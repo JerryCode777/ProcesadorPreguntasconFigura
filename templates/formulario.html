@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Preguntas Preuniversitarias</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- KaTeX para renderizar matemáticas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Banco de Preguntas Preuniversitarias</h1>
+            <p>Generador de preguntas en formato JSON</p>
+        </header>
+
+        <main>
+            <form id="preguntaForm" enctype="multipart/form-data">
+                
+                <!-- SECCIÓN 1: CAPTURA CON IA -->
+                <div class="form-section ai-capture">
+                    <h2>🚀 1. Procesar Pregunta con IA</h2>
+                    <p>Sube una imagen de la pregunta del libro y la IA completará automáticamente todos los campos</p>
+                    
+                    <div class="ai-upload-simple">
+                        <div class="drag-drop-area" id="dragDropArea">
+                            <div class="drag-drop-content">
+                                <div class="drag-icon">📷</div>
+                                <h3>Arrastra la imagen de la pregunta aquí</h3>
+                                <p>o haz clic para seleccionar</p>
+                                <input type="file" id="aiImageUpload" accept="image/*" hidden>
+                                <button type="button" onclick="document.getElementById('aiImageUpload').click()" class="upload-btn">
+                                    📁 Seleccionar Imagen
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-process-section">
+                            <select id="aiService" name="aiService" class="ai-select">
+                                <option value="gemini">🤖 Google Gemini Pro Vision</option>
+                                <option value="openai">OpenAI GPT-4 Vision</option>
+                                <option value="claude">Anthropic Claude Vision</option>
+                                <option value="azure">Azure OpenAI Vision</option>
+                            </select>
+                            
+                            <button type="button" id="processWithAI" class="ai-process-btn" disabled>
+                                <span class="ai-btn-text">🤖 Procesar con IA</span>
+                                <span class="ai-btn-loader" style="display: none;">
+                                    <div class="spinner"></div>
+                                    Procesando...
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div id="aiPreview" class="ai-preview" style="display: none;">
+                            <img id="aiPreviewImage" alt="Vista previa" />
+                        </div>
+                        
+                        <div id="aiResults" class="ai-results" style="display: none;">
+                            <h4>✨ IA completó el formulario - Revisa y edita si es necesario</h4>
+                            <div class="ai-confidence">
+                                <span>Confianza: <span id="aiConfidence">--</span>%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 2: CAMPOS BÁSICOS -->
+                <div class="form-section basic-fields">
+                    <h2>📝 2. Información Básica</h2>
+                    
+                    <div class="basic-grid">
+                        <div class="form-group">
+                            <label for="materia">Materia:</label>
+                            <select id="materia" name="materia" required>
+                                <option value="">Selecciona materia</option>
+                                {% for materia in materias %}
+                                <option value="{{ materia }}">{{ materia }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tema">Tema:</label>
+                            <input type="text" id="tema" name="tema" required 
+                                   placeholder="Ej: Ecuaciones Lineales">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dificultad">Dificultad:</label>
+                            <select id="dificultad" name="dificultad" required>
+                                <option value="">Dificultad</option>
+                                <option value="1">1 - Muy Fácil</option>
+                                <option value="2">2 - Fácil</option>
+                                <option value="3">3 - Intermedio</option>
+                                <option value="4">4 - Difícil</option>
+                                <option value="5">5 - Muy Difícil</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 3: PREGUNTA Y ALTERNATIVAS -->
+                <div class="form-section question-section">
+                    <h2>❓ 3. Pregunta y Alternativas</h2>
+                    
+                    <div class="form-group">
+                        <label for="pregunta">Pregunta:</label>
+                        <textarea id="pregunta" name="pregunta" rows="3" required 
+                                  placeholder="Escribe la pregunta aquí..."></textarea>
+                        
+                        <!-- Guía LaTeX compacta -->
+                        <div class="latex-guide">
+                            <div class="latex-header" onclick="toggleLatexGuide()">
+                                <small>💡 <strong>Guía LaTeX (clic para ver ejemplos)</strong> ▼</small>
+                            </div>
+                            <div class="latex-examples" id="latexExamples" style="display: none;">
+                                <div class="examples-grid">
+                                    <span><code>$$x^2$$</code> → x²</span>
+                                    <span><code>$$\frac{a}{b}$$</code> → a/b</span>
+                                    <span><code>$$\sqrt{x}$$</code> → √x</span>
+                                    <span><code>$$x^{n+1}$$</code> → x^(n+1)</span>
+                                    <span><code>$$\sin \theta$$</code> → sin θ</span>
+                                    <span><code>$$\leq$$</code> → ≤</span>
+                                    <span><code>$$\geq$$</code> → ≥</span>
+                                    <span><code>$$\pi$$</code> → π</span>
+                                    <span><code>$$\alpha$$</code> → α</span>
+                                    <span><code>$$\log_2 x$$</code> → log₂x</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="pregunta-preview" class="math-preview"></div>
+                    </div>
+
+                    <div class="alternatives-section">
+                        <h4>Alternativas:</h4>
+                        <div class="alternatives-grid">
+                            <div class="alternative">
+                                <label>A)</label>
+                                <textarea id="opcion_a" name="opcion_a" rows="2" required placeholder="Alternativa A"></textarea>
+                                <div id="opcion_a-preview" class="math-preview-small"></div>
+                            </div>
+                            <div class="alternative">
+                                <label>B)</label>
+                                <textarea id="opcion_b" name="opcion_b" rows="2" required placeholder="Alternativa B"></textarea>
+                                <div id="opcion_b-preview" class="math-preview-small"></div>
+                            </div>
+                            <div class="alternative">
+                                <label>C)</label>
+                                <textarea id="opcion_c" name="opcion_c" rows="2" required placeholder="Alternativa C"></textarea>
+                                <div id="opcion_c-preview" class="math-preview-small"></div>
+                            </div>
+                            <div class="alternative">
+                                <label>D)</label>
+                                <textarea id="opcion_d" name="opcion_d" rows="2" required placeholder="Alternativa D"></textarea>
+                                <div id="opcion_d-preview" class="math-preview-small"></div>
+                            </div>
+                            <div class="alternative">
+                                <label>E)</label>
+                                <textarea id="opcion_e" name="opcion_e" rows="2" required placeholder="Alternativa E"></textarea>
+                                <div id="opcion_e-preview" class="math-preview-small"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="correct-answer">
+                            <label for="respuesta_correcta">Respuesta Correcta:</label>
+                            <select id="respuesta_correcta" name="respuesta_correcta" required>
+                                <option value="">Selecciona</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="explicacion">Explicación:</label>
+                        <textarea id="explicacion" name="explicacion" rows="3" required 
+                                  placeholder="Explica por qué es correcta esta respuesta..."></textarea>
+                        <div id="explicacion-preview" class="math-preview"></div>
+                        
+                        <!-- Sección opcional para generar explicación con IA -->
+                        <div class="explanation-ai-section">
+                            <div class="ai-toggle" onclick="toggleExplanationAI()">
+                                <input type="checkbox" id="useAIExplanation">
+                                <label for="useAIExplanation">
+                                    🤖 <strong>Generar explicación automáticamente con IA</strong>
+                                    <small>Sube imágenes de la solución del ejercicio</small>
+                                </label>
+                            </div>
+                            
+                            <div class="ai-explanation-upload" id="aiExplanationUpload" style="display: none;">
+                                <div class="solution-images-section">
+                                    <h5>📸 Imágenes de la Solución (2-3 máximo)</h5>
+                                    <div class="solution-upload-grid">
+                                        <div class="solution-upload-item">
+                                            <div class="solution-drop-area" onclick="document.getElementById('solutionImage1').click()">
+                                                <span class="upload-icon">📄</span>
+                                                <span>Imagen 1</span>
+                                                <input type="file" id="solutionImage1" accept="image/*" hidden>
+                                            </div>
+                                            <div class="solution-preview" id="solutionPreview1" style="display: none;"></div>
+                                        </div>
+                                        
+                                        <div class="solution-upload-item">
+                                            <div class="solution-drop-area" onclick="document.getElementById('solutionImage2').click()">
+                                                <span class="upload-icon">📄</span>
+                                                <span>Imagen 2</span>
+                                                <input type="file" id="solutionImage2" accept="image/*" hidden>
+                                            </div>
+                                            <div class="solution-preview" id="solutionPreview2" style="display: none;"></div>
+                                        </div>
+                                        
+                                        <div class="solution-upload-item">
+                                            <div class="solution-drop-area" onclick="document.getElementById('solutionImage3').click()">
+                                                <span class="upload-icon">📄</span>
+                                                <span>Imagen 3</span>
+                                                <input type="file" id="solutionImage3" accept="image/*" hidden>
+                                            </div>
+                                            <div class="solution-preview" id="solutionPreview3" style="display: none;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="generate-explanation-section">
+                                        <button type="button" id="generateExplanation" class="generate-explanation-btn" disabled>
+                                            <span class="gen-btn-text">✨ Generar Explicación con IA</span>
+                                            <span class="gen-btn-loader" style="display: none;">
+                                                <div class="spinner"></div>
+                                                Procesando...
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN 4: IMAGEN MANUAL (OPCIONAL) -->
+                <div class="form-section image-section">
+                    <h2>🖼️ 4. Imagen Final (Opcional)</h2>
+                    <p>Sube aquí la imagen editada en Adobe Illustrator o deja vacío si no tiene imagen</p>
+                    
+                    <div class="form-group">
+                        <label for="imagen">Imagen procesada:</label>
+                        <input type="file" id="imagen" name="imagen" accept="image/*">
+                        <small>Formatos: JPG, PNG, GIF, BMP, WebP | Máximo 5MB</small>
+                    </div>
+                </div>
+
+                <!-- BOTONES Y ACCIONES -->
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="submit-btn">
+                        <span class="btn-text">✅ Crear Pregunta JSON</span>
+                        <span class="btn-loader" style="display: none;">
+                            <div class="spinner"></div>
+                            Procesando...
+                        </span>
+                    </button>
+                    <button type="reset" id="resetBtn" class="reset-btn">🔄 Limpiar Todo</button>
+                </div>
+            </form>
+
+            <!-- Mensajes y resultados -->
+            <div id="mensaje" class="mensaje" style="display: none;"></div>
+            
+            <div id="jsonPreview" class="json-preview" style="display: none;">
+                <h3>📄 JSON Generado:</h3>
+                <pre id="jsonContent"></pre>
+                <button type="button" onclick="copyToClipboard(document.getElementById('jsonContent').textContent)" class="copy-btn">
+                    📋 Copiar JSON
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

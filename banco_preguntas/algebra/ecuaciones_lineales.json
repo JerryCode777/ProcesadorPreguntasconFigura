@@ -1,0 +1,96 @@
+{
+  "materia": "algebra",
+  "tema": "ecuaciones_lineales",
+  "preguntas": [
+    {
+      "id_temporal": "alg_ecu_001",
+      "pregunta": "Hallar la raiz de esta ecuación: \r\n$$\\frac{x^{2}}{2}+1 = 0$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Es porque al resolver el sistema sale 3",
+      "imagen": null
+    },
+    {
+      "id_temporal": "alg_ecu_002",
+      "pregunta": "Hallar la raiz de esta ecuación: \r\n$$\\frac{x^{2}}{2}+1 = 0$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Es porque al resolver el sistema sale 3",
+      "imagen": null
+    },
+    {
+      "id_temporal": "alg_ecu_003",
+      "pregunta": "Resuelve la ecuación: $$2x + 5 = 13$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$x = 4$$",
+        "B": "$$x = 5$$",
+        "C": "$$x = 6$$",
+        "D": "$$x = 3$$",
+        "E": "$$x = 8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para resolver $$2x + 5 = 13$$, restamos 5 de ambos lados: $$2x = 8$$, luego dividimos por 2: $$x = 4$$",
+      "imagen": null
+    },
+    {
+      "id_temporal": "alg_ecu_004",
+      "pregunta": "Resuelve la ecuación: $$2x + 5 = 13$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$x = 4$$",
+        "B": "$$x = 5$$",
+        "C": "$$x = 6$$",
+        "D": "$$x = 3$$",
+        "E": "$$x = 8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para resolver $$2x + 5 = 13$$, restamos 5 de ambos lados: $$2x = 8$$, luego dividimos por 2: $$x = 4$$",
+      "imagen": null
+    },
+    {
+      "id_temporal": "alg_ecu_005",
+      "pregunta": "Resuelve la ecuación: $$2x + 5 = 13$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$x = 4$$",
+        "B": "$$x = 5$$",
+        "C": "$$x = 6$$",
+        "D": "$$x = 3$$",
+        "E": "$$x = 8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para resolver $$2x + 5 = 13$$, restamos 5 de ambos lados: $$2x = 8$$, luego dividimos por 2: $$x = 4$$",
+      "imagen": null
+    },
+    {
+      "id_temporal": "alg_ecu_006",
+      "pregunta": "Resuelve la ecuación: $$2x + 5 = 13$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$x = 4$$",
+        "B": "$$x = 5$$",
+        "C": "$$x = 6$$",
+        "D": "$$x = 3$$",
+        "E": "$$x = 8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para resolver $$2x + 5 = 13$$, restamos 5 de ambos lados: $$2x = 8$$, luego dividimos por 2: $$x = 4$$",
+      "imagen": null
+    }
+  ]
+}

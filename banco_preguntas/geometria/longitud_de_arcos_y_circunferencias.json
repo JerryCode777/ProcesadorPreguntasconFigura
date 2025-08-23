@@ -1,0 +1,21 @@
+{
+  "materia": "geometria",
+  "tema": "longitud_de_arcos_y_circunferencias",
+  "preguntas": [
+    {
+      "id_temporal": "geo_lon_001",
+      "pregunta": "En la figura mostrada el diámetro AB mide 36 cm. En AB se ubican P₁ y P₂ a partir de los segmentos que se determinan en el diámetro se trazan las semicicunferencias, halle la longitud aproximada (en cm) de la línea que limita la región sombreada.",
+      "dificultad": 4,
+      "opciones": {
+        "A": "106,76",
+        "B": "109,96",
+        "C": "113,04",
+        "D": "119,32",
+        "E": "122,46"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La solución se basa en descomponer la línea que limita la región sombreada en cuatro semicírculos.  El diámetro de la circunferencia grande es AB = 36 cm.  Los puntos P₁ y P₂ dividen el diámetro en cuatro segmentos: a, b, c, y d.  La suma de estos segmentos es igual al diámetro: a + b + c + d = 36 cm.\r\n\r\nCada semicírculo tiene una longitud de arco igual a la mitad de la circunferencia de un círculo con diámetro igual a la longitud del segmento correspondiente.  La longitud de la circunferencia de un círculo es dada por la fórmula $2\\pi r$, donde r es el radio.  Como el radio es la mitad del diámetro, la longitud de un semicírculo es $\\frac{1}{2}(2\\pi r) = \\pi r = \\frac{\\pi d}{2}$, donde d es el diámetro.\r\n\r\nPor lo tanto, la longitud de cada semicírculo es:\r\n\r\n* Semicírculo (1): $\\frac{\\pi c}{2}$\r\n* Semicírculo (2): $\\frac{\\pi a}{2}$\r\n* Semicírculo (3): $\\frac{\\pi d}{2}$\r\n* Semicírculo (4): $\\frac{\\pi b}{2}$\r\n\r\nLa longitud total de la línea que limita la región sombreada (x) es la suma de las longitudes de los cuatro semicírculos:\r\n\r\n$$x = \\frac{\\pi c}{2} + \\frac{\\pi a}{2} + \\frac{\\pi d}{2} + \\frac{\\pi b}{2}$$\r\n\r\nFactorizando π/2:\r\n\r\n$$x = \\frac{\\pi}{2}(a + b + c + d)$$\r\n\r\nComo a + b + c + d = 36 cm, se sustituye este valor en la ecuación:\r\n\r\n$$x = \\frac{\\pi}{2}(36)$$\r\n\r\n$$x = 18\\pi$$\r\n\r\nUsando una aproximación de π ≈ 3.14159:\r\n\r\n$$x ≈ 18 \\times 3.14159 ≈ 56.54862$$\r\n\r\nLa solución mostrada en la imagen tiene un error en el cálculo final.  Utiliza incorrectamente el diámetro de la circunferencia grande (36 cm) en lugar de la suma de los segmentos.  El resultado correcto, usando la aproximación de π ≈ 3.1416, es aproximadamente 56.55 cm.  La discrepancia con las opciones de respuesta sugiere un error en el enunciado o en las opciones proporcionadas.  La respuesta correcta debería ser aproximadamente 56.55 cm, no 113.04 cm como se muestra en la imagen.",
+      "imagen": "geometria_longitud_de_arcos_y_circunferencias_001.jpeg"
+    }
+  ]
+}

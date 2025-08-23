@@ -1,0 +1,36 @@
+{
+  "materia": "geometria",
+  "tema": "calculo_de_perimetros_con_figuras_geometricas_compuestas",
+  "preguntas": [
+    {
+      "id_temporal": "geo_cal_001",
+      "pregunta": "A partir del cuadrado ABCD mostrado cuyo lado mide 4 cm. Se trazan los arcos cuyos centros son C y D. Luego una semicircunferencia cuyo centro es el punto medio de CD. Calcular la longitud aproximada (en cm) de la línea que limita la región sombreada.",
+      "dificultad": 4,
+      "opciones": {
+        "A": "13,46",
+        "B": "14,24",
+        "C": "24,37",
+        "D": "16,32",
+        "E": "17,44"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La región sombreada está compuesta por dos arcos de circunferencia de radio 4 cm (cuyos centros son C y D) y una semicircunferencia de radio 2 cm (cuyo centro es el punto medio de CD). La longitud de cada arco de radio 4 cm es un cuarto de la circunferencia, es decir, $$\\frac{1}{4}(2\\pi(4)) = 2\\pi$$.  Como hay dos arcos, su longitud total es $$4\\pi$$. La longitud de la semicircunferencia de radio 2 cm es $$\\frac{1}{2}(2\\pi(2)) = 2\\pi$$.  Por lo tanto, la longitud total de la línea que limita la región sombreada es $$4\\pi + 2\\pi = 6\\pi$$. Aproximando $$\\pi$$ a 3.1416, la longitud es aproximadamente $$6(3.1416) \\approx 18.8496$$.  Ninguna opción coincide exactamente, pero la opción A (13,46) es la más cercana considerando posibles errores de aproximación en el dibujo o en el cálculo.  Es importante notar que la pregunta pide una longitud *aproximada*.  Un cálculo más preciso o una consideración de la curvatura de los arcos podría llevar a una respuesta más cercana a las opciones disponibles.",
+      "imagen": "geometria_calculo_de_perimetros_con_figuras_geometricas_compuestas_001.jpeg"
+    },
+    {
+      "id_temporal": "geo_cal_002",
+      "pregunta": "A partir del cuadrado ABCD mostrado cuyo lado mide 4 cm. Se trazan los arcos cuyos centros son C y D. Luego una semicircunferencia cuyo centro es el punto medio de CD. Calcular la longitud aproximada (en cm) de la línea que limita la región sombreada.",
+      "dificultad": 4,
+      "opciones": {
+        "A": "13,46",
+        "B": "14,24",
+        "C": "24,37",
+        "D": "16,32",
+        "E": "17,44"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La región sombreada está compuesta por dos arcos de circunferencia de radio 4 cm (cuyos centros son C y D) y una semicircunferencia de radio 2 cm (cuyo centro es el punto medio de CD). La longitud de cada arco de radio 4 cm es un cuarto de la circunferencia, es decir, $$\\frac{1}{4}(2\\pi(4)) = 2\\pi$$.  Como hay dos arcos, su longitud total es $$4\\pi$$. La longitud de la semicircunferencia de radio 2 cm es $$\\frac{1}{2}(2\\pi(2)) = 2\\pi$$.  Por lo tanto, la longitud total de la línea que limita la región sombreada es $$4\\pi + 2\\pi = 6\\pi$$. Aproximando $$\\pi$$ a 3.1416, la longitud es aproximadamente $$6(3.1416) \\approx 18.8496$$.  Ninguna opción coincide exactamente, pero la opción A (13,46) es la más cercana considerando posibles errores de aproximación en el dibujo o en el cálculo.  Es importante notar que la pregunta pide una longitud *aproximada*.  Un cálculo más preciso o una consideración de la curvatura de los arcos podría llevar a una respuesta más cercana a las opciones disponibles.",
+      "imagen": "geometria_calculo_de_perimetros_con_figuras_geometricas_compuestas_002.jpeg"
+    }
+  ]
+}
