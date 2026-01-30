@@ -1,0 +1,26 @@
+{
+  "materia": "algebra",
+  "tema": "ecuaciones_lineales",
+  "preguntas": [
+    {
+      "id_temporal": "alg_ecu_001",
+      "tipo_clasificacion": "proceso",
+      "pregunta": "Resuelve la ecuación: $$2x + 5 = 13$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$x = 4$$",
+        "B": "$$x = 5$$",
+        "C": "$$x = 6$$",
+        "D": "$$x = 3$$",
+        "E": "$$x = 8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "**Paso 1: Determinar el lado del cuadrado**\r\nEn un cuadrado, la diagonal ($d$) se relaciona con su lado ($L$) mediante la fórmula:\r\n$$d = L\\sqrt{2}$$\r\nDado que la diagonal en la imagen es $4\\sqrt{2}$, despejamos $L$:\r\n$$4\\sqrt{2} = L\\sqrt{2}$$\r\n$$L = 4$$\r\n\r\n**Paso 2: Identificar el sólido de revolución**\r\nAl girar un cuadrado $360^{\\circ}$ alrededor de uno de sus lados (eje $L$), se genera un **cilindro recto**.\r\n*   El radio de la base ($r$) es igual al lado del cuadrado: $$r = 4$$\r\n*   La altura ($h$) del cilindro es igual al lado del cuadrado: $$h = 4$$\r\n\r\n**Paso 3: Calcular el volumen del cilindro**\r\nUtilizamos la fórmula del volumen para un cilindro:\r\n$$V = \\pi \\cdot r^{2} \\cdot h$$\r\nSustituimos los valores conocidos:\r\n$$V = \\pi \\cdot (4)^{2} \\cdot 4$$\r\n$$V = \\pi \\cdot 16 \\cdot 4$$\r\n$$V = 64\\pi\\ u^{3}$$\r\n\r\n**Conclusión**\r\nEl volumen del sólido generado es $$64\\pi\\ u^{3}$$, lo que confirma que la respuesta correcta es la **A**.",
+      "imagen": null,
+      "anio": "2024",
+      "tipo_proceso": "extraordinario",
+      "fase": null,
+      "examen": null
+    }
+  ]
+}

@@ -103,18 +103,18 @@ async def process_with_openai(image_content: bytes) -> Dict[str, Any]:
 
 async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
     """Procesa imagen con Google Gemini Pro Vision"""
-    
+
     api_key = AI_API_KEYS["gemini"]
     print(f"🔍 Gemini API Key configurada: {'✅ SÍ' if api_key else '❌ NO'}")
-    
+
     if not api_key:
         print("⚠️ No hay API key de Gemini, usando respuesta simulada")
         return get_mock_response()
-    
+
     try:
         base64_image = base64.b64encode(image_content).decode('utf-8')
-        
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
+
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
         
         payload = {
             "contents": [
@@ -306,13 +306,29 @@ def parse_ai_response(content: str, service: str) -> Dict[str, Any]:
         print(f"❌ Error parseando respuesta de {service}: {str(e)}")
         return get_mock_response()
 
-async def process_solution_images_with_ai(service: str, solution_images: list, pregunta: str, respuesta_correcta: str) -> Dict[str, Any]:
-    """Procesa imágenes de solución para generar explicación"""
-    
+async def generate_explanation_from_question(service: str, question_image: bytes, pregunta: str, respuesta_correcta: str) -> Dict[str, Any]:
+    """Genera explicación directamente desde la imagen de la pregunta"""
+
     api_key = AI_API_KEYS[service]
     if not api_key:
         return {"explanation": "Explicación generada automáticamente - API no configurada"}
-    
+
+    try:
+        if service == "gemini":
+            return await generate_explanation_from_question_gemini(question_image, pregunta, respuesta_correcta)
+        else:
+            return {"explanation": f"Servicio {service} no implementado para explicaciones"}
+    except Exception as e:
+        print(f"Error generando explicación desde pregunta: {str(e)}")
+        return {"explanation": "Error generando explicación automática"}
+
+async def process_solution_images_with_ai(service: str, solution_images: list, pregunta: str, respuesta_correcta: str) -> Dict[str, Any]:
+    """Procesa imágenes de solución para generar explicación"""
+
+    api_key = AI_API_KEYS[service]
+    if not api_key:
+        return {"explanation": "Explicación generada automáticamente - API no configurada"}
+
     try:
         if service == "gemini":
             return await process_solution_with_gemini(solution_images, pregunta, respuesta_correcta)
@@ -322,14 +338,79 @@ async def process_solution_images_with_ai(service: str, solution_images: list, p
         print(f"Error procesando solución: {str(e)}")
         return {"explanation": "Error generando explicación automática"}
 
+async def generate_explanation_from_question_gemini(question_image: bytes, pregunta: str, respuesta_correcta: str) -> Dict[str, Any]:
+    """Genera explicación desde la imagen de la pregunta con Gemini"""
+
+    api_key = AI_API_KEYS["gemini"]
+
+    try:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
+
+        base64_image = base64.b64encode(question_image).decode('utf-8')
+
+        parts = [
+            {"text": f"""
+Analiza la imagen de esta pregunta de examen y genera una explicación detallada de cómo llegar a la respuesta correcta.
+
+PREGUNTA: {pregunta}
+RESPUESTA CORRECTA: {respuesta_correcta}
+
+INSTRUCCIONES IMPORTANTES:
+1. Explica paso a paso cómo resolver el problema, pero se breve solo lo vital
+2. Usa formato LaTeX para fórmulas matemáticas: $$fórmula$$
+3. Incluye el razonamiento detrás de cada paso
+4. Si hay conceptos teóricos, explícalos muy brevemente
+5. Muestra los cálculos intermedios cuando sea necesario
+6. Concluye explicando por qué la respuesta correcta es {respuesta_correcta}
+
+Ejemplos de formato LaTeX:
+- Ecuaciones: $$2x + 5 = 13$$
+- Fracciones: $$\\frac{{a}}{{b}}$$
+- Raíces: $$\\sqrt{{x}}$$
+- Potencias: $$x^{{2}}$$
+
+RESPONDE SOLO con la explicación paso a paso, usando formato LaTeX para matemáticas. No incluyas formato JSON ni texto adicional.
+            """},
+            {
+                "inline_data": {
+                    "mime_type": "image/jpeg",
+                    "data": base64_image
+                }
+            }
+        ]
+
+        payload = {
+            "contents": [{"parts": parts}],
+            "generationConfig": {
+                "maxOutputTokens": 1500,
+                "temperature": 0.2
+            }
+        }
+
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, json=payload)
+
+            if response.status_code == 200:
+                result = response.json()
+                explanation = result["candidates"][0]["content"]["parts"][0]["text"]
+                print(f"✅ Explicación desde pregunta generada exitosamente")
+                return {"explanation": explanation.strip()}
+            else:
+                print(f"❌ Error Gemini explicación: {response.status_code}")
+                return {"explanation": "Error generando explicación con IA"}
+
+    except Exception as e:
+        print(f"Error generando explicación desde pregunta con Gemini: {str(e)}")
+        return {"explanation": "Error procesando imagen de pregunta"}
+
 async def process_solution_with_gemini(solution_images: list, pregunta: str, respuesta_correcta: str) -> Dict[str, Any]:
     """Procesa imágenes de solución con Gemini"""
-    
+
     api_key = AI_API_KEYS["gemini"]
-    
+
     try:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
-        
+
         # Crear partes del contenido
         parts = [
             {"text": f"""
@@ -342,18 +423,24 @@ INSTRUCCIONES IMPORTANTES:
 1. NO resuelvas el problema por tu cuenta
 2. NO corrijas ni evalúes la solución mostrada
 3. ÚNICAMENTE describe y explica cada paso que aparece en las imágenes
-4. Si hay ecuaciones, cópialas usando LaTeX: $$ecuación$$
+4. Si hay ecuaciones, cópialas usando LaTeX inline: $$ecuación$$
 5. Explica el razonamiento que se muestra en cada paso de la resolución
 6. Si hay cálculos, describe qué operación se está realizando sin hacerla tú
 7. Mantén el enfoque en explicar la metodología mostrada
 
+Ejemplos de formato LaTeX:
+- Ecuaciones: $$2x + 5 = 13$$
+- Fracciones: $$\\frac{{a}}{{b}}$$
+- Raíces: $$\\sqrt{{x}}$$
+- Potencias: $$x^{{2}}$$
+
 Ejemplo de respuesta esperada:
 "En el primer paso se plantea la ecuación $$2x + 5 = 13$$. Luego se resta 5 de ambos lados obteniendo $$2x = 8$$. Finalmente se divide ambos lados entre 2 para obtener $$x = 4$$."
 
-RESPONDE SOLO con la explicación de lo mostrado en las imágenes, sin formato JSON ni texto adicional.
+RESPONDE SOLO con la explicación de lo mostrado en las imágenes, usando formato LaTeX inline para matemáticas. No incluyas formato JSON ni texto adicional.
             """}
         ]
-        
+
         # Agregar imágenes
         for i, image_content in enumerate(solution_images):
             base64_image = base64.b64encode(image_content).decode('utf-8')
@@ -363,7 +450,7 @@ RESPONDE SOLO con la explicación de lo mostrado en las imágenes, sin formato J
                     "data": base64_image
                 }
             })
-        
+
         payload = {
             "contents": [{"parts": parts}],
             "generationConfig": {
@@ -371,10 +458,10 @@ RESPONDE SOLO con la explicación de lo mostrado en las imágenes, sin formato J
                 "temperature": 0.1
             }
         }
-        
+
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(url, json=payload)
-            
+
             if response.status_code == 200:
                 result = response.json()
                 explanation = result["candidates"][0]["content"]["parts"][0]["text"]
@@ -383,7 +470,7 @@ RESPONDE SOLO con la explicación de lo mostrado en las imágenes, sin formato J
             else:
                 print(f"❌ Error Gemini explicación: {response.status_code}")
                 return {"explanation": "Error generando explicación con IA"}
-                
+
     except Exception as e:
         print(f"Error procesando solución con Gemini: {str(e)}")
         return {"explanation": "Error procesando imágenes de solución"}

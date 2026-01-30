@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupMathPreview();
     setupAICapture();
     setupExplanationAI();
+    setupProcesoSelectors();
 });
 
 function initializeForm() {
@@ -97,7 +98,18 @@ function setupResetButton() {
             form.reset();
             clearAllMessages();
             hideJsonPreview();
-            
+
+            // Ocultar sección de proceso
+            document.getElementById('proceso_section').style.display = 'none';
+            document.getElementById('fase_container').style.display = 'none';
+            document.getElementById('examen_container').style.display = 'none';
+
+            // Resetear required de campos de proceso
+            document.getElementById('anio').required = false;
+            document.getElementById('tipo_proceso').required = false;
+            document.getElementById('fase').required = false;
+            document.getElementById('examen').required = false;
+
             // Auto-resize de textareas después del reset
             const textareas = document.querySelectorAll('textarea');
             textareas.forEach(textarea => {
@@ -137,24 +149,54 @@ function setupImagePreview() {
 function validateForm() {
     let isValid = true;
     clearAllMessages();
-    
-    // Validar campos requeridos
-    const requiredFields = [
-        'materia', 'tema', 'pregunta', 'opcion_a', 'opcion_b', 
-        'opcion_c', 'opcion_d', 'opcion_e', 'respuesta_correcta', 
+
+    // Validar campos básicos siempre requeridos
+    const basicRequiredFields = [
+        'tipo_clasificacion', 'materia', 'tema', 'pregunta', 'opcion_a', 'opcion_b',
+        'opcion_c', 'opcion_d', 'opcion_e', 'respuesta_correcta',
         'explicacion', 'dificultad'
     ];
-    
-    requiredFields.forEach(fieldName => {
+
+    basicRequiredFields.forEach(fieldName => {
         const field = document.getElementById(fieldName);
         if (field && (!field.value || field.value.trim() === '')) {
             showFieldError(field, 'Este campo es obligatorio');
             isValid = false;
         } else if (field) {
-            // Limpiar error si el campo está lleno
             clearFieldError(field);
         }
     });
+
+    // Validar campos de proceso solo si se seleccionó "Por proceso"
+    const tipoClasificacion = document.getElementById('tipo_clasificacion').value;
+
+    if (tipoClasificacion === 'proceso') {
+        const procesoRequiredFields = ['anio', 'tipo_proceso'];
+
+        procesoRequiredFields.forEach(fieldName => {
+            const field = document.getElementById(fieldName);
+            if (field && (!field.value || field.value.trim() === '')) {
+                showFieldError(field, 'Este campo es obligatorio');
+                isValid = false;
+            } else if (field) {
+                clearFieldError(field);
+            }
+        });
+
+        // Validar campos condicionales (fase y examen)
+        const faseField = document.getElementById('fase');
+        const examenField = document.getElementById('examen');
+
+        if (faseField.required && (!faseField.value || faseField.value.trim() === '')) {
+            showFieldError(faseField, 'Este campo es obligatorio');
+            isValid = false;
+        }
+
+        if (examenField.required && (!examenField.value || examenField.value.trim() === '')) {
+            showFieldError(examenField, 'Este campo es obligatorio');
+            isValid = false;
+        }
+    }
     
     // Validaciones específicas solo si los campos tienen valor
     const respuestaCorrecta = document.getElementById('respuesta_correcta').value;
@@ -253,6 +295,7 @@ function showMessage(text, type) {
 function showJsonPreview(pregunta) {
     const jsonData = {
         id_temporal: pregunta.id_temporal,
+        tipo_clasificacion: pregunta.tipo_clasificacion,
         pregunta: pregunta.pregunta,
         dificultad: pregunta.dificultad,
         opciones: pregunta.opciones,
@@ -260,10 +303,18 @@ function showJsonPreview(pregunta) {
         explicacion: pregunta.explicacion,
         imagen: pregunta.imagen
     };
-    
+
+    // Solo añadir campos de proceso si están presentes
+    if (pregunta.tipo_clasificacion === 'proceso') {
+        jsonData.anio = pregunta.anio;
+        jsonData.tipo_proceso = pregunta.tipo_proceso;
+        if (pregunta.fase) jsonData.fase = pregunta.fase;
+        if (pregunta.examen) jsonData.examen = pregunta.examen;
+    }
+
     jsonContent.textContent = JSON.stringify(jsonData, null, 2);
     jsonPreview.style.display = 'block';
-    
+
     // Scroll suave hacia la vista previa
     jsonPreview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
@@ -684,26 +735,29 @@ function handleAIImageUpload(file) {
         showMessage('Por favor selecciona un archivo de imagen válido', 'error');
         return;
     }
-    
+
     // Validar tamaño (máximo 10MB)
     if (file.size > 10 * 1024 * 1024) {
         showMessage('La imagen es demasiado grande. Máximo 10MB', 'error');
         return;
     }
-    
+
     currentAIImage = file;
-    
+
     // Mostrar vista previa
     const reader = new FileReader();
     reader.onload = function(e) {
         const aiPreview = document.getElementById('aiPreview');
         const aiPreviewImage = document.getElementById('aiPreviewImage');
-        
+
         aiPreviewImage.src = e.target.result;
         aiPreview.style.display = 'block';
-        
+
         // Habilitar botón de procesar
         document.getElementById('processWithAI').disabled = false;
+
+        // Verificar si debe habilitar el botón de generar explicación
+        checkGenerateButton();
     };
     reader.readAsDataURL(file);
 }
@@ -734,13 +788,16 @@ async function processImageWithAI() {
         
         if (response.ok && result.success) {
             const aiData = result.data;
-            
+
             // Mostrar resultados
             showAIResults(aiData);
-            
+
             // Llenar formulario automáticamente
             fillFormFromAI(aiData);
-            
+
+            // Verificar si debe habilitar el botón de generar explicación
+            checkGenerateButton();
+
             // Mensaje diferenciado según el tipo de respuesta
             if (aiData.ai_service === 'mock' || aiData.note) {
                 showMessage('🧪 Procesado en MODO SIMULADO - Configura API key para IA real', 'error');
@@ -927,7 +984,28 @@ function setupExplanationAI() {
             input.addEventListener('change', (e) => handleSolutionImageUpload(i, e.target.files[0]));
         }
     }
-    
+
+    // Setup mode selectors
+    const modeFromQuestion = document.getElementById('modeFromQuestion');
+    const modeFromSolution = document.getElementById('modeFromSolution');
+    const solutionImagesSection = document.getElementById('solutionImagesSection');
+
+    if (modeFromQuestion && modeFromSolution) {
+        modeFromQuestion.addEventListener('change', function() {
+            if (this.checked) {
+                solutionImagesSection.style.display = 'none';
+                checkGenerateButton();
+            }
+        });
+
+        modeFromSolution.addEventListener('change', function() {
+            if (this.checked) {
+                solutionImagesSection.style.display = 'block';
+                checkGenerateButton();
+            }
+        });
+    }
+
     // Setup generate button
     const generateBtn = document.getElementById('generateExplanation');
     if (generateBtn) {
@@ -939,10 +1017,12 @@ function toggleExplanationAI() {
     const checkbox = document.getElementById('useAIExplanation');
     const uploadSection = document.getElementById('aiExplanationUpload');
     const explanationSection = document.querySelector('.explanation-ai-section');
-    
+
     if (checkbox.checked) {
         uploadSection.style.display = 'block';
         explanationSection.classList.add('active');
+        // Verificar si debe habilitar el botón
+        checkGenerateButton();
     } else {
         uploadSection.style.display = 'none';
         explanationSection.classList.remove('active');
@@ -994,61 +1074,87 @@ function clearSolutionImage(index) {
 
 function checkGenerateButton() {
     const generateBtn = document.getElementById('generateExplanation');
-    const hasImages = Object.values(solutionImages).some(img => img !== null);
-    generateBtn.disabled = !hasImages;
+    const modeFromQuestion = document.getElementById('modeFromQuestion');
+    const modeFromSolution = document.getElementById('modeFromSolution');
+
+    // Si está en modo "desde pregunta", siempre habilitado si hay imagen de pregunta
+    if (modeFromQuestion && modeFromQuestion.checked) {
+        generateBtn.disabled = !currentAIImage;
+        return;
+    }
+
+    // Si está en modo "desde solución", requiere al menos una imagen de solución
+    if (modeFromSolution && modeFromSolution.checked) {
+        const hasImages = Object.values(solutionImages).some(img => img !== null);
+        generateBtn.disabled = !hasImages;
+    }
 }
 
 async function generateExplanationWithAI() {
     const generateBtn = document.getElementById('generateExplanation');
     const pregunta = document.getElementById('pregunta').value;
     const respuestaCorrecta = document.getElementById('respuesta_correcta').value;
-    
+    const modeFromQuestion = document.getElementById('modeFromQuestion');
+
     if (!pregunta) {
         showMessage('Completa la pregunta antes de generar la explicación', 'error');
         return;
     }
-    
+
     if (!respuestaCorrecta) {
         showMessage('Selecciona la respuesta correcta antes de generar la explicación', 'error');
         return;
     }
-    
+
     // Cambiar estado del botón
     setGenerateExplanationState(true);
-    
+
     try {
         const formData = new FormData();
         formData.append('ai_service', 'gemini');
         formData.append('pregunta', pregunta);
         formData.append('respuesta_correcta', respuestaCorrecta);
-        
-        // Agregar imágenes
-        if (solutionImages[1]) formData.append('solution_image1', solutionImages[1]);
-        if (solutionImages[2]) formData.append('solution_image2', solutionImages[2]);
-        if (solutionImages[3]) formData.append('solution_image3', solutionImages[3]);
-        
+
+        // Determinar modo y añadir datos correspondientes
+        if (modeFromQuestion && modeFromQuestion.checked) {
+            // Modo: desde imagen de pregunta
+            if (!currentAIImage) {
+                showMessage('Primero debes procesar una imagen de pregunta con IA', 'error');
+                setGenerateExplanationState(false);
+                return;
+            }
+            formData.append('mode', 'from_question');
+            formData.append('question_image', currentAIImage);
+        } else {
+            // Modo: desde imágenes de solución
+            formData.append('mode', 'from_solution');
+            if (solutionImages[1]) formData.append('solution_image1', solutionImages[1]);
+            if (solutionImages[2]) formData.append('solution_image2', solutionImages[2]);
+            if (solutionImages[3]) formData.append('solution_image3', solutionImages[3]);
+        }
+
         const response = await fetch('/api/generate-explanation', {
             method: 'POST',
             body: formData
         });
-        
+
         const result = await response.json();
-        
+
         if (response.ok && result.success) {
             // Llenar el campo de explicación
             const explicacionField = document.getElementById('explicacion');
             explicacionField.value = result.explanation;
             updateMathPreview('explicacion');
             autoResize.call(explicacionField);
-            
+
             showMessage('✨ ¡Explicación generada exitosamente!', 'success');
-            
+
             // Scroll al campo de explicación
             explicacionField.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
             throw new Error(result.detail || 'Error generando explicación');
         }
-        
+
     } catch (error) {
         console.error('Error generando explicación:', error);
         showMessage(`❌ Error: ${error.message}`, 'error');
@@ -1061,7 +1167,7 @@ function setGenerateExplanationState(generating) {
     const generateBtn = document.getElementById('generateExplanation');
     const btnText = generateBtn.querySelector('.gen-btn-text');
     const btnLoader = generateBtn.querySelector('.gen-btn-loader');
-    
+
     if (generating) {
         btnText.style.display = 'none';
         btnLoader.style.display = 'flex';
@@ -1071,4 +1177,113 @@ function setGenerateExplanationState(generating) {
         btnLoader.style.display = 'none';
         checkGenerateButton(); // Restaurar estado basado en imágenes
     }
+}
+
+// ======= SELECTORES DE PROCESO =======
+
+function setupProcesoSelectors() {
+    const tipoClasificacion = document.getElementById('tipo_clasificacion');
+    const procesoSection = document.getElementById('proceso_section');
+    const anioSelect = document.getElementById('anio');
+    const tipoProceso = document.getElementById('tipo_proceso');
+    const faseContainer = document.getElementById('fase_container');
+    const examenContainer = document.getElementById('examen_container');
+    const faseSelect = document.getElementById('fase');
+    const examenSelect = document.getElementById('examen');
+
+    // Configuración de opciones por tipo de proceso
+    const procesoConfig = {
+        'extraordinario': {
+            hasFase: false,
+            hasExamen: false
+        },
+        'ceprunsa': {
+            hasFase: true,
+            fases: ['I FASE', 'II FASE'],
+            hasExamen: true,
+            examenes: ['1er examen', '2do examen']
+        },
+        'ceprequintos': {
+            hasFase: false,
+            hasExamen: true,
+            examenes: ['1er examen', '2do examen']
+        },
+        'ordinario': {
+            hasFase: true,
+            fases: ['I FASE', 'II FASE'],
+            hasExamen: false
+        }
+    };
+
+    // Manejar selección de tipo de clasificación
+    tipoClasificacion.addEventListener('change', function() {
+        const clasificacion = this.value;
+
+        if (clasificacion === 'proceso') {
+            // Mostrar sección de proceso
+            procesoSection.style.display = 'block';
+            anioSelect.required = true;
+            tipoProceso.required = true;
+        } else if (clasificacion === 'normal') {
+            // Ocultar sección de proceso
+            procesoSection.style.display = 'none';
+            anioSelect.required = false;
+            tipoProceso.required = false;
+            faseSelect.required = false;
+            examenSelect.required = false;
+
+            // Resetear campos de proceso
+            anioSelect.value = '';
+            tipoProceso.value = '';
+            faseSelect.value = '';
+            examenSelect.value = '';
+            faseContainer.style.display = 'none';
+            examenContainer.style.display = 'none';
+        }
+    });
+
+    // Manejar cambios en tipo de proceso
+    tipoProceso.addEventListener('change', function() {
+        const selectedProceso = this.value;
+
+        // Resetear campos
+        faseSelect.innerHTML = '<option value="">Selecciona fase</option>';
+        examenSelect.innerHTML = '<option value="">Selecciona examen</option>';
+        faseContainer.style.display = 'none';
+        examenContainer.style.display = 'none';
+        faseSelect.required = false;
+        examenSelect.required = false;
+        faseSelect.value = '';
+        examenSelect.value = '';
+
+        if (!selectedProceso || !procesoConfig[selectedProceso]) {
+            return;
+        }
+
+        const config = procesoConfig[selectedProceso];
+
+        // Mostrar selector de fase si aplica
+        if (config.hasFase && config.fases) {
+            faseContainer.style.display = 'block';
+            faseSelect.required = true;
+            config.fases.forEach(fase => {
+                const option = document.createElement('option');
+                option.value = fase;
+                option.textContent = fase;
+                faseSelect.appendChild(option);
+            });
+        }
+
+        // Mostrar selector de examen si aplica
+        if (config.hasExamen && config.examenes) {
+            examenContainer.style.display = 'block';
+            examenSelect.required = true;
+            config.examenes.forEach(examen => {
+                const option = document.createElement('option');
+                option.value = examen;
+                option.textContent = examen;
+                examenSelect.appendChild(option);
+            });
+        }
+    });
 }

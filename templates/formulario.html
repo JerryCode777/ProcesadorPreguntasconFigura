@@ -74,8 +74,61 @@
                 <!-- SECCIÓN 2: CAMPOS BÁSICOS -->
                 <div class="form-section basic-fields">
                     <h2>📝 2. Información Básica</h2>
-                    
+
                     <div class="basic-grid">
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="tipo_clasificacion">Clasificación:</label>
+                            <select id="tipo_clasificacion" name="tipo_clasificacion" required>
+                                <option value="">¿Cómo clasificar esta pregunta?</option>
+                                <option value="normal">📚 Distribución normal (sin proceso específico)</option>
+                                <option value="proceso">🎯 Por proceso de admisión</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Sección de proceso (oculta por defecto) -->
+                    <div id="proceso_section" style="display: none; margin-top: 20px;">
+                        <h3 style="color: #4a90e2; margin-bottom: 15px;">Información del Proceso</h3>
+                        <div class="basic-grid">
+                            <div class="form-group">
+                                <label for="anio">Año:</label>
+                                <select id="anio" name="anio">
+                                    <option value="">Selecciona año</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tipo_proceso">Tipo de Proceso:</label>
+                                <select id="tipo_proceso" name="tipo_proceso">
+                                    <option value="">Selecciona tipo</option>
+                                    <option value="extraordinario">Extraordinario</option>
+                                    <option value="ceprunsa">CEPRUNSA</option>
+                                    <option value="ceprequintos">CEPREQUINTOS</option>
+                                    <option value="ordinario">Ordinario</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="fase_container" style="display: none;">
+                                <label for="fase">Fase:</label>
+                                <select id="fase" name="fase">
+                                    <option value="">Selecciona fase</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="examen_container" style="display: none;">
+                                <label for="examen">Examen:</label>
+                                <select id="examen" name="examen">
+                                    <option value="">Selecciona examen</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="basic-grid" style="margin-top: 20px;">
                         <div class="form-group">
                             <label for="materia">Materia:</label>
                             <select id="materia" name="materia" required>
@@ -88,7 +141,7 @@
 
                         <div class="form-group">
                             <label for="tema">Tema:</label>
-                            <input type="text" id="tema" name="tema" required 
+                            <input type="text" id="tema" name="tema" required
                                    placeholder="Ej: Ecuaciones Lineales">
                         </div>
 
@@ -193,12 +246,28 @@
                                 <input type="checkbox" id="useAIExplanation">
                                 <label for="useAIExplanation">
                                     🤖 <strong>Generar explicación automáticamente con IA</strong>
-                                    <small>Sube imágenes de la solución del ejercicio</small>
+                                    <small>Usa la imagen de la pregunta o sube imágenes de solución</small>
                                 </label>
                             </div>
-                            
+
                             <div class="ai-explanation-upload" id="aiExplanationUpload" style="display: none;">
-                                <div class="solution-images-section">
+                                <!-- Selector de modo de generación -->
+                                <div class="explanation-mode-selector" style="margin-bottom: 20px;">
+                                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Modo de generación:</label>
+                                    <div style="display: flex; gap: 15px;">
+                                        <label style="display: flex; align-items: center; cursor: pointer;">
+                                            <input type="radio" name="explanation_mode" value="from_question" id="modeFromQuestion" checked>
+                                            <span style="margin-left: 8px;">📷 Desde imagen de pregunta</span>
+                                        </label>
+                                        <label style="display: flex; align-items: center; cursor: pointer;">
+                                            <input type="radio" name="explanation_mode" value="from_solution" id="modeFromSolution">
+                                            <span style="margin-left: 8px;">📸 Desde imágenes de solución</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Sección de imágenes de solución (oculta por defecto) -->
+                                <div class="solution-images-section" id="solutionImagesSection" style="display: none;">
                                     <h5>📸 Imágenes de la Solución (2-3 máximo)</h5>
                                     <div class="solution-upload-grid">
                                         <div class="solution-upload-item">
@@ -209,7 +278,7 @@
                                             </div>
                                             <div class="solution-preview" id="solutionPreview1" style="display: none;"></div>
                                         </div>
-                                        
+
                                         <div class="solution-upload-item">
                                             <div class="solution-drop-area" onclick="document.getElementById('solutionImage2').click()">
                                                 <span class="upload-icon">📄</span>
@@ -218,7 +287,7 @@
                                             </div>
                                             <div class="solution-preview" id="solutionPreview2" style="display: none;"></div>
                                         </div>
-                                        
+
                                         <div class="solution-upload-item">
                                             <div class="solution-drop-area" onclick="document.getElementById('solutionImage3').click()">
                                                 <span class="upload-icon">📄</span>
@@ -228,16 +297,16 @@
                                             <div class="solution-preview" id="solutionPreview3" style="display: none;"></div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="generate-explanation-section">
-                                        <button type="button" id="generateExplanation" class="generate-explanation-btn" disabled>
-                                            <span class="gen-btn-text">✨ Generar Explicación con IA</span>
-                                            <span class="gen-btn-loader" style="display: none;">
-                                                <div class="spinner"></div>
-                                                Procesando...
-                                            </span>
-                                        </button>
-                                    </div>
+                                </div>
+
+                                <div class="generate-explanation-section">
+                                    <button type="button" id="generateExplanation" class="generate-explanation-btn">
+                                        <span class="gen-btn-text">✨ Generar Explicación con IA</span>
+                                        <span class="gen-btn-loader" style="display: none;">
+                                            <div class="spinner"></div>
+                                            Procesando...
+                                        </span>
+                                    </button>
                                 </div>
                             </div>
                         </div>

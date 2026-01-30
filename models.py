@@ -2,6 +2,11 @@ from pydantic import BaseModel
 from typing import Dict, Optional
 
 class PreguntaRequest(BaseModel):
+    tipo_clasificacion: str
+    anio: Optional[str] = None
+    tipo_proceso: Optional[str] = None
+    fase: Optional[str] = None
+    examen: Optional[str] = None
     materia: str
     tema: str
     pregunta: str
@@ -16,6 +21,11 @@ class PreguntaRequest(BaseModel):
 
 class Pregunta(BaseModel):
     id_temporal: str
+    tipo_clasificacion: str
+    anio: Optional[str] = None
+    tipo_proceso: Optional[str] = None
+    fase: Optional[str] = None
+    examen: Optional[str] = None
     pregunta: str
     dificultad: int
     opciones: Dict[str, str]
