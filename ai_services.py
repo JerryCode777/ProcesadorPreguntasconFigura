@@ -114,7 +114,7 @@ async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
     try:
         base64_image = base64.b64encode(image_content).decode('utf-8')
         
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
         
         payload = {
             "contents": [

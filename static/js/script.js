@@ -33,7 +33,7 @@ function initializeForm() {
     const inputs = document.querySelectorAll('input, select, textarea');
     inputs.forEach(input => {
         input.addEventListener('blur', validateField);
-        input.addEventListener('input', clearFieldError);
+        input.addEventListener('input', (e) => clearFieldError(e.target));
     });
 }
 
@@ -623,35 +623,57 @@ function setupAICapture() {
     const processBtn = document.getElementById('processWithAI');
     const aiPreview = document.getElementById('aiPreview');
     const aiPreviewImage = document.getElementById('aiPreviewImage');
-    
+
     // Drag and Drop
     dragDropArea.addEventListener('dragover', (e) => {
         e.preventDefault();
         dragDropArea.classList.add('dragover');
     });
-    
+
     dragDropArea.addEventListener('dragleave', (e) => {
         e.preventDefault();
         dragDropArea.classList.remove('dragover');
     });
-    
+
     dragDropArea.addEventListener('drop', (e) => {
         e.preventDefault();
         dragDropArea.classList.remove('dragover');
-        
+
         const files = e.dataTransfer.files;
         if (files.length > 0 && files[0].type.startsWith('image/')) {
             handleAIImageUpload(files[0]);
         }
     });
-    
+
     // File input change
     aiImageUpload.addEventListener('change', (e) => {
         if (e.target.files.length > 0) {
             handleAIImageUpload(e.target.files[0]);
         }
     });
-    
+
+    // Paste from clipboard - solo funciona cuando haces clic en el área de drag-drop primero
+    dragDropArea.addEventListener('paste', (e) => {
+        const items = e.clipboardData?.items;
+        if (!items) return;
+
+        // Buscar imagen en el portapapeles
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type.startsWith('image/')) {
+                e.preventDefault();
+                const file = items[i].getAsFile();
+                if (file) {
+                    handleAIImageUpload(file);
+                    showMessage('📋 Imagen pegada desde el portapapeles', 'success');
+                }
+                break;
+            }
+        }
+    });
+
+    // Hacer el área de drag-drop enfocable para que funcione el paste
+    dragDropArea.setAttribute('tabindex', '0');
+
     // Process button
     processBtn.addEventListener('click', processImageWithAI);
 }
