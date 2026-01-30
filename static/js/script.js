@@ -122,29 +122,104 @@ function setupResetButton() {
 
 function setupImagePreview() {
     const imagen = document.getElementById('imagen');
+    const finalImageDropArea = document.getElementById('finalImageDropArea');
+    const finalImagePreview = document.getElementById('finalImagePreview');
+    const finalImagePreviewImg = document.getElementById('finalImagePreviewImg');
+
+    // Función para mostrar vista previa
+    const showFinalImagePreview = (file) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            finalImagePreviewImg.src = e.target.result;
+            finalImagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    };
+
+    // Input file change
     imagen.addEventListener('change', function() {
-        const preview = document.getElementById('imagePreview');
-        if (preview) preview.remove();
-        
         if (this.files && this.files[0]) {
-            const file = this.files[0];
-            const reader = new FileReader();
-            
-            reader.onload = function(e) {
-                const previewDiv = document.createElement('div');
-                previewDiv.id = 'imagePreview';
-                previewDiv.innerHTML = `
-                    <div style="margin-top: 10px;">
-                        <img src="${e.target.result}" alt="Vista previa" 
-                             style="max-width: 200px; max-height: 200px; border-radius: 8px; border: 2px solid #e9ecef;">
-                    </div>
-                `;
-                imagen.parentNode.appendChild(previewDiv);
-            };
-            
-            reader.readAsDataURL(file);
+            showFinalImagePreview(this.files[0]);
         }
     });
+
+    // Configurar drag & drop para imagen final
+    if (finalImageDropArea) {
+        // Hacer contentEditable para paste
+        finalImageDropArea.setAttribute('contenteditable', 'true');
+        finalImageDropArea.style.caretColor = 'transparent';
+        finalImageDropArea.style.outline = 'none';
+
+        // Prevenir escritura de texto
+        finalImageDropArea.addEventListener('keydown', (e) => {
+            if (e.key !== 'v' || (!e.ctrlKey && !e.metaKey)) {
+                e.preventDefault();
+            }
+        });
+
+        // Drag over
+        finalImageDropArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            finalImageDropArea.style.borderColor = '#4a90e2';
+            finalImageDropArea.style.background = '#f0f8ff';
+        });
+
+        // Drag leave
+        finalImageDropArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            finalImageDropArea.style.borderColor = '#ccc';
+            finalImageDropArea.style.background = '';
+        });
+
+        // Drop
+        finalImageDropArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            finalImageDropArea.style.borderColor = '#ccc';
+            finalImageDropArea.style.background = '';
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].type.startsWith('image/')) {
+                // Crear un FileList simulado para el input
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(files[0]);
+                imagen.files = dataTransfer.files;
+
+                showFinalImagePreview(files[0]);
+                showMessage('✅ Imagen cargada exitosamente', 'success', false);
+            }
+        });
+
+        // Paste
+        finalImageDropArea.addEventListener('paste', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const items = e.clipboardData?.items;
+            if (!items) return;
+
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].type.startsWith('image/')) {
+                    const file = items[i].getAsFile();
+                    if (file) {
+                        // Crear un FileList simulado para el input
+                        const dataTransfer = new DataTransfer();
+                        dataTransfer.items.add(file);
+                        imagen.files = dataTransfer.files;
+
+                        showFinalImagePreview(file);
+                        showMessage('📋 Imagen pegada desde el portapapeles', 'success', false);
+                    }
+                    break;
+                }
+            }
+        });
+
+        // Focus al hacer click
+        finalImageDropArea.addEventListener('click', () => {
+            finalImageDropArea.focus();
+        });
+    }
 }
 
 function validateForm() {
