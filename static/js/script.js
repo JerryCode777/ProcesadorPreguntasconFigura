@@ -111,10 +111,20 @@ function setupResetButton() {
             document.getElementById('fase').required = false;
             document.getElementById('examen').required = false;
 
-            // Auto-resize de textareas después del reset
+            // Limpiar vista previa de imagen final
+            const finalImagePreview = document.getElementById('finalImagePreview');
+            if (finalImagePreview) {
+                finalImagePreview.style.display = 'none';
+            }
+
+            // Limpiar vista previa de IA
+            resetAICapture();
+
+            // Resetear altura de textareas a su valor original
             const textareas = document.querySelectorAll('textarea');
             textareas.forEach(textarea => {
-                autoResize.call(textarea);
+                textarea.style.height = 'auto'; // Resetear altura
+                textarea.style.height = ''; // Quitar estilo inline para volver al CSS
             });
         }
     });
@@ -322,6 +332,34 @@ async function submitForm() {
                     form.reset();
                     hideJsonPreview();
                     clearAllMessages();
+
+                    // Limpiar vista previa de imagen final
+                    const finalImagePreview = document.getElementById('finalImagePreview');
+                    if (finalImagePreview) {
+                        finalImagePreview.style.display = 'none';
+                    }
+
+                    // Limpiar vista previa de IA
+                    resetAICapture();
+
+                    // Ocultar sección de proceso
+                    document.getElementById('proceso_section').style.display = 'none';
+                    document.getElementById('fase_container').style.display = 'none';
+                    document.getElementById('examen_container').style.display = 'none';
+
+                    // Resetear required
+                    document.getElementById('area_academica').required = false;
+                    document.getElementById('anio').required = false;
+                    document.getElementById('tipo_proceso').required = false;
+                    document.getElementById('fase').required = false;
+                    document.getElementById('examen').required = false;
+
+                    // Resetear altura de textareas
+                    const textareas = document.querySelectorAll('textarea');
+                    textareas.forEach(textarea => {
+                        textarea.style.height = 'auto';
+                        textarea.style.height = '';
+                    });
                 }
             }, 2000);
         } else {
