@@ -40,6 +40,7 @@ async def formulario(request: Request):
 @app.post("/crear-pregunta")
 async def crear_pregunta(
     tipo_clasificacion: str = Form(...),
+    area_academica: Optional[str] = Form(None),
     anio: Optional[str] = Form(None),
     tipo_proceso: Optional[str] = Form(None),
     fase: Optional[str] = Form(None),
@@ -64,6 +65,10 @@ async def crear_pregunta(
 
         # Validaciones condicionales si se seleccionó "Por proceso"
         if tipo_clasificacion == "proceso":
+            areas_validas = ["ingenierias", "biomedicas", "sociales"]
+            if not area_academica or area_academica not in areas_validas:
+                raise HTTPException(status_code=400, detail="Área académica requerida y debe ser válida")
+
             if not anio or anio not in ["2023", "2024", "2025", "2026"]:
                 raise HTTPException(status_code=400, detail="Año requerido y debe ser válido")
 
@@ -72,14 +77,17 @@ async def crear_pregunta(
                 raise HTTPException(status_code=400, detail="Tipo de proceso requerido y debe ser válido")
 
             # Validaciones condicionales según tipo de proceso
+            anio_num = int(anio)
+            examenes_validos = ["examen"] if anio_num >= 2025 else ["1er examen", "2do examen"]
+
             if tipo_proceso == "ceprunsa":
                 if not fase or fase not in ["I FASE", "II FASE"]:
                     raise HTTPException(status_code=400, detail="Fase requerida para CEPRUNSA")
-                if not examen or examen not in ["1er examen", "2do examen"]:
-                    raise HTTPException(status_code=400, detail="Examen requerido para CEPRUNSA")
+                if not examen or examen not in examenes_validos:
+                    raise HTTPException(status_code=400, detail=f"Examen requerido para CEPRUNSA (válidos: {', '.join(examenes_validos)})")
             elif tipo_proceso == "ceprequintos":
-                if not examen or examen not in ["1er examen", "2do examen"]:
-                    raise HTTPException(status_code=400, detail="Examen requerido para CEPREQUINTOS")
+                if not examen or examen not in examenes_validos:
+                    raise HTTPException(status_code=400, detail=f"Examen requerido para CEPREQUINTOS (válidos: {', '.join(examenes_validos)})")
             elif tipo_proceso == "ordinario":
                 if not fase or fase not in ["I FASE", "II FASE"]:
                     raise HTTPException(status_code=400, detail="Fase requerida para Ordinario")
@@ -103,9 +111,9 @@ async def crear_pregunta(
             base_path = Path("banco_preguntas")
             materia_dir = base_path / materia_norm
         else:  # tipo_clasificacion == "proceso"
-            # Estructura: banco_procesos/[año]/[tipo_proceso]/[fase]/[examen]/[materia]/
+            # Estructura: banco_procesos/[area]/[año]/[tipo_proceso]/[fase]/[examen]/[materia]/
             base_path = Path("banco_procesos")
-            path_parts = [base_path, anio, tipo_proceso]
+            path_parts = [base_path, area_academica, anio, tipo_proceso]
 
             # Normalizar nombres de fase y examen para usar en rutas
             if fase:
@@ -180,6 +188,7 @@ async def crear_pregunta(
 
         # Solo añadir campos de proceso si se seleccionó "Por proceso"
         if tipo_clasificacion == "proceso":
+            nueva_pregunta["area_academica"] = area_academica
             nueva_pregunta["anio"] = anio
             nueva_pregunta["tipo_proceso"] = tipo_proceso
             nueva_pregunta["fase"] = fase if fase else None

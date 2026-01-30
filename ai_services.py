@@ -114,7 +114,7 @@ async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
     try:
         base64_image = base64.b64encode(image_content).decode('utf-8')
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
         
         payload = {
             "contents": [
@@ -358,7 +358,7 @@ RESPUESTA CORRECTA: {respuesta_correcta}
 INSTRUCCIONES IMPORTANTES:
 1. Explica paso a paso cómo resolver el problema, pero se breve solo lo vital
 2. Usa formato LaTeX para fórmulas matemáticas: $$fórmula$$
-3. Incluye el razonamiento detrás de cada paso
+3. Incluye el razonamiento detrás de cada paso brevemente
 4. Si hay conceptos teóricos, explícalos muy brevemente
 5. Muestra los cálculos intermedios cuando sea necesario
 6. Concluye explicando por qué la respuesta correcta es {respuesta_correcta}
@@ -409,7 +409,7 @@ async def process_solution_with_gemini(solution_images: list, pregunta: str, res
     api_key = AI_API_KEYS["gemini"]
 
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
 
         # Crear partes del contenido
         parts = [

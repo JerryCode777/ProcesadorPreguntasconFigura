@@ -3,6 +3,7 @@ from typing import Dict, Optional
 
 class PreguntaRequest(BaseModel):
     tipo_clasificacion: str
+    area_academica: Optional[str] = None
     anio: Optional[str] = None
     tipo_proceso: Optional[str] = None
     fase: Optional[str] = None
@@ -22,6 +23,7 @@ class PreguntaRequest(BaseModel):
 class Pregunta(BaseModel):
     id_temporal: str
     tipo_clasificacion: str
+    area_academica: Optional[str] = None
     anio: Optional[str] = None
     tipo_proceso: Optional[str] = None
     fase: Optional[str] = None

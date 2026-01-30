@@ -35,7 +35,7 @@
                                     <strong>📋 O haz clic aquí y presiona Ctrl+V</strong>
                                 </p>
                                 <input type="file" id="aiImageUpload" accept="image/*" hidden>
-                                <button type="button" onclick="document.getElementById('aiImageUpload').click()" class="upload-btn">
+                                <button type="button" onclick="document.getElementById('aiImageUpload').click(); this.blur();" class="upload-btn">
                                     📁 Seleccionar Imagen
                                 </button>
                             </div>
@@ -90,6 +90,16 @@
                     <div id="proceso_section" style="display: none; margin-top: 20px;">
                         <h3 style="color: #4a90e2; margin-bottom: 15px;">Información del Proceso</h3>
                         <div class="basic-grid">
+                            <div class="form-group">
+                                <label for="area_academica">Área Académica:</label>
+                                <select id="area_academica" name="area_academica">
+                                    <option value="">Selecciona área</option>
+                                    <option value="ingenierias">Ingenierías</option>
+                                    <option value="biomedicas">Biomédicas</option>
+                                    <option value="sociales">Sociales</option>
+                                </select>
+                            </div>
+
                             <div class="form-group">
                                 <label for="anio">Año:</label>
                                 <select id="anio" name="anio">

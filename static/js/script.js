@@ -105,6 +105,7 @@ function setupResetButton() {
             document.getElementById('examen_container').style.display = 'none';
 
             // Resetear required de campos de proceso
+            document.getElementById('area_academica').required = false;
             document.getElementById('anio').required = false;
             document.getElementById('tipo_proceso').required = false;
             document.getElementById('fase').required = false;
@@ -171,7 +172,7 @@ function validateForm() {
     const tipoClasificacion = document.getElementById('tipo_clasificacion').value;
 
     if (tipoClasificacion === 'proceso') {
-        const procesoRequiredFields = ['anio', 'tipo_proceso'];
+        const procesoRequiredFields = ['area_academica', 'anio', 'tipo_proceso'];
 
         procesoRequiredFields.forEach(fieldName => {
             const field = document.getElementById(fieldName);
@@ -276,14 +277,16 @@ function setSubmittingState(submitting) {
     }
 }
 
-function showMessage(text, type) {
+function showMessage(text, type, doScroll = true) {
     mensaje.textContent = text;
     mensaje.className = `mensaje ${type}`;
     mensaje.style.display = 'block';
-    
-    // Scroll suave hacia el mensaje
-    mensaje.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    
+
+    // Scroll suave hacia el mensaje solo si se solicita
+    if (doScroll) {
+        mensaje.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
     // Auto-hide después de 5 segundos si es éxito
     if (type === 'success') {
         setTimeout(() => {
@@ -306,6 +309,7 @@ function showJsonPreview(pregunta) {
 
     // Solo añadir campos de proceso si están presentes
     if (pregunta.tipo_clasificacion === 'proceso') {
+        jsonData.area_academica = pregunta.area_academica;
         jsonData.anio = pregunta.anio;
         jsonData.tipo_proceso = pregunta.tipo_proceso;
         if (pregunta.fase) jsonData.fase = pregunta.fase;
@@ -688,61 +692,128 @@ function setupAICapture() {
 
     dragDropArea.addEventListener('drop', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         dragDropArea.classList.remove('dragover');
 
         const files = e.dataTransfer.files;
         if (files.length > 0 && files[0].type.startsWith('image/')) {
             handleAIImageUpload(files[0]);
         }
+
+        // Remover foco del área para prevenir scroll
+        dragDropArea.blur();
     });
 
     // File input change
     aiImageUpload.addEventListener('change', (e) => {
+        e.preventDefault();
         if (e.target.files.length > 0) {
             handleAIImageUpload(e.target.files[0]);
         }
+        // Remover foco del input para prevenir scroll
+        e.target.blur();
     });
 
-    // Paste from clipboard - solo funciona cuando haces clic en el área de drag-drop primero
+    // Hacer el área contentEditable para capturar paste más fácilmente
+    dragDropArea.setAttribute('contenteditable', 'true');
+    dragDropArea.style.cursor = 'pointer';
+    dragDropArea.style.caretColor = 'transparent'; // Ocultar cursor de texto
+    dragDropArea.style.outline = 'none'; // Quitar borde de foco
+
+    // Prevenir que se escriba texto en el área
+    dragDropArea.addEventListener('keydown', (e) => {
+        if (e.key !== 'v' || (!e.ctrlKey && !e.metaKey)) {
+            e.preventDefault();
+        }
+    });
+
+    // Prevenir selección de texto
+    dragDropArea.addEventListener('mousedown', (e) => {
+        if (e.detail > 1) { // Prevenir doble/triple click
+            e.preventDefault();
+        }
+    });
+
+    // Paste from clipboard
     dragDropArea.addEventListener('paste', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        console.log('Paste event detected');
+
         const items = e.clipboardData?.items;
-        if (!items) return;
+        console.log('Clipboard items:', items);
+
+        if (!items) {
+            console.log('No clipboard items found');
+            showMessage('No se detectó contenido en el portapapeles', 'error', false);
+            return;
+        }
+
+        let imageFound = false;
 
         // Buscar imagen en el portapapeles
         for (let i = 0; i < items.length; i++) {
+            console.log(`Item ${i}:`, items[i].type);
+
             if (items[i].type.startsWith('image/')) {
-                e.preventDefault();
+                imageFound = true;
                 const file = items[i].getAsFile();
+                console.log('Image file:', file);
+
                 if (file) {
                     handleAIImageUpload(file);
-                    showMessage('📋 Imagen pegada desde el portapapeles', 'success');
+                    showMessage('📋 Imagen pegada desde el portapapeles', 'success', false);
+                } else {
+                    showMessage('Error al obtener la imagen del portapapeles', 'error', false);
                 }
                 break;
             }
         }
+
+        if (!imageFound) {
+            console.log('No image found in clipboard');
+            showMessage('No se encontró ninguna imagen en el portapapeles. Copia una imagen primero.', 'error', false);
+        }
     });
 
-    // Hacer el área de drag-drop enfocable para que funcione el paste
+    // Hacer el área enfocable
     dragDropArea.setAttribute('tabindex', '0');
+
+    // Mensaje de ayuda al hacer clic
+    dragDropArea.addEventListener('click', () => {
+        dragDropArea.focus();
+        console.log('Drag-drop area focused. Ready for paste.');
+    });
 
     // Process button
     processBtn.addEventListener('click', processImageWithAI);
 }
 
 function handleAIImageUpload(file) {
+    // Guardar posición del scroll ANTES de hacer cualquier cosa
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
     // Validar tipo de archivo
     if (!file.type.startsWith('image/')) {
-        showMessage('Por favor selecciona un archivo de imagen válido', 'error');
+        showMessage('Por favor selecciona un archivo de imagen válido', 'error', false);
         return;
     }
 
     // Validar tamaño (máximo 10MB)
     if (file.size > 10 * 1024 * 1024) {
-        showMessage('La imagen es demasiado grande. Máximo 10MB', 'error');
+        showMessage('La imagen es demasiado grande. Máximo 10MB', 'error', false);
         return;
     }
 
     currentAIImage = file;
+
+    // Prevenir scroll durante el proceso
+    const preventScroll = () => {
+        window.scrollTo(scrollLeft, scrollPosition);
+    };
+    window.addEventListener('scroll', preventScroll);
 
     // Mostrar vista previa
     const reader = new FileReader();
@@ -758,21 +829,45 @@ function handleAIImageUpload(file) {
 
         // Verificar si debe habilitar el botón de generar explicación
         checkGenerateButton();
+
+        // Remover prevención de scroll y restaurar posición
+        setTimeout(() => {
+            window.removeEventListener('scroll', preventScroll);
+            window.scrollTo(scrollLeft, scrollPosition);
+        }, 100);
     };
     reader.readAsDataURL(file);
 }
 
-async function processImageWithAI() {
+async function processImageWithAI(event) {
+    // Prevenir comportamiento por defecto y scroll
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
     if (!currentAIImage) {
         showMessage('Por favor selecciona una imagen primero', 'error');
         return;
     }
-    
+
+    // Guardar posición del scroll ANTES de cualquier cosa
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
     const processBtn = document.getElementById('processWithAI');
     const aiService = document.getElementById('aiService').value;
-    
+
+    // Remover foco del botón para prevenir scroll automático
+    if (processBtn) {
+        processBtn.blur();
+    }
+
     // Cambiar estado del botón
     setAIProcessingState(true);
+
+    // Restaurar scroll inmediatamente
+    window.scrollTo(scrollLeft, scrollPosition);
     
     try {
         const formData = new FormData();
@@ -789,6 +884,18 @@ async function processImageWithAI() {
         if (response.ok && result.success) {
             const aiData = result.data;
 
+            // Guardar posición actual del scroll
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            // Prevenir cualquier scroll durante el proceso
+            const preventScroll = (e) => {
+                window.scrollTo(scrollLeft, scrollPosition);
+            };
+
+            // Agregar listener temporal para prevenir scroll
+            window.addEventListener('scroll', preventScroll);
+
             // Mostrar resultados
             showAIResults(aiData);
 
@@ -798,22 +905,30 @@ async function processImageWithAI() {
             // Verificar si debe habilitar el botón de generar explicación
             checkGenerateButton();
 
-            // Mensaje diferenciado según el tipo de respuesta
+            // Mensaje diferenciado según el tipo de respuesta (sin scroll)
             if (aiData.ai_service === 'mock' || aiData.note) {
-                showMessage('🧪 Procesado en MODO SIMULADO - Configura API key para IA real', 'error');
+                showMessage('🧪 Procesado en MODO SIMULADO - Configura API key para IA real', 'error', false);
             } else {
                 const serviceName = getServiceDisplayName(aiData.ai_service);
-                showMessage(`🤖 ¡${serviceName} procesó tu imagen exitosamente!`, 'success');
+                showMessage(`🤖 ¡${serviceName} procesó tu imagen exitosamente!`, 'success', false);
             }
+
+            // Remover listener y asegurar posición del scroll después de un momento
+            setTimeout(() => {
+                window.removeEventListener('scroll', preventScroll);
+                window.scrollTo(scrollLeft, scrollPosition);
+            }, 100);
         } else {
             throw new Error(result.detail || 'Error procesando imagen');
         }
         
     } catch (error) {
         console.error('Error procesando imagen:', error);
-        showMessage(`❌ Error: ${error.message}`, 'error');
+        showMessage(`❌ Error: ${error.message}`, 'error', false);
     } finally {
         setAIProcessingState(false);
+        // Asegurar que se mantenga la posición del scroll
+        window.scrollTo(scrollLeft, scrollPosition);
     }
 }
 
@@ -874,12 +989,11 @@ function showAIResults(aiData) {
     statusDiv.style.borderRadius = '8px';
     statusDiv.style.marginBottom = '15px';
     statusDiv.style.textAlign = 'center';
-    
+
     aiResults.insertBefore(statusDiv, aiResults.firstChild);
     aiResults.style.display = 'block';
-    
-    // Scroll hacia resultados
-    aiResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    // No hacer scroll automático - mantener al usuario en la sección actual
 }
 
 function getServiceDisplayName(service) {
@@ -894,23 +1008,31 @@ function getServiceDisplayName(service) {
 }
 
 function fillFormFromAI(aiData) {
-    // Llenar campos del formulario
+    // Prevenir scroll automático al llenar campos
+    const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+
+    // Llenar campos del formulario sin disparar validaciones
     if (aiData.materia) {
         const materiaSelect = document.getElementById('materia');
         materiaSelect.value = aiData.materia;
+        clearFieldError(materiaSelect);
     }
-    
+
     if (aiData.tema) {
-        document.getElementById('tema').value = aiData.tema;
+        const temaField = document.getElementById('tema');
+        temaField.value = aiData.tema;
+        clearFieldError(temaField);
     }
-    
+
     if (aiData.pregunta) {
         const preguntaField = document.getElementById('pregunta');
         preguntaField.value = aiData.pregunta;
         updateMathPreview('pregunta');
         autoResize.call(preguntaField);
+        clearFieldError(preguntaField);
     }
-    
+
     // Llenar opciones
     const opciones = aiData.opciones || {};
     ['A', 'B', 'C', 'D', 'E'].forEach(letra => {
@@ -920,31 +1042,37 @@ function fillFormFromAI(aiData) {
             field.value = opciones[letra];
             updateMathPreview(campo);
             autoResize.call(field);
+            clearFieldError(field);
         }
     });
-    
+
     // NO llenar respuesta correcta ni explicación - el usuario las completará manualmente
     // if (aiData.respuesta_correcta) {
     //     document.getElementById('respuesta_correcta').value = aiData.respuesta_correcta;
     // }
-    
+
     // if (aiData.explicacion) {
     //     const explicacionField = document.getElementById('explicacion');
     //     explicacionField.value = aiData.explicacion;
     //     updateMathPreview('explicacion');
     //     autoResize.call(explicacionField);
     // }
-    
+
     if (aiData.dificultad) {
-        document.getElementById('dificultad').value = aiData.dificultad;
+        const dificultadField = document.getElementById('dificultad');
+        dificultadField.value = aiData.dificultad;
+        clearFieldError(dificultadField);
     }
-    
+
+    // Restaurar scroll behavior
+    document.documentElement.style.scrollBehavior = originalScrollBehavior;
+
     // Limpiar errores de validación
     clearAllMessages();
-    
+
     // Mostrar nota si es respuesta simulada
     if (aiData.note) {
-        showMessage(`ℹ️ ${aiData.note}`, 'error');
+        showMessage(`ℹ️ ${aiData.note}`, 'error', false);
     }
 }
 
@@ -1090,24 +1218,42 @@ function checkGenerateButton() {
     }
 }
 
-async function generateExplanationWithAI() {
+async function generateExplanationWithAI(event) {
+    // Prevenir comportamiento por defecto y scroll
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
+    // Guardar posición del scroll
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
     const generateBtn = document.getElementById('generateExplanation');
     const pregunta = document.getElementById('pregunta').value;
     const respuestaCorrecta = document.getElementById('respuesta_correcta').value;
     const modeFromQuestion = document.getElementById('modeFromQuestion');
 
     if (!pregunta) {
-        showMessage('Completa la pregunta antes de generar la explicación', 'error');
+        showMessage('Completa la pregunta antes de generar la explicación', 'error', false);
         return;
     }
 
     if (!respuestaCorrecta) {
-        showMessage('Selecciona la respuesta correcta antes de generar la explicación', 'error');
+        showMessage('Selecciona la respuesta correcta antes de generar la explicación', 'error', false);
         return;
+    }
+
+    // Remover foco del botón para prevenir scroll automático
+    if (generateBtn) {
+        generateBtn.blur();
     }
 
     // Cambiar estado del botón
     setGenerateExplanationState(true);
+
+    // Restaurar scroll
+    window.scrollTo(scrollLeft, scrollPosition);
 
     try {
         const formData = new FormData();
@@ -1147,17 +1293,20 @@ async function generateExplanationWithAI() {
             updateMathPreview('explicacion');
             autoResize.call(explicacionField);
 
-            showMessage('✨ ¡Explicación generada exitosamente!', 'success');
+            showMessage('✨ ¡Explicación generada exitosamente!', 'success', false);
 
-            // Scroll al campo de explicación
-            explicacionField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Scroll al campo de explicación SOLO cuando se genera exitosamente
+            // (en este caso SÍ queremos que vea el resultado)
+            setTimeout(() => {
+                explicacionField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
         } else {
             throw new Error(result.detail || 'Error generando explicación');
         }
 
     } catch (error) {
         console.error('Error generando explicación:', error);
-        showMessage(`❌ Error: ${error.message}`, 'error');
+        showMessage(`❌ Error: ${error.message}`, 'error', false);
     } finally {
         setGenerateExplanationState(false);
     }
@@ -1191,48 +1340,64 @@ function setupProcesoSelectors() {
     const faseSelect = document.getElementById('fase');
     const examenSelect = document.getElementById('examen');
 
-    // Configuración de opciones por tipo de proceso
-    const procesoConfig = {
-        'extraordinario': {
-            hasFase: false,
-            hasExamen: false
-        },
-        'ceprunsa': {
-            hasFase: true,
-            fases: ['I FASE', 'II FASE'],
-            hasExamen: true,
-            examenes: ['1er examen', '2do examen']
-        },
-        'ceprequintos': {
-            hasFase: false,
-            hasExamen: true,
-            examenes: ['1er examen', '2do examen']
-        },
-        'ordinario': {
-            hasFase: true,
-            fases: ['I FASE', 'II FASE'],
-            hasExamen: false
-        }
+    // Función para obtener configuración de exámenes según el año
+    const getExamenesConfig = (anio) => {
+        const anioNum = parseInt(anio);
+        // A partir de 2025 solo hay "examen" sin número
+        return anioNum >= 2025 ? ['examen'] : ['1er examen', '2do examen'];
+    };
+
+    // Configuración base por tipo de proceso
+    const getProcesoConfig = (tipoProceso, anio) => {
+        const configs = {
+            'extraordinario': {
+                hasFase: false,
+                hasExamen: false
+            },
+            'ceprunsa': {
+                hasFase: true,
+                fases: ['I FASE', 'II FASE'],
+                hasExamen: true,
+                examenes: getExamenesConfig(anio)
+            },
+            'ceprequintos': {
+                hasFase: false,  // CEPREQUINTOS siempre sin fase
+                hasExamen: true,
+                examenes: getExamenesConfig(anio)
+            },
+            'ordinario': {
+                hasFase: true,
+                fases: ['I FASE', 'II FASE'],
+                hasExamen: false
+            }
+        };
+
+        return configs[tipoProceso];
     };
 
     // Manejar selección de tipo de clasificación
+    const areaAcademica = document.getElementById('area_academica');
+
     tipoClasificacion.addEventListener('change', function() {
         const clasificacion = this.value;
 
         if (clasificacion === 'proceso') {
             // Mostrar sección de proceso
             procesoSection.style.display = 'block';
+            areaAcademica.required = true;
             anioSelect.required = true;
             tipoProceso.required = true;
         } else if (clasificacion === 'normal') {
             // Ocultar sección de proceso
             procesoSection.style.display = 'none';
+            areaAcademica.required = false;
             anioSelect.required = false;
             tipoProceso.required = false;
             faseSelect.required = false;
             examenSelect.required = false;
 
             // Resetear campos de proceso
+            areaAcademica.value = '';
             anioSelect.value = '';
             tipoProceso.value = '';
             faseSelect.value = '';
@@ -1242,9 +1407,10 @@ function setupProcesoSelectors() {
         }
     });
 
-    // Manejar cambios en tipo de proceso
-    tipoProceso.addEventListener('change', function() {
-        const selectedProceso = this.value;
+    // Función para actualizar selectores de fase/examen
+    const updateProcesoSelectors = () => {
+        const selectedProceso = tipoProceso.value;
+        const selectedAnio = anioSelect.value;
 
         // Resetear campos
         faseSelect.innerHTML = '<option value="">Selecciona fase</option>';
@@ -1256,11 +1422,15 @@ function setupProcesoSelectors() {
         faseSelect.value = '';
         examenSelect.value = '';
 
-        if (!selectedProceso || !procesoConfig[selectedProceso]) {
+        if (!selectedProceso || !selectedAnio) {
             return;
         }
 
-        const config = procesoConfig[selectedProceso];
+        const config = getProcesoConfig(selectedProceso, selectedAnio);
+
+        if (!config) {
+            return;
+        }
 
         // Mostrar selector de fase si aplica
         if (config.hasFase && config.fases) {
@@ -1285,5 +1455,9 @@ function setupProcesoSelectors() {
                 examenSelect.appendChild(option);
             });
         }
-    });
+    };
+
+    // Manejar cambios en tipo de proceso o año
+    tipoProceso.addEventListener('change', updateProcesoSelectors);
+    anioSelect.addEventListener('change', updateProcesoSelectors);
 }
