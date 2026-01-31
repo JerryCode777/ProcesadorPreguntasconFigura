@@ -244,6 +244,13 @@ async def process_image_ai(
         # En el futuro, se puede mejorar para procesar ambas imágenes
         result = await process_image_with_ai(ai_service, images_content[0][0], images_content[0][1])
 
+        # Verificar si hubo un error de RECITATION
+        if "error" in result and result["error"] == "RECITATION":
+            raise HTTPException(
+                status_code=400,
+                detail=result.get("message", "Contenido bloqueado por políticas de IA")
+            )
+
         return JSONResponse(content={
             "success": True,
             "data": result

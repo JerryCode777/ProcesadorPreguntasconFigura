@@ -442,7 +442,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Error:', error);
-            mostrarMensaje('Error al extraer el texto: ' + error.message, 'error');
+            let errorMsg = 'Error al extraer el texto: ' + error.message;
+
+            // Mensaje específico para error de RECITATION
+            if (error.message && error.message.includes('derechos de autor')) {
+                errorMsg = '⚠️ Gemini bloqueó este contenido por políticas de derechos de autor. Cambia a OpenAI o Claude en el selector de IA.';
+            }
+
+            mostrarMensaje(errorMsg, 'error');
         } finally {
             btnProcesarTexto.disabled = false;
             btnProcesarTexto.innerHTML = '🤖 Extraer Texto con IA';
@@ -750,6 +757,79 @@ document.addEventListener('DOMContentLoaded', () => {
         } finally {
             btnSubmit.disabled = false;
             btnSubmit.innerHTML = '✅ Guardar Comprensión';
+        }
+    });
+});
+
+// ========================================
+// CARGAR DESDE JSON
+// ========================================
+
+function toggleJsonExample() {
+    const example = document.getElementById('jsonExample');
+    if (example) {
+        example.classList.toggle('hidden');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnCargarJSON = document.getElementById('cargarDesdeJSON');
+    if (!btnCargarJSON) return;
+
+    btnCargarJSON.addEventListener('click', () => {
+        const jsonInput = document.getElementById('jsonInput');
+        const jsonText = jsonInput.value.trim();
+
+        if (!jsonText) {
+            mostrarMensaje('Por favor, pega el JSON primero', 'error');
+            return;
+        }
+
+        try {
+            // Parsear JSON
+            const data = JSON.parse(jsonText);
+
+            // Validar estructura
+            if (!data.texto) {
+                throw new Error('El JSON debe contener el campo "texto"');
+            }
+            if (!data.preguntas || !Array.isArray(data.preguntas)) {
+                throw new Error('El JSON debe contener el campo "preguntas" como array');
+            }
+
+            // Llenar campo de texto
+            const textoComprension = document.getElementById('textoComprension');
+            textoComprension.value = data.texto;
+
+            // Cambiar a modo texto directo
+            toggleTextoMode('directo');
+
+            // Guardar preguntas extraídas
+            preguntasExtraidas = data.preguntas;
+
+            // Validar número de preguntas según tipo
+            if (numPreguntasRequeridas > 0 && data.preguntas.length !== numPreguntasRequeridas) {
+                mostrarMensaje(
+                    `⚠️ Advertencia: El tipo seleccionado requiere ${numPreguntasRequeridas} preguntas, pero el JSON tiene ${data.preguntas.length}`,
+                    'error'
+                );
+            }
+
+            // Mostrar preguntas
+            mostrarPreguntasExtraidas(data.preguntas);
+
+            // Habilitar botón de guardar
+            document.getElementById('submitCompBtn').disabled = false;
+
+            // Mensaje de éxito
+            mostrarMensaje(`✅ JSON cargado correctamente: ${data.preguntas.length} pregunta(s)`, 'success');
+
+            // Limpiar input
+            jsonInput.value = '';
+
+        } catch (error) {
+            console.error('Error parseando JSON:', error);
+            mostrarMensaje(`❌ Error en el JSON: ${error.message}`, 'error');
         }
     });
 });

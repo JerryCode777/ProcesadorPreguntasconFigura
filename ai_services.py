@@ -171,7 +171,18 @@ async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
                     print(f"❌ No hay 'content' en candidate")
                     print(f"Candidate completo: {candidate}")
                     if "finishReason" in candidate:
-                        print(f"Razón de finalización: {candidate['finishReason']}")
+                        finish_reason = candidate['finishReason']
+                        print(f"Razón de finalización: {finish_reason}")
+
+                        # Mensaje específico para RECITATION
+                        if finish_reason == "RECITATION":
+                            print(f"⚠️ Gemini detectó contenido protegido. Intenta con otro servicio de IA (OpenAI/Claude)")
+                            # Retornar un error más específico
+                            return {
+                                "error": "RECITATION",
+                                "message": "Gemini detectó que este contenido podría estar protegido por derechos de autor. Por favor, usa otro servicio de IA (OpenAI o Claude) o modifica la imagen.",
+                                "ai_service": "gemini"
+                            }
                     return get_mock_response()
 
                 content = candidate["content"]["parts"][0]["text"]

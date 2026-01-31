@@ -1863,3 +1863,125 @@ function setupProcesoSelectors() {
     tipoProceso.addEventListener('change', updateProcesoSelectors);
     anioSelect.addEventListener('change', updateProcesoSelectors);
 }
+
+// ======= CARGAR DESDE JSON (PREGUNTAS NORMALES) =======
+
+// Configurar el botón de cargar JSON para preguntas normales
+document.addEventListener('DOMContentLoaded', function() {
+    const cargarBtn = document.getElementById('cargarDesdeJSONNormal');
+    if (cargarBtn) {
+        cargarBtn.addEventListener('click', cargarDesdeJSONNormal);
+    }
+});
+
+function toggleNormalJsonExample() {
+    const example = document.getElementById('normalJsonExample');
+    if (example && example.classList.contains('hidden')) {
+        example.classList.remove('hidden');
+    } else if (example) {
+        example.classList.add('hidden');
+    }
+}
+
+function cargarDesdeJSONNormal() {
+    const jsonInput = document.getElementById('normalJsonInput');
+    if (!jsonInput) return;
+
+    const jsonText = jsonInput.value.trim();
+    if (!jsonText) {
+        showMessage('Por favor pega el JSON primero', 'error');
+        return;
+    }
+
+    try {
+        const data = JSON.parse(jsonText);
+
+        // Validar estructura básica
+        if (!data.pregunta || !data.opciones) {
+            throw new Error('El JSON debe contener al menos "pregunta" y "opciones"');
+        }
+
+        // Validar que opciones sea un objeto con A, B, C, D, E
+        const opcionesRequeridas = ['A', 'B', 'C', 'D', 'E'];
+        const opcionesPresentes = Object.keys(data.opciones);
+        const faltanOpciones = opcionesRequeridas.filter(op => !opcionesPresentes.includes(op));
+
+        if (faltanOpciones.length > 0) {
+            throw new Error(`Faltan opciones: ${faltanOpciones.join(', ')}`);
+        }
+
+        // Limpiar mensajes de error previos
+        clearAllMessages();
+
+        // Llenar formulario
+        // 1. Materia
+        if (data.materia) {
+            const materiaSelect = document.getElementById('materia');
+            materiaSelect.value = data.materia;
+            clearFieldError(materiaSelect);
+        }
+
+        // 2. Tema
+        if (data.tema) {
+            const temaField = document.getElementById('tema');
+            temaField.value = data.tema;
+            clearFieldError(temaField);
+        }
+
+        // 3. Pregunta
+        const preguntaField = document.getElementById('pregunta');
+        preguntaField.value = data.pregunta;
+        updateMathPreview('pregunta');
+        autoResize.call(preguntaField);
+        clearFieldError(preguntaField);
+
+        // 4. Opciones
+        ['A', 'B', 'C', 'D', 'E'].forEach(letra => {
+            const campo = `opcion_${letra.toLowerCase()}`;
+            const field = document.getElementById(campo);
+            if (field && data.opciones[letra]) {
+                field.value = data.opciones[letra];
+                updateMathPreview(campo);
+                autoResize.call(field);
+                clearFieldError(field);
+            }
+        });
+
+        // 5. Respuesta correcta
+        if (data.respuesta_correcta) {
+            const respuestaField = document.getElementById('respuesta_correcta');
+            respuestaField.value = data.respuesta_correcta;
+            clearFieldError(respuestaField);
+        }
+
+        // 6. Explicación
+        if (data.explicacion) {
+            const explicacionField = document.getElementById('explicacion');
+            explicacionField.value = data.explicacion;
+            updateMathPreview('explicacion');
+            autoResize.call(explicacionField);
+            clearFieldError(explicacionField);
+        }
+
+        // 7. Dificultad
+        if (data.dificultad) {
+            const dificultadField = document.getElementById('dificultad');
+            dificultadField.value = data.dificultad;
+            clearFieldError(dificultadField);
+        }
+
+        showMessage('✅ JSON cargado exitosamente - Revisa y completa los campos restantes', 'success');
+
+        // Scroll al inicio del formulario
+        setTimeout(() => {
+            const preguntaSection = document.querySelector('#preguntaForm .space-y-6');
+            if (preguntaSection) {
+                preguntaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 300);
+
+    } catch (error) {
+        console.error('Error parsing JSON:', error);
+        showMessage(`❌ Error al cargar JSON: ${error.message}`, 'error');
+    }
+}

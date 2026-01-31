@@ -167,6 +167,46 @@
                             </div>
                             <small class="mt-2 block text-xs text-slate-500">Formatos: JPG, PNG, GIF, BMP, WebP | Máximo 5MB cada una</small>
                         </section>
+
+                        <!-- Cargar desde JSON (Normal Questions) -->
+                        <section class="rounded-3xl border border-amber-200 bg-amber-50 p-6 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-lg font-semibold text-amber-900">📋 O Pegar JSON Directamente</h2>
+                                <button type="button" onclick="toggleNormalJsonExample()" class="text-xs font-semibold text-amber-700 hover:text-amber-900">
+                                    Ver formato
+                                </button>
+                            </div>
+                            <p class="mt-2 text-sm text-amber-700">Procesa la imagen con otra IA y pega el JSON aquí</p>
+
+                            <!-- Ejemplo de formato -->
+                            <div id="normalJsonExample" class="mt-3 hidden rounded-xl border border-amber-300 bg-white p-3">
+                                <p class="text-xs font-semibold text-amber-900">Formato esperado:</p>
+                                <pre class="mt-2 overflow-x-auto rounded-lg bg-slate-900 p-3 text-xs text-slate-100"><code>{
+  "materia": "Matemáticas",
+  "tema": "Álgebra Lineal",
+  "pregunta": "¿Cuál es la solución de x + 5 = 10?",
+  "opciones": {
+    "A": "3",
+    "B": "5",
+    "C": "10",
+    "D": "15",
+    "E": "20"
+  },
+  "respuesta_correcta": "B",
+  "explicacion": "La respuesta es B porque...",
+  "dificultad": 2
+}</code></pre>
+                            </div>
+
+                            <div class="mt-4">
+                                <label for="normalJsonInput" class="text-sm font-semibold text-amber-900">Pega el JSON aquí:</label>
+                                <textarea id="normalJsonInput" class="mt-2 w-full rounded-xl border border-amber-300 bg-white px-4 py-3 font-mono text-xs" rows="8" placeholder='{"materia": "...", "tema": "...", "pregunta": "...", ...}'></textarea>
+                            </div>
+
+                            <button type="button" id="cargarDesdeJSONNormal" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700">
+                                <span>📥 Cargar desde JSON</span>
+                            </button>
+                        </section>
                     </div>
 
                     <div class="space-y-6">
@@ -517,6 +557,49 @@
 
                             <button type="button" id="procesarPreguntasIA" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-slate-300" disabled>
                                 <span>🤖 Procesar Preguntas con IA</span>
+                            </button>
+                        </section>
+
+                        <!-- Cargar desde JSON -->
+                        <section class="rounded-3xl border border-amber-200 bg-amber-50 p-6 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-lg font-semibold text-amber-900">📋 O Pegar JSON Directamente</h2>
+                                <button type="button" onclick="toggleJsonExample()" class="text-xs font-semibold text-amber-700 hover:text-amber-900">
+                                    Ver formato
+                                </button>
+                            </div>
+                            <p class="mt-2 text-sm text-amber-700">Procesa las imágenes con otra IA y pega el JSON aquí</p>
+
+                            <!-- Ejemplo de formato -->
+                            <div id="jsonExample" class="mt-3 hidden rounded-xl border border-amber-300 bg-white p-3">
+                                <p class="text-xs font-semibold text-amber-900">Formato esperado:</p>
+                                <pre class="mt-2 overflow-x-auto rounded-lg bg-slate-900 p-3 text-xs text-slate-100"><code>{
+  "texto": "El texto completo de comprensión...",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es la idea principal?",
+      "opciones": {
+        "A": "Opción A",
+        "B": "Opción B",
+        "C": "Opción C",
+        "D": "Opción D",
+        "E": "Opción E"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La respuesta es B porque...",
+      "dificultad": 2
+    }
+  ]
+}</code></pre>
+                            </div>
+
+                            <div class="mt-4">
+                                <label for="jsonInput" class="text-sm font-semibold text-amber-900">Pega el JSON aquí:</label>
+                                <textarea id="jsonInput" class="mt-2 w-full rounded-xl border border-amber-300 bg-white px-4 py-3 font-mono text-xs" rows="8" placeholder='{"texto": "...", "preguntas": [...]}'></textarea>
+                            </div>
+
+                            <button type="button" id="cargarDesdeJSON" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-amber-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700">
+                                <span>📥 Cargar desde JSON</span>
                             </button>
                         </section>
                     </div>
