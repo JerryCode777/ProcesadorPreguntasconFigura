@@ -133,7 +133,7 @@ async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
                 }
             ],
             "generationConfig": {
-                "maxOutputTokens": 2000,
+                "maxOutputTokens": 4000,
                 "temperature": 0.1
             }
         }
@@ -263,54 +263,54 @@ IMPORTANTE: Responde SOLO con el JSON, sin texto adicional antes o después.
 
 def extract_json(text: str) -> Dict[str, Any]:
     cleaned = text.strip()
-    cleaned = re.sub(r"```(?:json)?", "", cleaned)
-    cleaned = re.sub(r"^```(?:json)?\\s*", "", cleaned)
-    cleaned = re.sub(r"```\\s*$", "", cleaned)
-    if not cleaned:
-        raise ValueError("Respuesta vacía de la API.")
+    # Eliminar bloques de código markdown de forma más robusta
+    cleaned = re.sub(r"^```+(?:json)?\s*", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"```+\s*$", "", cleaned)
+    cleaned = cleaned.strip()
 
-    def _extract_balanced_json(s: str) -> str | None:
-        start = s.find("{")
-        if start == -1:
-            return None
-        depth = 0
-        in_string = False
-        escape_next = False
-        for i in range(start, len(s)):
-            ch = s[i]
-            if escape_next:
-                escape_next = False
-                continue
-            if ch == "\\":
-                if in_string:
-                    escape_next = True
-                continue
-            if ch == '"':
-                in_string = not in_string
-                continue
-            if in_string:
-                continue
-            if ch == "{":
-                depth += 1
-            elif ch == "}":
-                depth -= 1
-                if depth == 0:
-                    return s[start : i + 1]
-        return None
+    if not cleaned:
+        raise ValueError("Respuesta vacia de la API.")
 
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError as e:
-        json_str = _extract_balanced_json(cleaned)
-        if not json_str:
-            print(f"Error parseando JSON: {e}")
-            print(f"Primeros 500 chars: {cleaned[:500]}")
+        # Intentar recuperar el JSON con limpieza adicional
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+        if start == -1 or end == -1 or end <= start:
+            print(f"❌ Error parseando JSON: {e}")
+            print(f"📄 Respuesta completa ({len(cleaned)} chars):")
+            print(cleaned[:1000])
+            if len(cleaned) > 1000:
+                print(f"... (truncado, total: {len(cleaned)} caracteres)")
             raise
 
-        json_str = json_str.replace('“', '"').replace('”', '"').replace("‘", "'").replace("’", "'")
+        json_str = cleaned[start : end + 1]
 
+        # Detectar y eliminar razonamiento interno/duplicación de campos
+        # Patrón: texto seguido de \n      "campo": (indicando duplicación)
+        json_str = re.sub(
+            r'\.\s*\(.*?\)\.\s*([A-Z][^"]*?)\n\s+"(explicacion|opciones|respuesta_correcta)":\s*',
+            r'.\n    },\n    {\n      "',
+            json_str
+        )
+
+        # Eliminar comentarios internos tipo "Let's...", "Correcting...", etc.
+        json_str = re.sub(
+            r'\.\s*(Let\'s|Correcting|Ok,|I need to|I wrote|So)[^.]*?\.\s*',
+            '. ',
+            json_str
+        )
+
+        # Limpiar comillas problemáticas
+        json_str = json_str.replace('"', '"').replace('"', '"')
+        json_str = json_str.replace(''', "'").replace(''', "'")
+
+        # Remover caracteres de control inválidos (excepto \n, \r, \t que son válidos)
         json_str = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F]', '', json_str)
 
+        # Estrategia más robusta: procesar el JSON carácter por carácter dentro de strings
+        # para escapar correctamente backslashes y saltos de línea
         result = []
         in_string = False
         escape_next = False
@@ -333,12 +333,15 @@ def extract_json(text: str) -> Dict[str, Any]:
 
             if in_string:
                 if char == '\\':
+                    # Verificar el siguiente carácter
                     if i + 1 < len(json_str):
                         next_char = json_str[i + 1]
+                        # Si es una secuencia de escape JSON válida, mantenerla
                         if next_char in ('"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'):
                             result.append(char)
                             escape_next = True
                         else:
+                            # Es un backslash de LaTeX, duplicarlo
                             result.append('\\\\')
                     else:
                         result.append('\\\\')
@@ -363,12 +366,42 @@ def extract_json(text: str) -> Dict[str, Any]:
 
         try:
             result = json.loads(json_str)
+            # Si el resultado es un objeto individual en lugar de tener "preguntas", intentar arreglarlo
+            if isinstance(result, dict) and "preguntas" not in result and "pregunta" in result:
+                # Es un objeto individual, necesitamos verificar si hay más
+                print("⚠️ Detectado: respuesta es objeto individual, intentando corregir...")
+                raise json.JSONDecodeError("Necesita envolver en array", json_str, 0)
             return result
         except json.JSONDecodeError as e2:
+            # Último intento: si el JSON son múltiples objetos separados por comas,
+            # intentar envolverlos en un array "preguntas"
+            if '"pregunta"' in json_str and '"preguntas"' not in json_str:
+                print("Intentando envolver objetos en estructura 'preguntas'...")
+                # Verificar si es un solo objeto o múltiples
+                if json_str.strip().startswith('{') and not json_str.strip().startswith('{"preguntas"'):
+                    wrapped = '{"preguntas": [' + json_str + ']}'
+                    try:
+                        return json.loads(wrapped)
+                    except json.JSONDecodeError:
+                        pass
+
             print(f"Error parseando JSON después de limpieza: {e2}")
+            print(f"Posición del error: línea {e2.lineno}, columna {e2.colno}")
+
+            # Mostrar contexto del error
+            if hasattr(e2, 'pos'):
+                pos = e2.pos
+                context_start = max(0, pos - 100)
+                context_end = min(len(json_str), pos + 100)
+                context = json_str[context_start:context_end]
+                print(f"Contexto del error:")
+                print(f"...{context}...")
+
+            # Guardar JSON problemático para debug
             debug_file = Path("/tmp/json_error_debug.txt")
             debug_file.write_text(json_str, encoding="utf-8")
             print(f"JSON guardado en: {debug_file}")
+            print(f"Longitud del JSON: {len(json_str)} caracteres")
             raise
 
 
@@ -439,16 +472,17 @@ async def generate_explanation_from_question_gemini(question_image: bytes, pregu
 
         parts = [
             {"text": f"""
-Genera una explicación paso a paso, clara y relativamente breve.
+Genera una explicación clara y directa de por qué la respuesta es {respuesta_correcta}.
 
 PREGUNTA: {pregunta}
 RESPUESTA CORRECTA: {respuesta_correcta}
 
-REGLAS:
-1. Máximo 5 pasos, 1-2 líneas por paso.
-2. Sin introducciones largas ni relleno.
-3. Usa LaTeX solo cuando sea necesario.
-4. Termina indicando por qué la respuesta es {respuesta_correcta}.
+REGLAS IMPORTANTES:
+1. Máximo 4-5 pasos, 1 línea por paso.
+2. NO expliques por qué las otras opciones son incorrectas.
+3. NO incluyas introducciones largas.
+4. Usa LaTeX solo cuando sea necesario.
+5. Concluye indicando por qué la respuesta es {respuesta_correcta}.
 
 RESPONDE SOLO con la explicación (sin JSON ni texto extra).
             """},
@@ -500,11 +534,12 @@ Resume la resolución MOSTRADA en las imágenes de forma clara y paso a paso, si
 PREGUNTA: {pregunta}
 RESPUESTA CORRECTA: {respuesta_correcta}
 
-REGLAS:
-1. Máximo 5 pasos, 1-2 líneas por paso.
-2. No agregues pasos que no aparezcan en las imágenes.
-3. Si hay ecuaciones, cópialas en LaTeX inline: $$ecuación$$.
-4. Termina indicando por qué la respuesta es {respuesta_correcta}.
+REGLAS IMPORTANTES:
+1. Máximo 4-5 pasos, 1 línea por paso.
+2. Solo resume los pasos clave mostrados en las imágenes.
+3. NO expliques por qué otras opciones son incorrectas.
+4. Si hay ecuaciones, cópialas en LaTeX inline: $$ecuación$$.
+5. Concluye indicando por qué la respuesta es {respuesta_correcta}.
 
 RESPONDE SOLO con la explicación (sin JSON ni texto extra).
             """}

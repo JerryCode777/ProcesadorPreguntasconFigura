@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 class PreguntaRequest(BaseModel):
     tipo_clasificacion: str
@@ -33,7 +33,7 @@ class Pregunta(BaseModel):
     opciones: Dict[str, str]
     respuesta_correcta: str
     explicacion: str
-    imagen: Optional[str] = None
+    imagenes: Optional[List[str]] = None
 
 class PreguntaResponse(BaseModel):
     materia: str

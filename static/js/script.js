@@ -52,28 +52,32 @@ function setupValidation() {
             showFieldError(this, 'La dificultad debe estar entre 1 y 5');
         }
     });
-    
-    // Validar imagen
-    const imagen = document.getElementById('imagen');
-    imagen.addEventListener('change', function() {
-        if (this.files.length > 0) {
-            const file = this.files[0];
-            const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp', 'image/webp'];
-            
-            if (!validTypes.includes(file.type)) {
-                showFieldError(this, 'Tipo de archivo no válido. Use JPG, PNG, GIF, BMP o WebP');
-                this.value = '';
-                return;
-            }
-            
-            // Límite de tamaño: 5MB
-            if (file.size > 5 * 1024 * 1024) {
-                showFieldError(this, 'El archivo es demasiado grande. Máximo 5MB');
-                this.value = '';
-                return;
-            }
+
+    // Validar imágenes (ambas)
+    for (let i = 1; i <= 2; i++) {
+        const imagen = document.getElementById(`imagen${i}`);
+        if (imagen) {
+            imagen.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp', 'image/webp'];
+
+                    if (!validTypes.includes(file.type)) {
+                        showFieldError(this, 'Tipo de archivo no válido. Use JPG, PNG, GIF, BMP o WebP');
+                        this.value = '';
+                        return;
+                    }
+
+                    // Límite de tamaño: 5MB
+                    if (file.size > 5 * 1024 * 1024) {
+                        showFieldError(this, 'El archivo es demasiado grande. Máximo 5MB');
+                        this.value = '';
+                        return;
+                    }
+                }
+            });
         }
-    });
+    }
 }
 
 function setupFormSubmission() {
@@ -118,11 +122,13 @@ function setupResetButton() {
             document.getElementById('fase').required = false;
             document.getElementById('examen').required = false;
 
-            // Limpiar vista previa de imagen final
-            const finalImagePreview = document.getElementById('finalImagePreview');
-            if (finalImagePreview) {
-                finalImagePreview.classList.add('hidden');
-                finalImagePreview.style.display = 'none';
+            // Limpiar vista previa de imágenes finales
+            for (let i = 1; i <= 2; i++) {
+                const finalImagePreview = document.getElementById(`finalImagePreview${i}`);
+                if (finalImagePreview) {
+                    finalImagePreview.classList.add('hidden');
+                    finalImagePreview.style.display = 'none';
+                }
             }
 
             // Limpiar vista previa de IA
@@ -139,10 +145,19 @@ function setupResetButton() {
 }
 
 function setupImagePreview() {
-    const imagen = document.getElementById('imagen');
-    const finalImageDropArea = document.getElementById('finalImageDropArea');
-    const finalImagePreview = document.getElementById('finalImagePreview');
-    const finalImagePreviewImg = document.getElementById('finalImagePreviewImg');
+    // Configurar ambas áreas de imagen
+    for (let imageNum = 1; imageNum <= 2; imageNum++) {
+        setupSingleImagePreview(imageNum);
+    }
+}
+
+function setupSingleImagePreview(imageNum) {
+    const imagen = document.getElementById(`imagen${imageNum}`);
+    const finalImageDropArea = document.getElementById(`finalImageDropArea${imageNum}`);
+    const finalImagePreview = document.getElementById(`finalImagePreview${imageNum}`);
+    const finalImagePreviewImg = document.getElementById(`finalImagePreviewImg${imageNum}`);
+
+    if (!imagen || !finalImageDropArea) return;
 
     // Función para mostrar vista previa
     const showFinalImagePreview = (file) => {
@@ -163,82 +178,112 @@ function setupImagePreview() {
     });
 
     // Configurar drag & drop para imagen final
-    if (finalImageDropArea) {
-        // Hacer contentEditable para paste
-        finalImageDropArea.setAttribute('contenteditable', 'true');
-        finalImageDropArea.style.caretColor = 'transparent';
-        finalImageDropArea.style.outline = 'none';
+    finalImageDropArea.setAttribute('tabindex', '0');
+    finalImageDropArea.style.outline = 'none';
+    finalImageDropArea.setAttribute('contenteditable', 'false');
 
-        // Prevenir escritura de texto
-        finalImageDropArea.addEventListener('keydown', (e) => {
-            if (e.key !== 'v' || (!e.ctrlKey && !e.metaKey)) {
-                e.preventDefault();
-            }
-        });
+    // Drag over
+    finalImageDropArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        finalImageDropArea.style.borderColor = '#4a90e2';
+        finalImageDropArea.style.background = '#f0f8ff';
+    });
 
-        // Drag over
-        finalImageDropArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            finalImageDropArea.style.borderColor = '#4a90e2';
-            finalImageDropArea.style.background = '#f0f8ff';
-        });
+    // Drag leave
+    finalImageDropArea.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        finalImageDropArea.style.borderColor = '';
+        finalImageDropArea.style.background = '';
+    });
 
-        // Drag leave
-        finalImageDropArea.addEventListener('dragleave', (e) => {
-            e.preventDefault();
-            finalImageDropArea.style.borderColor = '#ccc';
-            finalImageDropArea.style.background = '';
-        });
+    // Drop
+    finalImageDropArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        finalImageDropArea.style.borderColor = '';
+        finalImageDropArea.style.background = '';
 
-        // Drop
-        finalImageDropArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            finalImageDropArea.style.borderColor = '#ccc';
-            finalImageDropArea.style.background = '';
+        const files = e.dataTransfer.files;
+        if (files.length > 0 && files[0].type.startsWith('image/')) {
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(files[0]);
+            imagen.files = dataTransfer.files;
 
-            const files = e.dataTransfer.files;
-            if (files.length > 0 && files[0].type.startsWith('image/')) {
-                // Crear un FileList simulado para el input
-                const dataTransfer = new DataTransfer();
-                dataTransfer.items.add(files[0]);
-                imagen.files = dataTransfer.files;
+            showFinalImagePreview(files[0]);
+            showMessage(`✅ Imagen ${imageNum} cargada exitosamente`, 'success', false);
+        }
+    });
 
-                showFinalImagePreview(files[0]);
-                showMessage('✅ Imagen cargada exitosamente', 'success', false);
-            }
-        });
+    // Paste - directamente en el elemento
+    finalImageDropArea.addEventListener('paste', (e) => {
+        console.log(`Paste event en finalImageDropArea${imageNum}`, e);
+        e.preventDefault();
+        e.stopPropagation();
 
-        // Paste
-        finalImageDropArea.addEventListener('paste', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+        const items = e.clipboardData?.items;
+        if (!items) {
+            console.log('No clipboard items');
+            showMessage('No se detectó contenido en el portapapeles', 'error', false);
+            return;
+        }
 
-            const items = e.clipboardData?.items;
-            if (!items) return;
+        console.log(`Total items: ${items.length}`);
+        for (let i = 0; i < items.length; i++) {
+            console.log(`Item ${i}: ${items[i].type}`);
+            if (items[i].type.startsWith('image/')) {
+                const file = items[i].getAsFile();
+                console.log('Image file:', file);
+                if (file) {
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    imagen.files = dataTransfer.files;
 
-            for (let i = 0; i < items.length; i++) {
-                if (items[i].type.startsWith('image/')) {
-                    const file = items[i].getAsFile();
-                    if (file) {
-                        // Crear un FileList simulado para el input
-                        const dataTransfer = new DataTransfer();
-                        dataTransfer.items.add(file);
-                        imagen.files = dataTransfer.files;
-
-                        showFinalImagePreview(file);
-                        showMessage('📋 Imagen pegada desde el portapapeles', 'success', false);
-                    }
-                    break;
+                    showFinalImagePreview(file);
+                    showMessage(`📋 Imagen ${imageNum} pegada desde el portapapeles`, 'success', false);
+                } else {
+                    showMessage('Error al obtener la imagen del portapapeles', 'error', false);
                 }
+                return;
             }
-        });
+        }
 
-        // Focus al hacer click
-        finalImageDropArea.addEventListener('click', () => {
-            finalImageDropArea.focus();
-        });
+        showMessage('No se encontró ninguna imagen. Copia una imagen primero.', 'error', false);
+    });
+
+    // Click enfoca y permite paste
+    finalImageDropArea.addEventListener('click', (e) => {
+        e.stopPropagation();
+        finalImageDropArea.focus();
+        console.log(`finalImageDropArea${imageNum} focused`);
+    });
+
+    // Indicador visual cuando tiene foco
+    finalImageDropArea.addEventListener('focus', () => {
+        finalImageDropArea.style.borderColor = '#10b981';
+        finalImageDropArea.style.background = '#ecfdf5';
+        console.log(`finalImageDropArea${imageNum} gained focus`);
+    });
+
+    finalImageDropArea.addEventListener('blur', () => {
+        finalImageDropArea.style.borderColor = '';
+        finalImageDropArea.style.background = '';
+        console.log(`finalImageDropArea${imageNum} lost focus`);
+    });
+}
+
+// Función global para limpiar imagen específica
+function clearFinalImage(imageNum) {
+    const imagen = document.getElementById(`imagen${imageNum}`);
+    const finalImagePreview = document.getElementById(`finalImagePreview${imageNum}`);
+
+    if (imagen) {
+        imagen.value = '';
     }
+    if (finalImagePreview) {
+        finalImagePreview.classList.add('hidden');
+        finalImagePreview.style.display = 'none';
+    }
+    showMessage(`🗑️ Imagen ${imageNum} eliminada`, 'success', false);
 }
 
 function validateForm() {
@@ -428,11 +473,13 @@ function resetForNextQuestion(keepProcess, keepMateria, keepDificultad) {
     clearAllMessages();
     clearMathPreviews();
 
-    // Limpiar vista previa de imagen final
-    const finalImagePreview = document.getElementById('finalImagePreview');
-    if (finalImagePreview) {
-        finalImagePreview.classList.add('hidden');
-        finalImagePreview.style.display = 'none';
+    // Limpiar vista previa de imágenes finales
+    for (let i = 1; i <= 2; i++) {
+        const finalImagePreview = document.getElementById(`finalImagePreview${i}`);
+        if (finalImagePreview) {
+            finalImagePreview.classList.add('hidden');
+            finalImagePreview.style.display = 'none';
+        }
     }
 
     // Limpiar vista previa de IA
@@ -555,7 +602,7 @@ function showJsonPreview(pregunta) {
         opciones: pregunta.opciones,
         respuesta_correcta: pregunta.respuesta_correcta,
         explicacion: pregunta.explicacion,
-        imagen: pregunta.imagen
+        imagenes: pregunta.imagenes
     };
 
     // Solo añadir campos de proceso si están presentes
@@ -924,14 +971,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ======= FUNCIONALIDAD DE IA Y CAPTURA =======
 
-let currentAIImage = null;
+let currentAIImages = {1: null, 2: null};
 
 function setupAICapture() {
-    const dragDropArea = document.getElementById('dragDropArea');
-    const aiImageUpload = document.getElementById('aiImageUpload');
+    // Configurar ambas áreas de IA
+    for (let imageNum = 1; imageNum <= 2; imageNum++) {
+        setupSingleAICapture(imageNum);
+    }
+
+    // Process button
     const processBtn = document.getElementById('processWithAI');
-    const aiPreview = document.getElementById('aiPreview');
-    const aiPreviewImage = document.getElementById('aiPreviewImage');
+    processBtn.addEventListener('click', processImageWithAI);
+}
+
+function setupSingleAICapture(imageNum) {
+    const dragDropArea = document.getElementById(`dragDropArea${imageNum}`);
+    const aiImageUpload = document.getElementById(`aiImageUpload${imageNum}`);
+    const aiPreview = document.getElementById(`aiPreview${imageNum}`);
+    const aiPreviewImage = document.getElementById(`aiPreviewImage${imageNum}`);
+
+    if (!dragDropArea || !aiImageUpload) return;
+
+    // Hacer el área enfocable
+    dragDropArea.setAttribute('tabindex', '0');
+    dragDropArea.style.outline = 'none';
+    dragDropArea.style.cursor = 'pointer';
+    dragDropArea.setAttribute('contenteditable', 'false');
 
     // Drag and Drop
     dragDropArea.addEventListener('dragover', (e) => {
@@ -951,10 +1016,9 @@ function setupAICapture() {
 
         const files = e.dataTransfer.files;
         if (files.length > 0 && files[0].type.startsWith('image/')) {
-            handleAIImageUpload(files[0]);
+            handleAIImageUpload(imageNum, files[0]);
         }
 
-        // Remover foco del área para prevenir scroll
         dragDropArea.blur();
     });
 
@@ -962,89 +1026,86 @@ function setupAICapture() {
     aiImageUpload.addEventListener('change', (e) => {
         e.preventDefault();
         if (e.target.files.length > 0) {
-            handleAIImageUpload(e.target.files[0]);
+            handleAIImageUpload(imageNum, e.target.files[0]);
         }
-        // Remover foco del input para prevenir scroll
         e.target.blur();
     });
 
-    // Hacer el área contentEditable para capturar paste más fácilmente
-    dragDropArea.setAttribute('contenteditable', 'true');
-    dragDropArea.style.cursor = 'pointer';
-    dragDropArea.style.caretColor = 'transparent'; // Ocultar cursor de texto
-    dragDropArea.style.outline = 'none'; // Quitar borde de foco
-
-    // Prevenir que se escriba texto en el área
-    dragDropArea.addEventListener('keydown', (e) => {
-        if (e.key !== 'v' || (!e.ctrlKey && !e.metaKey)) {
-            e.preventDefault();
-        }
-    });
-
-    // Prevenir selección de texto
-    dragDropArea.addEventListener('mousedown', (e) => {
-        if (e.detail > 1) { // Prevenir doble/triple click
-            e.preventDefault();
-        }
-    });
-
-    // Paste from clipboard
+    // Paste - directamente en el elemento
     dragDropArea.addEventListener('paste', (e) => {
+        console.log(`Paste event en dragDropArea${imageNum}`, e);
         e.preventDefault();
         e.stopPropagation();
 
-        console.log('Paste event detected');
-
         const items = e.clipboardData?.items;
-        console.log('Clipboard items:', items);
 
         if (!items) {
-            console.log('No clipboard items found');
+            console.log('No clipboard items');
             showMessage('No se detectó contenido en el portapapeles', 'error', false);
             return;
         }
 
-        let imageFound = false;
-
-        // Buscar imagen en el portapapeles
+        console.log(`Total items: ${items.length}`);
         for (let i = 0; i < items.length; i++) {
-            console.log(`Item ${i}:`, items[i].type);
-
+            console.log(`Item ${i}: ${items[i].type}`);
             if (items[i].type.startsWith('image/')) {
-                imageFound = true;
                 const file = items[i].getAsFile();
                 console.log('Image file:', file);
 
                 if (file) {
-                    handleAIImageUpload(file);
-                    showMessage('📋 Imagen pegada desde el portapapeles', 'success', false);
+                    handleAIImageUpload(imageNum, file);
+                    showMessage(`📋 Imagen IA ${imageNum} pegada desde el portapapeles`, 'success', false);
                 } else {
                     showMessage('Error al obtener la imagen del portapapeles', 'error', false);
                 }
-                break;
+                return;
             }
         }
 
-        if (!imageFound) {
-            console.log('No image found in clipboard');
-            showMessage('No se encontró ninguna imagen en el portapapeles. Copia una imagen primero.', 'error', false);
-        }
+        showMessage('No se encontró ninguna imagen. Copia una imagen primero.', 'error', false);
     });
 
-    // Hacer el área enfocable
-    dragDropArea.setAttribute('tabindex', '0');
-
-    // Mensaje de ayuda al hacer clic
-    dragDropArea.addEventListener('click', () => {
+    // Hacer clic enfoca el área
+    dragDropArea.addEventListener('click', (e) => {
+        e.stopPropagation();
         dragDropArea.focus();
-        console.log('Drag-drop area focused. Ready for paste.');
+        console.log(`dragDropArea${imageNum} focused`);
     });
 
-    // Process button
-    processBtn.addEventListener('click', processImageWithAI);
+    // Indicador visual cuando tiene foco
+    dragDropArea.addEventListener('focus', () => {
+        dragDropArea.style.borderColor = '#10b981';
+        dragDropArea.style.background = '#ecfdf5';
+        console.log(`dragDropArea${imageNum} gained focus`);
+    });
+
+    dragDropArea.addEventListener('blur', () => {
+        dragDropArea.style.borderColor = '';
+        dragDropArea.style.background = '';
+        console.log(`dragDropArea${imageNum} lost focus`);
+    });
 }
 
-function handleAIImageUpload(file) {
+// Función global para limpiar imagen IA específica
+function clearAIImage(imageNum) {
+    currentAIImages[imageNum] = null;
+
+    const aiImageUpload = document.getElementById(`aiImageUpload${imageNum}`);
+    const aiPreview = document.getElementById(`aiPreview${imageNum}`);
+
+    if (aiImageUpload) {
+        aiImageUpload.value = '';
+    }
+    if (aiPreview) {
+        aiPreview.classList.add('hidden');
+        aiPreview.style.display = 'none';
+    }
+
+    checkProcessButtonState();
+    showMessage(`🗑️ Imagen IA ${imageNum} eliminada`, 'success', false);
+}
+
+function handleAIImageUpload(imageNum, file) {
     // Guardar posición del scroll ANTES de hacer cualquier cosa
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
@@ -1061,7 +1122,7 @@ function handleAIImageUpload(file) {
         return;
     }
 
-    currentAIImage = file;
+    currentAIImages[imageNum] = file;
 
     // Prevenir scroll durante el proceso
     const preventScroll = () => {
@@ -1072,17 +1133,17 @@ function handleAIImageUpload(file) {
     // Mostrar vista previa
     const reader = new FileReader();
     reader.onload = function(e) {
-        const aiPreview = document.getElementById('aiPreview');
-        const aiPreviewImage = document.getElementById('aiPreviewImage');
+        const aiPreview = document.getElementById(`aiPreview${imageNum}`);
+        const aiPreviewImage = document.getElementById(`aiPreviewImage${imageNum}`);
 
-        aiPreviewImage.src = e.target.result;
-        aiPreview.classList.remove('hidden');
-        aiPreview.style.display = 'block';
+        if (aiPreviewImage && aiPreview) {
+            aiPreviewImage.src = e.target.result;
+            aiPreview.classList.remove('hidden');
+            aiPreview.style.display = 'block';
+        }
 
-        // Habilitar botón de procesar
-        document.getElementById('processWithAI').disabled = false;
-
-        // Verificar si debe habilitar el botón de generar explicación
+        // Verificar si debe habilitar botones
+        checkProcessButtonState();
         checkGenerateButton();
 
         // Remover prevención de scroll y restaurar posición
@@ -1094,6 +1155,12 @@ function handleAIImageUpload(file) {
     reader.readAsDataURL(file);
 }
 
+function checkProcessButtonState() {
+    const processBtn = document.getElementById('processWithAI');
+    const hasAnyImage = currentAIImages[1] !== null || currentAIImages[2] !== null;
+    processBtn.disabled = !hasAnyImage;
+}
+
 async function processImageWithAI(event) {
     // Prevenir comportamiento por defecto y scroll
     if (event) {
@@ -1101,8 +1168,11 @@ async function processImageWithAI(event) {
         event.stopPropagation();
     }
 
-    if (!currentAIImage) {
-        showMessage('Por favor selecciona una imagen primero', 'error');
+    const hasImage1 = currentAIImages[1] !== null;
+    const hasImage2 = currentAIImages[2] !== null;
+
+    if (!hasImage1 && !hasImage2) {
+        showMessage('Por favor selecciona al menos una imagen primero', 'error');
         return;
     }
 
@@ -1123,19 +1193,20 @@ async function processImageWithAI(event) {
 
     // Restaurar scroll inmediatamente
     window.scrollTo(scrollLeft, scrollPosition);
-    
+
     try {
         const formData = new FormData();
-        formData.append('image', currentAIImage);
+        if (currentAIImages[1]) formData.append('image1', currentAIImages[1]);
+        if (currentAIImages[2]) formData.append('image2', currentAIImages[2]);
         formData.append('ai_service', aiService);
-        
+
         const response = await fetch('/api/process-image-ai', {
             method: 'POST',
             body: formData
         });
-        
+
         const result = await response.json();
-        
+
         if (response.ok && result.success) {
             const aiData = result.data;
 
@@ -1165,7 +1236,8 @@ async function processImageWithAI(event) {
                 showMessage('🧪 Procesado en MODO SIMULADO - Configura API key para IA real', 'error', false);
             } else {
                 const serviceName = getServiceDisplayName(aiData.ai_service);
-                showMessage(`🤖 ¡${serviceName} procesó tu imagen exitosamente!`, 'success', false);
+                const imageCount = (hasImage1 ? 1 : 0) + (hasImage2 ? 1 : 0);
+                showMessage(`🤖 ¡${serviceName} procesó ${imageCount} imagen(es) exitosamente!`, 'success', false);
             }
 
             // Remover listener y asegurar posición del scroll después de un momento
@@ -1176,7 +1248,7 @@ async function processImageWithAI(event) {
         } else {
             throw new Error(result.detail || 'Error procesando imagen');
         }
-        
+
     } catch (error) {
         console.error('Error procesando imagen:', error);
         showMessage(`❌ Error: ${error.message}`, 'error', false);
@@ -1354,15 +1426,28 @@ function clearMathPreviews() {
 
 // Función para reiniciar captura de IA
 function resetAICapture() {
-    currentAIImage = null;
-    const aiPreview = document.getElementById('aiPreview');
+    currentAIImages = {1: null, 2: null};
+
+    for (let i = 1; i <= 2; i++) {
+        const aiPreview = document.getElementById(`aiPreview${i}`);
+        const aiImageUpload = document.getElementById(`aiImageUpload${i}`);
+
+        if (aiPreview) {
+            aiPreview.classList.add('hidden');
+            aiPreview.style.display = 'none';
+        }
+        if (aiImageUpload) {
+            aiImageUpload.value = '';
+        }
+    }
+
     const aiResults = document.getElementById('aiResults');
-    aiPreview.classList.add('hidden');
-    aiPreview.style.display = 'none';
-    aiResults.classList.add('hidden');
-    aiResults.style.display = 'none';
+    if (aiResults) {
+        aiResults.classList.add('hidden');
+        aiResults.style.display = 'none';
+    }
+
     document.getElementById('processWithAI').disabled = true;
-    document.getElementById('aiImageUpload').value = '';
 }
 
 // ======= GUÍA LATEX =======
@@ -1497,9 +1582,12 @@ function checkGenerateButton() {
     const modeFromQuestion = document.getElementById('modeFromQuestion');
     const modeFromSolution = document.getElementById('modeFromSolution');
 
-    // Si está en modo "desde pregunta", siempre habilitado si hay imagen de pregunta
+    if (!generateBtn) return;
+
+    // Si está en modo "desde pregunta", habilitado si hay al menos una imagen de pregunta
     if (modeFromQuestion && modeFromQuestion.checked) {
-        generateBtn.disabled = !currentAIImage;
+        const hasAnyAIImage = currentAIImages[1] !== null || currentAIImages[2] !== null;
+        generateBtn.disabled = !hasAnyAIImage;
         return;
     }
 
@@ -1556,13 +1644,15 @@ async function generateExplanationWithAI(event) {
         // Determinar modo y añadir datos correspondientes
         if (modeFromQuestion && modeFromQuestion.checked) {
             // Modo: desde imagen de pregunta
-            if (!currentAIImage) {
-                showMessage('Primero debes procesar una imagen de pregunta con IA', 'error');
+            const hasAnyAIImage = currentAIImages[1] !== null || currentAIImages[2] !== null;
+            if (!hasAnyAIImage) {
+                showMessage('Primero debes procesar al menos una imagen de pregunta con IA', 'error');
                 setGenerateExplanationState(false);
                 return;
             }
             formData.append('mode', 'from_question');
-            formData.append('question_image', currentAIImage);
+            if (currentAIImages[1]) formData.append('question_image1', currentAIImages[1]);
+            if (currentAIImages[2]) formData.append('question_image2', currentAIImages[2]);
         } else {
             // Modo: desde imágenes de solución
             formData.append('mode', 'from_solution');

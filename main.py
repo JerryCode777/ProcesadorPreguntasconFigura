@@ -56,7 +56,8 @@ async def crear_pregunta(
     respuesta_correcta: str = Form(...),
     explicacion: str = Form(...),
     dificultad: int = Form(...),
-    imagen: Optional[UploadFile] = File(None)
+    imagen1: Optional[UploadFile] = File(None),
+    imagen2: Optional[UploadFile] = File(None)
 ):
     try:
         # Validaciones
@@ -69,7 +70,7 @@ async def crear_pregunta(
             if not area_academica or area_academica not in areas_validas:
                 raise HTTPException(status_code=400, detail="Área académica requerida y debe ser válida")
 
-            if not anio or anio not in ["2023", "2024", "2025", "2026"]:
+            if not anio or anio not in ["2022", "2023", "2024", "2025", "2026"]:
                 raise HTTPException(status_code=400, detail="Año requerido y debe ser válido")
 
             tipos_proceso_validos = ["extraordinario", "ceprunsa", "ceprequintos", "ordinario"]
@@ -132,18 +133,21 @@ async def crear_pregunta(
         materia_dir.mkdir(parents=True, exist_ok=True)
         imagenes_dir.mkdir(exist_ok=True)
         
-        # Procesar imagen si existe
-        nombre_imagen = None
-        if imagen and imagen.filename:
-            # Obtener siguiente número para la imagen
-            siguiente_num = obtener_siguiente_numero(imagenes_dir, f"{materia_norm}_{tema_norm}")
-            extension = imagen.filename.split(".")[-1].lower()
-            nombre_imagen = f"{materia_norm}_{tema_norm}_{siguiente_num:03d}.{extension}"
-            
-            # Guardar imagen
-            ruta_imagen = imagenes_dir / nombre_imagen
-            with open(ruta_imagen, "wb") as buffer:
-                shutil.copyfileobj(imagen.file, buffer)
+        # Procesar imágenes si existen
+        imagenes = []
+        for idx, imagen in enumerate([imagen1, imagen2], start=1):
+            if imagen and imagen.filename:
+                # Obtener siguiente número para la imagen
+                siguiente_num = obtener_siguiente_numero(imagenes_dir, f"{materia_norm}_{tema_norm}")
+                extension = imagen.filename.split(".")[-1].lower()
+                nombre_imagen = f"{materia_norm}_{tema_norm}_{siguiente_num:03d}.{extension}"
+
+                # Guardar imagen
+                ruta_imagen = imagenes_dir / nombre_imagen
+                with open(ruta_imagen, "wb") as buffer:
+                    shutil.copyfileobj(imagen.file, buffer)
+
+                imagenes.append(nombre_imagen)
         
         # Crear objeto pregunta
         opciones = {
@@ -183,7 +187,7 @@ async def crear_pregunta(
             "opciones": opciones,
             "respuesta_correcta": respuesta_correcta,
             "explicacion": explicacion,
-            "imagen": nombre_imagen
+            "imagenes": imagenes if imagenes else None
         }
 
         # Solo añadir campos de proceso si se seleccionó "Por proceso"
@@ -214,29 +218,37 @@ async def obtener_materias():
 @app.post("/api/process-image-ai")
 async def process_image_ai(
     ai_service: str = Form(...),
-    image: UploadFile = File(...)
+    image1: Optional[UploadFile] = File(None),
+    image2: Optional[UploadFile] = File(None)
 ):
     try:
         # Validar servicio de IA
         valid_services = ["openai", "gemini", "claude", "azure"]
         if ai_service not in valid_services:
             raise HTTPException(status_code=400, detail="Servicio de IA no válido")
-        
-        # Validar imagen
-        if not image.filename:
-            raise HTTPException(status_code=400, detail="No se subió imagen")
-        
-        # Leer imagen
-        image_content = await image.read()
-        
-        # Procesar con IA
-        result = await process_image_with_ai(ai_service, image_content, image.filename)
-        
+
+        # Validar que al menos una imagen esté presente
+        if not image1 and not image2:
+            raise HTTPException(status_code=400, detail="Debe subir al menos una imagen")
+
+        # Leer imágenes
+        images_content = []
+        if image1 and image1.filename:
+            content1 = await image1.read()
+            images_content.append((content1, image1.filename))
+        if image2 and image2.filename:
+            content2 = await image2.read()
+            images_content.append((content2, image2.filename))
+
+        # Procesar con IA (usar la primera imagen para compatibilidad con el código existente)
+        # En el futuro, se puede mejorar para procesar ambas imágenes
+        result = await process_image_with_ai(ai_service, images_content[0][0], images_content[0][1])
+
         return JSONResponse(content={
             "success": True,
             "data": result
         })
-        
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error procesando imagen: {str(e)}")
 
@@ -246,7 +258,8 @@ async def generate_explanation(
     mode: str = Form(...),
     pregunta: str = Form(...),
     respuesta_correcta: str = Form(...),
-    question_image: Optional[UploadFile] = File(None),
+    question_image1: Optional[UploadFile] = File(None),
+    question_image2: Optional[UploadFile] = File(None),
     solution_image1: Optional[UploadFile] = File(None),
     solution_image2: Optional[UploadFile] = File(None),
     solution_image3: Optional[UploadFile] = File(None)
@@ -255,14 +268,22 @@ async def generate_explanation(
         from ai_services import process_solution_images_with_ai, generate_explanation_from_question
 
         if mode == "from_question":
-            # Modo: generar desde imagen de pregunta
-            if not question_image or not question_image.filename:
-                raise HTTPException(status_code=400, detail="Se requiere la imagen de la pregunta")
+            # Modo: generar desde imágenes de pregunta
+            question_images = []
+            if question_image1 and question_image1.filename:
+                content1 = await question_image1.read()
+                question_images.append(content1)
+            if question_image2 and question_image2.filename:
+                content2 = await question_image2.read()
+                question_images.append(content2)
 
-            question_content = await question_image.read()
+            if not question_images:
+                raise HTTPException(status_code=400, detail="Se requiere al menos una imagen de la pregunta")
+
+            # Usar la primera imagen para compatibilidad
             result = await generate_explanation_from_question(
                 ai_service,
-                question_content,
+                question_images[0],
                 pregunta,
                 respuesta_correcta
             )

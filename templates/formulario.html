@@ -43,7 +43,18 @@
         </header>
 
         <main>
-            <form id="preguntaForm" enctype="multipart/form-data">
+            <!-- Sistema de Pestañas -->
+            <div class="mb-6 flex gap-3 rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
+                <button type="button" id="tabNormal" onclick="switchTab('normal')" class="flex-1 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                    📝 Pregunta Normal
+                </button>
+                <button type="button" id="tabComprension" onclick="switchTab('comprension')" class="flex-1 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-200">
+                    📖 Pregunta de Comprensión
+                </button>
+            </div>
+
+            <!-- Formulario Normal -->
+            <form id="preguntaForm" enctype="multipart/form-data" class="tab-content" data-tab="normal">
                 <div class="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
                     <div class="space-y-6">
                         <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -51,18 +62,43 @@
                                 <h2 class="text-lg font-semibold">🚀 1. Procesar Pregunta con IA</h2>
                                 <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">IA</span>
                             </div>
-                            <p class="mt-2 text-sm text-slate-500">Sube una imagen y la IA completará los campos clave.</p>
+                            <p class="mt-2 text-sm text-slate-500">Sube hasta 2 imágenes y la IA completará los campos clave.</p>
 
                             <div class="mt-5 space-y-4">
-                                <div class="rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center transition hover:border-slate-500" id="dragDropArea">
-                                    <div class="text-3xl">📷</div>
-                                    <h3 class="mt-2 text-base font-semibold">Arrastra la imagen aquí</h3>
-                                    <p class="text-sm text-slate-500">o haz clic para seleccionar</p>
-                                    <p class="mt-2 text-xs font-semibold text-slate-600">📋 Haz clic y presiona Ctrl+V</p>
-                                    <input type="file" id="aiImageUpload" accept="image/*" hidden>
-                                    <button type="button" onclick="document.getElementById('aiImageUpload').click(); this.blur();" class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
-                                        📁 Seleccionar Imagen
-                                    </button>
+                                <div class="grid gap-3 md:grid-cols-2">
+                                    <!-- Imagen IA 1 -->
+                                    <div class="rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-3 py-4 text-center transition hover:border-slate-500 cursor-pointer" id="dragDropArea1" title="Haz clic aquí y luego presiona Ctrl+V para pegar una imagen">
+                                        <div class="text-2xl">1️⃣</div>
+                                        <h3 class="mt-2 text-sm font-semibold">Imagen 1</h3>
+                                        <p class="text-xs text-slate-500">👆 Clic aquí + Ctrl+V</p>
+                                        <input type="file" id="aiImageUpload1" accept="image/*" hidden>
+                                        <button type="button" onclick="document.getElementById('aiImageUpload1').click(); this.blur();" class="mt-3 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-slate-800">
+                                            📁 Seleccionar
+                                        </button>
+                                    </div>
+
+                                    <!-- Imagen IA 2 -->
+                                    <div class="rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-3 py-4 text-center transition hover:border-slate-500 cursor-pointer" id="dragDropArea2" title="Haz clic aquí y luego presiona Ctrl+V para pegar una imagen">
+                                        <div class="text-2xl">2️⃣</div>
+                                        <h3 class="mt-2 text-sm font-semibold">Imagen 2</h3>
+                                        <p class="text-xs text-slate-500">👆 Clic aquí + Ctrl+V</p>
+                                        <input type="file" id="aiImageUpload2" accept="image/*" hidden>
+                                        <button type="button" onclick="document.getElementById('aiImageUpload2').click(); this.blur();" class="mt-3 inline-flex items-center justify-center rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-slate-800">
+                                            📁 Seleccionar
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Vista previa de imágenes IA -->
+                                <div class="grid gap-3 md:grid-cols-2">
+                                    <div id="aiPreview1" class="hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                                        <img id="aiPreviewImage1" alt="Vista previa 1" class="max-h-48 w-full rounded-xl object-contain">
+                                        <button type="button" onclick="clearAIImage(1)" class="mt-2 text-xs text-red-600 hover:text-red-800">❌ Eliminar</button>
+                                    </div>
+                                    <div id="aiPreview2" class="hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                                        <img id="aiPreviewImage2" alt="Vista previa 2" class="max-h-48 w-full rounded-xl object-contain">
+                                        <button type="button" onclick="clearAIImage(2)" class="mt-2 text-xs text-red-600 hover:text-red-800">❌ Eliminar</button>
+                                    </div>
                                 </div>
 
                                 <div class="flex flex-col gap-3">
@@ -82,10 +118,6 @@
                                     </button>
                                 </div>
 
-                                <div id="aiPreview" class="hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-                                    <img id="aiPreviewImage" alt="Vista previa" class="max-h-72 w-full rounded-xl object-contain">
-                                </div>
-
                                 <div id="aiResults" class="hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
                                     <h4 class="text-sm font-semibold text-emerald-900">✨ IA completó el formulario - Revisa y edita</h4>
                                     <div class="mt-3 rounded-xl bg-white px-3 py-2 text-center text-sm font-semibold text-emerald-700">
@@ -95,24 +127,45 @@
                             </div>
                         </section>
 
-                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                            <h2 class="text-lg font-semibold">🖼️ 4. Imagen Final (Opcional)</h2>
-                            <p class="mt-2 text-sm text-slate-500">Sube la imagen final editada o deja vacío si no aplica.</p>
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">                            <h2 class="text-lg font-semibold">🖼️ 4. Imágenes Finales (Opcional)</h2>
+                            <p class="mt-2 text-sm text-slate-500">Sube hasta 2 imágenes con orden específico o deja vacío si no aplica.</p>
 
-                            <div class="mt-4">
-                                <label for="imagen" class="text-sm font-semibold text-slate-700">Imagen procesada:</label>
-                                <div class="mt-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center" id="finalImageDropArea">
-                                    <p class="text-sm text-slate-600">📎 Arrastra la imagen aquí, haz clic o <strong>Ctrl+V</strong></p>
-                                    <input type="file" id="imagen" name="imagen" accept="image/*" hidden>
-                                    <button type="button" onclick="document.getElementById('imagen').click(); this.blur();" class="mt-4 inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
-                                        📁 Seleccionar Imagen
-                                    </button>
+                            <div class="mt-4 grid gap-4 md:grid-cols-2">
+                                <!-- Imagen 1 -->
+                                <div>
+                                    <label for="imagen1" class="text-sm font-semibold text-slate-700">Imagen 1:</label>
+                                    <div class="mt-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center cursor-pointer" id="finalImageDropArea1" title="Haz clic aquí y luego presiona Ctrl+V para pegar una imagen">
+                                        <div class="text-2xl">1️⃣</div>
+                                        <p class="mt-2 text-xs text-slate-600">👆 Clic aquí + <strong>Ctrl+V</strong></p>
+                                        <input type="file" id="imagen1" name="imagen1" accept="image/*" hidden>
+                                        <button type="button" onclick="document.getElementById('imagen1').click(); this.blur();" class="mt-3 inline-flex items-center justify-center rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-400">
+                                            📁 Seleccionar
+                                        </button>
+                                    </div>
+                                    <div id="finalImagePreview1" class="mt-3 hidden">
+                                        <img id="finalImagePreviewImg1" class="h-32 w-full rounded-2xl border border-slate-200 object-cover" alt="Vista previa 1">
+                                        <button type="button" onclick="clearFinalImage(1)" class="mt-2 text-xs text-red-600 hover:text-red-800">❌ Eliminar</button>
+                                    </div>
                                 </div>
-                                <div id="finalImagePreview" class="mt-3 hidden">
-                                    <img id="finalImagePreviewImg" class="h-40 w-40 rounded-2xl border border-slate-200 object-cover" alt="Vista previa">
+
+                                <!-- Imagen 2 -->
+                                <div>
+                                    <label for="imagen2" class="text-sm font-semibold text-slate-700">Imagen 2:</label>
+                                    <div class="mt-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center cursor-pointer" id="finalImageDropArea2" title="Haz clic aquí y luego presiona Ctrl+V para pegar una imagen">
+                                        <div class="text-2xl">2️⃣</div>
+                                        <p class="mt-2 text-xs text-slate-600">👆 Clic aquí + <strong>Ctrl+V</strong></p>
+                                        <input type="file" id="imagen2" name="imagen2" accept="image/*" hidden>
+                                        <button type="button" onclick="document.getElementById('imagen2').click(); this.blur();" class="mt-3 inline-flex items-center justify-center rounded-full border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-400">
+                                            📁 Seleccionar
+                                        </button>
+                                    </div>
+                                    <div id="finalImagePreview2" class="mt-3 hidden">
+                                        <img id="finalImagePreviewImg2" class="h-32 w-full rounded-2xl border border-slate-200 object-cover" alt="Vista previa 2">
+                                        <button type="button" onclick="clearFinalImage(2)" class="mt-2 text-xs text-red-600 hover:text-red-800">❌ Eliminar</button>
+                                    </div>
                                 </div>
-                                <small class="mt-2 block text-xs text-slate-500">Formatos: JPG, PNG, GIF, BMP, WebP | Máximo 5MB</small>
                             </div>
+                            <small class="mt-2 block text-xs text-slate-500">Formatos: JPG, PNG, GIF, BMP, WebP | Máximo 5MB cada una</small>
                         </section>
                     </div>
 
@@ -146,6 +199,7 @@
                                         <label for="anio" class="text-sm font-semibold text-slate-700">Año:</label>
                                         <select id="anio" name="anio" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
                                             <option value="">Selecciona año</option>
+                                            <option value="2022">2022</option>
                                             <option value="2023">2023</option>
                                             <option value="2024">2024</option>
                                             <option value="2025">2025</option>
@@ -378,6 +432,190 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Formulario de Comprensión -->
+            <form id="comprensionForm" enctype="multipart/form-data" class="tab-content hidden" data-tab="comprension">
+                <div class="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
+                    <!-- Columna izquierda: Texto e imágenes -->
+                    <div class="space-y-6">
+                        <!-- Selector de tipo de comprensión -->
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">📚 Tipo de Comprensión</h2>
+                            <div class="mt-4">
+                                <select id="tipo_comprension" name="tipo_comprension" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm">
+                                    <option value="">Selecciona tipo</option>
+                                    <option value="comprension_lectora_i">Comprensión Lectora I (2 preguntas)</option>
+                                    <option value="comprension_lectora_ii">Comprensión Lectora II (3 preguntas)</option>
+                                    <option value="comprension_ingles">Comprensión Inglés (2 preguntas)</option>
+                                </select>
+                                <p class="mt-2 text-xs text-slate-500" id="num_preguntas_info">Selecciona el tipo para ver el número de preguntas</p>
+                            </div>
+                        </section>
+
+                        <!-- Texto de comprensión -->
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">📄 Texto de Comprensión</h2>
+                            <p class="mt-2 text-sm text-slate-500">Elige cómo ingresar el texto</p>
+
+                            <!-- Toggle imagen vs texto -->
+                            <div class="mt-4 flex gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1">
+                                <button type="button" id="toggleTextoImagen" onclick="toggleTextoMode('imagen')" class="flex-1 rounded-lg bg-white px-3 py-2 text-xs font-semibold text-slate-900 shadow-sm">
+                                    📸 Imagen
+                                </button>
+                                <button type="button" id="toggleTextoDirecto" onclick="toggleTextoMode('directo')" class="flex-1 rounded-lg px-3 py-2 text-xs font-semibold text-slate-600">
+                                    ✏️ Texto Directo
+                                </button>
+                            </div>
+
+                            <!-- Área de imagen del texto -->
+                            <div id="textoImagenArea" class="mt-4">
+                                <div class="rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-8 text-center" id="textoDropArea">
+                                    <div class="text-3xl">📖</div>
+                                    <h3 class="mt-2 text-sm font-semibold">Imagen del Texto</h3>
+                                    <p class="text-xs text-slate-500">Arrastra, pega o selecciona</p>
+                                    <input type="file" id="imagenTexto" accept="image/*" hidden>
+                                    <button type="button" onclick="document.getElementById('imagenTexto').click()" class="mt-3 inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-slate-800">
+                                        📁 Seleccionar Imagen
+                                    </button>
+                                </div>
+                                <div id="textoImagenPreview" class="mt-3 hidden">
+                                    <img id="textoImagenPreviewImg" class="max-h-64 w-full rounded-2xl border border-slate-200 object-contain" alt="Vista previa texto">
+                                    <button type="button" onclick="clearTextoImagen()" class="mt-2 text-xs text-red-600 hover:text-red-800">❌ Eliminar</button>
+                                </div>
+                            </div>
+
+                            <!-- Área de texto directo -->
+                            <div id="textoDirectoArea" class="mt-4 hidden">
+                                <label for="textoComprension" class="text-sm font-semibold text-slate-700">Escribe o pega el texto aquí:</label>
+                                <textarea id="textoComprension" name="textoComprension" rows="12" placeholder="Escribe o pega el texto de comprensión aquí..." class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm"></textarea>
+                                <p class="mt-2 text-xs text-slate-500">El texto será compartido por todas las preguntas</p>
+                            </div>
+
+                            <!-- Selector de servicio IA para texto -->
+                            <div id="aiServiceTexto" class="mt-4">
+                                <select id="aiServiceTextoSelect" name="aiServiceTexto" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700">
+                                    <option value="gemini">🤖 Google Gemini Pro Vision</option>
+                                    <option value="openai">OpenAI GPT-4 Vision</option>
+                                    <option value="claude">Anthropic Claude Vision</option>
+                                    <option value="azure">Azure OpenAI Vision</option>
+                                </select>
+                                <button type="button" id="procesarTextoIA" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 disabled:cursor-not-allowed disabled:bg-slate-300" disabled>
+                                    <span>🤖 Extraer Texto con IA</span>
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- Imágenes de preguntas -->
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">❓ Imágenes de Preguntas</h2>
+                            <p class="mt-2 text-sm text-slate-500">Sube las imágenes de cada pregunta</p>
+
+                            <div id="preguntasImagenesContainer" class="mt-4 space-y-3">
+                                <!-- Se generará dinámicamente según el tipo -->
+                                <p class="text-center text-xs text-slate-400">Selecciona el tipo de comprensión primero</p>
+                            </div>
+
+                            <button type="button" id="procesarPreguntasIA" class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-slate-300" disabled>
+                                <span>🤖 Procesar Preguntas con IA</span>
+                            </button>
+                        </section>
+                    </div>
+
+                    <!-- Columna derecha: Formulario de datos -->
+                    <div class="space-y-6">
+                        <!-- Clasificación y metadatos -->
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">📝 Información Básica</h2>
+                            <div class="mt-4 grid gap-4">
+                                <div>
+                                    <label for="comp_tipo_clasificacion" class="text-sm font-semibold text-slate-700">Clasificación:</label>
+                                    <select id="comp_tipo_clasificacion" name="tipo_clasificacion" required class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm">
+                                        <option value="">¿Cómo clasificar?</option>
+                                        <option value="normal">📚 Distribución normal</option>
+                                        <option value="proceso">🎯 Por proceso de admisión</option>
+                                    </select>
+                                </div>
+
+                                <!-- Área de proceso (similar al formulario normal) -->
+                                <div id="comp_proceso_section" class="hidden rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                                    <h3 class="text-sm font-semibold text-slate-700">Información del Proceso</h3>
+                                    <div class="mt-3 grid gap-4 md:grid-cols-2">
+                                        <div>
+                                            <label for="comp_area_academica" class="text-sm font-semibold text-slate-700">Área:</label>
+                                            <select id="comp_area_academica" name="area_academica" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                                <option value="">Selecciona</option>
+                                                <option value="ingenierias">Ingenierías</option>
+                                                <option value="biomedicas">Biomédicas</option>
+                                                <option value="sociales">Sociales</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="comp_anio" class="text-sm font-semibold text-slate-700">Año:</label>
+                                            <select id="comp_anio" name="anio" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                                <option value="">Selecciona</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="comp_tipo_proceso" class="text-sm font-semibold text-slate-700">Tipo:</label>
+                                            <select id="comp_tipo_proceso" name="tipo_proceso" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                                <option value="">Selecciona</option>
+                                                <option value="extraordinario">Extraordinario</option>
+                                                <option value="ceprunsa">CEPRUNSA</option>
+                                                <option value="ceprequintos">CEPREQUINTOS</option>
+                                                <option value="ordinario">Ordinario</option>
+                                            </select>
+                                        </div>
+                                        <div id="comp_fase_container" class="hidden">
+                                            <label for="comp_fase" class="text-sm font-semibold text-slate-700">Fase:</label>
+                                            <select id="comp_fase" name="fase" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                                <option value="">Selecciona</option>
+                                            </select>
+                                        </div>
+                                        <div id="comp_examen_container" class="hidden">
+                                            <label for="comp_examen" class="text-sm font-semibold text-slate-700">Examen:</label>
+                                            <select id="comp_examen" name="examen" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                                <option value="">Selecciona</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="comp_numero_tema" class="text-sm font-semibold text-slate-700">Número de Texto:</label>
+                                    <input type="number" id="comp_numero_tema" name="numero_tema" required placeholder="Ej: 1, 2, 3..." class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm">
+                                    <p class="mt-1 text-xs text-slate-500">Número del texto de comprensión</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Vista previa de preguntas extraídas -->
+                        <section id="preguntasExtraidasSection" class="hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">✅ Preguntas Extraídas</h2>
+                            <p class="mt-2 text-sm text-slate-500">Revisa y edita las preguntas antes de guardar</p>
+
+                            <div id="preguntasExtraidasContainer" class="mt-4 space-y-4">
+                                <!-- Se llenará dinámicamente con las preguntas -->
+                            </div>
+                        </section>
+
+                        <!-- Botones de acción -->
+                        <div class="sticky bottom-6 z-10 flex flex-wrap items-center justify-between gap-3 rounded-3xl border border-slate-200 bg-white/90 px-6 py-4 shadow-lg backdrop-blur">
+                            <div class="text-sm text-slate-500">Listo para guardar la comprensión.</div>
+                            <div class="flex flex-wrap gap-3">
+                                <button type="reset" id="resetCompBtn" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-slate-400">🔄 Limpiar Todo</button>
+                                <button type="submit" id="submitCompBtn" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-300" disabled>
+                                    <span>✅ Guardar Comprensión</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </main>
     </div>
 
@@ -413,5 +651,6 @@
     </div>
 
     <script src="/static/js/script.js"></script>
+    <script src="/static/js/comprension.js"></script>
 </body>
 </html>
