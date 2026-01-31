@@ -4,370 +4,412 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco de Preguntas Preuniversitarias</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+                            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular']
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- KaTeX para renderizar matemáticas -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>📚 Banco de Preguntas Preuniversitarias</h1>
-            <p>Generador de preguntas en formato JSON</p>
+<body class="min-h-screen bg-gradient-to-br from-[#f7f3ef] via-[#eef2ff] to-[#f0f9ff] text-slate-900">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+        <header class="mb-8 rounded-3xl bg-slate-900 px-8 py-8 text-white shadow-xl">
+            <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Procesador con IA</p>
+                    <h1 class="text-3xl font-semibold md:text-4xl">📚 Banco de Preguntas Preuniversitarias</h1>
+                    <p class="mt-2 text-slate-300">Generador de preguntas en formato JSON</p>
+                </div>
+                <div class="rounded-2xl border border-slate-700 bg-slate-800 px-4 py-3 text-sm text-slate-200">
+                    Todo en una sola página, listo para trabajar rápido.
+                </div>
+            </div>
         </header>
 
         <main>
             <form id="preguntaForm" enctype="multipart/form-data">
-                
-                <!-- SECCIÓN 1: CAPTURA CON IA -->
-                <div class="form-section ai-capture">
-                    <h2>🚀 1. Procesar Pregunta con IA</h2>
-                    <p>Sube una imagen de la pregunta del libro y la IA completará automáticamente todos los campos</p>
-                    
-                    <div class="ai-upload-simple">
-                        <div class="drag-drop-area" id="dragDropArea">
-                            <div class="drag-drop-content">
-                                <div class="drag-icon">📷</div>
-                                <h3>Arrastra la imagen de la pregunta aquí</h3>
-                                <p>o haz clic para seleccionar</p>
-                                <p style="font-size: 0.9em; color: #6c757d; margin-top: 5px;">
-                                    <strong>📋 O haz clic aquí y presiona Ctrl+V</strong>
-                                </p>
-                                <input type="file" id="aiImageUpload" accept="image/*" hidden>
-                                <button type="button" onclick="document.getElementById('aiImageUpload').click(); this.blur();" class="upload-btn">
-                                    📁 Seleccionar Imagen
-                                </button>
+                <div class="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)]">
+                    <div class="space-y-6">
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-lg font-semibold">🚀 1. Procesar Pregunta con IA</h2>
+                                <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">IA</span>
                             </div>
-                        </div>
-                        
-                        <div class="ai-process-section">
-                            <select id="aiService" name="aiService" class="ai-select">
-                                <option value="gemini">🤖 Google Gemini Pro Vision</option>
-                                <option value="openai">OpenAI GPT-4 Vision</option>
-                                <option value="claude">Anthropic Claude Vision</option>
-                                <option value="azure">Azure OpenAI Vision</option>
-                            </select>
-                            
-                            <button type="button" id="processWithAI" class="ai-process-btn" disabled>
-                                <span class="ai-btn-text">🤖 Procesar con IA</span>
-                                <span class="ai-btn-loader" style="display: none;">
-                                    <div class="spinner"></div>
-                                    Procesando...
-                                </span>
-                            </button>
-                        </div>
-                        
-                        <div id="aiPreview" class="ai-preview" style="display: none;">
-                            <img id="aiPreviewImage" alt="Vista previa" />
-                        </div>
-                        
-                        <div id="aiResults" class="ai-results" style="display: none;">
-                            <h4>✨ IA completó el formulario - Revisa y edita si es necesario</h4>
-                            <div class="ai-confidence">
-                                <span>Confianza: <span id="aiConfidence">--</span>%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            <p class="mt-2 text-sm text-slate-500">Sube una imagen y la IA completará los campos clave.</p>
 
-                <!-- SECCIÓN 2: CAMPOS BÁSICOS -->
-                <div class="form-section basic-fields">
-                    <h2>📝 2. Información Básica</h2>
-
-                    <div class="basic-grid">
-                        <div class="form-group" style="grid-column: 1 / -1;">
-                            <label for="tipo_clasificacion">Clasificación:</label>
-                            <select id="tipo_clasificacion" name="tipo_clasificacion" required>
-                                <option value="">¿Cómo clasificar esta pregunta?</option>
-                                <option value="normal">📚 Distribución normal (sin proceso específico)</option>
-                                <option value="proceso">🎯 Por proceso de admisión</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Sección de proceso (oculta por defecto) -->
-                    <div id="proceso_section" style="display: none; margin-top: 20px;">
-                        <h3 style="color: #4a90e2; margin-bottom: 15px;">Información del Proceso</h3>
-                        <div class="basic-grid">
-                            <div class="form-group">
-                                <label for="area_academica">Área Académica:</label>
-                                <select id="area_academica" name="area_academica">
-                                    <option value="">Selecciona área</option>
-                                    <option value="ingenierias">Ingenierías</option>
-                                    <option value="biomedicas">Biomédicas</option>
-                                    <option value="sociales">Sociales</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="anio">Año:</label>
-                                <select id="anio" name="anio">
-                                    <option value="">Selecciona año</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                    <option value="2026">2026</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="tipo_proceso">Tipo de Proceso:</label>
-                                <select id="tipo_proceso" name="tipo_proceso">
-                                    <option value="">Selecciona tipo</option>
-                                    <option value="extraordinario">Extraordinario</option>
-                                    <option value="ceprunsa">CEPRUNSA</option>
-                                    <option value="ceprequintos">CEPREQUINTOS</option>
-                                    <option value="ordinario">Ordinario</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group" id="fase_container" style="display: none;">
-                                <label for="fase">Fase:</label>
-                                <select id="fase" name="fase">
-                                    <option value="">Selecciona fase</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group" id="examen_container" style="display: none;">
-                                <label for="examen">Examen:</label>
-                                <select id="examen" name="examen">
-                                    <option value="">Selecciona examen</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="basic-grid" style="margin-top: 20px;">
-                        <div class="form-group">
-                            <label for="materia">Materia:</label>
-                            <select id="materia" name="materia" required>
-                                <option value="">Selecciona materia</option>
-                                {% for materia in materias %}
-                                <option value="{{ materia }}">{{ materia }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="tema">Tema:</label>
-                            <input type="text" id="tema" name="tema" required
-                                   placeholder="Ej: Ecuaciones Lineales">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="dificultad">Dificultad:</label>
-                            <select id="dificultad" name="dificultad" required>
-                                <option value="">Dificultad</option>
-                                <option value="1">1 - Muy Fácil</option>
-                                <option value="2">2 - Fácil</option>
-                                <option value="3">3 - Intermedio</option>
-                                <option value="4">4 - Difícil</option>
-                                <option value="5">5 - Muy Difícil</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SECCIÓN 3: PREGUNTA Y ALTERNATIVAS -->
-                <div class="form-section question-section">
-                    <h2>❓ 3. Pregunta y Alternativas</h2>
-                    
-                    <div class="form-group">
-                        <label for="pregunta">Pregunta:</label>
-                        <textarea id="pregunta" name="pregunta" rows="3" required 
-                                  placeholder="Escribe la pregunta aquí..."></textarea>
-                        
-                        <!-- Guía LaTeX compacta -->
-                        <div class="latex-guide">
-                            <div class="latex-header" onclick="toggleLatexGuide()">
-                                <small>💡 <strong>Guía LaTeX (clic para ver ejemplos)</strong> ▼</small>
-                            </div>
-                            <div class="latex-examples" id="latexExamples" style="display: none;">
-                                <div class="examples-grid">
-                                    <span><code>$$x^2$$</code> → x²</span>
-                                    <span><code>$$\frac{a}{b}$$</code> → a/b</span>
-                                    <span><code>$$\sqrt{x}$$</code> → √x</span>
-                                    <span><code>$$x^{n+1}$$</code> → x^(n+1)</span>
-                                    <span><code>$$\sin \theta$$</code> → sin θ</span>
-                                    <span><code>$$\leq$$</code> → ≤</span>
-                                    <span><code>$$\geq$$</code> → ≥</span>
-                                    <span><code>$$\pi$$</code> → π</span>
-                                    <span><code>$$\alpha$$</code> → α</span>
-                                    <span><code>$$\log_2 x$$</code> → log₂x</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="pregunta-preview" class="math-preview"></div>
-                    </div>
-
-                    <div class="alternatives-section">
-                        <h4>Alternativas:</h4>
-                        <div class="alternatives-grid">
-                            <div class="alternative">
-                                <label>A)</label>
-                                <textarea id="opcion_a" name="opcion_a" rows="2" required placeholder="Alternativa A"></textarea>
-                                <div id="opcion_a-preview" class="math-preview-small"></div>
-                            </div>
-                            <div class="alternative">
-                                <label>B)</label>
-                                <textarea id="opcion_b" name="opcion_b" rows="2" required placeholder="Alternativa B"></textarea>
-                                <div id="opcion_b-preview" class="math-preview-small"></div>
-                            </div>
-                            <div class="alternative">
-                                <label>C)</label>
-                                <textarea id="opcion_c" name="opcion_c" rows="2" required placeholder="Alternativa C"></textarea>
-                                <div id="opcion_c-preview" class="math-preview-small"></div>
-                            </div>
-                            <div class="alternative">
-                                <label>D)</label>
-                                <textarea id="opcion_d" name="opcion_d" rows="2" required placeholder="Alternativa D"></textarea>
-                                <div id="opcion_d-preview" class="math-preview-small"></div>
-                            </div>
-                            <div class="alternative">
-                                <label>E)</label>
-                                <textarea id="opcion_e" name="opcion_e" rows="2" required placeholder="Alternativa E"></textarea>
-                                <div id="opcion_e-preview" class="math-preview-small"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="correct-answer">
-                            <label for="respuesta_correcta">Respuesta Correcta:</label>
-                            <select id="respuesta_correcta" name="respuesta_correcta" required>
-                                <option value="">Selecciona</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="explicacion">Explicación:</label>
-                        <textarea id="explicacion" name="explicacion" rows="3" required 
-                                  placeholder="Explica por qué es correcta esta respuesta..."></textarea>
-                        <div id="explicacion-preview" class="math-preview"></div>
-                        
-                        <!-- Sección opcional para generar explicación con IA -->
-                        <div class="explanation-ai-section">
-                            <div class="ai-toggle" onclick="toggleExplanationAI()">
-                                <input type="checkbox" id="useAIExplanation">
-                                <label for="useAIExplanation">
-                                    🤖 <strong>Generar explicación automáticamente con IA</strong>
-                                    <small>Usa la imagen de la pregunta o sube imágenes de solución</small>
-                                </label>
-                            </div>
-
-                            <div class="ai-explanation-upload" id="aiExplanationUpload" style="display: none;">
-                                <!-- Selector de modo de generación -->
-                                <div class="explanation-mode-selector" style="margin-bottom: 20px;">
-                                    <label style="display: block; margin-bottom: 10px; font-weight: bold;">Modo de generación:</label>
-                                    <div style="display: flex; gap: 15px;">
-                                        <label style="display: flex; align-items: center; cursor: pointer;">
-                                            <input type="radio" name="explanation_mode" value="from_question" id="modeFromQuestion" checked>
-                                            <span style="margin-left: 8px;">📷 Desde imagen de pregunta</span>
-                                        </label>
-                                        <label style="display: flex; align-items: center; cursor: pointer;">
-                                            <input type="radio" name="explanation_mode" value="from_solution" id="modeFromSolution">
-                                            <span style="margin-left: 8px;">📸 Desde imágenes de solución</span>
-                                        </label>
-                                    </div>
+                            <div class="mt-5 space-y-4">
+                                <div class="rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center transition hover:border-slate-500" id="dragDropArea">
+                                    <div class="text-3xl">📷</div>
+                                    <h3 class="mt-2 text-base font-semibold">Arrastra la imagen aquí</h3>
+                                    <p class="text-sm text-slate-500">o haz clic para seleccionar</p>
+                                    <p class="mt-2 text-xs font-semibold text-slate-600">📋 Haz clic y presiona Ctrl+V</p>
+                                    <input type="file" id="aiImageUpload" accept="image/*" hidden>
+                                    <button type="button" onclick="document.getElementById('aiImageUpload').click(); this.blur();" class="mt-4 inline-flex items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
+                                        📁 Seleccionar Imagen
+                                    </button>
                                 </div>
 
-                                <!-- Sección de imágenes de solución (oculta por defecto) -->
-                                <div class="solution-images-section" id="solutionImagesSection" style="display: none;">
-                                    <h5>📸 Imágenes de la Solución (2-3 máximo)</h5>
-                                    <div class="solution-upload-grid">
-                                        <div class="solution-upload-item">
-                                            <div class="solution-drop-area" onclick="document.getElementById('solutionImage1').click()">
-                                                <span class="upload-icon">📄</span>
-                                                <span>Imagen 1</span>
-                                                <input type="file" id="solutionImage1" accept="image/*" hidden>
-                                            </div>
-                                            <div class="solution-preview" id="solutionPreview1" style="display: none;"></div>
-                                        </div>
+                                <div class="flex flex-col gap-3">
+                                    <select id="aiService" name="aiService" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-slate-700 focus:border-slate-900 focus:outline-none">
+                                        <option value="gemini">🤖 Google Gemini Pro Vision</option>
+                                        <option value="openai">OpenAI GPT-4 Vision</option>
+                                        <option value="claude">Anthropic Claude Vision</option>
+                                        <option value="azure">Azure OpenAI Vision</option>
+                                    </select>
 
-                                        <div class="solution-upload-item">
-                                            <div class="solution-drop-area" onclick="document.getElementById('solutionImage2').click()">
-                                                <span class="upload-icon">📄</span>
-                                                <span>Imagen 2</span>
-                                                <input type="file" id="solutionImage2" accept="image/*" hidden>
-                                            </div>
-                                            <div class="solution-preview" id="solutionPreview2" style="display: none;"></div>
-                                        </div>
-
-                                        <div class="solution-upload-item">
-                                            <div class="solution-drop-area" onclick="document.getElementById('solutionImage3').click()">
-                                                <span class="upload-icon">📄</span>
-                                                <span>Imagen 3</span>
-                                                <input type="file" id="solutionImage3" accept="image/*" hidden>
-                                            </div>
-                                            <div class="solution-preview" id="solutionPreview3" style="display: none;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="generate-explanation-section">
-                                    <button type="button" id="generateExplanation" class="generate-explanation-btn">
-                                        <span class="gen-btn-text">✨ Generar Explicación con IA</span>
-                                        <span class="gen-btn-loader" style="display: none;">
-                                            <div class="spinner"></div>
+                                    <button type="button" id="processWithAI" class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 disabled:cursor-not-allowed disabled:bg-slate-300" disabled>
+                                        <span class="ai-btn-text">🤖 Procesar con IA</span>
+                                        <span class="ai-btn-loader" style="display: none;">
+                                            <span class="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"></span>
                                             Procesando...
                                         </span>
                                     </button>
                                 </div>
+
+                                <div id="aiPreview" class="hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                                    <img id="aiPreviewImage" alt="Vista previa" class="max-h-72 w-full rounded-xl object-contain">
+                                </div>
+
+                                <div id="aiResults" class="hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+                                    <h4 class="text-sm font-semibold text-emerald-900">✨ IA completó el formulario - Revisa y edita</h4>
+                                    <div class="mt-3 rounded-xl bg-white px-3 py-2 text-center text-sm font-semibold text-emerald-700">
+                                        Confianza: <span id="aiConfidence">--</span>%
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">🖼️ 4. Imagen Final (Opcional)</h2>
+                            <p class="mt-2 text-sm text-slate-500">Sube la imagen final editada o deja vacío si no aplica.</p>
+
+                            <div class="mt-4">
+                                <label for="imagen" class="text-sm font-semibold text-slate-700">Imagen procesada:</label>
+                                <div class="mt-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center" id="finalImageDropArea">
+                                    <p class="text-sm text-slate-600">📎 Arrastra la imagen aquí, haz clic o <strong>Ctrl+V</strong></p>
+                                    <input type="file" id="imagen" name="imagen" accept="image/*" hidden>
+                                    <button type="button" onclick="document.getElementById('imagen').click(); this.blur();" class="mt-4 inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
+                                        📁 Seleccionar Imagen
+                                    </button>
+                                </div>
+                                <div id="finalImagePreview" class="mt-3 hidden">
+                                    <img id="finalImagePreviewImg" class="h-40 w-40 rounded-2xl border border-slate-200 object-cover" alt="Vista previa">
+                                </div>
+                                <small class="mt-2 block text-xs text-slate-500">Formatos: JPG, PNG, GIF, BMP, WebP | Máximo 5MB</small>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="space-y-6">
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">📝 2. Información Básica</h2>
+                            <div class="mt-4 grid gap-4 md:grid-cols-3">
+                                <div class="md:col-span-3">
+                                    <label for="tipo_clasificacion" class="text-sm font-semibold text-slate-700">Clasificación:</label>
+                                    <select id="tipo_clasificacion" name="tipo_clasificacion" required class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm">
+                                        <option value="">¿Cómo clasificar esta pregunta?</option>
+                                        <option value="normal">📚 Distribución normal (sin proceso específico)</option>
+                                        <option value="proceso">🎯 Por proceso de admisión</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="proceso_section" class="mt-5 hidden rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                                <h3 class="text-sm font-semibold text-slate-700">Información del Proceso</h3>
+                                <div class="mt-3 grid gap-4 md:grid-cols-3">
+                                    <div>
+                                        <label for="area_academica" class="text-sm font-semibold text-slate-700">Área Académica:</label>
+                                        <select id="area_academica" name="area_academica" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                            <option value="">Selecciona área</option>
+                                            <option value="ingenierias">Ingenierías</option>
+                                            <option value="biomedicas">Biomédicas</option>
+                                            <option value="sociales">Sociales</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="anio" class="text-sm font-semibold text-slate-700">Año:</label>
+                                        <select id="anio" name="anio" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                            <option value="">Selecciona año</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="tipo_proceso" class="text-sm font-semibold text-slate-700">Tipo de Proceso:</label>
+                                        <select id="tipo_proceso" name="tipo_proceso" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                            <option value="">Selecciona tipo</option>
+                                            <option value="extraordinario">Extraordinario</option>
+                                            <option value="ceprunsa">CEPRUNSA</option>
+                                            <option value="ceprequintos">CEPREQUINTOS</option>
+                                            <option value="ordinario">Ordinario</option>
+                                        </select>
+                                    </div>
+                                    <div id="fase_container" class="hidden">
+                                        <label for="fase" class="text-sm font-semibold text-slate-700">Fase:</label>
+                                        <select id="fase" name="fase" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                            <option value="">Selecciona fase</option>
+                                        </select>
+                                    </div>
+                                    <div id="examen_container" class="hidden">
+                                        <label for="examen" class="text-sm font-semibold text-slate-700">Examen:</label>
+                                        <select id="examen" name="examen" class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm">
+                                            <option value="">Selecciona examen</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 grid gap-4 md:grid-cols-3">
+                                <div>
+                                    <label for="materia" class="text-sm font-semibold text-slate-700">Materia:</label>
+                                    <select id="materia" name="materia" required class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm">
+                                        <option value="">Selecciona materia</option>
+                                        {% for materia in materias %}
+                                        <option value="{{ materia }}">{{ materia }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="tema" class="text-sm font-semibold text-slate-700">Tema:</label>
+                                    <input type="text" id="tema" name="tema" required placeholder="Ej: Ecuaciones Lineales" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 text-sm">
+                                </div>
+                                <div>
+                                    <label for="dificultad" class="text-sm font-semibold text-slate-700">Dificultad:</label>
+                                    <select id="dificultad" name="dificultad" required class="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm">
+                                        <option value="">Dificultad</option>
+                                        <option value="1">1 - Muy Fácil</option>
+                                        <option value="2">2 - Fácil</option>
+                                        <option value="3">3 - Intermedio</option>
+                                        <option value="4">4 - Difícil</option>
+                                        <option value="5">5 - Muy Difícil</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <h2 class="text-lg font-semibold">❓ 3. Pregunta y Alternativas</h2>
+
+                            <div class="mt-4">
+                                <label for="pregunta" class="text-sm font-semibold text-slate-700">Pregunta:</label>
+                                <textarea id="pregunta" name="pregunta" rows="3" required placeholder="Escribe la pregunta aquí..." class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm"></textarea>
+
+                                <div class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                                    <button type="button" onclick="toggleLatexGuide()" class="text-xs font-semibold text-slate-600">
+                                        <span id="latexHeaderText">💡 Guía LaTeX (clic para ver ejemplos)</span>
+                                    </button>
+                                    <div class="mt-3 hidden text-xs text-slate-500" id="latexExamples">
+                                        <div class="grid gap-2 md:grid-cols-2">
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$x^2$$</code> → x²</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\frac{a}{b}$$</code> → a/b</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\sqrt{x}$$</code> → √x</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$x^{n+1}$$</code> → x^(n+1)</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\sin \theta$$</code> → sin θ</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\leq$$</code> → ≤</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\geq$$</code> → ≥</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\pi$$</code> → π</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\alpha$$</code> → α</span>
+                                            <span class="rounded-lg bg-white px-2 py-1"><code class="font-mono">$$\log_2 x$$</code> → log₂x</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="pregunta-preview" class="mt-3 min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500"></div>
+                            </div>
+
+                            <div class="mt-6">
+                                <h4 class="text-sm font-semibold text-slate-700">Alternativas:</h4>
+                                <div class="mt-3 grid gap-4 md:grid-cols-2">
+                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                                        <label class="text-xs font-semibold text-emerald-600">A)</label>
+                                        <textarea id="opcion_a" name="opcion_a" rows="2" required placeholder="Alternativa A" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"></textarea>
+                                        <div id="opcion_a-preview" class="mt-2 min-h-[36px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-500"></div>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                                        <label class="text-xs font-semibold text-emerald-600">B)</label>
+                                        <textarea id="opcion_b" name="opcion_b" rows="2" required placeholder="Alternativa B" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"></textarea>
+                                        <div id="opcion_b-preview" class="mt-2 min-h-[36px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-500"></div>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                                        <label class="text-xs font-semibold text-emerald-600">C)</label>
+                                        <textarea id="opcion_c" name="opcion_c" rows="2" required placeholder="Alternativa C" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"></textarea>
+                                        <div id="opcion_c-preview" class="mt-2 min-h-[36px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-500"></div>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                                        <label class="text-xs font-semibold text-emerald-600">D)</label>
+                                        <textarea id="opcion_d" name="opcion_d" rows="2" required placeholder="Alternativa D" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"></textarea>
+                                        <div id="opcion_d-preview" class="mt-2 min-h-[36px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-500"></div>
+                                    </div>
+                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-3 md:col-span-2">
+                                        <label class="text-xs font-semibold text-emerald-600">E)</label>
+                                        <textarea id="opcion_e" name="opcion_e" rows="2" required placeholder="Alternativa E" class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm"></textarea>
+                                        <div id="opcion_e-preview" class="mt-2 min-h-[36px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-500"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-4 flex items-center gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3">
+                                    <label for="respuesta_correcta" class="text-sm font-semibold text-emerald-700">Respuesta Correcta:</label>
+                                    <select id="respuesta_correcta" name="respuesta_correcta" required class="w-28 rounded-xl border border-emerald-300 bg-white px-3 py-2 text-sm">
+                                        <option value="">Selecciona</option>
+                                        <option value="A">A</option>
+                                        <option value="B">B</option>
+                                        <option value="C">C</option>
+                                        <option value="D">D</option>
+                                        <option value="E">E</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mt-6">
+                                <label for="explicacion" class="text-sm font-semibold text-slate-700">Explicación:</label>
+                                <textarea id="explicacion" name="explicacion" rows="3" required placeholder="Explica por qué es correcta esta respuesta..." class="mt-2 w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm"></textarea>
+                                <div id="explicacion-preview" class="mt-3 min-h-[44px] rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500"></div>
+
+                                <div class="mt-4 rounded-2xl border border-dashed border-slate-200 bg-slate-50 explanation-ai-section">
+                                    <div class="flex items-start gap-3 px-4 py-3 ai-toggle" onclick="toggleExplanationAI()">
+                                        <input type="checkbox" id="useAIExplanation" class="mt-1 h-4 w-4 accent-slate-900" onchange="toggleExplanationAI()">
+                                        <label for="useAIExplanation" class="text-sm font-semibold text-slate-700">
+                                            🤖 Generar explicación automáticamente con IA
+                                            <span class="mt-1 block text-xs font-normal text-slate-500">Usa la imagen de la pregunta o sube imágenes de solución</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="ai-explanation-upload hidden border-t border-slate-200 bg-white p-4" id="aiExplanationUpload">
+                                        <div class="explanation-mode-selector">
+                                            <label class="text-xs font-semibold text-slate-500">Modo de generación:</label>
+                                            <div class="mt-2 flex flex-wrap gap-3 text-sm">
+                                                <label class="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2">
+                                                    <input type="radio" name="explanation_mode" value="from_question" id="modeFromQuestion" checked>
+                                                    <span>📷 Desde imagen de pregunta</span>
+                                                </label>
+                                                <label class="flex items-center gap-2 rounded-full border border-slate-200 px-3 py-2">
+                                                    <input type="radio" name="explanation_mode" value="from_solution" id="modeFromSolution">
+                                                    <span>📸 Desde imágenes de solución</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="solution-images-section mt-4 hidden" id="solutionImagesSection">
+                                            <h5 class="text-sm font-semibold text-slate-600">📸 Imágenes de la Solución (2-3 máximo)</h5>
+                                            <div class="mt-3 grid gap-3 md:grid-cols-3">
+                                                <div class="solution-upload-item">
+                                                    <div class="solution-drop-area flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-3 py-4 text-center" onclick="document.getElementById('solutionImage1').click()">
+                                                        <span class="text-2xl">📄</span>
+                                                        <span class="text-xs font-semibold text-slate-600">Imagen 1</span>
+                                                        <input type="file" id="solutionImage1" accept="image/*" hidden>
+                                                    </div>
+                                                    <div class="solution-preview mt-2 hidden" id="solutionPreview1"></div>
+                                                </div>
+                                                <div class="solution-upload-item">
+                                                    <div class="solution-drop-area flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-3 py-4 text-center" onclick="document.getElementById('solutionImage2').click()">
+                                                        <span class="text-2xl">📄</span>
+                                                        <span class="text-xs font-semibold text-slate-600">Imagen 2</span>
+                                                        <input type="file" id="solutionImage2" accept="image/*" hidden>
+                                                    </div>
+                                                    <div class="solution-preview mt-2 hidden" id="solutionPreview2"></div>
+                                                </div>
+                                                <div class="solution-upload-item">
+                                                    <div class="solution-drop-area flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-3 py-4 text-center" onclick="document.getElementById('solutionImage3').click()">
+                                                        <span class="text-2xl">📄</span>
+                                                        <span class="text-xs font-semibold text-slate-600">Imagen 3</span>
+                                                        <input type="file" id="solutionImage3" accept="image/*" hidden>
+                                                    </div>
+                                                    <div class="solution-preview mt-2 hidden" id="solutionPreview3"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4 text-center">
+                                            <button type="button" id="generateExplanation" class="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600">
+                                                <span class="gen-btn-text">✨ Generar Explicación con IA</span>
+                                                <span class="gen-btn-loader" style="display: none;">
+                                                    <span class="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"></span>
+                                                    Procesando...
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="sticky bottom-6 z-10 flex flex-wrap items-center justify-between gap-3 rounded-3xl border border-slate-200 bg-white/90 px-6 py-4 shadow-lg backdrop-blur">
+                            <div class="text-sm text-slate-500">Listo para guardar la pregunta.</div>
+                            <div class="flex flex-wrap gap-3">
+                                <button type="reset" id="resetBtn" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-600 transition hover:border-slate-400">🔄 Limpiar Todo</button>
+                                <button type="submit" id="submitBtn" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                                    <span class="btn-text">✅ Crear Pregunta JSON</span>
+                                    <span class="btn-loader" style="display: none;">
+                                        <span class="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white"></span>
+                                        Procesando...
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- SECCIÓN 4: IMAGEN MANUAL (OPCIONAL) -->
-                <div class="form-section image-section">
-                    <h2>🖼️ 4. Imagen Final (Opcional)</h2>
-                    <p>Sube aquí la imagen editada en Adobe Illustrator o deja vacío si no tiene imagen</p>
-
-                    <div class="form-group">
-                        <label for="imagen">Imagen procesada:</label>
-                        <div class="final-image-drop-area" id="finalImageDropArea" style="border: 2px dashed #ccc; border-radius: 8px; padding: 20px; text-align: center; margin-bottom: 10px; cursor: pointer;">
-                            <p style="margin: 10px 0;">📎 Arrastra la imagen aquí, haz clic para seleccionar o <strong>presiona Ctrl+V para pegar</strong></p>
-                            <input type="file" id="imagen" name="imagen" accept="image/*" hidden>
-                            <button type="button" onclick="document.getElementById('imagen').click(); this.blur();" style="padding: 8px 16px; background: #4a90e2; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                                📁 Seleccionar Imagen
-                            </button>
-                        </div>
-                        <div id="finalImagePreview" style="display: none; margin-top: 10px;">
-                            <img id="finalImagePreviewImg" style="max-width: 200px; max-height: 200px; border-radius: 8px; border: 2px solid #e9ecef;" alt="Vista previa">
-                        </div>
-                        <small>Formatos: JPG, PNG, GIF, BMP, WebP | Máximo 5MB</small>
-                    </div>
-                </div>
-
-                <!-- BOTONES Y ACCIONES -->
-                <div class="form-actions">
-                    <button type="submit" id="submitBtn" class="submit-btn">
-                        <span class="btn-text">✅ Crear Pregunta JSON</span>
-                        <span class="btn-loader" style="display: none;">
-                            <div class="spinner"></div>
-                            Procesando...
-                        </span>
-                    </button>
-                    <button type="reset" id="resetBtn" class="reset-btn">🔄 Limpiar Todo</button>
-                </div>
             </form>
 
-            <!-- Mensajes y resultados -->
-            <div id="mensaje" class="mensaje" style="display: none;"></div>
-            
-            <div id="jsonPreview" class="json-preview" style="display: none;">
-                <h3>📄 JSON Generado:</h3>
-                <pre id="jsonContent"></pre>
-                <button type="button" onclick="copyToClipboard(document.getElementById('jsonContent').textContent)" class="copy-btn">
-                    📋 Copiar JSON
-                </button>
+            <div id="mensaje" class="mt-8 hidden rounded-2xl border px-4 py-3 text-center text-sm font-semibold"></div>
+
+            <div id="jsonPreview" class="json-preview mt-8 hidden overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+                <h3 class="bg-slate-800 px-4 py-3 text-sm font-semibold text-white">📄 JSON Generado:</h3>
+                <pre id="jsonContent" class="max-h-96 overflow-auto px-4 py-4 font-mono text-xs text-slate-100"></pre>
+                <div class="border-t border-slate-800 px-4 py-3">
+                    <button type="button" onclick="copyToClipboard(document.getElementById('jsonContent').textContent)" class="rounded-full bg-slate-700 px-4 py-2 text-xs font-semibold text-white transition hover:bg-slate-600">
+                        📋 Copiar JSON
+                    </button>
+                </div>
             </div>
         </main>
+    </div>
+
+    <!-- Modal continuar proceso -->
+    <div id="continueModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 px-4">
+        <div class="w-full max-w-md rounded-3xl bg-white p-6 shadow-2xl">
+            <h3 class="text-lg font-semibold text-slate-900">¿Continuar con el mismo proceso?</h3>
+            <p class="mt-2 text-sm text-slate-600">
+                Mantendremos área, año, tipo de proceso, fase y examen para la siguiente pregunta.
+            </p>
+            <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Opcional</p>
+                <div class="mt-2 flex flex-col gap-2">
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" id="keepMateria" class="h-4 w-4 accent-slate-900">
+                        Mantener materia
+                    </label>
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" id="keepDificultad" class="h-4 w-4 accent-slate-900">
+                        Mantener dificultad
+                    </label>
+                </div>
+            </div>
+            <div class="mt-5 flex flex-wrap gap-3">
+                <button type="button" id="continueSameProcess" class="inline-flex flex-1 items-center justify-center rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800">
+                    ✅ Sí, continuar
+                </button>
+                <button type="button" id="startFresh" class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-400">
+                    🔄 No, limpiar todo
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="/static/js/script.js"></script>

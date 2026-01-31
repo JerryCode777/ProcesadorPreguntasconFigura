@@ -98,11 +98,18 @@ function setupResetButton() {
             form.reset();
             clearAllMessages();
             hideJsonPreview();
+            clearMathPreviews();
 
             // Ocultar sección de proceso
-            document.getElementById('proceso_section').style.display = 'none';
-            document.getElementById('fase_container').style.display = 'none';
-            document.getElementById('examen_container').style.display = 'none';
+            const procesoSection = document.getElementById('proceso_section');
+            const faseContainer = document.getElementById('fase_container');
+            const examenContainer = document.getElementById('examen_container');
+            procesoSection.classList.add('hidden');
+            faseContainer.classList.add('hidden');
+            examenContainer.classList.add('hidden');
+            procesoSection.style.display = 'none';
+            faseContainer.style.display = 'none';
+            examenContainer.style.display = 'none';
 
             // Resetear required de campos de proceso
             document.getElementById('area_academica').required = false;
@@ -114,6 +121,7 @@ function setupResetButton() {
             // Limpiar vista previa de imagen final
             const finalImagePreview = document.getElementById('finalImagePreview');
             if (finalImagePreview) {
+                finalImagePreview.classList.add('hidden');
                 finalImagePreview.style.display = 'none';
             }
 
@@ -141,6 +149,7 @@ function setupImagePreview() {
         const reader = new FileReader();
         reader.onload = function(e) {
             finalImagePreviewImg.src = e.target.result;
+            finalImagePreview.classList.remove('hidden');
             finalImagePreview.style.display = 'block';
         };
         reader.readAsDataURL(file);
@@ -326,42 +335,17 @@ async function submitForm() {
             showMessage('✅ Pregunta creada exitosamente', 'success');
             showJsonPreview(result.pregunta);
             
-            // Opcional: limpiar formulario después del éxito
-            setTimeout(() => {
-                if (confirm('¿Deseas crear otra pregunta?')) {
-                    form.reset();
-                    hideJsonPreview();
-                    clearAllMessages();
+            // Preguntar si continuar con el mismo proceso
+            setTimeout(async () => {
+                const choice = await promptContinueProcess();
+                if (!choice) return;
 
-                    // Limpiar vista previa de imagen final
-                    const finalImagePreview = document.getElementById('finalImagePreview');
-                    if (finalImagePreview) {
-                        finalImagePreview.style.display = 'none';
-                    }
-
-                    // Limpiar vista previa de IA
-                    resetAICapture();
-
-                    // Ocultar sección de proceso
-                    document.getElementById('proceso_section').style.display = 'none';
-                    document.getElementById('fase_container').style.display = 'none';
-                    document.getElementById('examen_container').style.display = 'none';
-
-                    // Resetear required
-                    document.getElementById('area_academica').required = false;
-                    document.getElementById('anio').required = false;
-                    document.getElementById('tipo_proceso').required = false;
-                    document.getElementById('fase').required = false;
-                    document.getElementById('examen').required = false;
-
-                    // Resetear altura de textareas
-                    const textareas = document.querySelectorAll('textarea');
-                    textareas.forEach(textarea => {
-                        textarea.style.height = 'auto';
-                        textarea.style.height = '';
-                    });
+                if (choice.action === 'same') {
+                    resetForNextQuestion(true, choice.keepMateria, choice.keepDificultad);
+                } else {
+                    resetForNextQuestion(false, false, false);
                 }
-            }, 2000);
+            }, 300);
         } else {
             throw new Error(result.detail || 'Error al crear la pregunta');
         }
@@ -372,6 +356,155 @@ async function submitForm() {
     } finally {
         setSubmittingState(false);
     }
+}
+
+function scrollToTopNow() {
+    const originalBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.style.scrollBehavior = originalBehavior;
+    });
+}
+
+function promptContinueProcess() {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('continueModal');
+        const btnSame = document.getElementById('continueSameProcess');
+        const btnFresh = document.getElementById('startFresh');
+        const keepMateria = document.getElementById('keepMateria');
+        const keepDificultad = document.getElementById('keepDificultad');
+
+        if (!modal || !btnSame || !btnFresh) {
+            console.warn('Modal de continuidad no encontrado en el DOM.');
+            resolve(null);
+            return;
+        }
+
+        const handleSame = () => {
+            const keepM = !!keepMateria?.checked;
+            const keepD = !!keepDificultad?.checked;
+            cleanup();
+            resolve({ action: 'same', keepMateria: keepM, keepDificultad: keepD });
+        };
+        const handleFresh = () => {
+            cleanup();
+            resolve({ action: 'fresh', keepMateria: false, keepDificultad: false });
+        };
+
+        const cleanup = () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            modal.style.display = 'none';
+            btnSame.removeEventListener('click', handleSame);
+            btnFresh.removeEventListener('click', handleFresh);
+            if (keepMateria) keepMateria.checked = false;
+            if (keepDificultad) keepDificultad.checked = false;
+        };
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        modal.style.display = 'flex';
+        btnSame.addEventListener('click', handleSame);
+        btnFresh.addEventListener('click', handleFresh);
+    });
+}
+
+function resetForNextQuestion(keepProcess, keepMateria, keepDificultad) {
+    const processValues = {
+        tipo_clasificacion: document.getElementById('tipo_clasificacion').value,
+        area_academica: document.getElementById('area_academica').value,
+        anio: document.getElementById('anio').value,
+        tipo_proceso: document.getElementById('tipo_proceso').value,
+        fase: document.getElementById('fase').value,
+        examen: document.getElementById('examen').value,
+        materia: document.getElementById('materia').value,
+        dificultad: document.getElementById('dificultad').value
+    };
+
+    form.reset();
+    hideJsonPreview();
+    clearAllMessages();
+    clearMathPreviews();
+
+    // Limpiar vista previa de imagen final
+    const finalImagePreview = document.getElementById('finalImagePreview');
+    if (finalImagePreview) {
+        finalImagePreview.classList.add('hidden');
+        finalImagePreview.style.display = 'none';
+    }
+
+    // Limpiar vista previa de IA
+    resetAICapture();
+
+    // Resetear altura de textareas
+    const textareas = document.querySelectorAll('textarea');
+    textareas.forEach(textarea => {
+        textarea.style.height = 'auto';
+        textarea.style.height = '';
+    });
+
+    const procesoSection = document.getElementById('proceso_section');
+    const faseContainer = document.getElementById('fase_container');
+    const examenContainer = document.getElementById('examen_container');
+
+    if (keepProcess) {
+        document.getElementById('tipo_clasificacion').value = processValues.tipo_clasificacion || 'proceso';
+        document.getElementById('area_academica').value = processValues.area_academica;
+        document.getElementById('anio').value = processValues.anio;
+        document.getElementById('tipo_proceso').value = processValues.tipo_proceso;
+
+        procesoSection.classList.remove('hidden');
+        procesoSection.style.display = 'block';
+
+        document.getElementById('area_academica').required = true;
+        document.getElementById('anio').required = true;
+        document.getElementById('tipo_proceso').required = true;
+
+        // Refrescar selectores y reponer valores
+        const event = new Event('change');
+        document.getElementById('anio').dispatchEvent(event);
+        document.getElementById('tipo_proceso').dispatchEvent(event);
+
+        if (processValues.fase) {
+            document.getElementById('fase').value = processValues.fase;
+            faseContainer.classList.remove('hidden');
+            faseContainer.style.display = 'block';
+            document.getElementById('fase').required = true;
+        }
+        if (processValues.examen) {
+            document.getElementById('examen').value = processValues.examen;
+            examenContainer.classList.remove('hidden');
+            examenContainer.style.display = 'block';
+            document.getElementById('examen').required = true;
+        }
+    } else {
+        procesoSection.classList.add('hidden');
+        faseContainer.classList.add('hidden');
+        examenContainer.classList.add('hidden');
+        procesoSection.style.display = 'none';
+        faseContainer.style.display = 'none';
+        examenContainer.style.display = 'none';
+
+        document.getElementById('area_academica').required = false;
+        document.getElementById('anio').required = false;
+        document.getElementById('tipo_proceso').required = false;
+        document.getElementById('fase').required = false;
+        document.getElementById('examen').required = false;
+    }
+
+    if (keepMateria) {
+        document.getElementById('materia').value = processValues.materia;
+    }
+
+    if (keepDificultad) {
+        document.getElementById('dificultad').value = processValues.dificultad;
+    } else {
+        document.getElementById('dificultad').value = '';
+    }
+
+    scrollToTopNow();
 }
 
 function setSubmittingState(submitting) {
@@ -392,7 +525,12 @@ function setSubmittingState(submitting) {
 
 function showMessage(text, type, doScroll = true) {
     mensaje.textContent = text;
-    mensaje.className = `mensaje ${type}`;
+    if (type === 'success') {
+        mensaje.className = 'mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm font-semibold text-emerald-700';
+    } else {
+        mensaje.className = 'mt-8 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-center text-sm font-semibold text-rose-700';
+    }
+    mensaje.classList.remove('hidden');
     mensaje.style.display = 'block';
 
     // Scroll suave hacia el mensaje solo si se solicita
@@ -430,6 +568,7 @@ function showJsonPreview(pregunta) {
     }
 
     jsonContent.textContent = JSON.stringify(jsonData, null, 2);
+    jsonPreview.classList.remove('hidden');
     jsonPreview.style.display = 'block';
 
     // Scroll suave hacia la vista previa
@@ -437,6 +576,7 @@ function showJsonPreview(pregunta) {
 }
 
 function hideJsonPreview() {
+    jsonPreview.classList.add('hidden');
     jsonPreview.style.display = 'none';
 }
 
@@ -487,6 +627,7 @@ function validateField(event) {
 
 function clearAllMessages() {
     mensaje.style.display = 'none';
+    mensaje.classList.add('hidden');
     
     // Limpiar errores de campos
     const errorDivs = document.querySelectorAll('.field-error');
@@ -795,18 +936,18 @@ function setupAICapture() {
     // Drag and Drop
     dragDropArea.addEventListener('dragover', (e) => {
         e.preventDefault();
-        dragDropArea.classList.add('dragover');
+        dragDropArea.classList.add('border-slate-500', 'bg-white');
     });
 
     dragDropArea.addEventListener('dragleave', (e) => {
         e.preventDefault();
-        dragDropArea.classList.remove('dragover');
+        dragDropArea.classList.remove('border-slate-500', 'bg-white');
     });
 
     dragDropArea.addEventListener('drop', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        dragDropArea.classList.remove('dragover');
+        dragDropArea.classList.remove('border-slate-500', 'bg-white');
 
         const files = e.dataTransfer.files;
         if (files.length > 0 && files[0].type.startsWith('image/')) {
@@ -935,6 +1076,7 @@ function handleAIImageUpload(file) {
         const aiPreviewImage = document.getElementById('aiPreviewImage');
 
         aiPreviewImage.src = e.target.result;
+        aiPreview.classList.remove('hidden');
         aiPreview.style.display = 'block';
 
         // Habilitar botón de procesar
@@ -1083,8 +1225,7 @@ function showAIResults(aiData) {
             </div>
             <p><strong>⚠️ Usando respuesta de prueba</strong> - Para usar IA real, verifica tu API key de ${document.getElementById('aiService').value}</p>
         `;
-        statusDiv.style.background = 'linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%)';
-        statusDiv.style.border = '2px solid #ffc107';
+        statusDiv.classList.add('rounded-2xl', 'border', 'border-amber-200', 'bg-amber-50');
     } else {
         // IA real
         const serviceName = getServiceDisplayName(aiData.ai_service);
@@ -1094,16 +1235,25 @@ function showAIResults(aiData) {
             </div>
             <p><strong>✅ ${serviceName} analizó tu imagen</strong> - Resultado basado en procesamiento real</p>
         `;
-        statusDiv.style.background = 'linear-gradient(135deg, #d4edda 0%, #b8e6c1 100%)';
-        statusDiv.style.border = '2px solid #28a745';
+        statusDiv.classList.add('rounded-2xl', 'border', 'border-emerald-200', 'bg-emerald-50');
     }
-    
-    statusDiv.style.padding = '15px';
-    statusDiv.style.borderRadius = '8px';
-    statusDiv.style.marginBottom = '15px';
-    statusDiv.style.textAlign = 'center';
+    statusDiv.classList.add('px-4', 'py-3', 'text-center', 'mb-4');
+    const badge = statusDiv.querySelector('.status-badge');
+    if (badge) {
+        badge.classList.add('inline-flex', 'items-center', 'justify-center', 'rounded-full', 'px-3', 'py-1', 'text-xs', 'font-semibold', 'tracking-wide');
+        if (badge.classList.contains('simulated')) {
+            badge.classList.add('bg-amber-500', 'text-white');
+        } else {
+            badge.classList.add('bg-emerald-500', 'text-white');
+        }
+    }
+    const statusText = statusDiv.querySelector('p');
+    if (statusText) {
+        statusText.classList.add('mt-2', 'text-xs', 'text-slate-700');
+    }
 
     aiResults.insertBefore(statusDiv, aiResults.firstChild);
+    aiResults.classList.remove('hidden');
     aiResults.style.display = 'block';
 
     // No hacer scroll automático - mantener al usuario en la sección actual
@@ -1159,17 +1309,20 @@ function fillFormFromAI(aiData) {
         }
     });
 
-    // NO llenar respuesta correcta ni explicación - el usuario las completará manualmente
-    // if (aiData.respuesta_correcta) {
-    //     document.getElementById('respuesta_correcta').value = aiData.respuesta_correcta;
-    // }
+    // Limpiar respuesta correcta y explicación para evitar residuos de preguntas anteriores
+    const respuestaField = document.getElementById('respuesta_correcta');
+    if (respuestaField) {
+        respuestaField.value = '';
+        clearFieldError(respuestaField);
+    }
 
-    // if (aiData.explicacion) {
-    //     const explicacionField = document.getElementById('explicacion');
-    //     explicacionField.value = aiData.explicacion;
-    //     updateMathPreview('explicacion');
-    //     autoResize.call(explicacionField);
-    // }
+    const explicacionField = document.getElementById('explicacion');
+    if (explicacionField) {
+        explicacionField.value = '';
+        updateMathPreview('explicacion');
+        autoResize.call(explicacionField);
+        clearFieldError(explicacionField);
+    }
 
     if (aiData.dificultad) {
         const dificultadField = document.getElementById('dificultad');
@@ -1189,11 +1342,25 @@ function fillFormFromAI(aiData) {
     }
 }
 
+function clearMathPreviews() {
+    const fields = ['pregunta', 'opcion_a', 'opcion_b', 'opcion_c', 'opcion_d', 'opcion_e', 'explicacion'];
+    fields.forEach(fieldId => {
+        const preview = document.getElementById(`${fieldId}-preview`);
+        if (preview) {
+            preview.innerHTML = '';
+        }
+    });
+}
+
 // Función para reiniciar captura de IA
 function resetAICapture() {
     currentAIImage = null;
-    document.getElementById('aiPreview').style.display = 'none';
-    document.getElementById('aiResults').style.display = 'none';
+    const aiPreview = document.getElementById('aiPreview');
+    const aiResults = document.getElementById('aiResults');
+    aiPreview.classList.add('hidden');
+    aiPreview.style.display = 'none';
+    aiResults.classList.add('hidden');
+    aiResults.style.display = 'none';
     document.getElementById('processWithAI').disabled = true;
     document.getElementById('aiImageUpload').value = '';
 }
@@ -1202,14 +1369,18 @@ function resetAICapture() {
 
 function toggleLatexGuide() {
     const examples = document.getElementById('latexExamples');
-    const header = document.querySelector('.latex-header small');
-    
-    if (examples.style.display === 'none') {
-        examples.style.display = 'block';
-        header.innerHTML = '💡 <strong>Guía LaTeX (clic para ocultar)</strong> ▲';
+    const header = document.getElementById('latexHeaderText');
+
+    if (examples.classList.contains('hidden')) {
+        examples.classList.remove('hidden');
+        if (header) {
+            header.textContent = '💡 Guía LaTeX (clic para ocultar)';
+        }
     } else {
-        examples.style.display = 'none';
-        header.innerHTML = '💡 <strong>Guía LaTeX (clic para ver ejemplos)</strong> ▼';
+        examples.classList.add('hidden');
+        if (header) {
+            header.textContent = '💡 Guía LaTeX (clic para ver ejemplos)';
+        }
     }
 }
 
@@ -1254,19 +1425,25 @@ function setupExplanationAI() {
     }
 }
 
-function toggleExplanationAI() {
+function toggleExplanationAI(event) {
     const checkbox = document.getElementById('useAIExplanation');
     const uploadSection = document.getElementById('aiExplanationUpload');
     const explanationSection = document.querySelector('.explanation-ai-section');
 
+    if (event && event.target !== checkbox && event.target.tagName !== 'INPUT') {
+        checkbox.checked = !checkbox.checked;
+    }
+
     if (checkbox.checked) {
+        uploadSection.classList.remove('hidden');
         uploadSection.style.display = 'block';
-        explanationSection.classList.add('active');
+        explanationSection.classList.add('active', 'border-slate-400', 'bg-white');
         // Verificar si debe habilitar el botón
         checkGenerateButton();
     } else {
+        uploadSection.classList.add('hidden');
         uploadSection.style.display = 'none';
-        explanationSection.classList.remove('active');
+        explanationSection.classList.remove('active', 'border-slate-400', 'bg-white');
         // Limpiar imágenes
         for (let i = 1; i <= 3; i++) {
             clearSolutionImage(i);
@@ -1296,6 +1473,7 @@ function handleSolutionImageUpload(index, file) {
     reader.onload = function(e) {
         const preview = document.getElementById(`solutionPreview${index}`);
         preview.innerHTML = `<img src="${e.target.result}" alt="Solución ${index}">`;
+        preview.classList.remove('hidden');
         preview.style.display = 'block';
     };
     reader.readAsDataURL(file);
@@ -1309,6 +1487,7 @@ function clearSolutionImage(index) {
     document.getElementById(`solutionImage${index}`).value = '';
     const preview = document.getElementById(`solutionPreview${index}`);
     preview.innerHTML = '';
+    preview.classList.add('hidden');
     preview.style.display = 'none';
     checkGenerateButton();
 }
@@ -1496,12 +1675,14 @@ function setupProcesoSelectors() {
 
         if (clasificacion === 'proceso') {
             // Mostrar sección de proceso
+            procesoSection.classList.remove('hidden');
             procesoSection.style.display = 'block';
             areaAcademica.required = true;
             anioSelect.required = true;
             tipoProceso.required = true;
         } else if (clasificacion === 'normal') {
             // Ocultar sección de proceso
+            procesoSection.classList.add('hidden');
             procesoSection.style.display = 'none';
             areaAcademica.required = false;
             anioSelect.required = false;
@@ -1515,6 +1696,8 @@ function setupProcesoSelectors() {
             tipoProceso.value = '';
             faseSelect.value = '';
             examenSelect.value = '';
+            faseContainer.classList.add('hidden');
+            examenContainer.classList.add('hidden');
             faseContainer.style.display = 'none';
             examenContainer.style.display = 'none';
         }
@@ -1530,6 +1713,8 @@ function setupProcesoSelectors() {
         examenSelect.innerHTML = '<option value="">Selecciona examen</option>';
         faseContainer.style.display = 'none';
         examenContainer.style.display = 'none';
+        faseContainer.classList.add('hidden');
+        examenContainer.classList.add('hidden');
         faseSelect.required = false;
         examenSelect.required = false;
         faseSelect.value = '';
@@ -1547,6 +1732,7 @@ function setupProcesoSelectors() {
 
         // Mostrar selector de fase si aplica
         if (config.hasFase && config.fases) {
+            faseContainer.classList.remove('hidden');
             faseContainer.style.display = 'block';
             faseSelect.required = true;
             config.fases.forEach(fase => {
@@ -1559,6 +1745,7 @@ function setupProcesoSelectors() {
 
         // Mostrar selector de examen si aplica
         if (config.hasExamen && config.examenes) {
+            examenContainer.classList.remove('hidden');
             examenContainer.style.display = 'block';
             examenSelect.required = true;
             config.examenes.forEach(examen => {

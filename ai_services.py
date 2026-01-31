@@ -1,6 +1,8 @@
 import base64
 import json
 import os
+import re
+from pathlib import Path
 from typing import Dict, Any
 import httpx
 import asyncio
@@ -259,45 +261,132 @@ RESPONDE ÚNICAMENTE con un JSON válido en este formato exacto:
 IMPORTANTE: Responde SOLO con el JSON, sin texto adicional antes o después.
 """
 
+def extract_json(text: str) -> Dict[str, Any]:
+    cleaned = text.strip()
+    cleaned = re.sub(r"```(?:json)?", "", cleaned)
+    cleaned = re.sub(r"^```(?:json)?\\s*", "", cleaned)
+    cleaned = re.sub(r"```\\s*$", "", cleaned)
+    if not cleaned:
+        raise ValueError("Respuesta vacía de la API.")
+
+    def _extract_balanced_json(s: str) -> str | None:
+        start = s.find("{")
+        if start == -1:
+            return None
+        depth = 0
+        in_string = False
+        escape_next = False
+        for i in range(start, len(s)):
+            ch = s[i]
+            if escape_next:
+                escape_next = False
+                continue
+            if ch == "\\":
+                if in_string:
+                    escape_next = True
+                continue
+            if ch == '"':
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    return s[start : i + 1]
+        return None
+
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError as e:
+        json_str = _extract_balanced_json(cleaned)
+        if not json_str:
+            print(f"Error parseando JSON: {e}")
+            print(f"Primeros 500 chars: {cleaned[:500]}")
+            raise
+
+        json_str = json_str.replace('“', '"').replace('”', '"').replace("‘", "'").replace("’", "'")
+
+        json_str = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F]', '', json_str)
+
+        result = []
+        in_string = False
+        escape_next = False
+        i = 0
+
+        while i < len(json_str):
+            char = json_str[i]
+
+            if escape_next:
+                result.append(char)
+                escape_next = False
+                i += 1
+                continue
+
+            if char == '"':
+                in_string = not in_string
+                result.append(char)
+                i += 1
+                continue
+
+            if in_string:
+                if char == '\\':
+                    if i + 1 < len(json_str):
+                        next_char = json_str[i + 1]
+                        if next_char in ('"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'):
+                            result.append(char)
+                            escape_next = True
+                        else:
+                            result.append('\\\\')
+                    else:
+                        result.append('\\\\')
+                    i += 1
+                elif char == '\n':
+                    result.append('\\n')
+                    i += 1
+                elif char == '\r':
+                    result.append('\\r')
+                    i += 1
+                elif char == '\t':
+                    result.append('\\t')
+                    i += 1
+                else:
+                    result.append(char)
+                    i += 1
+            else:
+                result.append(char)
+                i += 1
+
+        json_str = ''.join(result)
+
+        try:
+            result = json.loads(json_str)
+            return result
+        except json.JSONDecodeError as e2:
+            print(f"Error parseando JSON después de limpieza: {e2}")
+            debug_file = Path("/tmp/json_error_debug.txt")
+            debug_file.write_text(json_str, encoding="utf-8")
+            print(f"JSON guardado en: {debug_file}")
+            raise
+
+
 def parse_ai_response(content: str, service: str) -> Dict[str, Any]:
     """Parsea la respuesta de la IA y extrae el JSON"""
-    
     try:
-        # Buscar JSON en la respuesta
-        start_idx = content.find('{')
-        end_idx = content.rfind('}') + 1
-        
-        if start_idx != -1 and end_idx != -1:
-            json_str = content[start_idx:end_idx]
-            
-            # Limpiar y arreglar el JSON
-            # Reemplazar comillas problemáticas
-            json_str = json_str.replace('"', '"').replace('"', '"')
-            json_str = json_str.replace(''', "'").replace(''', "'")
-            
-            # Escapar backslashes problemáticos de LaTeX (pero de forma más suave)
-            import re
-            # Solo escapar cuando hay LaTeX real
-            json_str = re.sub(r'\\(?![\\"/bfnrt])', r'\\\\', json_str)
-            
-            print(f"🔧 JSON limpio (primeros 300 chars): {json_str[:300]}")
-            
-            parsed = json.loads(json_str)
-            
-            # Validar campos requeridos (flexibles)
-            required_fields = ["materia", "tema", "pregunta", "opciones"]
-            for field in required_fields:
-                if field not in parsed:
-                    raise ValueError(f"Campo faltante: {field}")
-            
-            # Agregar metadatos
-            parsed["ai_service"] = service
-            parsed["confianza"] = parsed.get("confianza", 80)
-            
-            return parsed
-        else:
-            raise ValueError("No se encontró JSON válido en la respuesta")
-            
+        parsed = extract_json(content)
+
+        required_fields = ["materia", "tema", "pregunta", "opciones"]
+        for field in required_fields:
+            if field not in parsed:
+                raise ValueError(f"Campo faltante: {field}")
+
+        parsed["ai_service"] = service
+        parsed["confianza"] = parsed.get("confianza", 80)
+
+        return parsed
+
     except json.JSONDecodeError as e:
         print(f"❌ Error JSON en {service}: {str(e)}")
         print(f"📄 Contenido problemático: {content[:500]}...")
@@ -350,26 +439,18 @@ async def generate_explanation_from_question_gemini(question_image: bytes, pregu
 
         parts = [
             {"text": f"""
-Analiza la imagen de esta pregunta de examen y genera una explicación detallada de cómo llegar a la respuesta correcta.
+Genera una explicación paso a paso, clara y relativamente breve.
 
 PREGUNTA: {pregunta}
 RESPUESTA CORRECTA: {respuesta_correcta}
 
-INSTRUCCIONES IMPORTANTES:
-1. Explica paso a paso cómo resolver el problema, pero se breve solo lo vital
-2. Usa formato LaTeX para fórmulas matemáticas: $$fórmula$$
-3. Incluye el razonamiento detrás de cada paso brevemente
-4. Si hay conceptos teóricos, explícalos muy brevemente
-5. Muestra los cálculos intermedios cuando sea necesario
-6. Concluye explicando por qué la respuesta correcta es {respuesta_correcta}
+REGLAS:
+1. Máximo 5 pasos, 1-2 líneas por paso.
+2. Sin introducciones largas ni relleno.
+3. Usa LaTeX solo cuando sea necesario.
+4. Termina indicando por qué la respuesta es {respuesta_correcta}.
 
-Ejemplos de formato LaTeX:
-- Ecuaciones: $$2x + 5 = 13$$
-- Fracciones: $$\\frac{{a}}{{b}}$$
-- Raíces: $$\\sqrt{{x}}$$
-- Potencias: $$x^{{2}}$$
-
-RESPONDE SOLO con la explicación paso a paso, usando formato LaTeX para matemáticas. No incluyas formato JSON ni texto adicional.
+RESPONDE SOLO con la explicación (sin JSON ni texto extra).
             """},
             {
                 "inline_data": {
@@ -382,7 +463,7 @@ RESPONDE SOLO con la explicación paso a paso, usando formato LaTeX para matemá
         payload = {
             "contents": [{"parts": parts}],
             "generationConfig": {
-                "maxOutputTokens": 1500,
+                "maxOutputTokens": 900,
                 "temperature": 0.2
             }
         }
@@ -414,30 +495,18 @@ async def process_solution_with_gemini(solution_images: list, pregunta: str, res
         # Crear partes del contenido
         parts = [
             {"text": f"""
-Analiza las imágenes de la resolución y ÚNICAMENTE explica paso a paso lo que está mostrado en las imágenes.
+Resume la resolución MOSTRADA en las imágenes de forma clara y paso a paso, sin extenderte demasiado.
 
 PREGUNTA: {pregunta}
 RESPUESTA CORRECTA: {respuesta_correcta}
 
-INSTRUCCIONES IMPORTANTES:
-1. NO resuelvas el problema por tu cuenta
-2. NO corrijas ni evalúes la solución mostrada
-3. ÚNICAMENTE describe y explica cada paso que aparece en las imágenes
-4. Si hay ecuaciones, cópialas usando LaTeX inline: $$ecuación$$
-5. Explica el razonamiento que se muestra en cada paso de la resolución
-6. Si hay cálculos, describe qué operación se está realizando sin hacerla tú
-7. Mantén el enfoque en explicar la metodología mostrada
+REGLAS:
+1. Máximo 5 pasos, 1-2 líneas por paso.
+2. No agregues pasos que no aparezcan en las imágenes.
+3. Si hay ecuaciones, cópialas en LaTeX inline: $$ecuación$$.
+4. Termina indicando por qué la respuesta es {respuesta_correcta}.
 
-Ejemplos de formato LaTeX:
-- Ecuaciones: $$2x + 5 = 13$$
-- Fracciones: $$\\frac{{a}}{{b}}$$
-- Raíces: $$\\sqrt{{x}}$$
-- Potencias: $$x^{{2}}$$
-
-Ejemplo de respuesta esperada:
-"En el primer paso se plantea la ecuación $$2x + 5 = 13$$. Luego se resta 5 de ambos lados obteniendo $$2x = 8$$. Finalmente se divide ambos lados entre 2 para obtener $$x = 4$$."
-
-RESPONDE SOLO con la explicación de lo mostrado en las imágenes, usando formato LaTeX inline para matemáticas. No incluyas formato JSON ni texto adicional.
+RESPONDE SOLO con la explicación (sin JSON ni texto extra).
             """}
         ]
 
@@ -454,7 +523,7 @@ RESPONDE SOLO con la explicación de lo mostrado en las imágenes, usando format
         payload = {
             "contents": [{"parts": parts}],
             "generationConfig": {
-                "maxOutputTokens": 1500,
+                "maxOutputTokens": 900,
                 "temperature": 0.1
             }
         }
