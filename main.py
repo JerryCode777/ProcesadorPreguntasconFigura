@@ -29,8 +29,8 @@ MATERIAS = [
     "Razonamiento Lógico", "Razonamiento Matemático", "Razonamiento Verbal",
     "Comprensión Lectora", "Algebra", "Aritmética", "Geometría", "Trigonometría",
     "Historia", "Geografía", "Química", "Biología", "Física", "Filosofía",
-    "Psicología", "Educación Cívica", "Lenguaje", "Literatura", 
-    "Inglés Lectura", "Inglés Gramática"
+    "Psicología", "Educación Cívica", "Lenguaje", "Literatura",
+    "Inglés Lectura", "Inglés Gramática", "Anatomía", "Economía"
 ]
 
 @app.get("/", response_class=HTMLResponse)
@@ -218,6 +218,7 @@ async def obtener_materias():
 @app.post("/api/process-image-ai")
 async def process_image_ai(
     ai_service: str = Form(...),
+    mode: str = Form("extract_question"),
     image1: Optional[UploadFile] = File(None),
     image2: Optional[UploadFile] = File(None)
 ):
@@ -251,12 +252,22 @@ async def process_image_ai(
                 detail=result.get("message", "Contenido bloqueado por políticas de IA")
             )
 
+        # Modo extracción de texto (para comprensión)
+        if mode == "extract_text":
+            texto = result.get("texto") or result.get("pregunta") or ""
+            texto = texto.strip() if isinstance(texto, str) else ""
+            if not texto:
+                raise HTTPException(status_code=400, detail="No se pudo extraer el texto")
+            result = {"texto": texto}
+
         return JSONResponse(content={
             "success": True,
             "data": result
         })
 
     except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
         raise HTTPException(status_code=500, detail=f"Error procesando imagen: {str(e)}")
 
 @app.post("/api/generate-explanation")
@@ -455,6 +466,64 @@ async def crear_pregunta_comprension(request: Request):
     except Exception as e:
         print(f"Error guardando comprensión: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error guardando comprensión: {str(e)}")
+
+@app.post("/siguiente-texto-comprension")
+async def siguiente_texto_comprension(request: Request):
+    """Obtiene el siguiente número disponible para textos de comprensión"""
+    try:
+        data = await request.json()
+
+        # Validar campos requeridos
+        if "tipo_comprension" not in data or "tipo_clasificacion" not in data:
+            raise HTTPException(status_code=400, detail="Faltan campos requeridos")
+
+        tipo_comprension = data["tipo_comprension"]
+        tipo_clasificacion = data["tipo_clasificacion"]
+
+        materia_map = {
+            "comprension_lectora_i": "comprension_lectoraI",
+            "comprension_lectora_ii": "comprension_lectoraII",
+            "comprension_ingles": "comprension_ingles"
+        }
+        if tipo_comprension not in materia_map:
+            raise HTTPException(status_code=400, detail="Tipo de comprensión inválido")
+
+        materia_norm = materia_map[tipo_comprension]
+
+        if tipo_clasificacion == "normal":
+            base_path = Path("banco_preguntas")
+            materia_dir = base_path / materia_norm
+        else:
+            # Validar campos de proceso
+            for k in ["area_academica", "anio", "tipo_proceso"]:
+                if k not in data or not data[k]:
+                    raise HTTPException(status_code=400, detail="Faltan campos de proceso")
+
+            base_path = Path("banco_procesos")
+            path_parts = [base_path, data["area_academica"], data["anio"], data["tipo_proceso"]]
+
+            if data.get("fase"):
+                path_parts.append(normalizar_texto(data["fase"]))
+            if data.get("examen"):
+                path_parts.append(normalizar_texto(data["examen"]))
+
+            path_parts.append(materia_norm)
+            materia_dir = Path(*path_parts)
+
+        if not materia_dir.exists():
+            return JSONResponse(content={"success": True, "siguiente_numero": 1})
+
+        max_num = 0
+        for archivo in materia_dir.glob("texto_*.json"):
+            match = re.search(r"texto_(\d{3})\.json$", archivo.name)
+            if match:
+                max_num = max(max_num, int(match.group(1)))
+
+        return JSONResponse(content={"success": True, "siguiente_numero": max_num + 1})
+
+    except Exception as e:
+        print(f"Error obteniendo siguiente texto: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error obteniendo siguiente texto: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn

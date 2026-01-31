@@ -32,6 +32,61 @@ let tipoComprensionActual = null;
 let numPreguntasRequeridas = 0;
 let textoModoActual = 'imagen'; // 'imagen' o 'directo'
 let preguntasExtraidas = [];
+let autoNumeroTemaComp = true;
+
+function marcarNumeroTemaManual(e) {
+    if (e && e.target && String(e.target.value || '').trim() === '') {
+        autoNumeroTemaComp = true;
+        actualizarNumeroTemaComp();
+        return;
+    }
+    autoNumeroTemaComp = false;
+}
+
+async function actualizarNumeroTemaComp() {
+    const numeroInput = document.getElementById('comp_numero_tema');
+    if (!numeroInput || (!autoNumeroTemaComp && numeroInput.value)) return;
+
+    const tipoComprension = document.getElementById('tipo_comprension')?.value;
+    const tipoClasificacion = document.getElementById('comp_tipo_clasificacion')?.value;
+
+    if (!tipoComprension || !tipoClasificacion) return;
+
+    const payload = {
+        tipo_comprension: tipoComprension,
+        tipo_clasificacion: tipoClasificacion
+    };
+
+    if (tipoClasificacion === 'proceso') {
+        const area = document.getElementById('comp_area_academica')?.value;
+        const anio = document.getElementById('comp_anio')?.value;
+        const tipoProceso = document.getElementById('comp_tipo_proceso')?.value;
+        const fase = document.getElementById('comp_fase')?.value;
+        const examen = document.getElementById('comp_examen')?.value;
+
+        if (!area || !anio || !tipoProceso) return;
+
+        payload.area_academica = area;
+        payload.anio = anio;
+        payload.tipo_proceso = tipoProceso;
+        if (fase) payload.fase = fase;
+        if (examen) payload.examen = examen;
+    }
+
+    try {
+        const response = await fetch('/siguiente-texto-comprension', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        const result = await response.json();
+        if (result.success && typeof result.siguiente_numero === 'number') {
+            numeroInput.value = result.siguiente_numero;
+        }
+    } catch (error) {
+        console.error('Error obteniendo número de texto:', error);
+    }
+}
 
 // ========================================
 // TOGGLE ENTRE IMAGEN Y TEXTO DIRECTO
@@ -225,6 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
             infoElement.classList.remove('text-emerald-600', 'font-semibold');
             infoElement.classList.add('text-slate-500');
         }
+
+        actualizarNumeroTemaComp();
     });
 });
 
@@ -417,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const formData = new FormData();
-            formData.append('image', inputTexto.files[0]);
+            formData.append('image1', inputTexto.files[0]);
             formData.append('ai_service', aiService);
             formData.append('mode', 'extract_text');
 
@@ -474,8 +531,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const textoDirecto = document.getElementById('textoComprension').value.trim();
         const imagenTexto = document.getElementById('imagenTexto').files[0];
 
-        if (!textoDirecto && !imagenTexto) {
-            mostrarMensaje('Por favor, proporciona el texto de comprensión primero', 'error');
+        if (!textoDirecto) {
+            if (imagenTexto) {
+                mostrarMensaje('Primero extrae el texto con IA o pega el texto manualmente', 'error');
+            } else {
+                mostrarMensaje('Por favor, proporciona el texto de comprensión primero', 'error');
+            }
             return;
         }
 
@@ -485,8 +546,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const formData = new FormData();
-            formData.append('tipo_comprension', tipoComprensionActual);
-            formData.append('ai_service', document.getElementById('aiServiceTextoSelect').value);
+            const tipoComprension = tipoComprensionActual || document.getElementById('tipo_comprension').value;
+            const aiService = document.getElementById('aiServiceTextoSelect').value;
+
+            if (!tipoComprension) {
+                throw new Error('Selecciona el tipo de comprensión');
+            }
+            if (!aiService) {
+                throw new Error('Selecciona el servicio de IA');
+            }
+
+            formData.append('tipo_comprension', tipoComprension);
+            formData.append('ai_service', aiService);
 
             // Añadir texto (directo o desde imagen procesada)
             formData.append('texto', textoDirecto);
@@ -507,8 +578,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
 
             if (result.success && result.preguntas) {
-                preguntasExtraidas = result.preguntas;
-                mostrarPreguntasExtraidas(result.preguntas);
+                preguntasExtraidas = result.preguntas.map(p => ({
+                    pregunta: p.pregunta || p.enunciado || '',
+                    opciones: p.opciones || { A: '', B: '', C: '', D: '', E: '' },
+                    respuesta_correcta: p.respuesta_correcta || 'A',
+                    explicacion: p.explicacion || '',
+                    dificultad: typeof p.dificultad === 'number' ? p.dificultad : 1
+                }));
+                mostrarPreguntasExtraidas(preguntasExtraidas);
                 mostrarMensaje('✅ Preguntas procesadas correctamente. Revisa y edita antes de guardar.', 'success');
 
                 // Habilitar botón de guardar
@@ -538,6 +615,7 @@ function mostrarPreguntasExtraidas(preguntas) {
     container.innerHTML = '';
 
     preguntas.forEach((p, index) => {
+        const opciones = p.opciones || { A: '', B: '', C: '', D: '', E: '' };
         const div = document.createElement('div');
         div.className = 'rounded-2xl border border-slate-200 bg-slate-50 p-4';
         div.innerHTML = `
@@ -553,14 +631,14 @@ function mostrarPreguntasExtraidas(preguntas) {
             <div class="space-y-3">
                 <div>
                     <label class="text-xs font-semibold text-slate-600">Pregunta:</label>
-                    <textarea id="pregunta_${index}" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" rows="2">${p.pregunta || ''}</textarea>
+                    <textarea id="pregunta_${index}" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm min-h-[72px] resize-y" rows="3">${p.pregunta || ''}</textarea>
                 </div>
 
                 <div class="grid grid-cols-2 gap-2">
                     ${['A', 'B', 'C', 'D', 'E'].map(letra => `
                         <div>
                             <label class="text-xs font-semibold text-slate-600">${letra})</label>
-                            <textarea id="opcion_${letra}_${index}" class="mt-1 w-full rounded-lg border border-slate-300 px-2 py-1 text-xs" rows="1">${p.opciones[letra] || ''}</textarea>
+                            <textarea id="opcion_${letra}_${index}" class="mt-1 w-full rounded-lg border border-slate-300 px-2 py-1 text-xs min-h-[56px] resize-y" rows="2">${opciones[letra] || ''}</textarea>
                         </div>
                     `).join('')}
                 </div>
@@ -578,7 +656,7 @@ function mostrarPreguntasExtraidas(preguntas) {
 
                 <div>
                     <label class="text-xs font-semibold text-slate-600">Explicación:</label>
-                    <textarea id="explicacion_${index}" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm" rows="3">${p.explicacion || ''}</textarea>
+                    <textarea id="explicacion_${index}" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm min-h-[96px] resize-y" rows="4">${p.explicacion || ''}</textarea>
                 </div>
             </div>
         `;
@@ -595,6 +673,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const procesoSection = document.getElementById('comp_proceso_section');
     const tipoProceso = document.getElementById('comp_tipo_proceso');
     const anio = document.getElementById('comp_anio');
+    const numeroTemaInput = document.getElementById('comp_numero_tema');
+    const areaAcademica = document.getElementById('comp_area_academica');
+    const fase = document.getElementById('comp_fase');
+    const examen = document.getElementById('comp_examen');
+
+    if (numeroTemaInput) {
+        numeroTemaInput.addEventListener('input', marcarNumeroTemaManual);
+    }
 
     tipoClasificacion.addEventListener('change', (e) => {
         if (e.target.value === 'proceso') {
@@ -602,6 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             procesoSection.classList.add('hidden');
         }
+        actualizarNumeroTemaComp();
     });
 
     // Configuración dinámica de fase/examen (similar al formulario normal)
@@ -661,6 +748,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tipoProceso.addEventListener('change', updateProcesoSelectorsComp);
     anio.addEventListener('change', updateProcesoSelectorsComp);
+
+    if (areaAcademica) areaAcademica.addEventListener('change', actualizarNumeroTemaComp);
+    if (tipoProceso) tipoProceso.addEventListener('change', actualizarNumeroTemaComp);
+    if (anio) anio.addEventListener('change', actualizarNumeroTemaComp);
+    if (fase) fase.addEventListener('change', actualizarNumeroTemaComp);
+    if (examen) examen.addEventListener('change', actualizarNumeroTemaComp);
 });
 
 // ========================================
@@ -762,6 +855,78 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ========================================
+// LIMPIAR TODO (FORMULARIO COMPRENSIÓN)
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const resetBtn = document.getElementById('resetCompBtn');
+    const form = document.getElementById('comprensionForm');
+    if (!resetBtn || !form) return;
+
+    resetBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        form.reset();
+
+        preguntasExtraidas = [];
+        tipoComprensionActual = null;
+        numPreguntasRequeridas = 0;
+        autoNumeroTemaComp = true;
+
+        const infoElement = document.getElementById('num_preguntas_info');
+        if (infoElement) {
+            infoElement.textContent = 'Selecciona el tipo para ver el número de preguntas';
+            infoElement.classList.remove('text-emerald-600', 'font-semibold');
+            infoElement.classList.add('text-slate-500');
+        }
+
+        const preguntasSection = document.getElementById('preguntasExtraidasSection');
+        const preguntasContainer = document.getElementById('preguntasExtraidasContainer');
+        if (preguntasSection) preguntasSection.classList.add('hidden');
+        if (preguntasContainer) preguntasContainer.innerHTML = '';
+
+        const jsonPreview = document.getElementById('jsonPreview');
+        const jsonContent = document.getElementById('jsonContent');
+        if (jsonPreview) jsonPreview.classList.add('hidden');
+        if (jsonContent) jsonContent.textContent = '';
+
+        const mensaje = document.getElementById('mensaje');
+        if (mensaje) mensaje.classList.add('hidden');
+
+        const preguntasImagenesContainer = document.getElementById('preguntasImagenesContainer');
+        if (preguntasImagenesContainer) {
+            preguntasImagenesContainer.innerHTML = '<p class="text-center text-xs text-slate-400">Selecciona el tipo de comprensión primero</p>';
+        }
+
+        const procesarPreguntasBtn = document.getElementById('procesarPreguntasIA');
+        if (procesarPreguntasBtn) procesarPreguntasBtn.disabled = true;
+
+        clearTextoImagen();
+        toggleTextoMode('imagen');
+
+        const textoComprension = document.getElementById('textoComprension');
+        if (textoComprension) {
+            textoComprension.value = '';
+            textoComprension.style.height = '';
+        }
+
+        const jsonInput = document.getElementById('jsonInput');
+        if (jsonInput) {
+            jsonInput.value = '';
+            jsonInput.rows = 4;
+            jsonInput.style.height = '';
+            jsonInput.scrollTop = 0;
+        }
+
+        const jsonExample = document.getElementById('jsonExample');
+        if (jsonExample) jsonExample.classList.add('hidden');
+
+        const submitBtn = document.getElementById('submitCompBtn');
+        if (submitBtn) submitBtn.disabled = true;
+    });
+});
+
+// ========================================
 // CARGAR DESDE JSON
 // ========================================
 
@@ -776,8 +941,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCargarJSON = document.getElementById('cargarDesdeJSON');
     if (!btnCargarJSON) return;
 
+    const jsonInput = document.getElementById('jsonInput');
+    if (jsonInput) {
+        jsonInput.addEventListener('input', () => {
+            jsonInput.style.height = 'auto';
+            jsonInput.style.height = Math.min(jsonInput.scrollHeight, 240) + 'px';
+        });
+    }
+
     btnCargarJSON.addEventListener('click', () => {
-        const jsonInput = document.getElementById('jsonInput');
         const jsonText = jsonInput.value.trim();
 
         if (!jsonText) {
@@ -797,6 +969,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('El JSON debe contener el campo "preguntas" como array');
             }
 
+            // Normalizar campo tipo_comprension (aceptar "tipo" o "tipo_comprension")
+            const tipoComprension = data.tipo_comprension || data.tipo;
+
+            // Si el JSON incluye tipo de comprensión, seleccionarlo automáticamente
+            if (tipoComprension) {
+                const tipoSelect = document.getElementById('tipo_comprension');
+                const validTypes = ['comprension_lectora_i', 'comprension_lectora_ii', 'comprension_ingles'];
+
+                if (validTypes.includes(tipoComprension)) {
+                    tipoSelect.value = tipoComprension;
+
+                    // Disparar evento change para generar campos dinámicos
+                    const event = new Event('change');
+                    tipoSelect.dispatchEvent(event);
+                } else {
+                    throw new Error(`Tipo de comprensión inválido: "${tipoComprension}". Debe ser: comprension_lectora_i, comprension_lectora_ii o comprension_ingles`);
+                }
+            }
+
             // Llenar campo de texto
             const textoComprension = document.getElementById('textoComprension');
             textoComprension.value = data.texto;
@@ -804,8 +995,25 @@ document.addEventListener('DOMContentLoaded', () => {
             // Cambiar a modo texto directo
             toggleTextoMode('directo');
 
-            // Guardar preguntas extraídas
-            preguntasExtraidas = data.preguntas;
+            // Si el JSON incluye numero_tema, usarlo
+            if (data.numero_tema) {
+                const numeroTemaInput = document.getElementById('comp_numero_tema');
+                if (numeroTemaInput) {
+                    numeroTemaInput.value = data.numero_tema;
+                    marcarNumeroTemaManual();
+                }
+            } else {
+                actualizarNumeroTemaComp();
+            }
+
+            // Normalizar preguntas (aceptar "enunciado" o "pregunta")
+            preguntasExtraidas = data.preguntas.map(p => ({
+                pregunta: p.pregunta || p.enunciado,
+                opciones: p.opciones,
+                respuesta_correcta: p.respuesta_correcta,
+                explicacion: p.explicacion,
+                dificultad: p.dificultad
+            }));
 
             // Validar número de preguntas según tipo
             if (numPreguntasRequeridas > 0 && data.preguntas.length !== numPreguntasRequeridas) {
@@ -815,8 +1023,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 );
             }
 
-            // Mostrar preguntas
-            mostrarPreguntasExtraidas(data.preguntas);
+            // Mostrar preguntas normalizadas
+            mostrarPreguntasExtraidas(preguntasExtraidas);
 
             // Habilitar botón de guardar
             document.getElementById('submitCompBtn').disabled = false;
@@ -826,6 +1034,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Limpiar input
             jsonInput.value = '';
+            jsonInput.rows = 4;
+            jsonInput.style.height = '';
+            jsonInput.scrollTop = 0;
+
+            const jsonExample = document.getElementById('jsonExample');
+            if (jsonExample && !jsonExample.classList.contains('hidden')) {
+                jsonExample.classList.add('hidden');
+            }
 
         } catch (error) {
             console.error('Error parseando JSON:', error);

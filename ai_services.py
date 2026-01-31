@@ -22,7 +22,7 @@ AI_API_KEYS = {
 # Configuración de modelos (variables de entorno con valores por defecto)
 AI_MODELS = {
     "openai": os.getenv("OPENAI_MODEL", "gpt-4o"),
-    "gemini": os.getenv("GEMINI_MODEL", "gemini-2.0-flash-exp"),
+    "gemini": os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
     "claude": os.getenv("CLAUDE_MODEL", "claude-3-5-sonnet-20241022"),
     "azure": os.getenv("AZURE_OPENAI_MODEL", "gpt-4o")
 }
@@ -426,6 +426,15 @@ def extract_json(text: str) -> Dict[str, Any]:
                 i += 1
 
         json_str = ''.join(result)
+        # Intentar balancear llaves/corchetes si faltan cierres
+        open_curly = json_str.count('{')
+        close_curly = json_str.count('}')
+        if close_curly < open_curly:
+            json_str += '}' * (open_curly - close_curly)
+        open_square = json_str.count('[')
+        close_square = json_str.count(']')
+        if close_square < open_square:
+            json_str += ']' * (open_square - close_square)
 
         try:
             result = json.loads(json_str)
@@ -735,13 +744,21 @@ IMPORTANTE:
         else:
             raise ValueError(f"Servicio no soportado: {service}")
 
-        # Limpiar respuesta y parsear JSON
+        # Log crudo para depuración (comprehensión)
+        try:
+            debug_path = Path("/tmp/comp_gemini_raw.txt")
+            debug_path.write_text(result_text, encoding="utf-8")
+            print(f"🧾 Comprensión raw guardado en: {debug_path}")
+        except Exception as log_err:
+            print(f"⚠️ No se pudo guardar log raw de comprensión: {log_err}")
+
+        # Limpiar respuesta y parsear JSON (usar extractor robusto)
         result_text = result_text.strip()
         result_text = re.sub(r'^```json\s*', '', result_text)
         result_text = re.sub(r'^```\s*', '', result_text)
         result_text = re.sub(r'\s*```$', '', result_text)
 
-        return json.loads(result_text)
+        return extract_json(result_text)
 
     except Exception as e:
         print(f"Error procesando pregunta de comprensión: {e}")
