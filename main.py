@@ -366,7 +366,7 @@ async def procesar_comprension(
         # Procesar cada pregunta con IA
         preguntas_procesadas = []
         for i, img_content in enumerate(imagenes_preguntas, start=1):
-            result = await process_comprehension_question(ai_service, img_content, texto)
+            result = await process_comprehension_question(ai_service, img_content, texto, idx=i)
             preguntas_procesadas.append(result)
 
         return JSONResponse(content={

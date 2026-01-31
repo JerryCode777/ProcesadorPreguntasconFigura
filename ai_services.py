@@ -324,7 +324,7 @@ RESPONDE ÚNICAMENTE con un JSON válido en este formato exacto:
 IMPORTANTE: Responde SOLO con el JSON, sin texto adicional antes o después.
 """
 
-def extract_json(text: str) -> Dict[str, Any]:
+def extract_json(text: str, allow_single: bool = False) -> Dict[str, Any]:
     cleaned = text.strip()
     # Eliminar bloques de código markdown de forma más robusta
     cleaned = re.sub(r"^```+(?:json)?\s*", "", cleaned, flags=re.IGNORECASE)
@@ -439,7 +439,12 @@ def extract_json(text: str) -> Dict[str, Any]:
         try:
             result = json.loads(json_str)
             # Si el resultado es un objeto individual en lugar de tener "preguntas", intentar arreglarlo
-            if isinstance(result, dict) and "preguntas" not in result and "pregunta" in result:
+            if (
+                not allow_single
+                and isinstance(result, dict)
+                and "preguntas" not in result
+                and "pregunta" in result
+            ):
                 # Es un objeto individual, necesitamos verificar si hay más
                 print("⚠️ Detectado: respuesta es objeto individual, intentando corregir...")
                 raise json.JSONDecodeError("Necesita envolver en array", json_str, 0)
@@ -677,7 +682,12 @@ def get_mock_response() -> Dict[str, Any]:
 # FUNCIONES PARA COMPRENSIÓN LECTORA
 # ========================================
 
-async def process_comprehension_question(service: str, image_content: bytes, texto_comprension: str) -> Dict[str, Any]:
+async def process_comprehension_question(
+    service: str,
+    image_content: bytes,
+    texto_comprension: str,
+    idx: int | None = None
+) -> Dict[str, Any]:
     """
     Procesa una imagen de pregunta de comprensión y extrae sus datos
     """
@@ -707,7 +717,7 @@ Extrae de la imagen:
 1. La pregunta completa
 2. Las 5 alternativas (A, B, C, D, E)
 3. La respuesta correcta (si está marcada o indicada)
-4. La explicación (si existe)
+4. Una explicación breve (máx. 2-3 oraciones, sin análisis largo)
 5. Estima la dificultad (1-3)
 
 FORMATO DE SALIDA - JSON puro sin markdown:
@@ -728,7 +738,7 @@ FORMATO DE SALIDA - JSON puro sin markdown:
 IMPORTANTE:
 - Devuelve SOLO el JSON, sin ```json ni markdown
 - Si la respuesta correcta no está marcada, analiza cuál es la correcta
-- Si no hay explicación, genera una breve y clara
+- Si no hay explicación, genera una breve y clara (máx. 2-3 oraciones)
 - Usa LaTeX para fórmulas matemáticas si es necesario: $$formula$$
 """
 
@@ -744,9 +754,10 @@ IMPORTANTE:
         else:
             raise ValueError(f"Servicio no soportado: {service}")
 
-        # Log crudo para depuración (comprehensión)
+        # Log crudo para depuración (comprensión)
         try:
-            debug_path = Path("/tmp/comp_gemini_raw.txt")
+            suffix = f"_{idx}" if idx is not None else ""
+            debug_path = Path(f"/tmp/comp_gemini_raw{suffix}.txt")
             debug_path.write_text(result_text, encoding="utf-8")
             print(f"🧾 Comprensión raw guardado en: {debug_path}")
         except Exception as log_err:
@@ -758,7 +769,12 @@ IMPORTANTE:
         result_text = re.sub(r'^```\s*', '', result_text)
         result_text = re.sub(r'\s*```$', '', result_text)
 
-        return extract_json(result_text)
+        parsed = extract_json(result_text, allow_single=True)
+        if isinstance(parsed, dict):
+            explicacion = parsed.get("explicacion")
+            if isinstance(explicacion, str) and len(explicacion) > 400:
+                parsed["explicacion"] = explicacion[:397].rstrip() + "..."
+        return parsed
 
     except Exception as e:
         print(f"Error procesando pregunta de comprensión: {e}")
