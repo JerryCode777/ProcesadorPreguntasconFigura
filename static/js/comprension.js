@@ -79,6 +79,15 @@ function clearTextoImagen() {
 
 // Setup drag & drop y preview para imagen del texto
 document.addEventListener('DOMContentLoaded', () => {
+    // Auto-resize para textarea de texto de comprensión
+    const textoComprension = document.getElementById('textoComprension');
+    if (textoComprension) {
+        textoComprension.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 600) + 'px';
+        });
+    }
+
     const inputTexto = document.getElementById('imagenTexto');
     const dropArea = document.getElementById('textoDropArea');
     const preview = document.getElementById('textoImagenPreview');

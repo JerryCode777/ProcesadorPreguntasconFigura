@@ -316,6 +316,139 @@ async def generate_explanation(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error generando explicación: {str(e)}")
 
+@app.post("/api/procesar-comprension")
+async def procesar_comprension(
+    tipo_comprension: str = Form(...),
+    ai_service: str = Form(...),
+    texto: str = Form(...),
+    pregunta_1: Optional[UploadFile] = File(None),
+    pregunta_2: Optional[UploadFile] = File(None),
+    pregunta_3: Optional[UploadFile] = File(None)
+):
+    """Procesa imágenes de preguntas de comprensión y extrae sus datos"""
+    try:
+        from ai_services import process_comprehension_question
+
+        # Validar tipo de comprensión
+        valid_types = ["comprension_lectora_i", "comprension_lectora_ii", "comprension_ingles"]
+        if tipo_comprension not in valid_types:
+            raise HTTPException(status_code=400, detail="Tipo de comprensión no válido")
+
+        # Determinar número de preguntas esperadas
+        num_preguntas = 2 if tipo_comprension in ["comprension_lectora_i", "comprension_ingles"] else 3
+
+        # Recopilar imágenes de preguntas
+        imagenes_preguntas = []
+        for i, img in enumerate([pregunta_1, pregunta_2, pregunta_3], start=1):
+            if i <= num_preguntas:
+                if not img or not img.filename:
+                    raise HTTPException(status_code=400, detail=f"Se requiere la imagen de la pregunta {i}")
+                imagenes_preguntas.append(await img.read())
+
+        # Procesar cada pregunta con IA
+        preguntas_procesadas = []
+        for i, img_content in enumerate(imagenes_preguntas, start=1):
+            result = await process_comprehension_question(ai_service, img_content, texto)
+            preguntas_procesadas.append(result)
+
+        return JSONResponse(content={
+            "success": True,
+            "preguntas": preguntas_procesadas
+        })
+
+    except Exception as e:
+        print(f"Error procesando comprensión: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error procesando comprensión: {str(e)}")
+
+@app.post("/crear-pregunta-comprension")
+async def crear_pregunta_comprension(request: Request):
+    """Guarda una pregunta de comprensión en formato JSON"""
+    try:
+        data = await request.json()
+
+        # Validar campos requeridos
+        required_fields = ["tipo_comprension", "numero_tema", "texto", "preguntas", "tipo_clasificacion"]
+        for field in required_fields:
+            if field not in data:
+                raise HTTPException(status_code=400, detail=f"Campo requerido: {field}")
+
+        tipo_comprension = data["tipo_comprension"]
+        numero_tema = data["numero_tema"]
+        texto = data["texto"]
+        preguntas = data["preguntas"]
+        tipo_clasificacion = data["tipo_clasificacion"]
+
+        # Validar número de preguntas
+        num_esperadas = 2 if tipo_comprension in ["comprension_lectora_i", "comprension_ingles"] else 3
+        if len(preguntas) != num_esperadas:
+            raise HTTPException(status_code=400, detail=f"Se esperan {num_esperadas} preguntas para {tipo_comprension}")
+
+        # Determinar materia normalizada
+        materia_map = {
+            "comprension_lectora_i": "comprension_lectoraI",
+            "comprension_lectora_ii": "comprension_lectoraII",
+            "comprension_ingles": "comprension_ingles"
+        }
+        materia_norm = materia_map[tipo_comprension]
+
+        # Crear estructura de directorios según tipo de clasificación
+        if tipo_clasificacion == "normal":
+            base_path = Path("banco_preguntas")
+            materia_dir = base_path / materia_norm
+        else:  # tipo_clasificacion == "proceso"
+            # Validar campos de proceso
+            if not all(k in data for k in ["area_academica", "anio", "tipo_proceso"]):
+                raise HTTPException(status_code=400, detail="Faltan campos de proceso")
+
+            base_path = Path("banco_procesos")
+            path_parts = [base_path, data["area_academica"], data["anio"], data["tipo_proceso"]]
+
+            if data.get("fase"):
+                fase_norm = normalizar_texto(data["fase"])
+                path_parts.append(fase_norm)
+
+            if data.get("examen"):
+                examen_norm = normalizar_texto(data["examen"])
+                path_parts.append(examen_norm)
+
+            path_parts.append(materia_norm)
+            materia_dir = Path(*path_parts)
+
+        # Crear directorios
+        materia_dir.mkdir(parents=True, exist_ok=True)
+
+        # Generar IDs temporales para las preguntas
+        tema_norm = f"texto_{numero_tema:03d}"
+        for idx, pregunta in enumerate(preguntas, start=1):
+            pregunta["id_temporal"] = f"{materia_norm[:8]}_00{numero_tema}_{idx:03d}"
+            if "imagen" not in pregunta:
+                pregunta["imagen"] = None
+
+        # Construir el payload final
+        payload = {
+            "materia": materia_norm,
+            "numero_tema": numero_tema,
+            "total_temas": 20,  # Valor por defecto
+            "titulo_tema": f"Texto {numero_tema}",
+            "texto": texto,
+            "preguntas": preguntas
+        }
+
+        # Guardar JSON
+        archivo_json = materia_dir / f"{tema_norm}.json"
+        archivo_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        return JSONResponse(content={
+            "success": True,
+            "message": "Pregunta de comprensión guardada exitosamente",
+            "data": payload,
+            "archivo": str(archivo_json)
+        })
+
+    except Exception as e:
+        print(f"Error guardando comprensión: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error guardando comprensión: {str(e)}")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -46,12 +46,14 @@ function autoResize() {
 function setupValidation() {
     // Validar dificultad
     const dificultad = document.getElementById('dificultad');
-    dificultad.addEventListener('change', function() {
-        const value = parseInt(this.value);
-        if (value < 1 || value > 5) {
-            showFieldError(this, 'La dificultad debe estar entre 1 y 5');
-        }
-    });
+    if (dificultad) {
+        dificultad.addEventListener('change', function() {
+            const value = parseInt(this.value);
+            if (value < 1 || value > 5) {
+                showFieldError(this, 'La dificultad debe estar entre 1 y 5');
+            }
+        });
+    }
 
     // Validar imágenes (ambas)
     for (let i = 1; i <= 2; i++) {
@@ -81,22 +83,26 @@ function setupValidation() {
 }
 
 function setupFormSubmission() {
+    if (!form) return;
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
+
         if (isSubmitting) return;
-        
+
         // Validar formulario
         if (!validateForm()) {
             showMessage('Por favor corrige los errores en el formulario', 'error');
             return;
         }
-        
+
         await submitForm();
     });
 }
 
 function setupResetButton() {
+    if (!resetBtn) return;
+
     resetBtn.addEventListener('click', function() {
         if (confirm('¿Estás seguro de que deseas limpiar todos los campos?')) {
             form.reset();
@@ -1447,7 +1453,10 @@ function resetAICapture() {
         aiResults.style.display = 'none';
     }
 
-    document.getElementById('processWithAI').disabled = true;
+    const processBtn = document.getElementById('processWithAI');
+    if (processBtn) {
+        processBtn.disabled = true;
+    }
 }
 
 // ======= GUÍA LATEX =======
@@ -1721,6 +1730,9 @@ function setupProcesoSelectors() {
     const examenContainer = document.getElementById('examen_container');
     const faseSelect = document.getElementById('fase');
     const examenSelect = document.getElementById('examen');
+
+    // Si no existen los elementos necesarios, salir
+    if (!tipoClasificacion || !procesoSection || !anioSelect || !tipoProceso) return;
 
     // Función para obtener configuración de exámenes según el año
     const getExamenesConfig = (anio) => {

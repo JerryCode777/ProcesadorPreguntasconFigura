@@ -19,9 +19,17 @@ AI_API_KEYS = {
     "azure": os.getenv("AZURE_OPENAI_API_KEY", "")
 }
 
+# Configuración de modelos (variables de entorno con valores por defecto)
+AI_MODELS = {
+    "openai": os.getenv("OPENAI_MODEL", "gpt-4o"),
+    "gemini": os.getenv("GEMINI_MODEL", "gemini-2.0-flash-exp"),
+    "claude": os.getenv("CLAUDE_MODEL", "claude-3-5-sonnet-20241022"),
+    "azure": os.getenv("AZURE_OPENAI_MODEL", "gpt-4o")
+}
+
 print(f"🔧 API Keys cargadas:")
 for service, key in AI_API_KEYS.items():
-    print(f"  {service}: {'✅ Configurada' if key else '❌ No configurada'}")
+    print(f"  {service}: {'✅ Configurada' if key else '❌ No configurada'} | Modelo: {AI_MODELS[service]}")
 
 MATERIAS_DISPONIBLES = [
     "Razonamiento Lógico", "Razonamiento Matemático", "Razonamiento Verbal",
@@ -62,7 +70,7 @@ async def process_with_openai(image_content: bytes) -> Dict[str, Any]:
         }
         
         payload = {
-            "model": "gpt-4o",
+            "model": AI_MODELS["openai"],
             "messages": [
                 {
                     "role": "user",
@@ -116,7 +124,7 @@ async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
     try:
         base64_image = base64.b64encode(image_content).decode('utf-8')
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{AI_MODELS['gemini']}:generateContent?key={api_key}"
         
         payload = {
             "contents": [
@@ -173,7 +181,7 @@ async def process_with_claude(image_content: bytes) -> Dict[str, Any]:
         }
         
         payload = {
-            "model": "claude-3-5-sonnet-20241022",
+            "model": AI_MODELS["claude"],
             "max_tokens": 2000,
             "messages": [
                 {
@@ -240,7 +248,26 @@ INSTRUCCIONES IMPORTANTES:
 3. Identifica las 5 opciones (A, B, C, D, E) con su texto completo
 4. Asigna un nivel de dificultad del 1-5
 5. Sugiere un tema descriptivo
-6. Para matemáticas usa texto simple o LaTeX MUY BÁSICO entre $$
+6. Para matemáticas/ciencias usa LaTeX entre $$ (ejemplos):
+   - Fracciones: $$\\frac{{2}}{{5}}$$
+   - Raíces: $$\\sqrt{{x}}$$, $$\\sqrt[3]{{8}}$$
+   - Potencias: $$x^{{2}}$$, $$e^{{-x}}$$
+   - Vectores: $$\\vec{{v}}$$, $$\\hat{{i}}$$, $$\\hat{{j}}$$, $$\\hat{{k}}$$
+   - Matrices: $$\\begin{{pmatrix}} a & b \\\\ c & d \\end{{pmatrix}}$$
+   - Operadores lógicos: $$\\land$$, $$\\lor$$, $$\\neg$$, $$\\Rightarrow$$
+   - Conjuntos: $$\\cup$$, $$\\cap$$, $$\\in$$, $$\\subset$$, $$\\emptyset$$
+   - Trigonometría: $$\\sin$$, $$\\cos$$, $$\\tan$$
+   - Límites: $$\\lim_{{x \\to 0}}$$
+   - Sumatorias: $$\\sum_{{i=1}}^{{n}}$$
+   - Integrales: $$\\int_{{a}}^{{b}}$$
+   - Derivadas: $$\\frac{{d}}{{dx}}$$
+   - Valor absoluto: $$|x|$$
+   - Griegos: $$\\alpha$$, $$\\beta$$, $$\\theta$$, $$\\pi$$, $$\\Delta$$
+   - Química: $$H_{{2}}O$$, $$Fe^{{3+}}$$, $$\\rightarrow$$ (reacción)
+   - Física: use unidades sin LaTeX (m/s, kg, N, J, °C)
+7. MANTÉN el orden exacto de las opciones A, B, C, D, E como aparecen
+8. Si hay tablas o datos numéricos, inclúyelos en la pregunta
+9. Si la imagen está borrosa o incompleta, indica menor confianza (30-50)
 
 RESPONDE ÚNICAMENTE con un JSON válido en este formato exacto:
 {{
@@ -466,7 +493,7 @@ async def generate_explanation_from_question_gemini(question_image: bytes, pregu
     api_key = AI_API_KEYS["gemini"]
 
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{AI_MODELS['gemini']}:generateContent?key={api_key}"
 
         base64_image = base64.b64encode(question_image).decode('utf-8')
 
@@ -524,7 +551,7 @@ async def process_solution_with_gemini(solution_images: list, pregunta: str, res
     api_key = AI_API_KEYS["gemini"]
 
     try:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{AI_MODELS['gemini']}:generateContent?key={api_key}"
 
         # Crear partes del contenido
         parts = [
@@ -599,3 +626,211 @@ def get_mock_response() -> Dict[str, Any]:
         "ai_service": "mock",
         "note": "Respuesta simulada - Configura las API keys para usar IA real"
     }
+
+
+# ========================================
+# FUNCIONES PARA COMPRENSIÓN LECTORA
+# ========================================
+
+async def process_comprehension_question(service: str, image_content: bytes, texto_comprension: str) -> Dict[str, Any]:
+    """
+    Procesa una imagen de pregunta de comprensión y extrae sus datos
+    """
+    api_key = AI_API_KEYS.get(service)
+    if not api_key:
+        # Retornar respuesta simulada si no hay API key
+        return {
+            "pregunta": "¿Cuál es la idea principal del texto? (Simulado)",
+            "opciones": {
+                "A": "Opción A simulada",
+                "B": "Opción B simulada",
+                "C": "Opción C simulada",
+                "D": "Opción D simulada",
+                "E": "Opción E simulada"
+            },
+            "respuesta_correcta": "B",
+            "explicacion": "Esta es una explicación simulada. Configura las API keys para usar IA real.",
+            "dificultad": 2
+        }
+
+    # Preparar prompt para extraer pregunta de comprensión
+    prompt = f"""
+Analiza esta imagen que contiene una pregunta de comprensión lectora.
+
+INSTRUCCIONES:
+Extrae de la imagen:
+1. La pregunta completa
+2. Las 5 alternativas (A, B, C, D, E)
+3. La respuesta correcta (si está marcada o indicada)
+4. La explicación (si existe)
+5. Estima la dificultad (1-3)
+
+FORMATO DE SALIDA - JSON puro sin markdown:
+{{
+  "pregunta": "texto de la pregunta",
+  "opciones": {{
+    "A": "texto opción A",
+    "B": "texto opción B",
+    "C": "texto opción C",
+    "D": "texto opción D",
+    "E": "texto opción E"
+  }},
+  "respuesta_correcta": "B",
+  "explicacion": "explicación detallada paso a paso",
+  "dificultad": 2
+}}
+
+IMPORTANTE:
+- Devuelve SOLO el JSON, sin ```json ni markdown
+- Si la respuesta correcta no está marcada, analiza cuál es la correcta
+- Si no hay explicación, genera una breve y clara
+- Usa LaTeX para fórmulas matemáticas si es necesario: $$formula$$
+"""
+
+    try:
+        base64_image = base64.b64encode(image_content).decode('utf-8')
+
+        if service == "gemini":
+            result_text = await process_comp_with_gemini(base64_image, prompt)
+        elif service == "openai":
+            result_text = await process_comp_with_openai(base64_image, prompt)
+        elif service == "claude":
+            result_text = await process_comp_with_claude(base64_image, prompt)
+        else:
+            raise ValueError(f"Servicio no soportado: {service}")
+
+        # Limpiar respuesta y parsear JSON
+        result_text = result_text.strip()
+        result_text = re.sub(r'^```json\s*', '', result_text)
+        result_text = re.sub(r'^```\s*', '', result_text)
+        result_text = re.sub(r'\s*```$', '', result_text)
+
+        return json.loads(result_text)
+
+    except Exception as e:
+        print(f"Error procesando pregunta de comprensión: {e}")
+        raise
+
+
+async def process_comp_with_gemini(base64_image: str, prompt: str) -> str:
+    """Procesa pregunta de comprensión con Gemini"""
+    api_key = AI_API_KEYS["gemini"]
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{AI_MODELS['gemini']}:generateContent?key={api_key}"
+
+    payload = {
+        "contents": [{
+            "parts": [
+                {"text": prompt},
+                {
+                    "inline_data": {
+                        "mime_type": "image/jpeg",
+                        "data": base64_image
+                    }
+                }
+            ]
+        }],
+        "generationConfig": {
+            "maxOutputTokens": 1500,
+            "temperature": 0.4
+        }
+    }
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(url, json=payload)
+
+        if response.status_code == 200:
+            result = response.json()
+            return result["candidates"][0]["content"]["parts"][0]["text"]
+        else:
+            raise Exception(f"Error Gemini: {response.status_code} - {response.text}")
+
+
+async def process_comp_with_openai(base64_image: str, prompt: str) -> str:
+    """Procesa pregunta de comprensión con OpenAI"""
+    api_key = AI_API_KEYS["openai"]
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}"
+    }
+
+    payload = {
+        "model": AI_MODELS["openai"],
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{base64_image}",
+                            "detail": "high"
+                        }
+                    }
+                ]
+            }
+        ],
+        "max_tokens": 1500
+    }
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers=headers,
+            json=payload
+        )
+
+        if response.status_code == 200:
+            result = response.json()
+            return result["choices"][0]["message"]["content"]
+        else:
+            raise Exception(f"Error OpenAI: {response.status_code}")
+
+
+async def process_comp_with_claude(base64_image: str, prompt: str) -> str:
+    """Procesa pregunta de comprensión con Claude"""
+    api_key = AI_API_KEYS["claude"]
+
+    headers = {
+        "Content-Type": "application/json",
+        "x-api-key": api_key,
+        "anthropic-version": "2023-06-01"
+    }
+
+    payload = {
+        "model": AI_MODELS["claude"],
+        "max_tokens": 1500,
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": "image/jpeg",
+                            "data": base64_image
+                        }
+                    },
+                    {
+                        "type": "text",
+                        "text": prompt
+                    }
+                ]
+            }
+        ]
+    }
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(
+            "https://api.anthropic.com/v1/messages",
+            headers=headers,
+            json=payload
+        )
+
+        if response.status_code == 200:
+            result = response.json()
+            return result["content"][0]["text"]
+        else:
+            raise Exception(f"Error Claude: {response.status_code}")
