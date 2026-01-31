@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const preview = document.getElementById('textoImagenPreview');
     const previewImg = document.getElementById('textoImagenPreviewImg');
 
+    if (!inputTexto || !dropArea) return;
+
+    // Hacer el área enfocable para paste
+    dropArea.setAttribute('tabindex', '0');
+    dropArea.style.outline = 'none';
+    dropArea.style.cursor = 'pointer';
+
     // Cambio de archivo
     inputTexto.addEventListener('change', (e) => {
         const file = e.target.files[0];
@@ -110,21 +117,77 @@ document.addEventListener('DOMContentLoaded', () => {
     // Drag & drop
     dropArea.addEventListener('dragover', (e) => {
         e.preventDefault();
-        dropArea.classList.add('border-slate-500');
+        dropArea.classList.add('border-slate-500', 'bg-white');
     });
 
     dropArea.addEventListener('dragleave', () => {
-        dropArea.classList.remove('border-slate-500');
+        dropArea.classList.remove('border-slate-500', 'bg-white');
     });
 
     dropArea.addEventListener('drop', (e) => {
         e.preventDefault();
-        dropArea.classList.remove('border-slate-500');
+        dropArea.classList.remove('border-slate-500', 'bg-white');
         const file = e.dataTransfer.files[0];
         if (file && file.type.startsWith('image/')) {
-            inputTexto.files = e.dataTransfer.files;
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            inputTexto.files = dataTransfer.files;
             inputTexto.dispatchEvent(new Event('change'));
         }
+    });
+
+    // Paste
+    dropArea.addEventListener('paste', (e) => {
+        console.log('Paste event en textoDropArea', e);
+        e.preventDefault();
+        e.stopPropagation();
+
+        const items = e.clipboardData?.items;
+        if (!items) {
+            mostrarMensaje('No se detectó contenido en el portapapeles', 'error');
+            return;
+        }
+
+        console.log(`Total items: ${items.length}`);
+        for (let i = 0; i < items.length; i++) {
+            console.log(`Item ${i}: ${items[i].type}`);
+            if (items[i].type.startsWith('image/')) {
+                const file = items[i].getAsFile();
+                console.log('Image file:', file);
+                if (file) {
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    inputTexto.files = dataTransfer.files;
+                    inputTexto.dispatchEvent(new Event('change'));
+                    mostrarMensaje('📋 Imagen del texto pegada desde el portapapeles', 'success');
+                } else {
+                    mostrarMensaje('Error al obtener la imagen del portapapeles', 'error');
+                }
+                return;
+            }
+        }
+
+        mostrarMensaje('No se encontró ninguna imagen. Copia una imagen primero.', 'error');
+    });
+
+    // Click enfoca el área
+    dropArea.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropArea.focus();
+        console.log('textoDropArea focused');
+    });
+
+    // Indicador visual cuando tiene foco
+    dropArea.addEventListener('focus', () => {
+        dropArea.style.borderColor = '#10b981';
+        dropArea.style.background = '#ecfdf5';
+        console.log('textoDropArea gained focus');
+    });
+
+    dropArea.addEventListener('blur', () => {
+        dropArea.style.borderColor = '';
+        dropArea.style.background = '';
+        console.log('textoDropArea lost focus');
     });
 });
 
@@ -179,9 +242,10 @@ function generarCamposPreguntas(numPreguntas) {
             </div>
             <div class="mt-2 rounded-xl border-2 border-dashed border-slate-300 bg-white px-3 py-6 text-center cursor-pointer hover:border-slate-500"
                  id="preguntaDropArea${i}"
+                 title="Haz clic aquí y luego presiona Ctrl+V para pegar una imagen"
                  onclick="document.getElementById('imagenPregunta${i}').click()">
                 <div class="text-2xl">${i}️⃣</div>
-                <p class="mt-1 text-xs text-slate-600">Arrastra o selecciona</p>
+                <p class="mt-1 text-xs text-slate-600">👆 Clic + Ctrl+V</p>
                 <input type="file" id="imagenPregunta${i}" accept="image/*" hidden data-pregunta="${i}">
             </div>
             <div id="preguntaPreview${i}" class="mt-3 hidden">
@@ -201,9 +265,17 @@ function generarCamposPreguntas(numPreguntas) {
 
 function setupPreguntaImagenListeners(num) {
     const input = document.getElementById(`imagenPregunta${num}`);
+    const dropArea = document.getElementById(`preguntaDropArea${num}`);
     const preview = document.getElementById(`preguntaPreview${num}`);
     const previewImg = document.getElementById(`preguntaPreviewImg${num}`);
 
+    if (!input || !dropArea) return;
+
+    // Hacer el área enfocable para paste
+    dropArea.setAttribute('tabindex', '0');
+    dropArea.style.outline = 'none';
+
+    // Cambio de archivo
     input.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file && file.type.startsWith('image/')) {
@@ -215,6 +287,87 @@ function setupPreguntaImagenListeners(num) {
             };
             reader.readAsDataURL(file);
         }
+    });
+
+    // Drag & drop
+    dropArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropArea.classList.add('border-slate-500', 'bg-white');
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+        dropArea.classList.remove('border-slate-500', 'bg-white');
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.classList.remove('border-slate-500', 'bg-white');
+        const file = e.dataTransfer.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(file);
+            input.files = dataTransfer.files;
+            input.dispatchEvent(new Event('change'));
+        }
+    });
+
+    // Paste
+    dropArea.addEventListener('paste', (e) => {
+        console.log(`Paste event en preguntaDropArea${num}`, e);
+        e.preventDefault();
+        e.stopPropagation();
+
+        const items = e.clipboardData?.items;
+        if (!items) {
+            mostrarMensaje('No se detectó contenido en el portapapeles', 'error');
+            return;
+        }
+
+        console.log(`Total items: ${items.length}`);
+        for (let i = 0; i < items.length; i++) {
+            console.log(`Item ${i}: ${items[i].type}`);
+            if (items[i].type.startsWith('image/')) {
+                const file = items[i].getAsFile();
+                console.log('Image file:', file);
+                if (file) {
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    input.files = dataTransfer.files;
+                    input.dispatchEvent(new Event('change'));
+                    mostrarMensaje(`📋 Imagen de pregunta ${num} pegada desde el portapapeles`, 'success');
+                } else {
+                    mostrarMensaje('Error al obtener la imagen del portapapeles', 'error');
+                }
+                return;
+            }
+        }
+
+        mostrarMensaje('No se encontró ninguna imagen. Copia una imagen primero.', 'error');
+    });
+
+    // Click enfoca el área (prevenir propagación del onclick del HTML)
+    dropArea.addEventListener('click', (e) => {
+        const target = e.target;
+        // Si el click fue en el área pero no en el input oculto
+        if (target === dropArea || dropArea.contains(target)) {
+            e.stopPropagation();
+            dropArea.focus();
+            console.log(`preguntaDropArea${num} focused`);
+        }
+    });
+
+    // Indicador visual cuando tiene foco
+    dropArea.addEventListener('focus', () => {
+        dropArea.style.borderColor = '#10b981';
+        dropArea.style.background = '#ecfdf5';
+        console.log(`preguntaDropArea${num} gained focus`);
+    });
+
+    dropArea.addEventListener('blur', () => {
+        dropArea.style.borderColor = '';
+        dropArea.style.background = '';
+        console.log(`preguntaDropArea${num} lost focus`);
     });
 }
 

@@ -148,20 +148,45 @@ async def process_with_gemini(image_content: bytes) -> Dict[str, Any]:
         
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(url, json=payload)
-            
+
             if response.status_code == 200:
                 result = response.json()
-                content = result["candidates"][0]["content"]["parts"][0]["text"]
+                print(f"📦 Respuesta completa de Gemini: {json.dumps(result, indent=2)}")
+
+                # Verificar si hay error en la respuesta
+                if "error" in result:
+                    print(f"❌ Error en respuesta de Gemini: {result['error']}")
+                    return get_mock_response()
+
+                # Verificar estructura de la respuesta
+                if "candidates" not in result or not result["candidates"]:
+                    print(f"❌ No hay candidates en la respuesta de Gemini")
+                    print(f"Respuesta recibida: {result}")
+                    return get_mock_response()
+
+                candidate = result["candidates"][0]
+
+                # Verificar si el contenido fue bloqueado
+                if "content" not in candidate:
+                    print(f"❌ No hay 'content' en candidate")
+                    print(f"Candidate completo: {candidate}")
+                    if "finishReason" in candidate:
+                        print(f"Razón de finalización: {candidate['finishReason']}")
+                    return get_mock_response()
+
+                content = candidate["content"]["parts"][0]["text"]
                 print(f"✅ Gemini respondió exitosamente, procesando respuesta...")
                 parsed_result = parse_ai_response(content, "gemini")
                 print(f"🎯 Resultado parseado - Servicio: {parsed_result.get('ai_service', 'unknown')}")
                 return parsed_result
             else:
-                print(f"❌ Error Gemini: {response.status_code} - {response.text}")
+                print(f"❌ Error Gemini HTTP: {response.status_code} - {response.text}")
                 return get_mock_response()
-                
+
     except Exception as e:
-        print(f"Error procesando con Gemini: {str(e)}")
+        print(f"❌ Error procesando con Gemini: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return get_mock_response()
 
 async def process_with_claude(image_content: bytes) -> Dict[str, Any]:
