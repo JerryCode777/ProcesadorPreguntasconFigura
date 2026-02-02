@@ -941,6 +941,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCargarJSON = document.getElementById('cargarDesdeJSON');
     if (!btnCargarJSON) return;
 
+    const sanitizeJsonInput = (text) => {
+        let result = '';
+        let inString = false;
+        let escapeNext = false;
+
+        for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+
+            if (escapeNext) {
+                result += char;
+                escapeNext = false;
+                continue;
+            }
+
+            if (char === '\\') {
+                result += char;
+                escapeNext = true;
+                continue;
+            }
+
+            if (char === '"') {
+                if (!inString) {
+                    inString = true;
+                    result += char;
+                    continue;
+                }
+
+                // Lookahead to decide if this closes the string
+                let j = i + 1;
+                while (j < text.length && /\s/.test(text[j])) j++;
+                const next = text[j];
+                const isClosing = next === ',' || next === '}' || next === ']' || next === '\n' || next === '\r';
+
+                if (isClosing) {
+                    inString = false;
+                    result += char;
+                } else {
+                    result += '\\"';
+                }
+                continue;
+            }
+
+            result += char;
+        }
+
+        return result;
+    };
+
     const jsonInput = document.getElementById('jsonInput');
     if (jsonInput) {
         jsonInput.addEventListener('input', () => {
@@ -958,8 +1006,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            // Parsear JSON
-            const data = JSON.parse(jsonText);
+            // Parsear JSON (con auto-escape si es necesario)
+            let data;
+            try {
+                data = JSON.parse(jsonText);
+            } catch (parseError) {
+                const sanitized = sanitizeJsonInput(jsonText);
+                data = JSON.parse(sanitized);
+                mostrarMensaje('⚠️ Se auto-escaparon comillas internas en el JSON', 'success');
+            }
 
             // Validar estructura
             if (!data.texto) {
