@@ -1,32 +1,7 @@
 // ========================================
-// SISTEMA DE PESTAÑAS
-// ========================================
-
-function switchTab(tabName) {
-    // Cambiar estilo de los botones
-    const tabNormal = document.getElementById('tabNormal');
-    const tabComprension = document.getElementById('tabComprension');
-
-    if (tabName === 'normal') {
-        tabNormal.className = 'flex-1 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800';
-        tabComprension.className = 'flex-1 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-200';
-
-        // Mostrar/ocultar formularios
-        document.getElementById('preguntaForm').classList.remove('hidden');
-        document.getElementById('comprensionForm').classList.add('hidden');
-    } else {
-        tabNormal.className = 'flex-1 rounded-xl bg-slate-100 px-4 py-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-200';
-        tabComprension.className = 'flex-1 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800';
-
-        // Mostrar/ocultar formularios
-        document.getElementById('preguntaForm').classList.add('hidden');
-        document.getElementById('comprensionForm').classList.remove('hidden');
-    }
-}
-
-// ========================================
 // FORMULARIO DE COMPRENSIÓN - VARIABLES GLOBALES
 // ========================================
+// NOTA: La función switchTab está en script.js para manejar todas las pestañas
 
 let tipoComprensionActual = null;
 let numPreguntasRequeridas = 0;
@@ -956,6 +931,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (char === '\\') {
+                if (inString) {
+                    const nextChar = text[i + 1] || '';
+                    const isValidEscape = ['"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'].includes(nextChar);
+                    if (!isValidEscape) {
+                        result += '\\\\';
+                        continue;
+                    }
+                }
                 result += char;
                 escapeNext = true;
                 continue;
@@ -972,15 +955,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 let j = i + 1;
                 while (j < text.length && /\s/.test(text[j])) j++;
                 const next = text[j];
-                const isClosing = next === ',' || next === '}' || next === ']' || next === '\n' || next === '\r';
 
-                if (isClosing) {
+                if (next === ':') {
                     inString = false;
                     result += char;
-                } else {
-                    result += '\\"';
+                    continue;
                 }
+
+                if (next === ',' || next === '}' || next === ']') {
+                    let k = j + 1;
+                    while (k < text.length && /\s/.test(text[k])) k++;
+                    const after = text[k] || '';
+                    const isStructuralNext = after === '"' || after === '}' || after === ']' || after === '';
+                    if (isStructuralNext) {
+                        inString = false;
+                        result += char;
+                    } else {
+                        result += '\\"';
+                    }
+                    continue;
+                }
+
+                result += '\\"';
                 continue;
+            }
+
+            if (inString) {
+                if (char === '\n') {
+                    result += '\\n';
+                    continue;
+                }
+                if (char === '\r') {
+                    result += '\\r';
+                    continue;
+                }
+                if (char === '\t') {
+                    result += '\\t';
+                    continue;
+                }
             }
 
             result += char;

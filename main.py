@@ -525,6 +525,49 @@ async def siguiente_texto_comprension(request: Request):
         print(f"Error obteniendo siguiente texto: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error obteniendo siguiente texto: {str(e)}")
 
+@app.post("/api/generar-variacion")
+async def generar_variacion(
+    ai_service: str = Form(...),
+    tipo_variacion: str = Form(...),
+    imagen: UploadFile = File(...)
+):
+    """
+    Genera una variación de una pregunta existente manteniendo los números originales
+    pero cambiando el contexto o añadiendo pasos adicionales
+    """
+    try:
+        from ai_variation import generate_question_variation
+
+        # Validar servicio de IA
+        valid_services = ["openai", "gemini", "claude", "azure"]
+        if ai_service not in valid_services:
+            raise HTTPException(status_code=400, detail="Servicio de IA no válido")
+
+        # Validar tipo de variación
+        valid_types = ["contexto", "paso_adicional", "mas_compleja"]
+        if tipo_variacion not in valid_types:
+            raise HTTPException(status_code=400, detail="Tipo de variación no válido")
+
+        # Validar que la imagen esté presente
+        if not imagen or not imagen.filename:
+            raise HTTPException(status_code=400, detail="Debe subir una imagen")
+
+        # Leer imagen
+        image_content = await imagen.read()
+
+        # Generar variación con IA
+        result = await generate_question_variation(ai_service, image_content, tipo_variacion)
+
+        return JSONResponse(content={
+            "success": True,
+            "data": result
+        })
+
+    except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
+        raise HTTPException(status_code=500, detail=f"Error generando variación: {str(e)}")
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,10 +1,7 @@
-// Elementos del DOM
-const form = document.getElementById('preguntaForm');
-const submitBtn = document.getElementById('submitBtn');
-const resetBtn = document.getElementById('resetBtn');
-const mensaje = document.getElementById('mensaje');
-const jsonPreview = document.getElementById('jsonPreview');
-const jsonContent = document.getElementById('jsonContent');
+console.log('📦 script.js cargándose...');
+
+// Elementos del DOM (se inicializarán cuando el DOM esté listo)
+let form, submitBtn, resetBtn, mensaje, jsonPreview, jsonContent;
 
 // Estado del formulario
 let isSubmitting = false;
@@ -23,6 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeForm() {
+    // Inicializar referencias al DOM
+    form = document.getElementById('preguntaForm');
+    submitBtn = document.getElementById('submitBtn');
+    resetBtn = document.getElementById('resetBtn');
+    mensaje = document.getElementById('mensaje');
+    jsonPreview = document.getElementById('jsonPreview');
+    jsonContent = document.getElementById('jsonContent');
+
+    console.log('✅ script.js inicializado correctamente');
+    console.log('✅ switchTab está disponible:', typeof window.switchTab !== 'undefined');
+
     // Auto-resize de textareas
     const textareas = document.querySelectorAll('textarea');
     textareas.forEach(textarea => {
@@ -1931,15 +1939,44 @@ function cargarDesdeJSONNormal() {
                 let j = i + 1;
                 while (j < text.length && /\s/.test(text[j])) j++;
                 const next = text[j];
-                const isClosing = next === ',' || next === '}' || next === ']' || next === '\n' || next === '\r';
 
-                if (isClosing) {
+                if (next === ':') {
                     inString = false;
                     result += char;
-                } else {
-                    result += '\\"';
+                    continue;
                 }
+
+                if (next === ',' || next === '}' || next === ']') {
+                    let k = j + 1;
+                    while (k < text.length && /\s/.test(text[k])) k++;
+                    const after = text[k] || '';
+                    const isStructuralNext = after === '"' || after === '}' || after === ']' || after === '';
+                    if (isStructuralNext) {
+                        inString = false;
+                        result += char;
+                    } else {
+                        result += '\\"';
+                    }
+                    continue;
+                }
+
+                result += '\\"';
                 continue;
+            }
+
+            if (inString) {
+                if (char === '\n') {
+                    result += '\\n';
+                    continue;
+                }
+                if (char === '\r') {
+                    result += '\\r';
+                    continue;
+                }
+                if (char === '\t') {
+                    result += '\\t';
+                    continue;
+                }
             }
 
             result += char;
@@ -2081,5 +2118,45 @@ function cargarDesdeJSONNormal() {
     } catch (error) {
         console.error('Error parsing JSON:', error);
         showMessage(`❌ Error al cargar JSON: ${error.message}`, 'error');
+    }
+}
+
+
+// ========================================
+// SISTEMA DE PESTAÑAS
+// ========================================
+
+// Hacer switchTab global explícitamente
+window.switchTab = function(tabName) {
+    console.log('🔄 Cambiando a pestaña:', tabName);
+
+    // Ocultar todos los contenidos de pestañas
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+    });
+
+    // Mostrar el contenido de la pestaña seleccionada
+    const selectedTab = document.querySelector(`[data-tab="${tabName}"]`);
+    if (selectedTab) {
+        selectedTab.classList.remove('hidden');
+        console.log('✅ Pestaña encontrada y mostrada:', tabName);
+    } else {
+        console.error('❌ No se encontró pestaña con data-tab:', tabName);
+    }
+
+    // Actualizar estilos de botones de pestañas
+    document.querySelectorAll('[id^="tab"]').forEach(btn => {
+        btn.classList.remove('bg-slate-900', 'text-white');
+        btn.classList.add('bg-slate-100', 'text-slate-600');
+    });
+
+    // Activar la pestaña seleccionada
+    const activeBtn = document.getElementById(`tab${tabName.charAt(0).toUpperCase() + tabName.slice(1)}`);
+    if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+        activeBtn.classList.add('bg-slate-900', 'text-white');
+        console.log('✅ Botón activado:', activeBtn.id);
+    } else {
+        console.error('❌ No se encontró botón con ID:', `tab${tabName.charAt(0).toUpperCase() + tabName.slice(1)}`);
     }
 }
