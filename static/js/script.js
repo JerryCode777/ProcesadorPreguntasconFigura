@@ -1940,6 +1940,16 @@ function cargarDesdeJSONNormal() {
         return result;
     };
 
+    const normalizeKey = (value) => {
+        if (!value) return '';
+        return value
+            .toString()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .trim();
+    };
+
     try {
         let data;
         try {
@@ -1948,6 +1958,11 @@ function cargarDesdeJSONNormal() {
             const sanitized = sanitizeJsonInput(jsonText);
             data = JSON.parse(sanitized);
             showMessage('⚠️ Se auto-escaparon comillas internas en el JSON', 'success');
+        }
+
+        // Normalizar claves alternativas
+        if (!data.pregunta && data.enunciado) {
+            data.pregunta = data.enunciado;
         }
 
         // Validar estructura básica
@@ -1971,8 +1986,15 @@ function cargarDesdeJSONNormal() {
         // 1. Materia
         if (data.materia) {
             const materiaSelect = document.getElementById('materia');
-            materiaSelect.value = data.materia;
-            clearFieldError(materiaSelect);
+            const target = normalizeKey(data.materia);
+            const options = Array.from(materiaSelect.options);
+            const match = options.find(opt => normalizeKey(opt.value) === target || normalizeKey(opt.textContent) === target);
+            if (match) {
+                materiaSelect.value = match.value;
+                clearFieldError(materiaSelect);
+            } else {
+                materiaSelect.value = data.materia;
+            }
         }
 
         // 2. Tema
