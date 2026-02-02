@@ -1908,6 +1908,14 @@ function cargarDesdeJSONNormal() {
             }
 
             if (char === '\\') {
+                if (inString) {
+                    const nextChar = text[i + 1] || '';
+                    const isValidEscape = ['"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'].includes(nextChar);
+                    if (!isValidEscape) {
+                        result += '\\\\';
+                        continue;
+                    }
+                }
                 result += char;
                 escapeNext = true;
                 continue;
@@ -1950,6 +1958,11 @@ function cargarDesdeJSONNormal() {
             .trim();
     };
 
+    const stripBackticks = (value) => {
+        if (typeof value !== 'string') return value;
+        return value.replace(/`+/g, '');
+    };
+
     try {
         let data;
         try {
@@ -1963,6 +1976,15 @@ function cargarDesdeJSONNormal() {
         // Normalizar claves alternativas
         if (!data.pregunta && data.enunciado) {
             data.pregunta = data.enunciado;
+        }
+
+        // Limpiar backticks en contenido (LaTeX)
+        data.pregunta = stripBackticks(data.pregunta);
+        if (data.explicacion) data.explicacion = stripBackticks(data.explicacion);
+        if (data.opciones && typeof data.opciones === 'object') {
+            Object.keys(data.opciones).forEach((k) => {
+                data.opciones[k] = stripBackticks(data.opciones[k]);
+            });
         }
 
         // Validar estructura básica
