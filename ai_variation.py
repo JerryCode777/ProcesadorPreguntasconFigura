@@ -63,6 +63,8 @@ IMPORTANTE:
 - Devuelve SOLO el JSON, sin ```json ni markdown
 - Los números DEBEN ser idénticos a los de la imagen
 - Solo cambia el contexto/redacción, NO los datos numéricos
+- NO uses comillas dobles escapadas (\") dentro del texto, usa comillas simples (')
+- Asegúrate de completar TODOS los campos del JSON
 """,
 
         "paso_adicional": """
@@ -87,6 +89,8 @@ IMPORTANTE:
 - Devuelve SOLO el JSON, sin ```json ni markdown
 - Los números DEBEN ser idénticos a los de la imagen
 - El paso adicional debe requerir usar el resultado del problema original
+- NO uses comillas dobles escapadas (\") dentro del texto, usa comillas simples (')
+- Asegúrate de completar TODOS los campos del JSON
 """,
 
         "mas_compleja": """
@@ -113,17 +117,19 @@ IMPORTANTE:
 - Devuelve SOLO el JSON, sin ```json ni markdown
 - Los números de la imagen DEBEN mantenerse iguales
 - La complejidad adicional debe ser razonable y resolver el mismo diagrama
+- NO uses comillas dobles escapadas (\") dentro del texto, usa comillas simples (')
+- Asegúrate de completar TODOS los campos del JSON
 """
     }
 
     return prompts.get(tipo_variacion, prompts["contexto"])
 
 
-def extract_json(text: str) -> Dict[str, Any]:
-    """Extrae y parsea JSON de la respuesta de la IA"""
+def extract_json(text: str, allow_single: bool = True) -> Dict[str, Any]:
+    """Extrae y parsea JSON de la respuesta de la IA con manejo robusto de errores"""
     cleaned = text.strip()
 
-    # Eliminar bloques de código markdown
+    # Eliminar bloques de código markdown de forma más robusta
     cleaned = re.sub(r"^```+(?:json)?\s*", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"```+\s*$", "", cleaned)
     cleaned = cleaned.strip()
@@ -133,16 +139,127 @@ def extract_json(text: str) -> Dict[str, Any]:
 
     try:
         return json.loads(cleaned)
-    except json.JSONDecodeError:
-        # Intentar extraer JSON del texto
+    except json.JSONDecodeError as e:
+        # Intentar recuperar el JSON con limpieza adicional
         start = cleaned.find("{")
         end = cleaned.rfind("}")
-
         if start == -1 or end == -1 or end <= start:
-            raise ValueError("No se pudo encontrar JSON válido en la respuesta")
+            print(f"❌ Error parseando JSON: {e}")
+            print(f"📄 Respuesta completa ({len(cleaned)} chars):")
+            print(cleaned[:1000])
+            if len(cleaned) > 1000:
+                print(f"... (truncado, total: {len(cleaned)} caracteres)")
+            raise
 
         json_str = cleaned[start : end + 1]
-        return json.loads(json_str)
+
+        # Limpiar comillas problemáticas
+        json_str = json_str.replace('"', '"').replace('"', '"')
+        json_str = json_str.replace(''', "'").replace(''', "'")
+
+        # Remover caracteres de control inválidos (excepto \n, \r, \t que son válidos)
+        json_str = re.sub(r'[\x00-\x08\x0B\x0C\x0E-\x1F]', '', json_str)
+
+        # Arreglar comillas escapadas incorrectamente dentro de strings JSON
+        # La IA a veces devuelve: "text: \"x\"" cuando debería ser "text: \\\"x\\\""
+        # Primero, encontrar todos los strings y arreglar las comillas escapadas dentro
+        def fix_escaped_quotes(match):
+            content = match.group(1)
+            # Reemplazar \" por ' para evitar problemas de parsing
+            # (las comillas simples no causan problemas en JSON strings)
+            content = content.replace('\\"', "'")
+            return f'"{content}"'
+
+        # Aplicar la corrección a todos los valores de string en el JSON
+        json_str = re.sub(r'"([^"]*(?:\\"[^"]*)*)"', fix_escaped_quotes, json_str)
+
+        # Estrategia más robusta: procesar el JSON carácter por carácter dentro de strings
+        # para escapar correctamente backslashes y saltos de línea
+        result = []
+        in_string = False
+        escape_next = False
+        i = 0
+
+        while i < len(json_str):
+            char = json_str[i]
+
+            if escape_next:
+                result.append(char)
+                escape_next = False
+                i += 1
+                continue
+
+            if char == '"':
+                in_string = not in_string
+                result.append(char)
+                i += 1
+                continue
+
+            if in_string:
+                if char == '\\':
+                    # Verificar el siguiente carácter
+                    if i + 1 < len(json_str):
+                        next_char = json_str[i + 1]
+                        # Si es una secuencia de escape JSON válida, mantenerla
+                        if next_char in ('"', '\\', '/', 'b', 'f', 'n', 'r', 't', 'u'):
+                            result.append(char)
+                            escape_next = True
+                        else:
+                            # Es un backslash de LaTeX, duplicarlo
+                            result.append('\\\\')
+                    else:
+                        result.append('\\\\')
+                    i += 1
+                elif char == '\n':
+                    result.append('\\n')
+                    i += 1
+                elif char == '\r':
+                    result.append('\\r')
+                    i += 1
+                elif char == '\t':
+                    result.append('\\t')
+                    i += 1
+                else:
+                    result.append(char)
+                    i += 1
+            else:
+                result.append(char)
+                i += 1
+
+        json_str = ''.join(result)
+
+        # Intentar balancear llaves/corchetes si faltan cierres
+        open_curly = json_str.count('{')
+        close_curly = json_str.count('}')
+        if close_curly < open_curly:
+            json_str += '}' * (open_curly - close_curly)
+        open_square = json_str.count('[')
+        close_square = json_str.count(']')
+        if close_square < open_square:
+            json_str += ']' * (open_square - close_square)
+
+        try:
+            result = json.loads(json_str)
+            return result
+        except json.JSONDecodeError as e2:
+            print(f"Error parseando JSON después de limpieza: {e2}")
+            print(f"Posición del error: línea {e2.lineno}, columna {e2.colno}")
+
+            # Mostrar contexto del error
+            if hasattr(e2, 'pos'):
+                pos = e2.pos
+                context_start = max(0, pos - 100)
+                context_end = min(len(json_str), pos + 100)
+                context = json_str[context_start:context_end]
+                print(f"Contexto del error:")
+                print(f"...{context}...")
+
+            # Guardar JSON problemático para debug
+            debug_file = Path("/tmp/json_error_debug_variation.txt")
+            debug_file.write_text(json_str, encoding="utf-8")
+            print(f"JSON guardado en: {debug_file}")
+            print(f"Longitud del JSON: {len(json_str)} caracteres")
+            raise
 
 
 async def generate_question_variation(service: str, image_content: bytes, tipo_variacion: str) -> Dict[str, Any]:
@@ -217,7 +334,7 @@ async def generate_variation_gemini(base64_image: str, prompt: str) -> str:
             ]
         }],
         "generationConfig": {
-            "maxOutputTokens": 2000,
+            "maxOutputTokens": 4000,
             "temperature": 0.3
         }
     }
@@ -243,7 +360,15 @@ async def generate_variation_gemini(base64_image: str, prompt: str) -> str:
                     raise Exception("Gemini detectó contenido protegido. Usa otro servicio de IA.")
                 raise Exception(f"Gemini no devolvió contenido. Razón: {finish_reason}")
 
-            return candidate["content"]["parts"][0]["text"]
+            # Log para debug
+            finish_reason = candidate.get("finishReason", "NONE")
+            text_response = candidate["content"]["parts"][0]["text"]
+            print(f"🤖 Gemini finishReason: {finish_reason}")
+            print(f"📝 Respuesta longitud: {len(text_response)} caracteres")
+            if finish_reason != "STOP":
+                print(f"⚠️ ADVERTENCIA: Respuesta posiblemente incompleta. FinishReason: {finish_reason}")
+
+            return text_response
         else:
             raise Exception(f"Error HTTP Gemini: {response.status_code} - {response.text}")
 
