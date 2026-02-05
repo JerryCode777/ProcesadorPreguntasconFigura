@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 10,
+  "total_temas": 29,
+  "titulo_tema": "DETERMINANTE E INVERSA DE UNA MATRIZ 2x2",
+  "tema": "determinante_e_inversa_de_una_matriz_2x2",
+  "preguntas": [
+    {
+      "pregunta": "Si una matriz de transformación es $$A = [3 2 / 1 1]$$, calcular el determinante del producto de esta matriz por su transpuesta, es decir, $$det(A \\cdot A^t)$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero calculamos la transpuesta de $$A$$: $$A^t = [3 1 / 2 1]$$. Luego, multiplicamos $$A \\cdot A^t$$: $$A \\cdot A^t = [3 2 / 1 1][3 1 / 2 1] = [3 \\cdot 3 + 2 \\cdot 2 \\quad 3 \\cdot 1 + 2 \\cdot 1 / 1 \\cdot 3 + 1 \\cdot 2 \\quad 1 \\cdot 1 + 1 \\cdot 1] = [9 + 4 \\quad 3 + 2 / 3 + 2 \\quad 1 + 1] = [13 5 / 5 2]$$. Finalmente, calculamos el determinante de esta nueva matriz: $$det([13 5 / 5 2]) = 13 \\cdot 2 - 5 \\cdot 5 = 26 - 25 = 1$$.",
+      "id_temporal": "alg_det_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar todos los valores posibles de $$k$$ para los cuales el determinante de la matriz de coeficientes del sistema $$M = [k - 2 \\quad -3 / 1 \\quad k - 6]$$ es igual a cero.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$3 \\text{ ó } 5$$",
+        "B": "$$2 \\text{ ó } 4$$",
+        "C": "$$1 \\text{ ó } 6$$",
+        "D": "$$0 \\text{ ó } 3$$",
+        "E": "$$5 \\text{ ó } 6$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que el determinante sea cero, debemos resolver la ecuación $$det(M) = 0$$. La fórmula del determinante para una matriz de 2x2 es $$ad - bc$$. Entonces, $$(k - 2)(k - 6) - (-3)(1) = 0$$. Expandiendo la expresión: $$k^2 - 6k - 2k + 12 + 3 = 0$$. Simplificando: $$k^2 - 8k + 15 = 0$$. Factorizamos el trinomio: $$(k - 3)(k - 5) = 0$$. Esto nos da dos posibles valores para $$k$$: $$k = 3$$ o $$k = 5$$.",
+      "id_temporal": "alg_det_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "El costo de operación semanal de un equipo especializado está dado por el valor de $$-det(P)$$, donde $$P$$ es la matriz de rendimiento: $$P = [2 1 4 / -2 0 3 / 0 5 0]$$. Calcular el costo de operación semanal (en unidades monetarias).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$70$$",
+        "B": "$$-70$$",
+        "C": "$$0$$",
+        "D": "$$14$$",
+        "E": "$$-14$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Calculamos el determinante de la matriz $$P$$ usando la expansión por cofactores a lo largo de la tercera fila, ya que tiene dos ceros: $$det(P) = 0 \\cdot C_{31} + 5 \\cdot C_{32} + 0 \\cdot C_{33}$$. $$C_{32}$$ es el cofactor de la posición $$(3,2)$$ y se calcula como $$(-1)^{3+2} \\cdot det(M_{32})$$, donde $$M_{32}$$ es la submatriz que resulta de eliminar la fila 3 y columna 2. $$M_{32} = [2 4 / -2 3]$$. Entonces, $$det(M_{32}) = 2 \\cdot 3 - 4 \\cdot (-2) = 6 - (-8) = 6 + 8 = 14$$. Por lo tanto, $$C_{32} = (-1)^5 \\cdot 14 = -1 \\cdot 14 = -14$$. Sustituyendo en la fórmula del determinante: $$det(P) = 5 \\cdot (-14) = -70$$. El costo de operación es $$-det(P) = -(-70) = 70$$.",
+      "id_temporal": "alg_det_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "La matriz de consumo de energía (electricidad, gas) de dos apartamentos es: $$[Elena \\quad 50 \\quad 10 / Pedro \\quad 40 \\quad 15]$$. Para el próximo mes, el consumo de cada servicio aumentará un $$3\\%$$ del valor del determinante de esta matriz. ¿Cuánto pagará Pedro por el servicio de gas el próximo mes?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$15,00$$",
+        "B": "$$25,50$$",
+        "C": "$$10,50$$",
+        "D": "$$20,00$$",
+        "E": "$$30,00$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero calculamos el determinante de la matriz de consumo: $$det = 50 \\cdot 15 - 10 \\cdot 40 = 750 - 400 = 350$$. Luego, calculamos el $$3\\%$$ de este determinante: $$0,03 \\cdot 350 = 10,50$$. El pago de Pedro por gas en el mes actual es el elemento $$(2,2)$$ de la matriz, que es $$15$$. Para el próximo mes, su pago por gas será $$15 + 10,50 = 25,50$$.",
+      "id_temporal": "alg_det_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Juan tiene $$x^2 - y$$ años. Hallar la edad de Juan sabiendo que: $$\\begin{vmatrix} 3 & x & 2y \\\\ 0 & x & 70 \\\\ 0 & 0 & x - 2 \\end{vmatrix} = 45$$ y $$\\begin{vmatrix} y & 0 & 0 \\\\ -6 & 1 & 0 \\\\ 5 & -1 & y^2 + 4y + 10 \\end{vmatrix} = -12$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$27$$",
+        "B": "$$23$$",
+        "C": "$$25$$",
+        "D": "$$28$$",
+        "E": "$$30$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El primer determinante es de una matriz triangular superior, por lo que su valor es el producto de los elementos de la diagonal principal: $$3 \\cdot x \\cdot (x - 2) = 45$$. Dividimos por 3: $$x(x - 2) = 15$$. Expandimos y reordenamos: $$x^2 - 2x - 15 = 0$$. Factorizamos la ecuación cuadrática: $$(x - 5)(x + 3) = 0$$. Tomando el valor positivo de $$x$$, obtenemos $$x = 5$$. Para el segundo determinante, que es de una matriz triangular inferior, su valor es el producto de los elementos de la diagonal principal: $$y \\cdot 1 \\cdot (y^2 + 4y + 10) = -12$$. Esto es $$y(y^2 + 4y + 10) = -12$$. Probamos con valores enteros de $$y$$ que sean divisores de -12. Si probamos con $$y = -2$$: $$(-2)((-2)^2 + 4(-2) + 10) = (-2)(4 - 8 + 10) = (-2)(6) = -12$$. Por lo tanto, $$y = -2$$. La edad de Juan es $$x^2 - y$$. Sustituyendo los valores de $$x$$ e $$y$$: $$5^2 - (-2) = 25 + 2 = 27$$ años.",
+      "id_temporal": "alg_det_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$A = \begin{bmatrix} 3 & 2 \\ 1 & 4 \\end{bmatrix}$$. Calcular $$det(A \\cdot A^t)$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$80$$",
+        "B": "$$100$$",
+        "C": "$$120$$",
+        "D": "$$90$$",
+        "E": "$$110$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero calculamos la transpuesta de A: $$A^t = \begin{bmatrix} 3 & 1 \\ 2 & 4 \\end{bmatrix}$$. Luego, multiplicamos $$A \\cdot A^t = \begin{bmatrix} 3 & 2 \\ 1 & 4 \\end{bmatrix} \begin{bmatrix} 3 & 1 \\ 2 & 4 \\end{bmatrix} = \begin{bmatrix} 3 \\cdot 3 + 2 \\cdot 2 & 3 \\cdot 1 + 2 \\cdot 4 \\ 1 \\cdot 3 + 4 \\cdot 2 & 1 \\cdot 1 + 4 \\cdot 4 \\end{bmatrix} = \begin{bmatrix} 9 + 4 & 3 + 8 \\ 3 + 8 & 1 + 16 \\end{bmatrix} = \begin{bmatrix} 13 & 11 \\ 11 & 17 \\end{bmatrix}$$. Finalmente, calculamos el determinante: $$det(A \\cdot A^t) = 13 \\cdot 17 - 11 \\cdot 11 = 221 - 121 = 100$$.",
+      "imagen": null,
+      "id_temporal": "alg_det_006"
+    },
+    {
+      "pregunta": "Determinar todos los valores de $$k$$ para que $$det(B) = 0$$, si: $$B = \begin{bmatrix} k - 2 & -3 \\ 1 & k - 6 \\end{bmatrix}$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2 ó 4",
+        "B": "3 ó 5",
+        "C": "1 ó 6",
+        "D": "2 ó 5",
+        "E": "3 ó 6"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Calculamos el determinante de B y lo igualamos a cero: $$det(B) = (k - 2)(k - 6) - (-3)(1) = 0$$. Expandimos la expresión: $$(k^2 - 6k - 2k + 12) + 3 = 0 \\implies k^2 - 8k + 12 + 3 = 0 \\implies k^2 - 8k + 15 = 0$$. Factorizando la ecuación cuadrática: $$(k - 3)(k - 5) = 0$$. Por lo tanto, los valores de $$k$$ son $$3$$ ó $$5$$.",
+      "imagen": null,
+      "id_temporal": "alg_det_007"
+    },
+    {
+      "pregunta": "El costo de un servicio se determina por el valor de $$-det(M)$$, siendo: $$M = \begin{bmatrix} 2 & 4 & 1 \\ -2 & 0 & 3 \\ 0 & 5 & 0 \\end{bmatrix}$$. Calcular el costo del servicio (en dólares).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$30$$",
+        "B": "$$40$$",
+        "C": "$$-40$$",
+        "D": "$$25$$",
+        "E": "$$-30$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Calculamos el determinante de $$M$$ usando la expansión por cofactores a lo largo de la tercera fila, ya que contiene ceros: $$det(M) = 0 \\cdot C_{31} + 5 \\cdot C_{32} + 0 \\cdot C_{33}$$. Donde $$C_{32} = (-1)^{3+2} det(\begin{bmatrix} 2 & 1 \\ -2 & 3 \\end{bmatrix}) = -1 \\cdot (2 \\cdot 3 - 1 \\cdot (-2)) = -1 \\cdot (6 + 2) = -1 \\cdot 8 = -8$$. Entonces, $$det(M) = 5 \\cdot (-8) = -40$$. El costo del servicio es $$-det(M) = -(-40) = 40$$.",
+      "imagen": null,
+      "id_temporal": "alg_det_008"
+    },
+    {
+      "pregunta": "La matriz de consumo semanal (Café, Té) en una cafetería es: $$\begin{bmatrix} Cliente1 & 60 & 10 \\ Cliente2 & 45 & 15 \\end{bmatrix}$$. Para la siguiente semana, los precios aumentan a cada producto un $$3\\%$$ del valor del determinante de la matriz. ¿Cuánto pagará Cliente2 por Té la siguiente semana?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$27.5$$",
+        "B": "$$28.5$$",
+        "C": "$$25.5$$",
+        "D": "$$29.5$$",
+        "E": "$$30.5$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero calculamos el determinante de la matriz de consumo: $$det = 60 \\cdot 15 - 10 \\cdot 45 = 900 - 450 = 450$$. Luego, calculamos el $$3\\%$$ de este determinante: $$0.03 \\cdot 450 = 13.5$$. El valor original que pagaba Cliente2 por Té es el elemento en la segunda fila, segunda columna, que es $$15$$. El nuevo precio será el valor original más el aumento: $$15 + 13.5 = 28.5$$.",
+      "imagen": null,
+      "id_temporal": "alg_det_009"
+    },
+    {
+      "pregunta": "Calcular $$det(M)$$, si $$M = 4P - 2Q$$ y las matrices son: $$P = \begin{bmatrix} 1 & 2 \\ 0 & 3 \\end{bmatrix}$$ y $$Q = \begin{bmatrix} -2 & 1 \\ 4 & 0 \\end{bmatrix}$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$136$$",
+        "B": "$$140$$",
+        "C": "$$144$$",
+        "D": "$$148$$",
+        "E": "$$132$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero calculamos $$4P$$ y $$2Q$$: $$4P = 4 \begin{bmatrix} 1 & 2 \\ 0 & 3 \\end{bmatrix} = \begin{bmatrix} 4 & 8 \\ 0 & 12 \\end{bmatrix}$$ y $$2Q = 2 \begin{bmatrix} -2 & 1 \\ 4 & 0 \\end{bmatrix} = \begin{bmatrix} -4 & 2 \\ 8 & 0 \\end{bmatrix}$$. Luego, restamos las matrices para obtener $$M$$: $$M = 4P - 2Q = \begin{bmatrix} 4 - (-4) & 8 - 2 \\ 0 - 8 & 12 - 0 \\end{bmatrix} = \begin{bmatrix} 8 & 6 \\ -8 & 12 \\end{bmatrix}$$. Finalmente, calculamos el determinante de $$M$$: $$det(M) = (8)(12) - (6)(-8) = 96 - (-48) = 96 + 48 = 144$$.",
+      "imagen": null,
+      "id_temporal": "alg_det_010"
+    },
+    {
+      "pregunta": "Dada la matriz $$A = [3 1 / 2 1]$$. Calcular $$det(A \\cdot A^t)$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero calculamos la transpuesta de A: $$A^t = [3 2 / 1 1]$$. Luego, realizamos el producto $$A \\cdot A^t$$: $$A \\cdot A^t = [3 1 / 2 1][3 2 / 1 1] = [3\\cdot3 + 1\\cdot1  3\\cdot2 + 1\\cdot1 / 2\\cdot3 + 1\\cdot1  2\\cdot2 + 1\\cdot1] = [10 7 / 7 5]$$. Finalmente, calculamos el determinante: $$det(A \\cdot A^t) = 10\\cdot5 - 7\\cdot7 = 50 - 49 = 1$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_det_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar todos los valores de $$m$$ para que $$det(A) = 0$$, si: $$A = [m – 2 –3 / 1 m – 6]$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$3$$ ó $$5$$",
+        "B": "$$2$$ ó $$6$$",
+        "C": "$$1$$ ó $$5$$",
+        "D": "$$3$$ ó $$4$$",
+        "E": "$$2$$ ó $$5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Calculamos el determinante de A: $$det(A) = (m – 2)(m – 6) – (–3)(1)$$. Expandiendo y simplificando: $$det(A) = m^2 – 6m – 2m + 12 + 3 = m^2 – 8m + 15$$. Para que $$det(A) = 0$$, igualamos la expresión a cero: $$m^2 – 8m + 15 = 0$$. Factorizamos el trinomio: $$(m – 3)(m – 5) = 0$$. Los valores de $$m$$ son $$m = 3$$ ó $$m = 5$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_det_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "El costo de un servicio está determinado por el valor de $$–det(A)$$, siendo: $$A = [5 1 2 / 0 4 0 / -2 3 6]$$. Calcular el costo del servicio (en dólares).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$136$$",
+        "B": "$$-136$$",
+        "C": "$$100$$",
+        "D": "$$-100$$",
+        "E": "$$120$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Calculamos el determinante de A por cofactores de la segunda fila, ya que contiene ceros: $$det(A) = 0 \\cdot C_{21} + 4 \\cdot C_{22} + 0 \\cdot C_{23}$$. Solo necesitamos calcular $$C_{22}$$, que es $$(-1)^{2+2} \\cdot det([5 2 / -2 6])$$. El determinante de la submatriz es $$5\\cdot6 - 2\\cdot(-2) = 30 + 4 = 34$$. Entonces, $$det(A) = 4 \\cdot 34 = 136$$. El costo del servicio es $$–det(A) = –(136) = -136$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_det_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una bodega registra las ventas diarias de pan (P) y leche (L) de dos vendedores, Sofía y Carlos, en soles. La matriz de ventas es: $$M = [Sofia 60 15 / Carlos 45 20]$$. Para el día siguiente, las ventas de cada producto aumentan un 3% del valor del determinante de esta matriz. ¿Cuánto venderá Carlos por pan al día siguiente?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$60.75$$",
+        "B": "$$50.75$$",
+        "C": "$$65.25$$",
+        "D": "$$48.75$$",
+        "E": "$$58.50$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero calculamos el determinante de la matriz de ventas M: $$det(M) = 60\\cdot20 - 15\\cdot45 = 1200 - 675 = 525$$. Luego, calculamos el 3% de este determinante: $$0.03 \\cdot 525 = 15.75$$. La venta de Carlos por pan en la matriz original es el elemento en la segunda fila, primera columna, que es $$45$$. Para el día siguiente, la venta de Carlos por pan aumentará en $$15.75$$ soles. Por lo tanto, $$45 + 15.75 = 60.75$$. La respuesta correcta es A.",
+      "id_temporal": "alg_det_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular $$det(A)$$, si $$A = 3C – 2B$$, siendo $$B = [5 2 / 1 4]$$ y $$C = [3 1 / 2 5]$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$-3$$",
+        "B": "$$3$$",
+        "C": "$$-5$$",
+        "D": "$$5$$",
+        "E": "$$-1$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero calculamos $$3C$$ y $$2B$$: $$3C = 3 \\cdot [3 1 / 2 5] = [9 3 / 6 15]$$. $$2B = 2 \\cdot [5 2 / 1 4] = [10 4 / 2 8]$$. Luego, calculamos la matriz $$A = 3C – 2B$$: $$A = [9-10  3-4 / 6-2  15-8] = [-1 -1 / 4 7]$$. Finalmente, calculamos el determinante de A: $$det(A) = (-1)\\cdot7 - (-1)\\cdot4 = -7 - (-4) = -7 + 4 = -3$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_det_015",
+      "imagen": null
+    }
+  ]
+}

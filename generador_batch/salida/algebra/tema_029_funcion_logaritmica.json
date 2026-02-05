@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 29,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN LOGARÍTMICA",
+  "tema": "funcion_logaritmica",
+  "preguntas": [
+    {
+      "pregunta": "Determinar el dominio de la siguiente función: $$f(x) = \\ln\\left( \\sqrt{9 - x^{2}} - 5 \\right)$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "Dom(f) = [-3; 3]",
+        "B": "Dom(f) = R",
+        "C": "Dom(f) = \\emptyset",
+        "D": "Dom(f) = <-infinito; -3] \\cup [3; +infinito>",
+        "E": "Dom(f) = [3; +infinito]"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que la función logaritmo natural exista, el argumento debe ser mayor que cero: $$\\sqrt{9 - x^{2}} - 5 > 0$$. Esto implica que $$\\sqrt{9 - x^{2}} > 5$$. Para que la raíz cuadrada de $$\\sqrt{9 - x^{2}}$$ sea real, $$\\left(9 - x^{2}\\right) \\ge 0$$, lo que significa $$-3 \\le x \\le 3$$. El valor máximo de $$\\sqrt{9 - x^{2}}$$ ocurre cuando $$x = 0$$, siendo $$\\sqrt{9 - 0} = 3$$. Dado que el valor máximo de $$\\sqrt{9 - x^{2}}$$ es $$3$$, nunca puede ser mayor que $$5$$. Por lo tanto, no existe ningún valor real de $$x$$ que satisfaga la condición, y el dominio de la función es vacío. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar la función logarítmica cuya base es el único número primo par, donde el argumento es el triple de \"x\" aumentado en el segundo número primo impar, y hallar la intersección de su dominio y rango.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "<-5/3; +infinito>",
+        "B": "<5/3; +infinito>",
+        "C": "<-3/5; +infinito>",
+        "D": "<3/5; +infinito>",
+        "E": "<-infinito; +infinito>"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El único número primo par es $$2$$, por lo que la base es $$2$$. El segundo número primo impar es $$5$$ (después del $$3$$). El argumento es el triple de \"x\" aumentado en este número, es decir, $$3x + 5$$. La función es $$y = \\log_{2}(3x + 5)$$. Para el dominio, el argumento debe ser mayor que cero: $$3x + 5 > 0 \\implies 3x > -5 \\implies x > -5/3$$. Así, el dominio es $$(-5/3; +infinito)$$. El rango de cualquier función logarítmica es $$R$$, es decir, $$(-infinito; +infinito)$$. La intersección del dominio y el rango es $$(-5/3; +infinito) \\cap R = (-5/3; +infinito)$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si tenemos la siguiente función: $$f(x) = \\sqrt{2 + \\log_{1/3} x}$$ Determinar su dominio.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "Dom(f) = ]0; 9]",
+        "B": "Dom(f) = ]0; 1/9]",
+        "C": "Dom(f) = ]0; 3]",
+        "D": "Dom(f) = ]0; 1[",
+        "E": "Dom(f) = R+"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que el logaritmo exista, el argumento $$x$$ debe ser mayor que cero: $$x > 0$$. Para que la raíz cuadrada sea real, la expresión dentro de la raíz debe ser mayor o igual a cero: $$2 + \\log_{1/3} x \\ge 0$$. Restamos $$2$$ a ambos lados: $$\\log_{1/3} x \\ge -2$$. Dado que la base del logaritmo es $$1/3$$, la cual es menor que $$1$$, la desigualdad se invierte al convertir a forma exponencial: $$x \\le (1/3)^{-2}$$. Calculando el valor: $$x \\le 3^{2} \\implies x \\le 9$$. Combinando ambas condiciones ( $$x > 0$$ y $$x \\le 9$$ ), obtenemos el dominio: $$0 < x \\le 9$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la siguiente función: $$f(x) = \\log_{x-3} (7-x)$$ Determinar el dominio.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "<3; 7> - {4}",
+        "B": "<3; 7> - {3}",
+        "C": "<7; +infinito>",
+        "D": "<0; 7> - {4}",
+        "E": "<3; 6> - {4}"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para determinar el dominio de una función logarítmica, se deben cumplir tres condiciones: 1. La base del logaritmo debe ser mayor que cero: $$x - 3 > 0 \\implies x > 3$$. 2. La base del logaritmo no puede ser igual a uno: $$x - 3 \\neq 1 \\implies x \\neq 4$$. 3. El argumento del logaritmo debe ser mayor que cero: $$7 - x > 0 \\implies x < 7$$. Combinando estas tres condiciones, necesitamos valores de $$x$$ que sean mayores que $$3$$, menores que $$7$$ y que no sean iguales a $$4$$. Esto se expresa como el intervalo $$(3; 7)$$ excluyendo el valor $$4$$. El dominio es $$<3; 7> - \\{4\\}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función \"f\" definida por la regla de correspondencia: $$f(x) = 3 \\log_{5} x + 2$$, si Dom(f) = [25; 125]. Calcular el rango.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "[7; 10]",
+        "B": "[8; 11]",
+        "C": "[9; 12]",
+        "D": "[10; 13]",
+        "E": "[11; 14]"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La función $$\\log_{5} x$$ es una función creciente ya que su base ($$5$$) es mayor que $$1$$. Por lo tanto, el valor mínimo de $$f(x)$$ ocurrirá en el valor mínimo del dominio, y el valor máximo en el valor máximo del dominio. Evaluamos la función en los extremos del dominio: Para $$x = 25$$: $$f(25) = 3 \\log_{5} 25 + 2 = 3(2) + 2 = 6 + 2 = 8$$. Para $$x = 125$$: $$f(125) = 3 \\log_{5} 125 + 2 = 3(3) + 2 = 9 + 2 = 11$$. El rango de la función es el intervalo cerrado entre estos dos valores: $$[8; 11]$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el dominio de la siguiente función: $$f(x) = \\ln( \\sqrt{49 - x^2} - 8 )$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-7; 7]$$",
+        "B": "$$\\emptyset$$",
+        "C": "$$<-\\infty; -7> \\cup <7; +\\infty>$$",
+        "D": "$$[-5; 5]$$",
+        "E": "$$<0; +\\infty>$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que el logaritmo natural `$$\\ln(...)$$` exista, su argumento debe ser estrictamente positivo: `$$\\sqrt{49 - x^2} - 8 > 0$$`. Esto implica `$$\\sqrt{49 - x^2} > 8$$`. Adicionalmente, para que la raíz cuadrada `$$\\sqrt{49 - x^2}$$` esté definida en los números reales, el argumento debe ser no negativo: `$$49 - x^2 \\ge 0 \\implies x^2 \\le 49 \\implies -7 \\le x \\le 7$$`. Dentro de este intervalo `$$[-7; 7]$$`, el valor máximo que puede tomar `$$\\sqrt{49 - x^2}$$` ocurre cuando `$$x=0$$`, resultando en `$$\\sqrt{49} = 7$$`. Dado que el valor máximo de la raíz es 7, y se requiere que sea mayor que 8 (`$$7 > 8$$` es falso), no existe ningún valor real de `$$x$$` que satisfaga la condición. Por lo tanto, el dominio de la función es el conjunto vacío.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar la función logarítmica cuya base es el único número primo par, donde el argumento es el cuádruple de “x” disminuido en el tercer número primo impar. Hallar la intersección de su dominio y rango.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$<7/4; +\\infty>$$",
+        "B": "$$<-\\infty; +\\infty>$$",
+        "C": "$$<-7/4; +\\infty>$$",
+        "D": "$$<4/7; +\\infty>$$",
+        "E": "$$<-\\infty; 7/4>$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El único número primo par es 2, por lo tanto la base de la función logarítmica es 2. Los números primos impares son 3, 5, 7, ..., por lo que el tercer número primo impar es 7. El argumento de la función es el cuádruple de 'x' disminuido en 7, es decir, `$$4x - 7$$`. La función es `$$y = \\log_2(4x - 7)$$`. Para que el dominio exista, el argumento del logaritmo debe ser positivo: `$$4x - 7 > 0 \\implies 4x > 7 \\implies x > 7/4$$`. El dominio es `$$<7/4; +\\infty>$$`. El rango de cualquier función logarítmica es `$$\\mathbb{R}$$` (todos los números reales). La intersección del dominio y el rango es `$$<7/4; +\\infty> \\cap \\mathbb{R} = <7/4; +\\infty>$$`.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si tenemos la siguiente función: $$f(x) = \\sqrt{3 + \\log_{1/4} x}$$ Determinar su dominio.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$<0; 64]$$",
+        "B": "$$<0; 4]$$",
+        "C": "$$<0; 1/4]$$",
+        "D": "$$\\mathbb{R}^+$$",
+        "E": "$$<-\\infty; 64]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que el logaritmo `$$\\log_{1/4} x$$` exista, su argumento debe ser positivo: `$$x > 0$$`. Para que la raíz cuadrada `$$\\sqrt{...}$$` exista, el argumento debe ser no negativo: `$$3 + \\log_{1/4} x \\ge 0$$`. Restando 3 de ambos lados: `$$\\log_{1/4} x \\ge -3$$`. Como la base del logaritmo es `$$1/4$$`, que es un número entre 0 y 1, la desigualdad se invierte al eliminar el logaritmo: `$$x \\le (1/4)^{-3}$$`. Esto simplifica a `$$x \\le 4^3$$`, lo que significa `$$x \\le 64$$`. Combinando las dos condiciones (`$$x > 0$$` y `$$x \\le 64$$`), obtenemos que el dominio es `$$<0; 64]$$`.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "En el año 2024, la población de una reserva natural era de 8 mil animales y crecía a una tasa anual del 2%. ¿Cuál es la función logarítmica que representa el tiempo (en años) necesario para que la población supere los 16 mil animales, asumiendo que la tasa se mantiene constante?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\log_{1.02} 2$$",
+        "B": "$$\\log_{1.02} 3$$",
+        "C": "$$\\log_{1.03} 2$$",
+        "D": "$$\\log_{1.02} 1.5$$",
+        "E": "$$\\log_{1.04} 2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La fórmula de crecimiento poblacional es `$$P(t) = N(1 + r)^t$$`, donde `$$N$$` es la población inicial, `$$r$$` es la tasa de crecimiento anual y `$$t$$` es el tiempo en años. En este caso, `$$N = 8$$` mil animales, `$$r = 0.02$$` (2%) y la población deseada `$$P(t) = 16$$` mil animales. Sustituyendo los valores en la fórmula: `$$8(1 + 0.02)^t = 16$$`. Esto simplifica a `$$8(1.02)^t = 16$$`. Dividiendo por 8: `$$ (1.02)^t = 2$$`. Para despejar `$$t$$`, aplicamos el logaritmo con base 1.02 a ambos lados: `$$t = \\log_{1.02} 2$$`.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la siguiente función: $$f(x) = \\log_{(x-4)} (10 - x)$$ Determinar el dominio.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$<4; 10> - \\{5\\}$$",
+        "B": "$$<5; 10> - \\{6\\}$$",
+        "C": "$$<4; 9> - \\{5\\}$$",
+        "D": "$$<-\\infty; 10>$$",
+        "E": "$$<4; +\\infty> - \\{5\\}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para determinar el dominio de la función logarítmica `$$f(x) = \\log_{(x-4)} (10 - x)$$`, se deben cumplir tres condiciones: 1. El argumento del logaritmo debe ser estrictamente mayor que cero: `$$10 - x > 0 \\implies x < 10$$`. 2. La base del logaritmo debe ser estrictamente mayor que cero: `$$x - 4 > 0 \\implies x > 4$$`. 3. La base del logaritmo no puede ser igual a uno: `$$x - 4 \\ne 1 \\implies x \\ne 5$$`. Combinando estas tres condiciones, se obtiene que `$$x$$` debe ser mayor que 4 y menor que 10, excluyendo el valor de 5. Por lo tanto, el dominio es `$$<4; 10> - \\{5\\}$$`.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el dominio de la siguiente función: $$g(x) = \\ln( \\sqrt{9 - x^2} - 4 )$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "Dom(g) = [-3; 3]",
+        "B": "Dom(g) = ]-3; 3[",
+        "C": "Dom(g) = \\emptyset",
+        "D": "Dom(g) = R",
+        "E": "Dom(g) = ]-$\\infty$; -3[ U ]3; +$\\infty$["
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que exista $\\ln(\\dots)$: Se requiere que $\\sqrt{9 - x^2} - 4 > 0$. Esto implica $\\sqrt{9 - x^2} > 4$. Para que $\\sqrt{9 - x^2}$ exista, se necesita que $9 - x^2 \\ge 0$, lo que significa $x^2 \\le 9$, o sea $-3 \\le x \\le 3$. El valor máximo que puede tomar $\\sqrt{9 - x^2}$ es $\\sqrt{9} = 3$ (cuando $x = 0$). Como el valor máximo de $\\sqrt{9 - x^2}$ es 3, nunca podrá ser mayor que 4. Por lo tanto, no existe ningún valor real de $x$ que cumpla la condición. Así, el dominio de la función es vacío. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar la función logarítmica cuya base es el número primo impar más pequeño, donde el argumento es el triple de “x” disminuido en el segundo número primo impar, hallar la intersección de su dominio y rango.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "<3/5; +oo>",
+        "B": "<5/3; +oo>",
+        "C": "<2/5; +oo>",
+        "D": "<5/2; +oo>",
+        "E": "<-oo; +oo>"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El número primo impar más pequeño es 3, entonces la base es 3. El segundo número primo impar es 5 (después del 3). Entonces el argumento es $3x - 5$. La función es: $y = \\log_3(3x - 5)$. Para el dominio de una función logarítmica, el argumento debe ser mayor que cero: $3x - 5 > 0 \\rightarrow 3x > 5 \\rightarrow x > 5/3$. Por lo tanto, el dominio es $Dom = <5/3; +\\infty>$. El rango de una función logarítmica (con base $b > 0, b \\neq 1$) es siempre el conjunto de todos los números reales, $Ran = R$. La intersección del dominio y el rango es $Dom \\cap Ran = <5/3; +\\infty> \\cap R = <5/3; +\\infty>$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si tenemos la siguiente función: $$h(x) = \\sqrt{2 + \\log_{1/3} (2x)}$$ Determinar su dominio.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "Dom(h) = ]0; 9/2]",
+        "B": "Dom(h) = ]0; 1/3[",
+        "C": "Dom(h) = ]0; 3]",
+        "D": "Dom(h) = ]0; 1/9]",
+        "E": "Dom(h) = R+"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para el logaritmo, el argumento debe ser positivo: $2x > 0 \\rightarrow x > 0$. Para la raíz cuadrada, el argumento debe ser mayor o igual a cero: $2 + \\log_{1/3} (2x) \\ge 0 \\rightarrow \\log_{1/3} (2x) \\ge -2$. Como la base del logaritmo es $1/3$, que es menor que 1, la desigualdad se invierte al convertir a forma exponencial: $2x \\le (1/3)^{-2} \\rightarrow 2x \\le 3^2 \\rightarrow 2x \\le 9 \\rightarrow x \\le 9/2$. Combinando todas las condiciones: $x > 0$ y $x \\le 9/2$. El dominio es $Dom(h) = ]0; 9/2]$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "En 2010, un bosque tenía 5 millones de árboles y crecía a una tasa anual del 6%. ¿Cuál es la expresión logarítmica del tiempo (en años desde 2010) que tardará en superar los 10 millones de árboles, asumiendo que la tasa se mantiene constante?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$\\log_{1.06} 2$$",
+        "B": "$$\\log_{1.05} 2$$",
+        "C": "$$\\log_{1.06} 2.5$$",
+        "D": "$$\\log_{1.06} 3$$",
+        "E": "$$\\log_{1.06} 10$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La fórmula de crecimiento poblacional es $P(t) = P_0 (1 + r)^t$, donde $P_0$ es la población inicial, $r$ es la tasa de crecimiento anual y $t$ es el tiempo en años. En este caso, $P_0 = 5$ millones y $r = 0.06$. Entonces, la función es $P(t) = 5(1 + 0.06)^t = 5(1.06)^t$. Queremos encontrar el tiempo $t$ en que la población supera los 10 millones de árboles: $5(1.06)^t = 10$. Dividimos ambos lados por 5: $(1.06)^t = 10/5 \\rightarrow (1.06)^t = 2$. Para despejar $t$, aplicamos logaritmo en base 1.06 a ambos lados: $t = \\log_{1.06} 2$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la siguiente función: $$k(x) = \\log_{(x-3)} (6-x)$$ Determinar el dominio.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "<3; 6> - {4}",
+        "B": "<3; 6>",
+        "C": "<4; 6>",
+        "D": "<3; 5> - {4}",
+        "E": "<3; 7> - {4}"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que la función logarítmica $k(x) = \\log_b A$ esté definida, se deben cumplir tres condiciones: 1. El argumento debe ser positivo: $6 - x > 0 \\rightarrow x < 6$. 2. La base debe ser positiva: $x - 3 > 0 \\rightarrow x > 3$. 3. La base no debe ser igual a 1: $x - 3 \\neq 1 \\rightarrow x \\neq 4$. Juntando estas tres condiciones: $x$ debe ser mayor que 3 y menor que 6, y $x$ no debe ser 4. El dominio se expresa como el intervalo $(3, 6)$ excluyendo el valor 4. Por lo tanto, $Dom(k) = <3; 6> - \\{4\\}$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

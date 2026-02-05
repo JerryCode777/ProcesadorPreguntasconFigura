@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 14,
+  "total_temas": 29,
+  "titulo_tema": "RADICACIÓN Y RACIONALIZACIÓN DE EXPRESIONES ALGEBRAICAS",
+  "tema": "radicacion_y_racionalizacion_de_expresiones_algebraicas",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es la forma simplificada de la expresión $$ \\frac{\\sqrt[3]{x^4} \\cdot \\sqrt{x y^3}}{\\sqrt[6]{x^2 y}} $$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\sqrt[6]{x^9 y^8}$$",
+        "B": "$$\\sqrt[6]{x^8 y^7}$$",
+        "C": "$$\\sqrt[6]{x^7 y^9}$$",
+        "D": "$$\\sqrt[6]{x^9 y^7}$$",
+        "E": "$$\\sqrt[6]{x^8 y^8}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, convertimos todas las raíces a exponentes fraccionarios: $$ \\sqrt[3]{x^4} = x^{4/3} $$, $$ \\sqrt{x y^3} = (x y^3)^{1/2} = x^{1/2} y^{3/2} $$, $$ \\sqrt[6]{x^2 y} = (x^2 y)^{1/6} = x^{2/6} y^{1/6} = x^{1/3} y^{1/6} $$. La expresión se convierte en: $$ \\frac{x^{4/3} \\cdot x^{1/2} y^{3/2}}{x^{1/3} y^{1/6}} $$. Agrupamos los términos con la misma base y sumamos o restamos sus exponentes: Para 'x': $$ \\frac{4}{3} + \\frac{1}{2} - \\frac{1}{3} = \\frac{8}{6} + \\frac{3}{6} - \\frac{2}{6} = \\frac{8+3-2}{6} = \\frac{9}{6} $$. Para 'y': $$ \\frac{3}{2} - \\frac{1}{6} = \\frac{9}{6} - \\frac{1}{6} = \\frac{8}{6} $$. Así, la expresión simplificada es $$ x^{9/6} y^{8/6} $$. Finalmente, lo expresamos como una única raíz con índice 6: $$ \\sqrt[6]{x^9 y^8} $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la siguiente expresión: $$ \\frac{5}{\\sqrt[3]{4p^1q^2}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\frac{5\\sqrt[3]{2pq^2}}{2pq}$$",
+        "B": "$$\\frac{5\\sqrt[3]{2p^2q}}{2pq}$$",
+        "C": "$$\\frac{5\\sqrt[3]{4p^2q}}{2pq}$$",
+        "D": "$$\\frac{5\\sqrt[3]{2p^2q}}{4pq}$$",
+        "E": "$$\\frac{5\\sqrt[3]{2p^3q}}{2pq}$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El denominador es $$ \\sqrt[3]{4p^1q^2} $$. Para racionalizar, necesitamos que las potencias de los factores dentro de la raíz cúbica sean múltiplos de 3. El factor 4 es $$ 2^2 $$, necesita $$ 2^1 $$. El factor $$ p^1 $$ necesita $$ p^2 $$. El factor $$ q^2 $$ necesita $$ q^1 $$. Por lo tanto, multiplicamos el numerador y el denominador por $$ \\sqrt[3]{2^1 p^2 q^1} = \\sqrt[3]{2p^2q} $$. Expresión original: $$ \\frac{5}{\\sqrt[3]{4p^1q^2}} \\cdot \\frac{\\sqrt[3]{2p^2q}}{\\sqrt[3]{2p^2q}} $$. Numerador: $$ 5\\sqrt[3]{2p^2q} $$. Denominador: $$ \\sqrt[3]{4p^1q^2 \\cdot 2p^2q} = \\sqrt[3]{8p^3q^3} = 2pq $$. El resultado es: $$ \\frac{5\\sqrt[3]{2p^2q}}{2pq} $$. La respuesta correcta es B.",
+      "id_temporal": "alg_rad_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la expresión: $$ \\frac{\\sqrt{k-l}}{\\sqrt{k-l} + \\sqrt{k+l}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\frac{\\sqrt{k^2-l^2} + (k-l)}{2l}$$",
+        "B": "$$\\frac{\\sqrt{k^2-l^2} - (k-l)}{2l}$$",
+        "C": "$$\\frac{(k-l) - \\sqrt{k^2-l^2}}{-2l}$$",
+        "D": "$$\\frac{(k-l) + \\sqrt{k^2-l^2}}{2l}$$",
+        "E": "$$\\frac{(k-l) - \\sqrt{k^2-l^2}}{2l}$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Multiplicamos el numerador y el denominador por el conjugado del denominador, que es $$ (\\sqrt{k-l} - \\sqrt{k+l}) $$. Numerador: $$ \\sqrt{k-l} (\\sqrt{k-l} - \\sqrt{k+l}) = (k-l) - \\sqrt{(k-l)(k+l)} = (k-l) - \\sqrt{k^2 - l^2} $$. Denominador: $$ (\\sqrt{k-l} + \\sqrt{k+l}) (\\sqrt{k-l} - \\sqrt{k+l}) = (k-l) - (k+l) = k-l-k-l = -2l $$. El resultado es: $$ \\frac{(k-l) - \\sqrt{k^2 - l^2}}{-2l} $$. La respuesta correcta es C.",
+      "id_temporal": "alg_rad_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Suma y racionaliza la expresión: $$ \\frac{\\sqrt{s}}{\\sqrt{s}+\\sqrt{t}} + \\frac{\\sqrt{t}}{\\sqrt{s}-\\sqrt{t}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\frac{s+t}{s-t}$$",
+        "B": "$$\\frac{s-t}{s+t}$$",
+        "C": "$$\\frac{s+2\\sqrt{st}+t}{s-t}$$",
+        "D": "$$\\frac{s-2\\sqrt{st}+t}{s-t}$$",
+        "E": "$$\\frac{s^2+t^2}{s-t}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Racionalizamos cada fracción por separado. Para la primera fracción, multiplicamos por $$ (\\sqrt{s}-\\sqrt{t}) $$: $$ \\frac{\\sqrt{s}(\\sqrt{s}-\\sqrt{t})}{(\\sqrt{s}+\\sqrt{t})(\\sqrt{s}-\\sqrt{t})} = \\frac{s - \\sqrt{st}}{s-t} $$. Para la segunda fracción, multiplicamos por $$ (\\sqrt{s}+\\sqrt{t}) $$: $$ \\frac{\\sqrt{t}(\\sqrt{s}+\\sqrt{t})}{(\\sqrt{s}-\\sqrt{t})(\\sqrt{s}+\\sqrt{t})} = \\frac{\\sqrt{st} + t}{s-t} $$. Ahora sumamos ambas fracciones, que ya tienen el mismo denominador: $$ \\frac{(s - \\sqrt{st}) + (\\sqrt{st} + t)}{s-t} = \\frac{s - \\sqrt{st} + \\sqrt{st} + t}{s-t} = \\frac{s+t}{s-t} $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcula el valor de la expresión: $$ Z = \\sqrt{14 + \\sqrt{160}} - \\sqrt{11 + \\sqrt{40}} + \\sqrt{12 - \\sqrt{128}} - \\sqrt{9 - \\sqrt{32}} $$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$2\\sqrt{10}$$",
+        "C": "$$2\\sqrt{8}$$",
+        "D": "$$4$$",
+        "E": "$$2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Utilizamos la fórmula $$ \\sqrt{m \\pm 2\\sqrt{n}} = \\sqrt{a} \\pm \\sqrt{b} $$ donde $$ a+b=m $$ y $$ ab=n $$. Primero, simplificamos las raíces internas para que estén en la forma $$ 2\\sqrt{n} $$: $$ \\sqrt{160} = \\sqrt{4 \\cdot 40} = 2\\sqrt{40} $$, $$ \\sqrt{40} = \\sqrt{4 \\cdot 10} = 2\\sqrt{10} $$, $$ \\sqrt{128} = \\sqrt{4 \\cdot 32} = 2\\sqrt{32} $$, $$ \\sqrt{32} = \\sqrt{4 \\cdot 8} = 2\\sqrt{8} $$. La expresión Z se convierte en: $$ Z = \\sqrt{14 + 2\\sqrt{40}} - \\sqrt{11 + 2\\sqrt{10}} + \\sqrt{12 - 2\\sqrt{32}} - \\sqrt{9 - 2\\sqrt{8}} $$. Descomponemos cada término: 1. $$ \\sqrt{14 + 2\\sqrt{40}} $$: $$ a+b=14, ab=40 \\implies a=10, b=4 $$. Resultado: $$ \\sqrt{10} + \\sqrt{4} = \\sqrt{10} + 2 $$. 2. $$ \\sqrt{11 + 2\\sqrt{10}} $$: $$ a+b=11, ab=10 \\implies a=10, b=1 $$. Resultado: $$ \\sqrt{10} + \\sqrt{1} = \\sqrt{10} + 1 $$. 3. $$ \\sqrt{12 - 2\\sqrt{32}} $$: $$ a+b=12, ab=32 \\implies a=8, b=4 $$. Resultado: $$ \\sqrt{8} - \\sqrt{4} = 2\\sqrt{2} - 2 $$. 4. $$ \\sqrt{9 - 2\\sqrt{8}} $$: $$ a+b=9, ab=8 \\implies a=8, b=1 $$. Resultado: $$ \\sqrt{8} - \\sqrt{1} = 2\\sqrt{2} - 1 $$. Sustituimos estos resultados en Z: $$ Z = (\\sqrt{10} + 2) - (\\sqrt{10} + 1) + (2\\sqrt{2} - 2) - (2\\sqrt{2} - 1) $$. $$ Z = \\sqrt{10} + 2 - \\sqrt{10} - 1 + 2\\sqrt{2} - 2 - 2\\sqrt{2} + 1 $$. Cancelamos los términos: $$ (\\sqrt{10} - \\sqrt{10}) + (2\\sqrt{2} - 2\\sqrt{2}) + (2 - 1 - 2 + 1) = 0 + 0 + 0 = 0 $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Simplifica la expresión: $$ \\frac{\\sqrt[5]{x^3 y^2} \\cdot \\sqrt[3]{x y}}{\\sqrt[15]{x^2 y^4}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\sqrt[15]{x^{12} y^7} $$",
+        "B": "$$ \\sqrt[15]{x^{13} y^6} $$",
+        "C": "$$ \\sqrt[15]{x^{11} y^8} $$",
+        "D": "$$ \\sqrt[15]{x^{10} y^9} $$",
+        "E": "$$ \\sqrt[15]{x^9 y^{10}} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Pasamos todo a potencias fraccionarias: $$ \\sqrt[5]{x^3 y^2} = x^{3/5} y^{2/5} $$, $$ \\sqrt[3]{x y} = x^{1/3} y^{1/3} $$, $$ \\sqrt[15]{x^2 y^4} = x^{2/15} y^{4/15} $$. La expresión queda: $$ \\frac{x^{3/5} y^{2/5} \\cdot x^{1/3} y^{1/3}}{x^{2/15} y^{4/15}} $$. Juntamos exponentes de x: $$ \\frac{3}{5} + \\frac{1}{3} - \\frac{2}{15} = \\frac{9}{15} + \\frac{5}{15} - \\frac{2}{15} = \\frac{12}{15} = \\frac{4}{5} $$. Juntamos exponentes de y: $$ \\frac{2}{5} + \\frac{1}{3} - \\frac{4}{15} = \\frac{6}{15} + \\frac{5}{15} - \\frac{4}{15} = \\frac{7}{15} $$. El resultado es $$ x^{4/5} y^{7/15} $$. Para expresarlo como una única raíz, buscamos el mínimo común múltiplo de los denominadores (5 y 15), que es 15. Así, $$ x^{4/5} = x^{12/15} $$. Finalmente: $$ \\sqrt[15]{x^{12} y^7} $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la siguiente expresión: $$ \\frac{3}{\\sqrt[3]{9a b^2}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\frac{\\sqrt[3]{3a^2 b}}{a b} $$",
+        "B": "$$ \\frac{\\sqrt[3]{3a b^2}}{a b} $$",
+        "C": "$$ \\frac{\\sqrt[3]{9a^2 b}}{3a b} $$",
+        "D": "$$ \\frac{\\sqrt[3]{a^2 b}}{a b} $$",
+        "E": "$$ \\frac{\\sqrt[3]{9a b}}{a b} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El denominador es $$ \\sqrt[3]{9a b^2} = \\sqrt[3]{3^2 a^1 b^2} $$. Para racionalizar, multiplicamos por la raíz cúbica del complemento hasta que los exponentes dentro de la raíz sean múltiplos de 3. A $$ 3^2 $$ le falta $$ 3^1 $$, a $$ a^1 $$ le falta $$ a^2 $$, y a $$ b^2 $$ le falta $$ b^1 $$. Por lo tanto, multiplicamos por $$ \\frac{\\sqrt[3]{3a^2 b}}{\\sqrt[3]{3a^2 b}} $$. La expresión queda: $$ \\frac{3}{\\sqrt[3]{9a b^2}} \\cdot \\frac{\\sqrt[3]{3a^2 b}}{\\sqrt[3]{3a^2 b}} $$. El denominador se convierte en $$ \\sqrt[3]{9a b^2 \\cdot 3a^2 b} = \\sqrt[3]{27a^3 b^3} = 3ab $$. El numerador es $$ 3\\sqrt[3]{3a^2 b} $$. Simplificando, obtenemos $$ \\frac{3\\sqrt[3]{3a^2 b}}{3ab} = \\frac{\\sqrt[3]{3a^2 b}}{ab} $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la expresión: $$ \\frac{\\sqrt{x-y}}{\\sqrt{x+y} - \\sqrt{x-y}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\frac{x-y + \\sqrt{x^2 - y^2}}{2y} $$",
+        "B": "$$ \\frac{x+y - \\sqrt{x^2 - y^2}}{2y} $$",
+        "C": "$$ \\frac{x-y - \\sqrt{x^2 - y^2}}{2y} $$",
+        "D": "$$ \\frac{x+y + \\sqrt{x^2 - y^2}}{2y} $$",
+        "E": "$$ \\frac{y-x + \\sqrt{x^2 - y^2}}{2y} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Multiplicamos la expresión por el conjugado del denominador, que es $$ (\\sqrt{x+y} + \\sqrt{x-y}) $$. Numerador: $$ \\sqrt{x-y}(\\sqrt{x+y} + \\sqrt{x-y}) = \\sqrt{(x-y)(x+y)} + (x-y) = \\sqrt{x^2 - y^2} + (x-y) $$. Denominador: $$ (\\sqrt{x+y} - \\sqrt{x-y})(\\sqrt{x+y} + \\sqrt{x-y}) = (x+y) - (x-y) = x+y-x+y = 2y $$. El resultado es: $$ \\frac{x-y + \\sqrt{x^2 - y^2}}{2y} $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Suma y racionaliza la siguiente expresión: $$ \\frac{\\sqrt{m}}{\\sqrt{m}+\\sqrt{n}} + \\frac{\\sqrt{n}}{\\sqrt{m}-\\sqrt{n}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\frac{m+n}{m-n} $$",
+        "B": "$$ \\frac{m-n}{m+n} $$",
+        "C": "$$ \\frac{m+n}{n-m} $$",
+        "D": "$$ \\frac{m-n}{m} $$",
+        "E": "$$ \\frac{m+n}{n} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero racionalizamos cada fracción por separado. Para la primera fracción, multiplicamos por $$ (\\sqrt{m}-\\sqrt{n}) $$: $$ \\frac{\\sqrt{m}}{\\sqrt{m}+\\sqrt{n}} \\cdot \\frac{\\sqrt{m}-\\sqrt{n}}{\\sqrt{m}-\\sqrt{n}} = \\frac{m - \\sqrt{mn}}{m-n} $$. Para la segunda fracción, multiplicamos por $$ (\\sqrt{m}+\\sqrt{n}) $$: $$ \\frac{\\sqrt{n}}{\\sqrt{m}-\\sqrt{n}} \\cdot \\frac{\\sqrt{m}+\\sqrt{n}}{\\sqrt{m}+\\sqrt{n}} = \\frac{\\sqrt{mn} + n}{m-n} $$. Luego sumamos ambas fracciones, que ya tienen el mismo denominador: $$ \\frac{(m - \\sqrt{mn}) + (\\sqrt{mn} + n)}{m-n} = \\frac{m + n}{m-n} $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Descompón en radicales simples la expresión: $$ F = \\sqrt{5 - \\sqrt{5} - \\sqrt{6 - \\sqrt{20}}} $$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$ \\sqrt{5} - 1 $$",
+        "B": "$$ \\sqrt{5} + 1 $$",
+        "C": "$$ \\sqrt{3} - 1 $$",
+        "D": "$$ \\sqrt{3} + 1 $$",
+        "E": "$$ 2 $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero simplificamos el radical más interno: $$ \\sqrt{6 - \\sqrt{20}} $$. Sabemos que $$ \\sqrt{20} = \\sqrt{4 \\cdot 5} = 2\\sqrt{5} $$. Entonces la expresión interna es $$ 6 - 2\\sqrt{5} $$. Buscamos dos números que sumados den 6 y multiplicados den 5. Estos números son 5 y 1. Por lo tanto, $$ 6 - 2\\sqrt{5} = (\\sqrt{5} - 1)^2 $$. Así, $$ \\sqrt{6 - \\sqrt{20}} = \\sqrt{(\\sqrt{5} - 1)^2} = \\sqrt{5} - 1 $$. Ahora sustituimos esto en la expresión original para F: $$ F = \\sqrt{5 - \\sqrt{5} - (\\sqrt{5} - 1)} $$. Desarrollamos los términos dentro de la raíz: $$ F = \\sqrt{5 - \\sqrt{5} - \\sqrt{5} + 1} = \\sqrt{6 - 2\\sqrt{5}} $$. Nuevamente, esta es la misma forma que simplificamos antes, $$ \\sqrt{6 - 2\\sqrt{5}} = \\sqrt{(\\sqrt{5} - 1)^2} = \\sqrt{5} - 1 $$. La respuesta correcta es A.",
+      "id_temporal": "alg_rad_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Simplifica la expresión: $$ \\frac{\\sqrt[4]{m^3} \\cdot \\sqrt[3]{m n^2}}{\\sqrt[6]{m^2 n^3}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\sqrt[12]{m^9 n^2} $$",
+        "B": "$$ \\sqrt[12]{m^7 n^4} $$",
+        "C": "$$ \\sqrt[12]{m^{10} n^3} $$",
+        "D": "$$ \\sqrt[12]{m^8 n^5} $$",
+        "E": "$$ \\sqrt[12]{m^9 n^5} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Convertimos a potencias fraccionarias: $$ \\frac{m^{3/4} \\cdot (m n^2)^{1/3}}{(m^2 n^3)^{1/6}} = \\frac{m^{3/4} \\cdot m^{1/3} \\cdot n^{2/3}}{m^{2/6} \\cdot n^{3/6}} = \\frac{m^{3/4} \\cdot m^{1/3} \\cdot n^{2/3}}{m^{1/3} \\cdot n^{1/2}} $$. Agrupamos los exponentes de $$ m $$: $$ m^{3/4 + 1/3 - 1/3} = m^{3/4} $$. Agrupamos los exponentes de $$ n $$: $$ n^{2/3 - 1/2} = n^{4/6 - 3/6} = n^{1/6} $$. La expresión simplificada es $$ m^{3/4} n^{1/6} $$. Para expresarlo con raíz de índice 12: $$ m^{3/4} = m^{9/12} $$ y $$ n^{1/6} = n^{2/12} $$. Finalmente, $$ \\sqrt[12]{m^9 n^2} $$.",
+      "id_temporal": "alg_rad_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la expresión: $$ \\frac{5}{\\sqrt[3]{5a^2b}} $$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$ \\frac{\\sqrt[3]{25ab^2}}{ab} $$",
+        "B": "$$ \\frac{\\sqrt[3]{5ab^2}}{ab} $$",
+        "C": "$$ \\frac{\\sqrt[3]{25a^2b}}{ab} $$",
+        "D": "$$ \\frac{\\sqrt[3]{5a^2b}}{ab} $$",
+        "E": "$$ \\frac{\\sqrt[3]{125ab^2}}{ab} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para racionalizar el denominador $$ \\sqrt[3]{5a^2b} $$, necesitamos multiplicar por un factor que complete los cubos perfectos dentro de la raíz. A $$ 5 $$ le falta $$ 5^2 $$, a $$ a^2 $$ le falta $$ a^1 $$, y a $$ b $$ le falta $$ b^2 $$. Por lo tanto, multiplicamos el numerador y el denominador por $$ \\sqrt[3]{5^2 a b^2} = \\sqrt[3]{25ab^2} $$. La expresión queda: $$ \\frac{5}{\\sqrt[3]{5a^2b}} \\cdot \\frac{\\sqrt[3]{25ab^2}}{\\sqrt[3]{25ab^2}} = \\frac{5\\sqrt[3]{25ab^2}}{\\sqrt[3]{5a^2b \\cdot 25ab^2}} = \\frac{5\\sqrt[3]{25ab^2}}{\\sqrt[3]{125a^3b^3}} $$. Simplificando el denominador: $$ \\sqrt[3]{125a^3b^3} = 5ab $$. Así, la expresión final es $$ \\frac{5\\sqrt[3]{25ab^2}}{5ab} = \\frac{\\sqrt[3]{25ab^2}}{ab} $$.",
+      "id_temporal": "alg_rad_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la expresión: $$ \\frac{\\sqrt{p-q}}{\\sqrt{p-q} + \\sqrt{p+q}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\frac{\\sqrt{p^2-q^2} - (p-q)}{2q} $$",
+        "B": "$$ \\frac{(p-q) + \\sqrt{p^2-q^2}}{2q} $$",
+        "C": "$$ \\frac{(p-q) - \\sqrt{p^2-q^2}}{-2q} $$",
+        "D": "$$ \\frac{(p-q) - \\sqrt{p^2-q^2}}{2q} $$",
+        "E": "$$ \\frac{\\sqrt{p^2-q^2} + (p-q)}{-2q} $$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Multiplicamos el numerador y el denominador por el conjugado del denominador, que es $$ \\sqrt{p-q} - \\sqrt{p+q} $$. Numerador: $$ \\sqrt{p-q} (\\sqrt{p-q} - \\sqrt{p+q}) = (p-q) - \\sqrt{(p-q)(p+q)} = (p-q) - \\sqrt{p^2-q^2} $$. Denominador: $$ (\\sqrt{p-q} + \\sqrt{p+q}) (\\sqrt{p-q} - \\sqrt{p+q}) = (p-q) - (p+q) = p-q-p-q = -2q $$. El resultado es $$ \\frac{(p-q) - \\sqrt{p^2-q^2}}{-2q} $$.",
+      "id_temporal": "alg_rad_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Suma y racionaliza la siguiente expresión: $$ \\frac{\\sqrt{c}}{\\sqrt{c}+\\sqrt{d}} + \\frac{\\sqrt{d}}{\\sqrt{c}-\\sqrt{d}} $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\frac{c+d}{c-d} $$",
+        "B": "$$ \\frac{c-d}{c+d} $$",
+        "C": "$$ \\frac{c+2\\sqrt{cd}-d}{c-d} $$",
+        "D": "$$ \\frac{c-2\\sqrt{cd}+d}{c-d} $$",
+        "E": "$$ \\frac{c+d}{c} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Racionalizamos cada fracción por separado. Para la primera fracción, multiplicamos por $$ \\frac{\\sqrt{c}-\\sqrt{d}}{\\sqrt{c}-\\sqrt{d}} $$: $$ \\frac{\\sqrt{c}(\\sqrt{c}-\\sqrt{d})}{(\\sqrt{c}+\\sqrt{d})(\\sqrt{c}-\\sqrt{d})} = \\frac{c-\\sqrt{cd}}{c-d} $$. Para la segunda fracción, multiplicamos por $$ \\frac{\\sqrt{c}+\\sqrt{d}}{\\sqrt{c}+\\sqrt{d}} $$: $$ \\frac{\\sqrt{d}(\\sqrt{c}+\\sqrt{d})}{(\\sqrt{c}-\\sqrt{d})(\\sqrt{c}+\\sqrt{d})} = \\frac{\\sqrt{cd}+d}{c-d} $$. Ahora sumamos ambas fracciones, que ya tienen el mismo denominador: $$ \\frac{(c-\\sqrt{cd}) + (\\sqrt{cd}+d)}{c-d} = \\frac{c-\\sqrt{cd}+\\sqrt{cd}+d}{c-d} = \\frac{c+d}{c-d} $$.",
+      "id_temporal": "alg_rad_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcula el valor de $$ P = (\\sqrt{12 + \\sqrt{108}}) - (\\sqrt{11 + \\sqrt{72}}) + (\\sqrt{7 - 2\\sqrt{12}}) - (\\sqrt{6 - 2\\sqrt{8}}) $$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$ 0 $$",
+        "B": "$$ 2\\sqrt{3} $$",
+        "C": "$$ 2\\sqrt{2} $$",
+        "D": "$$ 3\\sqrt{3} $$",
+        "E": "$$ 3\\sqrt{2} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Usamos la propiedad $$ \\sqrt{A \\pm 2\\sqrt{B}} = \\sqrt{x} \\pm \\sqrt{y} $$ donde $$ x+y=A $$ y $$ xy=B $$. 1. $$ \\sqrt{12 + \\sqrt{108}} = \\sqrt{12 + 2\\sqrt{27}} $$. Buscamos $$ x+y=12 $$ y $$ xy=27 $$. Los números son $$ 9 $$ y $$ 3 $$. Entonces, $$ \\sqrt{9} + \\sqrt{3} = 3 + \\sqrt{3} $$. 2. $$ \\sqrt{11 + \\sqrt{72}} = \\sqrt{11 + 2\\sqrt{18}} $$. Buscamos $$ x+y=11 $$ y $$ xy=18 $$. Los números son $$ 9 $$ y $$ 2 $$. Entonces, $$ \\sqrt{9} + \\sqrt{2} = 3 + \\sqrt{2} $$. 3. $$ \\sqrt{7 - 2\\sqrt{12}} $$. Buscamos $$ x+y=7 $$ y $$ xy=12 $$. Los números son $$ 4 $$ y $$ 3 $$. Entonces, $$ \\sqrt{4} - \\sqrt{3} = 2 - \\sqrt{3} $$. 4. $$ \\sqrt{6 - 2\\sqrt{8}} $$. Buscamos $$ x+y=6 $$ y $$ xy=8 $$. Los números son $$ 4 $$ y $$ 2 $$. Entonces, $$ \\sqrt{4} - \\sqrt{2} = 2 - \\sqrt{2} $$. Sustituimos estos valores en la expresión $$ P $$: $$ P = (3 + \\sqrt{3}) - (3 + \\sqrt{2}) + (2 - \\sqrt{3}) - (2 - \\sqrt{2}) $$. Expandimos: $$ P = 3 + \\sqrt{3} - 3 - \\sqrt{2} + 2 - \\sqrt{3} - 2 + \\sqrt{2} $$. Cancelando términos: $$ P = (3-3+2-2) + (\\sqrt{3}-\\sqrt{3}) + (-\\sqrt{2}+\\sqrt{2}) = 0 $$.",
+      "id_temporal": "alg_rad_015",
+      "imagen": null
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 6,
+  "total_temas": 29,
+  "titulo_tema": "MCM Y MCD DE POLINOMIOS",
+  "tema": "mcm_y_mcd_de_polinomios",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es el Máximo Común Divisor (MCD) de los siguientes polinomios: P(x) = $$x^2 + 7x$$, Q(x) = $$x^3 + 14x^2 + 49x$$, y R(x) = $$3x^2 + 21x$$?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$x(x + 7)$$",
+        "B": "$$3(x + 7)$$",
+        "C": "$$x$$",
+        "D": "$$(x + 7)^2$$",
+        "E": "$$x^2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para encontrar el MCD, primero factorizamos cada polinomio:\nP(x) = $$x^2 + 7x = x(x + 7)$$\nQ(x) = $$x^3 + 14x^2 + 49x = x(x^2 + 14x + 49) = x(x + 7)^2$$\nR(x) = $$3x^2 + 21x = 3x(x + 7)$$\nEl MCD es el producto de los factores comunes con el menor exponente. Los factores comunes son $$x$$ (con exponente 1 en P(x), Q(x), R(x)) y $$(x + 7)$$ (con exponente 1 en P(x) y R(x)).\nPor lo tanto, el MCD es $$x(x + 7)$$. La respuesta correcta es A.",
+      "id_temporal": "alg_mcm_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dados los polinomios: F(x) = $$x^3 - 8x^2 + 16x$$, G(x) = $$x^4 - 20x^2 + 64$$, y H(x) = $$x^3 - 4x^2 - 4x + 16$$. Calcule la suma de los coeficientes del Mínimo Común Múltiplo (MCM) de dichos polinomios.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$135$$",
+        "B": "$$-135$$",
+        "C": "$$270$$",
+        "D": "$$-270$$",
+        "E": "$$0$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, factorizamos cada polinomio:\nF(x) = $$x(x^2 - 8x + 16) = x(x - 4)^2$$\nG(x) = $$x^4 - 20x^2 + 64$$ (sustituimos $$t = x^2$$: $$t^2 - 20t + 64 = (t - 4)(t - 16)$$).\nPor lo tanto, G(x) = $$(x^2 - 4)(x^2 - 16) = (x - 2)(x + 2)(x - 4)(x + 4)$$.\nH(x) = $$x^3 - 4x^2 - 4x + 16$$ (agrupamos: $$x^2(x - 4) - 4(x - 4) = (x - 4)(x^2 - 4)$$).\nPor lo tanto, H(x) = $$(x - 4)(x - 2)(x + 2)$$.\nEl MCM toma todos los factores con el mayor exponente:\nFactores: $$x^1, (x - 4)^2, (x - 2)^1, (x + 2)^1, (x + 4)^1$$\nMCM(x) = $$x(x - 4)^2(x - 2)(x + 2)(x + 4)$$\nLa suma de los coeficientes del MCM se obtiene evaluando MCM(1):\nMCM(1) = $$1(1 - 4)^2(1 - 2)(1 + 2)(1 + 4)$$\n= $$( - 3)^2( - 1)(3)(5)$$\n= $$9 \\times ( - 1) \\times 3 \\times 5$$\n= $$-135$$\nLa respuesta correcta es B.",
+      "id_temporal": "alg_mcm_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Se tienen los polinomios A(x) = $$x^3 + 3x^2 - 10x$$ y B(x), donde se sabe que el producto de su MCD y MCM es $$x^6 - 29x^4 + 100x^2$$. Halle el valor de B(-1).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$6$$",
+        "B": "$$-6$$",
+        "C": "$$12$$",
+        "D": "$$-12$$",
+        "E": "$$0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sabemos que para dos polinomios A(x) y B(x), se cumple que: A(x) \\cdot B(x) = MCD(A, B) \\cdot MCM(A, B).\nNos dan A(x) \\cdot B(x) = $$x^6 - 29x^4 + 100x^2$$.\nPrimero, factorizamos A(x):\nA(x) = $$x^3 + 3x^2 - 10x = x(x^2 + 3x - 10) = x(x + 5)(x - 2)$$.\nLuego, factorizamos el producto dado:\n$$x^6 - 29x^4 + 100x^2 = x^2(x^4 - 29x^2 + 100)$$\nSea $$t = x^2$$: $$t^2 - 29t + 100 = (t - 4)(t - 25)$$.\nEntonces, el producto es: $$x^2(x^2 - 4)(x^2 - 25) = x^2(x - 2)(x + 2)(x - 5)(x + 5)$$.\nAhora, para hallar B(x), dividimos el producto entre A(x):\nB(x) = $$[x^2(x - 2)(x + 2)(x - 5)(x + 5)] / [x(x + 5)(x - 2)]$$.\nSimplificando, obtenemos: B(x) = $$x(x + 2)(x - 5)$$.\nFinalmente, calculamos B(-1):\nB(-1) = $$(-1)((-1) + 2)((-1) - 5) = (-1)(1)(-6) = 6$$.\nLa respuesta correcta es A.",
+      "id_temporal": "alg_mcm_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "El Mínimo Común Múltiplo (MCM) de dos polinomios es $$x^3 + 4x^2 - 4x - 16$$ y el Máximo Común Divisor (MCD) es $$x^2 + 6x + 8$$. Si 'k' es el número total de factores algebraicos del producto de estos dos polinomios, hallar el valor de 'k'.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$18$$",
+        "B": "$$12$$",
+        "C": "$$24$$",
+        "D": "$$36$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para dos polinomios A y B, su producto es igual al producto de su MCD y MCM: A \\cdot B = MCD \\cdot MCM.\nPrimero, factorizamos el MCD y el MCM:\nMCD = $$x^2 + 6x + 8 = (x + 2)(x + 4)$$.\nMCM = $$x^3 + 4x^2 - 4x - 16$$ (agrupamos: $$x^2(x + 4) - 4(x + 4) = (x + 4)(x^2 - 4)$$).\nPor lo tanto, MCM = $$(x + 4)(x - 2)(x + 2)$$.\nAhora, multiplicamos el MCD por el MCM para obtener el producto de los polinomios:\nProducto = $$(x + 2)(x + 4) \\cdot (x + 4)(x - 2)(x + 2)$$\nProducto = $$(x + 2)^2 (x + 4)^2 (x - 2)^1$$\nEl número total de factores algebraicos se calcula sumando 1 a cada exponente de los factores primos y multiplicando los resultados:\nk = $$(2 + 1)(2 + 1)(1 + 1) = 3 \\times 3 \\times 2 = 18$$.\nLa respuesta correcta es A.",
+      "id_temporal": "alg_mcm_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar la suma de los coeficientes del polinomio que resulta de dividir el MCM entre el MCD de los siguientes polinomios: P(x) = $$(x+3)(x+4)^2$$, Q(x) = $$(x-1)(x+4)^2$$ y R(x) = $$(x+4)^3$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$12$$",
+        "B": "$$0$$",
+        "C": "$$20$$",
+        "D": "$$24$$",
+        "E": "$$-1$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, identificamos los factores de cada polinomio:\nP(x) = $$(x+3)^1(x+4)^2$$\nQ(x) = $$(x-1)^1(x+4)^2$$\nR(x) = $$(x+4)^3$$\nPara el MCD, tomamos los factores comunes con el menor exponente. El único factor común a los tres es $$(x+4)$$, y su menor exponente es 2.\nMCD = $$(x+4)^2$$\nPara el MCM, tomamos todos los factores (comunes y no comunes) con el mayor exponente:\nFactores: $$(x+3)^1, (x-1)^1, (x+4)^3$$\nMCM = $$(x+3)(x-1)(x+4)^3$$\nAhora, dividimos el MCM entre el MCD:\nDivisión = $$MCM / MCD = [(x+3)(x-1)(x+4)^3] / [(x+4)^2]$$\nDivisión = $$(x+3)(x-1)(x+4)$$\nPara determinar la suma de los coeficientes del polinomio resultante, evaluamos este polinomio en $$x = 1$$:\nSuma de coeficientes = $$(1+3)(1-1)(1+4)$$\n= $$(4)(0)(5)$$\n= $$0$$\nLa respuesta correcta es B.",
+      "id_temporal": "alg_mcm_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el Máximo Común Divisor (MCD) de los siguientes polinomios: $$P(z) = z^2 + 7z$$, $$Q(z) = z^3 + 14z^2 + 49z$$, y $$R(z) = 4z^2 + 28z$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$4z(z + 7)$$",
+        "B": "$$z(z + 7)^2$$",
+        "C": "$$z(z + 7)$$",
+        "D": "$$z$$",
+        "E": "$$z + 7$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Factorizamos cada polinomio:  $$P(z) = z^2 + 7z = z(z + 7)$$.  $$Q(z) = z^3 + 14z^2 + 49z = z(z^2 + 14z + 49) = z(z + 7)^2$$.  $$R(z) = 4z^2 + 28z = 4z(z + 7)$$. El MCD es el producto de los factores comunes con el menor exponente. Los factores comunes son $$z$$ (con exponente 1) y $$(z + 7)$$ (con exponente 1). Por lo tanto, MCD $ = z(z + 7)$.",
+      "id_temporal": "alg_mcm_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular la suma de coeficientes del Mínimo Común Múltiplo (MCM) de los siguientes polinomios: $$F(y) = y^3 - 8y^2 + 16y$$, $$G(y) = y^4 - 13y^2 + 36$$, y $$H(y) = y^3 - 4y^2 - 9y + 36$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "144",
+        "B": "-216",
+        "C": "216",
+        "D": "-144",
+        "E": "0"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Factorizamos cada polinomio:  $$F(y) = y(y^2 - 8y + 16) = y(y - 4)^2$$.  $$G(y) = y^4 - 13y^2 + 36$$. Sea $$t = y^2$$: $$t^2 - 13t + 36 = (t - 4)(t - 9)$$. Entonces $$G(y) = (y^2 - 4)(y^2 - 9) = (y - 2)(y + 2)(y - 3)(y + 3)$$.  $$H(y) = y^3 - 4y^2 - 9y + 36$$. Agrupamos: $$y^2(y - 4) - 9(y - 4) = (y - 4)(y^2 - 9) = (y - 4)(y - 3)(y + 3)$$. El MCM toma todos los factores con el mayor exponente: $$y^1, (y - 4)^2, (y - 2)^1, (y + 2)^1, (y - 3)^1, (y + 3)^1$$.  MCM$$(y) = y(y - 4)^2(y - 2)(y + 2)(y - 3)(y + 3)$$. La suma de coeficientes es MCM(1): MCM(1) = $$1(1 - 4)^2(1 - 2)(1 + 2)(1 - 3)(1 + 3) = 1(-3)^2(-1)(3)(-2)(4) = 9 \\times (-1) \\times 3 \\times (-2) \\times 4 = 9 \\times 24 = 216$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_mcm_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$A(x) = x^3 + 2x^2 - 8x$$ y $$B(x)$$ dos polinomios tales que el producto de su MCD y MCM es $$x^6 - 20x^4 + 64x^2$$. Hallar el valor de $$B(1)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "9",
+        "B": "-9",
+        "C": "12",
+        "D": "-12",
+        "E": "0"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sabemos que para dos polinomios $$A(x)$$ y $$B(x)$$, se cumple: $$A(x) \\cdot B(x) = \\text{MCD}(A, B) \\cdot \\text{MCM}(A, B)$$. Entonces: $$A(x)B(x) = x^6 - 20x^4 + 64x^2$$. Factorizamos $$A(x)$$: $$A(x) = x(x^2 + 2x - 8) = x(x + 4)(x - 2)$$. Factorizamos el producto dado: $$x^6 - 20x^4 + 64x^2 = x^2(x^4 - 20x^2 + 64)$$. Sea $$t = x^2$$: $$t^2 - 20t + 64 = (t - 16)(t - 4)$$. Entonces, $$x^2(x^2 - 16)(x^2 - 4) = x^2(x - 4)(x + 4)(x - 2)(x + 2)$$. Tenemos: $$A(x)B(x) = x^2(x - 4)(x + 4)(x - 2)(x + 2)$$. Para hallar $$B(x)$$, dividimos el producto entre $$A(x)$$: $$B(x) = \\frac{x^2(x - 4)(x + 4)(x - 2)(x + 2)}{x(x + 4)(x - 2)} = x(x - 4)(x + 2)$$. Calculamos $$B(1)$$: $$B(1) = (1)(1 - 4)(1 + 2) = (1)(-3)(3) = -9$$.",
+      "id_temporal": "alg_mcm_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar la suma de coeficientes del polinomio que resulta de dividir el MCM entre el MCD de: $$P(t) = t^3 + 7t^2 + 15t + 9$$, $$Q(t) = t^3 + 4t^2 - 3t - 18$$, y $$R(t) = t^3 + 9t^2 + 27t + 27$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "12",
+        "B": "8",
+        "C": "-8",
+        "D": "-12",
+        "E": "0"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Factorizamos cada polinomio:  $$P(t) = t^3 + 7t^2 + 15t + 9$$. Por Ruffini, probando $$t = -1$$: $$(-1)^3 + 7(-1)^2 + 15(-1) + 9 = -1 + 7 - 15 + 9 = 0$$. Entonces $$(t + 1)$$ es factor. Dividiendo $$P(t)$$ por $$(t + 1)$$ obtenemos $$t^2 + 6t + 9 = (t + 3)^2$$. Así, $$P(t) = (t + 1)(t + 3)^2$$.  $$Q(t) = t^3 + 4t^2 - 3t - 18$$. Por Ruffini, probando $$t = 2$$: $$(2)^3 + 4(2)^2 - 3(2) - 18 = 8 + 16 - 6 - 18 = 0$$. Entonces $$(t - 2)$$ es factor. Dividiendo $$Q(t)$$ por $$(t - 2)$$ obtenemos $$t^2 + 6t + 9 = (t + 3)^2$$. Así, $$Q(t) = (t - 2)(t + 3)^2$$.  $$R(t) = t^3 + 9t^2 + 27t + 27 = (t + 3)^3$$ (es un cubo perfecto).  El MCD es el producto de los factores comunes con el menor exponente: El factor común es $$(t + 3)$$ y el menor exponente es 2. MCD $ = (t + 3)^2$. El MCM toma todos los factores comunes y no comunes con el mayor exponente: Factores: $$(t + 1)$$, $$(t - 2)$$, $$(t + 3)$$. Mayores exponentes: $$(t + 1)^1$$, $$(t - 2)^1$$, $$(t + 3)^3$$. MCM $ = (t + 1)(t - 2)(t + 3)^3$. Dividimos MCM entre MCD: $$\\frac{\\text{MCM}}{\\text{MCD}} = \\frac{(t + 1)(t - 2)(t + 3)^3}{(t + 3)^2} = (t + 1)(t - 2)(t + 3)$$. La suma de los coeficientes del polinomio resultante se obtiene evaluando el polinomio en $$t = 1$$: Suma de coeficientes $$= (1 + 1)(1 - 2)(1 + 3) = (2)(-1)(4) = -8$$.",
+      "id_temporal": "alg_mcm_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dados los polinomios: $$P(x) = (x - 3)^{k-3}(x + 1)^j(x + 7)^{q+2}$$, $$Q(x) = (x - 3)^{k-1}(x + 1)^{j+1}(x + 7)^q$$, y $$R(x) = (x - 3)^{k-2}(x + 1)^{j+2}(x + 7)^{q-1}$$. Si el $\\text{MCD}(P, Q, R) = (x - 3)^5(x + 1)^7(x + 7)^8$, hallar el número total de factores del $\\text{MCM}(P, Q, R)$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "840",
+        "B": "960",
+        "C": "720",
+        "D": "1080",
+        "E": "600"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para el MCD, los exponentes son el mínimo en cada factor.  Para $$(x - 3)$$: $\\min(k - 3, k - 1, k - 2) = k - 3$. De la expresión del MCD, sabemos que $$k - 3 = 5$$, por lo tanto $$k = 8$$.  Para $$(x + 1)$$: $\\min(j, j + 1, j + 2) = j$. De la expresión del MCD, sabemos que $$j = 7$$.  Para $$(x + 7)$$: $\\min(q + 2, q, q - 1) = q - 1$. De la expresión del MCD, sabemos que $$q - 1 = 8$$, por lo tanto $$q = 9$$. Ahora, hallamos los exponentes para el MCM, que son los máximos para cada factor, usando los valores de $$k, j, q$$ encontrados:  Para $$(x - 3)$$: $\\max(k - 3, k - 1, k - 2) = \\max(8 - 3, 8 - 1, 8 - 2) = \\max(5, 7, 6) = 7$$.  Para $$(x + 1)$$: $\\max(j, j + 1, j + 2) = \\max(7, 7 + 1, 7 + 2) = \\max(7, 8, 9) = 9$$.  Para $$(x + 7)$$: $\\max(q + 2, q, q - 1) = \\max(9 + 2, 9, 9 - 1) = \\max(11, 9, 8) = 11$$. El MCM de los polinomios es: $\\text{MCM}(P, Q, R) = (x - 3)^7 (x + 1)^9 (x + 7)^{11}$. El número total de factores se calcula sumando 1 a cada exponente y multiplicando los resultados: Número de factores totales $ = (7 + 1)(9 + 1)(11 + 1) = 8 \\times 10 \\times 12 = 960$.",
+      "id_temporal": "alg_mcm_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuál es el Máximo Común Divisor (MCD) de los siguientes polinomios? $$P(x) = x^2 + 5x$$, $$Q(x) = x^3 + 10x^2 + 25x$$, $$R(x) = 3x^2 + 15x$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$x(x + 5)$$",
+        "B": "$$x(x + 25)$$",
+        "C": "$$3(x + 5)$$",
+        "D": "$$x^2$$",
+        "E": "$$(x + 5)^2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Factorizamos cada polinomio: $$P(x) = x(x + 5)$$. $$Q(x) = x(x^2 + 10x + 25) = x(x + 5)^2$$. $$R(x) = 3x(x + 5)$$. El MCD es el producto de los factores comunes con el menor exponente: Factor común $$x$$ (mínimo exponente 1), Factor común $$(x + 5)$$ (mínimo exponente 1). Por lo tanto, $$MCD = x(x + 5)$$. La respuesta correcta es A.",
+      "id_temporal": "alg_mcm_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcule la suma de los coeficientes del Mínimo Común Múltiplo (MCM) de los siguientes polinomios: $$A(x) = x^3 - 4x^2 + 4x$$, $$B(x) = x^4 - 29x^2 + 100$$, $$C(x) = x^3 - 2x^2 - 25x + 50$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-120$$",
+        "B": "$$72$$",
+        "C": "$$-72$$",
+        "D": "$$100$$",
+        "E": "$$-144$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Factorizamos cada polinomio: $$A(x) = x(x^2 - 4x + 4) = x(x - 2)^2$$. Para $$B(x)$$, sea $$t = x^2$$, entonces $$t^2 - 29t + 100 = (t - 4)(t - 25)$$. Así, $$B(x) = (x^2 - 4)(x^2 - 25) = (x - 2)(x + 2)(x - 5)(x + 5)$$. Para $$C(x)$$, agrupamos: $$x^2(x - 2) - 25(x - 2) = (x - 2)(x^2 - 25) = (x - 2)(x - 5)(x + 5)$$. El MCM toma todos los factores con el mayor exponente: $$x^1$$, $$(x - 2)^2$$, $$(x + 2)^1$$, $$(x - 5)^1$$, $$(x + 5)^1$$. Entonces, $$MCM(x) = x(x - 2)^2(x + 2)(x - 5)(x + 5)$$. La suma de coeficientes es $$MCM(1)$$: $$MCM(1) = 1(1 - 2)^2(1 + 2)(1 - 5)(1 + 5) = 1(-1)^2(3)(-4)(6) = 1(1)(3)(-4)(6) = -72$$. La respuesta correcta es C.",
+      "id_temporal": "alg_mcm_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dados los polinomios $$A(x) = x^3 - 3x^2 - 4x$$ y $$B(x)$$, se sabe que el producto de su MCD y MCM es $$x^6 - 17x^4 + 16x^2$$. Hallar el valor de $$B(-3)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$8$$",
+        "B": "$$-12$$",
+        "C": "$$12$$",
+        "D": "$$-8$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sabemos que $$A(x)B(x) = MCD(A, B) \\cdot MCM(A, B)$$. Por lo tanto, $$A(x)B(x) = x^6 - 17x^4 + 16x^2$$. Factorizamos $$A(x)$$: $$A(x) = x(x^2 - 3x - 4) = x(x - 4)(x + 1)$$. Factorizamos el producto dado: $$x^6 - 17x^4 + 16x^2 = x^2(x^4 - 17x^2 + 16)$$. Haciendo $$t = x^2$$, tenemos $$t^2 - 17t + 16 = (t - 16)(t - 1)$$. Entonces, $$x^2(x^2 - 16)(x^2 - 1) = x^2(x - 4)(x + 4)(x - 1)(x + 1)$$. Ahora, dividimos el producto por $$A(x)$$ para encontrar $$B(x)$$: $$B(x) = \\frac{x^2(x - 4)(x + 4)(x - 1)(x + 1)}{x(x - 4)(x + 1)} = x(x + 4)(x - 1)$$. Finalmente, calculamos $$B(-3)$$: $$B(-3) = (-3)(-3 + 4)(-3 - 1) = (-3)(1)(-4) = 12$$. La respuesta correcta es C.",
+      "id_temporal": "alg_mcm_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "El Mínimo Común Múltiplo (MCM) de dos polinomios es $$x^3 + 2x^2 - 9x - 18$$ y el Máximo Común Divisor (MCD) es $$x^2 + 2x - 3$$. Si $$n$$ es el número de factores totales del producto de los dos polinomios, hallar $$n$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$16$$",
+        "B": "$$24$$",
+        "C": "$$12$$",
+        "D": "$$20$$",
+        "E": "$$18$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para dos polinomios A y B, se cumple que $$A \\cdot B = MCD \\cdot MCM$$. Por lo tanto, el producto $$P(x)$$ es: $$P(x) = (x^2 + 2x - 3)(x^3 + 2x^2 - 9x - 18)$$. Factorizamos el MCD: $$x^2 + 2x - 3 = (x + 3)(x - 1)$$. Factorizamos el MCM: $$x^3 + 2x^2 - 9x - 18$$. Agrupamos términos: $$x^2(x + 2) - 9(x + 2) = (x + 2)(x^2 - 9) = (x + 2)(x - 3)(x + 3)$$. Ahora, multiplicamos las formas factorizadas: $$P(x) = (x + 3)(x - 1) \\cdot (x + 2)(x - 3)(x + 3)$$. Reagrupando, obtenemos: $$P(x) = (x + 3)^2 (x - 1)^1 (x + 2)^1 (x - 3)^1$$. El número de factores totales se calcula sumando 1 a cada exponente y multiplicando los resultados: $$(2 + 1)(1 + 1)(1 + 1)(1 + 1) = 3 \times 2 \times 2 \times 2 = 24$$. La respuesta correcta es B.",
+      "id_temporal": "alg_mcm_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dados los polinomios: $$A(x) = (x - 3)^{a-2}(x + 5)^b(x + 1)^{c+3}$$, $$B(x) = (x - 3)^{a-1}(x + 5)^{b+1}(x + 1)^{c+1}$$, $$C(x) = (x - 3)^{a-3}(x + 5)^{b+2}(x + 1)^{c+2}$$. Si el MCD de $$A(x), B(x), C(x)$$ es $$(x - 3)^2(x + 5)^3(x + 1)^4$$. Hallar el número de factores totales del MCM de $$A(x), B(x), C(x)$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$180$$",
+        "B": "$$210$$",
+        "C": "$$240$$",
+        "D": "$$150$$",
+        "E": "$$200$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para el MCD, los exponentes son el mínimo de los exponentes en cada factor. Establecemos las ecuaciones para encontrar $$a, b, c$$: Para $$(x - 3)$$: $$min(a - 2, a - 1, a - 3) = a - 3 = 2 \\Rightarrow a = 5$$. Para $$(x + 5)$$: $$min(b, b + 1, b + 2) = b = 3 \\Rightarrow b = 3$$. Para $$(x + 1)$$: $$min(c + 3, c + 1, c + 2) = c + 1 = 4 \\Rightarrow c = 3$$. Ahora, hallamos los exponentes para el MCM, que es el máximo exponente para cada factor: Para $$(x - 3)$$: $$max(a - 2, a - 1, a - 3) = max(5 - 2, 5 - 1, 5 - 3) = max(3, 4, 2) = 4$$. Para $$(x + 5)$$: $$max(b, b + 1, b + 2) = max(3, 3 + 1, 3 + 2) = max(3, 4, 5) = 5$$. Para $$(x + 1)$$: $$max(c + 3, c + 1, c + 2) = max(3 + 3, 3 + 1, 3 + 2) = max(6, 4, 5) = 6$$. Entonces, el MCM es: $$MCM(x) = (x - 3)^4 (x + 5)^5 (x + 1)^6$$. El número de factores totales se calcula sumando 1 a cada exponente y multiplicando los resultados: $$(4 + 1)(5 + 1)(6 + 1) = 5 \times 6 \times 7 = 210$$. La respuesta correcta es B.",
+      "id_temporal": "alg_mcm_015",
+      "imagen": null
+    }
+  ]
+}

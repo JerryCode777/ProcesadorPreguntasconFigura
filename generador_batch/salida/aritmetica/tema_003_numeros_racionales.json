@@ -1,0 +1,234 @@
+{
+  "materia": "aritmetica",
+  "numero_tema": 3,
+  "total_temas": 6,
+  "titulo_tema": "NÚMEROS RACIONALES",
+  "tema": "numeros_racionales",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es el valor de la suma $$S = 0,1̅ + 0,2̅ + 0,3̅ + 0,4̅$$?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$1,1̅$$",
+        "B": "$$1,2̅$$",
+        "C": "$$1,0̅$$",
+        "D": "$$10/9$$",
+        "E": "$$11/9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Convertimos cada decimal periódico puro a fracción:\n$$0,1̅ = 1/9$$\n$$0,2̅ = 2/9$$\n$$0,3̅ = 3/9$$\n$$0,4̅ = 4/9$$\nSumamos las fracciones:\n$$S = 1/9 + 2/9 + 3/9 + 4/9 = (1 + 2 + 3 + 4)/9 = 10/9$$\nConvertimos la fracción a decimal periódico:\n$$10/9 = 1,1̅$$\nPor lo tanto, la respuesta correcta es A.",
+      "id_temporal": "ari_num_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$\\frac{x}{3} + \\frac{x+2}{5} = 2,53̅$$, calcule el valor de $$x$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, convertimos el número decimal periódico mixto a fracción:\n$$2,53̅ = (253 - 25)/90 = 228/90 = 38/15$$\nAhora, sustituimos este valor en la ecuación:\n$$\\frac{x}{3} + \\frac{x+2}{5} = \\frac{38}{15}$$\nPara eliminar los denominadores, multiplicamos toda la ecuación por el mínimo común múltiplo de 3, 5 y 15, que es 15:\n$$15(\\frac{x}{3}) + 15(\\frac{x+2}{5}) = 15(\\frac{38}{15})$$\n$$5x + 3(x+2) = 38$$\n$$5x + 3x + 6 = 38$$\n$$8x + 6 = 38$$\n$$8x = 38 - 6$$\n$$8x = 32$$\n$$x = 32/8$$\n$$x = 4$$\nPor lo tanto, la respuesta correcta es B.",
+      "id_temporal": "ari_num_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuántas fracciones equivalentes a $$\\frac{21}{35}$$ tienen un numerador de dos cifras que sea múltiplo de 3?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "28",
+        "B": "30",
+        "C": "31",
+        "D": "29",
+        "E": "25"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, simplificamos la fracción dada:\n$$\\frac{21}{35} = \\frac{3 \\cdot 7}{5 \\cdot 7} = \\frac{3}{5}$$\nLas fracciones equivalentes a $$\\frac{3}{5}$$ tienen la forma $$\\frac{3k}{5k}$$ para algún entero $$k$$.\nSe nos pide que el numerador sea un número de dos cifras. Esto significa que $$10 \\le 3k \\le 99$$. \nDividimos la desigualdad por 3:\n$$\\frac{10}{3} \\le k \\le \\frac{99}{3}$$\n$$3,33... \\le k \\le 33$$\nComo $$k$$ debe ser un entero, los valores posibles para $$k$$ son $$4, 5, 6, \\dots, 33$$.\nAdemás, el numerador $$3k$$ debe ser múltiplo de 3. Esto siempre se cumple, ya que $$3k$$ es intrínsecamente un múltiplo de 3.\nPara contar la cantidad de valores de $$k$$, usamos la fórmula (último - primero + 1):\nCantidad de valores de $$k = 33 - 4 + 1 = 30$$\nPor lo tanto, hay 30 fracciones que cumplen la condición, y la respuesta correcta es B.",
+      "id_temporal": "ari_num_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un viajero ha recorrido $$\\frac{2}{7}$$ de su camino un día y $$\\frac{3}{5}$$ del resto al día siguiente. Si aún le quedan 24 km por recorrer, ¿cuál es la longitud total del camino?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "70 km",
+        "B": "80 km",
+        "C": "84 km",
+        "D": "90 km",
+        "E": "96 km"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$T$$ la longitud total del camino.\nEl primer día recorre $$\\frac{2}{7}T$$. \nEl resto del camino es $$T - \\frac{2}{7}T = \\frac{5}{7}T$$.\nEl segundo día recorre $$\\frac{3}{5}$$ del resto, es decir:\n$$\\frac{3}{5} \\cdot (\\frac{5}{7}T) = \\frac{3}{7}T$$\nEl total recorrido hasta ahora es la suma de lo recorrido el primer día y el segundo día:\nRecorrido total $$= \\frac{2}{7}T + \\frac{3}{7}T = \\frac{5}{7}T$$\nLo que le queda por recorrer es el total menos lo recorrido:\nQueda $$= T - \\frac{5}{7}T = \\frac{2}{7}T$$\nSabemos que lo que le queda es 24 km:\n$$\\frac{2}{7}T = 24$$\nDespejamos $$T$$:\n$$T = 24 \\cdot \\frac{7}{2}$$\n$$T = 12 \\cdot 7$$\n$$T = 84$$\nLa longitud total del camino es 84 km. La respuesta correcta es C.",
+      "id_temporal": "ari_num_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "La suma de dos números es 15 y la suma de sus inversos multiplicativos es $$\\frac{5}{18}$$. Halle el producto de dichos números.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "45",
+        "B": "50",
+        "C": "54",
+        "D": "60",
+        "E": "63"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sean los dos números $$a$$ y $$b$$.\nSegún el enunciado, tenemos dos ecuaciones:\n1) La suma de los números es 15: $$a + b = 15$$\n2) La suma de sus inversos multiplicativos es $$\\frac{5}{18}$$: $$\\frac{1}{a} + \\frac{1}{b} = \\frac{5}{18}$$\nPara simplificar la segunda ecuación, la expresamos con un denominador común:\n$$\\frac{b + a}{ab} = \\frac{5}{18}$$\nAhora, sustituimos el valor de $$a + b$$ de la primera ecuación en esta expresión:\n$$\\frac{15}{ab} = \\frac{5}{18}$$\nQueremos hallar el producto de los números, que es $$ab$$. Despejamos $$ab$$:\n$$ab = 15 \\cdot \\frac{18}{5}$$\n$$ab = 3 \\cdot 18$$\n$$ab = 54$$\nEl producto de dichos números es 54. La respuesta correcta es C.",
+      "id_temporal": "ari_num_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcule el valor de la expresión $$S = 0,2̅ + 0,3̅ + 0,4̅ + 0,5̅ + 0,6̅ + 0,7̅ + 0,8̅$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$3,7̅$$",
+        "B": "$$3,8̅$$",
+        "C": "$$3,9̅$$",
+        "D": "$$4,0$$",
+        "E": "$$3,5$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Convertimos cada decimal periódico puro a fracción:\n$$0,2̅ = \frac{2}{9}$$ \n$$0,3̅ = \frac{3}{9}$$ \n... \n$$0,8̅ = \frac{8}{9}$$ \nLuego sumamos las fracciones:\n$$S = \frac{2}{9} + \frac{3}{9} + \frac{4}{9} + \frac{5}{9} + \frac{6}{9} + \frac{7}{9} + \frac{8}{9}$$ \n$$S = \frac{2+3+4+5+6+7+8}{9} = \frac{35}{9}$$ \nFinalmente, convertimos la fracción de nuevo a decimal:\n$$\frac{35}{9} = 3,888... = 3,8̅$$ \nLa respuesta correcta es B.",
+      "id_temporal": "ari_num_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$\frac{x}{3} + \frac{x+1}{4} = 2,833̅$$, calcule el valor de $$x$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\frac{31}{7}$$",
+        "B": "$$\frac{29}{7}$$",
+        "C": "$$\frac{33}{7}$$",
+        "D": "$$\frac{30}{7}$$",
+        "E": "$$\frac{32}{7}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero convertimos el decimal periódico mixto a fracción:\n$$2,833̅ = 2 + 0,833̅ = 2 + \frac{83-8}{90} = 2 + \frac{75}{90}$$ \nSimplificamos la fracción $$75/90$$ dividiendo por 15:\n$$\frac{75}{90} = \frac{5}{6}$$ \nEntonces, $$2,833̅ = 2 + \frac{5}{6} = \frac{12+5}{6} = \frac{17}{6}$$ \nAhora reemplazamos en la ecuación:\n$$\frac{x}{3} + \frac{x+1}{4} = \frac{17}{6}$$ \nMultiplicamos toda la ecuación por el Mínimo Común Múltiplo (MCM) de 3, 4 y 6, que es 12:\n$$12 \\cdot \frac{x}{3} + 12 \\cdot \frac{x+1}{4} = 12 \\cdot \frac{17}{6}$$ \n$$4x + 3(x+1) = 2 \\cdot 17$$ \n$$4x + 3x + 3 = 34$$ \n$$7x + 3 = 34$$ \n$$7x = 34 - 3$$ \n$$7x = 31$$ \n$$x = \frac{31}{7}$$ \nLa respuesta correcta es A.",
+      "id_temporal": "ari_num_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuántas fracciones irreducibles tienen denominador 24 y son mayores que $$1/4$$ pero menores que $$2/3$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea la fracción irreducible $$k/24$$. \nSe nos pide que $$1/4 < k/24 < 2/3$$. \nPara comparar, convertimos todas las fracciones a un denominador común de 24:\n$$\frac{6}{24} < \frac{k}{24} < \frac{16}{24}$$ \nEsto implica que $$6 < k < 16$$. \nLos posibles valores enteros de $$k$$ son {7, 8, 9, 10, 11, 12, 13, 14, 15}. \nAdemás, la fracción debe ser irreducible, lo que significa que el Máximo Común Divisor (MCD) de $$k$$ y 24 debe ser 1 (es decir, $$gcd(k, 24) = 1$$).\nDescomponemos el denominador: $$24 = 2^3 \\cdot 3$$. Para que $$gcd(k, 24) = 1$$, $$k$$ no debe ser divisible por 2 ni por 3.\nRevisemos los valores de $$k$$:\n- $$k=7$$: No es divisible por 2 ni por 3. (Válido)\n- $$k=8$$: Es divisible por 2. (No válido)\n- $$k=9$$: Es divisible por 3. (No válido)\n- $$k=10$$: Es divisible por 2. (No válido)\n- $$k=11$$: No es divisible por 2 ni por 3. (Válido)\n- $$k=12$$: Es divisible por 2 y por 3. (No válido)\n- $$k=13$$: No es divisible por 2 ni por 3. (Válido)\n- $$k=14$$: Es divisible por 2. (No válido)\n- $$k=15$$: Es divisible por 3. (No válido)\nLas fracciones válidas son $$7/24$$, $$11/24$$, y $$13/24$$. Por lo tanto, hay 3 fracciones.\nLa respuesta correcta es B.",
+      "id_temporal": "ari_num_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un tanque de agua está lleno hasta sus $$3/7$$. Si se vacían $$26$$ litros, el nivel baja a $$2/9$$ de su capacidad total. ¿Cuál es la capacidad total del tanque en litros?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "108",
+        "B": "117",
+        "C": "126",
+        "D": "135",
+        "E": "144"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$C$$ la capacidad total del tanque en litros.\nInicialmente, el tanque está lleno hasta sus $$3/7$$ de su capacidad, es decir, tiene $$\frac{3}{7}C$$ litros.\nSi se vacían $$26$$ litros, la cantidad de agua en el tanque es $$\frac{3}{7}C - 26$$.\nEl nuevo nivel es $$2/9$$ de su capacidad total, es decir, $$\frac{2}{9}C$$ litros.\nIgualamos las expresiones para el nuevo nivel:\n$$\frac{3}{7}C - 26 = \frac{2}{9}C$$ \nMovemos los términos con $$C$$ a un lado de la ecuación:\n$$\frac{3}{7}C - \frac{2}{9}C = 26$$ \nRestamos las fracciones encontrando un denominador común (MCM de 7 y 9 es 63):\n$$\frac{3 \\cdot 9 C - 2 \\cdot 7 C}{63} = 26$$ \n$$\frac{27C - 14C}{63} = 26$$ \n$$\frac{13C}{63} = 26$$ \nAhora, despejamos $$C$$:\n$$13C = 26 \\cdot 63$$ \n$$C = \frac{26 \\cdot 63}{13}$$ \n$$C = 2 \\cdot 63$$ \n$$C = 126$$ litros.\nLa respuesta correcta es C.",
+      "id_temporal": "ari_num_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$p$$ y $$q$$ son dos números racionales distintos tales que $$\frac{1}{p} + \frac{1}{q} = \frac{5}{12}$$ y $$\frac{1}{p} \\cdot \frac{1}{q} = \frac{1}{24}$$, halle el valor de $$p+q$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "14",
+        "E": "15"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sean $$x = \frac{1}{p}$$ e $$y = \frac{1}{q}$$. Las ecuaciones dadas se pueden reescribir como:\n$$x + y = \frac{5}{12}$$ \n$$x \\cdot y = \frac{1}{24}$$ \nSe nos pide hallar el valor de $$p+q$$. \nSabemos que $$p = \frac{1}{x}$$ y $$q = \frac{1}{y}$$.\nEntonces, $$p+q = \frac{1}{x} + \frac{1}{y}$$ \nPara sumar estas fracciones, encontramos un denominador común:\n$$p+q = \frac{y+x}{xy}$$ \nAhora sustituimos los valores conocidos de $$x+y$$ y $$xy$$:\n$$p+q = \frac{\frac{5}{12}}{\frac{1}{24}}$$ \nPara dividir por una fracción, multiplicamos por su inverso:\n$$p+q = \frac{5}{12} \\cdot \frac{24}{1}$$ \n$$p+q = 5 \\cdot \frac{24}{12}$$ \n$$p+q = 5 \\cdot 2$$ \n$$p+q = 10$$ \nLa respuesta correcta es B.",
+      "id_temporal": "ari_num_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuál es el valor simplificado de la expresión $$P = 0,3̅ + 0,16̅ - 0,25$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$0,2̅$$",
+        "B": "$$0,25$$",
+        "C": "$$0,3$$",
+        "D": "$$1/3$$",
+        "E": "$$1/6$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Convertimos los decimales a fracciones:\n$$0,3̅ = 3/9 = 1/3$$\n$$0,16̅ = (16-1)/90 = 15/90 = 1/6$$\n$$0,25 = 25/100 = 1/4$$\nAhora sumamos y restamos:\n$$P = 1/3 + 1/6 - 1/4$$ El mínimo común múltiplo de 3, 6 y 4 es 12.\n$$P = 4/12 + 2/12 - 3/12$$\n$$P = (4+2-3)/12 = 3/12 = 1/4$$\nConvertimos a decimal: $$1/4 = 0,25$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "ari_num_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuántas fracciones equivalentes a $$\frac{21}{35}$$ tienen un numerador de tres cifras que sea múltiplo de 7?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "40",
+        "B": "41",
+        "C": "42",
+        "D": "43",
+        "E": "44"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Primero, simplificamos la fracción dada:\n$$\frac{21}{35} = \frac{3 \times 7}{5 \times 7} = \frac{3}{5}$$\nUna fracción equivalente a $$\frac{3}{5}$$ tiene la forma $$\frac{3k}{5k}$$, donde $$k$$ es un número entero.\nSe nos pide que el numerador sea de tres cifras: $$100 \\le 3k \\le 999$$\nDividiendo por 3: $$100/3 \\le k \\le 999/3$$\n$$33,33... \\le k \\le 333$$\nAsí que $$k$$ puede tomar valores desde 34 hasta 333.\nAdemás, el numerador $$3k$$ debe ser múltiplo de 7. Como 3 y 7 son primos relativos, esto significa que $$k$$ debe ser múltiplo de 7.\nBuscamos los valores de $$k$$ múltiplos de 7 en el rango $$[34, 333]$$.\nEl primer múltiplo de 7 mayor o igual que 34 es $$7 \times 5 = 35$$. Así que el primer valor de $$k$$ es 35.\nEl último múltiplo de 7 menor o igual que 333 es $$7 \times 47 = 329$$. Así que el último valor de $$k$$ es 329.\nPara contar cuántos múltiplos de 7 hay desde 35 hasta 329, podemos dividir ambos por 7 y restar:\nNúmero de valores = $$\frac{329}{7} - \frac{35}{7} + 1 = 47 - 5 + 1 = 43$$.\nPor lo tanto, hay 43 fracciones que cumplen la condición. La respuesta correcta es D.",
+      "id_temporal": "ari_num_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un estudiante lee $$\frac{2}{5}$$ de un libro el lunes y $$\frac{1}{3}$$ del resto el martes. Si aún le quedan 120 páginas por leer, ¿cuántas páginas tiene el libro en total?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "250",
+        "B": "300",
+        "C": "350",
+        "D": "400",
+        "E": "450"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$L$$ el número total de páginas del libro.\nEl lunes lee $$\frac{2}{5}L$$.\nEl resto después del lunes es $$L - \frac{2}{5}L = \frac{3}{5}L$$.\nEl martes lee $$\frac{1}{3}$$ del resto, es decir, $$\frac{1}{3} \times (\frac{3}{5}L) = \frac{1}{5}L$$.\nEl total leído hasta el martes es $$\frac{2}{5}L + \frac{1}{5}L = \frac{3}{5}L$$.\nLas páginas que le quedan por leer son $$L - \frac{3}{5}L = \frac{2}{5}L$$.\nSegún el problema, le quedan 120 páginas, entonces:\n$$\frac{2}{5}L = 120$$\n$$L = \frac{120 \times 5}{2} = 60 \times 5 = 300$$\nEl libro tiene 300 páginas en total. La respuesta correcta es B.",
+      "id_temporal": "ari_num_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$\frac{m}{3} + \frac{m+1}{4} = 1,416̅$$, calcule el valor de $$m$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, convertimos el número decimal periódico mixto a fracción:\n$$1,416̅ = 1 + 0,416̅$$\nPara $$0,416̅$$: Se toma la parte no periódica seguida de la periódica (416) y se le resta la parte no periódica (41), y se divide por tantos 9 como cifras periódicas (1) y tantos 0 como cifras no periódicas (2).\n$$0,416̅ = \frac{416-41}{900} = \frac{375}{900}$$\nSimplificando la fracción: $$\frac{375}{900} = \frac{3 \times 125}{7.2 \times 125} = \frac{3}{7.2} = \frac{3}{12 \times 2.5}$$ No. Dividimos por 75:\n$$375 \\div 75 = 5$$\n$$900 \\div 75 = 12$$\nAsí que $$0,416̅ = 5/12$$.\nVolviendo a $$1,416̅ = 1 + 5/12 = \frac{12+5}{12} = \frac{17}{12}$$.\nAhora, sustituimos en la ecuación original:\n$$\frac{m}{3} + \frac{m+1}{4} = \frac{17}{12}$$\nPara eliminar los denominadores, multiplicamos toda la ecuación por el mínimo común múltiplo (MCM) de 3, 4 y 12, que es 12:\n$$12 \times \frac{m}{3} + 12 \times \frac{m+1}{4} = 12 \times \frac{17}{12}$$\n$$4m + 3(m+1) = 17$$\n$$4m + 3m + 3 = 17$$\n$$7m + 3 = 17$$\n$$7m = 17 - 3$$\n$$7m = 14$$\n$$m = 14/7$$\n$$m = 2$$\nLa respuesta correcta es B.",
+      "id_temporal": "ari_num_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un salón de clases, el número de hombres excede al de mujeres en $$k$$ personas. Si llegan 5 parejas adicionales (5 hombres y 5 mujeres), la nueva proporción de hombres a mujeres es de 5 a 4. ¿Cuántos hombres había inicialmente en función de $$k$$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$5k - 1$$",
+        "B": "$$4k + 5$$",
+        "C": "$$5(k-1)$$",
+        "D": "$$4(k-1)$$",
+        "E": "$$5k + 1$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$H$$ el número inicial de hombres y $$M$$ el número inicial de mujeres.\nLa primera condición es que el número de hombres excede al de mujeres en $$k$$ personas:\n$$H = M + k$$ (Ecuación 1)\nLuego, llegan 5 parejas adicionales, lo que significa que el número de hombres aumenta en 5 y el número de mujeres también aumenta en 5.\nNuevo número de hombres: $$H' = H + 5$$\nNuevo número de mujeres: $$M' = M + 5$$\nLa nueva proporción de hombres a mujeres es de 5 a 4:\n$$\frac{H'}{M'} = \frac{H+5}{M+5} = \frac{5}{4}$$ (Ecuación 2)\nMultiplicamos en cruz la Ecuación 2:\n$$4(H+5) = 5(M+5)$$\n$$4H + 20 = 5M + 25$$\nAhora, sustituimos $$M$$ de la Ecuación 1 ($$M = H - k$$) en esta nueva ecuación:\n$$4H + 20 = 5(H - k) + 25$$\n$$4H + 20 = 5H - 5k + 25$$\nRestamos $$4H$$ de ambos lados:\n$$20 = H - 5k + 25$$\nRestamos 25 de ambos lados:\n$$20 - 25 = H - 5k$$\n$$-5 = H - 5k$$\nPara hallar $$H$$, sumamos $$5k$$ a ambos lados:\n$$H = 5k - 5$$\nFinalmente, podemos factorizar 5:\n$$H = 5(k-1)$$\nEl número inicial de hombres era $$5(k-1)$$. La respuesta correcta es C.",
+      "id_temporal": "ari_num_015",
+      "imagen": null
+    }
+  ]
+}

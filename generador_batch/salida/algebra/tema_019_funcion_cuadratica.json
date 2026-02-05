@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 19,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN CUADRÁTICA",
+  "tema": "funcion_cuadratica",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es la intersección de los rangos de las siguientes funciones cuadráticas: $$f(x) = -4(x + 2)^{2} + 10$$ y $$g(x) = 3(x + 2)^{2} - 5$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-5; 10[$$",
+        "B": "$$[-5; 10]$$",
+        "C": "$$]- \\infty; 10]$$",
+        "D": "$$[-5; + \\infty[$$",
+        "E": "$$[-4; 9]$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para $$f(x) = -4(x + 2)^{2} + 10$$: como el coeficiente principal es negativo, la parábola abre hacia abajo. Su valor máximo es 10 cuando $$x = -2$$. Por lo tanto, su rango es $$]- \\infty; 10]$$. Para $$g(x) = 3(x + 2)^{2} - 5$$: como el coeficiente principal es positivo, la parábola abre hacia arriba. Su valor mínimo es -5 cuando $$x = -2$$. Por lo tanto, su rango es $$[-5; + \\infty[$$ . La intersección de los rangos es $$]- \\infty; 10] \\cap [-5; + \\infty[ = [-5; 10]$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "La función cuadrática $$f(x) = 2x^{2} - 8x + 7$$ alcanza su valor mínimo en “b” cuando $$x = a$$. Calcule el valor de $$a + b$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$3$$",
+        "B": "$$1$$",
+        "C": "$$-1$$",
+        "D": "$$0$$",
+        "E": "$$2$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para $$f(x) = 2x^{2} - 8x + 7$$, el x del vértice se calcula como $$a = -(-8) / (2 \\cdot 2) = 8 / 4 = 2$$. Ahora, para hallar el valor mínimo 'b', sustituimos 'a' en la función: $$b = f(2) = 2(2)^{2} - 8(2) + 7 = 2(4) - 16 + 7 = 8 - 16 + 7 = -1$$. Finalmente, calculamos $$a + b = 2 + (-1) = 1$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determine el rango de la función cuadrática: $$f(x) = bx^{2} + 7$$, si se sabe que $$f(3) = -11$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-2; + \\infty[$$",
+        "B": "$$]- \\infty; -2]$$",
+        "C": "$$]- \\infty; 7]$$",
+        "D": "$$[7; + \\infty[$$",
+        "E": "$$]- \\infty; -11]$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Usamos el punto dado $$f(3) = -11$$ para encontrar el valor de 'b': $$b(3)^{2} + 7 = -11 \\implies 9b + 7 = -11 \\implies 9b = -18 \\implies b = -2$$. Sustituyendo 'b' en la función, obtenemos $$f(x) = -2x^{2} + 7$$. Como el coeficiente de $$x^{2}$$ es negativo ($-2$), la parábola abre hacia abajo. Su valor máximo se alcanza en el vértice, que para esta forma es $$x=0$$, y el valor máximo es 7. Por lo tanto, el rango de la función es $$]- \\infty; 7]$$. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una empresa de ingeniería está diseñando el arco de un puente que corta el nivel del suelo (eje x) en los puntos $$(6; 0)$$ y $$(–2; 0)$$. Sabiendo que la altura mínima del arco es $$-8$$ unidades (medido desde el nivel del suelo hacia abajo), ¿cuál es el punto de corte del arco con el eje y?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$(0; -6)$$",
+        "B": "$$(0; -4)$$",
+        "C": "$$(0; -8)$$",
+        "D": "$$(0; -2)$$",
+        "E": "$$(0; 2)$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que las raíces (puntos de corte con el eje x) son 6 y –2, la función cuadrática se puede expresar como $$f(x) = k(x - 6)(x + 2)$$. El eje de simetría (donde se encuentra el vértice) es el punto medio de las raíces: $$x = (6 + (-2)) / 2 = 4 / 2 = 2$$. Sabemos que el valor mínimo de la función es –8, lo que significa que $$f(2) = -8$$. Sustituyendo en la función: $$k(2 - 6)(2 + 2) = -8 \\implies k(-4)(4) = -8 \\implies -16k = -8 \\implies k = 1/2$$. La función es $$f(x) = (1/2)(x - 6)(x + 2)$$. Para encontrar el punto de corte con el eje y, hacemos $$x = 0$$: $$f(0) = (1/2)(0 - 6)(0 + 2) = (1/2)(-6)(2) = (1/2)(-12) = -6$$. El punto de corte con el eje y es $$(0; -6)$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una fábrica, la ganancia diaria P(x) (en miles de soles) en función de la cantidad de unidades producidas x, está dada por $$P(x) = x^{2} - 6x$$. Si el dominio de producción es tal que $$2x$$ se encuentra en el intervalo $$(-4; 16)$$, y el rango de la ganancia es $$[a; b)$$. Calcule el valor de $$T = a + 2b$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$23$$",
+        "B": "$$20$$",
+        "C": "$$15$$",
+        "D": "$$10$$",
+        "E": "$$18$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, determinamos el dominio de x a partir de la condición $$2x \\in (-4; 16)$$: Dividiendo por 2, obtenemos $$x \\in (-2; 8)$$. Ahora, reescribimos la función de ganancia en su forma de vértice: $$P(x) = x^{2} - 6x = (x^{2} - 6x + 9) - 9 = (x - 3)^{2} - 9$$. Esta parábola abre hacia arriba, y su mínimo se encuentra en el vértice $$x = 3$$. El valor del mínimo es $$P(3) = (3 - 3)^{2} - 9 = -9$$. Como $$x = 3$$ está dentro del dominio $$(-2; 8)$$, el valor mínimo del rango es $$a = -9$$. Para encontrar el valor máximo del rango, evaluamos la función en los extremos del dominio, sin incluirlos: $$P(-2) = (-2)^{2} - 6(-2) = 4 + 12 = 16$$. $$P(8) = (8)^{2} - 6(8) = 64 - 48 = 16$$. Dado que el dominio no incluye los extremos, el valor máximo del rango se acerca a 16 pero no lo incluye, por lo tanto, $$b = 16$$. El rango es $$[-9; 16)$$. Finalmente, calculamos $$T = a + 2b = -9 + 2(16) = -9 + 32 = 23$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar la intersección de los rangos de las funciones cuadráticas: $$h(x) = –2(x + 3)^2 + 8$$ y $$k(x) = 4(x + 3)^2 – 5$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-5; 8]$$",
+        "B": "$$[ -2; 4]$$",
+        "C": "$$[3; 6]$$",
+        "D": "$$[ -3; 5]$$",
+        "E": "$$[ -8; 5]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para $$h(x) = –2(x+3)^2 + 8$$: Como el coeficiente principal es negativo, la parábola abre hacia abajo. Su valor máximo es 8 cuando $$x = -3$$. Por lo tanto, su rango es: $$]-\\infty; 8]$$. Para $$k(x) = 4(x+3)^2 – 5$$: Como el coeficiente principal es positivo, la parábola abre hacia arriba. Su valor mínimo es –5 cuando $$x = -3$$. Por lo tanto, su rango es: $$[-5; +\\infty[$$. La intersección de los rangos es: $$]-\\infty; 8] \\cap [-5; +\\infty[ = [-5; 8]$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "La función cuadrática $$f(x) = x^2 + 5x + 7$$ alcanza su valor mínimo en “n” cuando $$x = m$$. Calcular $$m + n$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-7/4$$",
+        "B": "$$3/4$$",
+        "C": "$$-5/2$$",
+        "D": "$$5/4$$",
+        "E": "$$1/2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para $$f(x) = x^2 + 5x + 7$$, el valor de $$x$$ en el vértice (donde se alcanza el mínimo) es: $$m = -b/(2a) = -(5)/(2 \\cdot 1) = -5/2$$. Ahora hallamos el valor mínimo $$n = f(m)$$: $$n = f(-5/2) = (-5/2)^2 + 5(-5/2) + 7 = 25/4 - 25/2 + 7 = 25/4 - 50/4 + 28/4 = 3/4$$. Entonces, $$m + n = -5/2 + 3/4 = -10/4 + 3/4 = -7/4$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el rango de la función cuadrática: $$f(x) = bx^2 + 7$$, si $$f(3) = –11$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$]-\\infty; 7]$$",
+        "B": "$$[-2; +\\infty]$$",
+        "C": "$$]-\\infty; -11]$$",
+        "D": "$$[-7; +\\infty]$$",
+        "E": "$$]-\\infty; 0]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Usamos la condición $$f(3) = –11$$ para encontrar el valor de $$b$$: $$f(3) = b(3^2) + 7 = -11$$ $$9b + 7 = -11$$ $$9b = -18$$ $$b = -2$$. Sustituyendo $$b$$ en la función, obtenemos $$f(x) = -2x^2 + 7$$. Como el coeficiente de $$x^2$$ es negativo ($$-2$$), la parábola abre hacia abajo. Su vértice está en $$(0, 7)$$, por lo que el valor máximo de la función es 7. El rango de la función es $$]-\\infty; 7]$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función cuadrática $$f$$ que corta al eje $$x$$ en $$(6;0)$$ y $$(–2;0)$$, halle el punto de corte con el eje $$y$$, sabiendo que el mínimo valor de la función es $$-8$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$(0; -6)$$",
+        "B": "$$(0; 1/2)$$",
+        "C": "$$(0; -8)$$",
+        "D": "$$(0; 4)$$",
+        "E": "$$(0; -12)$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como las raíces de la función son 6 y –2, podemos escribir la función como $$f(x) = c(x – 6)(x + 2)$$. El eje de simetría (donde se encuentra el vértice y el valor mínimo) es el punto medio de las raíces: $$x = (6 + (-2))/2 = 4/2 = 2$$. Sabemos que el mínimo valor de la función es $$-8$$, lo que significa $$f(2) = -8$$. Sustituimos este valor en la ecuación de la función: $$f(2) = c(2 – 6)(2 + 2) = c(-4)(4) = -16c$$. Entonces, $$-16c = -8$$, de donde $$c = 1/2$$. La función es $$f(x) = (1/2)(x – 6)(x + 2)$$. Para hallar el punto de corte con el eje $$y$$, hacemos $$x = 0$$: $$f(0) = (1/2)(0 – 6)(0 + 2) = (1/2)(-6)(2) = (1/2)(-12) = -6$$. El punto de corte con el eje $$y$$ es $$(0; -6)$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un laboratorio, la concentración de un compuesto químico está dada por la función $$f(x) = x^2 - 6x$$, con un tiempo de $$2x$$ en el intervalo $$(–4; 16)$$. Si el rango de la función es $$[a; b)$$, calcular $$P = a + 2b$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$23$$",
+        "B": "$$16$$",
+        "C": "$$7$$",
+        "D": "$$19$$",
+        "E": "$$12$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, determinamos el dominio de $$x$$ a partir de la condición del tiempo: $$2x \\in (-4; 16)$$. Dividiendo por 2, obtenemos $$x \\in (-2; 8)$$. Ahora, analizamos la función cuadrática $$f(x) = x^2 - 6x$$. Para encontrar el vértice, completamos el cuadrado: $$f(x) = (x^2 - 6x + 9) - 9 = (x - 3)^2 - 9$$. La parábola abre hacia arriba, y su vértice está en $$(3; -9)$$. El valor mínimo de la función es $$-9$$, que ocurre en $$x = 3$$. Como $$x = 3$$ está dentro del dominio $$(-2; 8)$$, este mínimo es parte del rango. Por lo tanto, $$a = -9$$. Para encontrar el valor máximo del rango en el dominio dado, evaluamos la función en los extremos del intervalo $$(-2; 8)$$, pero sin incluirlos: $$f(-2) = (-2)^2 - 6(-2) = 4 + 12 = 16$$ $$f(8) = (8)^2 - 6(8) = 64 - 48 = 16$$ Como la parábola abre hacia arriba y el vértice está en $$x=3$$, los valores más alejados del vértice en el intervalo serán los máximos. Ambos extremos, aunque no incluidos, tienden al mismo valor 16. Por lo tanto, el valor máximo del rango (no incluido) es $$16$$, es decir, $$b = 16$$. El rango es $$[-9; 16)$$. Ahora, calculamos $$P = a + 2b$$: $$P = -9 + 2(16) = -9 + 32 = 23$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina la intersección de los rangos de las funciones cuadráticas: h(x) = $$-4(x + 2)^2 + 8$$ y j(x) = $$3(x + 2)^2 - 5$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-5; 8]$$",
+        "B": "$$[ -8; 5 ]$$",
+        "C": "$$[-5; -8]$$",
+        "D": "$$[8; +\\infty[$$",
+        "E": "$$]-\\infty; -5]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para h(x) = $$-4(x + 2)^2 + 8$$: Como abre hacia abajo, su máximo es 8 cuando x = -2. Entonces su rango es: $$]-\\infty; 8]$$. Para j(x) = $$3(x + 2)^2 - 5$$: Como abre hacia arriba, su mínimo es -5 cuando x = -2. Entonces su rango es: $$[-5; +\\infty[$$. La intersección de los rangos es: $$]-\\infty; 8] \\cap [-5; +\\infty[ = [-5; 8]$$.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "La función cuadrática f(x) = $$2x^2 + 8x + 5$$ alcanza su valor mínimo en 'b' cuando x = a. Calcular a + b.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-7$$",
+        "B": "$$-5$$",
+        "C": "$$5$$",
+        "D": "$$-3$$",
+        "E": "$$3$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para f(x) = $$2x^2 + 8x + 5$$, el x del vértice es: $$a = -\\frac{8}{2 \\cdot 2} = -\\frac{8}{4} = -2$$. Ahora hallamos b = f(a): $$b = f(-2) = 2(-2)^2 + 8(-2) + 5 = 2(4) - 16 + 5 = 8 - 16 + 5 = -3$$. Entonces: $$a + b = -2 + (-3) = -5$$.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el rango de la función cuadrática: f(x) = $$cx^2 + 7$$, si f(3) = $$-11$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$[7; +\\infty[$$",
+        "B": "$$]-\\infty; -7]$$",
+        "C": "$$]-\\infty; 7]$$",
+        "D": "$$]-\\infty; 0]$$",
+        "E": "$$[0; +\\infty[$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Dado f(3) = $$-11$$: $$c(3)^2 + 7 = -11$$ $$9c + 7 = -11$$ $$9c = -18$$ $$c = -2$$. Entonces f(x) = $$-2x^2 + 7$$. Como el coeficiente de $$x^2$$ es negativo (-2), la parábola abre hacia abajo. Su valor máximo es 7 cuando x = 0. Por lo tanto, el rango es: $$]-\\infty; 7]$$.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una compañía de drones diseña una trayectoria de vuelo parabólica que corta el nivel del suelo (eje x) en (6;0) y (-2;0). Halle el punto de corte de esta trayectoria con el eje y, sabiendo que el valor mínimo de la función que describe la trayectoria es $$-8$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$(0; -12)$$",
+        "B": "$$(0; -6)$$",
+        "C": "$$(0; -8)$$",
+        "D": "$$(0; -4)$$",
+        "E": "$$(0; -10)$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Como las raíces son 6 y -2, la función cuadrática puede escribirse como: $$f(x) = k(x - 6)(x + 2)$$. El eje de simetría (donde se encuentra el mínimo) es el punto medio de las raíces: $$x = \\frac{6 + (-2)}{2} = \\frac{4}{2} = 2$$. Sabemos que el valor mínimo de la función es $$-8$$, lo que significa que $$f(2) = -8$$. Sustituimos en la ecuación: $$k(2 - 6)(2 + 2) = -8$$ $$k(-4)(4) = -8$$ $$-16k = -8$$ $$k = \\frac{-8}{-16} = \\frac{1}{2}$$. Así, la función es: $$f(x) = \\frac{1}{2}(x - 6)(x + 2)$$. Para hallar el punto de corte con el eje y, hacemos $$x = 0$$: $$f(0) = \\frac{1}{2}(0 - 6)(0 + 2) = \\frac{1}{2}(-6)(2) = \\frac{1}{2}(-12) = -6$$. Por lo tanto, el punto de corte con el eje y es $$(0; -6)$$.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un ingeniero de software analiza el rendimiento de un algoritmo cuya eficiencia se modela con la función f(x) = $$x^2 - 6x$$, donde x representa la carga de trabajo en un intervalo $$2x \\in (-8; 12)$$. Si el rango de la función es $$[a; b)$$, calcule el valor de M = $$3a + 2b$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$-27$$",
+        "B": "$$53$$",
+        "C": "$$31$$",
+        "D": "$$-53$$",
+        "E": "$$27$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, determinamos el dominio de x a partir de la condición $$2x \\in (-8; 12)$$: Dividiendo por 2, obtenemos $$x \\in (-4; 6)$$. La función es $$f(x) = x^2 - 6x$$. Para encontrar el vértice, completamos el cuadrado: $$f(x) = (x^2 - 6x + 9) - 9 = (x - 3)^2 - 9$$. Esta parábola abre hacia arriba, y su vértice (mínimo) está en $$x = 3$$. Dado que $$x = 3$$ está dentro del dominio $$(-4; 6)$$, el valor mínimo de la función es $$f(3) = (3 - 3)^2 - 9 = -9$$. Entonces, $$a = -9$$. Para encontrar el valor máximo en el rango, evaluamos la función en los extremos del dominio (no incluidos, pero nos dan el límite superior del rango): $$f(-4) = (-4)^2 - 6(-4) = 16 + 24 = 40$$. $$f(6) = (6)^2 - 6(6) = 36 - 36 = 0$$. El valor máximo de la función dentro del intervalo $$(-4; 6)$$ se acerca a 40 (no incluido, ya que -4 no está incluido en el dominio). Por lo tanto, el rango es $$[-9; 40)$$. Así, $$a = -9$$ y $$b = 40$$. Finalmente, calculamos M = $$3a + 2b$$: $$M = 3(-9) + 2(40) = -27 + 80 = 53$$.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

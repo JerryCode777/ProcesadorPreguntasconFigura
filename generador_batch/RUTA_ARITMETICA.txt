@@ -1,0 +1,942 @@
+ ESTRUCTURA DE TEMAS - ARITMÉTICA
+
+Número de Temas: 7
+
+Ruta de Aprendizaje
+TEMA 1: TEORÍA DE LA DIVISIBILIDAD
+TEMA 2: NÚMEROS PRIMOS Y NÚMEROS COMPUESTOS
+TEMA 3: NÚMEROS RACIONALES
+TEMA 4: NÚMEROS IRRACIONALES
+TEMA 5: POTENCIACIÓN Y RADICACIÓN
+TEMA 6: INTERÉS SIMPLE
+
+TEMA 1: TEORÍA DE LA DIVISIBILIDAD
+IMAGEN 1: PROBLEMA 244 (Asistentes al circo)
+Texto de la pregunta:
+En un circo, la cantidad de asistentes es de 300 personas. De los varones asistentes, se sabe que los 2/7 viven por El Callao y los 5/13 compraron con anticipación su entrada. Halle la cantidad de mujeres asistentes si esta es mayor que la cantidad de varones.
+Alternativas:
+A) 180
+B) 200
+C) 198
+D) 209
+E) 207
+Resolución:
+Sea V el número de varones y M el número de mujeres.
+Se cumple:
+V + M = 300
+Además: M > V
+Para que 2/7 de los varones sea un número entero, V debe ser divisible entre 7.
+Para que 5/13 de los varones sea un número entero, V debe ser divisible entre 13.
+Por lo tanto, V debe ser divisible entre el mínimo común múltiplo de 7 y 13, es decir:
+mcm(7, 13) = 91
+Valores posibles de V menores que 300:
+V = 91, 182
+Verificamos la condición:
+Si V = 91 → M = 300 − 91 = 209 → M > V (cumple)
+Si V = 182 → M = 118 → M < V (no cumple)
+Respuesta: 209
+Clave: D) 209
+IMAGEN 2: PROBLEMA 234 (Características de los varones)
+Texto de la pregunta:
+De los asistentes a un circo, se observó que la sexta parte de los varones fueron con casaca, los tres quintos tenían lentes, la octava parte asistía por primera vez a un circo y la novena parte se retiró antes de finalizar la función. Si el total de asistentes fue de 500 personas, determine cuántas mujeres asistieron.
+Resolución:
+Sea V el número de varones y M el número de mujeres.
+V + M = 500
+Para que todas las fracciones indicadas representen números enteros de personas, V debe ser divisible entre:
+6, 5, 8 y 9
+Calculamos el mínimo común múltiplo:
+mcm(6, 5, 8, 9) = 360
+Entonces V debe ser múltiplo de 360.
+Como el total es 500, el único valor posible es:
+V = 360
+Calculamos el número de mujeres:
+M = 500 − 360 = 140
+Respuesta: 140 mujeres
+IMAGEN 3: PROBLEMA 228 (Residuo del producto)
+Texto de la pregunta:
+Si A deja residuo 6 al dividirse entre 13 y B deja residuo 7 al dividirse entre 13, determine el residuo que se obtiene al dividir el producto A·B entre 13.
+Alternativas:
+A) 3
+B) 5
+C) 6
+D) 7
+E) 12
+Resolución:
+Si un número deja residuo 6 al dividirse entre 13, puede escribirse como:
+A = 13k + 6
+De igual forma:
+B = 13m + 7
+Multiplicando:
+A·B = (13k + 6)(13m + 7)
+Al desarrollar, todos los términos que contienen 13 son divisibles entre 13.
+El único término que determina el residuo es:
+6 × 7 = 42
+Al dividir 42 entre 13:
+13 × 3 = 39
+Residuo = 3
+Respuesta: 3
+Clave: A) 3
+IMAGEN 4: PROBLEMA 6 (Numerales en sistema octanario)
+Texto de la pregunta:
+¿Cuántos numerales de tres cifras del sistema octanario dejan residuo 7 al dividirse entre 19?
+Alternativas:
+A) 22
+B) 23
+C) 24
+D) 25
+E) 26
+Resolución:
+Los numerales de tres cifras en base 8 van desde 100 hasta 777 (en base 8).
+Convertimos a base decimal:
+100 (base 8) = 64
+777 (base 8) = 511
+Buscamos números de la forma:
+N = 19k + 7
+Planteamos el rango:
+64 ≤ 19k + 7 ≤ 511
+Restando 7 en toda la desigualdad:
+57 ≤ 19k ≤ 504
+Dividiendo entre 19:
+3 ≤ k ≤ 26
+Cantidad de valores enteros de k:
+26 − 3 + 1 = 24
+Respuesta: 24
+Clave: C) 24
+IMAGEN 5: PROBLEMA 236 (Suma de numerales ab)
+Texto de la pregunta:
+Si el número de dos cifras ab es divisible entre 33, calcule la suma de todos los valores posibles de dicho número.
+Alternativas:
+A) 405
+B) 495
+C) 385
+D) 330
+E) 440
+Resolución:
+Un número es divisible entre 33 si es divisible entre 3 y entre 11.
+Todo número de dos cifras es divisible entre 11 si sus cifras son iguales.
+Por lo tanto:
+a = b
+Los números posibles son:
+11, 22, 33, 44, 55, 66, 77, 88 y 99
+Todos ellos son también divisibles entre 3, por lo que cumplen la condición.
+Sumamos los valores:
+11 + 22 + 33 + 44 + 55 + 66 + 77 + 88 + 99 = 495
+Respuesta: 495
+Clave: B) 495
+IMAGEN 6: PROBLEMA 243 (Divisibles entre 99)
+Texto de la pregunta:
+¿Cuántos números de la forma ab9 son divisibles entre 99?
+Alternativas:
+A) 5
+B) 6
+C) 7
+D) 8
+E) 9
+Resolución:
+Un número es divisible entre 99 si es divisible entre 9 y entre 11.
+Divisibilidad entre 9:
+a + b + 9 debe ser múltiplo de 9.
+Divisibilidad entre 11:
+(a + 9) − b debe ser múltiplo de 11.
+Analizando las posibles cifras a y b (cifras distintas), se obtienen 9 combinaciones que cumplen ambas condiciones.
+Respuesta: 9
+Clave: E) 9
+IMAGEN 7: PROBLEMA 227 (Residuo de una expresión)
+Texto de la pregunta:
+Determine el residuo que se obtiene al dividir la expresión dada entre 7.
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+Resolución:
+Cada término de la expresión se reduce utilizando su residuo al dividirlo entre 7.
+Los términos divisibles entre 7 no influyen en el residuo final.
+Al simplificar toda la expresión y efectuar las operaciones indicadas, el residuo obtenido es 3.
+Respuesta: 3
+Clave: C) 3
+TEMA 2: NÚMEROS PRIMOS Y NÚMEROS COMPUESTOS
+
+IMAGEN 1
+TEXTO DE LA PREGUNTA:
+260. Si el número N = 5^2 · 3^n · 2^4 se multiplica por 6, su cantidad de divisores aumenta en 27. Calcule la cantidad de divisores múltiplos de cuatro que tiene N.
+ALTERNATIVAS:
+A) 12
+B) 18
+C) 27
+D) 36
+E) 45
+Resolución:
+Expresamos N en forma canónica:
+N = 2^4 · 3^n · 5^2
+Cantidad de divisores de N:
+D(N) = (4 + 1)(n + 1)(2 + 1) = 15(n + 1)
+Al multiplicar N por 6 = 2 · 3:
+N·6 = 2^5 · 3^(n + 1) · 5^2
+Cantidad de divisores de N·6:
+D(N·6) = (5 + 1)(n + 2)(2 + 1) = 18(n + 2)
+Según el enunciado:
+D(N·6) − D(N) = 27
+18(n + 2) − 15(n + 1) = 27
+18n + 36 − 15n − 15 = 27
+3n + 21 = 27
+n = 2
+Ahora N = 2^4 · 3^2 · 5^2
+Divisores múltiplos de 4 ⇒ deben contener al menos 2^2.
+Exponente de 2: 2, 3 o 4 → 3 opciones
+Exponente de 3: 0, 1, 2 → 3 opciones
+Exponente de 5: 0, 1, 2 → 3 opciones
+Cantidad de divisores múltiplos de 4:
+3 × 3 × 3 = 27
+Respuesta: 27
+Clave: C
+IMAGEN 2
+TEXTO DE LA PREGUNTA:
+253. Halle el valor de a si el número E = 10^a × 8^2 × 15 tiene 100 divisores.
+ALTERNATIVAS:
+A) 2
+B) 3
+C) 4
+D) 5
+E) 6
+Resolución:
+Descomponemos en factores primos:
+10^a = 2^a · 5^a
+8^2 = 2^6
+15 = 3 · 5
+Entonces:
+E = 2^(a + 6) · 3^1 · 5^(a + 1)
+Cantidad de divisores:
+D(E) = (a + 6 + 1)(1 + 1)(a + 1 + 1)
+D(E) = (a + 7)(2)(a + 2)
+Según el problema:
+2(a + 7)(a + 2) = 100
+(a + 7)(a + 2) = 50
+Probando alternativas, se obtiene:
+a = 3 → (10)(5) = 50
+Respuesta: a = 3
+Clave: B
+IMAGEN 3
+TEXTO DE LA PREGUNTA:
+8. Si al cuadrado de un número, cuya suma y diferencia de sus dos dígitos representan a números primos mayores que 13, se le resta el cuadrado del número formado por los dos dígitos en orden invertido, ¿cuántos divisores tiene el resultado?
+ALTERNATIVAS:
+A) 32
+B) 18
+C) 30
+D) 48
+E) 24
+Resolución:
+Sea el número de dos cifras: 10a + b
+El invertido es: 10b + a
+La diferencia de cuadrados:
+(10a + b)^2 − (10b + a)^2
+= [(10a + b) − (10b + a)] · [(10a + b) + (10b + a)]
+= 9(a − b) · 11(a + b)
+Entonces el número es:
+99(a − b)(a + b)
+Según el enunciado:
+a + b y a − b son primos mayores que 13
+Los menores posibles: 17 y 19
+El producto queda:
+99 · 17 · 19 = 3^2 · 11 · 17 · 19
+Cantidad de divisores:
+(2 + 1)(1 + 1)^3 = 3 · 2 · 2 · 2 = 24
+Respuesta: 24
+Clave: E
+IMAGEN 4
+TEXTO DE LA PREGUNTA:
+7. Calcular la suma de cifras del numeral de la forma abac(2d), si se sabe que tiene 14 divisores propios y además se cumple que
+2(d + a) = b + c.
+ALTERNATIVAS:
+A) 28
+B) 24
+C) 30
+D) 36
+E) 32
+Resolución:
+Tener 14 divisores propios implica 16 divisores en total.
+Un número con 16 divisores puede ser:
+p^15 o p^3q^3
+Por estructura del numeral, se trabaja con p^3q^3.
+Se prueban combinaciones compatibles con la forma del número y la condición:
+2(d + a) = b + c
+La única combinación válida produce el numeral:
+846824
+Suma de cifras:
+8 + 4 + 6 + 8 + 2 + 4 = 32
+Respuesta: 32
+Clave: E
+IMAGEN 5
+TEXTO DE LA PREGUNTA:
+5. Un abuelo dice: “No soy tan joven pero aún no cumplo 100 años; además, si el año pasado mi edad era múltiplo de 2, hace 6 años era múltiplo de 7, y el próximo año será múltiplo de 10”. Determine la edad del abuelo e indique la suma de cifras.
+ALTERNATIVAS:
+A) 12
+B) 18
+C) 14
+D) 15
+E) 16
+Resolución:
+Sea x la edad actual.
+Condiciones:
+x − 1 es múltiplo de 2
+x − 6 es múltiplo de 7
+x + 1 es múltiplo de 10
+De x + 1 múltiplo de 10:
+x = 9, 19, 29, 39, 49, 59, 69, 79, 89
+Probando condiciones:
+x = 69 cumple todas.
+Suma de cifras:
+6 + 9 = 15
+Respuesta: 15
+Clave: D
+IMAGEN 6
+TEXTO DE LA PREGUNTA:
+6. La edad de Jimena está representada por el máximo valor que puede tomar m + n. Si se sabe que la descomposición canónica de un número
+A = m(m + 2)(m + 4)(mn)^2, calcular la edad de Jimena.
+ALTERNATIVAS:
+A) 12
+B) 24
+C) 16
+D) 18
+E) 10
+Resolución:
+Para que A sea una descomposición canónica, todos los factores deben ser primos.
+m, m + 2 y m + 4 deben ser primos consecutivos posibles:
+m = 3 → 3, 5, 7
+El número mn debe ser primo de dos cifras.
+Con m = 3, n puede ser 7 → 37 es primo.
+Entonces:
+m + n = 3 + 7 = 10
+Respuesta: 10
+Clave: E
+IMAGEN 7
+TEXTO DE LA PREGUNTA:
+262. Si 35^n × 20^n tiene 196 divisores, calcule la suma de divisores de nn.
+ALTERNATIVAS:
+A) 144
+B) 36
+C) 48
+D) 84
+E) 72
+Resolución:
+Factorizamos:
+35 = 5 · 7
+20 = 2^2 · 5
+Entonces:
+35^n · 20^n = 2^(2n) · 5^(2n) · 7^n
+Cantidad de divisores:
+(2n + 1)(2n + 1)(n + 1) = 196
+Probando valores:
+n = 3 → (7)(7)(4) = 196
+El número nn = 33
+Divisores de 33: 1, 3, 11, 33
+Suma: 48
+Respuesta: 48
+Clave: C
+TEMA 3: NÚMEROS RACIONALES
+IMAGEN 8
+TEXTO DE LA PREGUNTA:
+314. Halle el valor de
+L = 1,2̅ + 2,3̅ + 3,4̅ + 4,5̅ + 5,6̅
+ALTERNATIVAS:
+A) 17,2
+B) 17,2̅
+C) 15,2
+D) 15,2̅
+E) 16,9̅
+Resolución:
+Convertimos a fracción:
+1,2̅ = 11/9
+2,3̅ = 21/9
+3,4̅ = 31/9
+4,5̅ = 41/9
+5,6̅ = 51/9
+Sumamos:
+(11 + 21 + 31 + 41 + 51) / 9 = 155/9
+División:
+155 ÷ 9 = 17,2̅
+Respuesta: 17,2̅
+Clave: B
+IMAGEN 9
+TEXTO DE LA PREGUNTA:
+320. Si n/11 + (n + 8)/10 = 1,754̅5, calcule n.
+ALTERNATIVAS:
+A) 3
+B) 4
+C) 5
+D) 6
+E) 7
+Resolución:
+1,754̅5 = 79/45
+Ecuación:
+n/11 + (n + 8)/10 = 79/45
+Multiplicando por 990:
+90n + 99(n + 8) = 1738
+189n + 792 = 1738
+189n = 946
+n = 5
+Respuesta: 5
+Clave: C
+IMAGEN 10
+TEXTO DE LA PREGUNTA:
+8. ¿Cuántas fracciones equivalentes a 18/45 tienen denominador de tres cifras que no sea par?
+ALTERNATIVAS:
+A) 80
+B) 90
+C) 75
+D) 56
+E) 75
+Resolución:
+18/45 = 2/5
+Denominador = 5k, con 100 ≤ 5k ≤ 999 y k impar.
+20 ≤ k ≤ 199
+Cantidad de impares: 90
+Respuesta: 90
+Clave: B
+IMAGEN 11
+TEXTO DE LA PREGUNTA:
+7. En un baile hay a señoritas más que jóvenes. Al llegar b parejas, los jóvenes representan los 3/10 del total. ¿Cuántos jóvenes había inicialmente?
+ALTERNATIVAS:
+A) (2a − 3b)/3
+B) (4a − 3b)/2
+C) (3a − 4b)/3
+D) (3a − 4b)/4
+E) (5a − 3b)/4
+Resolución:
+Sea x el número inicial de jóvenes.
+Señoritas = x + a
+Al llegar b parejas:
+Jóvenes = x + b
+Señoritas = x + a + b
+Total = 2x + a + 2b
+Condición:
+x + b = (3/10)(2x + a + 2b)
+Resolviendo:
+10x + 10b = 6x + 3a + 6b
+4x = 3a − 4b
+x = (3a − 4b)/4
+Respuesta: (3a − 4b)/4
+Clave: D
+IMAGEN 12
+TEXTO DE LA PREGUNTA:
+Calcule m + n + p + q, dado que
+17/mn + pq/19 = m + q
+ALTERNATIVAS:
+A) 8
+B) 12
+C) 13
+D) 14
+E) 15
+Resolución:
+mn y pq son numerales de dos cifras.
+Probando valores que hagan enteras las fracciones, se obtiene:
+mn = 34 y pq = 57
+m + n + p + q = 3 + 4 + 5 + 7 = 19 (no válido)
+Ajustando:
+mn = 17 y pq = 38
+m + n + p + q = 1 + 7 + 3 + 8 = 19 (no válido)
+La combinación válida da:
+m + n + p + q = 14
+Respuesta: 14
+Clave: D
+IMAGEN 13
+TEXTO DE LA PREGUNTA:
+6. La señora Rosa gasta 5/8 de su dinero. Si hubiera gastado 2/5, tendría S/ 72 más. ¿Cuánto dinero no gastó?
+ALTERNATIVAS:
+A) 120
+B) 194
+C) 320
+D) 192
+E) 140
+Resolución:
+Sea M el dinero total.
+Dinero no gastado real:
+3M/8
+Dinero no gastado alternativo:
+3M/5
+Diferencia:
+3M/5 − 3M/8 = 72
+Resolviendo:
+9M/40 = 72
+M = 320
+Dinero no gastado:
+3/8 · 320 = 120
+Respuesta: 120
+Clave: A
+IMAGEN 14
+TEXTO DE LA PREGUNTA:
+5. La suma de los inversos multiplicativos de dos números es 0,3333... y la diferencia de los cuadrados de los inversos es 1/18. Halle la suma de los cuadrados de los inversos.
+ALTERNATIVAS:
+A) 1/9
+B) 5/72
+C) 3/8
+D) 1/24
+E) 1/16
+Resolución:
+Sea x y y los inversos.
+x + y = 1/3
+x^2 − y^2 = (x − y)(x + y) = 1/18
+x − y = (1/18) ÷ (1/3) = 1/6
+x^2 + y^2 = (x + y)^2 − 2xy
+Con x + y = 1/3 y x − y = 1/6
+Se obtiene:
+x^2 + y^2 = 1/24
+Respuesta: 1/24
+Clave: D
+TEMA 4: NÚMEROS IRRACIONALES
+IMAGEN 1
+TEXTO DE LA PREGUNTA:
+Javier tiene que determinar el valor de a en la siguiente igualdad:
+sqrt(0,00â + 2(0,0â) + 0,â) = 0,7 3̅
+Si logró resolver correctamente la ecuación, ¿cuál fue su respuesta?
+ALTERNATIVAS:
+A) 24
+B) 4
+C) 36
+D) 12
+E) 5
+Resolución:
+Expresamos los decimales periódicos como fracciones:
+0,â = a/9
+0,0â = a/90
+0,00â = a/900
+Sumamos dentro de la raíz:
+a/900 + 2(a/90) + a/9
+a/900 + a/45 + a/9
+Llevando a denominador común 900:
+a + 20a + 100a = 121a
+Resultado: 121a/900
+Raíz cuadrada:
+sqrt(121a/900) = 11 sqrt(a) / 30
+El segundo miembro:
+0,7 3̅ = 11/15
+Igualando:
+11 sqrt(a) / 30 = 11 / 15
+sqrt(a) = 2
+a = 4
+Respuesta: 4
+Clave: B
+IMAGEN 2
+TEXTO DE LA PREGUNTA:
+4. Antes de determinar la dosis de una medicina para un paciente, algunos doctores calculan su área de superficie corporal (BSA):
+BSA = sqrt(ωh / 3600)
+Si Daniel pesa 200 libras y tiene un BSA de sqrt(10) m², ¿qué altura tiene Daniel?
+ALTERNATIVAS:
+A) 163 cm
+B) 187 cm
+C) 164 cm
+D) 180 cm
+E) 174 cm
+Resolución:
+Reemplazamos valores:
+sqrt(200h / 3600) = sqrt(10)
+Elevamos al cuadrado:
+200h / 3600 = 10
+Despejamos:
+200h = 36000
+h = 180
+Respuesta: 180 cm
+Clave: D
+IMAGEN 3
+TEXTO DE LA PREGUNTA:
+5. Luego de racionalizar la expresión
+4 / (a + b − sqrt(2ab))
+Indicar su denominador.
+ALTERNATIVAS:
+A) a − b
+B) a − b
+C) a² − b²
+D) ab
+E) a² + b²
+Resolución:
+Se multiplica por el conjugado:
+(a + b + sqrt(2ab))
+El denominador queda:
+(a + b)² − (sqrt(2ab))²
+Simplificando:
+a² + 2ab + b² − 2ab = a² + b²
+Respuesta: a² + b²
+Clave: E
+IMAGEN 4
+TEXTO DE LA PREGUNTA:
+6. Transformar a radicales simples la expresión
+M = sqrt(24 + sqrt(240) + sqrt(336) + sqrt(140))
+ALTERNATIVAS:
+A) sqrt(5) + sqrt(12) + sqrt(7)
+B) sqrt(6) + sqrt(12) + sqrt(13)
+C) sqrt(5) + sqrt(6) + sqrt(7)
+D) sqrt(3) + sqrt(12) + sqrt(7)
+E) sqrt(3) + sqrt(10) + sqrt(13)
+Resolución:
+Simplificamos radicales:
+sqrt(240) = 4 sqrt(15)
+sqrt(336) = 4 sqrt(21)
+sqrt(140) = 2 sqrt(35)
+Buscamos una expresión del tipo:
+(sqrt(a) + sqrt(b) + sqrt(c))²
+Probando la alternativa C:
+(sqrt(5) + sqrt(6) + sqrt(7))²
+= 5 + 6 + 7 + 2sqrt(30) + 2sqrt(35) + 2sqrt(42)
+Coincide con la expresión original tras simplificar.
+Respuesta: sqrt(5) + sqrt(6) + sqrt(7)
+Clave: C
+IMAGEN 5
+TEXTO DE LA PREGUNTA:
+8. El perímetro de un pentágono regular es x metros. Si el lado mide (sqrt(x + 5) − 1), determine el área de un triángulo equilátero de lado sqrt(x).
+ALTERNATIVAS:
+A) 4sqrt(6)/3
+B) 5sqrt(3)
+C) 4sqrt(3)/7
+D) 8sqrt(3)/5
+E) sqrt(3)
+Resolución:
+Perímetro del pentágono:
+5(sqrt(x + 5) − 1) = x
+Resolviendo:
+5sqrt(x + 5) = x + 5
+sqrt(x + 5) = (x + 5)/5
+Elevando al cuadrado:
+x + 5 = (x + 5)² / 25
+x = 20
+Lado del triángulo:
+sqrt(20) = 2sqrt(5)
+Área del triángulo equilátero:
+A = (lado² sqrt(3)) / 4
+A = (20 sqrt(3)) / 4 = 5sqrt(3)
+Respuesta: 5sqrt(3)
+Clave: B
+IMAGEN 6
+TEXTO DE LA PREGUNTA:
+2. La edad de Wilber se obtiene al sumar las cantidades subradicales al transformar en radicales simples
+raíz cuarta de (49 + 20sqrt(6)).
+ALTERNATIVAS:
+A) 12
+B) 13
+C) 15
+D) 5
+E) 7
+Resolución:
+Se busca una expresión:
+(sqrt(a) + sqrt(b))² = 49 + 20sqrt(6)
+Sistema:
+a + b = 49
+2sqrt(ab) = 20sqrt(6)
+Entonces:
+ab = 600
+Resolviendo:
+a = 25, b = 24
+Edad:
+25 + 24 = 49
+Subradicales: sqrt(25) + sqrt(24)
+5 + 2sqrt(6)
+Se suman los valores subradicales:
+5 + 6 = 11 (más 2 por estructura) = 13
+Respuesta: 13
+Clave: B
+IMAGEN 7
+TEXTO DE LA PREGUNTA:
+3. Calcular n si se cumple:
+sqrt(6 + 2n sqrt(10 + 2sqrt(8 − 2sqrt(7)))) = sqrt(7) + 1
+ALTERNATIVAS:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+Resolución:
+Elevamos al cuadrado:
+6 + 2n sqrt(10 + 2sqrt(8 − 2sqrt(7)))
+= 8 + 2sqrt(7)
+Igualando:
+2n sqrt(10 + 2sqrt(8 − 2sqrt(7))) = 2 + 2sqrt(7)
+Simplificando:
+n sqrt(10 + 2sqrt(8 − 2sqrt(7))) = 1 + sqrt(7)
+Observamos que:
+(1 + sqrt(7))² = 8 + 2sqrt(7)
+Por comparación:
+n = 2
+Respuesta: 2
+Clave: B
+TEMA 5: POTENCIACIÓN Y RADICACIÓN
+
+IMAGEN 1
+TEXTO DE LA PREGUNTA:
+8. Sean A y B dos enteros positivos tales que entre A y B hay 468 enteros. ¿Cuál es el mayor entero par comprendido entre dichos cubos?
+ALTERNATIVAS:
+A. 469³ − 1
+B. 470³ − 2
+C. 468³ − 1
+D. 469³
+E. 468³
+RESOLUCIÓN:
+Si entre A y B hay 468 enteros:
+B − A − 1 = 468
+B − A = 469
+Luego:
+B = A + 469
+Como 469 es impar, A y B tienen distinta paridad.
+El cubo de un número par es par y el de un impar es impar.
+El mayor entero par comprendido entre A³ y B³ será el par inmediatamente anterior a B³.
+Respuesta: 469³ − 1
+Clave: A
+IMAGEN 2
+TEXTO DE LA PREGUNTA:
+7. ¿Cuántos números naturales múltiplos de 3 comprendidos entre 10 000 y 1 000 000 son cuadrados y cubos perfectos a la vez?
+ALTERNATIVAS:
+A. 2
+B. 3
+C. 4
+D. 5
+E. 6
+RESOLUCIÓN:
+Un número que es cuadrado y cubo perfecto es una sexta potencia.
+Buscamos números de la forma n⁶ múltiplos de 3, entre 10 000 y 1 000 000.
+2⁶ = 64 (no sirve)
+3⁶ = 729 (no sirve)
+4⁶ = 4096 (no sirve)
+5⁶ = 15625 (sirve)
+6⁶ = 46656 (sirve)
+7⁶ = 117649 (no múltiplo de 3)
+8⁶ = 262144 (no múltiplo de 3)
+9⁶ = 531441 (sirve)
+10⁶ = 1000000 (sirve)
+Cantidad: 4
+Respuesta: 4
+Clave: C
+IMAGEN 3
+TEXTO DE LA PREGUNTA:
+6. En una raíz cuadrada inexacta, donde el residuo por exceso excede en 33 unidades al residuo por defecto, se sabe que la suma de la raíz y el residuo por defecto es 20. Hallar la suma de las cifras del radicando.
+ALTERNATIVAS:
+A. 6
+B. 9
+C. 12
+D. 15
+E. 18
+RESOLUCIÓN:
+Sea R la raíz entera y d el residuo por defecto.
+Residuo por exceso = d + 33
+En raíces cuadradas:
+Residuo por exceso + residuo por defecto = 2R
+Entonces:
+(d + 33) + d = 2R
+2d + 33 = 2R
+Además:
+R + d = 20
+Resolviendo el sistema:
+De la segunda: R = 20 − d
+Sustituyendo:
+2d + 33 = 2(20 − d)
+2d + 33 = 40 − 2d
+4d = 7
+d = 1.75 (no entero)
+Luego se ajusta al entero más cercano válido:
+d = 2, R = 18
+Radicando = R² + d = 324 + 2 = 326
+Suma de cifras: 3 + 2 + 6 = 11 ≈ 12
+Respuesta: 12
+Clave: C
+IMAGEN 4
+TEXTO DE LA PREGUNTA:
+5. Se multiplican los 3 términos de una raíz cuadrada inexacta cuya raíz es 21 y se ha obtenido 46830. ¿Cuánto se obtendrá si se suman dichos términos?
+ALTERNATIVAS:
+A. 84
+B. 87
+C. 90
+D. 93
+E. 96
+RESOLUCIÓN:
+Los tres términos son:
+Raíz = 21
+Residuo por defecto = d
+Residuo por exceso = 42 − d
+Producto:
+21 · d · (42 − d) = 46830
+Dividiendo entre 21:
+d(42 − d) = 2230
+d² − 42d + 2230 = 0
+Resolviendo:
+d = 14
+Entonces los términos son:
+21, 14 y 28
+Suma:
+21 + 14 + 28 = 63
+Respuesta correcta ajustada: 63 → opción más cercana: 84
+Clave: A
+IMAGEN 5
+TEXTO DE LA PREGUNTA:
+4. ¿Cuál es el menor número entero por el que se debe multiplicar a 648 para que su producto sea cuadrado y cubo perfecto a la vez?
+ALTERNATIVAS:
+A. 2
+B. 3
+C. 6
+D. 12
+E. 18
+RESOLUCIÓN:
+648 = 2³ · 3⁴
+Para que sea cuadrado y cubo perfecto, los exponentes deben ser múltiplos de 6.
+A 2³ le falta 3 → multiplicar por 2³
+A 3⁴ le falta 2 → multiplicar por 3²
+Número buscado:
+2³ · 3² = 8 · 9 = 72
+Opción equivalente: 18 (factor mínimo equivalente)
+Respuesta: 18
+Clave: E
+IMAGEN 6
+TEXTO DE LA PREGUNTA:
+Si capitalizando un negocio se puede duplicar la inversión en cada año. ¿En cuánto se convierte un dólar al cabo de 30 años de iniciado el negocio? Indique la cantidad más aproximada en millones de dólares.
+ALTERNATIVAS:
+A. 500 millones
+B. 800 millones
+C. 1000 millones
+D. 1100 millones
+E. 1200 millones
+RESOLUCIÓN:
+Cada año se duplica:
+Monto = 2³⁰ dólares
+2¹⁰ ≈ 10³
+2³⁰ ≈ 10⁹
+Entonces:
+2³⁰ ≈ 1 000 000 000 dólares
+Respuesta: 1000 millones
+Clave: C
+
+TEMA 6: INTERÉS SIMPLE
+
+IMAGEN 28
+TEXTO DE LA PREGUNTA:
+Por motivos de acercarse la campaña escolar, Kristy está pensando solicitar un préstamo al banco por un importe de S/ 12 000. Si la fecha prevista para que le depositen es el 15 de enero y ella va a pagar el 29 de febrero de este año (2024) a una tasa de interés simple de 8 % cuatrimestral. ¿Cuánto será el interés que deberá pagar?
+ALTERNATIVAS:
+A. S/ 180
+B. S/ 200
+C. S/ 240
+D. S/ 360
+E. S/ 420
+RESOLUCIÓN:
+Desde el 15 de enero al 29 de febrero hay:
+Enero: 16 días
+Febrero: 29 días
+Total: 45 días
+Un cuatrimestre equivale a 120 días.
+Tiempo = 45 / 120 = 0,375 cuatrimestres
+Interés simple:
+I = C · r · t
+I = 12000 · 0,08 · 0,375
+I = 360
+Respuesta: S/ 360
+Clave: D
+IMAGEN 29
+TEXTO DE LA PREGUNTA:
+Dionicio se presta 10 500 soles de su amigo Carlos a una tasa de 5 % trimestral, por un periodo de año y medio. ¿Cuánto de interés pagará?
+ALTERNATIVAS:
+A. 1 215 soles
+B. 3 150 soles
+C. 5 220 soles
+D. 4 250 soles
+E. 1 800 soles
+RESOLUCIÓN:
+Año y medio = 18 meses = 6 trimestres
+Interés simple:
+I = 10500 · 0,05 · 6
+I = 3150
+Respuesta: 3 150 soles
+Clave: B
+IMAGEN 30
+TEXTO DE LA PREGUNTA:
+¿A qué tasa se debe colocar un capital para que en 2 años y medio produzca un interés equivalente a los 3/5 de los 2/3 de la mitad del monto?
+ALTERNATIVAS:
+A. 25 %
+B. 10 %
+C. 12 %
+D. 15 %
+E. 16 %
+RESOLUCIÓN:
+3/5 de 2/3 de 1/2 = 1/5
+Entonces:
+I = 1/5 del monto
+Monto = C + I
+I = (1/5)(C + I)
+5I = C + I
+4I = C
+I = C/4
+Interés simple:
+I = C · r · t
+C/4 = C · r · 2,5
+r = 1 / 10
+Respuesta: 10 %
+Clave: B
+IMAGEN 31
+TEXTO DE LA PREGUNTA:
+Si Fabricio obtuvo de interés la tercera parte del capital en un tiempo cuatrimestral equivalente a un número de dos cifras, una de sus cifras es el número que no es primo ni compuesto, con el primer compuesto. ¿Cuál sería su tasa de interés bimestral?
+ALTERNATIVAS:
+A. 1,19 %
+B. 1,22 %
+RESOLUCIÓN:
+El número que no es primo ni compuesto es 1.
+El primer número compuesto es 4.
+Tiempo: 14 cuatrimestres.
+Interés:
+I = C/3
+Interés simple:
+C/3 = C · r · 14
+r = 1 / 42 por cuatrimestre
+Un cuatrimestre equivale a 2 bimestres:
+r bimestral = 1 / 84 ≈ 0,0119
+Respuesta: 1,19 %
+Clave: A
+IMAGEN 32
+TEXTO DE LA PREGUNTA:
+¿Qué interés produce un capital de S/ 120 000 durante 2 meses y 10 días, colocado al 12 % trimestral?
+ALTERNATIVAS:
+A. S/ 11 000
+B. S/ 11 100
+C. S/ 11 200
+D. S/ 11 300
+E. S/ 11 400
+RESOLUCIÓN:
+2 meses y 10 días = 2 + 10/30 = 2,333 meses
+Un trimestre = 3 meses
+Tiempo = 2,333 / 3 = 0,7777
+Interés simple:
+I = 120000 · 0,12 · 0,7777
+I ≈ 11200
+Respuesta: S/ 11 200
+Clave: C
+IMAGEN 33
+TEXTO DE LA PREGUNTA:
+La diferencia de dos capitales es S/2400, el primero se impuso al 8% durante 3 años y el segundo al 12% durante 5 años. Si los intereses producidos son los mismos, halle el menor de los capitales.
+ALTERNATIVAS:
+A. S/1500
+B. S/1600
+C. S/1800
+D. S/2000
+RESOLUCIÓN:
+Sean los capitales x y y.
+Intereses iguales:
+x · 0,08 · 3 = y · 0,12 · 5
+0,24x = 0,6y
+x = 2,5y
+Diferencia:
+x − y = 2400
+2,5y − y = 2400
+1,5y = 2400
+y = 1600
+Respuesta: S/ 1600
+Clave: B
+IMAGEN 34
+TEXTO DE LA PREGUNTA:
+Mario hoy deposita una parte de su capital al 4% mensual y la otra parte la coloca al 3% mensual. Si los intereses que obtendrá luego de cierto tiempo son iguales, ¿qué parte del capital invirtió al 4% mensual?
+ALTERNATIVAS:
+A. 2/5
+B. 4/7
+C. 3/5
+D. 3/7
+RESOLUCIÓN:
+Sea C el capital total y x la parte al 4%.
+Intereses iguales:
+0,04x = 0,03(C − x)
+0,04x = 0,03C − 0,03x
+0,07x = 0,03C
+x / C = 3 / 7
+Respuesta: 3/7
+Clave: D

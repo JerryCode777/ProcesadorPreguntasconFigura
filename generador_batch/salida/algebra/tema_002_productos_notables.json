@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 2,
+  "total_temas": 29,
+  "titulo_tema": "PRODUCTOS NOTABLES",
+  "tema": "productos_notables",
+  "preguntas": [
+    {
+      "pregunta": "Al dividir P(x) entre $$(x + 3)(x - 1)(x^5 + 2)$$, se obtiene un resto igual a $$5x + 4$$; hallar el resto de dividir P(x) entre $$x - 1$$ y P(x) entre $$x + 3$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$9 \\; -11$$",
+        "B": "$$-9 \\; 11$$",
+        "C": "$$9 \\; 11$$",
+        "D": "$$-9 \\; -11$$",
+        "E": "$$0 \\; 0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Si el resto al dividir P(x) por $$(x + 3)(x - 1)(x^5 + 2)$$ es $$5x + 4$$, entonces por el Teorema del Resto: Para el divisor $$(x - 1)$$, el resto es $$P(1) = 5(1) + 4 = 9$$. Para el divisor $$(x + 3)$$, el resto es $$P(-3) = 5(-3) + 4 = -15 + 4 = -11$$. Por lo tanto, los restos son $$9$$ y $$-11$$, respectivamente.",
+      "id_temporal": "alg_pro_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Don Ramiro recibe un bono cuyo monto es igual a la suma de los coeficientes del polinomio homogéneo: $$P(x ; y) = (4j + 3)x^9y^(q^2) + 5cx^c y^j + (5c + 6j)x^(4q)y^(q^2 – 19)$$. Si el banco cobra una comisión del 8%, ¿cuánto recibe finalmente?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$536.36$$",
+        "B": "$$535.12$$",
+        "C": "$$537.88$$",
+        "D": "$$534.50$$",
+        "E": "$$538.10$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como el polinomio es homogéneo, los grados totales de cada término son iguales. Igualamos los grados del primer y tercer término: $$9 + q^2 = 4q + q^2 – 19$$. Esto simplifica a $$9 = 4q – 19$$, de donde $$4q = 28$$, entonces $$q = 7$$. El grado total del polinomio es $$9 + q^2 = 9 + 7^2 = 9 + 49 = 58$$. Para el segundo término, su grado total es $$c + j$$. Así que, $$c + j = 58$$. La suma de los coeficientes del polinomio es $$(4j + 3) + 5c + (5c + 6j) = 10c + 10j + 3$$. Sustituyendo $$c + j = 58$$, obtenemos $$10(58) + 3 = 580 + 3 = 583$$. Este es el monto del bono. Si el banco cobra una comisión del 8%, Don Ramiro recibe el 92% del monto. $$0.92 \\times 583 = 536.36$$. ",
+      "id_temporal": "alg_pro_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$P(x) = 2(ax + b)^2 + ax^2 – 2b$$ y $$R(x) = 4(9x^2 + 12x + q)$$ son idénticos. Calcular $$P(-1)$$, sabiendo que $$a > 0$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$4$$",
+        "C": "$$-2$$",
+        "D": "$$8$$",
+        "E": "$$12$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, desarrollamos P(x): $$P(x) = 2(a^2x^2 + 2abx + b^2) + ax^2 - 2b = (2a^2 + a)x^2 + 4abx + (2b^2 - 2b)$$. Luego, desarrollamos R(x): $$R(x) = 36x^2 + 48x + 4q$$. Como P(x) y R(x) son idénticos, igualamos sus coeficientes: 1) $$2a^2 + a = 36 \\implies 2a^2 + a - 36 = 0$$. Factorizando, $$(2a + 9)(a - 4) = 0$$. Dado que $$a > 0$$, tomamos $$a = 4$$. 2) $$4ab = 48$$. Sustituyendo $$a = 4$$: $$4(4)b = 48 \\implies 16b = 48 \\implies b = 3$$. 3) $$2b^2 - 2b = 4q$$. Sustituyendo $$b = 3$$: $$2(3^2) - 2(3) = 18 - 6 = 12$$. Así, $$4q = 12 \\implies q = 3$$. Finalmente, calculamos $$P(-1)$$: $$P(x) = 2(4x + 3)^2 + 4x^2 - 2(3)$$. $$P(-1) = 2(4(-1) + 3)^2 + 4(-1)^2 - 6 = 2(-1)^2 + 4 - 6 = 2(1) + 4 - 6 = 2 + 4 - 6 = 0$$. ",
+      "id_temporal": "alg_pro_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "El término independiente del polinomio mónico $$P(x) = 4x^k + 3x^(20–k) – 2x^(k–15) + 6x^(k/5) + (c – k)x^(k+3) + 9 – k + 4c$$ representa el dinero de Sara. ¿Cuánto le queda si gasta $$c + 5$$ soles?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$37$$",
+        "B": "$$32$$",
+        "C": "$$41$$",
+        "D": "$$28$$",
+        "E": "$$45$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que $$P(x)$$ sea un polinomio, los exponentes deben ser enteros no negativos: 1) $$k - 15 \\ge 0 \\implies k \\ge 15$$. 2) $$20 - k \\ge 0 \\implies k \\le 20$$. 3) $$k/5$$ debe ser un número entero. Los valores enteros de $$k$$ que cumplen las dos primeras condiciones son $$15, 16, 17, 18, 19, 20$$. De estos, solo $$k=15$$ y $$k=20$$ hacen que $$k/5$$ sea entero. Analizando los grados de los términos: $$k, 20-k, k-15, k/5, k+3$$. Si $$k=15$$, los grados son $$15, 5, 0, 3, 18$$. El grado mayor es $$k+3=18$$. El coeficiente de este término ($$x^{18}$$) es $$(c-k)$$. Como el polinomio es mónico, su coeficiente principal es 1. Por lo tanto, $$c - k = 1$$. Sustituyendo $$k = 15$$: $$c - 15 = 1 \\implies c = 16$$. El término independiente de $$P(x)$$ es la constante $$9 – k + 4c$$. Sustituyendo $$k=15$$ y $$c=16$$: $$9 - 15 + 4(16) = -6 + 64 = 58$$. Este es el dinero de Sara. Ella gasta $$c + 5$$ soles, que es $$16 + 5 = 21$$ soles. Lo que le queda es $$58 - 21 = 37$$ soles.",
+      "id_temporal": "alg_pro_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$M(x) = (x-1)(x-2)(x-3)(x-4) + 1$$ y $$N(x) = (ax^2 + bx + c)^d$$ son idénticos, halle $$a^2 + b + c + d$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$3$$",
+        "B": "$$4$$",
+        "C": "$$5$$",
+        "D": "$$6$$",
+        "E": "$$7$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero reordenamos los factores de $$M(x)$$: $$M(x) = [(x-1)(x-4)][(x-2)(x-3)] + 1$$. Multiplicamos los pares: $$(x^2 - 5x + 4)(x^2 - 5x + 6) + 1$$. Sea $$y = x^2 - 5x$$. Sustituyendo: $$M(x) = (y + 4)(y + 6) + 1$$. Desarrollamos esta expresión: $$M(x) = y^2 + 10y + 24 + 1 = y^2 + 10y + 25$$. Reconocemos esto como un cuadrado perfecto: $$M(x) = (y + 5)^2$$. Ahora sustituimos $$y$$ de nuevo: $$M(x) = (x^2 - 5x + 5)^2$$. Comparando esto con $$N(x) = (ax^2 + bx + c)^d$$, identificamos los valores: $$a = 1$$, $$b = -5$$, $$c = 5$$, y $$d = 2$$. Finalmente, calculamos $$a^2 + b + c + d = (1)^2 + (-5) + 5 + 2 = 1 - 5 + 5 + 2 = 3$$. ",
+      "id_temporal": "alg_pro_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Al dividir R(z) entre $$(z + 3)(z + 5)(z^3 + 7)$$, se obtiene un resto igual a $$4z - 1$$; hallar el resto de dividir R(z) entre $$z + 3$$ y R(z) entre $$z + 5$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$–13 ; –21$$",
+        "B": "$$13 ; 21$$",
+        "C": "$$–13 ; 21$$",
+        "D": "$$21 ; –13$$",
+        "E": "$$–21 ; –13$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Según el Teorema del Resto, para hallar el resto de dividir un polinomio R(z) entre $$(z - a)$$, se evalúa R(a). En este caso, el resto general al dividir R(z) por $$(z + 3)(z + 5)(z^3 + 7)$$ es $$4z - 1$$. Por lo tanto, el resto al dividir R(z) entre $$z + 3$$ (es decir, $$z - (-3)$$) es R(–3) = $$4(-3) - 1 = -12 - 1 = -13$$. El resto al dividir R(z) entre $$z + 5$$ (es decir, $$z - (-5)$$) es R(–5) = $$4(-5) - 1 = -20 - 1 = -21$$. Así, los restos son $$-13$$ y $$-21$$, respectivamente.",
+      "id_temporal": "alg_pro_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "La donación de un benefactor a un centro cultural es el 92% de la suma de los coeficientes del polinomio homogéneo: Q(x ; y) = $$(2b + 5)x^6y^{(k^2)} + 7ax^a y^b + (3a + 8b)x^{(2k)}y^{(k^2 – 10)}$$. ¿Cuál es el monto de la donación?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$648.6$$",
+        "B": "$$705$$",
+        "C": "$$685.4$$",
+        "D": "$$720$$",
+        "E": "$$690$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que el polinomio Q(x ; y) es homogéneo, los grados absolutos de todos sus términos deben ser iguales. Tomamos los grados del primer y tercer término:\n$$6 + k^2 = 2k + k^2 – 10$$\nRestamos $$k^2$$ de ambos lados:\n$$6 = 2k – 10$$\n$$16 = 2k$$\n$$k = 8$$\nEl grado absoluto del polinomio es $$6 + k^2 = 6 + 8^2 = 6 + 64 = 70$$. Para el segundo término, su grado es $$a + b = 70$$. La suma de los coeficientes de un polinomio se obtiene evaluando el polinomio en $$x = 1$$ e $$y = 1$$. Suma de coeficientes = $$(2b + 5) + 7a + (3a + 8b) = 10a + 10b + 5 = 10(a + b) + 5$$. Sustituyendo $$a + b = 70$$: Suma de coeficientes = $$10(70) + 5 = 700 + 5 = 705$$. La donación es el 92% de esta suma: $$0.92 \times 705 = 648.6$$.",
+      "id_temporal": "alg_pro_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si S(x) = $$2(mx + n)^2 + 3mx^2 – 4n$$ y T(x) = $$5(13x^2 + 8x + p)$$ son polinomios idénticos, calcular S(–1), sabiendo que $$m > 0$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$25$$",
+        "B": "$$18$$",
+        "C": "$$15$$",
+        "D": "$$32$$",
+        "E": "$$20$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, desarrollamos S(x): $$S(x) = 2(m^2x^2 + 2mnx + n^2) + 3mx^2 – 4n = (2m^2 + 3m)x^2 + 4mnx + (2n^2 – 4n)$$. Desarrollamos T(x): $$T(x) = 65x^2 + 40x + 5p$$. Para que S(x) y T(x) sean idénticos, sus coeficientes correspondientes deben ser iguales. Igualando los coeficientes de $$x^2$$: $$2m^2 + 3m = 65 \\implies m(2m + 3) = 65$$. Como $$m > 0$$, probamos valores enteros: si $$m = 5$$, $$5(2(5) + 3) = 5(13) = 65$$. Por lo tanto, $$m = 5$$. Igualando los coeficientes de $$x$$: $$4mn = 40 \\implies 4(5)n = 40 \\implies 20n = 40 \\implies n = 2$$. Igualando los términos constantes: $$2n^2 – 4n = 5p \\implies 2(2^2) – 4(2) = 5p \\implies 8 – 8 = 5p \\implies 0 = 5p \\implies p = 0$$. Finalmente, calculamos S(–1) usando $$m = 5$$ y $$n = 2$$: $$S(-1) = 2(5(-1) + 2)^2 + 3(5)(-1)^2 – 4(2) = 2(-3)^2 + 15 – 8 = 2(9) + 7 = 18 + 7 = 25$$.",
+      "id_temporal": "alg_pro_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "El presupuesto inicial de un proyecto de ingeniería es el término independiente del polinomio mónico T(z ; w) = $$4z^k + 3z^{(21–k)} – 2z^{(k–14)} + 6z^{(k/7)} + (c – k)z^{(k+3)} + 9 – k + 4c$$. Si se aprueba un gasto adicional de $$c + 3$$ unidades monetarias, ¿cuánto queda del presupuesto original?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$51$$",
+        "B": "$$55$$",
+        "C": "$$48$$",
+        "D": "$$60$$",
+        "E": "$$45$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que T(z ; w) sea un polinomio, todos los exponentes deben ser enteros no negativos. Tenemos las condiciones: $$k - 14 \\ge 0 \\implies k \\ge 14$$; $$21 - k \\ge 0 \\implies k \\le 21$$; y $$k/7$$ debe ser un entero (k es múltiplo de 7). Los valores enteros de k que satisfacen estas condiciones son $$k = 14$$ y $$k = 21$$. Ahora, debemos determinar cuál de estos valores hace al polinomio mónico (coeficiente del término de mayor grado es 1). Los grados de los términos son: $$k$$, $$21-k$$, $$k-14$$, $$k/7$$, y $$k+3$$. Si $$k=14$$, los grados son: $$14, 7, 0, 2, 17$$. El mayor grado es 17, cuyo término es $$(c-14)z^{17}$$. Si $$k=21$$, los grados son: $$21, 0, 7, 3, 24$$. El mayor grado es 24, cuyo término es $$(c-21)z^{24}$$. Para que el polinomio sea mónico, el coeficiente del término de mayor grado debe ser 1. Por lo tanto, elegimos el valor de k que da el mayor grado posible, que es $$k=21$$. Entonces, el coeficiente principal es $$(c-21) = 1$$, lo que implica $$c = 22$$. El presupuesto inicial es el término independiente del polinomio, que es $$9 – k + 4c$$. Sustituyendo $$k=21$$ y $$c=22$$: Presupuesto inicial = $$9 – 21 + 4(22) = -12 + 88 = 76$$ unidades monetarias. El gasto adicional es $$c + 3 = 22 + 3 = 25$$ unidades monetarias. Finalmente, lo que queda del presupuesto es $$76 – 25 = 51$$ unidades monetarias.",
+      "id_temporal": "alg_pro_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si M(y) = $$(y+1)(y+2)(y+3)(y+4) + 1$$ y N(y) = $$(py^2 + qy + r)^s$$ son idénticos, halle $$p^2 + q - r + s$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$3$$",
+        "B": "$$7$$",
+        "C": "$$1$$",
+        "D": "$$5$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para simplificar M(y), agrupamos los términos de la siguiente manera: $$M(y) = [(y+1)(y+4)][(y+2)(y+3)] + 1$$. Multiplicamos los binomios: $$(y^2 + 5y + 4)(y^2 + 5y + 6) + 1$$. Sea $$A = y^2 + 5y$$. Sustituimos A en la expresión: $$M(y) = (A + 4)(A + 6) + 1$$. Multiplicamos: $$A^2 + 10A + 24 + 1 = A^2 + 10A + 25$$. Esta expresión es un trinomio cuadrado perfecto: $$(A + 5)^2$$. Sustituimos A de nuevo por $$y^2 + 5y$$: $$M(y) = (y^2 + 5y + 5)^2$$. Como M(y) y N(y) son idénticos, comparamos con $$N(y) = (py^2 + qy + r)^s$$. Obtenemos los valores: $$p = 1$$, $$q = 5$$, $$r = 5$$, $$s = 2$$. Finalmente, calculamos la expresión pedida: $$p^2 + q - r + s = 1^2 + 5 - 5 + 2 = 1 + 5 - 5 + 2 = 3$$.",
+      "id_temporal": "alg_pro_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Al dividir S(y) entre $$(y - 3)(y - 5)(y^3 - 1)$$, se obtiene un resto igual a $$2y + 7$$; hallar el resto de dividir S(y) entre $$y - 3$$ y S(y) entre $$y - 5$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$13 ; 17$$",
+        "B": "$$17 ; 13$$",
+        "C": "$$13 ; -17$$",
+        "D": "$$-13 ; 17$$",
+        "E": "$$0 ; 0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Según el Teorema del Resto, si el resto al dividir S(y) por $$(y - 3)(y - 5)(y^3 - 1)$$ es $$2y - 7$$, entonces para hallar el resto de dividir S(y) entre $$y - 3$$, se evalúa S(3). Para S(y) entre $$y - 5$$, se evalúa S(5). S(3) = $$2(3) + 7 = 6 + 7 = 13$$. S(5) = $$2(5) + 7 = 10 + 7 = 17$$. Por lo tanto, los restos son $$13$$ y $$17$$, respectivamente, lo que corresponde a la opción A.",
+      "id_temporal": "alg_pro_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "La bonificación de un empleado es el 85% de la suma de los coeficientes del polinomio homogéneo: $$Q(x ; y) = (4r + 6)x^8y^{(n^2)} + 6mx^m y^r + (5m + 7r)x^{(4n)}y^{(n^2 – 16)}$$. Si se deposita todo en una cuenta con una deducción del 15%, ¿cuánto recibe el empleado?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$416.5$$",
+        "B": "$$420.5$$",
+        "C": "$$410.5$$",
+        "D": "$$400.0$$",
+        "E": "$$425.5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que el polinomio $$Q(x ; y)$$ es homogéneo, los grados totales de sus términos deben ser iguales. Igualamos los grados del primer y tercer término: $$8 + n^2 = 4n + n^2 – 16$$. Simplificando, obtenemos $$8 = 4n – 16$$, lo que lleva a $$4n = 24$$, entonces $$n = 6$$. El grado total del polinomio es $$8 + n^2 = 8 + 6^2 = 8 + 36 = 44$$. Para el segundo término, su grado total es $$m + r$$, por lo tanto, $$m + r = 44$$. La suma de los coeficientes del polinomio se obtiene evaluando $$Q(1 ; 1)$$ o sumando directamente los coeficientes: $$(4r + 6) + 6m + (5m + 7r)$$. Agrupando términos, obtenemos $$11m + 11r + 6 = 11(m + r) + 6$$. Sustituyendo $$m + r = 44$$: $$11(44) + 6 = 484 + 6 = 490$$. Esta es la bonificación total. Si se aplica una deducción del 15%, el empleado recibe el $$100\\% - 15\\% = 85\\%$$ de la bonificación. Monto recibido = $$0.85 \times 490 = 416.5$$.",
+      "imagen": null,
+      "id_temporal": "alg_pro_012"
+    },
+    {
+      "pregunta": "Si $$T(z) = z(z - 1)(z - 2)(z - 3) + 1$$ y $$U(z) = (pz^2 + qz + r)^s$$ son idénticos, halle $$p^2 - q + r + s$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$7$$",
+        "B": "$$8$$",
+        "C": "$$9$$",
+        "D": "$$10$$",
+        "E": "$$11$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, reordenamos los términos de $$T(z)$$: $$T(z) = [z(z-3)][(z-1)(z-2)] + 1$$. Multiplicamos los factores: $$z(z-3) = z^2 - 3z$$. $$(z-1)(z-2) = z^2 - 3z + 2$$. Sustituyendo en $$T(z)$$: $$T(z) = (z^2 - 3z)(z^2 - 3z + 2) + 1$$. Sea $$X = z^2 - 3z$$. Entonces, $$T(z) = X(X + 2) + 1 = X^2 + 2X + 1$$. Esto es un trinomio cuadrado perfecto: $$(X + 1)^2$$. Sustituyendo $$X$$ de nuevo: $$T(z) = (z^2 - 3z + 1)^2$$. Comparando con $$U(z) = (pz^2 + qz + r)^s$$, identificamos los coeficientes: $$p = 1$$, $$q = -3$$, $$r = 1$$, $$s = 2$$. Finalmente, calculamos la expresión: $$p^2 - q + r + s = (1)^2 - (-3) + 1 + 2 = 1 + 3 + 1 + 2 = 7$$.",
+      "imagen": null,
+      "id_temporal": "alg_pro_013"
+    },
+    {
+      "pregunta": "Dados $$a^3 = 64$$, $$a \ne 4$$; $$b^3 = 125$$, $$b \ne 5$$, hallar $$(a^2 + 4a - 3) / (b^2 + 5b + 7)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$19/18$$",
+        "B": "$$1/3$$",
+        "C": "$$-1/3$$",
+        "D": "$$3/2$$",
+        "E": "$$-3/2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para $$a^3 = 64$$ y $$a \ne 4$$, sabemos que la ecuación cúbica $$a^3 - 4^3 = 0$$ se factoriza como $$(a - 4)(a^2 + 4a + 16) = 0$$. Dado que $$a \ne 4$$, la única posibilidad es que $$a^2 + 4a + 16 = 0$$, de donde $$a^2 + 4a = -16$$. Similarmente, para $$b^3 = 125$$ y $$b \ne 5$$, la ecuación $$b^3 - 5^3 = 0$$ se factoriza como $$(b - 5)(b^2 + 5b + 25) = 0$$. Dado que $$b \ne 5$$, entonces $$b^2 + 5b + 25 = 0$$, de donde $$b^2 + 5b = -25$$. Ahora sustituimos estas expresiones en la fracción dada: El numerador es $$a^2 + 4a - 3 = (-16) - 3 = -19$$. El denominador es $$b^2 + 5b + 7 = (-25) + 7 = -18$$. Por lo tanto, el resultado es $$(-19) / (-18) = 19/18$$.",
+      "imagen": null,
+      "id_temporal": "alg_pro_014"
+    },
+    {
+      "pregunta": "Si $$y^2 + 7y - \\sqrt{5} = 0$$, calcular $$C = y(y+1)(y+6)(y+7) - 10\\sqrt{5}$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$5 - 4\\sqrt{5}$$",
+        "B": "$$5 + 4\\sqrt{5}$$",
+        "C": "$$5$$",
+        "D": "$$-4\\sqrt{5}$$",
+        "E": "$$10\\sqrt{5}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "De la ecuación dada, tenemos $$y^2 + 7y = \\sqrt{5}$$. Reordenamos los términos del producto en la expresión $$C$$ para agrupar los que suman $$7y$$: $$C = [y(y+7)][(y+1)(y+6)] - 10\\sqrt{5}$$. Desarrollamos los productos: $$y(y+7) = y^2 + 7y$$. $$(y+1)(y+6) = y^2 + 6y + y + 6 = y^2 + 7y + 6$$. Ahora sustituimos el valor de $$y^2 + 7y = \\sqrt{5}$$ en estos productos: El primer producto es $$\\sqrt{5}$$. El segundo producto es $$\\sqrt{5} + 6$$. Sustituimos estos en la expresión para $$C$$: $$C = (\\sqrt{5})(\\sqrt{5} + 6) - 10\\sqrt{5}$$. Desarrollamos el producto: $$C = 5 + 6\\sqrt{5} - 10\\sqrt{5}$$. Finalmente, combinamos los términos semejantes: $$C = 5 - 4\\sqrt{5}$$.",
+      "imagen": null,
+      "id_temporal": "alg_pro_015"
+    }
+  ]
+}

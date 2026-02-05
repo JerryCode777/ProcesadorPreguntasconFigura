@@ -1,0 +1,234 @@
+{
+  "materia": "aritmetica",
+  "numero_tema": 1,
+  "total_temas": 6,
+  "titulo_tema": "TEORÍA DE LA DIVISIBILIDAD",
+  "tema": "teoria_de_la_divisibilidad",
+  "preguntas": [
+    {
+      "pregunta": "¿Cuál es el valor del número N, menor que 500, que al ser dividido entre 5, 7 o 9 siempre deja un residuo de 3?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$213$$",
+        "B": "$$318$$",
+        "C": "$$423$$",
+        "D": "$$328$$",
+        "E": "$$298$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea N el número buscado. Según el enunciado, N deja un residuo de 3 al dividirse entre 5, 7 o 9. Esto se puede expresar como:\n$$N = 5k_1 + 3$$\n$$N = 7k_2 + 3$$\n$$N = 9k_3 + 3$$\nEsto significa que $$N-3$$ debe ser un múltiplo común de 5, 7 y 9. Por lo tanto, $$N-3$$ es un múltiplo del Mínimo Común Múltiplo (MCM) de 5, 7 y 9.\nCalculamos el MCM(5, 7, 9):\nComo 5, 7 y 9 son números primos entre sí (o potencias de primos distintos en el caso de 9), su MCM es el producto de ellos:\n$$MCM(5, 7, 9) = 5 \\times 7 \\times 9 = 35 \\times 9 = 315$$\nEntonces, $$N-3$$ debe ser un múltiplo de 315.\n$$N - 3 = 315k$$\n$$N = 315k + 3$$\nNos dice que N es menor que 500. Probamos valores para k:\nSi $$k = 1$$: $$N = 315(1) + 3 = 318$$\nSi $$k = 2$$: $$N = 315(2) + 3 = 630 + 3 = 633$$ (Este valor es mayor que 500, así que no es válido).\nPor lo tanto, el único valor posible para N es 318.\nLa respuesta correcta es B.",
+      "id_temporal": "ari_teo_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el número de cuatro cifras $$3a4b$$ es divisible por 72 y 'a' es una cifra par, determine la suma de las cifras 'a' y 'b'.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$2$$",
+        "B": "$$5$$",
+        "C": "$$8$$",
+        "D": "$$11$$",
+        "E": "$$14$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Un número es divisible por 72 si es divisible por 8 y por 9 a la vez.\n\n1.  **Divisibilidad por 8**: Un número es divisible por 8 si sus últimas tres cifras forman un número divisible por 8. En este caso, $$4b$$ debe ser divisible por 8. Los posibles valores para $$4b$$ son 40 y 48.\n    *   Si $$4b = 40$$, entonces $$b = 0$$.\n    *   Si $$4b = 48$$, entonces $$b = 8$$.\n\n2.  **Divisibilidad por 9**: Un número es divisible por 9 si la suma de sus cifras es un múltiplo de 9. Para el número $$3a4b$$, la suma de sus cifras es $$3 + a + 4 + b = 7 + a + b$$. Esta suma debe ser un múltiplo de 9.\n\nAnalicemos los casos para 'b':\n\n*   **Caso 1: $$b = 0$$**\n    La suma de cifras es $$7 + a + 0 = 7 + a$$. Para que sea múltiplo de 9, $$a$$ debe ser 2 (ya que $$7 + 2 = 9$$). En este caso, $$a = 2$$ es una cifra par. Este es un valor válido.\n    El número sería $$3240$$. La suma de 'a' y 'b' es $$2 + 0 = 2$$.\n\n*   **Caso 2: $$b = 8$$**\n    La suma de cifras es $$7 + a + 8 = 15 + a$$. Para que sea múltiplo de 9, $$a$$ debe ser 3 (ya que $$15 + 3 = 18$$). En este caso, $$a = 3$$ no es una cifra par. Por lo tanto, este caso no cumple la condición adicional.\n\nEl único caso que cumple todas las condiciones es cuando $$a = 2$$ y $$b = 0$$. La suma de 'a' y 'b' es $$2 + 0 = 2$$.\nLa respuesta correcta es A.",
+      "id_temporal": "ari_teo_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determine el residuo que se obtiene al dividir $$13^{2023}$$ entre 5.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$1$$",
+        "C": "$$2$$",
+        "D": "$$3$$",
+        "E": "$$4$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para encontrar el residuo de $$13^{2023}$$ al dividirlo entre 5, podemos trabajar con los residuos de la base:\n$$13 \\equiv 3 \\pmod{5}$$\nAsí, el problema se reduce a encontrar el residuo de $$3^{2023}$$ al dividirlo entre 5.\nAnalizamos las potencias de 3 módulo 5:\n$$3^1 \\equiv 3 \\pmod{5}$$\n$$3^2 \\equiv 9 \\equiv 4 \\pmod{5}$$\n$$3^3 \\equiv 3 \\times 4 = 12 \\equiv 2 \\pmod{5}$$\n$$3^4 \\equiv 3 \\times 2 = 6 \\equiv 1 \\pmod{5}$$\nObservamos que los residuos se repiten en un ciclo de longitud 4 (3, 4, 2, 1). Para encontrar el residuo de $$3^{2023}$$, necesitamos saber la posición de 2023 en este ciclo. Para ello, dividimos el exponente 2023 entre la longitud del ciclo, que es 4:\n$$2023 \\div 4 = 505$$ con un residuo de $$3$$\nEsto significa que $$2023 = 4 \\times 505 + 3$$.\nEntonces, podemos reescribir la expresión como:\n$$3^{2023} = 3^{(4 \\times 505 + 3)} = (3^4)^{505} \\times 3^3$$\nTomando el módulo 5:\n$$(3^4)^{505} \\times 3^3 \\equiv (1)^{505} \\times 2 \\pmod{5}$$\n$$1 \\times 2 \\equiv 2 \\pmod{5}$$\nPor lo tanto, el residuo al dividir $$13^{2023}$$ entre 5 es 2.\nLa respuesta correcta es C.",
+      "id_temporal": "ari_teo_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuántos números de cuatro cifras son múltiplos de 13 y terminan en 7?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$69$$",
+        "B": "$$70$$",
+        "C": "$$71$$",
+        "D": "$$72$$",
+        "E": "$$73$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea N un número de cuatro cifras. Sabemos que:\n1.  $$1000 \\le N \\le 9999$$ (N es de cuatro cifras)\n2.  $$N \\equiv 0 \\pmod{13}$$ (N es múltiplo de 13)\n3.  $$N \\equiv 7 \\pmod{10}$$ (N termina en 7)\n\nDe la condición 2, $$N = 13k$$ para algún entero k.\nSustituimos esto en la condición 3:\n$$13k \\equiv 7 \\pmod{10}$$\nReducimos 13 módulo 10:\n$$3k \\equiv 7 \\pmod{10}$$\nPara resolver esta congruencia, necesitamos encontrar un número que multiplicado por 3 dé un residuo de 1 al dividirlo entre 10. Ese número es 7 (ya que $$3 \\times 7 = 21 \\equiv 1 \\pmod{10}$$). Multiplicamos ambos lados de la congruencia por 7:\n$$7 \\times 3k \\equiv 7 \\times 7 \\pmod{10}$$\n$$21k \\equiv 49 \\pmod{10}$$\nReduciendo los coeficientes:\n$$k \\equiv 9 \\pmod{10}$$\nEsto significa que k puede ser de la forma $$10m + 9$$, donde m es un entero.\nAhora, sustituimos esta forma de k en $$N = 13k$$:\n$$N = 13(10m + 9)$$\n$$N = 130m + 117$$\nFinalmente, aplicamos el rango de los números de cuatro cifras:\n$$1000 \\le 130m + 117 \\le 9999$$\nRestamos 117 de todas las partes de la desigualdad:\n$$1000 - 117 \\le 130m \\le 9999 - 117$$\n$$883 \\le 130m \\le 9882$$\nDividimos todas las partes por 130:\n$$\\frac{883}{130} \\le m \\le \\frac{9882}{130}$$\n$$6.79... \\le m \\le 76.01...$$\nLos valores enteros de m que satisfacen esta desigualdad son desde 7 hasta 76, inclusive.\nPara encontrar la cantidad de valores de m, usamos la fórmula: Último - Primero + 1.\nCantidad de valores de $$m = 76 - 7 + 1 = 70$$\nPor lo tanto, hay 70 números de cuatro cifras que son múltiplos de 13 y terminan en 7.\nLa respuesta correcta es B.",
+      "id_temporal": "ari_teo_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un grupo de turistas, se observa que la cantidad de hombres es un número de dos cifras tal que los $$3/5$$ practican senderismo y los $$2/9$$ visitaron Machu Picchu. Si la cantidad de hombres es un número impar, ¿cuál es el producto de las cifras de la cantidad de hombres?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$15$$",
+        "C": "$$20$$",
+        "D": "$$25$$",
+        "E": "$$30$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea H la cantidad de hombres en el grupo.\nDel enunciado, se sabe que:\n1.  Los $$3/5$$ de los hombres practican senderismo, lo que implica que H debe ser divisible por 5.\n2.  Los $$2/9$$ de los hombres visitaron Machu Picchu, lo que implica que H debe ser divisible por 9.\n\nPara que H sea divisible por 5 y por 9, H debe ser un múltiplo del Mínimo Común Múltiplo (MCM) de 5 y 9.\nComo 5 y 9 son números primos entre sí, su MCM es el producto de ambos:\n$$MCM(5, 9) = 5 \\times 9 = 45$$\nAsí, H debe ser un múltiplo de 45.\n\nAdemás, se indica que la cantidad de hombres H es un número de dos cifras. Los números de dos cifras van desde 10 hasta 99.\nLos múltiplos de 45 dentro de este rango son:\n*   $$45 \\times 1 = 45$$\n*   $$45 \\times 2 = 90$$\n\nAhora, aplicamos la condición adicional: \"Si la cantidad de hombres es un número impar\".\n*   De los posibles valores, 45 es impar.\n*   90 es par.\n\nPor lo tanto, la cantidad de hombres H debe ser 45.\nFinalmente, se pide el producto de las cifras de la cantidad de hombres. Las cifras de 45 son 4 y 5.\nProducto de las cifras $$= 4 \\times 5 = 20$$\nLa respuesta correcta es C.",
+      "id_temporal": "ari_teo_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una universidad, se observa que la cuarta parte de los estudiantes de primer año practican algún deporte, la quinta parte de ellos estudian ingeniería, y la séptima parte tienen beca. Si el número total de estudiantes de primer año está entre 300 y 500, ¿cuántos estudiantes de primer año hay en total?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "350",
+        "B": "420",
+        "C": "380",
+        "D": "490",
+        "E": "450"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que las fracciones de estudiantes sean números enteros, el número total de estudiantes ($$N$$) debe ser divisible entre 4, 5 y 7. Calculamos el MCM de estos números: $$mcm(4, 5, 7) = 140$$. Los múltiplos de 140 son 140, 280, 420, 560, ... El único múltiplo que se encuentra entre 300 y 500 es 420. Por lo tanto, hay 420 estudiantes de primer año.",
+      "imagen": null,
+      "id_temporal": "ari_teo_006"
+    },
+    {
+      "pregunta": "Si un número $$X$$ deja un residuo de 3 al dividirse entre 9, y otro número $$Y$$ deja un residuo de 5 al dividirse entre 9, ¿cuál es el residuo que se obtiene al dividir el producto $$(X+1)(Y-1)$$ entre 9?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Dado que $$X \\equiv 3 \\pmod{9}$$ y $$Y \\equiv 5 \\pmod{9}$$.\nPrimero, calculamos los residuos de $$(X+1)$$ y $$(Y-1)$$.\n$$X+1 \\equiv 3+1 \\pmod{9} \\equiv 4 \\pmod{9}$$ \n$$Y-1 \\equiv 5-1 \\pmod{9} \\equiv 4 \\pmod{9}$$\nAhora, calculamos el residuo del producto:\n$$(X+1)(Y-1) \\equiv 4 \\cdot 4 \\pmod{9} \\equiv 16 \\pmod{9}$$ \nFinalmente, el residuo de 16 al dividirse entre 9 es 7 ($$16 = 1 \\cdot 9 + 7$$). Por lo tanto, la respuesta correcta es D.",
+      "imagen": null,
+      "id_temporal": "ari_teo_007"
+    },
+    {
+      "pregunta": "¿Cuántos números de tres cifras del sistema quinario (base 5) dejan un residuo de 2 al dividirse entre 6?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "15",
+        "B": "16",
+        "C": "17",
+        "D": "18",
+        "E": "19"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los números de tres cifras en base 5 van desde $$100_{5}$$ hasta $$444_{5}$$. Convertimos estos límites a base decimal:\n$$100_{5} = 1 \\cdot 5^{2} + 0 \\cdot 5^{1} + 0 \\cdot 5^{0} = 25$$\n$$444_{5} = 4 \\cdot 5^{2} + 4 \\cdot 5^{1} + 4 \\cdot 5^{0} = 4(25) + 4(5) + 4(1) = 100 + 20 + 4 = 124$$\nBuscamos números $$N$$ tales que $$25 \\le N \\le 124$$ y que dejen residuo 2 al dividirse entre 6. Esto significa $$N = 6k + 2$$.\nPlanteamos la desigualdad: $$25 \\le 6k + 2 \\le 124$$\nRestamos 2 a todos los términos: $$23 \\le 6k \\le 122$$\nDividimos entre 6: $$\frac{23}{6} \\le k \\le \frac{122}{6}$$\n$$3.83... \\le k \\le 20.33...$$\nLos valores enteros de $$k$$ son desde 4 hasta 20.\nLa cantidad de valores posibles para $$k$$ es $$20 - 4 + 1 = 17$$. Por lo tanto, hay 17 números que cumplen la condición.",
+      "imagen": null,
+      "id_temporal": "ari_teo_008"
+    },
+    {
+      "pregunta": "Si el numeral de cuatro cifras $$5abc$$ es divisible entre 3, 5 y 11 simultáneamente, y se sabe que $$a$$ es una cifra par y $$b$$ es una cifra impar, calcule el menor valor posible de $$a+b+c$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "1. Divisibilidad por 5: El número $$5abc$$ es divisible por 5, por lo tanto, $$c$$ debe ser 0 o 5.\n2. Divisibilidad por 11: La suma de las cifras en posiciones impares menos la suma de las cifras en posiciones pares debe ser múltiplo de 11. $$(5+b) - (a+c) = 11k$$.\n3. Divisibilidad por 3: La suma de todas las cifras debe ser múltiplo de 3. $$5+a+b+c = 3j$$.\nAdicionalmente, $$a$$ es par ($$0, 2, 4, 6, 8$$) y $$b$$ es impar ($$1, 3, 5, 7, 9$$).\n\n**Caso 1: $$c=0$$**\n*   De la divisibilidad por 11: $$(5+b) - (a+0) = 5+b-a = 11k$$.\n    *   Si $$5+b-a = 0 \\implies a-b=5$$. Posibles pares ($$a,b$$) con $$a$$ par y $$b$$ impar: ($$6,1$$), ($$8,3$$).\n    *   Si $$5+b-a = 11 \\implies a-b=-6$$. No hay pares ($$a,b$$) que cumplan, ya que $$b$$ debería ser 6 unidades mayor que $$a$$, por ejemplo ($$0,6$$) pero $$b$$ es impar. ($$2,8$$) $$b$$ es impar, ($$4,10$$) no es cifra. \n*   De la divisibilidad por 3: $$5+a+b+0 = 5+a+b = 3j$$.\n    *   Para ($$a=6, b=1$$): $$5+6+1=12$$. Como 12 es múltiplo de 3, esta combinación es válida. $$a+b+c = 6+1+0 = 7$$.\n    *   Para ($$a=8, b=3$$): $$5+8+3=16$$. Como 16 no es múltiplo de 3, esta combinación no es válida.\n\n**Caso 2: $$c=5$$**\n*   De la divisibilidad por 11: $$(5+b) - (a+5) = b-a = 11k$$.\n    *   Si $$b-a = 0 \\implies b=a$$. Esto es imposible porque $$a$$ es par y $$b$$ es impar.\n    *   Otros múltiplos de 11 ($$b-a=11$$ o $$b-a=-11$$) tampoco son posibles para cifras simples.\n\nEl único conjunto de valores que cumple todas las condiciones es $$a=6, b=1, c=0$$. Por lo tanto, el valor de $$a+b+c = 6+1+0 = 7$$. Este es el único valor posible, y por ende, el menor.",
+      "imagen": null,
+      "id_temporal": "ari_teo_009"
+    },
+    {
+      "pregunta": "¿Cuál es el residuo que se obtiene al dividir $$3^{2024}$$ entre 5?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "0"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Calculamos las potencias de 3 módulo 5:\n$$3^{1} \\equiv 3 \\pmod{5}$$\n$$3^{2} \\equiv 9 \\pmod{5} \\equiv 4 \\pmod{5}$$\n$$3^{3} \\equiv 3 \\cdot 4 \\pmod{5} \\equiv 12 \\pmod{5} \\equiv 2 \\pmod{5}$$\n$$3^{4} \\equiv 3 \\cdot 2 \\pmod{5} \\equiv 6 \\pmod{5} \\equiv 1 \\pmod{5}$$\nEl ciclo de los residuos se repite cada 4 potencias (3, 4, 2, 1).\nPara encontrar el residuo de $$3^{2024}$$ entre 5, dividimos el exponente (2024) entre la longitud del ciclo (4):\n$$2024 \\div 4 = 506$$ con un residuo de 0.\nCuando el residuo de la división del exponente es 0, tomamos el último valor del ciclo de residuos, que corresponde a $$3^{4}$$, cuyo residuo es 1.\nPor lo tanto, el residuo de $$3^{2024}$$ al dividirse entre 5 es 1.",
+      "imagen": null,
+      "id_temporal": "ari_teo_010"
+    },
+    {
+      "pregunta": "En un evento social, el número total de asistentes es 420. De los varones, se observa que los $$2/9$$ usan gafas y los $$3/11$$ llegaron tarde. Si el número de mujeres es el menor posible, ¿cuántas mujeres asistieron?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "123",
+        "B": "24",
+        "C": "99",
+        "D": "222",
+        "E": "321"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea V el número de varones y M el número de mujeres. Se sabe que $$V + M = 420$$. Para que las fracciones de varones sean números enteros, V debe ser divisible entre 9 y entre 11. Por lo tanto, V debe ser múltiplo del mínimo común múltiplo de 9 y 11, es decir, $$mcm(9, 11) = 99$$. Los posibles valores de V menores que 420 son: $$99, 198, 297, 396$$. Para que el número de mujeres (M) sea el menor posible, el número de varones (V) debe ser el mayor posible. Entonces, $$V = 396$$. Calculamos el número de mujeres: $$M = 420 - 396 = 24$$. Por lo tanto, asistieron 24 mujeres.",
+      "id_temporal": "ari_teo_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si un número A deja residuo 7 al dividirse entre 12 y un número B deja residuo 9 al dividirse entre 12, determine el residuo que se obtiene al dividir $$A \\cdot B + A$$ entre 12.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "5",
+        "C": "10",
+        "D": "3",
+        "E": "7"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Según los datos, podemos escribir las congruencias:\n$$A \\equiv 7 \\pmod{12}$$\n$$B \\equiv 9 \\pmod{12}$$\nPrimero, calculamos el residuo de $$A \\cdot B$$ al dividirse entre 12:\n$$A \\cdot B \\equiv 7 \\cdot 9 \\pmod{12}$$\n$$A \\cdot B \\equiv 63 \\pmod{12}$$\nComo $$63 = 5 \times 12 + 3$$, entonces $$A \\cdot B \\equiv 3 \\pmod{12}$$.\nAhora, calculamos el residuo de $$A \\cdot B + A$$ al dividirse entre 12:\n$$A \\cdot B + A \\equiv 3 + 7 \\pmod{12}$$\n$$A \\cdot B + A \\equiv 10 \\pmod{12}$$\nEl residuo es 10.",
+      "id_temporal": "ari_teo_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuántos numerales de cuatro cifras del sistema quinario (base 5) dejan residuo 5 al dividirse entre 17?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "27",
+        "B": "28",
+        "C": "29",
+        "D": "30",
+        "E": "31"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los numerales de cuatro cifras en base 5 van desde $$1000_5$$ hasta $$4444_5$$. Primero, los convertimos a base decimal:\n$$1000_5 = 1 \\cdot 5^3 = 125$$\n$$4444_5 = 4 \\cdot 5^3 + 4 \\cdot 5^2 + 4 \\cdot 5^1 + 4 \\cdot 5^0 = 4(125) + 4(25) + 4(5) + 4(1) = 500 + 100 + 20 + 4 = 624$$\nBuscamos números N de la forma $$N = 17k + 5$$. Establecemos el rango:\n$$125 \\leq 17k + 5 \\leq 624$$\nRestamos 5 a toda la desigualdad:\n$$120 \\leq 17k \\leq 619$$\nDividimos entre 17:\n$$\frac{120}{17} \\leq k \\leq \frac{619}{17}$$\n$$7.05... \\leq k \\leq 36.41...$$\nLos valores enteros de k son desde 8 hasta 36. La cantidad de valores de k es $$36 - 8 + 1 = 29$$. Por lo tanto, hay 29 numerales que cumplen la condición.",
+      "id_temporal": "ari_teo_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuántos números de la forma $$3ab$$ (donde a y b son cifras) son divisibles entre 22?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un número es divisible entre 22 si es divisible entre 2 y entre 11.\n1. Divisibilidad entre 2: El número $$3ab$$ debe ser par, lo que significa que la última cifra 'b' debe ser par. Entonces, $$b \\in \\{0, 2, 4, 6, 8\\}$$.\n2. Divisibilidad entre 11: La suma alternada de sus cifras debe ser un múltiplo de 11. $$(3 - a + b)$$ debe ser un múltiplo de 11.\nAnalicemos cada posible valor de b:\n*   Si $$b=0$$: $$3 - a + 0 = 3 - a$$. Para que sea múltiplo de 11, $$3 - a = 0 \\implies a = 3$$. (Número 330)\n*   Si $$b=2$$: $$3 - a + 2 = 5 - a$$. Para que sea múltiplo de 11, $$5 - a = 0 \\implies a = 5$$. (Número 352)\n*   Si $$b=4$$: $$3 - a + 4 = 7 - a$$. Para que sea múltiplo de 11, $$7 - a = 0 \\implies a = 7$$. (Número 374)\n*   Si $$b=6$$: $$3 - a + 6 = 9 - a$$. Para que sea múltiplo de 11, $$9 - a = 0 \\implies a = 9$$. (Número 396)\n*   Si $$b=8$$: $$3 - a + 8 = 11 - a$$. Para que sea múltiplo de 11, $$11 - a = 0 \\implies a = 11$$ (no es una cifra válida) o $$11 - a = 11 \\implies a = 0$$. (Número 308)\nLos números encontrados son 330, 352, 374, 396 y 308. Hay 5 números que cumplen la condición.",
+      "id_temporal": "ari_teo_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determine el residuo que se obtiene al dividir la expresión $$4^{20} + 5^{30}$$ entre 9.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "1",
+        "B": "3",
+        "C": "5",
+        "D": "7",
+        "E": "8"
+      },
+      "respuesta_correcta": "E",
+      "explicacion": "Calcularemos el residuo de cada término por separado.\nPara $$4^{20} \\pmod{9}$$:\n$$4^1 \\equiv 4 \\pmod{9}$$\n$$4^2 \\equiv 16 \\equiv 7 \\pmod{9}$$\n$$4^3 \\equiv 4 \\cdot 7 = 28 \\equiv 1 \\pmod{9}$$\nEl ciclo de los residuos de las potencias de 4 módulo 9 es 3. Dividimos el exponente 20 entre 3: $$20 = 3 \times 6 + 2$$.\nEntonces, $$4^{20} \\equiv (4^3)^6 \\cdot 4^2 \\equiv 1^6 \\cdot 4^2 \\equiv 1 \\cdot 16 \\equiv 7 \\pmod{9}$$.\n\nPara $$5^{30} \\pmod{9}$$:\n$$5^1 \\equiv 5 \\pmod{9}$$\n$$5^2 \\equiv 25 \\equiv 7 \\pmod{9}$$\n$$5^3 \\equiv 5 \\cdot 7 = 35 \\equiv 8 \\equiv -1 \\pmod{9}$$\n$$5^6 \\equiv (-1)^2 \\equiv 1 \\pmod{9}$$\nEl ciclo de los residuos de las potencias de 5 módulo 9 es 6. Dividimos el exponente 30 entre 6: $$30 = 6 \times 5 + 0$$.\nEntonces, $$5^{30} \\equiv (5^6)^5 \\equiv 1^5 \\equiv 1 \\pmod{9}$$. (Alternativamente, $$5^{30} = (5^3)^{10} \\equiv (-1)^{10} \\equiv 1 \\pmod{9}$$).\n\nFinalmente, sumamos los residuos:\n$$4^{20} + 5^{30} \\equiv 7 + 1 \\pmod{9}$$\n$$4^{20} + 5^{30} \\equiv 8 \\pmod{9}$$\nEl residuo es 8.",
+      "id_temporal": "ari_teo_015",
+      "imagen": null
+    }
+  ]
+}

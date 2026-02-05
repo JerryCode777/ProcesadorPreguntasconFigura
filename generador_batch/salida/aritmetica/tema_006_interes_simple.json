@@ -1,0 +1,234 @@
+{
+  "materia": "aritmetica",
+  "numero_tema": 6,
+  "total_temas": 6,
+  "titulo_tema": "INTERÉS SIMPLE",
+  "tema": "interes_simple",
+  "preguntas": [
+    {
+      "pregunta": "Un inversor deposita un capital de S/ 15 000 en un banco que ofrece una tasa de interés simple del 6 % semestral. Si el dinero se mantiene invertido por 1 año y 4 meses, ¿cuánto de interés generará?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 1 800",
+        "B": "S/ 2 000",
+        "C": "S/ 2 400",
+        "D": "S/ 2 700",
+        "E": "S/ 3 000"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El capital es $$C = 15000$$. La tasa es $$r = 6 \\% \\text{ semestral} = 0,06$$ por semestre.\nEl tiempo es 1 año y 4 meses. Para convertirlo a semestres:\n1 año = 2 semestres\n4 meses = $$4/6$$ semestres = $$2/3$$ semestres\nTotal tiempo $$t = 2 + 2/3 = 8/3$$ semestres.\nEl interés simple se calcula con la fórmula $$I = C \\cdot r \\cdot t$$.\n$$I = 15000 \\cdot 0,06 \\cdot \\frac{8}{3}$$\n$$I = 900 \\cdot \\frac{8}{3}$$\n$$I = 300 \\cdot 8$$\n$$I = 2400$$ soles.\nPor lo tanto, el interés generado será de S/ 2 400.",
+      "id_temporal": "ari_int_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Julio obtuvo un interés de S/ 1 200 al invertir un capital de S/ 8 000 durante 2 años y 6 meses. ¿Cuál fue la tasa de interés simple anual a la que se colocó el capital?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "4 %",
+        "B": "5 %",
+        "C": "6 %",
+        "D": "7 %",
+        "E": "8 %"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El interés es $$I = 1200$$. El capital es $$C = 8000$$. El tiempo es 2 años y 6 meses, que es igual a $$2,5$$ años.\nUsamos la fórmula del interés simple $$I = C \\cdot r \\cdot t$$, donde $$r$$ es la tasa anual.\nDespejando $$r$$: $$r = \\frac{I}{C \\cdot t}$$.\n$$r = \\frac{1200}{8000 \\cdot 2,5}$$\n$$r = \\frac{1200}{20000}$$\n$$r = 0,06$$\nExpresando como porcentaje, la tasa anual es $$0,06 \\cdot 100 \\% = 6 \\%$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "ari_int_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿En qué tiempo, en años, un capital colocado a una tasa de interés simple del 20 % anual producirá un interés equivalente a los $$3/5$$ de dicho capital?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1 año y 6 meses",
+        "B": "2 años",
+        "C": "2 años y 6 meses",
+        "D": "3 años",
+        "E": "4 años"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$C$$ el capital. El interés producido es $$I = \\frac{3}{5}C$$.\nLa tasa de interés simple anual es $$r = 20 \\% = 0,20$$.\nUsamos la fórmula del interés simple $$I = C \\cdot r \\cdot t$$.\nSustituimos los valores conocidos:\n$$\\frac{3}{5}C = C \\cdot 0,20 \\cdot t$$\nDividimos ambos lados por $$C$$ (asumiendo $$C \\neq 0$$):\n$$\\frac{3}{5} = 0,20 \\cdot t$$\nConvertimos la fracción a decimal: $$0,6 = 0,20 \\cdot t$$\nDespejamos $$t$$:\n$$t = \\frac{0,6}{0,20}$$\n$$t = 3$$\nEl tiempo es de 3 años. Por lo tanto, la respuesta correcta es D.",
+      "id_temporal": "ari_int_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Se tienen dos capitales. El primero se impone a una tasa de interés simple del 5 % trimestral durante 2 años, y el segundo se impone al 10 % semestral durante 1 año. Si los intereses generados por ambos capitales son iguales y la suma de los capitales es S/ 10 500, halle el mayor de los dos capitales.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/ 3 000",
+        "B": "S/ 3 500",
+        "C": "S/ 6 000",
+        "D": "S/ 7 000",
+        "E": "S/ 7 500"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sean $$C_1$$ y $$C_2$$ los dos capitales. Sean $$I_1$$ e $$I_2$$ sus respectivos intereses.\nPara el primer capital ($$C_1$$):\n $$r_1 = 5 \\% \\text{ trimestral} = 0,05$$\n $$t_1 = 2 \\text{ años} = 8 \\text{ trimestres}$$ (1 año = 4 trimestres)\n $$I_1 = C_1 \\cdot 0,05 \\cdot 8 = 0,40 C_1$$\nPara el segundo capital ($$C_2$$):\n $$r_2 = 10 \\% \\text{ semestral} = 0,10$$\n $$t_2 = 1 \\text{ año} = 2 \\text{ semestres}$$ (1 año = 2 semestres)\n $$I_2 = C_2 \\cdot 0,10 \\cdot 2 = 0,20 C_2$$\nDado que los intereses son iguales ($$I_1 = I_2$$):\n $$0,40 C_1 = 0,20 C_2$$\nDividiendo por 0,20:\n $$2 C_1 = C_2$$\nTambién se sabe que la suma de los capitales es S/ 10 500:\n $$C_1 + C_2 = 10500$$\nSustituimos $$C_2$$ en la segunda ecuación:\n $$C_1 + 2 C_1 = 10500$$\n $$3 C_1 = 10500$$\n $$C_1 = \\frac{10500}{3} = 3500$$\nAhora hallamos $$C_2$$:\n $$C_2 = 2 C_1 = 2 \\cdot 3500 = 7000$$\nEl mayor de los dos capitales es S/ 7 000. Por lo tanto, la respuesta correcta es D.",
+      "id_temporal": "ari_int_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una persona desea obtener S/ 27 000 como monto final después de 4 años, invirtiendo su capital a una tasa de interés simple del 12,5 % anual. ¿Cuánto capital debe depositar inicialmente?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 16 000",
+        "B": "S/ 18 000",
+        "C": "S/ 20 000",
+        "D": "S/ 21 000",
+        "E": "S/ 22 500"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El monto final deseado es $$M = 27000$$. El tiempo es $$t = 4$$ años. La tasa de interés simple anual es $$r = 12,5 \\% = 0,125$$. (También puede expresarse como $$1/8$$).\nLa fórmula del monto final con interés simple es $$M = C(1 + r \\cdot t)$$, donde $$C$$ es el capital inicial.\nSustituimos los valores:\n $$27000 = C(1 + 0,125 \\cdot 4)$$\n $$27000 = C(1 + 0,5)$$\n $$27000 = C(1,5)$$\nDespejamos $$C$$:\n $$C = \\frac{27000}{1,5}$$\n $$C = \\frac{27000}{3/2}$$\n $$C = 27000 \\cdot \\frac{2}{3}$$\n $$C = 9000 \\cdot 2$$\n $$C = 18000$$\nDebe depositar S/ 18 000 inicialmente. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "ari_int_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Camila desea invertir S/ 25 000 en un banco que ofrece una tasa de interés simple del 6% semestral. Si su inversión se realiza desde el 10 de marzo hasta el 25 de agosto del año 2023 (un año no bisiesto), ¿cuánto interés obtendrá?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 1250",
+        "B": "S/ 1320",
+        "C": "S/ 1400",
+        "D": "S/ 1500",
+        "E": "S/ 1680"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, calculamos el número de días entre el 10 de marzo y el 25 de agosto:\nMarzo: $$31 - 10 = 21$$ días\nAbril: $$30$$ días\nMayo: $$31$$ días\nJunio: $$30$$ días\nJulio: $$31$$ días\nAgosto: $$25$$ días\nTotal de días = $$21 + 30 + 31 + 30 + 31 + 25 = 168$$ días.\n\nUn semestre comercial se considera de $$6 \\times 30 = 180$$ días.\nEl tiempo en semestres es $$t = \\frac{168}{180}$$. Simplificando, $$t = \\frac{28}{30} = \\frac{14}{15}$$ semestres.\n\nLa fórmula del interés simple es $$I = C \\cdot r \\cdot t$$.\n$$I = 25000 \\cdot 0,06 \\cdot \\frac{168}{180}$$\n$$I = 1500 \\cdot \\frac{168}{180}$$\n$$I = 1500 \\cdot \\frac{14}{15}$$\n$$I = 100 \\cdot 14$$\n$$I = 1400$$\nPor lo tanto, el interés que obtendrá es S/ 1400.",
+      "id_temporal": "ari_int_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un capital se invierte a interés simple de tal manera que el interés producido es equivalente a los $$\\frac{2}{7}$$ del monto final. Si el monto final asciende a S/ 14 000, ¿cuál fue el capital inicial invertido?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/ 8000",
+        "B": "S/ 9000",
+        "C": "S/ 10000",
+        "D": "S/ 10500",
+        "E": "S/ 11200"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sabemos que el interés $$I$$ es $$\\frac{2}{7}$$ del monto final $$M$$.\nEs decir, $$I = \\frac{2}{7} M$$.\nDado que el monto final $$M = S/ 14000$$, podemos calcular el interés:\n$$I = \\frac{2}{7} \\cdot 14000$$\n$$I = 2 \\cdot 2000$$\n$$I = 4000$$\n\nAhora, utilizamos la relación entre Monto, Capital e Interés: $$M = C + I$$.\nSustituimos los valores conocidos:\n$$14000 = C + 4000$$\nDespejamos el Capital $$C$$:\n$$C = 14000 - 4000$$\n$$C = 10000$$\nEl capital inicial invertido fue S/ 10 000.",
+      "id_temporal": "ari_int_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una empresa obtuvo un préstamo de S/ 15 000 y, después de 156 días, pagó un total de S/ 780 en concepto de interés simple. ¿Cuál fue la tasa de interés anual simple aplicada? (Considere un año comercial de 360 días).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "10%",
+        "B": "11%",
+        "C": "12%",
+        "D": "13%",
+        "E": "14%"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La fórmula del interés simple es $$I = C \\cdot r \\cdot t$$, donde $$C$$ es el capital, $$r$$ es la tasa de interés anual y $$t$$ es el tiempo en años.\nTenemos:\nInterés $$I = S/ 780$$\nCapital $$C = S/ 15000$$\nTiempo $$t = 156$$ días. Para convertir a años, dividimos por $$360$$ días (año comercial): $$t = \\frac{156}{360}$$ años.\n\nSustituimos los valores en la fórmula:\n$$780 = 15000 \\cdot r \\cdot \\frac{156}{360}$$\nSimplificamos la fracción del tiempo:\n$$780 = 15000 \\cdot r \\cdot \\frac{13}{30}$$\n$$780 = (\\frac{15000}{30}) \\cdot 13 \\cdot r$$\n$$780 = 500 \\cdot 13 \\cdot r$$\n$$780 = 6500 \\cdot r$$\nDespejamos $$r$$:\n$$r = \\frac{780}{6500}$$\n$$r = 0,12$$\n\nPara expresar la tasa en porcentaje, multiplicamos por 100:\n$$r = 0,12 \\cdot 100\\% = 12\\%$$\nLa tasa de interés anual simple aplicada fue del 12%.",
+      "id_temporal": "ari_int_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un inversionista decide distribuir un capital total en dos partes que están en la proporción de $$3:2$$. La parte mayor se coloca al 8% de interés simple anual, mientras que la parte menor se invierte al 12% de interés simple anual. Si después de 2 años el interés total generado por ambas inversiones es de S/ 4800, ¿cuál fue el capital total inicial invertido?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/ 20000",
+        "B": "S/ 22500",
+        "C": "S/ 24000",
+        "D": "S/ 25000",
+        "E": "S/ 26000"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$C$$ el capital total inicial.\nLas dos partes del capital están en proporción $$3:2$$. Esto significa que el capital total se divide en $$3+2 = 5$$ partes.\nLa parte mayor ($$C_1$$) es $$\\frac{3}{5}C$$.\nLa parte menor ($$C_2$$) es $$\\frac{2}{5}C$$.\nEl tiempo de inversión para ambas partes es $$t = 2$$ años.\n\nCalculamos el interés generado por cada parte:\nInterés de la parte mayor ($$I_1$$): $$I_1 = C_1 \\cdot r_1 \\cdot t = \\frac{3}{5}C \\cdot 0,08 \\cdot 2$$\n$$I_1 = \\frac{3}{5}C \\cdot 0,16 = \\frac{0,48}{5}C = 0,096C$$\n\nInterés de la parte menor ($$I_2$$): $$I_2 = C_2 \\cdot r_2 \\cdot t = \\frac{2}{5}C \\cdot 0,12 \\cdot 2$$\n$$I_2 = \\frac{2}{5}C \\cdot 0,24 = \\frac{0,48}{5}C = 0,096C$$\n\nEl interés total ($$I_{total}$$) es la suma de los intereses de ambas partes:\n$$I_{total} = I_1 + I_2 = 0,096C + 0,096C = 0,192C$$\n\nNos dicen que el interés total es S/ 4800:\n$$4800 = 0,192C$$\nDespejamos $$C$$:\n$$C = \\frac{4800}{0,192}$$\nPara facilitar el cálculo, podemos multiplicar el numerador y el denominador por 1000:\n$$C = \\frac{4800000}{192}$$\nDividiendo:\n$$C = 25000$$\nEl capital total inicial invertido fue S/ 25 000.",
+      "id_temporal": "ari_int_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un inversionista dispone de un capital y evalúa dos opciones de inversión a interés simple. La primera opción ofrece una tasa del 9% semestral por un periodo de 1 año y 4 meses. La segunda opción propone una tasa del X% trimestral por un periodo de 2 años y 6 meses. Si ambas opciones generan exactamente el mismo monto de interés, ¿cuál es el valor de X?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "2,0%",
+        "B": "2,4%",
+        "C": "2,5%",
+        "D": "3,0%",
+        "E": "3,2%"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$C$$ el capital invertido.\n\n**Opción 1:**\nTasa $$r_1 = 9\\%$$ semestral.\nTiempo $$t_1 = 1$$ año y $$4$$ meses = $$12 + 4 = 16$$ meses.\nConvertimos el tiempo a semestres. Como un semestre tiene 6 meses, $$t_1 = \\frac{16}{6} = \\frac{8}{3}$$ semestres.\nEl interés generado por la primera opción ($$I_1$$) es:\n$$I_1 = C \\cdot r_1 \\cdot t_1 = C \\cdot 0,09 \\cdot \\frac{8}{3}$$\n$$I_1 = C \\cdot 0,03 \\cdot 8$$\n$$I_1 = 0,24C$$\n\n**Opción 2:**\nTasa $$r_2 = X\\%$$ trimestral (donde X es el valor numérico de la tasa).\nTiempo $$t_2 = 2$$ años y $$6$$ meses = $$24 + 6 = 30$$ meses.\nConvertimos el tiempo a trimestres. Como un trimestre tiene 3 meses, $$t_2 = \\frac{30}{3} = 10$$ trimestres.\nEl interés generado por la segunda opción ($$I_2$$) es:\n$$I_2 = C \\cdot r_2 \\cdot t_2 = C \\cdot \\frac{X}{100} \\cdot 10$$\n$$I_2 = C \\cdot \\frac{10X}{100} = C \\cdot \\frac{X}{10}$$\n\nDado que ambas opciones generan el mismo interés ($$I_1 = I_2$$):\n$$0,24C = C \\cdot \\frac{X}{10}$$\nPodemos cancelar $$C$$ de ambos lados:\n$$0,24 = \\frac{X}{10}$$\nDespejamos $$X$$:\n$$X = 0,24 \\cdot 10$$\n$$X = 2,4$$\nPor lo tanto, la tasa de interés trimestral de la segunda opción es del 2,4%.",
+      "id_temporal": "ari_int_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sofía realiza un préstamo de S/ 8000. Si debe pagarlo en 1 año y 3 meses a una tasa de interés simple del 6 % semestral, ¿cuánto de interés pagará?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "S/ 960",
+        "B": "S/ 1080",
+        "C": "S/ 1200",
+        "D": "S/ 1440",
+        "E": "S/ 1600"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El capital es $$C = 8000$$. La tasa es $$r = 6 \\% = 0,06$$ semestral. El tiempo es 1 año y 3 meses, que equivale a $$15$$ meses. Como un semestre tiene $$6$$ meses, el tiempo en semestres es $$t = \\frac{15}{6} = 2,5$$ semestres. Usando la fórmula de interés simple $$I = C \\cdot r \\cdot t$$:\n$$I = 8000 \\cdot 0,06 \\cdot 2,5$$\n$$I = 480 \\cdot 2,5$$\n$$I = 1200$$\nSofía deberá pagar S/ 1200 de interés.",
+      "imagen": null,
+      "id_temporal": "ari_int_011"
+    },
+    {
+      "pregunta": "¿Qué capital se debe invertir para generar un interés simple de S/ 720 en 9 meses, si la tasa de interés anual es del 12 %?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 6000",
+        "B": "S/ 6500",
+        "C": "S/ 7200",
+        "D": "S/ 8000",
+        "E": "S/ 8500"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "El interés es $$I = 720$$. La tasa anual es $$r = 12 \\% = 0,12$$. El tiempo es $$t = 9$$ meses, que en años es $$t = \\frac{9}{12} = 0,75$$ años. Usando la fórmula de interés simple $$I = C \\cdot r \\cdot t$$ y despejando el capital (C):\n$$C = \\frac{I}{r \\cdot t}$$\n$$C = \\frac{720}{0,12 \\cdot 0,75}$$\n$$C = \\frac{720}{0,09}$$\n$$C = 8000$$\nSe debe invertir un capital de S/ 8000.",
+      "imagen": null,
+      "id_temporal": "ari_int_012"
+    },
+    {
+      "pregunta": "¿A qué tasa de interés simple anual debe colocarse un capital para que en 2 años, el interés producido sea equivalente a la cuarta parte de dicho capital?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10 \\ %$$",
+        "B": "$$12,5 \\ %$$",
+        "C": "$$15 \\ %$$",
+        "D": "$$18 \\ %$$",
+        "E": "$$20 \\ %$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El tiempo es $$t = 2$$ años. El interés $$I$$ es la cuarta parte del capital $$C$$, es decir, $$I = \\frac{C}{4}$$. Usando la fórmula de interés simple $$I = C \\cdot r \\cdot t$$:\n$$\\frac{C}{4} = C \\cdot r \\cdot 2$$\nDividiendo ambos lados por $$C$$ (asumiendo $$C \\ne 0$$):\n$$\\frac{1}{4} = r \\cdot 2$$\nDespejando la tasa $$r$$:\n$$r = \\frac{1}{4 \\cdot 2}$$\n$$r = \\frac{1}{8}$$\nPara expresar la tasa en porcentaje:\n$$r = \\frac{1}{8} \\cdot 100 \\ %$$\n$$r = 12,5 \\ %$$\nLa tasa de interés simple anual debe ser del $$12,5 \\ %$$.",
+      "imagen": null,
+      "id_temporal": "ari_int_013"
+    },
+    {
+      "pregunta": "La diferencia entre dos capitales es S/ 3000. El primer capital se impone al 6 % anual durante 4 años, y el segundo capital al 5 % anual durante 8 años. Si los intereses generados por ambos capitales son iguales, determine el capital mayor.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 4500",
+        "B": "S/ 6000",
+        "C": "S/ 7000",
+        "D": "S/ 7500",
+        "E": "S/ 8000"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sean $$C_1$$ y $$C_2$$ los capitales. Se sabe que $$C_1 - C_2 = 3000$$ (asumiendo $$C_1$$ es el mayor).\nEl interés del primer capital es $$I_1 = C_1 \\cdot 0,06 \\cdot 4 = 0,24 C_1$$.\nEl interés del segundo capital es $$I_2 = C_2 \\cdot 0,05 \\cdot 8 = 0,40 C_2$$.\nComo los intereses son iguales ($$I_1 = I_2$$):\n$$0,24 C_1 = 0,40 C_2$$\n$$24 C_1 = 40 C_2$$\nDividiendo por $$8$$:\n$$3 C_1 = 5 C_2$$\nDe aquí, $$C_1 = \\frac{5}{3} C_2$$.\nSustituimos $$C_1$$ en la ecuación de la diferencia:\n$$\\frac{5}{3} C_2 - C_2 = 3000$$\n$$\\frac{5 C_2 - 3 C_2}{3} = 3000$$\n$$\\frac{2 C_2}{3} = 3000$$\n$$2 C_2 = 9000$$\n$$C_2 = 4500$$\nEntonces, el capital mayor es $$C_1 = C_2 + 3000 = 4500 + 3000 = 7500$$.",
+      "imagen": null,
+      "id_temporal": "ari_int_014"
+    },
+    {
+      "pregunta": "Un inversionista coloca S/ 10 000 en dos entidades financieras. Una parte se invierte al 1 % de interés simple mensual y el resto al 3 % de interés simple bimestral. Si al cabo de 1 año obtiene un interés total de S/ 1560, ¿cuánto dinero invirtió al 3 % bimestral?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/ 3000",
+        "B": "S/ 4000",
+        "C": "S/ 5000",
+        "D": "S/ 6000",
+        "E": "S/ 7000"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$x$$ la cantidad invertida al 1 % mensual. La cantidad invertida al 3 % bimestral será $$(10000 - x)$$. El tiempo es 1 año, que son $$12$$ meses o $$6$$ bimestres.\nInterés de la primera parte ($$I_1$$):\n$$I_1 = x \\cdot 0,01 \\cdot 12 = 0,12x$$\nInterés de la segunda parte ($$I_2$$):\n$$I_2 = (10000 - x) \\cdot 0,03 \\cdot 6 = (10000 - x) \\cdot 0,18 = 1800 - 0,18x$$\nEl interés total es $$I_{total} = I_1 + I_2 = 1560$$:\n$$1560 = 0,12x + 1800 - 0,18x$$\n$$1560 = 1800 - 0,06x$$\n$$0,06x = 1800 - 1560$$\n$$0,06x = 240$$\n$$x = \\frac{240}{0,06}$$\n$$x = 4000$$\nLa cantidad invertida al 1 % mensual es S/ 4000. La cantidad invertida al 3 % bimestral es $$10000 - x = 10000 - 4000 = 6000$$.",
+      "imagen": null,
+      "id_temporal": "ari_int_015"
+    }
+  ]
+}

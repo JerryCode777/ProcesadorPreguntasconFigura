@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 1,
+  "total_temas": 29,
+  "titulo_tema": "DIVISIÓN DE POLINOMIOS",
+  "tema": "division_de_polinomios",
+  "preguntas": [
+    {
+      "pregunta": "Al dividir el polinomio $$Q(x)$$ entre $$(x - 3)(x - 4)(x^3 + 5)$$, se obtiene un resto igual a: $$5x + 7$$; hallar el resto de dividir $$Q(x)$$ entre $$x - 3$$ y $$Q(x)$$ entre $$x - 4$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$22 ; 27$$",
+        "B": "$$27 ; 22$$",
+        "C": "$$-22 ; 27$$",
+        "D": "$$0 ; 0$$",
+        "E": "$$22 ; -27$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Si al dividir $$Q(x)$$ por $$(x - 3)(x - 4)(x^3 + 5)$$ el resto es $$5x + 7$$, entonces $$Q(x)$$ y $$5x + 7$$ tienen el mismo valor cuando $$x = 3$$ y $$x = 4$$. Para $$x = 3$$: $$Q(3) = 5(3) + 7 = 15 + 7 = 22$$. Para $$x = 4$$: $$Q(4) = 5(4) + 7 = 20 + 7 = 27$$. Por lo tanto, el resto de dividir $$Q(x)$$ entre $$x - 3$$ es $$22$$ y entre $$x - 4$$ es $$27$$, siendo la opción A la correcta.",
+      "id_temporal": "alg_div_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Don Pedro invierte en un fondo cuyo monto, en dólares, es el valor numérico de la suma de los coeficientes del siguiente polinomio homogéneo: $$P(a ; b) = (3k + 2)a^{10} b^{(m^2)} + 5s a^s b^k + (4s + 6k)a^{(2m)} b^{(m^2 - 14)}$$. Si el fondo le cobra una tarifa del 15% del monto, ¿cuánto recibe finalmente Don Pedro?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1179.8$$",
+        "B": "$$1249.2$$",
+        "C": "$$1300$$",
+        "D": "$$1150.5$$",
+        "E": "$$1400$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como el polinomio es homogéneo, todos los términos deben tener el mismo grado total. Primer término: $$10 + m^2$$. Tercer término: $$2m + (m^2 - 14)$$. Igualando: $$10 + m^2 = 2m + m^2 - 14 \\ 10 = 2m - 14 \\ 2m = 24 \\ m = 12$$. El grado total es: $$10 + m^2 = 10 + 12^2 = 10 + 144 = 154$$. Para el segundo término: $$s + k = 154$$. La suma de coeficientes es: $$(3k + 2) + 5s + (4s + 6k) = 9k + 9s + 2 = 9(k + s) + 2$$. Sustituyendo $$s + k = 154$$: $$9(154) + 2 = 1386 + 2 = 1388$$. El monto depositado es $$1388$$ dólares. El fondo cobra el 15%, por lo tanto, Don Pedro recibe el 85%: $$0.85 \\times 1388 = 1179.8$$. La respuesta correcta es la A.",
+      "id_temporal": "alg_div_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si los polinomios $$V(x) = 2(qx + r)^2 + qx^2 - 2r$$ y $$W(x) = 4(9x^2 + 12x + 3)$$ son idénticos. Calcular $$V(-1)$$, sabiendo que $$q > 0$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$1$$",
+        "C": "$$-2$$",
+        "D": "$$3$$",
+        "E": "$$-1$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Desarrollamos $$V(x)$$: $$V(x) = 2(q^2 x^2 + 2qrx + r^2) + qx^2 - 2r = (2q^2 + q)x^2 + 4qrx + (2r^2 - 2r)$$. Desarrollamos $$W(x)$$: $$W(x) = 36x^2 + 48x + 12$$. Igualando coeficientes: $$2q^2 + q = 36 \\ 2q^2 + q - 36 = 0 \\ (2q + 9)(q - 4) = 0$$. Dado que $$q > 0$$, entonces $$q = 4$$. Luego, $$4qr = 48 \\ 4(4)r = 48 \\ 16r = 48 \\ r = 3$$. Finalmente, calculamos $$V(-1)$$: $$V(-1) = 2(q(-1) + r)^2 + q(-1)^2 - 2r \\ V(-1) = 2(-4 + 3)^2 + 4 - 2(3) \\ V(-1) = 2(-1)^2 + 4 - 6 \\ V(-1) = 2(1) + 4 - 6 \\ V(-1) = 2 + 4 - 6 = 0$$. La respuesta correcta es A.",
+      "id_temporal": "alg_div_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "El premio de un concurso, en dólares, se calcula como el término independiente del polinomio mónico $$Q(t ; s) = 4t^k + 3t^{(20 - k)} - 2t^{(k - 15)} + 6t^{(k/4)} + (c - k)t^{(k + 3)} + 10 - k + 4c$$. Si el ganador debe donar $$c + 5$$ dólares, ¿cuánto dinero le queda?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$48$$",
+        "B": "$$50$$",
+        "C": "$$42$$",
+        "D": "$$39$$",
+        "E": "$$55$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que sea un polinomio, todos los exponentes deben ser enteros no negativos. De $$k - 15 \\ge 0 \\Rightarrow k \\ge 15$$. De $$20 - k \\ge 0 \\Rightarrow k \\le 20$$. Además, $$k/4$$ debe ser un entero. Los valores posibles para $$k$$ en el rango $$[15, 20]$$ que son múltiplos de 4 son $$k = 16$$ y $$k = 20$$. El término de mayor grado es $$t^{(k+3)}$$. Si $$k=16$$, el mayor exponente es $$19$$. Si $$k=20$$, el mayor exponente es $$23$$. Por lo tanto, $$k=20$$ es el valor que define el término de mayor grado. Como el polinomio es mónico, el coeficiente del término de mayor grado (cuando el exponente es $$k+3 = 23$$) debe ser 1. Entonces, $$c - k = 1 \\ c - 20 = 1 \\ c = 21$$. El término independiente es: $$10 - k + 4c = 10 - 20 + 4(21) = 10 - 20 + 84 = -10 + 84 = 74$$. El ganador tiene $$74$$ dólares. Si gasta $$c + 5 = 21 + 5 = 26$$ dólares. Le quedan: $$74 - 26 = 48$$ dólares. La respuesta correcta es A.",
+      "id_temporal": "alg_div_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Luego de realizar la división $$(4x^4 + 9x^3 + px^2 + qx + r) / (x^2 + 3x + 1)$$ se obtiene un cociente cuya suma de coeficientes es 9 y como resto $$R(x) = 2x + 5$$. Determine el valor de $$F = (p + q) / r$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$2$$",
+        "B": "$$3$$",
+        "C": "$$1$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea el cociente $$Q(x) = ux^2 + vx + w$$. La suma de coeficientes es $$u + v + w = 9$$. Se cumple que Dividendo = divisor $$ \\times $$ cociente + resto. Entonces: $$(x^2 + 3x + 1)(ux^2 + vx + w) + (2x + 5) = ux^4 + (v + 3u)x^3 + (w + 3v + u)x^2 + (3w + v + 2)x + (w + 5)$$. Igualando coeficientes con $$4x^4 + 9x^3 + px^2 + qx + r$$: 1. Coeficiente de $$x^4$$: $$u = 4$$. 2. Coeficiente de $$x^3$$: $$v + 3u = 9 \\ v + 3(4) = 9 \\ v + 12 = 9 \\ v = -3$$. 3. Usando la suma de coeficientes del cociente: $$u + v + w = 9 \\ 4 + (-3) + w = 9 \\ 1 + w = 9 \\ w = 8$$. Ahora, encontramos $$p, q, r$$: 4. Coeficiente de $$x^2$$: $$p = w + 3v + u = 8 + 3(-3) + 4 = 8 - 9 + 4 = 3$$. 5. Coeficiente de $$x$$: $$q = 3w + v + 2 = 3(8) + (-3) + 2 = 24 - 3 + 2 = 23$$. 6. Término independiente: $$r = w + 5 = 8 + 5 = 13$$. Finalmente, calculamos $$F = (p + q) / r = (3 + 23) / 13 = 26 / 13 = 2$$. La respuesta correcta es A.",
+      "id_temporal": "alg_div_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Al dividir el polinomio $$P(x)$$ entre $$(x - 3)(x - 4)(x^5 + 7)$$, se obtiene un resto igual a: $$2x + 5$$. Halle el resto de dividir $$P(x)$$ entre $$x - 3$$ y $$P(x)$$ entre $$x - 4$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$11 ; 13$$",
+        "B": "$$13 ; 11$$",
+        "C": "$$-11 ; -13$$",
+        "D": "$$0 ; 0$$",
+        "E": "$$5 ; 2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Si al dividir $$P(x)$$ por $$(x - 3)(x - 4)(x^5 + 7)$$ el resto es $$2x + 5$$, entonces $$P(x)$$ y $$2x + 5$$ tienen el mismo valor cuando $$x = 3$$ y $$x = 4$$.Para $$x = 3$$: $$P(3) = 2(3) + 5 = 6 + 5 = 11$$.Para $$x = 4$$: $$P(4) = 2(4) + 5 = 8 + 5 = 13$$.Por lo tanto, los restos son $$11$$ y $$13$$ respectivamente.",
+      "id_temporal": "alg_div_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un investigador recibe una subvención cuyo monto, en miles de dólares, resulta ser la suma de los coeficientes del siguiente polinomio homogéneo: $$P(x ; y) = (3p + 7)x^9 y^{q^2} + 10r x^r y^p + (5r + 12p)x^{4q} y^{q^2 – 27}$$. Si la institución que otorga la subvención retiene una comisión del 15% del monto, ¿cuánto recibe finalmente el investigador?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1153.45$$",
+        "B": "$$1200.75$$",
+        "C": "$$1357$$",
+        "D": "$$1050.25$$",
+        "E": "$$980.15$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como el polinomio es homogéneo, todos los términos deben tener el mismo grado total.Grado del primer término: $$9 + q^2$$.Grado del tercer término: $$4q + (q^2 – 27)$$.Igualando los grados: $$9 + q^2 = 4q + q^2 – 27$$. $$9 = 4q – 27$$. $$4q = 36$$. $$q = 9$$.El grado total es: $$9 + 9^2 = 9 + 81 = 90$$.Para el segundo término, su grado total también debe ser $$90$$: $$r + p = 90$$.La suma de coeficientes es: $$(3p + 7) + 10r + (5r + 12p) = 15p + 15r + 7 = 15(p + r) + 7$$.Sustituyendo $$p + r = 90$$: $$15(90) + 7 = 1350 + 7 = 1357$$.El monto de la subvención es $$1357$$ miles de dólares.La institución retiene el 15%, por lo tanto el investigador recibe el $$100\\% - 15\\% = 85\\%$$.Finalmente recibe: $$0.85 \times 1357 = 1153.45$$ miles de dólares.",
+      "id_temporal": "alg_div_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si los polinomios $$A(x) = 4(mx + n)^2 + mx^2 – 3n$$ y $$B(x) = 5(21x^2 + 16x + p)$$ son idénticos y $$m > 0$$. Calcule el valor de $$A(-1)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$35$$",
+        "B": "$$30$$",
+        "C": "$$25$$",
+        "D": "$$40$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Desarrollamos $$A(x)$$: $$A(x) = 4(m^2 x^2 + 2mnx + n^2) + mx^2 – 3n = (4m^2 + m)x^2 + 8mnx + (4n^2 – 3n)$$.Desarrollamos $$B(x)$$: $$B(x) = 105x^2 + 80x + 5p$$.Igualando coeficientes:1. Coeficientes de $$x^2$$: $$4m^2 + m = 105$$. $$4m^2 + m – 105 = 0$$. Factorizando obtenemos $$(4m + 21)(m - 5) = 0$$. Como $$m > 0$$, entonces $$m = 5$$.2. Coeficientes de $$x$$: $$8mn = 80$$. $$8(5)n = 80$$. $$40n = 80$$. $$n = 2$$.Calculamos $$A(-1)$$: $$A(-1) = 4(m(-1) + n)^2 + m(-1)^2 – 3n$$. $$A(-1) = 4(5(-1) + 2)^2 + 5(-1)^2 – 3(2)$$. $$A(-1) = 4(-5 + 2)^2 + 5 – 6$$. $$A(-1) = 4(-3)^2 – 1$$. $$A(-1) = 4(9) – 1 = 36 – 1 = 35$$.Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_div_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "El término independiente del polinomio mónico $$S(x) = 5x^k + 3x^{20 – k} – 2x^{k – 17} + 6x^{k/4} + (c – k)x^{k + 3} + 10 – k + 4c$$ representa la cantidad en miles de dólares de un fondo de becas. ¿Cuánto quedaría en el fondo si se desembolsan $$c + 5$$ miles de dólares?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$48$$",
+        "B": "$$50$$",
+        "C": "$$60$$",
+        "D": "$$74$$",
+        "E": "$$26$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que sea un polinomio, todos los exponentes deben ser enteros no negativos.1. $$k \\ge 0$$2. $$20 – k \\ge 0 \\implies k \\le 20$$3. $$k – 17 \\ge 0 \\implies k \\ge 17$$4. $$k/4$$ debe ser un entero.De las condiciones $$k \\ge 17$$ y $$k \\le 20$$, los posibles valores de $$k$$ son $$17, 18, 19, 20$$. El único valor que hace que $$k/4$$ sea entero es $$k = 20$$.Como el polinomio es mónico, el coeficiente del término de mayor grado debe ser $$1$$.Evaluando los exponentes con $$k=20$$: $$20, 0, 3, 5, 23$$. El mayor exponente es $$k + 3 = 23$$.Su coeficiente es $$(c – k)$$. Por lo tanto, $$c – k = 1$$. $$c – 20 = 1 \\implies c = 21$$.El término independiente del polinomio es $$10 – k + 4c$$.Sustituyendo $$k=20$$ y $$c=21$$: $$10 – 20 + 4(21) = -10 + 84 = 74$$.El fondo de becas tiene $$74$$ mil dólares.Se desembolsan $$c + 5$$ miles de dólares: $$21 + 5 = 26$$ miles de dólares.La cantidad restante en el fondo es: $$74 – 26 = 48$$ miles de dólares.",
+      "id_temporal": "alg_div_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Al dividir el polinomio $$Q(x)$$ entre $$x$$, el resto es $$75$$ y al dividirlo entre $$x – 5$$, el resto es $$125$$. Halle el resto de la división de $$Q(x)$$ entre $$x^2 – 5x$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$10x + 75$$",
+        "B": "$$5x + 75$$",
+        "C": "$$x + 50$$",
+        "D": "$$10x + 125$$",
+        "E": "$$15x + 25$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $$x^2 – 5x = x(x – 5)$$, el divisor es de grado 2, por lo tanto el resto es un polinomio de grado menor que 2, es decir, de la forma $$R(x) = ax + b$$.Según el Teorema del Resto:1. Al dividir $$Q(x)$$ entre $$x$$, el resto es $$Q(0)$$. Nos dicen que es $$75$$. Entonces $$Q(0) = 75$$.Sustituyendo $$x=0$$ en $$R(x)$$ obtenemos: $$a(0) + b = 75 \\implies b = 75$$.2. Al dividir $$Q(x)$$ entre $$x – 5$$, el resto es $$Q(5)$$. Nos dicen que es $$125$$. Entonces $$Q(5) = 125$$.Sustituyendo $$x=5$$ en $$R(x)$$ obtenemos: $$a(5) + b = 125$$. Como ya sabemos que $$b=75$$: $$5a + 75 = 125$$. $$5a = 125 – 75$$. $$5a = 50$$. $$a = 10$$.El resto de la división es $$R(x) = ax + b = 10x + 75$$.",
+      "id_temporal": "alg_div_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Al dividir el polinomio $$M(x)$$ entre $$(x - 2)(x + 5)(x^3 + 4)$$, se obtiene un resto igual a: $$4x + 9$$. Hallar el resto de dividir $$M(x)$$ entre $$x + 5$$ y $$M(x)$$ entre $$x - 2$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$-11 ; 17$$",
+        "B": "$$17 ; -11$$",
+        "C": "$$-11 ; -17$$",
+        "D": "$$17 ; 11$$",
+        "E": "$$9 ; 4$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Si al dividir $$M(x)$$ por $$(x - 2)(x + 5)(x^3 + 4)$$ el resto es $$4x + 9$$, entonces $$M(x)$$ y $$4x + 9$$ tienen el mismo valor cuando $$x = 2$$ y $$x = -5$$. Para $$x = -5$$: $$M(-5) = 4(-5) + 9 = -20 + 9 = -11$$. Para $$x = 2$$: $$M(2) = 4(2) + 9 = 8 + 9 = 17$$. Por lo tanto, los restos son $$-11$$ y $$17$$, respectivamente.",
+      "id_temporal": "alg_div_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "La fundación 'Innovación Verde' recibe un subsidio, cuyo monto en dólares, es el valor numérico de la suma de los coeficientes del siguiente polinomio homogéneo: $$Q(a ; b) = (7k + 9)a^6 b^{p^2} + 10j a^j b^k + (5j + 8k + 12)a^{3p} b^{p^2 – 18}$$. Si la agencia gubernamental cobra una comisión del 15% del subsidio, ¿cuánto recibe finalmente la fundación?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$910.35$$",
+        "B": "$$850.25$$",
+        "C": "$$1071$$",
+        "D": "$$150$$",
+        "E": "$$920.75$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como el polinomio es homogéneo, todos los términos deben tener el mismo grado total. Igualando los grados de los términos: $$6 + p^2 = 3p + p^2 – 18$$. Simplificando: $$6 = 3p – 18$$, lo que da $$3p = 24$$ y $$p = 8$$. El grado total es $$6 + p^2 = 6 + 8^2 = 6 + 64 = 70$$. Para el segundo término, el grado es $$j + k = 70$$. La suma de coeficientes es: $$(7k + 9) + 10j + (5j + 8k + 12) = 15k + 15j + 21 = 15(k + j) + 21$$. Sustituyendo $$k + j = 70$$: $$15(70) + 21 = 1050 + 21 = 1071$$. El subsidio es de $$1071$$ dólares. La agencia cobra el 15%, por lo tanto, la fundación recibe el $$100\\% - 15\\% = 85\\%$$: $$0.85 \times 1071 = 910.35$$ dólares.",
+      "id_temporal": "alg_div_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si los polinomios $$P(x) = 3(ax + b)^2 + ax^2 – 5b$$ y $$R(x) = 2(15x^2 + 18x + 1)$$ son idénticos. Calcular $$P(–2)$$, sabiendo que $$a > 0$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$48$$",
+        "B": "$$50$$",
+        "C": "$$52$$",
+        "D": "$$45$$",
+        "E": "$$55$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Desarrollamos $$P(x)$$: $$P(x) = 3(a^2 x^2 + 2abx + b^2) + ax^2 – 5b = (3a^2 + a)x^2 + 6abx + (3b^2 – 5b)$$. Desarrollamos $$R(x)$$: $$R(x) = 30x^2 + 36x + 2$$. Igualando coeficientes: Para $$x^2$$: $$3a^2 + a = 30 \\Rightarrow 3a^2 + a – 30 = 0$$. Factorizando: $$(3a + 10)(a - 3) = 0$$. Como $$a > 0$$, entonces $$a = 3$$. Para $$x$$: $$6ab = 36 \\Rightarrow 6(3)b = 36 \\Rightarrow 18b = 36 \\Rightarrow b = 2$$. Verificamos constante: $$3b^2 - 5b = 3(2^2) - 5(2) = 12 - 10 = 2$$, que coincide con el constante de $$R(x)$$. Finalmente, calculamos $$P(–2)$$: $$P(-2) = 3(3(-2) + 2)^2 + 3(-2)^2 – 5(2) = 3(-6 + 2)^2 + 3(4) – 10 = 3(-4)^2 + 12 – 10 = 3(16) + 2 = 48 + 2 = 50$$.",
+      "id_temporal": "alg_div_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "El término independiente del polinomio mónico $$Q(z) = 4z^k + 3z^{20 – k} – 2z^{k – 15} + 6z^{k/4} + (c – k)z^{k + 3} + 10 – k + 2c$$ representa la cantidad en soles que Carla tiene para su viaje. ¿Cuánto le quedaría si gasta $$c + 5$$ soles?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$6$$",
+        "B": "$$10$$",
+        "C": "$$12$$",
+        "D": "$$8$$",
+        "E": "$$4$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que sea un polinomio, todos los exponentes deben ser enteros no negativos. De $$k – 15 \\ge 0 \\Rightarrow k \\ge 15$$. De $$20 – k \\ge 0 \\Rightarrow k \\le 20$$. Además, $$k/4$$ debe ser un entero. El único valor posible para $$k$$ que cumple estas condiciones es $$k = 16$$. Como el polinomio es mónico, el coeficiente del término de mayor grado debe ser 1. El mayor exponente es $$k + 3 = 16 + 3 = 19$$, cuyo coeficiente es $$c – k$$. Entonces, $$c – k = 1 \\Rightarrow c – 16 = 1 \\Rightarrow c = 17$$. El término independiente es: $$10 – k + 2c = 10 – 16 + 2(17) = 10 – 16 + 34 = -6 + 34 = 28$$. Carla tiene $$28$$ soles. Gasta $$c + 5 = 17 + 5 = 22$$ soles. Le queda: $$28 – 22 = 6$$ soles.",
+      "id_temporal": "alg_div_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si los polinomios $$P(x) = (x – 1)(x – 2)(x – 3)(x – 4) + 1$$ y $$Q(x) = (gx^2 + hx + i)^j$$ son idénticos, halle $$g^2 + h + i + j$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$3$$",
+        "B": "$$1$$",
+        "C": "$$-2$$",
+        "D": "$$7$$",
+        "E": "$$0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Desarrollamos $$P(x)$$: Agrupamos los términos de forma conveniente: $$P(x) = [(x – 1)(x – 4)][(x – 2)(x – 3)] + 1$$ $$P(x) = (x^2 – 5x + 4)(x^2 – 5x + 6) + 1$$ Hacemos una sustitución temporal: sea $$y = x^2 – 5x$$. Entonces, $$P(x) = (y + 4)(y + 6) + 1$$ $$P(x) = y^2 + 10y + 24 + 1$$ $$P(x) = y^2 + 10y + 25$$ $$P(x) = (y + 5)^2$$ Sustituimos $$y$$ de nuevo: $$P(x) = (x^2 – 5x + 5)^2$$. Comparando con $$Q(x) = (gx^2 + hx + i)^j$$, identificamos los valores: $$g = 1$$ (coeficiente de $$x^2$$), $$h = -5$$ (coeficiente de $$x$$), $$i = 5$$ (término independiente), $$j = 2$$ (el exponente del binomio). Finalmente, calculamos: $$g^2 + h + i + j = 1^2 + (-5) + 5 + 2 = 1 - 5 + 5 + 2 = 3$$.",
+      "id_temporal": "alg_div_015",
+      "imagen": null
+    }
+  ]
+}

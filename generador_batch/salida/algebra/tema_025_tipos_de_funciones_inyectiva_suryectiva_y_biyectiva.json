@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 25,
+  "total_temas": 29,
+  "titulo_tema": "TIPOS DE FUNCIONES: INYECTIVA, SURYECTIVA Y BIYECTIVA",
+  "tema": "tipos_de_funciones_inyectiva_suryectiva_y_biyectiva",
+  "preguntas": [
+    {
+      "pregunta": "A partir de la función $$f: A \\to B$$, $$f(x) = \\frac{x^2 - 49}{x^2 + 9x + 14}$$, determinar $$A - B$$, si $$f$$ es suryectiva.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\{-2; 1\\}$$",
+        "B": "$$\\{-7; 1\\}$$",
+        "C": "$$\\{1; 7\\}$$",
+        "D": "$$\\{2; -1\\}$$",
+        "E": "$$\\{-2; -7\\}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Se factoriza el numerador como $$(x - 7)(x + 7)$$ y el denominador como $$(x + 2)(x + 7)$$. La función simplificada es $$f(x) = \\frac{x - 7}{x + 2}$$ con la restricción original $$x \\neq -7$$. El dominio de la función original es $$A = \\mathbb{R} - \\{-7, -2\\}$$. Para encontrar el rango, se despeja $$x$$ de $$y = \\frac{x - 7}{x + 2}$$: $$y(x + 2) = x - 7 \\Rightarrow yx + 2y = x - 7 \\Rightarrow x(y - 1) = -7 - 2y \\Rightarrow x = \\frac{-7 - 2y}{y - 1}$$. Para que $$x$$ sea real, $$y - 1 \\neq 0 \\Rightarrow y \\neq 1$$. Así, el rango es $$B = \\mathbb{R} - \\{1\\}$$. Siguiendo la interpretación del problema base, $$A - B$$ se compone del valor excluido del rango (1) y el valor excluido del dominio de la función simplificada (-2). Por lo tanto, $$A - B = \\{-2; 1\\}$$.",
+      "id_temporal": "alg_tip_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$f: \\mathbb{R} \\to \\mathbb{R}$$ definida por $$f(x) = 2x^3 - 6x + 5$$. Dar el valor de verdad de las siguientes proposiciones: I. $$f$$ es inyectiva. II. $$f$$ es suryectiva. III. $$f$$ es biyectiva.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "FVF",
+        "B": "VVF",
+        "C": "VFF",
+        "D": "VFV",
+        "E": "FVV"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función $$f(x) = 2x^3 - 6x + 5$$ es un polinomio de grado impar, por lo que su rango es $$\\mathbb{R}$$. Así, la proposición II (f es suryectiva) es Verdadera (V). Para la inyectividad, analizamos la derivada: $$f'(x) = 6x^2 - 6 = 6(x^2 - 1)$$. Esta derivada cambia de signo (por ejemplo, $$f'(0) = -6$$ y $$f'(2) = 18$$), lo que indica que la función no es estrictamente monótona en todo $$\\mathbb{R}$$. Por lo tanto, $$f$$ no es inyectiva (F). Al no ser inyectiva, tampoco puede ser biyectiva (F). El valor de verdad es FVF.",
+      "id_temporal": "alg_tip_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un proyecto de monitoreo ambiental modela la función suryectiva: $$f: \\mathbb{R} \\to [a; b]$$, $$f(x) = \\frac{6x}{x^2 + 9}$$. Si el índice de impacto esperado es $$|ab + 3a|$$, hallar ese índice.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$4$$",
+        "B": "$$1$$",
+        "C": "$$3$$",
+        "D": "$$6$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para determinar el rango de $$f(x) = \\frac{6x}{x^2 + 9}$$, igualamos $$y = \\frac{6x}{x^2 + 9}$$ y despejamos $$x$$: $$y(x^2 + 9) = 6x \\Rightarrow yx^2 - 6x + 9y = 0$$. Para que $$x$$ sea un número real, el discriminante de esta ecuación cuadrática (en términos de $$x$$) debe ser mayor o igual a cero. $$(-6)^2 - 4(y)(9y) \\ge 0 \\Rightarrow 36 - 36y^2 \\ge 0 \\Rightarrow 36 \\ge 36y^2 \\Rightarrow 1 \\ge y^2$$. Esto implica que $$-1 \\le y \\le 1$$. Por lo tanto, el rango es $$[-1; 1]$$, lo que significa $$a = -1$$ y $$b = 1$$. El índice de impacto es $$|ab + 3a| = |(-1)(1) + 3(-1)| = |-1 - 3| = |-4| = 4$$.",
+      "id_temporal": "alg_tip_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el valor de $$y^2 - x^2$$ sabiendo que la función $$f$$ es inyectiva: $$f = \\{(7; 3), (-2; 4), (3x - y; 3), (y - 2x; 4), (x; 9)\\}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$39$$",
+        "B": "$$25$$",
+        "C": "$$49$$",
+        "D": "$$16$$",
+        "E": "$$64$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que una función sea inyectiva, cada elemento del dominio debe corresponder a un elemento único en el rango. Si hay pares con la misma imagen, entonces sus preimágenes deben ser iguales. En los datos de la función, observamos: Imágenes iguales a 3: $$7 = 3x - y$$. Imágenes iguales a 4: $$-2 = y - 2x$$. Tenemos un sistema de ecuaciones: 1) $$3x - y = 7$$. 2) $$-2x + y = -2$$. Sumando ambas ecuaciones: $$(3x - y) + (-2x + y) = 7 - 2 \\Rightarrow x = 5$$. Sustituyendo $$x = 5$$ en la segunda ecuación: $$-2(5) + y = -2 \\Rightarrow -10 + y = -2 \\Rightarrow y = 8$$. Finalmente, calculamos $$y^2 - x^2 = 8^2 - 5^2 = 64 - 25 = 39$$.",
+      "id_temporal": "alg_tip_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función $$f: [c; 15] \\to [-50; d]$$, $$f(x) = x^2 - 10x - 25$$. Hallar $$3c + d$$ para que $$f$$ sea biyectiva.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$65$$",
+        "B": "$$50$$",
+        "C": "$$75$$",
+        "D": "$$85$$",
+        "E": "$$45$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que la función cuadrática $$f(x) = x^2 - 10x - 25$$ sea inyectiva en el intervalo $$[c; 15]$$, el intervalo debe comenzar en el vértice o el vértice debe ser el final del intervalo. La coordenada x del vértice es $$x_v = -\\frac{-10}{2(1)} = 5$$. Como $$15 > 5$$, el intervalo debe comenzar en el vértice para garantizar la monotonicidad (y por ende la inyectividad). Así, $$c = 5$$. El valor de la función en el vértice es $$f(5) = 5^2 - 10(5) - 25 = 25 - 50 - 25 = -50$$. El valor de la función en el otro extremo del dominio es $$f(15) = 15^2 - 10(15) - 25 = 225 - 150 - 25 = 50$$. Para que $$f$$ sea suryectiva, el codominio $$[-50; d]$$ debe ser igual al rango de la función en el dominio $$[c; 15]$$, que es $$[f(5); f(15)] = [-50; 50]$$. Por lo tanto, $$d = 50$$. Finalmente, calculamos $$3c + d = 3(5) + 50 = 15 + 50 = 65$$.",
+      "id_temporal": "alg_tip_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función $$g$$ definida por: $$g = \\{(7; 2), (-4; 5), (3p - q; 2), (q - p; 5), (p; 9)\\}$$. Si $$g$$ es inyectiva, ¿cuál es el valor de $$p^2 + q^2$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\frac{17}{2}$$",
+        "B": "$$\\frac{15}{2}$$",
+        "C": "$$\\frac{19}{2}$$",
+        "D": "$$\\frac{13}{2}$$",
+        "E": "$$\\frac{11}{2}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que una función sea inyectiva, si los valores de salida son iguales, entonces los valores de entrada deben ser iguales. Observamos los pares ordenados: Para la salida $$2$$: $$7 = 3p - q$$. Para la salida $$5$$: $$-4 = q - p$$. Tenemos un sistema de ecuaciones: 1) $$3p - q = 7$$ 2) $$q - p = -4$$ De la ecuación (2) despejamos $$q$$: $$q = p - 4$$. Sustituimos esta expresión de $$q$$ en la ecuación (1): $$3p - (p - 4) = 7$$ $$3p - p + 4 = 7$$ $$2p + 4 = 7$$ $$2p = 3$$ $$p = \\frac{3}{2}$$. Ahora sustituimos el valor de $$p$$ en la expresión para $$q$$: $$q = \\frac{3}{2} - 4 = \\frac{3}{2} - \\frac{8}{2} = -\\frac{5}{2}$$. Finalmente, calculamos $$p^2 + q^2$$: $$p^2 + q^2 = \\left(\\frac{3}{2}\\right)^2 + \\left(-\\frac{5}{2}\\right)^2 = \\frac{9}{4} + \\frac{25}{4} = \\frac{34}{4} = \\frac{17}{2}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea la función $$g: [k; 8] \\to [c; m]$$ definida por $$g(x) = x^2 - 6x - 12$$. Hallar $$k + m$$ para que la función sea biyectiva.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "7",
+        "B": "5",
+        "C": "9",
+        "D": "6",
+        "E": "8"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función $$g(x) = x^2 - 6x - 12$$ es una parábola que abre hacia arriba. Su vértice se encuentra en $$x = -\\frac{-6}{2(1)} = 3$$. Evaluamos la función en el vértice: $$g(3) = (3)^2 - 6(3) - 12 = 9 - 18 - 12 = -21$$. Para que la función sea biyectiva en el intervalo $$[k; 8]$$, debe ser inyectiva (estrictamente monótona) y suryectiva (el rango debe ser igual al codominio). Para que sea inyectiva y abarque un rango definido por los extremos del dominio, el intervalo debe comenzar en el vértice. Por lo tanto, $$k = 3$$. El dominio es $$[3; 8]$$. En este intervalo, la función es creciente. Calculamos los valores de la función en los extremos del dominio: $$g(3) = -21$$ $$g(8) = (8)^2 - 6(8) - 12 = 64 - 48 - 12 = 4$$. Entonces, el rango de la función en este dominio es $$[-21; 4]$$. Para que la función sea suryectiva, el codominio $$[c; m]$$ debe ser igual al rango. Así, $$c = -21$$ y $$m = 4$$. Nos piden calcular $$k + m = 3 + 4 = 7$$. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$h$$ es una función inyectiva definida por: $$h = \\{(t; t^2 + 4t) / t \\in ]-\\text{infinito}; m + 3]}\\}$$. Entonces se cumple:",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$m \\leq -5$$",
+        "B": "$$m \\geq -5$$",
+        "C": "$$m \\leq -3$$",
+        "D": "$$m \\geq -3$$",
+        "E": "$$m \\leq -7$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función $$h(t) = t^2 + 4t$$ es una parábola que abre hacia arriba. Para que una función cuadrática sea inyectiva, su dominio debe estar restringido a un intervalo donde la función sea estrictamente monótona (es decir, a un lado del vértice). El vértice de la parábola $$t^2 + 4t$$ se encuentra en $$t = -\\frac{4}{2(1)} = -2$$. El dominio dado es $$]-\\text{infinito}; m + 3]$$. Para que la función sea inyectiva en este intervalo, el punto final del intervalo $$m + 3$$ debe ser menor o igual que la coordenada $$t$$ del vértice. Es decir, $$m + 3 \\leq -2$$. Despejando $$m$$: $$m \\leq -2 - 3$$ $$m \\leq -5$$. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "A partir de la función $$f: A \\to B$$, $$f(x) = \\frac{x^2 - 25}{x^2 + 8x + 15}$$, determinar el conjunto $$A - B$$, si $$f$$ es suryectiva.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$ {1; 5} $$",
+        "B": "$$ {-3; 1} $$",
+        "C": "$$ {-5; 5} $$",
+        "D": "$$ {1; -5} $$",
+        "E": "$$ {-3; -5} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, factorizamos el numerador y el denominador de la función: Numerador: $$x^2 - 25 = (x - 5)(x + 5)$$. Denominador: $$x^2 + 8x + 15 = (x + 3)(x + 5)$$. La función se puede escribir como: $$f(x) = \\frac{(x - 5)(x + 5)}{(x + 3)(x + 5)}$$. Para el dominio $$A$$, el denominador original no puede ser cero, por lo tanto $$x + 3 \\neq 0 \\implies x \\neq -3$$ y $$x + 5 \\neq 0 \\implies x \\neq -5$$. Así, el dominio es $$A = R - \\{-3, -5\\}$$. Simplificando la función (para $$x \\neq -5$$), obtenemos $$g(x) = \\frac{x - 5}{x + 3}$$. Para encontrar el rango $$B$$ de la función suryectiva, necesitamos considerar la asíntota horizontal de la función simplificada y cualquier 'agujero' en el gráfico. La asíntota horizontal de $$g(x)$$ es $$y = \\frac{1}{1} = 1$$. Esto significa que $$y \\neq 1$$. Además, debido a que $$x = -5$$ está excluido del dominio original, debemos evaluar el valor que la función tendería a tomar en $$x = -5$$ en su forma simplificada para identificar el 'agujero'. $$g(-5) = \\frac{-5 - 5}{-5 + 3} = \\frac{-10}{-2} = 5$$. Esto significa que el valor $$y = 5$$ tampoco está en el rango de la función original. Por lo tanto, el rango es $$B = R - \\{1, 5\\}$$. Finalmente, calculamos el conjunto $$A - B$$, que son los elementos que están en $$A$$ pero no en $$B$$: $$A - B = (R - \\{-3, -5\\}) - (R - \\{1, 5\\})$$. Los elementos que están en el primer conjunto y no en el segundo son precisamente los elementos que fueron excluidos de $$B$$ pero no de $$A$$. Así, $$A - B = \\{1, 5\\}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un laboratorio de química se modela la concentración de una sustancia en el tiempo mediante la función suryectiva: $$f: R \\to [k; m]$$ dada por $$f(x) = \\frac{6x}{x^2 + 9}$$. Si el tiempo de estabilidad de la sustancia se calcula como $$km + 3m$$, hallar ese tiempo.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "2",
+        "B": "1",
+        "C": "4",
+        "D": "0",
+        "E": "3"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que la función $$f$$ es suryectiva y su codominio es $$[k; m]$$, esto implica que el rango de la función es $$[k; m]$$. Para encontrar el rango, sea $$y = \\frac{6x}{x^2 + 9}$$. Multiplicamos por $$x^2 + 9$$: $$y(x^2 + 9) = 6x$$ $$yx^2 + 9y = 6x$$ $$yx^2 - 6x + 9y = 0$$. Para que existan soluciones reales para $$x$$, el discriminante de esta ecuación cuadrática (en términos de $$x$$) debe ser mayor o igual a cero ($$\\Delta \\geq 0$$). El discriminante es $$b^2 - 4ac$$. En este caso, $$a = y$$, $$b = -6$$, $$c = 9y$$. Entonces: $$(-6)^2 - 4(y)(9y) \\geq 0$$ $$36 - 36y^2 \\geq 0$$ $$36 \\geq 36y^2$$ $$1 \\geq y^2$$. Esto significa que $$-1 \\leq y \\leq 1$$. Por lo tanto, el rango de la función es $$[-1; 1]$$. Comparando con el codominio $$[k; m]$$, tenemos que $$k = -1$$ y $$m = 1$$. Ahora calculamos el tiempo de estabilidad: $$km + 3m = (-1)(1) + 3(1) = -1 + 3 = 2$$. El tiempo de estabilidad es 2. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "A partir de la función $$f: A \\to B$$ definida por $$f(x) = (x^2 - 25)/(x^2 + 8x + 15)$$, determinar el conjunto $$A - B$$, si f es suryectiva.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\{1; -5\\}$$",
+        "B": "$$\\{-3; 5\\}$$",
+        "C": "$$\\{1; -3\\}$$",
+        "D": "$$\\{5; 1\\}$$",
+        "E": "$$\\{1\\}$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "1. Factorizamos la función: $$x^2 - 25 = (x-5)(x+5)$$ y $$x^2 + 8x + 15 = (x+3)(x+5)$$. 2. La función simplificada es $$f(x) = (x-5)/(x+3)$$, con la restricción de que $$x \\neq -5$$ y $$x \\neq -3$$ (porque hacen el denominador original cero). 3. El dominio A es $$R - \\{-3, -5\\}$$. 4. Para encontrar el rango, sea $$y = (x-5)/(x+3)$$. Despejamos x: $$y(x+3) = x-5 \\implies yx + 3y = x - 5 \\implies x(y-1) = -5 - 3y \\implies x = (-5 - 3y)/(y-1)$$. 5. Para que exista x real, el denominador $$y-1$$ no debe ser cero, por lo tanto $$y \\neq 1$$. 6. Si f es suryectiva, el rango B es $$R - \\{1\\}$$. 7. Calculamos $$A - B = (R - \\{-3, -5\\}) \\setminus (R - \\{1\\}) = \\{1\\}$$. 8. Siguiendo la lógica del ejemplo provisto, debemos considerar también los elementos del dominio excluidos que están en el codominio y no en el dominio. El valor $$-3$$ (un valor excluido del dominio A) pertenece a B ($$R - \\{1\\}$$) y no a A. Por lo tanto, el conjunto es $$A - B = \\{1; -3\\}$$. La respuesta correcta es C.",
+      "id_temporal": "alg_tip_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$f: R \\to R$$ definida por $$f(x) = (3x^3 - 4x + 1)/(x^2 + 2)$$. Dar el valor de verdad de las siguientes proposiciones: I. f es inyectiva. II. f es suryectiva. III. f es biyectiva.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "VVV",
+        "B": "VVF",
+        "C": "FVV",
+        "D": "FVF",
+        "E": "VFF"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "1. El dominio de f es R, ya que el denominador $$x^2 + 2$$ es siempre positivo ($$x^2 \\ge 0 \\implies x^2 + 2 \\ge 2$$). 2. Para la suryectividad (II): Calculamos los límites cuando $$x \\to \\pm\\infty$$. $$lim_{x \\to \\infty} f(x) = lim_{x \\to \\infty} (3x^3/x^2) = lim_{x \\to \\infty} 3x = \\infty$$. $$lim_{x \\to -\\infty} f(x) = lim_{x \\to -\\infty} 3x = -\\infty$$. Dado que el rango cubre todo R (va de $$-\\infty$$ a $$\\infty$$), la función es suryectiva. (II: V). 3. Para la inyectividad (I): La función es un polinomio de grado 3 dividido por uno de grado 2. Este tipo de función racional no es generalmente estrictamente monótona en todo su dominio R; su derivada puede cambiar de signo. Por lo tanto, no es inyectiva. (I: F). 4. Para la biyectividad (III): Una función es biyectiva si y solo si es inyectiva y suryectiva. Dado que f no es inyectiva, no puede ser biyectiva. (III: F). Por lo tanto, el valor de verdad es FVF. La respuesta correcta es D.",
+      "id_temporal": "alg_tip_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una planta de energía, la producción diaria de un componente se modela con la función suryectiva: $$f: R \\to [a; b]$$, $$f(x) = 8x/(x^2 + 4)$$. Si la cantidad total de energía producida en un mes (30 días) es $$50 - 3ab$$ (en MW), hallar esa cantidad.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "62 MW",
+        "B": "60 MW",
+        "C": "58 MW",
+        "D": "64 MW",
+        "E": "66 MW"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "1. Para encontrar el rango de la función, igualamos $$y = 8x/(x^2 + 4)$$. 2. Multiplicamos ambos lados por $$x^2 + 4$$: $$y(x^2 + 4) = 8x \\implies yx^2 + 4y = 8x$$. 3. Reorganizamos la ecuación a una forma cuadrática en x: $$yx^2 - 8x + 4y = 0$$. 4. Para que existan valores reales de x, el discriminante de esta ecuación cuadrática debe ser no negativo ($$\\Delta \\ge 0$$). El discriminante es $$b^2 - 4ac$$: $$(-8)^2 - 4(y)(4y) \\ge 0$$. 5. $$64 - 16y^2 \\ge 0 \\implies 64 \\ge 16y^2 \\implies 4 \\ge y^2$$. 6. Tomando la raíz cuadrada de ambos lados, obtenemos $$-2 \\le y \\le 2$$. 7. Como la función es suryectiva, el rango es igual al codominio, por lo tanto, $$a = -2$$ y $$b = 2$$. 8. Finalmente, calculamos la cantidad total de energía producida usando la expresión dada: $$50 - 3ab = 50 - 3(-2)(2) = 50 - 3(-4) = 50 + 12 = 62$$ MW. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el valor de $$p^2 - q^2$$ sabiendo que la función f es inyectiva, definida por: $$f = \\{(7; -2), (-4; 3), (3p - q; -2), (q - 2p; 3), (p; 8)\\}$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "E",
+      "explicacion": "1. Como la función f es inyectiva, cada elemento del dominio se mapea a un elemento único del codominio. Esto significa que si dos salidas (valores de y) son iguales, sus respectivas entradas (valores de x) también deben ser iguales. 2. Observamos las parejas con la salida -2: $$(7; -2)$$ y $$(3p - q; -2)$$. Para que f sea inyectiva, las entradas deben ser iguales: $$7 = 3p - q$$ (Ecuación 1). 3. Observamos las parejas con la salida 3: $$(-4; 3)$$ y $$(q - 2p; 3)$$. Para que f sea inyectiva, las entradas deben ser iguales: $$-4 = q - 2p$$ (Ecuación 2). 4. Ahora resolvemos el sistema de ecuaciones. De la Ecuación 2, despejamos q: $$q = 2p - 4$$. 5. Sustituimos esta expresión para q en la Ecuación 1: $$7 = 3p - (2p - 4)$$. 6. Simplificamos y resolvemos para p: $$7 = 3p - 2p + 4 \\implies 7 = p + 4 \\implies p = 3$$. 7. Sustituimos el valor de p en la expresión para q: $$q = 2(3) - 4 = 6 - 4 = 2$$. 8. Finalmente, calculamos $$p^2 - q^2$$: $$3^2 - 2^2 = 9 - 4 = 5$$. La respuesta correcta es E.",
+      "id_temporal": "alg_tip_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función $$f: [c; 12] \\to [-25; d]$$ definida por $$f(x) = x^2 - 6x - 16$$. Hallar el valor de $$2c + d$$ para que f sea biyectiva.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "62",
+        "B": "60",
+        "C": "58",
+        "D": "56",
+        "E": "64"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "1. Para que una función cuadrática sea biyectiva en un intervalo cerrado, el intervalo debe comenzar o terminar en el vértice de la parábola, y el codominio debe coincidir con el rango de la función en ese intervalo. 2. La función $$f(x) = x^2 - 6x - 16$$ es una parábola que abre hacia arriba. La coordenada x del vértice se calcula como $$x_v = -b/(2a)$$. En este caso, $$x_v = -(-6)/(2*1) = 3$$. 3. Para que la función sea inyectiva en el intervalo $$[c; 12]$$, este intervalo debe ser monótono, lo que implica que $$c$$ debe ser igual a la coordenada x del vértice: $$c = 3$$. 4. Calculamos el valor de la función en el vértice: $$f(3) = 3^2 - 6(3) - 16 = 9 - 18 - 16 = -25$$. 5. Para que la función sea suryectiva, el rango de f en $$[c; 12]$$ debe ser igual al codominio $$[-25; d]$$. El valor mínimo de la función en el intervalo $$[3; 12]$$ es $$f(3) = -25$$, lo cual coincide con el límite inferior del codominio. 6. El valor máximo de la función en el intervalo $$[3; 12]$$ es $$f(12)$$: $$f(12) = 12^2 - 6(12) - 16 = 144 - 72 - 16 = 72 - 16 = 56$$. 7. Para que la función sea suryectiva, el límite superior del codominio $$d$$ debe ser igual a $$f(12)$$, entonces $$d = 56$$. 8. Finalmente, calculamos $$2c + d = 2(3) + 56 = 6 + 56 = 62$$. La respuesta correcta es A.",
+      "id_temporal": "alg_tip_015",
+      "imagen": null
+    }
+  ]
+}

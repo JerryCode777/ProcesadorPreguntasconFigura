@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 26,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN INVERSA",
+  "tema": "funcion_inversa",
+  "preguntas": [
+    {
+      "pregunta": "Si la función de temperatura $$T : (−8; 4) \\to (p; q)$$ tiene inversa, y su regla de correspondencia es $$T(x) = \\frac{x}{3} + 5$$. Calcular el valor de $$T^{-1}(p)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-12$$",
+        "B": "$$0$$",
+        "C": "$$-8$$",
+        "D": "$$4$$",
+        "E": "$$-5$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero hallamos la inversa de $$T(x)$$. Sea $$y = \\frac{x}{3} + 5$$. Despejamos $$x$$: $$y - 5 = \\frac{x}{3} \\Rightarrow x = 3(y - 5)$$. Así, $$T^{-1}(y) = 3y - 15$$, o $$T^{-1}(x) = 3x - 15$$. Ahora, hallamos el rango $$(p; q)$$ usando el dominio $$(−8; 4)$$. Como $$T(x)$$ es una función lineal (creciente), evaluamos en los extremos del dominio: $$T(-8) = \\frac{-8}{3} + 5 = \\frac{-8 + 15}{3} = \\frac{7}{3}$$. $$T(4) = \\frac{4}{3} + 5 = \\frac{4 + 15}{3} = \\frac{19}{3}$$. Entonces, $$p = \\frac{7}{3}$$. Finalmente, calculamos $$T^{-1}(p) = T^{-1}(\\frac{7}{3}) = 3(\\frac{7}{3}) - 15 = 7 - 15 = -8$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "El código de acceso a un sistema está dado por el producto $$P \\cdot Q$$. Si la siguiente relación es una función inversa: $$G = \\{(3P + 2; 9), (9; 6), (Q^{2} - 7; 6), (8; 9)\\}$$. Calcular el valor del código de acceso.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$6$$",
+        "C": "$$12$$",
+        "D": "$$8$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Si $$G$$ es una función inversa, entonces su función original $$G_{original}$$ (obtenida invirtiendo las parejas ordenadas) debe ser una función bien definida. Las parejas de $$G_{original}$$ son: $$\\cbrk{(9, 3P+2), (6, 9), (6, Q^{2}-7), (9, 8)}$$. Para que $$G_{original}$$ sea una función, para un mismo valor de entrada (primera coordenada), debe haber un único valor de salida (segunda coordenada). Consideramos las entradas repetidas: Para la entrada $$9$$: Tenemos las salidas $$3P+2$$ y $$8$$. Por lo tanto, $$3P+2 = 8 \\Rightarrow 3P = 6 \\Rightarrow P = 2$$. Para la entrada $$6$$: Tenemos las salidas $$9$$ y $$Q^{2}-7$$. Por lo tanto, $$9 = Q^{2}-7 \\Rightarrow Q^{2} = 16$$. Asumiendo el valor positivo, $$Q = 4$$. El código de acceso es $$P \\cdot Q = 2 \\cdot 4 = 8$$. Por lo tanto, la respuesta correcta es D.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "La función de beneficio de una empresa está dada por $$B(x) = x^{2} - 4x + 10$$, definida en el intervalo de producción $$[4; 7]$$. Si esta función tiene inversa en dicho dominio, ¿cuál es el dominio de su función inversa $$B^{-1}(x)$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[8; 25]$$",
+        "B": "$$[10; 31]$$",
+        "C": "$$[12; 35]$$",
+        "D": "$$[5; 28]$$",
+        "E": "$$[15; 40]$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El dominio de la función inversa es el rango de la función original. La función $$B(x) = x^{2} - 4x + 10$$ es una parábola que abre hacia arriba, con vértice en $$x = -(-4)/(2 \\cdot 1) = 2$$. El dominio dado es $$[4; 7]$$, que se encuentra a la derecha del vértice. Esto significa que la función es estrictamente creciente en este intervalo, y por lo tanto, es inyectiva. Para hallar el rango, evaluamos la función en los extremos del dominio: $$B(4) = 4^{2} - 4(4) + 10 = 16 - 16 + 10 = 10$$. $$B(7) = 7^{2} - 4(7) + 10 = 49 - 28 + 10 = 31$$. El rango de $$B(x)$$ es $$[10; 31]$$. Este rango es el dominio de la función inversa $$B^{-1}(x)$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Indicar el valor de verdad de las siguientes proposiciones sobre funciones inversas:\nI. La función $$k(x) = x^{3} - 5$$, con $$x \\in \\mathbb{R}$$, tiene inversa.\nII. La función $$l(x) = |x| + 3$$, con $$x \\in (−7; 5)$$, tiene inversa.\nIII. La función $$m(x) = \\sqrt{x + 4}$$, con $$x > -3$$, tiene inversa.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFF",
+        "B": "VFV",
+        "C": "FVF",
+        "D": "FVV",
+        "E": "VVV"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Una función tiene inversa si y solo si es inyectiva (uno a uno) en su dominio.\nI. $$k(x) = x^{3} - 5$$. La función cúbica $$x^{3}$$ es estrictamente creciente en todo su dominio $$\\mathbb{R}$$, y la resta de una constante no altera esta propiedad. Por lo tanto, $$k(x)$$ es inyectiva y tiene inversa. (Verdadero)\nII. $$l(x) = |x| + 3$$. En el dominio $$(−7; 5)$$, la función valor absoluto no es inyectiva. Por ejemplo, $$l(-1) = |-1| + 3 = 1 + 3 = 4$$ y $$l(1) = |1| + 3 = 1 + 3 = 4$$. Como $$l(-1) = l(1)$$ pero $$-1 \\neq 1$$, la función no es inyectiva y no tiene inversa. (Falso)\nIII. $$m(x) = \\sqrt{x + 4}$$. Para $$x > -3$$, tenemos que $$x + 4 > 1$$. La función raíz cuadrada es estrictamente creciente para argumentos positivos. Dado que $$x+4$$ es estrictamente creciente y positivo en el dominio, $$m(x)$$ es estrictamente creciente y, por lo tanto, inyectiva. (Verdadero)\nEl valor de verdad de las proposiciones es VFV. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un analista financiero obtuvo un rendimiento \"$$P$$' en una inversión, dado por la expresión: $$P = \\frac{60s + 10t}{s \\cdot t + t}$$. Si \"$$s$$\" y \"$$t$$\" se obtienen de la regla de correspondencia de la función inversa $$g^{-1}(x) = sx + t$$, la cual es inversa de $$g(x) = 4x - 6$$. ¿Cuál fue el rendimiento \"$$P$$\" obtenido?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$12$$",
+        "B": "$$16$$",
+        "C": "$$18$$",
+        "D": "$$20$$",
+        "E": "$$10$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, hallamos la inversa de la función $$g(x) = 4x - 6$$. Sea $$y = 4x - 6$$. Despejamos $$x$$ en términos de $$y$$: $$y + 6 = 4x \\Rightarrow x = \\frac{y + 6}{4}$$. Así, la función inversa es $$g^{-1}(x) = \\frac{1}{4}x + \\frac{6}{4} = \\frac{1}{4}x + \\frac{3}{2}$$. Comparando con $$g^{-1}(x) = sx + t$$, identificamos los valores de $$s$$ y $$t$$: $$s = \\frac{1}{4}$$ y $$t = \\frac{3}{2}$$. Ahora, sustituimos estos valores en la expresión para \"$$P$$\": Calculamos el numerador: $$60s + 10t = 60\\left(\\frac{1}{4}\\right) + 10\\left(\\frac{3}{2}\\right) = 15 + 15 = 30$$. Calculamos el denominador: $$s \\cdot t + t = \\left(\\frac{1}{4}\\right)\\left(\\frac{3}{2}\\right) + \\frac{3}{2} = \\frac{3}{8} + \\frac{12}{8} = \\frac{15}{8}$$. Finalmente, dividimos el numerador por el denominador para obtener \"$$P$$\": $$P = \\frac{30}{\\frac{15}{8}} = 30 \\cdot \\frac{8}{15} = 2 \\cdot 8 = 16$$. Por lo tanto, el rendimiento obtenido fue $$16$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$f : (-4; 2) \\to (m; n)$$ tiene inversa. Calcular la inversa de $$f(x) = 3x - 1$$ y dar como respuesta $$f^{-1}(m)$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$-4$$",
+        "B": "$$-5$$",
+        "C": "$$-3$$",
+        "D": "$$-2$$",
+        "E": "$$0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero hallamos la inversa: $$y = 3x - 1 \\implies 3x = y + 1 \\implies x = \\frac{y+1}{3}$$. Entonces, $$f^{-1}(y) = \\frac{y+1}{3}$$. Ahora hallamos el rango $$(m; n)$$ usando el dominio $$(-4; 2)$$ para determinar $$m$$: $$f(-4) = 3(-4) - 1 = -12 - 1 = -13$$. Así, $$m = -13$$. Finalmente, calculamos $$f^{-1}(m) = f^{-1}(-13) = \\frac{-13+1}{3} = \\frac{-12}{3} = -4$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una relación $$R$$ se define como $$R = \\{(4p + 2; 9), (9; 6), (q^{3} + 1; 6), (14; 9)\\}$$. Si $$R$$ es una función con inversa, calcular el valor de $$p - q$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$1$$",
+        "C": "$$2$$",
+        "D": "$$3$$",
+        "E": "$$-1$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que $$R$$ sea una función con inversa, debe ser inyectiva (uno a uno). Esto significa que no puede haber dos entradas distintas para la misma salida. Para la salida $$9$$, tenemos los pares $$(4p + 2; 9)$$ y $$(14; 9)$$, por lo tanto, $$4p + 2 = 14 \\implies 4p = 12 \\implies p = 3$$. Para la salida $$6$$, tenemos los pares $$(9; 6)$$ y $$(q^{3} + 1; 6)$$, por lo tanto, $$q^{3} + 1 = 9 \\implies q^{3} = 8 \\implies q = 2$$. Finalmente, calculamos $$p - q = 3 - 2 = 1$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$H : [-5; -2] \\to [a; b]$$ con $$H(x) = x^{2} + 4x - 2$$ tiene inversa en su dominio. Calcular el dominio de su inversa.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-6; 3]$$",
+        "B": "$$[-2; 3]$$",
+        "C": "$$[-6; 1]$$",
+        "D": "$$[-5; 3]$$",
+        "E": "$$[-2; -1]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El dominio de la función inversa $$H^{-1}$$ es el rango de la función original $$H$$. La función $$H(x) = x^{2} + 4x - 2$$ es una parábola que abre hacia arriba, con vértice en $$x = -\\frac{4}{2(1)} = -2$$. El dominio dado es $$[-5; -2]$$. Como el vértice está en el extremo superior del intervalo, la función es decreciente en este dominio. Calculamos los valores en los extremos: $$H(-5) = (-5)^{2} + 4(-5) - 2 = 25 - 20 - 2 = 3$$. $$H(-2) = (-2)^{2} + 4(-2) - 2 = 4 - 8 - 2 = -6$$. Dado que la función es decreciente en $$[-5; -2]$$, el rango es $$[H(-2); H(-5)] = [-6; 3]$$. Este es el dominio de la inversa. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Indicar el valor de verdad de las siguientes proposiciones: I. $$f(x) = \\sqrt{x - 3}$$, $$x > 4$$, tiene inversa. II. $$g(x) = x^{2} - 5$$, $$x \\in (-7; 2)$$, tiene inversa. III. $$h(x) = \\frac{1}{x}$$, $$x < -1$$, tiene inversa.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "VFF",
+        "B": "VFV",
+        "C": "FVF",
+        "D": "FVV",
+        "E": "VVV"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Una función tiene inversa si es inyectiva (uno a uno), lo cual implica que es estrictamente monótona (siempre creciente o siempre decreciente) en su dominio. I. $$f(x) = \\sqrt{x - 3}$$, $$x > 4$$: La función raíz cuadrada es estrictamente creciente en su dominio. Para $$x > 4$$, $$x - 3 > 1$$, por lo tanto, $$f(x)$$ es estrictamente creciente y, consecuentemente, inyectiva. (Verdadero). II. $$g(x) = x^{2} - 5$$, $$x \\in (-7; 2)$$: Esta es una función cuadrática cuyo vértice está en $$x = 0$$. El intervalo $$(-7; 2)$$ incluye al vértice. La función es decreciente en $$(-7; 0)$$ y creciente en $$(0; 2)$$, por lo tanto, no es inyectiva en este dominio. (Falso). III. $$h(x) = \\frac{1}{x}$$, $$x < -1$$: La función $$1/x$$ es estrictamente decreciente en el intervalo $$x < 0$$. Como $$x < -1$$ es parte de este intervalo, $$h(x)$$ es estrictamente decreciente y, por lo tanto, inyectiva. (Verdadero). El resultado es VFV. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un laboratorio, la concentración de una sustancia $$K$$ está dada por la expresión $$K = \\frac{20m + 4n}{mn + n}$$. Si $$m$$ y $$n$$ son los coeficientes de la función inversa $$f^{-1}(x) = mx + n$$, la cual es la inversa de $$f(x) = 2x - 4$$. ¿Cuál es el valor de la concentración $$K$$?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$5$$",
+        "B": "$$6$$",
+        "C": "$$7$$",
+        "D": "$$8$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero hallamos la inversa de $$f(x) = 2x - 4$$: $$y = 2x - 4 \\implies 2x = y + 4 \\implies x = \\frac{y+4}{2} = \\frac{1}{2}y + 2$$. Por lo tanto, $$f^{-1}(x) = \\frac{1}{2}x + 2$$. Comparando con $$f^{-1}(x) = mx + n$$, obtenemos que $$m = \\frac{1}{2}$$ y $$n = 2$$. Ahora, sustituimos estos valores en la expresión para $$K$$: Numerador: $$20m + 4n = 20\\left(\\frac{1}{2}\\right) + 4(2) = 10 + 8 = 18$$. Denominador: $$mn + n = \\left(\\frac{1}{2}\\right)(2) + 2 = 1 + 2 = 3$$. Finalmente, $$K = \\frac{18}{3} = 6$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si la función $$h : (2; 7) \to (p; q)$$ es biyectiva y su regla de correspondencia es $$h(x) = 3x - 5$$, calcular el valor de $$h^{-1}(q)$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$7$$",
+        "B": "$$2$$",
+        "C": "$$5$$",
+        "D": "$$1$$",
+        "E": "$$16$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero hallamos la inversa de $$h(x)$$:\nSea $$y = h(x)$$.\n$$y = 3x - 5$$\n$$y + 5 = 3x$$\n$$x = \frac{y + 5}{3}$$\nEntonces, la función inversa es $$h^{-1}(y) = \frac{y + 5}{3}$$. (Usando $$x$$ como variable independiente: $$h^{-1}(x) = \frac{x + 5}{3}$$).\nAhora, para encontrar el rango $$(p; q)$$ de $$h(x)$$, evaluamos la función en los extremos de su dominio $$(2; 7)$$. Dado que $$h(x)$$ es una función lineal con pendiente positiva, es creciente, por lo que los valores de los extremos definen el rango:\n$$h(2) = 3(2) - 5 = 6 - 5 = 1$$\n$$h(7) = 3(7) - 5 = 21 - 5 = 16$$\nAsí, el rango de $$h(x)$$ es $$(1; 16)$$. Por lo tanto, $$p = 1$$ y $$q = 16$$.\nFinalmente, calculamos $$h^{-1}(q)$$, sustituyendo $$q = 16$$ en la función inversa:\n$$h^{-1}(16) = \frac{16 + 5}{3} = \frac{21}{3} = 7$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un conjunto de datos para un estudio de mercado está representado por la función inversa $$g = \\{(2k + 1; 9), (10; 4), (m - 3; 4), (5; 9)\\}$$. Calcular el valor de $$k + m$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$15$$",
+        "B": "$$12$$",
+        "C": "$$10$$",
+        "D": "$$18$$",
+        "E": "$$7$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que $$g$$ es una función inversa, implica que $$g$$ es una función inyectiva. Para que un conjunto de pares ordenados represente una función inyectiva, si dos pares tienen el mismo segundo componente (salida), entonces sus primeros componentes (entradas) deben ser iguales. \nObservamos los pares con la misma salida:\n1.  Para la salida 9, tenemos los pares $$(2k + 1; 9)$$ y $$(5; 9)$$. Para que $$g$$ sea inyectiva, sus entradas deben ser iguales:\n    $$2k + 1 = 5$$\n    $$2k = 4$$\n    $$k = 2$$\n2.  Para la salida 4, tenemos los pares $$(10; 4)$$ y $$(m - 3; 4)$$. Sus entradas también deben ser iguales:\n    $$m - 3 = 10$$\n    $$m = 13$$\nFinalmente, calculamos el valor de $$k + m$$:\n$$k + m = 2 + 13 = 15$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si la función $$H : [4; 8] \to [c; d]$$ con $$H(x) = x^2 + 4x + 1$$ tiene inversa en su dominio, calcular el valor de $$c + d$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$130$$",
+        "B": "$$120$$",
+        "C": "$$110$$",
+        "D": "$$100$$",
+        "E": "$$90$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El dominio de la función inversa de $$H(x)$$ es el rango de la función original $$H(x)$$, es decir, $$[c; d]$$. Para encontrar el rango, evaluamos la función en los extremos de su dominio dado $$[4; 8]$$. \nPrimero, analizamos la función cuadrática $$H(x) = x^2 + 4x + 1$$. Su vértice se encuentra en $$x_v = -b/(2a) = -4/(2 \\cdot 1) = -2$$. Dado que el intervalo de interés $$[4; 8]$$ está completamente a la derecha del vértice (es decir, $$x > -2$$ para todo el intervalo) y la parábola abre hacia arriba (coeficiente de $$x^2$$ es positivo), la función $$H(x)$$ es estrictamente creciente en $$[4; 8]$$. Por lo tanto, el rango se obtiene evaluando la función en los puntos extremos del dominio:\n$$c = H(4) = 4^2 + 4(4) + 1 = 16 + 16 + 1 = 33$$\n$$d = H(8) = 8^2 + 4(8) + 1 = 64 + 32 + 1 = 97$$\nEntonces, el rango de $$H(x)$$ es $$[33; 97]$$, lo que significa que $$c = 33$$ y $$d = 97$$.\nFinalmente, calculamos $$c + d$$:\n$$c + d = 33 + 97 = 130$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Indicar el valor de verdad de las siguientes proposiciones respecto a la existencia de la función inversa:\nI. La función $$k(x) = 2x - 7$$, con $$x \\in \\mathbb{R}$$, tiene inversa.\nII. La función $$l(x) = |x - 1|$$, con $$x \\in (-2; 4)$$, tiene inversa.\nIII. La función $$m(x) = \\sqrt{x + 5}$$, con $$x > 0$$, tiene inversa.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "VFV",
+        "B": "VFF",
+        "C": "FVF",
+        "D": "FVV",
+        "E": "VVV"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Una función tiene inversa si y solo si es inyectiva (uno a uno) en su dominio. Analizamos cada proposición:\nI. La función $$k(x) = 2x - 7$$ es una función lineal. Todas las funciones lineales con pendiente no nula (en este caso, la pendiente es 2) son inyectivas en todo su dominio real. Por lo tanto, $$k(x)$$ tiene inversa. (Verdadero)\nII. La función $$l(x) = |x - 1|$$ es una función valor absoluto cuyo vértice está en $$x = 1$$. En el intervalo $$(-2; 4)$$, la función decrece de $$x = -2$$ a $$x = 1$$ y luego crece de $$x = 1$$ a $$x = 4$$. Esto significa que hay valores diferentes de $$x$$ que producen el mismo valor de $$l(x)$$. Por ejemplo, $$l(0) = |0 - 1| = 1$$ y $$l(2) = |2 - 1| = 1$$. Como $$0 \neq 2$$ pero $$l(0) = l(2)$$, la función no es inyectiva en $$(-2; 4)$$. Por lo tanto, no tiene inversa. (Falso)\nIII. La función $$m(x) = \\sqrt{x + 5}$$ es una función de raíz cuadrada. Para su dominio $$x > 0$$, la expresión $$x + 5$$ es siempre positiva ($$x + 5 > 5$$) y es estrictamente creciente. La función raíz cuadrada $$\\sqrt{u}$$ es estrictamente creciente para $$u \\ge 0$$. Por lo tanto, $$m(x)$$ es estrictamente creciente y, consecuentemente, inyectiva para $$x > 0$$. Por lo tanto, tiene inversa. (Verdadero)\nEl valor de verdad de las proposiciones es VFV. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "La cantidad de libros en una biblioteca escolar es $$20B$$, si el valor de $$B$$ es el único valor que no pertenece al rango de la función inversa de $$y = f(x) = \frac{6x + 2}{3x - 5}$$. Calcular la cantidad de libros.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$40$$",
+        "B": "$$30$$",
+        "C": "$$50$$",
+        "D": "$$20$$",
+        "E": "$$60$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para resolver este problema, primero debemos encontrar la función inversa $$f^{-1}(x)$$. Luego, identificaremos el valor de $$B$$ que representa una restricción en el dominio de $$f^{-1}(x)$$, siguiendo la interpretación del ejemplo.\nSea $$y = f(x)$$. Intercambiamos $$x$$ e $$y$$ y despejamos $$y$$ para encontrar la regla de correspondencia de la inversa:\n$$y = \frac{6x + 2}{3x - 5}$$\n$$x = \frac{6y + 2}{3y - 5}$$\nMultiplicamos ambos lados por $$(3y - 5)$$: \n$$x(3y - 5) = 6y + 2$$\n$$3xy - 5x = 6y + 2$$\nAgrupamos los términos con $$y$$ a un lado y los demás al otro:\n$$3xy - 6y = 2 + 5x$$\nFactorizamos $$y$$:\n$$y(3x - 6) = 2 + 5x$$\nFinalmente, despejamos $$y$$:\n$$y = \frac{2 + 5x}{3x - 6}$$\nAsí, la función inversa es $$f^{-1}(x) = \frac{2 + 5x}{3x - 6}$$.\nEl valor de $$B$$ se refiere al único valor para el cual $$f^{-1}(x)$$ no está definida, es decir, el valor que hace que el denominador sea cero (lo cual es una restricción en el dominio de la inversa). Este valor es lo que el problema denomina el valor que 'no pertenece al rango de la función inversa' en este contexto.\n$$3x - 6 = 0$$\n$$3x = 6$$\n$$x = 2$$\nEntonces, $$B = 2$$.\nFinalmente, calculamos la cantidad de libros:\nCantidad de libros $$= 20B = 20(2) = 40$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

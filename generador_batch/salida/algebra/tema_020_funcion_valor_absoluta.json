@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 20,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN VALOR ABSOLUTA",
+  "tema": "funcion_valor_absoluta",
+  "preguntas": [
+    {
+      "pregunta": "Calcular el vértice y el rango de la función $$f(x) = -5|x + 4| + 8$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "V = (4; 8) ; Ran f(x) = [8; infinito>",
+        "B": "V = (-4; -8) ; Ran f(x) = <-infinito; -8]",
+        "C": "V = (4; -8) ; Ran f(x) = [-8; infinito>",
+        "D": "V = (-4; 8) ; Ran f(x) = <-infinito; 8]",
+        "E": "V = (8; -4) ; Ran f(x) = [8; -infinito>"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "La función tiene la forma $$a|x - h| + k$$, cuyo vértice es $$(h, k)$$. Aquí, $$f(x) = -5|x - (-4)| + 8$$. Entonces el vértice es $$V = (-4, 8)$$. Como el coeficiente de $$| |$$ es negativo $$(-5)$$, la gráfica abre hacia abajo. El valor máximo ocurre en el vértice y es $$8$$, y luego baja sin límite. Por lo tanto, el rango es $$<-infinito; 8]$$.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Don Pedro es propietario de un terreno con forma triangular, delimitado por la función $$f(x) = -|x - 7| + 18$$ y el eje de las abscisas. Si el metro cuadrado de este terreno se valora en $$700$$ dólares, ¿cuánto recibirá Don Pedro por la venta de su propiedad?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$210 500$$ dólares",
+        "B": "$$226 800$$ dólares",
+        "C": "$$230 400$$ dólares",
+        "D": "$$205 600$$ dólares",
+        "E": "$$198 200$$ dólares"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El terreno está limitado por la gráfica de $$f(x)$$ y el eje X $$(y = 0)$$, formando un triángulo. Hallamos los cortes con el eje X: $$-|x - 7| + 18 = 0 \\Rightarrow |x - 7| = 18$$. Esto implica $$x - 7 = 18 \\Rightarrow x = 25$$ o $$x - 7 = -18 \\Rightarrow x = -11$$. La base del triángulo está en el eje X, desde $$-11$$ hasta $$25$$, por lo tanto, la Base es $$25 - (-11) = 36$$. La altura es el valor máximo de la función (en el vértice). El vértice es $$(7, 18)$$, así que la Altura es $$18$$. El Área del triángulo es $$(Base \\times Altura) / 2 = (36 \\times 18) / 2 = 324$$ m$${^2}$$. El pago total será $$324 \\times 700 = 226 800$$ dólares.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Resolver la ecuación: $$|x| + |x - 4| = 6$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$CS = \\{-1; 5\\}$$",
+        "B": "$$CS = \\{2; 5\\}$$",
+        "C": "$$CS = \\{-1; -5\\}$$",
+        "D": "$$CS = \\{1; 6\\}$$",
+        "E": "$$CS = \\{4; 5; 6\\}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Se analizan intervalos según los puntos críticos $$0$$ y $$4$$. Si $$x \\geq 4$$: $$|x| = x$$ y $$|x - 4| = x - 4$$. Entonces $$x + (x - 4) = 6 \\Rightarrow 2x - 4 = 6 \\Rightarrow 2x = 10 \\Rightarrow x = 5$$. (Sí pertenece al intervalo $$x \\geq 4$$). Si $$0 \\leq x < 4$$: $$|x| = x$$ y $$|x - 4| = 4 - x$$. Entonces $$x + (4 - x) = 6 \\Rightarrow 4 = 6$$. (Imposible). Si $$x < 0$$: $$|x| = -x$$ y $$|x - 4| = -(x - 4) = 4 - x$$. Entonces $$(-x) + (4 - x) = 6 \\Rightarrow 4 - 2x = 6 \\Rightarrow -2x = 2 \\Rightarrow x = -1$$. (Sí pertenece al intervalo $$x < 0$$). El conjunto solución es $$CS = \\{-1; 5\\}$$.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el área de la región formada por las gráficas de $$f(x) = -|x + 8| + 7$$ y $$g(x) = -5$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$120$$ u$${^2}$$",
+        "B": "$$136$$ u$${^2}$$",
+        "C": "$$144$$ u$${^2}$$",
+        "D": "$$150$$ u$${^2}$$",
+        "E": "$$160$$ u$${^2}$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La región está entre la curva $$f(x)$$ y la recta $$y = -5$$. Hallamos los puntos de intersección: $$-|x + 8| + 7 = -5 \\Rightarrow -|x + 8| = -12 \\Rightarrow |x + 8| = 12$$. Esto implica $$x + 8 = 12 \\Rightarrow x = 4$$ o $$x + 8 = -12 \\Rightarrow x = -20$$. En $$x = -8$$, $$f(x)$$ alcanza su máximo: $$f(-8) = -|0| + 7 = 7$$. La base del triángulo es la distancia entre los puntos de intersección: Base $$= 4 - (-20) = 24$$. La altura del triángulo es la diferencia entre el valor máximo de $$f(x)$$ y el valor de $$g(x)$$: Altura $$= 7 - (-5) = 12$$. El área del triángulo es $$(Base \\times Altura) / 2 = (24 \\times 12) / 2 = 144$$ u$${^2}$$.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "La función $$f(x) = |x^{2} - 11x + 30|$$ tiene $$3$$ interceptos con los ejes coordenados $$(a; 0)$$, $$(b; 0)$$ y $$(0; c)$$. Calcular $$a + b + c$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$38$$",
+        "B": "$$41$$",
+        "C": "$$43$$",
+        "D": "$$36$$",
+        "E": "$$45$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Interceptos con el eje X: $$f(x) = 0 \\Rightarrow |x^{2} - 11x + 30| = 0$$. Entonces $$x^{2} - 11x + 30 = 0$$. Factorizamos: $$(x - 5)(x - 6) = 0$$. Así, $$x = 5$$ y $$x = 6$$. Entonces $$(a, 0)$$ y $$(b, 0)$$ son $$(5,0)$$ y $$(6,0)$$, por lo tanto $$a = 5$$ y $$b = 6$$. Intercepto con el eje Y: $$x = 0$$. $$c = f(0) = |0^{2} - 11(0) + 30| = |30| = 30$$. La suma es $$a + b + c = 5 + 6 + 30 = 41$$.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el vértice y el rango de la función: $$f(x) = -5|x - 3| + 8$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "V = (3; 8) ; Ran f(x) = $$\\langle-\\infty; 8]$$",
+        "B": "V = (-3; 8) ; Ran f(x) = $$[8; \\infty\\rangle$$",
+        "C": "V = (3; -8) ; Ran f(x) = $$\\langle-\\infty; -8]$$",
+        "D": "V = (-3; -8) ; Ran f(x) = $$[-8; \\infty\\rangle$$",
+        "E": "V = (8; 3) ; Ran f(x) = $$\\langle-\\infty; 3]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función tiene la forma general $$f(x) = a|x - h| + k$$, donde el vértice es $$(h, k)$$. En este caso, $$f(x) = -5|x - 3| + 8$$. Comparando, tenemos $$h = 3$$ y $$k = 8$$. Por lo tanto, el vértice es $$V = (3, 8)$$. Como el coeficiente $$a$$ es negativo (a = -5), la gráfica se abre hacia abajo. Esto significa que el valor máximo de la función se alcanza en el vértice, que es $$y = 8$$. El rango de la función irá desde este valor máximo hacia el infinito negativo. Así, el rango es $$Ran f(x) = \\langle-\\infty; 8]$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "El señor Ricardo posee un terreno de forma triangular, delimitado por la función $$f(x) = -|x - 7| + 25$$ y el eje de las abscisas. Si el metro cuadrado de dicho terreno se cotiza en $$600$$ dólares, ¿cuánto recibirá el señor Ricardo por la venta de su propiedad?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "350 000 dólares",
+        "B": "375 000 dólares",
+        "C": "400 000 dólares",
+        "D": "300 000 dólares",
+        "E": "425 000 dólares"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El terreno está limitado por la gráfica de $$f(x)$$ y el eje X $$(y = 0)$$, formando un triángulo. Primero, hallamos los puntos de corte con el eje X: $$-|x - 7| + 25 = 0$$. Despejando, $$|x - 7| = 25$$. Esto nos da dos posibilidades: $$x - 7 = 25 \\Rightarrow x = 32$$ o $$x - 7 = -25 \\Rightarrow x = -18$$. La base del triángulo se extiende desde $$x = -18$$ hasta $$x = 32$$. La longitud de la base es $$32 - (-18) = 50$$ unidades. La altura del triángulo es el valor máximo de la función, que se encuentra en el vértice de la función de valor absoluto. El vértice de $$f(x) = -|x - 7| + 25$$ es $$(7, 25)$$. Por lo tanto, la altura del triángulo es $$25$$ unidades. El área del triángulo se calcula con la fórmula $$\\text{Área} = (\\text{base} \\times \\text{altura}) / 2$$. Sustituyendo los valores: $$\\text{Área} = (50 \\times 25) / 2 = 1250 / 2 = 625$$ metros cuadrados. Finalmente, para calcular el pago total, multiplicamos el área por el costo por metro cuadrado: $$625 \\times 600 = 375 000$$ dólares. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina el conjunto solución de la siguiente ecuación con valor absoluto: $$|x| + |x - 4| = 6$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "CS = $$\\{-1; 5\\}$$",
+        "B": "CS = $$\\{2; 4\\}$$",
+        "C": "CS = $$\\{-2; 5\\}$$",
+        "D": "CS = $$\\{1; 6\\}$$",
+        "E": "CS = $$\\{-1; 4; 5\\}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para resolver la ecuación $$|x| + |x - 4| = 6$$, analizamos los intervalos definidos por los puntos críticos de los valores absolutos, que son $$x = 0$$ y $$x = 4$$.  Caso 1: Si $$x \\geq 4$$. En este intervalo, $$|x| = x$$ y $$|x - 4| = x - 4$$. La ecuación se convierte en $$x + (x - 4) = 6 \\Rightarrow 2x - 4 = 6 \\Rightarrow 2x = 10 \\Rightarrow x = 5$$. Este valor $$x = 5$$ pertenece al intervalo $$x \\geq 4$$, por lo que es una solución válida.  Caso 2: Si $$0 \\leq x < 4$$. En este intervalo, $$|x| = x$$ y $$|x - 4| = -(x - 4) = 4 - x$$. La ecuación se convierte en $$x + (4 - x) = 6 \\Rightarrow 4 = 6$$. Esto es una contradicción, por lo que no hay soluciones en este intervalo.  Caso 3: Si $$x < 0$$. En este intervalo, $$|x| = -x$$ y $$|x - 4| = -(x - 4) = 4 - x$$. La ecuación se convierte en $$-x + (4 - x) = 6 \\Rightarrow 4 - 2x = 6 \\Rightarrow -2x = 2 \\Rightarrow x = -1$$. Este valor $$x = -1$$ pertenece al intervalo $$x < 0$$, por lo que es una solución válida.  El conjunto solución es la unión de todas las soluciones válidas: $$CS = \\{-1; 5\\}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el área de la región formada por las gráficas de $$f(x) = -|x + 8| + 7$$ y $$g(x) = -5$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "120 $$u^{2}$$",
+        "B": "144 $$u^{2}$$",
+        "C": "160 $$u^{2}$$",
+        "D": "108 $$u^{2}$$",
+        "E": "132 $$u^{2}$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La región está delimitada por la función de valor absoluto $$f(x)$$ y la recta horizontal $$g(x) = -5$$. Para encontrar el área, primero hallamos los puntos de intersección entre ambas funciones: $$-|x + 8| + 7 = -5$$. Despejamos el valor absoluto: $$-|x + 8| = -12 \\Rightarrow |x + 8| = 12$$. Esto nos da dos ecuaciones: $$x + 8 = 12 \\Rightarrow x = 4$$ y $$x + 8 = -12 \\Rightarrow x = -20$$. Estos puntos $$x = -20$$ y $$x = 4$$ representan los extremos de la base del triángulo que forma la región. La longitud de la base es $$4 - (-20) = 24$$ unidades. La altura del triángulo se calcula a partir del vértice de la función $$f(x)$$. El vértice de $$f(x) = -|x + 8| + 7$$ es $$(-8, 7)$$. La altura del triángulo es la distancia vertical entre el punto máximo de $$f(x)$$ (que es $$y = 7$$) y la recta $$g(x) = -5$$. Así, la altura es $$7 - (-5) = 12$$ unidades. El área de un triángulo es $$\\text{Área} = (\\text{base} \\times \\text{altura}) / 2$$. Sustituyendo los valores: $$\\text{Área} = (24 \\times 12) / 2 = 288 / 2 = 144$$ $$u^{2}$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un ecosistema del Amazonas se han identificado $$M = (a - 3)(a - 1)(a + 1)$$ nuevas especies de insectos. Si la función $$f(x) = 8 - |3x - 12|$$ tiene como valor máximo 'a', ¿cuántas nuevas especies de insectos se han identificado?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "468",
+        "B": "579",
+        "C": "357",
+        "D": "680",
+        "E": "791"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que la función $$f(x) = 8 - |3x - 12|$$ alcance su valor máximo, el término del valor absoluto $$|3x - 12|$$ debe ser mínimo. El valor mínimo posible de un valor absoluto es $$0$$.  Entonces, igualamos el argumento a cero para encontrar el valor de $$x$$ donde esto ocurre: $$3x - 12 = 0 \\Rightarrow 3x = 12 \\Rightarrow x = 4$$.  Sustituimos $$x = 4$$ en la función para encontrar su valor máximo 'a': $$a = f(4) = 8 - |3(4) - 12| = 8 - |12 - 12| = 8 - |0| = 8$$.  Así, el valor máximo 'a' es $$8$$.  Ahora, sustituimos $$a = 8$$ en la expresión dada para $$M = (a - 3)(a - 1)(a + 1)$$. Esto representa la concatenación de los resultados de cada paréntesis (como se infiere del formato de ejemplo).  Calculamos cada parte: $$a - 3 = 8 - 3 = 5$$  $$a - 1 = 8 - 1 = 7$$  $$a + 1 = 8 + 1 = 9$$  Concatenando estos dígitos, obtenemos $$M = 579$$. Por lo tanto, se han identificado 579 nuevas especies de insectos. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el vértice y el rango de la función $$f(x) = -5|x - 3| + 8$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "V = $$(3; 8)$$ ; Ran f(x) = $$<-\\text{infinito}; 8]$$",
+        "B": "V = $$(-3; 8)$$ ; Ran f(x) = $$[8; \\text{infinito}>$$",
+        "C": "V = $$(3; -8)$$ ; Ran f(x) = $$<-\\text{infinito}; -8]$$",
+        "D": "V = $$(-3; -8)$$ ; Ran f(x) = $$[8; \\text{infinito}>$$",
+        "E": "V = $$(5; 8)$$ ; Ran f(x) = $$<-\\text{infinito}; 5]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función tiene la forma $$f(x) = a|x - h| + k$$, cuyo vértice es $$(h, k)$$. Aquí, $$f(x) = -5|x - 3| + 8$$. Entonces el vértice es $$V = (3, 8)$$. Como el coeficiente de $$||$$ es negativo $$(-5)$$, la gráfica abre hacia abajo. El valor máximo ocurre en el vértice y es 8, y luego baja sin límite. Por lo tanto, el rango es $$<-\\text{infinito}; 8]$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un urbanista evalúa un terreno de forma triangular delimitado por la función $$f(x) = -|x - 7| + 15$$ y el eje de las abscisas. Si el valor del metro cuadrado en esa zona es de 600 dólares, ¿cuál sería el precio total del terreno?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "150 000 dólares",
+        "B": "135 000 dólares",
+        "C": "120 000 dólares",
+        "D": "180 000 dólares",
+        "E": "200 000 dólares"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El terreno está limitado por la gráfica de $$f(x)$$ y el eje X $$(y = 0)$$, formando un triángulo. Hallamos los cortes con el eje X: $$-|x - 7| + 15 = 0$$, lo que implica $$|x - 7| = 15$$. Esto nos da dos soluciones: $$x - 7 = 15 \\Rightarrow x = 22$$ y $$x - 7 = -15 \\Rightarrow x = -8$$. La base del triángulo está en el eje X, desde -8 hasta 22. La base es $$22 - (-8) = 30$$. La altura es el valor máximo de la función (en el vértice). El vértice de $$f(x) = -|x - 7| + 15$$ es $$(7, 15)$$. Así que la altura es $$15$$. El área del triángulo es $$(base \\times altura) / 2 = (30 \\times 15) / 2 = 450 / 2 = 225$$ $$m^{2}$$. El pago total por el terreno será el área multiplicada por el costo por metro cuadrado: $$225 \\times 600 = 135 000$$ dólares. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Resolver la ecuación con valor absoluto: $$|x| + |x - 4| = 6$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "CS = $$(-2; 5)$$",
+        "B": "CS = $$(-1; 4)$$",
+        "C": "CS = $$(-1; 5)$$",
+        "D": "CS = $$(0; 6)$$",
+        "E": "$$CS = (1; 5)$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Se analizan intervalos según los puntos críticos de los valores absolutos, que son 0 y 4. Caso 1: Si $$x \\geq 4$$. Entonces $$|x| = x$$ y $$|x - 4| = x - 4$$. La ecuación es $$x + (x - 4) = 6 \\Rightarrow 2x - 4 = 6 \\Rightarrow 2x = 10 \\Rightarrow x = 5$$. $$x = 5$$ sí pertenece al intervalo $$x \\geq 4$$. Caso 2: Si $$0 \\leq x < 4$$. Entonces $$|x| = x$$ y $$|x - 4| = -(x - 4) = 4 - x$$. La ecuación es $$x + (4 - x) = 6 \\Rightarrow 4 = 6$$, lo cual es imposible. Caso 3: Si $$x < 0$$. Entonces $$|x| = -x$$ y $$|x - 4| = -(x - 4) = 4 - x$$. La ecuación es $$-x + (4 - x) = 6 \\Rightarrow 4 - 2x = 6 \\Rightarrow -2x = 2 \\Rightarrow x = -1$$. $$x = -1$$ sí pertenece al intervalo $$x < 0$$. El conjunto solución es $$CS = (-1; 5)$$. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el área de la región encerrada por las gráficas de las funciones $$f(x) = -|x + 5| + 9$$ y $$g(x) = 2$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$42 u^{2}$$",
+        "B": "$$56 u^{2}$$",
+        "C": "$$49 u^{2}$$",
+        "D": "$$63 u^{2}$$",
+        "E": "$$35 u^{2}$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La región está entre la curva $$f(x)$$ y la recta $$y = 2$$. Primero, hallamos los puntos de intersección igualando las funciones: $$-|x + 5| + 9 = 2 \\Rightarrow -|x + 5| = -7 \\Rightarrow |x + 5| = 7$$. Esto nos da dos soluciones: $$x + 5 = 7 \\Rightarrow x = 2$$ y $$x + 5 = -7 \\Rightarrow x = -12$$. Estos son los puntos donde la gráfica de $$f(x)$$ intersecta la recta $$y=2$$. El vértice de la función $$f(x) = -|x + 5| + 9$$ es $$(-5, 9)$$, donde $$f(x)$$ alcanza su máximo. En los extremos $$x = -12$$ y $$x = 2$$, $$f(x) = 2$$. La región encerrada es un triángulo. La base del triángulo es la distancia entre los puntos de intersección en el eje x: $$Base = 2 - (-12) = 14$$. La altura del triángulo es la diferencia entre el valor máximo de $$f(x)$$ (el k del vértice, que es 9) y el valor de la recta $$g(x) = 2$$: $$Altura = 9 - 2 = 7$$. El área del triángulo es $$(Base \\times Altura) / 2 = (14 \\times 7) / 2 = 98 / 2 = 49$$ $$u^{2}$$. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "La función $$f(x) = |x^{2} - 10x + 21|$$ tiene 3 interceptos con los ejes coordenados $$(a; 0)$$, $$(b; 0)$$ y $$(0; c)$$. Calcular $$a + b + c$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "30",
+        "B": "35",
+        "C": "31",
+        "D": "28",
+        "E": "40"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para encontrar los interceptos con el eje X, hacemos $$f(x) = 0$$: $$|x^{2} - 10x + 21| = 0$$. Esto implica $$x^{2} - 10x + 21 = 0$$. Factorizamos la ecuación cuadrática: $$(x - 3)(x - 7) = 0$$. Las soluciones son $$x = 3$$ y $$x = 7$$. Por lo tanto, los interceptos con el eje X son $$(3, 0)$$ y $$(7, 0)$$. Asignamos $$a = 3$$ y $$b = 7$$. Para encontrar el intercepto con el eje Y, hacemos $$x = 0$$: $$c = f(0) = |0^{2} - 10(0) + 21| = |0 - 0 + 21| = |21| = 21$$. Entonces, el intercepto con el eje Y es $$(0, 21)$$, lo que significa $$c = 21$$. Finalmente, calculamos la suma $$a + b + c = 3 + 7 + 21 = 31$$. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

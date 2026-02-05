@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 23,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN IRRACIONAL",
+  "tema": "funcion_irracional",
+  "preguntas": [
+    {
+      "pregunta": "En la siguiente función: $$f(x) = \\sqrt[4]{\\frac{40}{x + 3} - x + 3}$$ El número de valores enteros positivos del dominio de \"f\" representa en cientos de dólares el beneficio semanal de una pequeña tienda. Si el dueño invierte el 30 % de ese beneficio en publicidad, ¿cuánto dinero le quedará para otros gastos?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 420",
+        "B": "S/ 490",
+        "C": "S/ 560",
+        "D": "S/ 350",
+        "E": "S/ 700"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Como es raíz cuarta, se exige: $$\\frac{40}{x + 3} - x + 3 \\ge 0$$ y además: $$x \\neq -3$$. Pasamos a una sola fracción: $$\\frac{40 - x(x + 3) + 3(x + 3)}{x + 3} = \\frac{40 - x^2 - 3x + 3x + 9}{x + 3} = \\frac{49 - x^2}{x + 3}$$. Entonces: $$\\frac{49 - x^2}{x + 3} \\ge 0$$. Factorizamos: $$49 - x^2 = (7 - x)(7 + x)$$. Puntos críticos: $$x = -7, x = -3, x = 7$$. Análisis de signos para $$\\frac{(7 - x)(7 + x)}{x + 3} \\ge 0$$: Se obtiene el dominio $$Dom(f) = (-\\infty; -7] \\cup (-3; 7]$$. Valores enteros positivos del dominio: $$1, 2, 3, 4, 5, 6, 7$$ (hay 7 valores). Beneficio = 7 cientos = 700 dólares. Si invierte el 30%, le queda el 70%: $$0.70 \\times 700 = 490$$. Por lo tanto, le quedará S/ 490.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función: $$f(x) = \\sqrt[8]{x^2 - 16}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$Dom(f) = (-\\infty; -4] \\cup [4; +\\infty); Ran(f) = [0; +\\infty)>$$",
+        "B": "$$Dom(f) = [4; +\\infty); Ran(f) = [0; +\\infty)>$$",
+        "C": "$$Dom(f) = (-\\infty; -16] \\cup [16; +\\infty); Ran(f) = [16; +\\infty)>$$",
+        "D": "$$Dom(f) = R; Ran(f) = [0; +\\infty)>$$",
+        "E": "$$Dom(f) = [-4; 4]; Ran(f) = [0; 4]>$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como es raíz de índice par (8), se exige que el radicando sea no negativo: $$x^2 - 16 \\ge 0$$ $$x^2 \\ge 16$$ $$|x| \\ge 4$$. Esto significa $$x \\le -4$$ o $$x \\ge 4$$. El dominio es: $$(-\\infty; -4] \\cup [4; +\\infty)$$. Para el rango, la raíz octava siempre es no negativa y su valor mínimo es 0 cuando $$x^2 - 16 = 0$$ (es decir, en $$x = \\pm 4$$). A medida que $$|x|$$ crece, $$x^2 - 16$$ crece sin límite, por lo que la función también crece sin límite. El rango es: $$[0; +\\infty)$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función de índice impar: $$g(x) = \\sqrt[7]{x^2 - 4}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$Dom(g) = R; Ran(g) = [-\\sqrt[7]{4}; +\\infty)>$$",
+        "B": "$$Dom(g) = R; Ran(g) = [0; +\\infty)>$$",
+        "C": "$$Dom(g) = [2; +\\infty); Ran(g) = [0; +\\infty)>$$",
+        "D": "$$Dom(g) = R; Ran(g) = [-4; +\\infty)>$$",
+        "E": "$$Dom(g) = (-\\infty; -2] \\cup [2; +\\infty); Ran(g) = [0; +\\infty)>$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como la raíz es de índice impar (7), el radicando puede ser cualquier número real. Por lo tanto, el dominio es: $$Dom(g) = R$$. Para el rango, analizamos el radicando $$x^2 - 4$$. El valor mínimo de $$x^2 - 4$$ ocurre cuando $$x = 0$$, dando $$-4$$. A medida que $$|x|$$ aumenta, $$x^2 - 4$$ tiende a $$\\infty$$. Así, el rango del radicando es $$[-4; +\\infty)$$. Aplicando la raíz séptima a este intervalo, y dado que la función raíz impar es creciente, el rango de $$g(x)$$ será: $$[\\sqrt[7]{-4}; +\\infty)$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "El dominio de la función irracional $$f(x) = m\\sqrt[2m]{mx - 3m - 2}$$ es $$Dom(f) = [\\frac{13}{4}; +\\infty)$$, hallar el valor de \"m + 5\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "11",
+        "B": "13",
+        "C": "9",
+        "D": "12",
+        "E": "10"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La raíz es de índice par ($$2m$$), entonces se exige que el radicando sea no negativo: $$mx - 3m - 2 \\ge 0$$. Suponiendo que $$m > 0$$ (para que el índice sea par positivo y el coeficiente de x positivo): $$mx \\ge 3m + 2$$ $$x \\ge \\frac{3m + 2}{m}$$ $$x \\ge 3 + \\frac{2}{m}$$. Como el dominio dado es $$[\\frac{13}{4}; +\\infty)$$, entonces: $$3 + \\frac{2}{m} = \\frac{13}{4}$$. Restamos 3 a ambos lados: $$\\frac{2}{m} = \\frac{13}{4} - 3 = \\frac{13 - 12}{4} = \\frac{1}{4}$$. Así, $$\\frac{2}{m} = \\frac{1}{4}$$, lo que implica $$m = 8$$. Finalmente, nos piden hallar $$m + 5 = 8 + 5 = 13$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función: $$f(x) = 7 - \\sqrt[4]{81 - x^2}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$Dom(f) = [-9; 9]; Ran(f) = [4; 7]$$",
+        "B": "$$Dom(f) = [9; +\\infty); Ran(f) = [0; 7]$$",
+        "C": "$$Dom(f) = (-\\infty; -9] \\cup [9; +\\infty); Ran(f) = [4; 7]$$",
+        "D": "$$Dom(f) = [-9; 9]; Ran(f) = [0; 7]$$",
+        "E": "$$Dom(f) = [-7; 7]; Ran(f) = [0; 7]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para la raíz cuarta, se exige que el radicando sea no negativo: $$81 - x^2 \\ge 0$$ $$x^2 \\le 81$$ $$-9 \\le x \\le 9$$. El dominio es: $$Dom(f) = [-9; 9]$$. Para el rango, sabemos que la raíz de índice par siempre es no negativa. Dentro del dominio, el valor mínimo del radicando $$81 - x^2$$ es 0 (cuando $$x = \\pm 9$$) y el valor máximo es 81 (cuando $$x = 0$$). Entonces, $$0 \\le \\sqrt[4]{81 - x^2} \\le \\sqrt[4]{81}$$. Como $$3^4 = 81$$, tenemos: $$0 \\le \\sqrt[4]{81 - x^2} \\le 3$$. Ahora, consideramos la función completa $$f(x) = 7 - \\sqrt[4]{81 - x^2}$$. Para encontrar el rango, aplicamos la operación a los límites del intervalo $$[0; 3]$$: $$7 - 3 \\le 7 - \\sqrt[4]{81 - x^2} \\le 7 - 0$$ $$4 \\le f(x) \\le 7$$. El rango es: $$Ran(f) = [4; 7]$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "En la siguiente función: $$f(x) = \\sqrt[4]{\\frac{72}{x + 3} - x + 3}$$. El número de valores enteros positivos del dominio de \"f\" representa en cientos de dólares el presupuesto mensual de Miguel para su startup. Si invierte el 20 % de su presupuesto en marketing digital, ¿cuánto le quedará para otros gastos?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/ 720",
+        "B": "S/ 640",
+        "C": "S/ 800",
+        "D": "S/ 750",
+        "E": "S/ 680"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como es raíz cuarta, se exige: $$\\frac{72}{x + 3} - x + 3 \\geq 0$$ y además: $$x \\neq -3$$. Pasamos a una sola fracción: $$\\frac{72 - x(x + 3) + 3(x + 3)}{x + 3} = \\frac{72 - x^2 - 3x + 3x + 9}{x + 3} = \\frac{81 - x^2}{x + 3}$$. Entonces: $$\\frac{81 - x^2}{x + 3} \\geq 0$$. Factorizamos: $$81 - x^2 = (9 - x)(9 + x)$$. Puntos críticos: $$x = -9, x = -3, x = 9$$. Análisis de signos: Dom(f) = $$]-\\infty; -9] \\cup ]-3; 9]$$. Valores enteros positivos del dominio: 1, 2, 3, 4, 5, 6, 7, 8, 9. Hay 9 valores. Presupuesto = 9 cientos = 900 dólares. Invierte el 20%, le queda el 80%: $$0.80 \\times 900 = 720$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_006"
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función: $$f(x) = \\sqrt[4]{x^2 - 16}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "Dom(f) = $$]-\\infty; -4] \\cup [4; +\\infty[$$; Ran(f) = $$[0; +\\infty[$$",
+        "B": "Dom(f) = $$[4; +\\infty[$$; Ran(f) = $$[0; +\\infty[$$",
+        "C": "Dom(f) = $$]-\\infty; -4] \\cup [4; +\\infty[$$; Ran(f) = $$[4; +\\infty[$$",
+        "D": "Dom(f) = $$]-\\infty; -16] \\cup [16; +\\infty[$$; Ran(f) = $$[0; +\\infty[$$",
+        "E": "Dom(f) = $$[0; +\\infty[$$; Ran(f) = $$[0; +\\infty[$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como es raíz de índice par (cuarta), se exige: $$x^2 - 16 \\geq 0$$. Esto implica $$x^2 \\geq 16$$, lo que se traduce en $$|x| \\geq 4$$. Por lo tanto, $$x \\leq -4$$ o $$x \\geq 4$$. El dominio es: Dom(f) = $$]-\\infty; -4] \\cup [4; +\\infty[$$. Para el rango, la expresión $$x^2 - 16$$ tiene un valor mínimo de 0 (cuando $$x = \\pm 4$$) y puede tomar cualquier valor positivo hasta el infinito. La raíz cuarta de estos valores también será no negativa, comenzando en 0 y extendiéndose hasta el infinito. Así, el rango es: Ran(f) = $$[0; +\\infty[$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_007"
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función de índice impar: $$g(x) = \\sqrt[3]{x^2 - 27}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "Dom(g) = R; Ran(g) = $$[-3; +\\infty[$$",
+        "B": "Dom(g) = R; Ran(g) = $$[-27; +\\infty[$$",
+        "C": "Dom(g) = R; Ran(g) = $$[0; +\\infty[$$",
+        "D": "Dom(g) = R+; Ran(g) = $$[-3; +\\infty[$$",
+        "E": "Dom(g) = R; Ran(g) = R"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como es una raíz de índice impar (cúbica), su argumento puede ser cualquier número real. Por lo tanto, el dominio de la función es todos los números reales: Dom(g) = R. Para el rango, analizamos la expresión dentro de la raíz: $$x^2 - 27$$. El valor mínimo de $$x^2$$ es 0 (cuando $$x = 0$$), así que el valor mínimo de $$x^2 - 27$$ es $$0 - 27 = -27$$. La expresión puede tomar cualquier valor real mayor o igual a -27. La función raíz cúbica es creciente, por lo que transformará el intervalo $$[-27; +\\infty[$$ en $$[\\sqrt[3]{-27}; +\\infty[$$. Como $$\\sqrt[3]{-27} = -3$$, el rango de la función es: Ran(g) = $$[-3; +\\infty[$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_008"
+    },
+    {
+      "pregunta": "El dominio de la función irracional $$f(x) = p\\sqrt[2p]{px - 5p + 1}$$ es Dom(f) = $$[14/3; +\\infty[$$. Hallar el mínimo valor de \"p\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "1",
+        "E": "5"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La raíz es de índice par ($$2p$$), entonces se exige que el argumento sea no negativo: $$px - 5p + 1 \\geq 0$$. Además, el índice $$2p$$ debe ser un entero positivo, por lo que $$p$$ debe ser un entero positivo. Suponiendo $$p > 0$$: $$px \\geq 5p - 1$$. $$x \\geq \\frac{5p - 1}{p}$$. $$x \\geq 5 - \\frac{1}{p}$$. Como el dominio dado es $$[14/3; +\\infty[$$, entonces: $$5 - \\frac{1}{p} = \\frac{14}{3}$$. $$\\frac{1}{p} = 5 - \\frac{14}{3}$$. $$\\frac{1}{p} = \\frac{15}{3} - \\frac{14}{3}$$. $$\\frac{1}{p} = \\frac{1}{3}$$. $$p = 3$$. Este valor de $$p=3$$ es un entero positivo ($$2p=6$$ es un índice par válido). Por lo tanto, el mínimo valor de \"p\" es 3. La respuesta correcta es B.",
+      "imagen": null,
+      "id_temporal": "alg_fun_009"
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función: $$f(x) = 5 - \\sqrt[4]{81 - x^2}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "Dom(f) = $$[-9; 9]$$; Ran(f) = $$[2; 5]$$",
+        "B": "Dom(f) = $$[9; +\\infty[$$; Ran(f) = $$[0; 5]$$",
+        "C": "Dom(f) = $$]-\\infty; -9] \\cup [9; +\\infty[$$; Ran(f) = $$[2; 5]$$",
+        "D": "Dom(f) = $$[-9; 9]$$; Ran(f) = $$[5; 8]$$",
+        "E": "Dom(f) = $$[-9; 9]$$; Ran(f) = R"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para la raíz cuarta, se exige que el argumento sea no negativo: $$81 - x^2 \\geq 0$$. Esto implica $$x^2 \\leq 81$$. Al resolver la inecuación, obtenemos $$-9 \\leq x \\leq 9$$. Por lo tanto, el dominio es: Dom(f) = $$[-9; 9]$$. Para el rango, sabemos que $$0 \\leq \\sqrt[4]{81 - x^2} \\leq \\sqrt[4]{81}$$. Como $$3^4 = 81$$, entonces $$\\sqrt[4]{81} = 3$$. Así, la expresión $$\\sqrt[4]{81 - x^2}$$ pertenece al intervalo $$[0; 3]$$. La función es $$f(x) = 5 - \\sqrt[4]{81 - x^2}$$. Para encontrar el rango de $$f(x)$$, restamos los valores del intervalo $$[0; 3]$$ de 5 y revertimos el orden: $$[5 - 3; 5 - 0] = [2; 5]$$. Por lo tanto, el rango es: Ran(f) = $$[2; 5]$$. La respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_010"
+    },
+    {
+      "pregunta": "En la siguiente función: $$f(x) = \\sqrt[4]{\\frac{72}{x + 3} - x + 3}$$. El número de valores enteros positivos del dominio de \"f\" representa en cientos de puntos lo que un estudiante obtiene como bonificación. Si utiliza el 20 % de sus puntos para canjear un premio, ¿cuántos puntos le quedarán?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "700 puntos",
+        "B": "680 puntos",
+        "C": "720 puntos",
+        "D": "800 puntos",
+        "E": "600 puntos"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Como es raíz cuarta, se exige que el radicando sea no negativo y que el denominador no sea cero: $$\\frac{72}{x + 3} - x + 3 \\ge 0$$ y además $$x \\ne -3$$. Primero, se unifica la expresión: $$\\frac{72 - x(x + 3) + 3(x + 3)}{x + 3} = \\frac{72 - x^2 - 3x + 3x + 9}{x + 3} = \\frac{81 - x^2}{x + 3}$$. Entonces, se tiene: $$\\frac{81 - x^2}{x + 3} \\ge 0$$. Se factoriza el numerador: $$(9 - x)(9 + x)$$. Los puntos críticos son $$x = -9$$, $$x = -3$$, $$x = 9$$. Realizando un análisis de signos, el dominio de la función es $$]-\\infty; -9] \\cup ]-3; 9]$$. Los valores enteros positivos del dominio son: 1, 2, 3, 4, 5, 6, 7, 8, 9. Hay 9 valores. La bonificación es 9 cientos de puntos, es decir, 900 puntos. Si utiliza el 20%, le queda el 80%: $$0.80 \\times 900 = 720$$. Por lo tanto, le quedarán 720 puntos.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función: $$f(x) = \\sqrt[8]{x^2 - 25}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "Dom(f) = $$]-\\infty; -5] \\cup [5; +\\infty>$$; Ran(f) = $$[0; +\\infty>$$",
+        "B": "Dom(f) = $$[5; +\\infty>$$; Ran(f) = $$[0; +\\infty>$$",
+        "C": "Dom(f) = $$]-\\infty; -25] \\cup [25; +\\infty>$$; Ran(f) = $$[0; +\\infty>$$",
+        "D": "Dom(f) = $$[-5; 5]$$; Ran(f) = $$[0; +\\infty>$$",
+        "E": "Dom(f) = $$]-\\infty; -5] \\cup [5; +\\infty>$$; Ran(f) = $$[5; +\\infty>$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que la raíz de índice par esté definida, el radicando debe ser no negativo: $$x^2 - 25 \\ge 0$$. Esto implica $$x^2 \\ge 25$$, lo que se traduce en $$|x| \\ge 5$$. Por lo tanto, el dominio es $$x \\le -5$$ o $$x \\ge 5$$, es decir, Dom(f) = $$]-\\infty; -5] \\cup [5; +\\infty>$$$. Para el rango, como la raíz de índice par siempre produce valores no negativos, el valor mínimo se alcanza cuando $$x^2 - 25 = 0$$, que es 0. A medida que $$|x|$$ crece, el valor de la función crece sin límite. Así, el rango es Ran(f) = $$[0; +\\infty>$$.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función de índice impar: $$g(x) = \\sqrt[7]{x^2 - 4}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "Dom(g) = $$R$$; Ran(g) = $$[0; +\\infty>$$",
+        "B": "Dom(g) = $$R$$; Ran(g) = $$[-4; +\\infty>$$",
+        "C": "Dom(g) = $$[2; +\\infty>$$; Ran(g) = $$[-4; +\\infty>$$",
+        "D": "Dom(g) = $$R$$; Ran(g) = $$[2; +\\infty>$$",
+        "E": "Dom(g) = $$]-\\infty; -2] \\cup [2; +\\infty>$$; Ran(g) = $$R$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Como la función es una raíz de índice impar (séptima), está definida para cualquier número real dentro del radicando. Por lo tanto, el dominio es Dom(g) = $$R$$. Para el rango, se analiza la expresión dentro de la raíz: $$x^2 - 4$$. El valor mínimo de $$x^2$$ es 0 (cuando $$x=0$$), entonces el valor mínimo de $$x^2 - 4$$ es $$-4$$. La expresión $$x^2 - 4$$ puede tomar cualquier valor en el intervalo $$[-4; +\\infty>$$$. Dado que la función raíz séptima es monótona creciente, aplica el mismo rango al resultado. Por lo tanto, el rango es Ran(g) = $$[-4; +\\infty>$$.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "El dominio de la función irracional $$f(x) = \\sqrt[2n]{(n+1)x - 3n + 2}$$ es Dom(f) = $$[7/4; +\\infty>$$ . Hallar el valor de \"n\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La raíz es de índice par ($$2n$$), entonces se exige que el radicando sea no negativo: $$(n+1)x - 3n + 2 \\ge 0$$. Asumiendo que $$n+1 > 0$$ (lo que implica $$n > -1$$), se despeja $$x$$: $$(n+1)x \\ge 3n - 2 \\Rightarrow x \\ge \\frac{3n - 2}{n + 1}$$. Como el dominio dado es $$[7/4; +\\infty>$$$, se iguala el límite inferior: $$\\frac{3n - 2}{n + 1} = \\frac{7}{4}$$. Se resuelve la ecuación: $$4(3n - 2) = 7(n + 1) \\Rightarrow 12n - 8 = 7n + 7 \\Rightarrow 5n = 15 \\Rightarrow n = 3$$. Este valor de $$n$$ satisface la condición $$n > -1$$. Por lo tanto, el valor de \"n\" es 3.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el dominio y rango de la función: $$f(x) = 5 - \\sqrt[4]{16 - x^2}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "Dom(f) = $$[-4; 4]$$; Ran(f) = $$[3; 5]$$",
+        "B": "Dom(f) = $$]-\\infty; -4] \\cup [4; +\\infty>$$; Ran(f) = $$[0; 5]$$",
+        "C": "Dom(f) = $$[-4; 4]$$; Ran(f) = $$[0; 2]$$",
+        "D": "Dom(f) = $$[4; +\\infty>$$; Ran(f) = $$[3; 5]$$",
+        "E": "Dom(f) = $$[-16; 16]$$; Ran(f) = $$[0; 5]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que la raíz cuarta esté definida, el radicando debe ser no negativo: $$16 - x^2 \\ge 0$$. Esto implica $$x^2 \\le 16$$, lo que se traduce en $$-4 \\le x \\le 4$$. Por lo tanto, el dominio es Dom(f) = $$[-4; 4]$$. Para el rango, se analiza la raíz. Cuando $$x = \\pm 4$$, $$16 - x^2 = 0$$, por lo que $$\\sqrt[4]{16 - x^2} = 0$$. Cuando $$x = 0$$, $$16 - x^2 = 16$$, por lo que $$\\sqrt[4]{16 - x^2} = \\sqrt[4]{16} = 2$$. Entonces, la expresión $$\\sqrt[4]{16 - x^2}$$ toma valores en el intervalo $$[0; 2]$$. Ahora, se considera la función completa $$f(x) = 5 - \\sqrt[4]{16 - x^2}$$. Si se resta un valor entre 0 y 2 de 5, el rango será: $$5 - 2 \\le 5 - \\sqrt[4]{16 - x^2} \\le 5 - 0$$. Esto resulta en $$3 \\le f(x) \\le 5$$. Por lo tanto, el rango es Ran(f) = $$[3; 5]$$.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 15,
+  "total_temas": 29,
+  "titulo_tema": "RAÍCES DE UNA ECUACIÓN POLINOMIAL",
+  "tema": "raices_de_una_ecuacion_polinomial",
+  "preguntas": [
+    {
+      "pregunta": "Sabiendo que una de las raíces de la ecuación $$x^3 - 9x^2 + 5x + m = 0$$ es $$3$$. Indicar la suma de las otras dos raíces.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$6$$",
+        "B": "$$5$$",
+        "C": "$$7$$",
+        "D": "$$4$$",
+        "E": "$$8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$r_1, r_2, r_3$$ las raíces. Para una ecuación cúbica mónico $$x^3 + Ax^2 + Bx + C = 0$$, la suma de las raíces es $$r_1 + r_2 + r_3 = -A$$. En este caso, para $$x^3 - 9x^2 + 5x + m = 0$$, la suma de las raíces es $$r_1 + r_2 + r_3 = -(-9)/1 = 9$$. Dado que una de las raíces (digamos $$r_1$$) es $$3$$, tenemos: $$3 + r_2 + r_3 = 9$$. Despejando la suma de las otras dos raíces: $$r_2 + r_3 = 9 - 3 = 6$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_rai_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "En la ecuación $$3x^3 - 5x^2 + 8x - 6 = 0$$, dos de sus raíces suman $$2$$. Hallar la tercera raíz.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$1/3$$",
+        "B": "$$-1/3$$",
+        "C": "$$1/2$$",
+        "D": "$$-1/2$$",
+        "E": "$$2/3$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$r_1, r_2, r_3$$ las raíces de la ecuación. Para una ecuación cúbica $$ax^3 + bx^2 + cx + d = 0$$, la suma de las raíces es $$r_1 + r_2 + r_3 = -b/a$$. Para $$3x^3 - 5x^2 + 8x - 6 = 0$$, la suma de las raíces es $$r_1 + r_2 + r_3 = -(-5)/3 = 5/3$$. Se nos da que dos de sus raíces suman $$2$$ (es decir, $$r_1 + r_2 = 2$$). Sustituyendo este valor en la suma total de raíces: $$2 + r_3 = 5/3$$. Despejando la tercera raíz: $$r_3 = 5/3 - 2 = 5/3 - 6/3 = -1/3$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_rai_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el valor del coeficiente $$p$$, si una raíz de la ecuación $$x^3 - 7x^2 + kx + p = 0$$, con $$k$$ y $$p$$ reales, es $$1 + 2i$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$25$$",
+        "B": "$$-25$$",
+        "C": "$$5$$",
+        "D": "$$-5$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Dado que los coeficientes de la ecuación son reales y una de las raíces es $$1 + 2i$$, su conjugado complejo, $$1 - 2i$$, también debe ser una raíz. Sea la tercera raíz $$r_3$$. Para una ecuación cúbica mónico $$x^3 + Ax^2 + Bx + C = 0$$, la suma de las raíces es $$-A$$ y el producto de las raíces es $$-C$$. En este caso, para $$x^3 - 7x^2 + kx + p = 0$$: 1. Suma de raíces: $$(1 + 2i) + (1 - 2i) + r_3 = -(-7)/1 = 7$$. Simplificando: $$2 + r_3 = 7 \\implies r_3 = 5$$. 2. Producto de raíces: $$(1 + 2i)(1 - 2i)(5) = -p$$. Calculamos el producto de los conjugados: $$(1 + 2i)(1 - 2i) = 1^2 - (2i)^2 = 1 - (-4) = 1 + 4 = 5$$. Ahora, sustituimos este valor en el producto total: $$5 \\cdot 5 = -p \\implies 25 = -p \\implies p = -25$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_rai_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$2 - \\sqrt{3}$$ es una raíz de la ecuación $$ax^3 - 10x^2 + bx + 2 = 0$$, calcular el valor de $$ab$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$-15$$",
+        "B": "$$15$$",
+        "C": "$$-10$$",
+        "D": "$$10$$",
+        "E": "$$-20$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que los coeficientes son reales y una raíz es $$2 - \\sqrt{3}$$, su conjugado irracional, $$2 + \\sqrt{3}$$, también es una raíz. Sea $$x_1 = 2 - \\sqrt{3}$$, $$x_2 = 2 + \\sqrt{3}$$. Sea $$x_3$$ la tercera raíz. Para la ecuación $$ax^3 - 10x^2 + bx + 2 = 0$$: 1. Producto de raíces: $$x_1x_2x_3 = -(2)/a$$. $$(2 - \\sqrt{3})(2 + \\sqrt{3})x_3 = -2/a$$. $$(4 - 3)x_3 = -2/a \\implies 1 \\cdot x_3 = -2/a \\implies x_3 = -2/a$$. 2. Suma de raíces: $$x_1 + x_2 + x_3 = -(-10)/a = 10/a$$. $$(2 - \\sqrt{3}) + (2 + \\sqrt{3}) + x_3 = 10/a$$. $$4 + x_3 = 10/a$$. Sustituyendo $$x_3 = -2/a$$: $$4 - 2/a = 10/a$$. Multiplicando por $$a$$: $$4a - 2 = 10 \\implies 4a = 12 \\implies a = 3$$. Ahora podemos encontrar $$x_3 = -2/a = -2/3$$. 3. Suma de productos de raíces tomadas de dos en dos: $$x_1x_2 + x_1x_3 + x_2x_3 = b/a$$. Sabemos que $$x_1x_2 = (2 - \\sqrt{3})(2 + \\sqrt{3}) = 1$$. También $$x_1 + x_2 = (2 - \\sqrt{3}) + (2 + \\sqrt{3}) = 4$$. Entonces, $$x_1x_3 + x_2x_3 = x_3(x_1 + x_2) = (-2/3)(4) = -8/3$$. Así, la suma de productos es: $$1 + (-8/3) = b/3$$. $$3/3 - 8/3 = b/3 \\implies -5/3 = b/3 \\implies b = -5$$. Finalmente, calculamos $$ab = (3)(-5) = -15$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_rai_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$x_1, x_2, x_3$$ son las raíces de la ecuación $$5x^3 - 3x^2 + 6x - 4 = 0$$. Calcular el valor de la expresión $$Q = \frac{1}{x_1x_2} + \frac{1}{x_2x_3} + \frac{1}{x_1x_3}$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$3/4$$",
+        "B": "$$4/3$$",
+        "C": "$$-3/4$$",
+        "D": "$$-4/3$$",
+        "E": "$$1/2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, simplificamos la expresión $$Q$$ sumando las fracciones. El denominador común es $$x_1x_2x_3$$: $$Q = \frac{x_3}{x_1x_2x_3} + \frac{x_1}{x_1x_2x_3} + \frac{x_2}{x_1x_2x_3} = \frac{x_1 + x_2 + x_3}{x_1x_2x_3}$$. Ahora, utilizamos las fórmulas de Vieta para encontrar la suma y el producto de las raíces de la ecuación $$5x^3 - 3x^2 + 6x - 4 = 0$$. Para una ecuación cúbica $$Ax^3 + Bx^2 + Cx + D = 0$$: Suma de raíces: $$x_1 + x_2 + x_3 = -B/A$$. Producto de raíces: $$x_1x_2x_3 = -D/A$$. En nuestro caso, $$A=5$$, $$B=-3$$, $$C=6$$, $$D=-4$$: Suma de raíces: $$x_1 + x_2 + x_3 = -(-3)/5 = 3/5$$. Producto de raíces: $$x_1x_2x_3 = -(-4)/5 = 4/5$$. Sustituimos estos valores en la expresión simplificada para $$Q$$: $$Q = \frac{3/5}{4/5} = \frac{3}{4}$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_rai_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sabiendo que una de las raíces de la ecuación $$x^3 - 9x^2 + 4x + m = 0$$ es $$-3$$. Indicar la suma de las otras dos raíces.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$9$$",
+        "B": "$$10$$",
+        "C": "$$12$$",
+        "D": "$$13$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$r_1, r_2, r_3$$ las raíces. Para una ecuación cúbica mónica $$x^3 + Ax^2 + Bx + C = 0$$, la suma de las raíces es $$-A$$. En este caso, para $$x^3 - 9x^2 + 4x + m = 0$$, la suma de las raíces es $$-(-9) = 9$$. Dado que una raíz es $$r_1 = -3$$, tenemos: $$( -3 ) + r_2 + r_3 = 9$$ $$r_2 + r_3 = 9 + 3$$ $$r_2 + r_3 = 12$$. Por lo tanto, la suma de las otras dos raíces es $$12$$.",
+      "id_temporal": "alg_rai_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "En la ecuación $$3x^3 - 5x^2 + 8x - 1 = 0$$, dos de sus raíces suman $$2$$. Hallar la tercera raíz.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1/3$$",
+        "B": "$$-1/3$$",
+        "C": "$$2/3$$",
+        "D": "$$-2/3$$",
+        "E": "$$1$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$r_1, r_2, r_3$$ las raíces de la ecuación $$3x^3 - 5x^2 + 8x - 1 = 0$$. La suma de las raíces está dada por la fórmula $$-b/a$$. En este caso, la suma de las raíces es $$-(-5)/3 = 5/3$$. Sabemos que dos de sus raíces suman $$2$$, es decir, $$r_1 + r_2 = 2$$. Sustituyendo esto en la suma total de raíces: $$( r_1 + r_2 ) + r_3 = 5/3$$ $$2 + r_3 = 5/3$$ $$r_3 = 5/3 - 2$$ $$r_3 = 5/3 - 6/3$$ $$r_3 = -1/3$$. La tercera raíz es $$-1/3$$.",
+      "id_temporal": "alg_rai_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el valor de $$c$$, si una de las raíces de la ecuación $$x^3 - 8x^2 + kx + c = 0$$, con $$k$$ y $$c$$ reales, es $$3 - i$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-10$$",
+        "B": "$$-20$$",
+        "C": "$$20$$",
+        "D": "$$10$$",
+        "E": "$$-15$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Dado que los coeficientes de la ecuación $$x^3 - 8x^2 + kx + c = 0$$ son reales y una de sus raíces es $$3 - i$$, su conjugado complejo $$3 + i$$ también debe ser una raíz. Sea $$r_1 = 3 - i$$, $$r_2 = 3 + i$$, y $$r_3$$ la tercera raíz. Para una ecuación cúbica mónica $$x^3 + Ax^2 + Bx + C = 0$$, la suma de las raíces es $$-A$$ y el producto de las raíces es $$-C$$. La suma de las raíces es $$-(-8)/1 = 8$$: $$( 3 - i ) + ( 3 + i ) + r_3 = 8$$ $$6 + r_3 = 8$$ $$r_3 = 2$$. El producto de las raíces es $$-c$$: $$( 3 - i )( 3 + i )( 2 ) = -c$$ $$( 9 - i^2 )( 2 ) = -c$$ $$( 9 + 1 )( 2 ) = -c$$ $$10 \\cdot 2 = -c$$ $$20 = -c$$ $$c = -20$$. Por lo tanto, el valor de $$c$$ es $$-20$$.",
+      "id_temporal": "alg_rai_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$1 - \\sqrt{2}$$ es una raíz de la ecuación $$px^3 - 10x^2 - qx + 6 = 0$$, con $$p$$ y $$q$$ reales. Calcular el valor de $$pq$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$20$$",
+        "B": "$$10$$",
+        "C": "$$-10$$",
+        "D": "$$-20$$",
+        "E": "$$-5$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Dado que los coeficientes de la ecuación son reales y una raíz es $$1 - \\sqrt{2}$$, su conjugado $$1 + \\sqrt{2}$$ también es una raíz. Sean las raíces $$r_1 = 1 - \\sqrt{2}$$, $$r_2 = 1 + \\sqrt{2}$$ y $$r_3$$ la tercera raíz. Para la ecuación $$px^3 - 10x^2 - qx + 6 = 0$$: 1. Suma de raíces: $$r_1 + r_2 + r_3 = -(-10)/p = 10/p$$ $$( 1 - \\sqrt{2} ) + ( 1 + \\sqrt{2} ) + r_3 = 10/p$$ $$2 + r_3 = 10/p \\quad (I)$$ 2. Producto de raíces: $$r_1 r_2 r_3 = -6/p$$ $$( 1 - \\sqrt{2} )( 1 + \\sqrt{2} )r_3 = -6/p$$ $$( 1 - 2 )r_3 = -6/p$$ $$-r_3 = -6/p \\quad r_3 = 6/p \\quad (II)$$ Igualando (I) y (II): $$2 + 6/p = 10/p$$ Multiplicamos por $$p$$: $$2p + 6 = 10$$ $$2p = 4 \\quad p = 2$$. Sustituimos $$p=2$$ en $$r_3 = 6/p$$: $$r_3 = 6/2 = 3$$. 3. Suma de productos de raíces tomadas de dos en dos: $$r_1 r_2 + r_1 r_3 + r_2 r_3 = -q/p$$ $$( 1 - \\sqrt{2} )( 1 + \\sqrt{2} ) + ( 1 - \\sqrt{2} )( 3 ) + ( 1 + \\sqrt{2} )( 3 ) = -q/2$$ $$-1 + 3( 1 - \\sqrt{2} + 1 + \\sqrt{2} ) = -q/2$$ $$-1 + 3( 2 ) = -q/2$$ $$-1 + 6 = -q/2$$ $$5 = -q/2 \\quad q = -10$$. Finalmente, calculamos $$pq = (2)(-10) = -20$$. Por lo tanto, $$pq = -20$$.",
+      "id_temporal": "alg_rai_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una de las raíces de la ecuación $$3x^3 + ax^2 + bx + 18 = 0$$ es $$1 - \\sqrt{2}$$. Calcular el valor de $$P = \\sqrt[3]{(a + b - 1)}$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Dado que los coeficientes de la ecuación $$3x^3 + ax^2 + bx + 18 = 0$$ son reales y una raíz es $$1 - \\sqrt{2}$$, su conjugado $$1 + \\sqrt{2}$$ también es una raíz. Sean las raíces $$r_1 = 1 - \\sqrt{2}$$, $$r_2 = 1 + \\sqrt{2}$$ y $$r_3$$ la tercera raíz. 1. Producto de raíces: $$r_1 r_2 r_3 = -18/3 = -6$$ $$( 1 - \\sqrt{2} )( 1 + \\sqrt{2} )r_3 = -6$$ $$( 1 - 2 )r_3 = -6$$ $$-r_3 = -6 \\quad r_3 = 6$$. Las raíces de la ecuación son $$1 - \\sqrt{2}$$, $$1 + \\sqrt{2}$$ y $$6$$. Ahora formamos el polinomio con estas raíces: $$( x - ( 1 - \\sqrt{2} ) )( x - ( 1 + \\sqrt{2} ) )( x - 6 ) = 0$$ $$((x - 1)^2 - (\\sqrt{2})^2)(x - 6) = 0$$ $$( x^2 - 2x + 1 - 2 )( x - 6 ) = 0$$ $$( x^2 - 2x - 1 )( x - 6 ) = 0$$ Desarrollamos el producto: $$x(x^2 - 2x - 1) - 6(x^2 - 2x - 1) = 0$$ $$x^3 - 2x^2 - x - 6x^2 + 12x + 6 = 0$$ $$x^3 - 8x^2 + 11x + 6 = 0$$. Para que el coeficiente principal sea $$3$$, multiplicamos toda la ecuación por $$3$$: $$3x^3 - 24x^2 + 33x + 18 = 0$$. Comparando con la ecuación original $$3x^3 + ax^2 + bx + 18 = 0$$: $$a = -24$$ $$b = 33$$. Finalmente, calculamos el valor de $$P = \\sqrt[3]{(a + b - 1)}$$: $$P = \\sqrt[3]{( -24 + 33 - 1 )}$$ $$P = \\sqrt[3]{( 9 - 1 )}$$ $$P = \\sqrt[3]{8}$$ $$P = 2$$. El valor de $$P$$ es $$2$$.",
+      "id_temporal": "alg_rai_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sabiendo que una de las raíces de la ecuación $$x^{3} - 9x^{2} + 5x + k = 0$$ es $$3$$. Indicar la suma de las otras dos raíces.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$4$$",
+        "B": "$$6$$",
+        "C": "$$8$$",
+        "D": "$$10$$",
+        "E": "$$12$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para una ecuación cúbica mónica $$x^{3} + Ax^{2} + Bx + C = 0$$, la suma de las raíces ($$r_1 + r_2 + r_3$$) es igual a $$-A$$. En la ecuación $$x^{3} - 9x^{2} + 5x + k = 0$$, la suma de las raíces es $$-(-9) = 9$$. Si una de las raíces ($$r_1$$) es $$3$$, entonces $$3 + r_2 + r_3 = 9$$. Despejando la suma de las otras dos raíces obtenemos $$r_2 + r_3 = 9 - 3 = 6$$. La respuesta correcta es B.",
+      "id_temporal": "alg_rai_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el valor de $$m$$, si una de las raíces de la ecuación $$x^{3} - 7x^{2} + kx + m = 0$$, con $$k$$ y $$m$$ reales, es $$3 - i$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$-10$$",
+        "C": "$$5$$",
+        "D": "$$-5$$",
+        "E": "$$1$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Si los coeficientes de la ecuación $$x^{3} - 7x^{2} + kx + m = 0$$ son reales y una de sus raíces es $$3 - i$$, entonces su conjugado, $$3 + i$$, también debe ser una raíz. Sea la tercera raíz $$r_3$$. Por las relaciones de Vieta, la suma de las raíces es $$-(-7)/1 = 7$$. Entonces, $$(3 - i) + (3 + i) + r_3 = 7$$. Esto simplifica a $$6 + r_3 = 7$$, por lo tanto $$r_3 = 1$$. El producto de las raíces es igual a $$-m/1 = -m$$. Así, $$(3 - i)(3 + i)(1) = -m$$. El producto de los conjugados es $$(3^2 - i^2) = (9 - (-1)) = 10$$. Entonces, $$10 \\cdot 1 = -m$$, lo que implica $$m = -10$$. La respuesta correcta es B.",
+      "id_temporal": "alg_rai_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$x_1$$, $$x_2$$, $$x_3$$ son las raíces de la ecuación $$5x^{3} - 3x^{2} + 6x - 2 = 0$$. Calcular el valor de $$Q = \\frac{1}{x_1x_2} + \\frac{1}{x_2x_3} + \\frac{1}{x_1x_3}$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\frac{2}{3}$$",
+        "B": "$$\\frac{3}{2}$$",
+        "C": "$$1$$",
+        "D": "$$-\\frac{2}{3}$$",
+        "E": "$$-\\frac{3}{2}$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La expresión $$Q$$ puede simplificarse a un formato más útil: $$Q = \\frac{1}{x_1x_2} + \\frac{1}{x_2x_3} + \\frac{1}{x_1x_3} = \\frac{x_3 + x_1 + x_2}{x_1x_2x_3}$$. Para la ecuación $$5x^{3} - 3x^{2} + 6x - 2 = 0$$, aplicando las relaciones de Vieta: La suma de las raíces ($$x_1 + x_2 + x_3$$) es $$-(-3)/5 = 3/5$$. El producto de las raíces ($$x_1x_2x_3$$) es $$-(-2)/5 = 2/5$$. Sustituyendo estos valores en la expresión simplificada de $$Q$$: $$Q = \\frac{3/5}{2/5} = \\frac{3}{2}$$. La respuesta correcta es B.",
+      "id_temporal": "alg_rai_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el valor de $$m$$, si las raíces de la ecuación $$x^{3} - 12x^{2} + mx - 48 = 0$$ están en progresión aritmética.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$36$$",
+        "B": "$$40$$",
+        "C": "$$44$$",
+        "D": "$$48$$",
+        "E": "$$52$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Si las raíces están en progresión aritmética, podemos representarlas como $$a - d$$, $$a$$ y $$a + d$$. Para una ecuación cúbica mónica $$x^{3} + Ax^{2} + Bx + C = 0$$, la suma de las raíces es $$-A$$, y el producto de las raíces es $$-C$$. En la ecuación $$x^{3} - 12x^{2} + mx - 48 = 0$$: Suma de raíces: $$(a - d) + a + (a + d) = 3a$$. Esto es igual a $$-(-12) = 12$$. Entonces, $$3a = 12 \\implies a = 4$$. Las raíces son $$4 - d$$, $$4$$ y $$4 + d$$. Producto de raíces: $$(4 - d) \\cdot 4 \\cdot (4 + d) = -(-48) = 48$$. $$4(16 - d^{2}) = 48$$. Dividiendo por $$4$$: $$16 - d^{2} = 12$$. $$d^{2} = 4$$, por lo tanto $$d = \\pm 2$$. Podemos tomar $$d = 2$$. Las raíces son $$4 - 2 = 2$$, $$4$$ y $$4 + 2 = 6$$. El valor de $$m$$ es la suma de los productos de las raíces tomadas de dos en dos: $$m = (2)(4) + (4)(6) + (2)(6)$$. $$m = 8 + 24 + 12 = 44$$. La respuesta correcta es C.",
+      "id_temporal": "alg_rai_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una de las raíces de la ecuación $$3x^{3} + px^{2} + qx + 6 = 0$$, con $$p$$ y $$q$$ reales, es $$1 + \\sqrt{3}$$. Calcular el valor de $$Q = \\sqrt{ p + q^{2} + 10 }$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que los coeficientes $$p$$ y $$q$$ son reales y una de las raíces es $$x_1 = 1 + \\sqrt{3}$$, su conjugado $$x_2 = 1 - \\sqrt{3}$$ también debe ser una raíz. Sea la tercera raíz $$x_3 = r$$. Para la ecuación $$3x^{3} + px^{2} + qx + 6 = 0$$, el producto de las raíces ($$x_1x_2x_3$$) es $$-6/3 = -2$$. Sustituyendo las raíces: $$(1 + \\sqrt{3})(1 - \\sqrt{3})r = -2$$. $$(1^{2} - (\\sqrt{3})^{2})r = -2$$. $$(1 - 3)r = -2$$. $$-2r = -2 \\implies r = 1$$. Así, las tres raíces son $$1 + \\sqrt{3}$$, $$1 - \\sqrt{3}$$ y $$1$$. Ahora, formamos el polinomio con estas raíces: $$(x - (1 + \\sqrt{3}))(x - (1 - \\sqrt{3}))(x - 1) = 0$$. Primero multiplicamos los dos primeros factores: $$((x - 1) - \\sqrt{3})((x - 1) + \\sqrt{3}) = (x - 1)^{2} - (\\sqrt{3})^{2} = (x^{2} - 2x + 1) - 3 = x^{2} - 2x - 2$$. Luego multiplicamos por el tercer factor: $$(x^{2} - 2x - 2)(x - 1) = x^{3} - x^{2} - 2x^{2} + 2x - 2x + 2 = x^{3} - 3x^{2} + 0x + 2$$. Para que el coeficiente principal sea $$3$$, multiplicamos toda la ecuación por $$3$$: $$3(x^{3} - 3x^{2} + 0x + 2) = 3x^{3} - 9x^{2} + 0x + 6 = 0$$. Comparando con la ecuación original $$3x^{3} + px^{2} + qx + 6 = 0$$, obtenemos: $$p = -9$$ y $$q = 0$$. Finalmente, calculamos el valor de $$Q = \\sqrt{ p + q^{2} + 10 }$$. $$Q = \\sqrt{ -9 + (0)^{2} + 10 } = \\sqrt{ -9 + 0 + 10 } = \\sqrt{1} = 1$$. La respuesta correcta es A.",
+      "id_temporal": "alg_rai_015",
+      "imagen": null
+    }
+  ]
+}

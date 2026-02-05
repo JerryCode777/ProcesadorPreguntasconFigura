@@ -1,0 +1,234 @@
+{
+  "materia": "aritmetica",
+  "numero_tema": 4,
+  "total_temas": 6,
+  "titulo_tema": "NÚMEROS IRRACIONALES",
+  "tema": "numeros_irracionales",
+  "preguntas": [
+    {
+      "pregunta": "Determina el valor de $$k$$ si se cumple la siguiente igualdad:\n$$\\sqrt{10 + k \\sqrt{11 + 2\\sqrt{10}}} = \\sqrt{10} + 2$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Primero, simplificamos el radical más interno:\n$$\\sqrt{11 + 2\\sqrt{10}}$$Buscamos dos números cuya suma sea 11 y cuyo producto sea 10. Esos números son 10 y 1.\nAsí, $$\\sqrt{11 + 2\\sqrt{10}} = \\sqrt{10} + \\sqrt{1} = \\sqrt{10} + 1$$\nAhora, sustituimos este resultado en la ecuación original:\n$$\\sqrt{10 + k (\\sqrt{10} + 1)} = \\sqrt{10} + 2$$\nElevamos ambos lados al cuadrado:\n$$10 + k(\\sqrt{10} + 1) = (\\sqrt{10} + 2)^2$$\nExpandimos el lado derecho:\n$$( \\sqrt{10} + 2 )^2 = (\\sqrt{10})^2 + 2(\\sqrt{10})(2) + 2^2 = 10 + 4\\sqrt{10} + 4 = 14 + 4\\sqrt{10}$$\nAhora igualamos las expresiones:\n$$10 + k\\sqrt{10} + k = 14 + 4\\sqrt{10}$$\nAgrupamos términos racionales e irracionales:\n$$(10 + k) + k\\sqrt{10} = 14 + 4\\sqrt{10}$$\nPara que esta igualdad se cumpla, las partes racionales e irracionales deben ser iguales:\n$$k\\sqrt{10} = 4\\sqrt{10} \\implies k = 4$$\nVerificamos con la parte racional:\n$$10 + k = 14$$\n$$10 + 4 = 14$$\n$$14 = 14$$\nAmbas partes coinciden con $$k=4$$.",
+      "id_temporal": "ari_num_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionaliza la expresión $$\\frac{1}{1 + \\sqrt{2} + \\sqrt{3}}$$ e indica su numerador final después de la racionalización completa.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$2 + \\sqrt{2} - \\sqrt{6}$$",
+        "B": "$$1 + \\sqrt{2} - \\sqrt{3}$$",
+        "C": "$$\\sqrt{2} + \\sqrt{6} - 2$$",
+        "D": "$$2 - \\sqrt{2} - \\sqrt{6}$$",
+        "E": "$$4$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Agrupamos el denominador como $$(1 + \\sqrt{2}) + \\sqrt{3}$$ y multiplicamos por su conjugado $$(1 + \\sqrt{2}) - \\sqrt{3}$$.:\n$$\\frac{1}{ (1 + \\sqrt{2}) + \\sqrt{3} } \\cdot \\frac{(1 + \\sqrt{2}) - \\sqrt{3}}{(1 + \\sqrt{2}) - \\sqrt{3}}$$\nEl numerador provisional es $$1 + \\sqrt{2} - \\sqrt{3}$$. El denominador es:\n$$( (1 + \\sqrt{2}) + \\sqrt{3} ) ( (1 + \\sqrt{2}) - \\sqrt{3} ) = (1 + \\sqrt{2})^2 - (\\sqrt{3})^2$$\n$$= (1 + 2\\sqrt{2} + 2) - 3 = 3 + 2\\sqrt{2} - 3 = 2\\sqrt{2}$$\nLa expresión se convierte en $$\\frac{1 + \\sqrt{2} - \\sqrt{3}}{2\\sqrt{2}}$$. Para completar la racionalización, multiplicamos por $$\\frac{\\sqrt{2}}{\\sqrt{2}}$$:\n$$\\frac{(1 + \\sqrt{2} - \\sqrt{3})\\sqrt{2}}{2\\sqrt{2} \\cdot \\sqrt{2}} = \\frac{\\sqrt{2} + (\\sqrt{2})^2 - \\sqrt{3}\\sqrt{2}}{2 \\cdot 2} = \\frac{\\sqrt{2} + 2 - \\sqrt{6}}{4}$$\nEl numerador final es $$2 + \\sqrt{2} - \\sqrt{6}$$.",
+      "id_temporal": "ari_num_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Daniel debe encontrar el valor de la cifra $$a$$ para la siguiente igualdad:\n$$\\sqrt{0,00\\overline{a} + 2 \\cdot 0,0\\overline{a} + 0,\\overline{a}} = 0,3\\overline{6}$$Si Daniel resolvió correctamente, ¿cuál fue su respuesta?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$3$$",
+        "C": "$$9$$",
+        "D": "$$16$$",
+        "E": "$$25$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Expresamos los decimales periódicos como fracciones:\n$$0,\\overline{a} = \\frac{a}{9}$$\n$$0,0\\overline{a} = \\frac{a}{90}$$\n$$0,00\\overline{a} = \\frac{a}{900}$$\nSumamos las fracciones dentro de la raíz:\n$$\\frac{a}{900} + 2\\left(\\frac{a}{90}\\right) + \\frac{a}{9} = \\frac{a}{900} + \\frac{2a}{90} + \\frac{a}{9}$$\nPara sumarlas, buscamos un denominador común, que es 900:\n$$\\frac{a}{900} + \\frac{20a}{900} + \\frac{100a}{900} = \\frac{a + 20a + 100a}{900} = \\frac{121a}{900}$$\nEntonces, la expresión dentro de la raíz es $$\\frac{121a}{900}$$. Calculamos la raíz cuadrada:\n$$\\sqrt{\\frac{121a}{900}} = \\frac{\\sqrt{121}\\sqrt{a}}{\\sqrt{900}} = \\frac{11\\sqrt{a}}{30}$$\nAhora, convertimos el lado derecho de la igualdad a fracción:\n$$0,3\\overline{6} = \\frac{36 - 3}{90} = \\frac{33}{90} = \\frac{11}{30}$$\nIgualamos ambas expresiones:\n$$\\frac{11\\sqrt{a}}{30} = \\frac{11}{30}$$\nMultiplicando ambos lados por $$\\frac{30}{11}$$, obtenemos:\n$$\\sqrt{a} = 1$$\nElevamos al cuadrado para encontrar $$a$$:\n$$a = 1^2 = 1$$",
+      "id_temporal": "ari_num_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Transforma la expresión radical $$E = \\sqrt{14 + \\sqrt{40} + \\sqrt{56} + \\sqrt{140}}$$ a la forma $$\\sqrt{x} + \\sqrt{y} + \\sqrt{z}$$, donde $$x, y, z$$ son números enteros. Luego, calcula la suma $$x+y+z$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$14$$",
+        "C": "$$18$$",
+        "D": "$$20$$",
+        "E": "$$24$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, reescribimos los radicales dentro de la expresión en la forma $$2\\sqrt{ab}$$, $$2\\sqrt{ac}$$, $$2\\sqrt{bc}$$, etc.:\n$$\\sqrt{40} = \\sqrt{4 \\cdot 10} = 2\\sqrt{10}$$\n$$\\sqrt{56} = \\sqrt{4 \\cdot 14} = 2\\sqrt{14}$$\n$$\\sqrt{140} = \\sqrt{4 \\cdot 35} = 2\\sqrt{35}$$\nAsí, la expresión se convierte en:\n$$E = \\sqrt{14 + 2\\sqrt{10} + 2\\sqrt{14} + 2\\sqrt{35}}$$\nEsta expresión es de la forma $$\\sqrt{A + 2\\sqrt{xy} + 2\\sqrt{xz} + 2\\sqrt{yz}} = \\sqrt{x} + \\sqrt{y} + \\sqrt{z}$$, donde $$A = x+y+z$$.\nNecesitamos encontrar tres números enteros $$x, y, z$$ tales que:\n1) $$x+y+z = 14$$\n2) $$xy = 10$$\n3) $$xz = 14$$\n4) $$yz = 35$$\nPodemos resolver este sistema de ecuaciones. De (2), (3) y (4), multiplicamos los productos:\n$$(xy)(xz)(yz) = 10 \\cdot 14 \\cdot 35$$\n$$(xyz)^2 = 4900$$\n$$xyz = \\sqrt{4900} = 70$$\nAhora podemos encontrar $$x, y, z$$ individualmente:\n$$x = \\frac{xyz}{yz} = \\frac{70}{35} = 2$$\n$$y = \\frac{xyz}{xz} = \\frac{70}{14} = 5$$\n$$z = \\frac{xyz}{xy} = \\frac{70}{10} = 7$$\nVerificamos que estos valores satisfacen la primera condición:\n$$x+y+z = 2+5+7 = 14$$\nEsto coincide con el término constante bajo la raíz. Por lo tanto, la expresión simplificada es $$\\sqrt{2} + \\sqrt{5} + \\sqrt{7}$$. La pregunta pide la suma de los valores $$x+y+z$$, que es 14.",
+      "id_temporal": "ari_num_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "El lado de un nonágono regular (9 lados iguales) mide $$(\\sqrt{x+16} - 4)$$ centímetros. Si el perímetro de dicho nonágono es $$x$$ centímetros, ¿cuál es el valor de $$x$$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$8$$",
+        "B": "$$9$$",
+        "C": "$$10$$",
+        "D": "$$12$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El perímetro de un nonágono regular es 9 veces la longitud de uno de sus lados.\nDado que el perímetro es $$x$$ y el lado mide $$(\\sqrt{x+16} - 4)$$, podemos establecer la ecuación:\n$$x = 9(\\sqrt{x+16} - 4)$$\nDistribuimos el 9:\n$$x = 9\\sqrt{x+16} - 36$$\nSumamos 36 a ambos lados:\n$$x + 36 = 9\\sqrt{x+16}$$\nPara resolver esta ecuación, hacemos una sustitución. Sea $$u = \\sqrt{x+16}$$. Entonces, $$u^2 = x+16$$, lo que implica $$x = u^2 - 16$$.\nSustituimos $$x$$ en la ecuación:\n$$(u^2 - 16) + 36 = 9u$$\n$$u^2 + 20 = 9u$$\nReorganizamos la ecuación para formar una ecuación cuadrática:\n$$u^2 - 9u + 20 = 0$$\nFactorizamos la ecuación cuadrática:\n$$(u-4)(u-5) = 0$$\nEsto nos da dos posibles valores para $$u$$:\n1) $$u = 4$$\n2) $$u = 5$$\nSi $$u = 4$$:\n$$\\sqrt{x+16} = 4$$\nElevamos al cuadrado ambos lados:\n$$x+16 = 4^2$$\n$$x+16 = 16$$\n$$x = 0$$\nSi el perímetro $$x$$ fuera 0, el lado también sería 0 (o indefinido), lo cual no es posible para un nonágono. Por lo tanto, $$x=0$$ no es una solución válida.\nSi $$u = 5$$:\n$$\\sqrt{x+16} = 5$$\nElevamos al cuadrado ambos lados:\n$$x+16 = 5^2$$\n$$x+16 = 25$$\n$$x = 25 - 16$$\n$$x = 9$$\nVerificamos esta solución:\nLado = $$\\sqrt{9+16} - 4 = \\sqrt{25} - 4 = 5 - 4 = 1$$ centímetro.\nPerímetro = $$9 \\cdot 1 = 9$$ centímetros.\nEl perímetro es $$x$$, y $$x=9$$, lo cual es consistente.",
+      "id_temporal": "ari_num_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuál es el resultado de simplificar la expresión $$ F = \frac{6}{\\sqrt{3} + \\sqrt{2}} + \frac{1}{\\sqrt{2} - 1} $$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ 6\\sqrt{3} - 5\\sqrt{2} + 1 $$",
+        "B": "$$ 6\\sqrt{3} - 7\\sqrt{2} + 1 $$",
+        "C": "$$ 5\\sqrt{3} - 5\\sqrt{2} + 1 $$",
+        "D": "$$ 6\\sqrt{3} - 5\\sqrt{2} - 1 $$",
+        "E": "$$ \\sqrt{3} + \\sqrt{2} + 1 $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para el primer término, racionalizamos multiplicando por el conjugado: $$ \frac{6}{\\sqrt{3} + \\sqrt{2}} \\cdot \frac{\\sqrt{3} - \\sqrt{2}}{\\sqrt{3} - \\sqrt{2}} = \frac{6(\\sqrt{3} - \\sqrt{2})}{3 - 2} = 6(\\sqrt{3} - \\sqrt{2}) = 6\\sqrt{3} - 6\\sqrt{2} $$. Para el segundo término: $$ \frac{1}{\\sqrt{2} - 1} \\cdot \frac{\\sqrt{2} + 1}{\\sqrt{2} + 1} = \frac{\\sqrt{2} + 1}{2 - 1} = \\sqrt{2} + 1 $$. Sumando ambos resultados: $$ (6\\sqrt{3} - 6\\sqrt{2}) + (\\sqrt{2} + 1) = 6\\sqrt{3} - 5\\sqrt{2} + 1 $$.",
+      "id_temporal": "ari_num_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si la expresión $$ \\sqrt{M + 2\\sqrt{15}} $$ se transforma en radicales simples de la forma $$ \\sqrt{a} + \\sqrt{b} $$, donde $$ a $$ y $$ b $$ son enteros positivos. Si además se sabe que $$ a \\cdot b = 15 $$ y $$ a > b $$, ¿cuál es el valor de $$ M $$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "10",
+        "B": "8",
+        "C": "7",
+        "D": "12",
+        "E": "9"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para transformar $$ \\sqrt{M + 2\\sqrt{15}} $$ en $$ \\sqrt{a} + \\sqrt{b} $$, se debe cumplir que $$ M = a+b $$ y $$ 15 = ab $$. Dado que $$ a \\cdot b = 15 $$ y $$ a, b $$ son enteros positivos con $$ a > b $$, los únicos valores posibles para $$ a $$ y $$ b $$ son $$ a=5 $$ y $$ b=3 $$. Por lo tanto, $$ M = a+b = 5+3 = 8 $$.",
+      "id_temporal": "ari_num_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Los catetos de un triángulo rectángulo miden $$ (\\sqrt{7} + \\sqrt{3}) $$ unidades y $$ (\\sqrt{7} - \\sqrt{3}) $$ unidades. ¿Cuál es la longitud de la hipotenusa de este triángulo?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ 2\\sqrt{5} $$",
+        "B": "$$ \\sqrt{10} $$",
+        "C": "$$ 2\\sqrt{7} $$",
+        "D": "$$ 5\\sqrt{2} $$",
+        "E": "$$ \\sqrt{30} $$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Usando el Teorema de Pitágoras, la hipotenusa $$ c $$ cumple $$ c^2 = a^2 + b^2 $$. Calculamos el cuadrado de cada cateto:\n$$ a^2 = (\\sqrt{7} + \\sqrt{3})^2 = (\\sqrt{7})^2 + 2\\sqrt{7}\\sqrt{3} + (\\sqrt{3})^2 = 7 + 2\\sqrt{21} + 3 = 10 + 2\\sqrt{21} $$\n$$ b^2 = (\\sqrt{7} - \\sqrt{3})^2 = (\\sqrt{7})^2 - 2\\sqrt{7}\\sqrt{3} + (\\sqrt{3})^2 = 7 - 2\\sqrt{21} + 3 = 10 - 2\\sqrt{21} $$\nSumando ambos cuadrados: $$ c^2 = (10 + 2\\sqrt{21}) + (10 - 2\\sqrt{21}) = 20 $$. Por lo tanto, $$ c = \\sqrt{20} = \\sqrt{4 \\cdot 5} = 2\\sqrt{5} $$.",
+      "id_temporal": "ari_num_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$ X $$ el valor de la siguiente suma: $$ X = \frac{1}{1 + \\sqrt{2}} + \frac{1}{\\sqrt{2} + \\sqrt{3}} + \frac{1}{\\sqrt{3} + \\sqrt{4}} + \\dots + \frac{1}{\\sqrt{99} + \\sqrt{100}} $$. ¿Cuál es el valor de $$ X $$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "10",
+        "B": "9",
+        "C": "11",
+        "D": "8",
+        "E": "100"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Cada término de la suma se puede racionalizar multiplicando por su conjugado. Para un término general $$ \frac{1}{\\sqrt{n} + \\sqrt{n+1}} $$:\n$$ \frac{1}{\\sqrt{n} + \\sqrt{n+1}} \\cdot \frac{\\sqrt{n+1} - \\sqrt{n}}{\\sqrt{n+1} - \\sqrt{n}} = \frac{\\sqrt{n+1} - \\sqrt{n}}{(n+1) - n} = \\sqrt{n+1} - \\sqrt{n} $$\nAplicando esto a cada término de la suma, obtenemos una serie telescópica:\n$$ X = (\\sqrt{2} - \\sqrt{1}) + (\\sqrt{3} - \\sqrt{2}) + (\\sqrt{4} - \\sqrt{3}) + \\dots + (\\sqrt{100} - \\sqrt{99}) $$\nTodos los términos intermedios se cancelan, dejando solo el último y el primer término:\n$$ X = \\sqrt{100} - \\sqrt{1} = 10 - 1 = 9 $$.",
+      "id_temporal": "ari_num_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si la expresión $$ \\sqrt[4]{49 - 20\\sqrt{6}} $$ se escribe en la forma $$ \\sqrt{a} - \\sqrt{b} $$, donde $$ a $$ y $$ b $$ son enteros positivos. Determine el valor de $$ a - b $$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, transformamos el radical interno para aplicar la fórmula de radicales simples $$ \\sqrt{A \\pm 2\\sqrt{B}} = \\sqrt{x} \\pm \\sqrt{y} $$:\n$$ \\sqrt{49 - 20\\sqrt{6}} = \\sqrt{49 - 2\\sqrt{100 \\cdot 6}} = \\sqrt{49 - 2\\sqrt{600}} $$\nAhora buscamos dos números que sumen 49 y su producto sea 600. Estos números son 25 y 24 ($$ 25+24=49 $$, $$ 25 \\cdot 24 = 600 $$).\nAsí, $$ \\sqrt{49 - 2\\sqrt{600}} = \\sqrt{25} - \\sqrt{24} = 5 - \\sqrt{24} = 5 - 2\\sqrt{6} $$. \nAhora, necesitamos la raíz cuadrada de este resultado, lo que significa calcular la raíz cuadrada de nuevo:\n$$ \\sqrt[4]{49 - 20\\sqrt{6}} = \\sqrt{5 - 2\\sqrt{6}} $$\nPara simplificar $$ \\sqrt{5 - 2\\sqrt{6}} $$, buscamos dos números que sumen 5 y su producto sea 6. Estos números son 3 y 2 ($$ 3+2=5 $$, $$ 3 \\cdot 2 = 6 $$).\nPor lo tanto, $$ \\sqrt{5 - 2\\sqrt{6}} = \\sqrt{3} - \\sqrt{2} $$. \nLa expresión final es $$ \\sqrt{3} - \\sqrt{2} $$, de donde $$ a=3 $$ y $$ b=2 $$. Finalmente, $$ a - b = 3 - 2 = 1 $$.",
+      "id_temporal": "ari_num_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "La expresión $$ \\sqrt{30 + 2\\sqrt{221}} $$ puede transformarse en la suma de dos radicales simples $$ \\sqrt{a} + \\sqrt{b} $$. Determine el valor de $$ a + b $$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$30$$",
+        "B": "$$28$$",
+        "C": "$$26$$",
+        "D": "$$32$$",
+        "E": "$$34$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para transformar la expresión $$ \\sqrt{A + 2\\sqrt{B}} $$ en $$ \\sqrt{a} + \\sqrt{b} $$, se busca que $$ a+b = A $$ y $$ ab = B $$. En este caso, $$ A=30 $$ y $$ B=221 $$. Necesitamos encontrar dos números que sumen $$ 30 $$ y cuyo producto sea $$ 221 $$. Consideramos la ecuación cuadrática $$ t^{2} - 30t + 221 = 0 $$. Factorizando, obtenemos $$ (t-13)(t-17) = 0 $$. Así, los números son $$ a=17 $$ y $$ b=13 $$ (o viceversa). La suma de $$ a+b $$ es $$ 17+13 = 30 $$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "ari_num_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Racionalice la expresión $$ \\frac{6}{\\sqrt{10} - \\sqrt{5} - \\sqrt{2}} $$ e indique el denominador resultante.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$31$$",
+        "B": "$$-31$$",
+        "C": "$$9$$",
+        "D": "$$40$$",
+        "E": "$$7$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para racionalizar la expresión, agrupamos los términos en el denominador: $$ \\frac{6}{\\sqrt{10} - (\\sqrt{5} + \\sqrt{2})} $$. Multiplicamos por el conjugado $$ \\sqrt{10} + (\\sqrt{5} + \\sqrt{2}) $$: \n$$ \\frac{6}{\\sqrt{10} - (\\sqrt{5} + \\sqrt{2})} \\times \\frac{\\sqrt{10} + (\\sqrt{5} + \\sqrt{2})}{\\sqrt{10} + (\\sqrt{5} + \\sqrt{2})} $$ El nuevo denominador es: \n$$ (\\sqrt{10})^{2} - (\\sqrt{5} + \\sqrt{2})^{2} = 10 - (5 + 2\\sqrt{5}\\sqrt{2} + 2) = 10 - (7 + 2\\sqrt{10}) = 3 - 2\\sqrt{10} $$ Ahora, debemos racionalizar nuevamente multiplicando por el conjugado de $$ 3 - 2\\sqrt{10} $$ que es $$ 3 + 2\\sqrt{10} $$:\n$$ \\frac{6(\\sqrt{10} + \\sqrt{5} + \\sqrt{2})}{3 - 2\\sqrt{10}} \\times \\frac{3 + 2\\sqrt{10}}{3 + 2\\sqrt{10}} $$ El denominador final es:\n$$ (3)^{2} - (2\\sqrt{10})^{2} = 9 - (4 \\times 10) = 9 - 40 = -31 $$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "ari_num_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si se cumple la igualdad $$ \\frac{\\sqrt{a} + \\sqrt{b}}{\\sqrt{a} - \\sqrt{b}} = 7 + 4\\sqrt{3} $$, donde $$ a $$ y $$ b $$ son números enteros positivos, determine el valor de la razón $$ a/b $$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$4/3$$",
+        "B": "$$7/4$$",
+        "C": "$$3/2$$",
+        "D": "$$13/7$$",
+        "E": "$$5/3$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para simplificar el lado izquierdo de la ecuación, multiplicamos el numerador y el denominador por el conjugado del denominador, $$ (\\sqrt{a} + \\sqrt{b}) $$:\n$$ \\frac{(\\sqrt{a} + \\sqrt{b})(\\sqrt{a} + \\sqrt{b})}{(\\sqrt{a} - \\sqrt{b})(\\sqrt{a} + \\sqrt{b})} = \\frac{(\\sqrt{a} + \\sqrt{b})^{2}}{(\\sqrt{a})^{2} - (\\sqrt{b})^{2}} = \\frac{a + b + 2\\sqrt{ab}}{a - b} $$ Separando las partes racional e irracional, tenemos:\n$$ \\frac{a + b}{a - b} + \\frac{2\\sqrt{ab}}{a - b} = 7 + 4\\sqrt{3} $$ Igualando las partes racionales:\n$$ \\frac{a + b}{a - b} = 7 \\implies a + b = 7(a - b) \\implies a + b = 7a - 7b \\implies 8b = 6a \\implies \\frac{a}{b} = \\frac{8}{6} = \\frac{4}{3} $$ Igualando las partes irracionales (para verificar):\n$$ \\frac{2\\sqrt{ab}}{a - b} = 4\\sqrt{3} $$ Si $$ a/b = 4/3 $$, podemos asumir $$ a=4k $$ y $$ b=3k $$ para algún $$ k $$. Sustituyendo en la ecuación de las partes irracionales: \n$$ \\frac{2\\sqrt{(4k)(3k)}}{4k - 3k} = \\frac{2\\sqrt{12k^{2}}}{k} = \\frac{2 \\cdot 2k\\sqrt{3}}{k} = 4\\sqrt{3} $$ La igualdad se cumple, confirmando que $$ a/b = 4/3 $$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "ari_num_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un terreno de forma cuadrada tiene un lado de longitud $$ (\\sqrt{x+7} - 1) $$ metros. Si el área del terreno es $$ (x+2) $$ metros cuadrados, determine el valor de $$ x $$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El lado del terreno cuadrado es $$ L = \\sqrt{x+7} - 1 $$. El área de un cuadrado se calcula como $$ L^{2} $$. Sabemos que el área es $$ x+2 $$. Entonces, podemos establecer la ecuación:\n$$ (\\sqrt{x+7} - 1)^{2} = x+2 $$ Expandimos el lado izquierdo:\n$$ (\\sqrt{x+7})^{2} - 2\\sqrt{x+7} + 1^{2} = x+2 $$ $$ x+7 - 2\\sqrt{x+7} + 1 = x+2 $$ $$ x+8 - 2\\sqrt{x+7} = x+2 $$ Restamos $$ x $$ de ambos lados:\n$$ 8 - 2\\sqrt{x+7} = 2 $$ Reorganizamos para aislar el radical:\n$$ 6 = 2\\sqrt{x+7} $$ $$ 3 = \\sqrt{x+7} $$ Elevamos ambos lados al cuadrado para eliminar la raíz:\n$$ 3^{2} = (\\sqrt{x+7})^{2} $$ $$ 9 = x+7 $$ $$ x = 9 - 7 $$ $$ x = 2 $$ Verificamos la solución: Si $$ x=2 $$, el lado es $$ \\sqrt{2+7} - 1 = \\sqrt{9} - 1 = 3 - 1 = 2 $$ metros. El área sería $$ 2^{2} = 4 $$ metros cuadrados. Según el problema, el área es $$ x+2 = 2+2 = 4 $$ metros cuadrados. La solución es consistente. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "ari_num_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "La longitud de un cable se calcula como el resultado de simplificar la expresión $$ \\sqrt{10 + \\sqrt{24} + \\sqrt{40} + \\sqrt{60}} $$ y luego sumar los radicandos de los radicales simples resultantes. ¿Cuál es la longitud total del cable?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$12$$",
+        "C": "$$15$$",
+        "D": "$$8$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La expresión dada es de la forma $$ \\sqrt{A + \\sqrt{B} + \\sqrt{C} + \\sqrt{D}} $$. Podemos reescribir los radicales como $$ 2\\sqrt{\\text{algo}} $$:\n$$ \\sqrt{24} = \\sqrt{4 \\times 6} = 2\\sqrt{6} $$ $$ \\sqrt{40} = \\sqrt{4 \\times 10} = 2\\sqrt{10} $$ $$ \\sqrt{60} = \\sqrt{4 \\times 15} = 2\\sqrt{15} $$ Sustituyendo en la expresión original:\n$$ \\sqrt{10 + 2\\sqrt{6} + 2\\sqrt{10} + 2\\sqrt{15}} $$ Buscamos tres números positivos $$ a, b, c $$ tales que $$ (\\sqrt{a} + \\sqrt{b} + \\sqrt{c})^{2} = a+b+c + 2\\sqrt{ab} + 2\\sqrt{ac} + 2\\sqrt{bc} $$. Comparando con nuestra expresión, tenemos:\n1. $$ a+b+c = 10 $$\n2. $$ ab = 6 $$\n3. $$ ac = 10 $$\n4. $$ bc = 15 $$ De las ecuaciones (2) y (3), si dividimos la tercera por la segunda, obtenemos $$ c/b = 10/6 = 5/3 $$, por lo que $$ c = (5/3)b $$. Sustituimos esto en la ecuación (4):\n$$ b((5/3)b) = 15 \\implies (5/3)b^{2} = 15 \\implies 5b^{2} = 45 \\implies b^{2} = 9 $$ Como $$ b $$ debe ser positivo, $$ b = 3 $$. Ahora encontramos $$ c $$ y $$ a $$:\n$$ c = (5/3)b = (5/3)(3) = 5 $$\n$$ a = 6/b = 6/3 = 2 $$ Verificamos con la ecuación (1): $$ a+b+c = 2+3+5 = 10 $$. Esto coincide. Por lo tanto, la expresión se simplifica a:\n$$ \\sqrt{2} + \\sqrt{3} + \\sqrt{5} $$ El problema pide sumar los radicandos de los radicales simples resultantes. Los radicandos son 2, 3 y 5. La suma es $$ 2+3+5 = 10 $$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "ari_num_015",
+      "imagen": null
+    }
+  ]
+}

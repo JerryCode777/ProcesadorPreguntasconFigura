@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 4,
+  "total_temas": 29,
+  "titulo_tema": "FACTORIZACIÓN",
+  "tema": "factorizacion",
+  "preguntas": [
+    {
+      "pregunta": "La puntuación en un torneo de ajedrez es un número de dos cifras '3a', donde 'a' representa el número de factores lineales distintos que tiene el polinomio $$P(x) = x^4 - 256$$. ¿Cuál es la puntuación obtenida?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "32",
+        "B": "34",
+        "C": "30",
+        "D": "36",
+        "E": "31"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Se factoriza el polinomio $$P(x) = x^4 - 256$$ como una diferencia de cuadrados: $$P(x) = (x^2 - 16)(x^2 + 16)$$. Luego, se factoriza nuevamente $$x^2 - 16$$ como $$(x - 4)(x + 4)$$. El término $$x^2 + 16$$ no se factoriza en factores lineales con coeficientes reales. Por lo tanto, los factores lineales distintos son $$(x - 4)$$ y $$(x + 4)$$. Esto significa que $$a = 2$$. La puntuación es el número de dos cifras '3a', que es $$32$$.",
+      "id_temporal": "alg_fac_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "El precio de un artículo coleccionable se determina multiplicando el número total de factores algebraicos y el número de factores primos distintos del polinomio $$M(k) = k^3 + 3k^2 - 9k - 27$$. ¿Cuál será el costo de 40 de estos artículos?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "240 soles",
+        "B": "180 soles",
+        "C": "300 soles",
+        "D": "120 soles",
+        "E": "200 soles"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, factorizamos el polinomio $$M(k) = k^3 + 3k^2 - 9k - 27$$ por agrupación: $$k^2(k + 3) - 9(k + 3) = (k + 3)(k^2 - 9)$$. Luego, factorizamos $$k^2 - 9$$ como una diferencia de cuadrados: $$(k - 3)(k + 3)$$. Así, el polinomio factorizado es $$(k + 3)(k - 3)(k + 3) = (k + 3)^2(k - 3)$$. Los factores primos distintos son $$(k + 3)$$ y $$(k - 3)$$, por lo que el número de factores primos es $$2$$. Los factores totales, contando su multiplicidad, son $$(k + 3)$$, $$(k + 3)$$ y $$(k - 3)$$, sumando un total de $$3$$ factores. El precio por unidad es el producto de estos números: $$2 \times 3 = 6$$ soles. Para $$40$$ artículos, el costo total será $$40 \times 6 = 240$$ soles.",
+      "id_temporal": "alg_fac_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Factorizar e indicar el número de factores algebraicos que tiene el polinomio $$R(m; n; p) = (m + n + p)^3 – (m + n – p)^3$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "1",
+        "E": "5"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$A = m + n + p$$ y $$B = m + n – p$$. El polinomio se convierte en $$R = A^3 – B^3$$. Usamos la identidad de diferencia de cubos: $$A^3 – B^3 = (A – B)(A^2 + AB + B^2)$$. Primero, calculamos $$A – B = (m + n + p) – (m + n – p) = 2p$$. Luego, para $$A^2 + AB + B^2$$, sea $$s = m + n$$. Entonces $$A = s + p$$ y $$B = s – p$$. $$A^2 = (s + p)^2 = s^2 + 2sp + p^2$$. $$B^2 = (s – p)^2 = s^2 – 2sp + p^2$$. $$AB = (s + p)(s – p) = s^2 – p^2$$. Sumando: $$A^2 + AB + B^2 = (s^2 + 2sp + p^2) + (s^2 – p^2) + (s^2 – 2sp + p^2) = 3s^2 + p^2$$. Sustituyendo $$s = m + n$$ de nuevo: $$3(m + n)^2 + p^2$$. Por lo tanto, $$R = 2p(3(m + n)^2 + p^2)$$. Los factores algebraicos son $$2p$$ y $$(3(m + n)^2 + p^2)$$. Así, el número total de factores algebraicos es $$2$$.",
+      "id_temporal": "alg_fac_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular $$Q(3) - Q(1)$$, si $$Q(z)$$ es igual al factor primo cuadrático del polinomio $$P(z) = z^4 + 8 + z^3 + 8z$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "4",
+        "B": "2",
+        "C": "-2",
+        "D": "6",
+        "E": "0"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, ordenamos el polinomio $$P(z) = z^4 + z^3 + 8z + 8$$ y lo factorizamos por agrupación: $$z^3(z + 1) + 8(z + 1) = (z + 1)(z^3 + 8)$$. Luego, factorizamos la suma de cubos $$z^3 + 8 = (z + 2)(z^2 - 2z + 4)$$. El factor primo cuadrático es $$Q(z) = z^2 - 2z + 4$$. Ahora, calculamos $$Q(3)$$ y $$Q(1)$$: $$Q(3) = 3^2 - 2(3) + 4 = 9 - 6 + 4 = 7$$. $$Q(1) = 1^2 - 2(1) + 4 = 1 - 2 + 4 = 3$$. Finalmente, $$Q(3) - Q(1) = 7 - 3 = 4$$.",
+      "id_temporal": "alg_fac_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$P(a; b)$$ es igual a la suma de los factores primos del polinomio $$Q(a; b) = a^4 + 8a^2b^2 + 16b^4 - 4a^2b^2$$, calcular $$P(3; 2)$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "50",
+        "B": "42",
+        "C": "56",
+        "D": "60",
+        "E": "48"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, simplificamos el polinomio $$Q(a; b)$$ combinando los términos de $$a^2b^2$$: $$Q(a; b) = a^4 + (8a^2b^2 - 4a^2b^2) + 16b^4 = a^4 + 4a^2b^2 + 16b^4$$. Ahora, factorizamos este polinomio reescribiéndolo para usar la identidad de diferencia de cuadrados. El término $$a^4 + 16b^4$$ es parte de un cuadrado perfecto $$(a^2 + 4b^2)^2 = a^4 + 8a^2b^2 + 16b^4$$. Para que nuestro polinomio original coincida, restamos $$4a^2b^2$$: $$a^4 + 4a^2b^2 + 16b^4 = (a^2 + 4b^2)^2 - 4a^2b^2$$. Reconocemos $$4a^2b^2$$ como $$(2ab)^2$$. Así, tenemos una diferencia de cuadrados: $$(a^2 + 4b^2)^2 - (2ab)^2 = (a^2 + 4b^2 - 2ab)(a^2 + 4b^2 + 2ab)$$. Los factores primos son $$F_1 = a^2 + 4b^2 - 2ab$$ y $$F_2 = a^2 + 4b^2 + 2ab$$. La suma de los factores primos es $$P(a; b) = F_1 + F_2 = (a^2 + 4b^2 - 2ab) + (a^2 + 4b^2 + 2ab) = 2a^2 + 8b^2$$. Finalmente, evaluamos $$P(3; 2)$$: $$P(3; 2) = 2(3^2) + 8(2^2) = 2(9) + 8(4) = 18 + 32 = 50$$.",
+      "id_temporal": "alg_fac_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "La calificación final de Clara es '1a', donde 'a' es el número de factores lineales distintos que tiene el polinomio $$R(x) = x^6 - 64$$. ¿Cuál es la calificación de Clara?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13",
+        "E": "14"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Factorizamos el polinomio: $$R(x) = x^6 - 64 = (x^3 - 8)(x^3 + 8)$$. Luego, aplicamos las fórmulas de diferencia y suma de cubos: $$(x - 2)(x^2 + 2x + 4)(x + 2)(x^2 - 2x + 4)$$. Los factores lineales distintos son $$(x - 2)$$ y $$(x + 2)$$. Por lo tanto, el número de factores lineales 'a' es 2. La calificación de Clara es '1a', que es 12.",
+      "id_temporal": "alg_fac_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "El precio unitario de un libro en una librería se determina como el producto del número de factores primos y el número total de factores (contando su multiplicidad) del polinomio $$N(x) = x^3 - 4x^2 - x + 4$$. ¿Cuál será el costo de 40 libros?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "360 soles",
+        "B": "400 soles",
+        "C": "320 soles",
+        "D": "280 soles",
+        "E": "450 soles"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Factorizamos el polinomio $$N(x) = x^3 - 4x^2 - x + 4$$ por agrupación: $$N(x) = x^2(x - 4) - 1(x - 4) = (x - 4)(x^2 - 1)$$. Continuamos factorizando la diferencia de cuadrados: $$(x - 4)(x - 1)(x + 1)$$. Los factores primos (distintos) son $$(x - 4)$$, $$(x - 1)$$ y $$(x + 1)$$. El número de factores primos es 3. El número total de factores (contando su multiplicidad) es también 3, ya que todos son distintos y tienen multiplicidad 1. El precio unitario es el producto de estos números: $$3 \times 3 = 9$$ soles. El costo de 40 libros será $$40 \times 9 = 360$$ soles.",
+      "id_temporal": "alg_fac_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Factorizar e indicar el número de factores algebraicos primos que tiene el polinomio: $$P(x; y; z) = (x + y + z)^3 - (x - y + z)^3$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$U = x + y + z$$ y $$V = x - y + z$$. Entonces $$P = U^3 - V^3$$. Usando la fórmula de diferencia de cubos: $$U^3 - V^3 = (U - V)(U^2 + UV + V^2)$$. Primero, calculamos $$U - V = (x + y + z) - (x - y + z) = 2y$$. Luego, sea $$s = x + z$$. Entonces $$U = s + y$$ y $$V = s - y$$. Calculamos $$U^2 + UV + V^2 = (s + y)^2 + (s + y)(s - y) + (s - y)^2 = (s^2 + 2sy + y^2) + (s^2 - y^2) + (s^2 - 2sy + y^2) = 3s^2 + y^2$$. Sustituyendo $$s = x + z$$ de nuevo: $$3(x + z)^2 + y^2$$. Así, el polinomio factorizado es $$P = 2y(3(x + z)^2 + y^2)$$. Los factores algebraicos primos son $$y$$ y $$(3(x + z)^2 + y^2)$$. Por lo tanto, tiene 2 factores algebraicos primos.",
+      "id_temporal": "alg_fac_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular $$R(3) – R(1)$$. Si $$R(x)$$ es igual al factor primo cuadrático del polinomio: $$P(x) = x^4 + 8 + x^3 + 8x$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "-2",
+        "E": "-4"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Ordenamos el polinomio: $$P(x) = x^4 + x^3 + 8x + 8$$. Factorizamos por agrupación: $$x^3(x + 1) + 8(x + 1) = (x + 1)(x^3 + 8)$$. Luego, factorizamos la suma de cubos $$x^3 + 8 = (x + 2)(x^2 - 2x + 4)$$. El factor primo cuadrático es $$R(x) = x^2 - 2x + 4$$. Calculamos $$R(3) = 3^2 - 2(3) + 4 = 9 - 6 + 4 = 7$$. Calculamos $$R(1) = 1^2 - 2(1) + 4 = 1 - 2 + 4 = 3$$. Finalmente, $$R(3) - R(1) = 7 - 3 = 4$$.",
+      "id_temporal": "alg_fac_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$G(a; b)$$ es igual a la suma de los factores primos del polinomio: $$F(a; b) = a^4 + 3a^2b^2 + b^4 – 2a^2b^2$$. Calcular $$G(2; 5)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "48",
+        "B": "52",
+        "C": "58",
+        "D": "60",
+        "E": "62"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Simplificamos el polinomio $$F(a; b)$$ combinando los términos semejantes: $$F(a; b) = a^4 + (3a^2b^2 - 2a^2b^2) + b^4 = a^4 + a^2b^2 + b^4$$. Para factorizar esta expresión, la reescribimos como una diferencia de cuadrados: $$(a^2 + b^2)^2 – (ab)^2$$. Aplicando la diferencia de cuadrados $$A^2 - B^2 = (A - B)(A + B)$$: $$(a^2 + b^2 - ab)(a^2 + b^2 + ab)$$. Los factores primos son $$F1 = a^2 - ab + b^2$$ y $$F2 = a^2 + ab + b^2$$. La suma de estos factores, $$G(a; b)$$, es $$G(a; b) = (a^2 - ab + b^2) + (a^2 + ab + b^2) = 2a^2 + 2b^2$$. Ahora evaluamos $$G(2; 5)$$: $$G(2; 5) = 2(2^2) + 2(5^2) = 2(4) + 2(25) = 8 + 50 = 58$$.",
+      "id_temporal": "alg_fac_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "La puntuación de Elisa es de 2b, donde “b” es el número de factores lineales que tiene el polinomio $$P(x) = x^4 – 256$$. ¿Cuál es la puntuación de Elisa?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "22",
+        "B": "23",
+        "C": "21",
+        "D": "24",
+        "E": "20"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Factorizamos: $$P(x) = x^4 – 256 = (x^2 – 16)(x^2 + 16)$$. Factorizamos $$x^2 – 16 = (x – 4)(x + 4)$$. El término $$x^2 + 16$$ no se factoriza en lineales reales. Los factores lineales son: $$(x – 4)$$ y $$(x + 4)$$. Entonces $$b = 2$$. La puntuación es el número de dos cifras “2b” = 22. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_fac_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "El costo por caja de bombones artesanales se determina por el producto del número de factores primos distintos y el número de factores totales del polinomio: $$N(x) = x^3 + x^2 – 9x – 9$$. Si se desean adquirir 75 cajas, ¿cuál será el costo total?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "525 soles",
+        "B": "600 soles",
+        "C": "675 soles",
+        "D": "750 soles",
+        "E": "825 soles"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Factorizamos el polinomio por agrupación: $$N(x) = x^3 + x^2 – 9x – 9 = x^2(x + 1) – 9(x + 1) = (x + 1)(x^2 – 9)$$. Luego, factorizamos la diferencia de cuadrados: $$(x^2 – 9) = (x – 3)(x + 3)$$. Así, $$N(x) = (x + 1)(x – 3)(x + 3)$$. Los factores primos distintos son: $$(x + 1)$$, $$(x – 3)$$ y $$(x + 3)$$. El número de factores primos distintos es 3. El número de factores totales (contando multiplicidad) es 3. El costo por caja es el producto de estos números: $$3 \times 3 = 9$$ soles. El costo de 75 cajas será $$75 \times 9 = 675$$ soles. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_fac_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular $$R(3) – R(1)$$. Si $$R(y)$$ es igual al factor primo cuadrático del polinomio: $$P(y) = y^4 + y^3 – 125y – 125$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "12",
+        "B": "18",
+        "C": "24",
+        "D": "6",
+        "E": "30"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Ordenamos y factorizamos por agrupación: $$P(y) = y^4 + y^3 – 125y – 125 = y^3(y + 1) – 125(y + 1) = (y + 1)(y^3 – 125)$$. Factorizamos la diferencia de cubos: $$y^3 – 125 = (y – 5)(y^2 + 5y + 25)$$. El factor primo cuadrático es: $$R(y) = y^2 + 5y + 25$$. Calculamos $$R(3)$$ y $$R(1)$$: $$R(3) = 3^2 + 5(3) + 25 = 9 + 15 + 25 = 49$$. $$R(1) = 1^2 + 5(1) + 25 = 1 + 5 + 25 = 31$$. Finalmente, $$R(3) – R(1) = 49 – 31 = 18$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fac_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$M(x; y)$$ es igual a la suma de los factores primos del polinomio: $$Q(x; y) = x^4 + 2x^2y^2 + y^4 – 9x^2y^2$$. Calcular $$M(2; 3)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "18",
+        "B": "26",
+        "C": "34",
+        "D": "22",
+        "E": "14"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Simplificamos $$Q(x; y)$$: $$Q = x^4 + (2x^2y^2 – 9x^2y^2) + y^4 = x^4 – 7x^2y^2 + y^4$$. Reordenamos para aplicar la identidad de Sophie Germain o diferencia de cuadrados: $$Q = (x^4 + 2x^2y^2 + y^4) – 9x^2y^2 = (x^2 + y^2)^2 – (3xy)^2$$. Factorizamos como diferencia de cuadrados: $$Q = ((x^2 + y^2) – 3xy)((x^2 + y^2) + 3xy)$$. Los factores primos son: $$F1 = x^2 + y^2 – 3xy$$ y $$F2 = x^2 + y^2 + 3xy$$. La suma de los factores primos es: $$M(x; y) = F1 + F2 = (x^2 + y^2 – 3xy) + (x^2 + y^2 + 3xy) = 2x^2 + 2y^2$$. Evaluamos en $$(2; 3)$$: $$M(2; 3) = 2(2^2) + 2(3^2) = 2(4) + 2(9) = 8 + 18 = 26$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fac_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Factorizar e indicar el número de factores algebraicos que tiene el polinomio: $$G(a) = a^6 – 7a^3 – 8$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Hacemos un cambio de variable: sea $$t = a^3$$. Entonces, el polinomio se convierte en $$t^2 – 7t – 8$$. Factorizamos el trinomio cuadrático: $$t^2 – 7t – 8 = (t – 8)(t + 1)$$. Volvemos a la variable original, reemplazando $$t$$ por $$a^3$$: $$(a^3 – 8)(a^3 + 1)$$. Ahora, factorizamos cada término usando las fórmulas de diferencia y suma de cubos: $$a^3 – 8 = (a – 2)(a^2 + 2a + 4)$$ y $$a^3 + 1 = (a + 1)(a^2 – a + 1)$$. Por lo tanto, la factorización completa de $$G(a)$$ es: $$G(a) = (a – 2)(a^2 + 2a + 4)(a + 1)(a^2 – a + 1)$$. Los factores algebraicos son cuatro: $$(a – 2)$$, $$(a^2 + 2a + 4)$$, $$(a + 1)$$ y $$(a^2 – a + 1)$$. Por lo tanto, el número de factores algebraicos es 4. La respuesta correcta es C.",
+      "id_temporal": "alg_fac_015",
+      "imagen": null
+    }
+  ]
+}

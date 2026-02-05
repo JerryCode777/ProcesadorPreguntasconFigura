@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 3,
+  "total_temas": 29,
+  "titulo_tema": "COCIENTES NOTABLES",
+  "tema": "cocientes_notables",
+  "preguntas": [
+    {
+      "pregunta": "Si el número de términos del cociente notable $$(a^{M} – b^{N}) / (a^4 – b^6)$$ es 7, determine el cuarto término.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$a^{12} b^{18}$$",
+        "B": "$$a^{16} b^{24}$$",
+        "C": "$$a^{20} b^{30}$$",
+        "D": "$$a^{12} b^{24}$$",
+        "E": "$$a^{16} b^{18}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El cociente notable es de la forma $$(x^A - y^B) / (x^P - y^Q)$$. El número de términos (N) se calcula como $$A/P = B/Q$$. Dado que el número de términos es $$N=7$$, y los denominadores son $$a^4$$ y $$b^6$$:  $$M/4 = 7 \\Rightarrow M = 28$$ y $$N/6 = 7 \\Rightarrow N = 42$$. Así, el cociente es $$(a^{28} – b^{42}) / (a^4 – b^6)$$. El término general $$(T_k)$$, para el k-ésimo término (1-indexado), es $$T_k = (a^P)^{N-k} (b^Q)^{k-1}$$. Para el cuarto término, $$k=4$$:  $$T_4 = (a^4)^{7-4} (b^6)^{4-1} = (a^4)^3 (b^6)^3 = a^{12} b^{18}$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_coc_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$m^{240} n^{90} + m^{236} n^{96} + \\dots$$ son términos consecutivos del desarrollo de un cociente notable, hallar el número total de términos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "70",
+        "B": "76",
+        "C": "82",
+        "D": "68",
+        "E": "72"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Observamos la diferencia entre los exponentes de $$m$$ y $$n$$ en términos consecutivos:  Diferencia de exponentes de $$m$$: $$240 - 236 = 4$$. Diferencia de exponentes de $$n$$: $$96 - 90 = 6$$. Esto indica que la base del cociente notable en el denominador es de la forma $$(m^4 - n^6)$$. El término general $$(T_k)$$ (1-indexado) de un cociente notable $$(m^A - n^B) / (m^P - n^Q)$$ es $$T_k = (m^P)^{N-k} (n^Q)^{k-1}$$. Aquí, $$P=4$$ y $$Q=6$$.  Supongamos que $$m^{240} n^{90}$$ es el término en la posición $$j$$. Entonces:  $$P(N-j) = 240 \\Rightarrow 4(N-j) = 240 \\Rightarrow N-j = 60$$  $$Q(j-1) = 90 \\Rightarrow 6(j-1) = 90 \\Rightarrow j-1 = 15 \\Rightarrow j = 16$$  Sustituyendo $$j=16$$ en la primera ecuación:  $$N - 16 = 60 \\Rightarrow N = 76$$. El número total de términos es 76. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_coc_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$p^x q^{27}$$ es el término central del desarrollo del cociente notable $$(p^{114} – q^y) / (p^z – q^3)$$, hallar $$x + y + z$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "115",
+        "B": "120",
+        "C": "123",
+        "D": "125",
+        "E": "118"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El cociente notable es $$(p^{114} – q^y) / (p^z – q^3)$$. El término central es $$p^x q^{27}$$.  Sea $$N$$ el número de términos. Como existe un término central, $$N$$ debe ser impar. La posición (0-indexada) del término central es $$k_c = (N-1)/2$$.  El término general (usando 0-indexación para los exponentes del denominador) es $$T_{k_c} = (p^z)^{N-1-k_c} (q^3)^{k_c}$$. O, de forma más directa como en el ejemplo: el exponente de $$q^3$$ en el término central es $$3k_c$$.  Dado que el exponente de $$q$$ en el término central es 27:  $$3k_c = 27 \\Rightarrow k_c = 9$$.  Como $$k_c = (N-1)/2$$, entonces $$9 = (N-1)/2 \\Rightarrow 18 = N-1 \\Rightarrow N = 19$$.  Ahora, usamos la relación de los exponentes del cociente notable para hallar $$z$$ e $$y$$:  $$N = 114/z \\Rightarrow 19 = 114/z \\Rightarrow z = 114/19 = 6$$  $$N = y/3 \\Rightarrow 19 = y/3 \\Rightarrow y = 19 \\times 3 = 57$$  Finalmente, hallamos el exponente $$x$$ del término central. El exponente de $$p$$ en el término central es $$114 - z \\times k_c$$.  $$x = 114 - 6 \\times 9 = 114 - 54 = 60$$.  Por lo tanto, $$x = 60$$, $$y = 57$$, $$z = 6$$.  La suma es $$x + y + z = 60 + 57 + 6 = 123$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_coc_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Qué lugar ocupa el término que tiene grado absoluto 47 en el desarrollo del cociente notable $$(p^{45} – q^{60}) / (p^3 – q^4)$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8",
+        "E": "9"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El cociente notable es $$(p^{45} – q^{60}) / (p^3 – q^4)$$.  Primero, calculamos el número de términos ($$N$$):  $$N = 45/3 = 15$$  $$N = 60/4 = 15$$  Así, el número de términos es $$N = 15$$.  El término general $$(T_k)$$ (para el k-ésimo término, 1-indexado) es $$T_k = (p^3)^{N-k} (q^4)^{k-1}$$.  Sustituyendo $$N=15$$:  $$T_k = (p^3)^{15-k} (q^4)^{k-1} = p^{3(15-k)} q^{4(k-1)}$$.  El grado absoluto (GA) de este término es la suma de los exponentes de $$p$$ y $$q$$:  $$GA = 3(15-k) + 4(k-1) = 45 - 3k + 4k - 4 = 41 + k$$.  Nos piden el lugar ($$k$$) del término cuyo grado absoluto es 47:  $$41 + k = 47 \\Rightarrow k = 47 - 41 \\Rightarrow k = 6$$.  El término que tiene un grado absoluto de 47 ocupa el 6to lugar. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_coc_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el menor término racional del desarrollo del cociente notable:  $$ \\frac{ (\\sqrt[4]{3})^{40} - (\\sqrt[3]{5})^{40} }{ \\sqrt[4]{3} - \\sqrt[3]{5} } $$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "98415",
+        "B": "2278125",
+        "C": "1215",
+        "D": "64",
+        "E": "162"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El cociente notable es de la forma $$(A^N - B^N) / (A - B)$$, donde $$A = \\sqrt[4]{3} = 3^{1/4}$$ y $$B = \\sqrt[3]{5} = 5^{1/3}$$.  El número de términos es $$N=40$$.  El término general $$(T_k)$$ (para el k-ésimo término, 1-indexado) es $$T_k = A^{N-k} B^{k-1}$$.  Sustituyendo los valores de $$A$$, $$B$$ y $$N$$:  $$T_k = (3^{1/4})^{40-k} (5^{1/3})^{k-1} = 3^{(40-k)/4} 5^{(k-1)/3}$$.  Para que un término sea racional, los exponentes de 3 y 5 deben ser números enteros. Esto significa que:  1. $$(40-k)$$ debe ser un múltiplo de 4. 2. $$(k-1)$$ debe ser un múltiplo de 3.  El valor de $$k$$ va desde 1 hasta $$N=40$$.  Analicemos las condiciones para $$k$$:  - $$k-1$$ es múltiplo de 3: $$k-1 \\in \\{0, 3, 6, ..., 39\\}$$ lo que implica $$k \\in \\{1, 4, 7, 10, ..., 40\\}$$.  - $$40-k$$ es múltiplo de 4:  Probemos los valores de $$k$$ que cumplen la segunda condición:  - Si $$k=1$$: $$40-1 = 39$$ (no es múltiplo de 4). - Si $$k=4$$: $$40-4 = 36$$ (es múltiplo de 4).  $$T_4 = 3^{36/4} 5^{3/3} = 3^9 \\times 5^1 = 19683 \\times 5 = 98415$$. (Término racional)  - Si $$k=7$$: $$40-7 = 33$$ (no es múltiplo de 4). - Si $$k=10$$: $$40-10 = 30$$ (no es múltiplo de 4). - Si $$k=13$$: $$40-13 = 27$$ (no es múltiplo de 4). - Si $$k=16$$: $$40-16 = 24$$ (es múltiplo de 4).  $$T_{16} = 3^{24/4} 5^{15/3} = 3^6 \\times 5^5 = 729 \\times 3125 = 2278125$$. (Término racional)  - Si $$k=19$$: $$40-19 = 21$$ (no es múltiplo de 4). - Si $$k=22$$: $$40-22 = 18$$ (no es múltiplo de 4). - Si $$k=25$$: $$40-25 = 15$$ (no es múltiplo de 4). - Si $$k=28$$: $$40-28 = 12$$ (es múltiplo de 4).  $$T_{28} = 3^{12/4} 5^{27/3} = 3^3 \\times 5^9 = 27 \\times 1953125 = 52734375$$. (Término racional)  - Si $$k=31$$: $$40-31 = 9$$ (no es múltiplo de 4). - Si $$k=34$$: $$40-34 = 6$$ (no es múltiplo de 4). - Si $$k=37$$: $$40-37 = 3$$ (no es múltiplo de 4). - Si $$k=40$$: $$40-40 = 0$$ (es múltiplo de 4).  $$T_{40} = 3^{0/4} 5^{39/3} = 3^0 \\times 5^{13} = 1 \\times 1220703125 = 1220703125$$. (Término racional)  Los términos racionales son 98415, 2278125, 52734375, 1220703125.  El menor de ellos es 98415. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_coc_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el número de términos del cociente notable $$(p^A - q^B) / (p^4 - q^6)$$ es 7, determine el cuarto término.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$p^{12} q^{18}$$",
+        "B": "$$p^{16} q^{24}$$",
+        "C": "$$p^{12} q^{24}$$",
+        "D": "$$p^{16} q^{18}$$",
+        "E": "$$p^8 q^{12}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado el cociente notable $$(p^A - q^B) / (p^4 - q^6)$$ y que el número de términos ($$N$$) es 7. Se cumple que $$A/4 = B/6 = N$$. Por lo tanto: $$A/4 = 7 \\implies A = 28$$. $$B/6 = 7 \\implies B = 42$$. El término general $$(T_k)$$ es $$(base_p)^{N-k} (base_q)^{k-1}$$, donde $$base_p = p^4$$ y $$base_q = q^6$$. Así, $$T_k = (p^4)^{N-k} (q^6)^{k-1}$$. Para el cuarto término ($$k=4$$): $$T_4 = (p^4)^{7-4} (q^6)^{4-1} = (p^4)^3 (q^6)^3 = p^{12} q^{18}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_coc_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$(a^{220} b^{110} + a^{216} b^{117} + \\ldots)$$ son términos consecutivos del desarrollo de un cociente notable. Hallar el número total de términos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "55",
+        "B": "56",
+        "C": "57",
+        "D": "58",
+        "E": "59"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Se toman dos términos consecutivos: $$(a^{220} b^{110})$$ y $$(a^{216} b^{117})$$. La diferencia entre los exponentes de $$a$$ es $$220 - 216 = 4$$. Esta es la potencia de $$a$$ en el denominador $$(a^4)$$. La diferencia entre los exponentes de $$b$$ es $$117 - 110 = 7$$. Esta es la potencia de $$b$$ en el denominador $$(b^7)$$. El exponente del primer término de $$a$$ en el numerador es $$220$$ (asumiendo que es el término inicial o el exponente máximo para $$a$$ en el desarrollo de $$a^N$$). El número de términos ($$N_{terms}$$) se calcula como el exponente máximo de la primera base dividido por su diferencia de exponente, más 1 (para incluir el término con exponente 0): $$N_{terms} = (220 / 4) + 1 = 55 + 1 = 56$$. La respuesta correcta es B.",
+      "id_temporal": "alg_coc_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el menor término racional del cociente notable $$( (3^{1/2})^{19} - (2^{1/3})^{19} ) / (3^{1/2} - 2^{1/3})$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "81",
+        "B": "64",
+        "C": "243",
+        "D": "729",
+        "E": "432"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El cociente notable es de la forma $$(X^N - Y^N) / (X - Y)$$, donde $$X = 3^{1/2}$$, $$Y = 2^{1/3}$$ y $$N = 19$$. El número de términos es 19. El término general es $$(T_k) = X^{N-k} Y^{k-1}$$ para $$k = 1, 2, \\ldots, 19$$. Sustituyendo $$X$$ y $$Y$$: $$T_k = (3^{1/2})^{19-k} (2^{1/3})^{k-1} = 3^{(19-k)/2} 2^{(k-1)/3}$$. Para que un término sea racional, los exponentes de 3 y 2 deben ser enteros. Esto significa que $$(19-k)$$ debe ser un número par (para que $$(19-k)/2$$ sea entero) y $$(k-1)$$ debe ser un múltiplo de 3 (para que $$(k-1)/3$$ sea entero). Si $$(19-k)$$ es par, entonces $$k$$ debe ser impar. Si $$(k-1)$$ es múltiplo de 3, entonces $$k$$ puede ser de la forma $$3m+1$$. Buscamos valores de $$k$$ entre 1 y 19 que cumplan ambas condiciones.  Los valores posibles de $$k$$ son 1, 7, 13, 19.  Para $$k=1$$: $$T_1 = 3^{(19-1)/2} 2^{(1-1)/3} = 3^9 2^0 = 19683$$. Para $$k=7$$: $$T_7 = 3^{(19-7)/2} 2^{(7-1)/3} = 3^6 2^2 = 729 \\times 4 = 2916$$. Para $$k=13$$: $$T_{13} = 3^{(19-13)/2} 2^{(13-1)/3} = 3^3 2^4 = 27 \\times 16 = 432$$. Para $$k=19$$: $$T_{19} = 3^{(19-19)/2} 2^{(19-1)/3} = 3^0 2^6 = 1 \\times 64 = 64$$. El menor término racional es 64. La respuesta correcta es B.",
+      "id_temporal": "alg_coc_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$(u^p v^{30})$$ es el término central del desarrollo del cociente notable $$(u^{84} - v^q) / (u^r - v^3)$$, hallar $$p + q + r$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "100",
+        "B": "108",
+        "C": "111",
+        "D": "114",
+        "E": "117"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea el cociente notable $$(u^A - v^B) / (u^C - v^D)$$, donde $$A=84$$, $$B=q$$, $$C=r$$, $$D=3$$. El término general ($$T_k$$) es $$u^{A-(k-1)C} v^{(k-1)D}$$. El término central dado es $$(u^p v^{30})$$.  Del exponente de $$v$$: $$(k-1)D = 30 \\implies (k-1) \\times 3 = 30 \\implies k-1 = 10 \\implies k = 11$$. Esto significa que el término central es el término número 11.  Para un cociente notable con término central, el número total de términos ($$N$$) debe ser impar, y el lugar del término central es $$k = (N+1)/2$$. Así, $$11 = (N+1)/2 \\implies N+1 = 22 \\implies N = 21$$.  Ahora, usamos la relación de los exponentes para el número de términos: $$N = A/C = B/D$$.  $$21 = 84/C \\implies C = 84/21 \\implies C = 4$$. Por lo tanto, $$r = 4$$.  $$21 = B/D \\implies 21 = q/3 \\implies q = 21 \\times 3 \\implies q = 63$$.  Ahora calculamos el exponente de $$u$$ en el término central ($$p$$): $$p = A - (k-1)C = 84 - (10) \\times 4 = 84 - 40 = 44$$.  Finalmente, sumamos los valores: $$p + q + r = 44 + 63 + 4 = 111$$. La respuesta correcta es C.",
+      "id_temporal": "alg_coc_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Qué lugar ocupa el término que tiene grado absoluto 7 del cociente notable $$(m^{12} - n^8) / (m^3 - n^2)$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Dado el cociente notable $$(m^{12} - n^8) / (m^3 - n^2)$$. Primero calculamos el número de términos ($$N$$). $$N = 12/3 = 4$$. También $$N = 8/2 = 4$$. Entonces, el cociente notable tiene 4 términos.  El término general $$(T_k)$$ es $$(base_m)^{N-k} (base_n)^{k-1}$$, donde $$base_m = m^3$$ y $$base_n = n^2$$.  Así, $$T_k = (m^3)^{4-k} (n^2)^{k-1} = m^{3(4-k)} n^{2(k-1)} = m^{12-3k} n^{2k-2}$$.  El grado absoluto ($$GA$$) de un término es la suma de los exponentes de las variables: $$GA = (12-3k) + (2k-2) = 12 - 3k + 2k - 2 = 10 - k$$. Se nos pide hallar el lugar ($$k$$) del término cuyo grado absoluto es 7.  Igualamos la expresión del $$GA$$ a 7: $$10 - k = 7 \\implies k = 10 - 7 \\implies k = 3$$. El término ocupa el tercer lugar. La respuesta correcta es C.",
+      "id_temporal": "alg_coc_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el número de términos del cociente notable $$\\frac{p^A - r^B}{p^4 - r^6}$$ es 7, determine el tercer término.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$p^{16} r^{12}$$",
+        "B": "$$p^{20} r^6$$",
+        "C": "$$p^{12} r^{18}$$",
+        "D": "$$p^{16} r^6$$",
+        "E": "$$p^{20} r^{12}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El número de términos (N) se obtiene dividiendo los exponentes del numerador entre los del denominador. Así: $$A/4 = 7 \\implies A = 28$$. Y $$B/6 = 7 \\implies B = 42$$. El término general $$T_k$$ (para k desde 1 hasta N) de un cociente notable de la forma $$\\frac{X^N - Y^N}{X - Y}$$ donde $$\\text{base}_X = p^4$$ y $$\\text{base}_Y = r^6$$ es $$T_k = (p^4)^{(N-k)} (r^6)^{(k-1)}$$. Para el tercer término ($$k=3$$), sustituimos N=7 y k=3: $$T_3 = (p^4)^{(7-3)} (r^6)^{(3-1)} = (p^4)^4 (r^6)^2 = p^{16} r^{12}$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_coc_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$x^{200} y^{150} + x^{195} y^{160} + \\dots$$ son términos consecutivos del desarrollo de un cociente notable. Hallar el número total de términos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$55$$",
+        "B": "$$56$$",
+        "C": "$$57$$",
+        "D": "$$58$$",
+        "E": "$$59$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Observamos los exponentes de los términos consecutivos para encontrar los exponentes de las bases del denominador. Para 'x', la diferencia de exponentes es $$200 - 195 = 5$$. Este es el exponente de 'x' en el denominador ($$P=5$$). Para 'y', la diferencia de exponentes es $$160 - 150 = 10$$. Este es el exponente de 'y' en el denominador ($$Q=10$$). El cociente notable es de la forma $$\\frac{X^M - Y^M}{x^5 - y^{10}}$$. El término general $$T_k$$ (para k desde 1 hasta N) es $$T_k = (x^5)^{(N-k)} (y^{10})^{(k-1)}$$. Usamos el primer término dado, $$x^{200} y^{150}$$, para encontrar 'k' y 'N'. El exponente de 'y' es $$10(k-1) = 150 \\implies k-1 = 15 \\implies k = 16$$. Ahora, usamos el exponente de 'x' para el mismo término: $$5(N-k) = 200 \\implies 5(N-16) = 200 \\implies N-16 = 40 \\implies N = 56$$. El número total de términos es 56. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_coc_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$a^x b^{36}$$ es el término central del desarrollo del cociente notable $$\\frac{a^{100} - b^Y}{a^Z - b^3}$$$, hallar $$x + Y + Z$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$121$$",
+        "B": "$$128$$",
+        "C": "$$131$$",
+        "D": "$$135$$",
+        "E": "$$140$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea 'N' el número de términos del cociente notable. Dado que existe un término central, 'N' debe ser impar. El término general $$T_k$$ (para k desde 1 hasta N) es $$T_k = a^{(100 - Z(k-1))} b^{(3(k-1))}$$. Para el término central, el lugar 'k' se calcula como $$(N+1)/2$$. El exponente de 'b' en el término central es 36. Así, $$3(k-1) = 36 \\implies k-1 = 12 \\implies k = 13$$. Sustituyendo 'k' en la fórmula para el lugar del término central: $$13 = (N+1)/2 \\implies 26 = N+1 \\implies N = 25$$. Ahora usamos la relación de número de términos: $$N = 100/Z \\implies 25 = 100/Z \\implies Z = 4$$. Y $$N = Y/3 \\implies 25 = Y/3 \\implies Y = 75$$. Finalmente, el exponente de 'a' en el término central ('x') es: $$x = 100 - Z(k-1) = 100 - 4(12) = 100 - 48 = 52$$. Por lo tanto, $$x + Y + Z = 52 + 75 + 4 = 131$$. La respuesta correcta es C.",
+      "id_temporal": "alg_coc_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Qué lugar ocupa el término que tiene grado absoluto 14 del cociente notable $$\\frac{u^{20} - v^{10}}{u^2 - v}$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$3$$",
+        "B": "$$4$$",
+        "C": "$$5$$",
+        "D": "$$6$$",
+        "E": "$$7$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, hallamos el número de términos (N) del cociente notable: $$N = 20/2 = 10$$. (También $$10/1 = 10$$). El término general $$T_k$$ (con 'k' iniciando en 0 para el primer término) de un cociente notable $$\\frac{X^{N \\cdot P} - Y^{N \\cdot Q}}{X^P - Y^Q}$$ se puede expresar como $$T_k = (X^P)^{(N-1-k)} (Y^Q)^k$$. En este caso, $$\\text{base}_X = u^2$$, $$\\text{base}_Y = v^1$$, y $$N=10$$. Así, $$T_k = (u^2)^{(10-1-k)} (v^1)^k = u^{2(9-k)} v^k$$. El grado absoluto (GA) de un término es la suma de los exponentes de las variables: $$GA = 2(9-k) + k = 18 - 2k + k = 18 - k$$. Se nos pide el término con grado absoluto 14, entonces: $$18 - k = 14 \\implies k = 4$$. Dado que 'k' inicia en 0 (para el primer término), un valor de $$k=4$$ corresponde al quinto término del desarrollo ($$k+1=5$$). Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_coc_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si en el cociente notable $$\\frac{m^A - n^B}{m^5 - n^6}$$ se cumple que $$\\frac{T_4 \\cdot T_8}{T_5} = m^{25} n^{36}$$$, hallar $$A + B$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$110$$",
+        "B": "$$115$$",
+        "C": "$$121$$",
+        "D": "$$125$$",
+        "E": "$$130$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "El término general $$T_k$$ (para k desde 1 hasta N) del cociente notable es $$T_k = m^{(A - 5(k-1))} n^{(6(k-1))}$$. Calculamos los términos necesarios: Para $$T_4$$ ($$k=4$$): $$m^{(A - 5(4-1))} n^{(6(4-1))} = m^{(A - 15)} n^{18}$$. Para $$T_8$$ ($$k=8$$): $$m^{(A - 5(8-1))} n^{(6(8-1))} = m^{(A - 35)} n^{42}$$. Para $$T_5$$ ($$k=5$$): $$m^{(A - 5(5-1))} n^{(6(5-1))} = m^{(A - 20)} n^{24}$$. Ahora realizamos la operación $$\\frac{T_4 \\cdot T_8}{T_5}$$: $$m^{((A-15) + (A-35) - (A-20))} n^{(18 + 42 - 24)}$$. Simplificando los exponentes: Exponente de 'm': $$A - 15 - 35 + 20 = A - 30$$. Exponente de 'n': $$18 + 42 - 24 = 60 - 24 = 36$$. Entonces, $$\\frac{T_4 \\cdot T_8}{T_5} = m^{(A - 30)} n^{36}$$. Igualando esto con la expresión dada, $$m^{25} n^{36}$$: Comparando los exponentes de 'm': $$A - 30 = 25 \\implies A = 55$$. Los exponentes de 'n' ya coinciden ($$36 = 36$$). El número de términos 'N' del cociente notable es $$N = A/5 = 55/5 = 11$$. También sabemos que $$N = B/6$$, entonces $$11 = B/6 \\implies B = 66$$. Finalmente, nos piden hallar $$A + B = 55 + 66 = 121$$. La respuesta correcta es C.",
+      "id_temporal": "alg_coc_015",
+      "imagen": null
+    }
+  ]
+}

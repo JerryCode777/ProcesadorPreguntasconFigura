@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 16,
+  "total_temas": 29,
+  "titulo_tema": "PRODUCTO CARTESIANO, RELACIONES BINARIAS Y FUNCIONES",
+  "tema": "producto_cartesiano_relaciones_binarias_y_funciones",
+  "preguntas": [
+    {
+      "pregunta": "Dados los conjuntos P = {4; 12} y Q = {4; 20; 70}, que representan capacidades en dos tipos de contenedores, determine la relación R de pares ordenados $$(p; q)$$ donde $$p \\in P$$ y $$q \\in Q$$, tal que la suma de sus capacidades esté estrictamente entre 15 y 85.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "R = {(4; 20), (4; 70), (12; 4), (12; 20), (12; 70)}",
+        "B": "R = {(4; 20), (12; 4), (12; 20)}",
+        "C": "R = {(4; 70), (12; 70)}",
+        "D": "R = {(4; 4), (12; 70)}",
+        "E": "R = {(4; 20), (4; 70), (12; 20), (12; 70)}"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para encontrar la relación R, se prueban todas las combinaciones posibles de pares $$(p; q)$$ donde $$p \\in P$$ y $$q \\in Q$$, y se verifica si cumplen la condición $$15 < p + q < 85$$. Si $$p = 4$$: $$4+4=8$$ (no cumple), $$4+20=24$$ (sí cumple), $$4+70=74$$ (sí cumple). Si $$p = 12$$: $$12+4=16$$ (sí cumple), $$12+20=32$$ (sí cumple), $$12+70=82$$ (sí cumple). Por lo tanto, $$R = \\{(4; 20), (4; 70), (12; 4), (12; 20), (12; 70)\\}$$.",
+      "id_temporal": "alg_pro_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un analista de datos observa que los pares ordenados $$(5; j+k)$$, $$(5; 9)$$, $$(10; 9)$$, $$(13; j–k)$$ y $$(13; 4)$$ pertenecen a un conjunto de datos que representa una función $$f$$. Calcule el valor del producto $$jk$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$65/2$$",
+        "B": "$$65/4$$",
+        "C": "$$13/4$$",
+        "D": "$$55/4$$",
+        "E": "$$65/16$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que un conjunto de pares ordenados represente una función, a cada valor de la primera coordenada (dominio) le debe corresponder un único valor en la segunda coordenada (rango). Para $$x = 5$$, tenemos los pares $$(5; j+k)$$ y $$(5; 9)$$, lo que implica que $$j+k = 9$$. Para $$x = 13$$, tenemos los pares $$(13; j–k)$$ y $$(13; 4)$$, lo que implica que $$j-k = 4$$. Se resuelve el sistema de ecuaciones: $$j+k = 9$$ y $$j-k = 4$$. Sumando ambas ecuaciones: $$(j+k) + (j-k) = 9 + 4 \\Rightarrow 2j = 13 \\Rightarrow j = \\frac{13}{2}$$. Sustituyendo $$j$$ en la primera ecuación: $$\\frac{13}{2} + k = 9 \\Rightarrow k = 9 - \\frac{13}{2} = \\frac{18 - 13}{2} = \\frac{5}{2}$$. Finalmente, se calcula el producto $$jk = \\left(\\frac{13}{2}\\right)\\left(\\frac{5}{2}\\right) = \\frac{65}{4}$$. La respuesta correcta es B.",
+      "id_temporal": "alg_pro_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el conjunto de pares $g = \\{(2; k^2 + k), (2; 12), (k; 7), (-3; 10)\\}$ representa una función, determine el cardinal del rango de $$g$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que $$g$$ sea una función, si la primera coordenada se repite, la segunda coordenada debe ser idéntica. Para la primera coordenada $$2$$, tenemos los pares $$(2; k^2 + k)$$ y $$(2; 12)$$. Esto implica que $$k^2 + k = 12$$. Resolviendo la ecuación: $$k^2 + k - 12 = 0 \\Rightarrow (k+4)(k-3) = 0$$. Así, $$k = 3$$ o $$k = -4$$. Ahora, debemos considerar el par $$(k; 7)$$ y el par fijo $$(-3; 10)$$. Si $$k = 3$$, el par $$(k; 7)$$ se convierte en $$(3; 7)$$. Observamos que en la función también existe el par $$(3; 10)$$. Para que sea una función, si la primera coordenada es $$3$$, la segunda coordenada debe ser única, es decir, $$7$$ debería ser igual a $$10$$, lo cual es falso. Por lo tanto, $$k \\ne 3$$. Si $$k = -4$$, el par $$(k; 7)$$ se convierte en $$(-4; 7)$$. Este par no entra en conflicto con ninguno de los otros pares fijos (es decir, $$(-4; 7)$$ no tiene la misma primera coordenada que $$(2; 12)$$ o $$(3; 10)$$). Entonces, el valor correcto de $$k$$ es $$-4$$. Sustituyendo $$k = -4$$ en los pares: $$(2; (-4)^2 + (-4)) = (2; 16 - 4) = (2; 12)$$. El conjunto de la función $$g$$ es $$\\left\\{(2; 12), (-4; 7), (3; 10)\\right\\}$$. El rango de $$g$$ es el conjunto de las segundas coordenadas: $$\\{12, 7, 10\\}$$. El cardinal del rango (número de elementos distintos) es 3. La respuesta correcta es C.",
+      "id_temporal": "alg_pro_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Indique la regla de correspondencia de la función $g = \\{(4s - 3; 16s^2 + 7) / s \\in R\\}$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$g(x) = x^2 + 6x + 16$$",
+        "B": "$$g(x) = x^2 - 6x + 16$$",
+        "C": "$$g(x) = 4x^2 + 3x + 7$$",
+        "D": "$$g(x) = x^2 + 6x + 9$$",
+        "E": "$$g(x) = x^2 + 3x + 16$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para encontrar la regla de correspondencia $$g(x)$$, se establece que $$x$$ es la primera componente del par ordenado y $$y$$ (o $$g(x)$$) es la segunda componente. Así, tenemos: $$x = 4s - 3$$. Despejamos $$s$$ en términos de $$x$$: $$4s = x + 3 \\Rightarrow s = \\frac{x+3}{4}$$. La segunda componente es $$y = 16s^2 + 7$$. Sustituimos la expresión de $$s$$ en la ecuación de $$y$$: $$y = 16\\left(\\frac{x+3}{4}\\right)^2 + 7$$ $$y = 16\\left(\\frac{(x+3)^2}{16}\\right) + 7$$ $$y = (x+3)^2 + 7$$ Desarrollamos el binomio: $$y = (x^2 + 6x + 9) + 7$$ $$y = x^2 + 6x + 16$$. Por lo tanto, la regla de correspondencia es $$g(x) = x^2 + 6x + 16$$. La respuesta correcta es A.",
+      "id_temporal": "alg_pro_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función $$h(x) = (x - 4)(x - 6)$$ con $$Dom h = [3; 7)$$ y $$Ran h = [c; d)$$. Determine el valor de $$(c+d)/2$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$1$$",
+        "C": "$$2$$",
+        "D": "$$3$$",
+        "E": "$$-1$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La función dada es $$h(x) = (x - 4)(x - 6)$$. Al expandirla, obtenemos $$h(x) = x^2 - 10x + 24$$. Esta es la ecuación de una parábola que abre hacia arriba. El vértice de la parábola se encuentra en $$x = -\\frac{b}{2a}$$, donde $$a=1$$ y $$b=-10$$. Así, $$x = -\\frac{(-10)}{2(1)} = 5$$. Este valor de $$x$$ está dentro del dominio dado, $$[3; 7)$$. El valor de la función en el vértice es el mínimo: $$h(5) = (5 - 4)(5 - 6) = (1)(-1) = -1$$. Por lo tanto, $$c = -1$$. Para determinar el valor máximo (supremo) del rango en el dominio $$[3; 7)$$, evaluamos la función en los extremos del dominio: $$h(3) = (3 - 4)(3 - 6) = (-1)(-3) = 3$$. $$h(7) = (7 - 4)(7 - 6) = (3)(1) = 3$$. Dado que el dominio es $$[3; 7)$$, el valor $$x=7$$ no está incluido. Sin embargo, la función se acerca a $$3$$ cuando $$x$$ se acerca a $$7$$. El valor máximo de la función en este intervalo es $$3$$, pero no está incluido, por lo tanto, el rango es $$[-1; 3)$$. Así, $$c = -1$$ y $$d = 3$$. El valor solicitado es $$\\frac{c+d}{2} = \\frac{-1 + 3}{2} = \\frac{2}{2} = 1$$. La respuesta correcta es B.",
+      "id_temporal": "alg_pro_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dados los conjuntos $$C = \\{5; 15\\}$$ y $$D = \\{10; 25; 50\\}$$, halle la siguiente relación: $$S = \\{(c; d) / c \\in C, d \\in D \text{ y } 20 < c + d < 70\\}$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$S = \\{(5; 25), (5; 50), (15; 10), (15; 25), (15; 50)\\}$$",
+        "B": "$$S = \\{(5; 25), (15; 10), (15; 25)\\}$$",
+        "C": "$$S = \\{(5; 10), (15; 50)\\}$$",
+        "D": "$$S = \\{(5; 50), (15; 10), (15; 25)\\}$$",
+        "E": "$$S = \\{(5; 25), (15; 50)\\}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Probamos todas las combinaciones $$(c, d)$$: Si $$c = 5$$: $$d = 10 \\Rightarrow c+d = 15$$ (no cumple $$20 < 15$$); $$d = 25 \\Rightarrow c+d = 30$$ (sí cumple); $$d = 50 \\Rightarrow c+d = 55$$ (sí cumple). Si $$c = 15$$: $$d = 10 \\Rightarrow c+d = 25$$ (sí cumple); $$d = 25 \\Rightarrow c+d = 40$$ (sí cumple); $$d = 50 \\Rightarrow c+d = 65$$ (sí cumple). Entonces: $$S = \\{(5; 25), (5; 50), (15; 10), (15; 25), (15; 50)\\}$$, por lo tanto la respuesta correcta es A.",
+      "id_temporal": "alg_pro_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Luis le dice a María que los pares ordenados $$(2; a+b)$$, $$(2; 7)$$, $$(5; 4)$$, $$(9; a–b)$$ y $$(9; 3)$$ pertenecen a una función $$h$$. Calcule $$ab$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$12$$",
+        "C": "$$14$$",
+        "D": "$$15$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que sea función, a un mismo valor de $$x$$ le corresponde un único $$y$$. Para $$x = 2$$: $$(2; a+b)$$ y $$(2; 7)$$. Entonces $$a+b = 7$$. Para $$x = 9$$: $$(9; a-b)$$ y $$(9; 3)$$. Entonces $$a-b = 3$$. Resolvemos el sistema: $$a+b = 7$$ y $$a-b = 3$$. Sumando ambas ecuaciones: $$2a = 10 \\Rightarrow a = 5$$. Sustituyendo $$a$$ en la primera ecuación: $$5+b = 7 \\Rightarrow b = 2$$. Finalmente, $$ab = (5)(2) = 10$$, por lo tanto la respuesta correcta es A.",
+      "id_temporal": "alg_pro_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el conjunto $$f = \\{(2; y^{2} – y), (2; 6), (y; 8), (–2; 10)\\}$$ representa una función, determine el cardinal del Ran$$f$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que sea función, cuando la primera coordenada se repite, la segunda debe ser igual. Se repite el valor $$2$$: $$(2; y^{2} – y)$$ y $$(2; 6)$$. Entonces: $$y^{2} – y = 6 \\Rightarrow y^{2} - y - 6 = 0 \\Rightarrow (y - 3)(y + 2) = 0$$. Esto nos da $$y = 3$$ o $$y = -2$$. Pero ya existe el par $$(–2; 10)$$. Si $$y = –2$$, entonces también aparece $$(y; 8) = (–2; 8)$$, lo cual chocaría con $$(–2; 10)$$. No sería función. Entonces $$y = 3$$. Con $$y = 3$$: $$(2; y^{2} – y) = (2; 3^{2} – 3) = (2; 9 – 3) = (2; 6)$$, $$(y; 8) = (3; 8)$$, y también está $$(–2; 10)$$. El Rango de la función $$f$$ es el conjunto de las segundas coordenadas: $$\\{6, 8, 10\\}$$. El cardinal del Rango es $$3$$, por lo tanto la respuesta correcta es C.",
+      "id_temporal": "alg_pro_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "El costo $$C$$ (en euros) de envío de un paquete para pesos de hasta 20 kg está dado por: $$C = g(p) = \frac{p + 3}{10}$$, donde $$p$$ es el peso en kg. Determine el dominio y el rango de costos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$(0; 20] \text{ kg}; (\frac{3}{10} ; \frac{23}{10}] \text{ euros}$$",
+        "B": "$$[0; 20) \text{ kg}; [\frac{3}{10} ; \frac{23}{10}) \text{ euros}$$",
+        "C": "$$(0; 20] \text{ kg}; (0 ; \frac{23}{10}] \text{ euros}$$",
+        "D": "$$(0; 15] \text{ kg}; (\frac{3}{10} ; \frac{18}{10}] \text{ euros}$$",
+        "E": "$$(0; 20] \text{ kg}; (\frac{3}{10} ; \frac{20}{10}] \text{ euros}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La condición “hasta 20 kg” significa que el peso $$p$$ está en el intervalo $$(0; 20]$$. Este es el dominio de la función. La función $$g(p) = \frac{p + 3}{10}$$ es creciente. Así que el rango va desde el valor mínimo (cuando $$p$$ tiende a $$0$$) hasta el valor máximo (cuando $$p = 20$$). Cuando $$p \to 0$$: $$C \to \frac{0+3}{10} = \frac{3}{10}$$ (abierto porque $$p > 0$$). Cuando $$p = 20$$: $$C = \frac{20+3}{10} = \frac{23}{10}$$ (cerrado). Por lo tanto, el rango es $$(\frac{3}{10} ; \frac{23}{10}] \text{ euros}$$, por lo tanto la respuesta correcta es A.",
+      "id_temporal": "alg_pro_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función $$g(x) = (x – 1)(x – 7)$$ con Dom $$g = [0; 6)$$ y Ran $$g = [m; n)$$. Determine $$(m+n)/2$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$0$$",
+        "C": "$$-1$$",
+        "D": "$$-2$$",
+        "E": "$$2$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero expandimos la función: $$g(x) = x^{2} – 8x + 7$$. Esta es una parábola que abre hacia arriba. El vértice de la parábola se encuentra en $$x = \frac{-(-8)}{2(1)} = 4$$. Este valor de $$x$$ está dentro del dominio $$[0; 6)$$. El valor mínimo de la función se alcanza en el vértice: $$g(4) = (4 – 1)(4 – 7) = (3)(-3) = -9$$. Entonces, $$m = -9$$. Para encontrar el valor máximo del rango, evaluamos la función en los extremos del dominio: $$g(0) = (0 – 1)(0 – 7) = (-1)(-7) = 7$$. $$g(6) = (6 – 1)(6 – 7) = (5)(-1) = -5$$. Dado que el dominio es $$[0; 6)$$, el valor de $$x=6$$ no está incluido. La función decrece de $$g(0)=7$$ a $$g(4)=-9$$ y luego crece a $$g(6)=-5$$. El valor máximo alcanzado dentro del dominio es $$7$$ (en $$x=0$$). Por lo tanto, el rango es $$[-9; 7)$$. Así, $$m = -9$$ y $$n = 7$$. Finalmente, calculamos $$(m+n)/2 = (-9 + 7)/2 = -2/2 = -1$$, por lo tanto la respuesta correcta es C.",
+      "id_temporal": "alg_pro_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dados los conjuntos M = {5; 15} y N = {12; 40; 70}, halle la siguiente relación: R = {(m; n) / m pertenece a M, n pertenece a N y $$20 < m + n < 80$$}.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "R = {(5; 40), (5; 70), (15; 12), (15; 40)}",
+        "B": "R = {(5; 40), (15; 12)}",
+        "C": "R = {(5; 12), (15; 70)}",
+        "D": "R = {(5; 70), (15; 40)}",
+        "E": "R = {(15; 12), (15; 40), (15; 70)}"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para encontrar la relación R, probamos todas las combinaciones de pares (m, n) donde m pertenece a M y n pertenece a N, verificando la condición $$20 < m + n < 80$$: Si m = 5: n = 12 --> m+n = 17 (no cumple); n = 40 --> m+n = 45 (sí cumple); n = 70 --> m+n = 75 (sí cumple). Si m = 15: n = 12 --> m+n = 27 (sí cumple); n = 40 --> m+n = 55 (sí cumple); n = 70 --> m+n = 85 (no cumple). Entonces, R = {(5; 40), (5; 70), (15; 12), (15; 40)}. La respuesta correcta es A.",
+      "id_temporal": "alg_pro_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un análisis de datos, se observa que los pares ordenados $$(4; p+q)$$, $$(4; 9)$$, $$(6; 11)$$, $$(10; p–q)$$ y $$(10; 3)$$ pertenecen a una función f. Calcule el producto $$pq$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$27$$",
+        "B": "$$18$$",
+        "C": "$$24$$",
+        "D": "$$12$$",
+        "E": "$$30$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que el conjunto de pares ordenados sea una función, si la primera coordenada se repite, la segunda coordenada debe ser única. Observamos los siguientes pares: Para x = 4: $$(4; p+q)$$ y $$(4; 9)$$. Implica que $$p+q = 9$$. Para x = 10: $$(10; p–q)$$ y $$(10; 3)$$. Implica que $$p-q = 3$$. Resolvemos el sistema de ecuaciones: $$p+q = 9$$ $$p-q = 3$$. Sumando ambas ecuaciones: $$(p+q) + (p-q) = 9 + 3 \\ 2p = 12 \\ p = 6$$. Sustituyendo p en la primera ecuación: $$6+q = 9 \\ q = 3$$. Finalmente, calculamos el producto $$pq = (6)(3) = 18$$. La respuesta correcta es B.",
+      "id_temporal": "alg_pro_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el conjunto $$g = \\{(3; k^{2} + 2k), (3; 8), (k; 7), (-4; 9)\\}$$ representa una función, determine el cardinal del Ran_g.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$1$$",
+        "B": "$$2$$",
+        "C": "$$3$$",
+        "D": "$$4$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que el conjunto g sea una función, los pares con la misma primera coordenada deben tener la misma segunda coordenada. Observamos los pares con primera coordenada 3: $$(3; k^{2} + 2k)$$ y $$(3; 8)$$. Por lo tanto, $$k^{2} + 2k = 8$$. Reorganizando la ecuación: $$k^{2} + 2k - 8 = 0$$. Factorizando: $$(k + 4)(k - 2) = 0$$. Esto nos da dos posibles valores para k: $$k = -4$$ o $$k = 2$$. Si $$k = -4$$, el par $$(k; 7)$$ se convierte en $$(-4; 7)$$. Sin embargo, ya existe el par $$(-4; 9)$$ en la función. Para que sea función, $$7$$ debería ser igual a $$9$$, lo cual es falso. Por lo tanto, $$k = -4$$ no es una solución válida. Si $$k = 2$$, el par $$(k; 7)$$ se convierte en $$(2; 7)$$. No hay conflicto con los demás pares. Así, el valor correcto de $$k$$ es 2. Sustituyendo $$k=2$$ en el conjunto g: $$(3; 2^{2} + 2(2)) = (3; 4+4) = (3; 8)$$. El conjunto de la función g es: $$\\left\\{(3; 8), (3; 8), (2; 7), (-4; 9)\\right\\}$$ Simplificando los pares únicos: $$\\left\\{(3; 8), (2; 7), (-4; 9)\\right\\}$$ El rango de la función (Ran_g) es el conjunto de todas las segundas coordenadas: $$\\left\\{8, 7, 9\\right\\}$$. El cardinal del Ran_g (número de elementos únicos en el rango) es 3. La respuesta correcta es C.",
+      "id_temporal": "alg_pro_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "La temperatura T (en °C) de un componente electrónico después de h horas de funcionamiento está dada por la función: $$T = g(h) = \\frac{h + 3}{10}$$. Si el componente se monitorea hasta 8 horas de funcionamiento, determine el dominio y el rango de la temperatura.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$(0; 8]\\text{ horas; } (0.3; 1.1]\\text{ }^\\circ\\text{C}$$",
+        "B": "$$(0; 8]\\text{ horas; } (0.3; 1.1)\\text{ }^\\circ\\text{C}$$",
+        "C": "$$(0; 8]\\text{ horas; } [0.3; 1.1]\\text{ }^\\circ\\text{C}$$",
+        "D": "$$(0; 7]\\text{ horas; } (0.3; 1.0]\\text{ }^\\circ\\text{C}$$",
+        "E": "$$(1; 8]\\text{ horas; } (0.4; 1.1]\\text{ }^\\circ\\text{C}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El problema indica que el componente se monitorea 'hasta 8 horas de funcionamiento'. Esto significa que el tiempo h puede ser cualquier valor mayor que 0 y menor o igual a 8. Por lo tanto, el dominio de la función es $$h \\in (0; 8]$$ horas. Para determinar el rango de la temperatura, evaluamos la función en los límites del dominio. La función $$g(h) = \\frac{h + 3}{10}$$ es una función lineal creciente. Cuando h se acerca a 0 (pero sin incluirlo): $$T = \\frac{0 + 3}{10} = 0.3$$ (este valor no se alcanza, por lo tanto el intervalo es abierto). Cuando h es igual a 8 (valor máximo): $$T = \\frac{8 + 3}{10} = \\frac{11}{10} = 1.1$$ (este valor sí se alcanza, por lo tanto el intervalo es cerrado). Así, el rango de la temperatura es $$(0.3; 1.1]$$ °C. La respuesta correcta es A.",
+      "id_temporal": "alg_pro_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función $$g(x) = (x – 3)(x – 7)$$ con Dominio $$g = [2; 8)$$ y Rango $$g = [p; q)$$. Determine el valor de $$\\frac{p+q}{2}$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$1/2$$",
+        "B": "$$1$$",
+        "C": "$$3/2$$",
+        "D": "$$2$$",
+        "E": "$$-1/2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, expandimos la función $$g(x) = (x – 3)(x – 7) = x^{2} – 10x + 21$$. Esta es una parábola que abre hacia arriba. El vértice de la parábola se encuentra en $$x = -\\frac{b}{2a} = -\\frac{-10}{2(1)} = 5$$. Este valor de $$x = 5$$ se encuentra dentro del dominio dado $$[2; 8)$$. El valor mínimo de la función se alcanza en el vértice: $$g(5) = 5^{2} – 10(5) + 21 = 25 – 50 + 21 = -4$$. Por lo tanto, $$p = -4$$. Para encontrar el valor máximo del rango (o el límite superior), evaluamos la función en los extremos del dominio y consideramos la naturaleza del intervalo. $$g(2) = (2 – 3)(2 – 7) = (-1)(-5) = 5$$. $$g(8) = (8 – 3)(8 – 7) = (5)(1) = 5$$. Aunque $$g(8)=5$$, el punto $$x=8$$ no está incluido en el dominio $$[2; 8)$$. Sin embargo, la función se acerca a 5 a medida que $$x$$ se acerca a 8. El valor máximo alcanzado en el dominio (o el supremo del rango) es 5. Dado que el rango se expresa como $$[p; q)$$, el valor de $$q$$ es 5, pero no incluido. Así, $$q=5$$. Por lo tanto, el rango es $$[-4; 5)$$. Finalmente, calculamos $$\\frac{p+q}{2} = \\frac{-4 + 5}{2} = \\frac{1}{2}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_pro_015",
+      "imagen": null
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 27,
+  "total_temas": 29,
+  "titulo_tema": "ECUACIÓN Y FUNCIÓN EXPONENCIAL",
+  "tema": "ecuacion_y_funcion_exponencial",
+  "preguntas": [
+    {
+      "pregunta": "Si el segundo dígito de un código de seguridad es $$6x$$, donde “x” es la solución de la ecuación $$x^x = \frac{1}{\\sqrt{2}}$$, y el primer dígito es $$5$$. Determinar la suma de los dos dígitos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$8$$",
+        "B": "$$9$$",
+        "C": "$$7$$",
+        "D": "$$10$$",
+        "E": "$$6$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, resolvemos la ecuación $$x^x = \frac{1}{\\sqrt{2}}$$. Podemos reescribir el lado derecho como $$2^{-1/2}$$. Para que $$x^x = 2^{-1/2}$$ tenga una solución de la forma $$x=1/k$$ o $$x=k^{-1}$$, probamos con $$x = 1/2$$. Si $$x=1/2$$, entonces $$(1/2)^{(1/2)} = \\sqrt{1/2} = \frac{1}{\\sqrt{2}}$$. Por lo tanto, $$x = 1/2$$. El segundo dígito es $$6x = 6 \\cdot (1/2) = 3$$. El primer dígito es $$5$$. La suma de los dos dígitos es $$5 + 3 = 8$$.",
+      "id_temporal": "alg_ecu_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "La población de una colonia de bacterias sigue el modelo de crecimiento $$P(t) = C \\cdot e^{kt}$$. Inicialmente hay $$2000$$ bacterias y luego de $$2$$ horas hay $$5000$$. Determinar cuántas bacterias habrá en $$4$$ horas.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10000$$",
+        "B": "$$12500$$",
+        "C": "$$15000$$",
+        "D": "$$7500$$",
+        "E": "$$9000$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La población inicial es $$P(0) = C = 2000$$. Entonces, la función es $$P(t) = 2000 \\cdot e^{kt}$$. Después de $$2$$ horas, $$P(2) = 5000$$. Sustituimos: $$5000 = 2000 \\cdot e^{2k}$$. Dividiendo por $$2000$$ obtenemos $$e^{2k} = \frac{5000}{2000} = 2.5$$. Para hallar la población en $$4$$ horas, calculamos $$P(4) = 2000 \\cdot e^{4k}$$. Podemos escribir $$e^{4k}$$ como $$(e^{2k})^2$$. Entonces, $$P(4) = 2000 \\cdot (2.5)^2 = 2000 \\cdot 6.25 = 12500$$.",
+      "id_temporal": "alg_ecu_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el intervalo $$\\langle25; 625\rangle$$ es el rango de $$f$$, cuya regla es $$f(x) = 5^{3x - 2}$$, hallar el $$\text{Dom}(f)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$\\langle4/3; 2\rangle$$",
+        "B": "$$\\langle1; 2\rangle$$",
+        "C": "$$\\langle2/3; 2\rangle$$",
+        "D": "$$\\langle1/3; 2\rangle$$",
+        "E": "$$\\langle4/3; 3\rangle$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Expresamos los extremos del rango como potencias de la base $$5$$: $$25 = 5^2$$ y $$625 = 5^4$$. Entonces, la desigualdad del rango es $$5^2 \\leq 5^{3x - 2} \\leq 5^4$$. Como la función exponencial con base mayor a $$1$$ es creciente, podemos igualar los exponentes: $$2 \\leq 3x - 2 \\leq 4$$. Sumamos $$2$$ a todas las partes de la desigualdad: $$2 + 2 \\leq 3x - 2 + 2 \\leq 4 + 2$$, lo que nos da $$4 \\leq 3x \\leq 6$$. Finalmente, dividimos por $$3$$: $$\frac{4}{3} \\leq x \\leq \frac{6}{3}$$, resultando en $$\frac{4}{3} \\leq x \\leq 2$$. Por lo tanto, el dominio de $$f$$ es $$\\langle4/3; 2\rangle$$.",
+      "id_temporal": "alg_ecu_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "La cantidad de un compuesto químico en una reacción está modelada por $$P(t) = 30 \\cdot 2^{t/5}$$, donde “t” es el tiempo en minutos. ¿Qué tiempo debe transcurrir para que la cantidad del compuesto sea el óctuplo de la cantidad inicial?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$12$$",
+        "C": "$$15$$",
+        "D": "$$20$$",
+        "E": "$$25$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La cantidad inicial del compuesto es $$P(0) = 30 \\cdot 2^{0/5} = 30 \\cdot 2^0 = 30 \\cdot 1 = 30$$. Queremos encontrar el tiempo para que la cantidad sea el óctuplo de la inicial, es decir, $$8 \\cdot 30 = 240$$. Entonces, planteamos la ecuación: $$30 \\cdot 2^{t/5} = 240$$. Dividimos ambos lados por $$30$$: $$2^{t/5} = \frac{240}{30} = 8$$. Sabemos que $$8$$ es igual a $$2^3$$. Así que, $$2^{t/5} = 2^3$$. Igualando los exponentes, obtenemos $$t/5 = 3$$. Multiplicando por $$5$$, hallamos $$t = 15$$ minutos.",
+      "id_temporal": "alg_ecu_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "En la siguiente ecuación exponencial $$9^{\\sqrt{x}} - 729 = 72 \\cdot 3^{\\sqrt{x}}$$, ¿qué podemos afirmar del valor de “x”, si $$x \\in \\mathbb{R}$$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$9$$",
+        "B": "$$16$$",
+        "C": "$$36$$",
+        "D": "$$4$$",
+        "E": "$$81$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, expresamos todos los términos en la misma base, en este caso, base $$3$$: $$9 = 3^2$$ y $$729 = 3^6$$. La ecuación se convierte en $$(3^2)^{\\sqrt{x}} - 3^6 = 72 \\cdot 3^{\\sqrt{x}}$$. Esto simplifica a $$3^{2\\sqrt{x}} - 3^6 = 72 \\cdot 3^{\\sqrt{x}}$$. Hacemos la sustitución $$u = 3^{\\sqrt{x}}$$. Dado que la base de un exponencial es positiva, $$u$$ también debe ser positiva. La ecuación se transforma en una cuadrática: $$u^2 - 729 = 72u$$. Reordenamos la ecuación a su forma estándar: $$u^2 - 72u - 729 = 0$$. Factorizamos la ecuación cuadrática: $$(u - 81)(u + 9) = 0$$. Esto nos da dos posibles soluciones para $$u$$: $$u = 81$$ o $$u = -9$$. Como $$u = 3^{\\sqrt{x}}$$ debe ser positivo, descartamos $$u = -9$$. Entonces, $$3^{\\sqrt{x}} = 81$$. Sabemos que $$81 = 3^4$$. Así que, $$3^{\\sqrt{x}} = 3^4$$. Igualando los exponentes, obtenemos $$\\sqrt{x} = 4$$. Elevando al cuadrado ambos lados para resolver $$x$$: $$(\\sqrt{x})^2 = 4^2$$, lo que da $$x = 16$$.",
+      "id_temporal": "alg_ecu_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Los dos dígitos que forman un código de seguridad son 7 y 'c', donde 'c' es la solución de la expresión $$16x$$, y 'x' es la solución de la ecuación: $$x^x = (1/4)^{1/4}$$. Determinar la suma de los dos dígitos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "13",
+        "B": "8",
+        "C": "12",
+        "D": "11",
+        "E": "14"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Primero, resolvemos la ecuación exponencial para 'x': $$x^x = (1/4)^{1/4}$$. Comparando la forma, se deduce que $$x = 1/4$$. Luego, calculamos el valor de 'c' usando la expresión dada: $$c = 16x = 16 \\cdot (1/4) = 4$$. Los dos dígitos del código de seguridad son 7 y 4. Finalmente, sumamos estos dígitos: $$7 + 4 = 11$$. Por lo tanto, la respuesta correcta es D.",
+      "id_temporal": "alg_ecu_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "El crecimiento de una población de bacterias en un cultivo está modelado por la función $$P(t) = C \\cdot e^{kt}$$. Inicialmente, hay 500 organismos y, después de 3 horas, la población aumenta a 1350. Determinar cuántos organismos habrá en 6 horas.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "3645",
+        "B": "3150",
+        "C": "4200",
+        "D": "2700",
+        "E": "5400"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "En el tiempo $$t = 0$$, la población inicial es $$P(0) = C = 500$$. Por lo tanto, la función se convierte en $$P(t) = 500 \\cdot e^{kt}$$. En el tiempo $$t = 3$$ horas, la población es 1350, entonces: $$1350 = 500 \\cdot e^{3k}$$. Dividiendo por 500, obtenemos $$e^{3k} = \frac{1350}{500} = 2.7$$. Para encontrar la población en $$t = 6$$ horas, usamos $$P(6) = 500 \\cdot e^{6k}$$. Podemos reescribir $$e^{6k}$$ como $$(e^{3k})^2$$. Sustituyendo el valor que encontramos: $$P(6) = 500 \\cdot (2.7)^2 = 500 \\cdot 7.29 = 3645$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el intervalo $$⟨1/\\sqrt{2}; 128⟩$$ es el rango de la función $$f(x) = 2^{3x - 2}$$, hallar el Dom(f).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$⟨1/2; 3⟩$$",
+        "B": "$$⟨1; 4⟩$$",
+        "C": "$$⟨-1/2; 2⟩$$",
+        "D": "$$⟨3/4; 3⟩$$",
+        "E": "$$⟨1/3; 5⟩$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para encontrar el dominio, expresamos los extremos del rango como potencias de la base 2. $$1/\\sqrt{2} = 2^{-1/2}$$ y $$128 = 2^7$$. Dado que la función exponencial $$f(x) = 2^{3x-2}$$ es creciente, podemos establecer la desigualdad con los exponentes: $$2^{-1/2} < 2^{3x - 2} < 2^7$$. Esto implica que $$-1/2 < 3x - 2 < 7$$. Sumamos 2 a todas las partes de la desigualdad: $$-1/2 + 2 < 3x < 7 + 2 \\Rightarrow 3/2 < 3x < 9$$. Finalmente, dividimos todas las partes por 3: $$\frac{3/2}{3} < x < \frac{9}{3} \\Rightarrow 1/2 < x < 3$$. El dominio de la función es el intervalo $$⟨1/2; 3⟩$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "El número de clientes diarios en un nuevo centro comercial está modelado por la función $$N(t) = 20 \\cdot 3^{t/4}$$, donde 't' es el tiempo en meses. ¿Qué tiempo debe transcurrir para que el centro comercial tenga el nonuplo (nueve veces) de la cantidad inicial de clientes?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "9",
+        "B": "8",
+        "C": "12",
+        "D": "10",
+        "E": "7"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, determinamos la cantidad inicial de clientes en $$t = 0$$: $$N(0) = 20 \\cdot 3^{0/4} = 20 \\cdot 3^0 = 20 \\cdot 1 = 20$$. El nonuplo de la población inicial es $$9 \\cdot 20 = 180$$. Ahora, planteamos la ecuación para encontrar el tiempo 't' cuando el número de clientes sea 180: $$20 \\cdot 3^{t/4} = 180$$. Dividimos ambos lados por 20: $$3^{t/4} = \frac{180}{20} = 9$$. Como $$9 = 3^2$$, podemos igualar los exponentes: $$3^{t/4} = 3^2 \\Rightarrow t/4 = 2$$. Finalmente, despejamos 't': $$t = 2 \\cdot 4 = 8$$ meses. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_ecu_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Siendo $$y \neq p \neq q \neq 0$$. Calcular 'y' en la ecuación: $$y^p = (pq)^q$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$(pq)^{p/q}$$",
+        "B": "$$(p^2q)^{q/p}$$",
+        "C": "$$(pq)^{q/p}$$",
+        "D": "$$p^{q}q$$",
+        "E": "$$(pq)^{q}$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Tenemos la ecuación $$y^p = (pq)^q$$. Para despejar 'y', elevamos ambos lados de la ecuación a la potencia $$(1/p)$$. Esto es equivalente a tomar la raíz 'p' en ambos lados. Así: $$ (y^p)^{1/p} = ((pq)^q)^{1/p} $$. Esto simplifica a $$y = (pq)^{q \\cdot (1/p)}$$. Por lo tanto, $$y = (pq)^{q/p}$$. Esta expresión también se puede escribir como la raíz p-ésima de $$(pq)^q$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_ecu_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si un número de dos dígitos está formado por 'A' y 'B', donde 'A' es el dígito 9 y 'B' es el resultado de $$12y$$, siendo $$y$$ la solución de la ecuación: $$y^{y} = \\frac{1}{\\sqrt[3]{7}}$$. Determinar la suma de los dos dígitos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "13",
+        "B": "12",
+        "C": "10",
+        "D": "11",
+        "E": "14"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, resolvemos la ecuación exponencial: $$y^{y} = \\frac{1}{\\sqrt[3]{7}} = 7^{-1/3}$$. Por inspección, se deduce que $$y = 1/3$$. El primer dígito es $$A = 9$$. El segundo dígito es $$B = 12y = 12(1/3) = 4$$. Los dos dígitos son 9 y 4. La suma de los dos dígitos es $$9 + 4 = 13$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "La cantidad de células en un cultivo crece según el modelo: $$C(t) = K \\cdot e^{mt}$$. Inicialmente hay $$1500$$ células y después de $$2$$ horas, la cantidad aumenta a $$4050$$ células. ¿Cuántas células habrá en $$4$$ horas?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "10935",
+        "B": "11500",
+        "C": "9800",
+        "D": "12150",
+        "E": "8100"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "En $$t = 0$$, la población inicial es $$C(0) = K = 1500$$. Entonces, el modelo es $$C(t) = 1500 \\cdot e^{mt}$$. En $$t = 2$$ horas, la cantidad es $$C(2) = 4050$$. Sustituyendo: $$4050 = 1500 \\cdot e^{2m}$$. Despejando $$e^{2m}$$: $$e^{2m} = \\frac{4050}{1500} = 2.7$$. Ahora, para $$t = 4$$ horas: $$C(4) = 1500 \\cdot e^{4m}$$. Podemos reescribir $$e^{4m}$$ como $$(e^{2m})^2$$. Sustituyendo el valor encontrado: $$C(4) = 1500 \\cdot (2.7)^2 = 1500 \\cdot 7.29 = 10935$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el intervalo $$ \\langle 4; 16 \\sqrt{2} \\rangle$$ es el rango de la función $$f$$, cuya regla es: $$f(x) = 2^{3x - 2}$$. Hallar el $$Dom(f)$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$ \\langle 4/3; 13/6 \\rangle$$",
+        "B": "$$ \\langle 1; 13/6 \\rangle$$",
+        "C": "$$ \\langle 4/3; 2 \\rangle$$",
+        "D": "$$ \\langle 1/3; 13/6 \\rangle$$",
+        "E": "$$ \\langle 4/3; 7/3 \\rangle$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Expresamos los extremos del rango como potencias de 2: $$4 = 2^2$$ y $$16 \\sqrt{2} = 2^4 \\cdot 2^{1/2} = 2^{4 + 1/2} = 2^{9/2}$$. Dado que el rango es $$ \\langle 4; 16 \\sqrt{2} \\rangle$$, tenemos: $$2^2 < 2^{3x - 2} < 2^{9/2}$$. Como la base de la función exponencial (2) es mayor que 1, la función es creciente y la desigualdad se mantiene en los exponentes: $$2 < 3x - 2 < 9/2$$. Sumamos 2 a todos los términos de la desigualdad: $$2 + 2 < 3x < 9/2 + 2 \\Rightarrow 4 < 3x < 9/2 + 4/2 \\Rightarrow 4 < 3x < 13/2$$. Finalmente, dividimos entre 3: $$\\frac{4}{3} < x < \\frac{13/2}{3} \\Rightarrow \\frac{4}{3} < x < \\frac{13}{6}$$. Por lo tanto, el dominio es $$ \\langle 4/3; 13/6 \\rangle$$. La respuesta correcta es A.",
+      "id_temporal": "alg_ecu_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "El número de visitantes a una exposición de arte está modelado por: $$N(t) = 30 \\cdot 4^{t/5}$$ Donde 't' es el tiempo en semanas. ¿Cuánto tiempo debe transcurrir para que el número de visitantes sea 16 veces la población inicial?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "10",
+        "B": "12",
+        "C": "8",
+        "D": "15",
+        "E": "7"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, calculamos la población inicial en $$t=0$$: $$N(0) = 30 \\cdot 4^{0/5} = 30 \\cdot 4^0 = 30 \\cdot 1 = 30$$. Queremos saber el tiempo para que el número de visitantes sea 16 veces la población inicial, es decir, $$16 \\cdot 30 = 480$$. Planteamos la ecuación: $$30 \\cdot 4^{t/5} = 480$$. Dividimos ambos lados por 30: $$4^{t/5} = \\frac{480}{30} = 16$$. Sabemos que $$16 = 4^2$$. Entonces, igualamos los exponentes: $$t/5 = 2$$. Despejando $$t$$: $$t = 2 \\cdot 5 = 10$$ semanas. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$5^{2m} + 25 = 26 \\cdot (5^m)$$, entonces el valor de $$m^2 - 1$$ es:",
+      "dificultad": 2,
+      "opciones": {
+        "A": "1 ó 3",
+        "B": "-1 ó 3",
+        "C": "0 ó 3",
+        "D": "-1 ó 5",
+        "E": "1 ó 5"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$u = 5^m$$. Entonces, la ecuación $$5^{2m} + 25 = 26 \\cdot (5^m)$$ se puede reescribir como una ecuación cuadrática: $$u^2 + 25 = 26u$$. Reordenamos la ecuación: $$u^2 - 26u + 25 = 0$$. Factorizamos el trinomio: $$(u - 1)(u - 25) = 0$$. Esto nos da dos posibles valores para $$u$$: $$u = 1$$ o $$u = 25$$.  Volvemos a la sustitución $$u = 5^m$$: 1. Si $$u = 1$$: $$5^m = 1 \\Rightarrow m = 0$$. 2. Si $$u = 25$$: $$5^m = 25 \\Rightarrow 5^m = 5^2 \\Rightarrow m = 2$$. Ahora calculamos el valor de la expresión $$m^2 - 1$$ para cada valor de $$m$$: 1. Para $$m = 0$$: $$0^2 - 1 = 0 - 1 = -1$$. 2. Para $$m = 2$$: $$2^2 - 1 = 4 - 1 = 3$$. Por lo tanto, los valores posibles para $$m^2 - 1$$ son -1 ó 3. La respuesta correcta es B.",
+      "id_temporal": "alg_ecu_015",
+      "imagen": null
+    }
+  ]
+}

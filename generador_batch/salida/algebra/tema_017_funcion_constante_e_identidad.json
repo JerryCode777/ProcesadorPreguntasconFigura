@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 17,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN CONSTANTE E IDENTIDAD",
+  "tema": "funcion_constante_e_identidad",
+  "preguntas": [
+    {
+      "pregunta": "Una cadena de cafeterías proyectó sus ingresos netos anuales. A pesar de fluctuaciones externas, la gerencia notó que el patrón de ingresos se mantuvo constante a lo largo de varios años. La función $$I(t)$$ representa los ingresos en el año $$t$$. Si la relación observada es $$(I(2023) + I(2024)) / (I(2025) + 2) = 5$$, determine la suma de los ingresos proyectados para los años 2026, 2027 y 2028.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-10$$",
+        "B": "$$-5$$",
+        "C": "$$10$$",
+        "D": "$$5$$",
+        "E": "$$0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Dado que $$I(t)$$ es una función constante, sea $$I(t) = k$$ para cualquier año $$t$$. Sustituimos en la ecuación dada: $$(k + k) / (k + 2) = 5$$. Esto simplifica a $$2k / (k + 2) = 5$$. Multiplicamos ambos lados por $$(k + 2)$$: $$2k = 5(k + 2)$$. Distribuimos el 5: $$2k = 5k + 10$$. Restamos $$5k$$ de ambos lados: $$-3k = 10$$. Dividimos por -3 para hallar $$k$$: $$k = -10/3$$. Se pide la suma de los ingresos para los años 2026, 2027 y 2028, que es $$I(2026) + I(2027) + I(2028)$$. Como $$I(t)$$ es constante, esto es igual a $$k + k + k = 3k$$. Sustituimos el valor de $$k$$: $$3 * (-10/3) = -10$$. Por lo tanto, la suma es $$-10$$.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un algoritmo genera un valor constante $$C$$ para cualquier entrada $$x$$. La función $$g(x)$$ representa este algoritmo. Si se cumple que $$(g(x + 5) + g(3x)) / (g(x^2) – 8) = 7$$, halle el valor de $$M = g(x + 1) + g(x – 3) + 10$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$162/5$$",
+        "B": "$$112/5$$",
+        "C": "$$56/5$$",
+        "D": "$$10$$",
+        "E": "$$152/5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $$g(x)$$ es una función constante, sea $$g(x) = c$$ para cualquier valor de $$x$$. Sustituimos $$c$$ en la ecuación dada: $$(c + c) / (c – 8) = 7$$. Esto simplifica a $$2c / (c – 8) = 7$$. Multiplicamos ambos lados por $$(c – 8)$$: $$2c = 7(c – 8)$$. Distribuimos el 7: $$2c = 7c – 56$$. Restamos $$7c$$ de ambos lados: $$-5c = -56$$. Dividimos por -5 para hallar $$c$$: $$c = 56/5$$. Ahora, se pide calcular $$M = g(x + 1) + g(x – 3) + 10$$. Como $$g(x)$$ es constante, esto se convierte en $$M = c + c + 10 = 2c + 10$$. Sustituimos el valor de $$c$$: $$M = 2 * (56/5) + 10$$. Realizamos la multiplicación: $$M = 112/5 + 10$$. Para sumar, convertimos 10 a fracción con denominador 5: $$10 = 50/5$$. Entonces, $$M = 112/5 + 50/5 = 162/5$$. Por lo tanto, el valor de $$M$$ es $$162/5$$.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Analizando las propiedades de la función identidad $$f(x) = x$$, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F). I. Su gráfico pasa por el origen $$(0,0)$$. II. Su rango es solo los números positivos. III. Es una función biyectiva.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFV",
+        "B": "VVF",
+        "C": "FFV",
+        "D": "FVF",
+        "E": "VFF"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Analicemos cada afirmación para la función identidad $$f(x) = x$$: I. El gráfico de $$f(x) = x$$ pasa por el origen $$(0,0)$$ porque al sustituir $$x=0$$ se obtiene $$f(0)=0$$, lo que significa que el punto $$(0,0)$$ pertenece a la función. Esta afirmación es Verdadera (V). II. El rango de la función identidad $$f(x) = x$$ es el conjunto de todos los números reales $$(R)$$, no solo los números positivos. Esto significa que puede tomar valores negativos y cero. Esta afirmación es Falsa (F). III. Una función es biyectiva si es inyectiva (uno a uno) y sobreyectiva (su rango cubre todo el codominio). La función identidad $$f(x) = x$$ es inyectiva porque cada elemento del dominio se asocia con un único elemento del rango, y es sobreyectiva porque su rango (todos los reales) es igual a su codominio (todos los reales). Por lo tanto, es biyectiva. Esta afirmación es Verdadera (V). El patrón correcto es VFV.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un programador implementa una función $$h(t)$$ que, debido a un error de configuración, se comporta como una función identidad a pesar de su forma compleja. La función está dada por $$h(t) = (6m – 17)t + (9n – 27)$$. Calcule el valor de $$m + n + 5$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$11$$",
+        "B": "$$9$$",
+        "C": "$$7$$",
+        "D": "$$13$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que la función $$h(t)$$ sea una función identidad, debe tener la forma $$h(t) = t$$. Esto implica que el coeficiente de $$t$$ debe ser 1 y el término independiente debe ser 0.  Igualamos el coeficiente de $$t$$ a 1: $$6m – 17 = 1$$. Sumamos 17 a ambos lados: $$6m = 18$$. Dividimos por 6: $$m = 3$$. Igualamos el término independiente a 0: $$9n – 27 = 0$$. Sumamos 27 a ambos lados: $$9n = 27$$. Dividimos por 9: $$n = 3$$. Ahora, se nos pide calcular el valor de $$m + n + 5$$. Sustituimos los valores de $$m$$ y $$n$$: $$3 + 3 + 5 = 11$$. Por lo tanto, el valor es 11.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una membresía de gimnasio cobra una tarifa fija mensual de 75 dólares, independientemente del uso de las instalaciones. Esta situación se modela con la función constante $$M(y) = r(2 + y) + s(1 – y) – 4y + 10$$. Calcule el valor de $$r^2 – s^2$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$168$$",
+        "B": "$$150$$",
+        "C": "$$180$$",
+        "D": "$$144$$",
+        "E": "$$196$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, expandimos la función $$M(y)$$: $$M(y) = 2r + ry + s – sy – 4y + 10$$. Agrupamos los términos con $$y$$ y los términos constantes: $$M(y) = (ry – sy – 4y) + (2r + s + 10)$$. Factorizamos $$y$$: $$M(y) = (r – s – 4)y + (2r + s + 10)$$. Para que $$M(y)$$ sea una función constante, el coeficiente de $$y$$ debe ser 0: $$r – s – 4 = 0$$. Esto implica que $$r = s + 4$$. Además, la tarifa mensual es de 75 dólares, por lo que la función constante debe ser igual a 75: $$M(y) = 75$$. Esto significa que el término constante de la función expandida debe ser 75: $$2r + s + 10 = 75$$. Restamos 10 de ambos lados: $$2r + s = 65$$. Ahora tenemos un sistema de dos ecuaciones con dos incógnitas: 1) $$r = s + 4$$ 2) $$2r + s = 65$$ Sustituimos la ecuación (1) en la ecuación (2): $$2(s + 4) + s = 65$$. Distribuimos el 2: $$2s + 8 + s = 65$$. Combinamos términos semejantes: $$3s + 8 = 65$$. Restamos 8 de ambos lados: $$3s = 57$$. Dividimos por 3: $$s = 19$$. Ahora sustituimos el valor de $$s$$ en la ecuación (1) para encontrar $$r$$: $$r = 19 + 4 = 23$$. Finalmente, se nos pide calcular $$r^2 – s^2$$. Sustituimos los valores de $$r$$ y $$s$$: $$23^2 – 19^2$$. Podemos usar la diferencia de cuadrados $$a^2 – b^2 = (a – b)(a + b)$$: $$(23 – 19)(23 + 19) = (4)(42) = 168$$. Por lo tanto, el valor de $$r^2 – s^2$$ es 168.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un centro de monitoreo, la cantidad de reportes diarios de un cierto tipo de incidente se ha mantenido constante. Si se modela con la función $$h(x)$$ para cada año $$x$$, y se cumple la relación: $$(h(2019) + h(2020)) / (h(2021) – 6) = 6$$ Determinar la suma de la función constante para los años 2022, 2023 y 2024.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$27$$",
+        "B": "$$18$$",
+        "C": "$$24$$",
+        "D": "$$30$$",
+        "E": "$$21$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $$h(x)$$ es una función constante, sea $$h(x) = c$$ para todo $$x$$. Sustituyendo en la ecuación dada: $$(c + c) / (c – 6) = 6$$ $$2c = 6(c – 6)$$ $$2c = 6c – 36$$ $$4c = 36$$ $$c = 9$$ Se pide la suma de la función constante para los años 2022, 2023 y 2024, que es $$h(2022) + h(2023) + h(2024) = c + c + c = 3c$$. Calculando: $$3c = 3(9) = 27$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$q(x)$$ una función constante tal que: $$(q(x – 3) + q(x + 5)) / (q(3x) – 7) = 5$$ Hallar $$Q = q(x^2) + q(x + 1) + 4$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$82/3$$",
+        "B": "$$70/3$$",
+        "C": "$$35/3$$",
+        "D": "$$4$$",
+        "E": "$$12$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $$q(x)$$ es una función constante, sea $$q(x) = k$$ para todo $$x$$. Sustituyendo en la ecuación dada: $$(k + k) / (k – 7) = 5$$ $$2k = 5(k – 7)$$ $$2k = 5k – 35$$ $$3k = 35$$ $$k = 35/3$$ Ahora, se pide calcular $$Q = q(x^2) + q(x + 1) + 4$$. Como $$q(x)$$ es constante, esto es igual a $$k + k + 4 = 2k + 4$$. Sustituyendo el valor de $$k$$: $$Q = 2(35/3) + 4 = 70/3 + 12/3 = 82/3$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sobre la función identidad $$f(x) = x$$, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F): I. Es una función impar. II. Su gráfica interseca el eje Y en $$(0, 1)$$. III. El punto $$(-3; -3)$$ pertenece a la función.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFV",
+        "B": "FVF",
+        "C": "VVF",
+        "D": "FFV",
+        "E": "VVV"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función identidad es $$f(x) = x$$. Analicemos cada afirmación: I. Una función es impar si $$f(-x) = -f(x)$$. Para $$f(x) = x$$, tenemos $$f(-x) = -x$$ y $$-f(x) = -(x) = -x$$. Por lo tanto, $$f(-x) = -f(x)$$. La afirmación es Verdadera (V). II. La gráfica de $$f(x) = x$$ interseca el eje Y cuando $$x = 0$$. Sustituyendo, $$f(0) = 0$$. Por lo tanto, interseca el eje Y en $$(0, 0)$$, no en $$(0, 1)$$. La afirmación es Falsa (F). III. Un punto $$(a; b)$$ pertenece a la función si $$f(a) = b$$. Para el punto $$(-3; -3)$$, tenemos $$f(-3) = -3$$, lo cual es cierto. La afirmación es Verdadera (V). El patrón de verdad es VFV. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$f: R \to R$$ una función identidad, tal que $$f(x) = (6m – 18)x^2 + (5n – 19)x + (8p – 24)$$. Calcular el valor de $$m + n – p$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$4$$",
+        "B": "$$5$$",
+        "C": "$$6$$",
+        "D": "$$7$$",
+        "E": "$$8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Si $$f(x)$$ es una función identidad, entonces $$f(x) = x$$. Comparando con la expresión dada: $$f(x) = (6m – 18)x^2 + (5n – 19)x + (8p – 24)$$ Para que sea $$f(x) = x$$, deben cumplirse tres condiciones: 1. El coeficiente de $$x^2$$ debe ser 0: $$6m – 18 = 0 \\Rightarrow 6m = 18 \\Rightarrow m = 3$$ 2. El coeficiente de $$x$$ debe ser 1: $$5n – 19 = 1 \\Rightarrow 5n = 20 \\Rightarrow n = 4$$ 3. El término independiente debe ser 0: $$8p – 24 = 0 \\Rightarrow 8p = 24 \\Rightarrow p = 3$$ Se pide calcular $$m + n – p$$. Sustituyendo los valores encontrados: $$m + n – p = 3 + 4 – 3 = 4$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un servicio de streaming cobra una tarifa mensual de 42 soles. Si esta situación está representada por la función constante: $$f(x) = c(2 + x) + d(1 – x) – 3x + 5$$. Calcular: $$c + d$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$71/3$$",
+        "B": "$$40/3$$",
+        "C": "$$31/3$$",
+        "D": "$$10$$",
+        "E": "$$12$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, expandimos y agrupamos los términos de la función $$f(x)$$: $$f(x) = 2c + cx + d – dx – 3x + 5$$ $$f(x) = (2c + d + 5) + (c – d – 3)x$$ Para que $$f(x)$$ sea una función constante, el coeficiente de $$x$$ debe ser cero: $$c – d – 3 = 0 \\Rightarrow c – d = 3 \\quad \\text{(Ecuación 1)}$$ Además, el problema indica que la tarifa mensual es de 42 soles, lo que significa que la función constante $$f(x)$$ debe ser igual a 42. Por lo tanto, el término constante de la función debe ser 42: $$2c + d + 5 = 42 \\Rightarrow 2c + d = 37 \\quad \\text{(Ecuación 2)}$$ Ahora, resolvemos el sistema de ecuaciones: 1) $$c – d = 3$$ 2) $$2c + d = 37$$ Sumando la Ecuación 1 y la Ecuación 2: $$(c – d) + (2c + d) = 3 + 37$$ $$3c = 40$$ $$c = 40/3$$ Sustituyendo el valor de $$c$$ en la Ecuación 1: $$(40/3) – d = 3$$ $$d = 40/3 – 3$$ $$d = 40/3 – 9/3$$ $$d = 31/3$$ Se pide calcular $$c + d$$: $$c + d = 40/3 + 31/3 = 71/3$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una empresa de software estima que su rendimiento operativo anual, representado por la función $H(y)$, se ha mantenido constante. Si se sabe que la relación entre los rendimientos de ciertos años está dada por $$\\frac{H(2028) + H(2029)}{H(2030) - 4} = 6$$. Determinar la suma de los rendimientos para los años 2031, 2032, 2033 y 2034.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "20",
+        "B": "24",
+        "C": "18",
+        "D": "12",
+        "E": "16"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Como $H(y)$ es una función constante, sea $H(y) = c$ para todo $y$. Entonces, la ecuación dada se transforma en: $$\\frac{c + c}{c - 4} = 6$$ $$\\frac{2c}{c - 4} = 6$$ $$2c = 6(c - 4)$$ $$2c = 6c - 24$$ $$4c = 24$$ $$c = 6$$ Se pide la suma de los rendimientos para los años 2031, 2032, 2033 y 2034, lo cual es: $$H(2031) + H(2032) + H(2033) + H(2034) = c + c + c + c = 4c$$ Sustituyendo el valor de $c$: $$4c = 4(6) = 24$$ Por lo tanto, la suma es 24.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $F(t)$ una función constante que modela la consistencia de un material a lo largo del tiempo. Si se cumple que $$\\frac{F(t-1) + F(t+1)}{F(3t) - 6} = 5$$. Hallar el valor de la expresión $Q = F(t^3) + F(2t) - 4$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "14",
+        "B": "18",
+        "C": "16",
+        "D": "12",
+        "E": "20"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Como $F(t)$ es una función constante, sea $F(t) = k$ para todo $t$. Entonces, la ecuación dada se transforma en: $$\\frac{k + k}{k - 6} = 5$$ $$\\frac{2k}{k - 6} = 5$$ $$2k = 5(k - 6)$$ $$2k = 5k - 30$$ $$3k = 30$$ $$k = 10$$ Ahora, se pide hallar el valor de $Q = F(t^3) + F(2t) - 4$. Sustituyendo $F(x)$ por $k$: $$Q = k + k - 4 = 2k - 4$$ Sustituyendo el valor de $k$: $$Q = 2(10) - 4 = 20 - 4 = 16$$ Por lo tanto, el valor de $Q$ es 16.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sobre la función identidad $g(x)$, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F). I. La gráfica de $g(x)=x$ pasa por el origen $(0;0)$. II. Su gráfica es simétrica respecto al eje Y. III. La imagen de cualquier número real es el mismo número real.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFF",
+        "B": "FVF",
+        "C": "VFV",
+        "D": "FFV",
+        "E": "VVV"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Analicemos cada afirmación para la función identidad $g(x) = x$: I. La gráfica de $g(x)=x$ pasa por el origen $(0;0)$ porque $g(0) = 0$. Esta afirmación es Verdadera (V). II. Una función es simétrica respecto al eje Y si $g(x) = g(-x)$. Para $g(x)=x$, tenemos $g(x)=x$ y $g(-x)=-x$. Como $x \\neq -x$ (excepto para $x=0$), la función no es simétrica respecto al eje Y. Es simétrica respecto al origen. Esta afirmación es Falsa (F). III. La imagen de cualquier número real es el mismo número real por definición de la función identidad ($g(x)=x$). Esta afirmación es Verdadera (V). El patrón de verdad es VFV.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un ingeniero calibra un sensor para que su lectura $h(x)$ se comporte como una función identidad. El modelo de calibración es $h(x) = (5p - 24)x + (9q - 36)$. Calcular el valor de $p + q + 3$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "10",
+        "B": "15",
+        "C": "12",
+        "D": "9",
+        "E": "18"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Si $h(x)$ es una función identidad, entonces debe cumplir $h(x) = x$. Esto significa que el coeficiente de $x$ debe ser 1 y el término independiente debe ser 0. Comparando con $h(x) = (5p - 24)x + (9q - 36)$: 1. El coeficiente de $x$ debe ser 1: $$5p - 24 = 1$$ $$5p = 25$$ $$p = 5$$ 2. El término independiente debe ser 0: $$9q - 36 = 0$$ $$9q = 36$$ $$q = 4$$ Ahora, se pide calcular el valor de $p + q + 3$: $$p + q + 3 = 5 + 4 + 3 = 12$$ Por lo tanto, el valor de $p + q + 3$ es 12.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un servicio de streaming tiene un plan básico con un pago mensual fijo de 50 soles. Esta situación está representada por la función constante $g(x) = m(x + 2) + n(3 - x) - 4x + 7$. Calcular el valor de $m^2 + n^2$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "170",
+        "B": "149",
+        "C": "130",
+        "D": "121",
+        "E": "100"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, expandimos y simplificamos la función $g(x)$: $$g(x) = m(x + 2) + n(3 - x) - 4x + 7$$ $$g(x) = mx + 2m + 3n - nx - 4x + 7$$ Agrupamos los términos con $x$ y los términos constantes: $$g(x) = (mx - nx - 4x) + (2m + 3n + 7)$$ $$g(x) = (m - n - 4)x + (2m + 3n + 7)$$ Para que $g(x)$ sea una función constante, el coeficiente de $x$ debe ser cero: $$m - n - 4 = 0$$ $$m = n + 4 \\quad (Ecuación 1)$$ Además, se nos dice que el pago mensual fijo es de 50 soles, lo que significa que la función constante $g(x)$ es igual a 50: $$g(x) = 50$$ Entonces, el término constante de la función debe ser 50: $$2m + 3n + 7 = 50$$ $$2m + 3n = 43 \\quad (Ecuación 2)$$ Ahora, sustituimos la Ecuación 1 en la Ecuación 2: $$2(n + 4) + 3n = 43$$ $$2n + 8 + 3n = 43$$ $$5n + 8 = 43$$ $$5n = 35$$ $$n = 7$$ Sustituimos el valor de $n$ en la Ecuación 1 para encontrar $m$: $$m = 7 + 4$$ $$m = 11$$ Finalmente, se nos pide calcular $m^2 + n^2$: $$m^2 + n^2 = (11)^2 + (7)^2$$ $$m^2 + n^2 = 121 + 49$$ $$m^2 + n^2 = 170$$ Por lo tanto, el valor de $m^2 + n^2$ es 170.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

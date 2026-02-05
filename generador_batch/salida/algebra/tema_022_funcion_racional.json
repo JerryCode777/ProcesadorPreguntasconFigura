@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 22,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN RACIONAL",
+  "tema": "funcion_racional",
+  "preguntas": [
+    {
+      "pregunta": "Calcular el rango de la siguiente función: $$f(x) = 5 / (x^{2} - 4)$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$]- \\infty; -5/4] U ]0; + \\infty[$$",
+        "B": "$$[-5/4; 0[ U ]0; + \\infty[$$",
+        "C": "$$]- \\infty; -4/5] U ]0; + \\infty[$$",
+        "D": "$$]- \\infty; -5/4[ U ]0; + \\infty[$$",
+        "E": "$$[-5; 0] U ]0; + \\infty[$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$y = 5 / (x^{2} - 4)$$. Despejando $$x^{2}$$: $$y(x^{2} - 4) = 5$$, lo que lleva a $$yx^{2} - 4y = 5$$, entonces $$yx^{2} = 4y + 5$$. Así, $$x^{2} = (4y + 5) / y = 4 + 5/y$$. Como $$x^{2} \\ge 0$$, se exige que $$4 + 5/y \\ge 0$$, lo que implica $$(4y + 5) / y \\ge 0$$. Los puntos críticos son $$y = -5/4$$ (donde el numerador es cero) y $$y = 0$$ (donde el denominador es cero). Analizando los signos de la expresión, obtenemos $$y \\le -5/4$$ o $$y > 0$$. El valor $$y = -5/4$$ se logra si $$x = 0$$, ya que $$f(0) = 5 / (0^{2} - 4) = 5 / -4 = -5/4$$. El valor $$y = 0$$ no es posible porque el numerador de la función original es $$5$$, que nunca es cero. Por lo tanto, el rango es $$]- \\infty; -5/4] U ]0; + \\infty[$$.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean \"c\" y \"d\" dos números reales tales que la función: $$f(x) = (c + dx + 10) / (cx - 2d)$$ tiene como dominio: R $$ - \\{-2\\}$$ y $$f(2) = -5$$. Hallar el valor de \"cd\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-100/361$$",
+        "B": "$$10/19$$",
+        "C": "$$-19/10$$",
+        "D": "$$100/361$$",
+        "E": "$$-10/19$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El dominio excluye solo $$x = -2$$, lo que significa que el denominador se anula en $$x = -2$$. Sustituimos en el denominador: $$c(-2) - 2d = 0$$, lo que resulta en $$-2c - 2d = 0$$. Dividiendo por -2, obtenemos $$c + d = 0$$, de donde $$d = -c$$. Ahora usamos la condición $$f(2) = -5$$. Sustituimos $$x=2$$ en la función: $$f(2) = (c + d(2) + 10) / (c(2) - 2d)$$. Reemplazamos $$d = -c$$ en esta expresión. Numerador: $$c + 2(-c) + 10 = c - 2c + 10 = 10 - c$$. Denominador: $$2c - 2(-c) = 2c + 2c = 4c$$. Entonces, la ecuación se convierte en $$(10 - c) / (4c) = -5$$. Multiplicando por $$4c$$: $$10 - c = -20c$$. Sumando $$c$$ a ambos lados: $$10 = -19c$$. Por lo tanto, $$c = -10/19$$. Usando $$d = -c$$, tenemos $$d = 10/19$$. Finalmente, el valor de \"cd\" es $$cd = (-10/19)(10/19) = -100/361$$.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un arquitecto, el día \"a/4\" del mes \"a/6\" del año 2024, presentó su diseño final para un edificio, donde \"a\" representa la suma de valores enteros del dominio de la siguiente función: $$f(x) = (4x + 3) / (x + 2)$$, cuyo rango está dado por $$[1; 7/2]$$. Hallar el día y mes de la presentación.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "9 de junio",
+        "B": "12 de julio",
+        "C": "8 de agosto",
+        "D": "10 de abril",
+        "E": "7 de mayo"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, reescribimos la función mediante división polinómica: $$f(x) = (4x + 3) / (x + 2) = (4(x + 2) - 5) / (x + 2) = 4 - 5 / (x + 2)$$. Se nos da que el rango está en el intervalo $$[1; 7/2]$$. Esto significa que $$1 \\le 4 - 5 / (x + 2) \\le 7/2$$. También sabemos que $$x \\ne -2$$ porque el denominador no puede ser cero. Observamos que los valores del rango (1 y $$7/2 = 3.5$$) son menores que la asíntota horizontal $$y=4$$. Esto implica que el término $$5 / (x + 2)$$ debe ser positivo. Para que $$5 / (x + 2) > 0$$, necesitamos que $$x + 2 > 0$$, lo que significa $$x > -2$$. Esta condición es importante porque nos permite multiplicar por $$(x + 2)$$ en las desigualdades sin cambiar su sentido. Para la primera desigualdad: $$1 \\le 4 - 5 / (x + 2)$$ $$5 / (x + 2) \\le 3$$ $$5 \\le 3(x + 2)$$ $$5 \\le 3x + 6$$ $$-1 \\le 3x$$ $$x \\ge -1/3$$. Para la segunda desigualdad: $$4 - 5 / (x + 2) \\le 7/2$$ $$-5 / (x + 2) \\le 7/2 - 4$$ $$-5 / (x + 2) \\le (7 - 8)/2$$ $$-5 / (x + 2) \\le -1/2$$. Multiplicamos por -1 y cambiamos el sentido de la desigualdad: $$5 / (x + 2) \\ge 1/2$$ $$10 \\ge x + 2$$ $$x \\le 8$$. Combinando todas las condiciones ( $$x > -2$$, $$x \\ge -1/3$$, y $$x \\le 8$$), el dominio de $$x$$ que produce este rango es $$[-1/3; 8]$$. Los valores enteros en este dominio son: $$0, 1, 2, 3, 4, 5, 6, 7, 8$$. La suma de estos valores es $$a = 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 = 36$$. La fecha de presentación es el día \"a/4\" del mes \"a/6\". Día = $$36/4 = 9$$. Mes = $$36/6 = 6$$ (junio). Por lo tanto, el arquitecto presentó su diseño el 9 de junio.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función real: $$f(x) = (x^{2} - 5) / (x^{2} - 6)$$, cuyo dominio es $$]-2; 2[$$ determine el rango de la función \"f\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$]1/2; 5/6]$$",
+        "B": "$$[-1/2; 1/6]$$",
+        "C": "$$]1/6; 1/2]$$",
+        "D": "$$]- \\infty; 5/6]$$",
+        "E": "$$[1/2; 5/6[$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$u = x^{2}$$. Con $$x$$ en $$]-2; 2[$$, los valores de $$x^{2}$$ (es decir, $$u$$) pertenecen al intervalo $$[0; 4[$$. Ahora reescribimos la función en términos de $$u$$: $$f(u) = (u - 5) / (u - 6)$$. Podemos simplificar esta expresión: $$f(u) = (u - 6 + 1) / (u - 6) = 1 + 1 / (u - 6)$$. Como $$u$$ pertenece a $$[0; 4[$$, entonces $$u - 6$$ pertenece a $$[0 - 6; 4 - 6[$$ lo que es $$[-6; -2[$$. Ahora analizamos la expresión $$1 / (u - 6)$$: Cuando $$u - 6 = -6$$ (es decir, $$u=0$$), $$1 / (u - 6) = 1/(-6) = -1/6$$. Cuando $$u - 6$$ se acerca a $$-2$$ (pero no lo incluye), $$1 / (u - 6)$$ se acerca a $$1/(-2) = -1/2$$. Dado que $$1/x$$ es una función decreciente para $$x < 0$$, y $$u-6$$ está aumentando de -6 a -2, el valor de $$1/(u-6)$$ va de $$-1/6$$ a $$-1/2$$. Por lo tanto, $$1 / (u - 6)$$ pertenece al intervalo $$]-1/2; -1/6]$$. Finalmente, sumamos 1 a este intervalo: $$1 + ]-1/2; -1/6]$$ = $$]1 - 1/2; 1 - 1/6]$$ = $$]1/2; 5/6]$$. Así, el rango de la función \"f\" es $$]1/2; 5/6]$$.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el rango de la siguiente función: $$y = (3x + 1) / (x^{2} + 1)$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$[(1 - \\sqrt{10}) / 2; (1 + \\sqrt{10}) / 2]$$",
+        "B": "$$[-1; 1]$$",
+        "C": "$$]0; \\sqrt{10}]$$",
+        "D": "$$[-2; 3]$$",
+        "E": "$$[(1 - \\sqrt{5}) / 2; (1 + \\sqrt{5}) / 2]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$y = (3x + 1) / (x^{2} + 1)$$. Multiplicamos por $$(x^{2} + 1)$$ para despejar $$x$$: $$y(x^{2} + 1) = 3x + 1$$. $$yx^{2} + y = 3x + 1$$. Reorganizamos la ecuación para obtener una forma cuadrática en $$x$$: $$yx^{2} - 3x + (y - 1) = 0$$. Para que existan soluciones reales para $$x$$, el discriminante de esta ecuación cuadrática debe ser mayor o igual a cero ( $$D \\ge 0$$ ). El discriminante se calcula como $$D = b^{2} - 4ac$$. En este caso, $$a = y$$, $$b = -3$$, y $$c = (y - 1)$$. Entonces: $$D = (-3)^{2} - 4(y)(y - 1) \\ge 0$$. $$9 - 4y^{2} + 4y \\ge 0$$. Multiplicando por -1 y cambiando el sentido de la desigualdad: $$4y^{2} - 4y - 9 \\le 0$$. Para encontrar los valores de $$y$$ que satisfacen esta desigualdad, primero encontramos las raíces de la ecuación $$4y^{2} - 4y - 9 = 0$$ usando la fórmula cuadrática: $$y = [-b \\pm \\sqrt{(b^{2} - 4ac)}] / (2a)$$. $$y = [4 \\pm \\sqrt{((-4)^{2} - 4(4)(-9))}] / (2(4))$$. $$y = [4 \\pm \\sqrt{(16 + 144)}] / 8$$. $$y = [4 \\pm \\sqrt{(160)}] / 8$$. $$y = [4 \\pm \\sqrt{(16 \\times 10)}] / 8$$. $$y = [4 \\pm 4\\sqrt{(10)}] / 8$$. Simplificando, dividiendo por 4: $$y = [1 \\pm \\sqrt{(10)}] / 2$$. Dado que la parábola $$4y^{2} - 4y - 9$$ se abre hacia arriba, la desigualdad $$4y^{2} - 4y - 9 \\le 0$$ se cumple entre sus raíces. Por lo tanto, el rango de la función es $$[(1 - \\sqrt{10}) / 2; (1 + \\sqrt{10}) / 2]$$.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el rango de la siguiente función: $$f(x) = \frac{5}{x^2 - 4}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$Ran(f) = <-\\text{infinito}; -\\frac{5}{4}] \\cup ]0; +\\text{infinito}<$$",
+        "B": "$$Ran(f) = <-\\text{infinito}; -\\frac{4}{5}] \\cup ]0; +\\text{infinito}<$$",
+        "C": "$$Ran(f) = <-\\text{infinito}; -\\frac{5}{4}> \\cup <0; +\\text{infinito}<$$",
+        "D": "$$Ran(f) = <-\\text{infinito}; -\\frac{5}{4}] \\cup [0; +\\text{infinito}<$$",
+        "E": "$$Ran(f) = <-\\text{infinito}; -\\frac{5}{4}] \\cup <4; +\\text{infinito}<$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$y = \\frac{5}{x^2 - 4}$$. Entonces, $$y(x^2 - 4) = 5$$, lo que implica $$yx^2 - 4y = 5$$, de donde $$yx^2 = 5 + 4y$$. Despejando $$x^2$$, obtenemos $$x^2 = \\frac{5 + 4y}{y} = 4 + \\frac{5}{y}$$. Como $$x^2 \\ge 0$$, se debe cumplir que $$4 + \\frac{5}{y} \\ge 0$$, lo que es equivalente a $$\\frac{4y + 5}{y} \\ge 0$$. Los puntos críticos son $$y = -\\frac{5}{4}$$ y $$y = 0$$. Analizando los signos, se obtiene que $$y \\le -\\frac{5}{4}$$ o $$y > 0$$. Además, $$y = -\\frac{5}{4}$$ se logra (por ejemplo, cuando $$x = 0$$, $$f(0) = \\frac{5}{0^2 - 4} = -\\frac{5}{4}$$), pero $$y = 0$$ no se puede (el numerador $$5$$ nunca es $$0$$). Por lo tanto, el rango es $$<-\\text{infinito}; -\\frac{5}{4}] \\cup ]0; +\\text{infinito}<$$.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean \"a\" y \"b\" dos números reales tales que la función: $$f(x) = \\frac{2a + bx + 7}{ax - 4b}$$ tiene como dominio: $$R - \\{4\\}$$ y $$f(1) = \\frac{1}{2}$$. Hallar el valor de $$a + b$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-\\frac{28}{9}$$",
+        "B": "$$-\\frac{14}{9}$$",
+        "C": "$$\\frac{14}{9}$$",
+        "D": "$$\\frac{28}{9}$$",
+        "E": "$$0$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "El dominio excluye solo $$x = 4$$, lo que significa que el denominador se anula en $$x = 4$$: $$a(4) - 4b = 0 \\Rightarrow 4a - 4b = 0 \\Rightarrow a = b$$. Ahora usamos la condición $$f(1) = \\frac{1}{2}$$: $$f(1) = \\frac{2a + b(1) + 7}{a(1) - 4b}$$. Sustituimos $$b = a$$: Numerador: $$2a + a + 7 = 3a + 7$$. Denominador: $$a - 4a = -3a$$. Entonces, $$\\frac{3a + 7}{-3a} = \\frac{1}{2}$$. Multiplicando en cruz: $$2(3a + 7) = -3a \\Rightarrow 6a + 14 = -3a \\Rightarrow 9a = -14 \\Rightarrow a = -\\frac{14}{9}$$. Como $$b = a$$, entonces $$b = -\\frac{14}{9}$$. Finalmente, $$a + b = (-\\frac{14}{9}) + (-\\frac{14}{9}) = -\\frac{28}{9}$$.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "El biólogo Mario tiene un día de campo en la zona \"3a\" del mes \"a\" del año 2024, donde \"a\" representa la suma de los valores enteros del dominio de la siguiente función: $$f(x) = \\frac{3x - 1}{x + 1}$$. Además, el rango de la función está dado por $$[-1; 2]$$. Hallar el día y mes de la actividad de Mario.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "15 de julio",
+        "B": "12 de junio",
+        "C": "18 de junio",
+        "D": "18 de julio",
+        "E": "16 de mayo"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Reescribimos la función como $$f(x) = \\frac{3x - 1}{x + 1} = \\frac{3(x + 1) - 4}{x + 1} = 3 - \\frac{4}{x + 1}$$. Para que el rango sea $$[-1; 2]$$, buscamos los valores de $$x$$ que producen valores entre esos límites: $$-1 \\le 3 - \\frac{4}{x + 1} \\le 2$$. Notamos que los valores del rango son menores que $$3$$. Para que $$3 - \\frac{4}{x + 1} < 3$$, es necesario que $$\\frac{4}{x + 1}$$ sea positivo, lo que implica $$x + 1 > 0$$, es decir, $$x > -1$$. Primera desigualdad: $$-1 \\le 3 - \\frac{4}{x + 1} \\Rightarrow -4 \\le -\\frac{4}{x + 1}$$. Multiplicando por $$-1$$ y cambiando el sentido de la desigualdad: $$4 \\ge \\frac{4}{x + 1}$$. Como $$x + 1 > 0$$, podemos multiplicar por $$x + 1$$: $$4(x + 1) \\ge 4 \\Rightarrow x + 1 \\ge 1 \\Rightarrow x \\ge 0$$. Segunda desigualdad: $$3 - \\frac{4}{x + 1} \\le 2 \\Rightarrow -\\frac{4}{x + 1} \\le -1$$. Multiplicando por $$-1$$ y cambiando el sentido de la desigualdad: $$\\frac{4}{x + 1} \\ge 1$$. Como $$x + 1 > 0$$, podemos multiplicar por $$x + 1$$: $$4 \\ge x + 1 \\Rightarrow x \\le 3$$. Entonces, el dominio que produce este rango es $$[0; 3]$$. Los valores enteros en este dominio son $$0, 1, 2, 3$$. La suma de estos valores es $$a = 0 + 1 + 2 + 3 = 6$$. El día de la actividad es $$3a = 3 \\times 6 = 18$$. El mes de la actividad es $$a = 6$$, que corresponde a junio. Por lo tanto, la actividad de Mario es el 18 de junio.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función real: $$f(x) = \\frac{x^2 - 10}{x^2 - 16}$$ cuyo dominio es $$]-4; 3[$$ determine el rango de la función \"f\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$]-\\text{infinito}; \\frac{5}{8}]$$",
+        "B": "$$]-\\text{infinito}; \\frac{3}{8}]$$",
+        "C": "$$[\\frac{5}{8}; +\\text{infinito}<$$",
+        "D": "$$[0; \\frac{5}{8}]$$",
+        "E": "$$]-\\text{infinito}; \\frac{10}{16}]$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$u = x^2$$. Con $$x$$ en $$]-4; 3[$$, se tiene que $$x^2$$ pertenece al intervalo $$[0; 16[$$. (El mínimo es $$0$$ en $$x=0$$, y el máximo se acerca a $$(-4)^2 = 16$$ pero sin incluirlo). Reescribimos la función en términos de $$u$$: $$f(u) = \\frac{u - 10}{u - 16}$$. Podemos reescribir esto como $$f(u) = \\frac{u - 16 + 6}{u - 16} = 1 + \\frac{6}{u - 16}$$. Como $$u$$ pertenece a $$[0; 16[$$, entonces $$u - 16$$ pertenece a $$[-16; 0[$$. Analizamos el término $$\\frac{6}{u - 16}$$: Cuando $$u = 0$$, $$\\frac{6}{0 - 16} = -\\frac{6}{16} = -\\frac{3}{8}$$. Cuando $$u \\to 16^-$$, $$u - 16 \\to 0^-$$, por lo tanto $$\\frac{6}{u - 16} \\to -\\text{infinito}$$. Así, el término $$\\frac{6}{u - 16}$$ pertenece a $$]-\\text{infinito}; -\\frac{3}{8}]$$. Sumando $$1$$ a este intervalo, obtenemos que $$f(u)$$ pertenece a $$]-\\text{infinito}; 1 - \\frac{3}{8}] = ]-\\text{infinito}; \\frac{5}{8}]$$. Por lo tanto, el rango de la función es $$]-\\text{infinito}; \\frac{5}{8}]$$.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el rango de la función: $$f(x) = \\frac{3x^2 - 2}{3x^2 + 5}$$ para $$2 \\le x \\le 4$$ es: $$[m; n]$$, entonces $$n - m$$ es igual a:",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$\\frac{252}{901}$$",
+        "B": "$$\\frac{126}{450}$$",
+        "C": "$$-\\frac{252}{901}$$",
+        "D": "$$\\frac{10}{17}$$",
+        "E": "$$\\frac{46}{53}$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$u = x^2$$. Como $$2 \\le x \\le 4$$, entonces $$x^2$$ está en el intervalo $$[2^2; 4^2]$$, es decir, $$u \\in [4; 16]$$. Reescribimos la función en términos de $$u$$: $$f(u) = \\frac{3u - 2}{3u + 5}$$. Para determinar si la función es creciente o decreciente en este intervalo, calculamos su derivada con respecto a $$u$$: $$f'(u) = \\frac{3(3u + 5) - (3u - 2)3}{(3u + 5)^2} = \\frac{9u + 15 - 9u + 6}{(3u + 5)^2} = \\frac{21}{(3u + 5)^2}$$. Como $$f'(u) > 0$$ para todo $$u$$ en el dominio, la función es estrictamente creciente. Por lo tanto, el valor mínimo $$m$$ se alcanzará en el valor mínimo de $$u$$ (cuando $$x=2$$, $$u=4$$), y el valor máximo $$n$$ se alcanzará en el valor máximo de $$u$$ (cuando $$x=4$$, $$u=16$$). Mínimo ($$m$$) en $$u = 4$$: $$m = f(4) = \\frac{3(4) - 2}{3(4) + 5} = \\frac{12 - 2}{12 + 5} = \\frac{10}{17}$$. Máximo ($$n$$) en $$u = 16$$: $$n = f(16) = \\frac{3(16) - 2}{3(16) + 5} = \\frac{48 - 2}{48 + 5} = \\frac{46}{53}$$. Finalmente, calculamos $$n - m$$: $$n - m = \\frac{46}{53} - \\frac{10}{17} = \\frac{46 \\times 17 - 10 \\times 53}{53 \\times 17} = \\frac{782 - 530}{901} = \\frac{252}{901}$$.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el rango de la siguiente función: $$f(x) = 5 / (x^2 - 4)$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$]-\\infty; -5/4] \\cup ]0; +\\infty[$$",
+        "B": "$$]-\\infty; -4] \\cup ]0; +\\infty[$$",
+        "C": "$$]-\\infty; -5/4[ \\cup ]0; +\\infty[$$",
+        "D": "$$]-\\infty; -5/4] \\cup [0; +\\infty[$$",
+        "E": "$$]-\\infty; 0] \\cup ]5/4; +\\infty[$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$y = 5 / (x^2 - 4)$$. Entonces: $$y(x^2 - 4) = 5 \\implies yx^2 - 4y = 5 \\implies yx^2 = 5 + 4y \\implies x^2 = (5 + 4y)/y = 4 + 5/y$$. Como $$x^2 \\ge 0$$, se exige que $$4 + 5/y \\ge 0 \\implies (4y + 5)/y \\ge 0$$. Los puntos críticos son $$y = -5/4$$ y $$y = 0$$. Analizando los signos, se obtiene que $$y \\le -5/4$$ o $$y > 0$$. El valor $$y = -5/4$$ se logra (por ejemplo, cuando $$x = 0$$, $$f(0) = 5/(-4) = -5/4$$). El valor $$y = 0$$ no se puede lograr ya que el numerador es $$5$$. Por lo tanto, el rango es $$]-\\infty; -5/4] \\cup ]0; +\\infty[$$. La respuesta correcta es A.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean \"c\" y \"d\" dos números reales tales que la función: $$g(x) = (c + dx + 10) / (cx - 5d)$$ tiene como dominio: R $$-\\{-5\\}$$ y $$g(2) = -2$$. Hallar el valor de \"cd\".",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$100/169$$",
+        "B": "$$-100/169$$",
+        "C": "$$-13/10$$",
+        "D": "$$13/10$$",
+        "E": "$$-1/169$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El dominio excluye $$x = -5$$, entonces el denominador se anula en $$x = -5$$: $$c(-5) - 5d = 0 \\implies -5c - 5d = 0 \\implies c + d = 0 \\implies d = -c$$. Ahora usamos $$g(2) = -2$$: $$g(2) = (c + d(2) + 10) / (c(2) - 5d) = (c + 2d + 10) / (2c - 5d)$$. Sustituyendo $$d = -c$$: Numerador: $$c + 2(-c) + 10 = -c + 10$$. Denominador: $$2c - 5(-c) = 7c$$. Entonces: $$(-c + 10) / (7c) = -2 \\implies -c + 10 = -14c \\implies 13c = -10 \\implies c = -10/13$$. Como $$d = -c$$, entonces $$d = 10/13$$. Finalmente, $$cd = (-10/13)(10/13) = -100/169$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Ana celebra su cumpleaños el día \"2k\" del mes \"k+1\" del año 2024, donde \"k\" representa la suma de valores enteros del dominio de la siguiente función: $$f(x) = (4x + 3) / (x + 2)$$. Si el rango está dado por $$[1; 3]$$, hallar el día y mes en que nació Ana.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "10 de abril",
+        "B": "12 de julio",
+        "C": "8 de mayo",
+        "D": "14 de agosto",
+        "E": "6 de junio"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Escribimos $$f(x) = (4x + 3)/(x + 2) = (4(x+2) - 8 + 3)/(x + 2) = 4 - 5/(x + 2)$$. El rango dado es $$[1; 3]$$. Observamos que los valores del rango son menores que $$4$$. Esto implica que $$4 - 5/(x + 2) < 4 \\implies -5/(x + 2) < 0 \\implies 5/(x + 2) > 0 \\implies x + 2 > 0 \\implies x > -2$$. Con $$x + 2 > 0$$, las desigualdades se pueden multiplicar sin cambiar el sentido: $$1 \\le (4x + 3)/(x + 2)$$ y $$(4x + 3)/(x + 2) \\le 3$$. Para la primera parte: $$1(x + 2) \\le 4x + 3 \\implies x + 2 \\le 4x + 3 \\implies -1 \\le 3x \\implies x \\ge -1/3$$. Para la segunda parte: $$4x + 3 \\le 3(x + 2) \\implies 4x + 3 \\le 3x + 6 \\implies x \\le 3$$. El dominio que produce este rango es la intersección de $$x > -2$$, $$x \\ge -1/3$$ y $$x \\le 3$$, lo que resulta en $$[-1/3; 3]$$. Los valores enteros en este dominio son $$0, 1, 2, 3$$. La suma de estos valores es $$k = 0 + 1 + 2 + 3 = 6$$. El día de nacimiento es $$2k = 2(6) = 12$$. El mes de nacimiento es $$k + 1 = 6 + 1 = 7$$ (julio). La respuesta correcta es B.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dada la función real: $$f(x) = (x^2 - 7) / (x^2 - 10)$$ cuyo dominio es $$]-4; 3[$$, determine el rango de la función \"f\".",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$[7/10; 3/2]$$",
+        "B": "$$]-\\infty; 7/10] \\cup ]3/2; +\\infty[$$",
+        "C": "$$]7/10; 3/2[$$",
+        "D": "$$[7/10; +\\infty[$$",
+        "E": "$$]-\\infty; 3/2[$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$u = x^2$$. Con $$x$$ en $$]-4; 3[$$, $$x^2$$ pertenece a $$[0; 16[$$ (ya que el valor mínimo de $$x^2$$ es $$0$$ cuando $$x=0$$, y el valor máximo se acerca a $$(-4)^2 = 16$$ sin incluirlo). Reescribimos la función como $$g(u) = (u - 7) / (u - 10) = (u - 10 + 3) / (u - 10) = 1 + 3 / (u - 10)$$. Analicemos el comportamiento de $$g(u)$$ para $$u \\in [0; 16[$$. Cuando $$u = 0$$, $$g(0) = 1 + 3 / (0 - 10) = 1 - 3/10 = 7/10$$. A medida que $$u$$ se acerca a $$10$$ desde la izquierda ($$u \\to 10^-$$), $$u - 10 \\to 0^-$$ y $$3/(u - 10) \\to -\\infty$$. Así, $$g(u) \\to -\\infty$$. Entonces, para $$u \\in [0; 10[$$, el rango es $$]-\\infty; 7/10]$$. A medida que $$u$$ se acerca a $$10$$ desde la derecha ($$u \\to 10^+$$), $$u - 10 \\to 0^+$$ y $$3/(u - 10) \\to +\\infty$$. Así, $$g(u) \\to +\\infty$$. A medida que $$u$$ se acerca a $$16$$ desde la izquierda ($$u \\to 16^-$$), $$g(u) \\to 1 + 3 / (16 - 10) = 1 + 3/6 = 1 + 1/2 = 3/2$$. Este valor $$3/2$$ no está incluido. Entonces, para $$u \\in ]10; 16[$$, el rango es $$]3/2; +\\infty[$$. El rango total de la función \"f\" es la unión de estos dos intervalos: $$]-\\infty; 7/10] \\cup ]3/2; +\\infty[$$. La respuesta correcta es B.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el rango de la siguiente función: $$g(x) = 6x / (x^2 + 2)$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-3; 3]$$",
+        "B": "$$[-2\\sqrt{2}; 2\\sqrt{2}]$$",
+        "C": "$$[-3\\sqrt{2}/2; 3\\sqrt{2}/2]$$",
+        "D": "$$]-\\infty; +\\infty[$$",
+        "E": "$$[-1; 1]$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$y = 6x / (x^2 + 2)$$. Multiplicando por el denominador, obtenemos $$y(x^2 + 2) = 6x$$. Reorganizando en una ecuación cuadrática en $$x$$: $$yx^2 - 6x + 2y = 0$$. Para que existan valores reales de $$x$$, el discriminante de esta ecuación cuadrática debe ser mayor o igual a cero: $$D = (-6)^2 - 4(y)(2y) \\ge 0$$. $$36 - 8y^2 \\ge 0 \\implies 36 \\ge 8y^2 \\implies 9/2 \\ge y^2$$. Esto implica $$y^2 \\le 9/2$$. Tomando la raíz cuadrada a ambos lados, obtenemos $$-\\sqrt{9/2} \\le y \\le \\sqrt{9/2}$$. Simplificando las raíces: $$-\\frac{3}{\\sqrt{2}} \\le y \\le \\frac{3}{\\sqrt{2}}$$. Racionalizando, obtenemos $$-\\frac{3\\sqrt{2}}{2} \\le y \\le \\frac{3\\sqrt{2}}{2}$$. Estos valores de $$y$$ se alcanzan (por ejemplo, para $$y = 3\\sqrt{2}/2$$, se encuentra $$x = \\sqrt{2}$$ y para $$y = -3\\sqrt{2}/2$$, se encuentra $$x = -\\sqrt{2}$$). Por lo tanto, el rango de la función es $$[-3\\sqrt{2}/2; 3\\sqrt{2}/2]$$. La respuesta correcta es C.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

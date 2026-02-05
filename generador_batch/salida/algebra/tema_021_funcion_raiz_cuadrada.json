@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 21,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIÓN RAÍZ CUADRADA",
+  "tema": "funcion_raiz_cuadrada",
+  "preguntas": [
+    {
+      "pregunta": "Determina el dominio de la función $$f(x) = \\sqrt{\\frac{25}{x^{2}} - 1} + 10$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[-5; 5]$$",
+        "B": "$$]0; 5]$$",
+        "C": "$$[-5; 0[ \\cup ]0; 5]$$",
+        "D": "$$]-\\infty; 5]$$",
+        "E": "$$]-5; 5[$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que la raíz cuadrada exista, se requiere que la expresión bajo la raíz sea no negativa: $$\\frac{25}{x^{2}} - 1 \\geq 0$$. Además, el denominador no puede ser cero, por lo tanto $$x \\neq 0$$. Resolviendo la desigualdad: $$\\frac{25}{x^{2}} \\geq 1$$. Como $$x^{2}$$ es siempre positivo (y distinto de cero), podemos multiplicar por $$x^{2}$$ sin cambiar el sentido de la desigualdad: $$25 \\geq x^{2}$$ o $$x^{2} \\leq 25$$. Esto implica que $$-5 \\leq x \\leq 5$$. Combinando con la condición $$x \\neq 0$$, el dominio es $$[-5; 0[ \\cup ]0; 5]$$.",
+      "id_temporal": "alg_fun_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcula la suma de los valores enteros que pertenecen al dominio de la función $$f(x) = \\sqrt{x + 3} + \\sqrt[4]{15 - 4x}$$ (raíz cuarta).",
+      "dificultad": 2,
+      "opciones": {
+        "A": "3",
+        "B": "4",
+        "C": "0",
+        "D": "6",
+        "E": "5"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que la función exista, ambas raíces pares deben tener argumentos no negativos. Para $$\\sqrt{x + 3}$$: $$x + 3 \\geq 0 \\Rightarrow x \\geq -3$$. Para $$\\sqrt[4]{15 - 4x}$$: $$15 - 4x \\geq 0 \\Rightarrow -4x \\geq -15 \\Rightarrow 4x \\leq 15 \\Rightarrow x \\leq \\frac{15}{4}$$. La intersección de estas condiciones es $$[-3; \\frac{15}{4}]$$. Los valores enteros en este intervalo son $$-3, -2, -1, 0, 1, 2, 3$$. La suma de estos valores es $$-3 + (-2) + (-1) + 0 + 1 + 2 + 3 = 0$$.",
+      "id_temporal": "alg_fun_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina el rango de la función $$f(x) = \\sqrt{2 - \\sqrt{4 - x}}$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$]0; \\sqrt{2}[$$",
+        "B": "$$]-\\infty; \\sqrt{2}]$$",
+        "C": "$$[0; \\sqrt{2}]$$",
+        "D": "$$[0; 2[$$",
+        "E": "$$[\\sqrt{2}; 2]$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, encontramos el dominio. Para que $$\\sqrt{4 - x}$$ exista, $$4 - x \\geq 0 \\Rightarrow x \\leq 4$$. Para que la raíz exterior exista, $$2 - \\sqrt{4 - x} \\geq 0 \\Rightarrow \\sqrt{4 - x} \\leq 2$$. Elevando al cuadrado (válido porque la raíz es no negativa): $$4 - x \\leq 4 \\Rightarrow -x \\leq 0 \\Rightarrow x \\geq 0$$. Así, el dominio es $$[0; 4]$$. Evaluamos la función en los extremos del dominio: Si $$x = 0$$, $$f(0) = \\sqrt{2 - \\sqrt{4 - 0}} = \\sqrt{2 - \\sqrt{4}} = \\sqrt{2 - 2} = \\sqrt{0} = 0$$. Si $$x = 4$$, $$f(4) = \\sqrt{2 - \\sqrt{4 - 4}} = \\sqrt{2 - \\sqrt{0}} = \\sqrt{2 - 0} = \\sqrt{2}$$. Dado que la función es continua y las raíces siempre producen valores no negativos, el rango de la función es $$[0; \\sqrt{2}]$$.",
+      "id_temporal": "alg_fun_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el rango de la función $$g(x) = \\frac{x - 2030}{\\sqrt{x - 2029} - 1}$$ es $$[a; b[ \\cup ]b; +\\infty[$$, calcula el valor de $$b^{2} - a^{2}$$ (b al cuadrado menos a al cuadrado).",
+      "dificultad": 3,
+      "opciones": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "-1",
+        "E": "-2"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, las condiciones de existencia: El argumento de la raíz debe ser no negativo, $$x - 2029 \\geq 0 \\Rightarrow x \\geq 2029$$. El denominador no puede ser cero, $$\\sqrt{x - 2029} - 1 \\neq 0 \\Rightarrow \\sqrt{x - 2029} \\neq 1 \\Rightarrow x - 2029 \\neq 1 \\Rightarrow x \\neq 2030$$. El dominio es $$[2029; 2030[ \\cup ]2030; +\\infty[$$. Ahora, simplificamos la función racionalizando el denominador: $$g(x) = \\frac{(x - 2030)(\\sqrt{x - 2029} + 1)}{(\\sqrt{x - 2029} - 1)(\\sqrt{x - 2029} + 1)} = \\frac{(x - 2030)(\\sqrt{x - 2029} + 1)}{(x - 2029) - 1} = \\frac{(x - 2030)(\\sqrt{x - 2029} + 1)}{x - 2030}$$. Para $$x \\neq 2030$$, la función se simplifica a $$g(x) = \\sqrt{x - 2029} + 1$$. Para determinar el rango, analizamos esta expresión dentro de su dominio. El valor mínimo de $$x$$ en el dominio es $$2029$$. En $$x = 2029$$, $$g(2029) = \\sqrt{2029 - 2029} + 1 = \\sqrt{0} + 1 = 1$$. A medida que $$x$$ aumenta, $$\\sqrt{x - 2029}$$ también aumenta. Sin embargo, el valor $$x = 2030$$ está excluido del dominio. Si $$x$$ se acercara a $$2030$$, $$g(x)$$ se acercaría a $$\\sqrt{2030 - 2029} + 1 = \\sqrt{1} + 1 = 2$$. Dado que $$x = 2030$$ está excluido, el valor $$2$$ también está excluido del rango. A medida que $$x \\to +\\infty$$, $$g(x) \\to +\\infty$$. Por lo tanto, el rango es $$[1; 2[ \\cup ]2; +\\infty[$$. Comparando con el formato dado, $$a = 1$$ y $$b = 2$$. Finalmente, calculamos $$b^{2} - a^{2} = 2^{2} - 1^{2} = 4 - 1 = 3$$.",
+      "id_temporal": "alg_fun_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina el dominio de la función $$f(x) = \\frac{x}{\\sqrt{x^{2} - 9x + 14}}$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$[2; +\\infty[$$",
+        "B": "$$]-\\infty; 2]$$",
+        "C": "$$]-\\infty; 2[ \\cup [7; +\\infty[$$",
+        "D": "$$]-\\infty; 2[ \\cup ]7; +\\infty[$$",
+        "E": "$$]-\\infty; -2[ \\cup ]7; +\\infty[$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Para que la función exista, la expresión bajo la raíz cuadrada debe ser mayor que cero (estrictamente, ya que la raíz está en el denominador): $$x^{2} - 9x + 14 > 0$$. Factorizamos el trinomio: $$(x - 2)(x - 7) > 0$$. Esta desigualdad se cumple cuando ambos factores son positivos o ambos son negativos. Caso 1 (ambos negativos): $$x - 2 < 0$$ y $$x - 7 < 0 \\Rightarrow x < 2$$ y $$x < 7 \\Rightarrow x < 2$$. Caso 2 (ambos positivos): $$x - 2 > 0$$ y $$x - 7 > 0 \\Rightarrow x > 2$$ y $$x > 7 \\Rightarrow x > 7$$. Uniendo ambas condiciones, el dominio de la función es $$]-\\infty; 2[ \\cup ]7; +\\infty[$$.",
+      "id_temporal": "alg_fun_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina el dominio de la función $f(x) = \\sqrt{\\frac{49}{x^{2}} - 9} + 15$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$[-7; 7]$",
+        "B": "$]0; 7/3]$",
+        "C": "$[-7/3; 0[ \\cup ]0; 7/3]$",
+        "D": "$]-\\text{infinito}; 7/3]$",
+        "E": "$]-7/3; 7/3[$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que la función exista, el argumento de la raíz cuadrada debe ser no negativo y el denominador no debe ser cero. Tenemos: $$\\frac{49}{x^{2}} - 9 \\ge 0$$ Esto implica: $$\\frac{49}{x^{2}} \\ge 9$$ Como $x^{2}$ es siempre positivo (ya que $x \\ne 0$), podemos multiplicar por $x^{2}$ sin cambiar el sentido de la desigualdad: $$49 \\ge 9x^{2}$$ $$x^{2} \\le \\frac{49}{9}$$ Tomando la raíz cuadrada de ambos lados: $$-\\sqrt{\\frac{49}{9}} \\le x \\le \\sqrt{\\frac{49}{9}}$$ $$-\\frac{7}{3} \\le x \\le \\frac{7}{3}$$ Además, $x \\ne 0$ debido al denominador original. Uniendo estas condiciones, el dominio es: $$[-\\frac{7}{3}; 0[ \\cup ]0; \\frac{7}{3}]$$",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcula la suma de los valores enteros que presenta el dominio de la función $g(x) = \\sqrt{x + 5} + \\sqrt[4]{18 - 5x}$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$-10$",
+        "B": "$-9$",
+        "C": "$-8$",
+        "D": "$0$",
+        "E": "$1$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que existan las raíces pares, sus argumentos deben ser no negativos. Para $\\sqrt{x + 5}$: $$x + 5 \\ge 0 \\implies x \\ge -5$$ Para $\\sqrt[4]{18 - 5x}$: $$18 - 5x \\ge 0 \\implies -5x \\ge -18 \\implies 5x \\le 18 \\implies x \\le \\frac{18}{5}$$ La intersección de ambas condiciones es: $$-5 \\le x \\le \\frac{18}{5}$$ Convertimos $\\frac{18}{5}$ a decimal para identificar los enteros: $\\frac{18}{5} = 3.6$. Por lo tanto, el dominio es $[-5; 3.6]$. Los valores enteros en este dominio son: $$-5, -4, -3, -2, -1, 0, 1, 2, 3$$ La suma de estos valores es: $$-5 + (-4) + (-3) + (-2) + (-1) + 0 + 1 + 2 + 3 = -15 + 6 = -9$$",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina el rango de la siguiente función: $h(x) = \\sqrt{3 - \\sqrt{9 - x}}$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$[0; 3]$",
+        "B": "$[0; \\sqrt{3}]$",
+        "C": "$]0; \\sqrt{3}[$",
+        "D": "$[0; 1]$",
+        "E": "$]0; 3[$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, hallamos el dominio. Para que exista la raíz interior $\\sqrt{9 - x}$: $$9 - x \\ge 0 \\implies x \\le 9$$ Para que exista la raíz exterior $\\sqrt{3 - \\sqrt{9 - x}}$: $$3 - \\sqrt{9 - x} \\ge 0 \\implies \\sqrt{9 - x} \\le 3$$ Como ambos lados son no negativos, podemos elevar al cuadrado: $$9 - x \\le 9 \\implies -x \\le 0 \\implies x \\ge 0$$ El dominio de la función es la intersección de estas condiciones: $[0; 9]$. Ahora, evaluamos la función en los extremos de su dominio para encontrar el rango, considerando que es una función continua y creciente en este intervalo (o analizamos su comportamiento): Si $x = 0$: $$h(0) = \\sqrt{3 - \\sqrt{9 - 0}} = \\sqrt{3 - \\sqrt{9}} = \\sqrt{3 - 3} = \\sqrt{0} = 0$$ Si $x = 9$: $$h(9) = \\sqrt{3 - \\sqrt{9 - 9}} = \\sqrt{3 - \\sqrt{0}} = \\sqrt{3 - 0} = \\sqrt{3}$$ El rango de la función es $[0; \\sqrt{3}]$. Esto se debe a que las raíces cuadradas siempre producen valores no negativos y la función es monótona en su dominio.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el rango de la función $k(x) = \\frac{x - 2030}{\\sqrt{x - 2029} - 1}$ es $[p; q[ \\cup ]q; +\\text{infinito}[$; calcula el valor de $q^2 - p^2$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$3$",
+        "D": "$-1$",
+        "E": "$2$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, determinamos las condiciones de existencia del dominio. El argumento de la raíz debe ser no negativo: $$x - 2029 \\ge 0 \\implies x \\ge 2029$$ El denominador no puede ser cero: $$\\sqrt{x - 2029} - 1 \\ne 0 \\implies \\sqrt{x - 2029} \\ne 1$$ Elevando al cuadrado: $$x - 2029 \\ne 1 \\implies x \\ne 2030$$ Ahora, simplificamos la función racionalizando el denominador: $$k(x) = \\frac{x - 2030}{\\sqrt{x - 2029} - 1} \\times \\frac{\\sqrt{x - 2029} + 1}{\\sqrt{x - 2029} + 1}$$ $$k(x) = \\frac{(x - 2030)(\\sqrt{x - 2029} + 1)}{(\\sqrt{x - 2029})^{2} - 1^{2}}$$ $$k(x) = \\frac{(x - 2030)(\\sqrt{x - 2029} + 1)}{x - 2029 - 1}$$ $$k(x) = \\frac{(x - 2030)(\\sqrt{x - 2029} + 1)}{x - 2030}$$ Para $x \\ne 2030$, podemos cancelar el término $(x - 2030)$: $$k(x) = \\sqrt{x - 2029} + 1$$ Sea $t = \\sqrt{x - 2029}$. Dado que $x \\ge 2029$, tenemos $t \\ge 0$. Por lo tanto, la función es $k(x) = t + 1$. El valor mínimo de $t$ es $0$, que ocurre cuando $x = 2029$. En este caso, $k(2029) = 0 + 1 = 1$. Este valor está incluido en el rango, por lo que $p = 1$. Sin embargo, la función no está definida para $x = 2030$. Si $x = 2030$, entonces $t = \\sqrt{2030 - 2029} = \\sqrt{1} = 1$. Si este punto estuviera en el dominio, la función tomaría el valor $1 + 1 = 2$. Como $x=2030$ no está en el dominio, el valor $2$ se excluye del rango. A medida que $x$ tiende a infinito, $t$ tiende a infinito, y por lo tanto $k(x)$ tiende a infinito. El rango es $[1; 2[ \\cup ]2; +\\text{infinito}[$. Así, $p = 1$ y $q = 2$. Finalmente, calculamos $q^2 - p^2$: $$2^2 - 1^2 = 4 - 1 = 3$$",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina el dominio de la siguiente función: $f(x) = \\sqrt{\\frac{x - 3}{x + 6}}$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$[-6; +\\text{infinito}[$",
+        "B": "$]-\\text{infinito}; 3]$",
+        "C": "$]-\\text{infinito}; -3[ \\cup [6; +\\text{infinito}[$",
+        "D": "$]-\\text{infinito}; -6[ \\cup [3; +\\text{infinito}[$",
+        "E": "$[-3; 6]$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Para que la raíz cuadrada exista, el cociente dentro de la raíz debe ser no negativo: $$\\frac{x - 3}{x + 6} \\ge 0$$ Además, el denominador no puede ser cero, por lo que $x + 6 \\ne 0 \\implies x \\ne -6$. Los puntos críticos donde el numerador o el denominador se hacen cero son $x = 3$ y $x = -6$. Usamos un análisis de signos en los intervalos definidos por estos puntos críticos: 1. Si $x < -6$: Por ejemplo, $x = -7$. Numerador $(x - 3)$ es $(-7 - 3) = -10$ (negativo). Denominador $(x + 6)$ es $(-7 + 6) = -1$ (negativo). El cociente es $\\frac{(-)}{(-)} = (+)$. Se permite. 2. Si $-6 < x < 3$: Por ejemplo, $x = 0$. Numerador $(x - 3)$ es $(0 - 3) = -3$ (negativo). Denominador $(x + 6)$ es $(0 + 6) = 6$ (positivo). El cociente es $\\frac{(-)}{(+)} = (-)$. No se permite. 3. Si $x \\ge 3$: Por ejemplo, $x = 4$. Numerador $(x - 3)$ es $(4 - 3) = 1$ (positivo). Denominador $(x + 6)$ es $(4 + 6) = 10$ (positivo). El cociente es $\\frac{(+)}{(+)} = (+)$. Se permite. Incluimos $x = 3$ porque el cociente es $0$, y $\\sqrt{0}$ existe. Excluimos $x = -6$ porque el denominador no puede ser cero. Por lo tanto, el dominio es: $$]-\\text{infinito}; -6[ \\cup [3; +\\text{infinito}[$$",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el dominio de la función \"f\": $$f(x) = \\sqrt{\\frac{25}{x^2} - 4} + 10$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$[-2; 2]$$",
+        "B": "$$]0; 2.5]$$",
+        "C": "$$[-2.5; 0[ \\cup ]0; 2.5]$$",
+        "D": "$$]-\\infty; 2.5]$$",
+        "E": "$$]-2.5; 2.5[$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que exista la raíz cuadrada se requiere: $$\\frac{25}{x^2} - 4 \\ge 0$$. Además, $$x$$ no puede ser $$0$$. $$\\frac{25}{x^2} \\ge 4$$. Como $$x^2$$ es positivo (y $$x \\neq 0$$), multiplicamos por $$x^2$$ sin cambiar el sentido: $$25 \\ge 4x^2$$. Entonces: $$x^2 \\le \\frac{25}{4}$$. Esto implica $$-\\frac{5}{2} \\le x \\le \\frac{5}{2}$$ o $$-2.5 \\le x \\le 2.5$$. Pero $$x \\neq 0$$, por el denominador. Dominio: $$[-2.5; 0[ \\cup ]0; 2.5]$$.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular la suma de los valores enteros que presenta el dominio de la función: $$f(x) = \\sqrt{x + 3} + \\sqrt[4]{17 - 4x}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "8"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que exista $$\\sqrt{x + 3}$$: $$x + 3 \\ge 0 \\Rightarrow x \\ge -3$$. Para que exista la raíz cuarta $$\\sqrt[4]{17 - 4x}$$ (raíz par): $$17 - 4x \\ge 0 \\Rightarrow -4x \\ge -17 \\Rightarrow 4x \\le 17 \\Rightarrow x \\le \\frac{17}{4}$$. Unimos ambas condiciones: $$-3 \\le x \\le \\frac{17}{4}$$. Dado que $$\\frac{17}{4} = 4.25$$, el dominio es $$[-3; 4.25]$$. Los valores enteros en este dominio son: -3, -2, -1, 0, 1, 2, 3, 4. La suma es: $$-3 + 0 + (-1) + 0 + 1 + 2 + 3 + 4 = 4$$.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar el rango de la siguiente función: $$f(x) = \\sqrt{2 - \\sqrt{4 - x}}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$]0; 2[$$",
+        "B": "$$]-\\infty; \\sqrt{2}]$$",
+        "C": "$$[0; \\sqrt{2}]$$",
+        "D": "$$[0; 2[$$",
+        "E": "$$]\\sqrt{2}/2; \\sqrt{2}]$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero hallamos el dominio para poder estudiar el rango. Para que exista $$\\sqrt{4 - x}$$: $$4 - x \\ge 0 \\Rightarrow x \\le 4$$. Para que exista la raíz exterior: $$2 - \\sqrt{4 - x} \\ge 0 \\Rightarrow \\sqrt{4 - x} \\le 2$$. Como $$\\sqrt{4 - x}$$ es no negativo, elevamos al cuadrado: $$4 - x \\le 4 \\Rightarrow -x \\le 0 \\Rightarrow x \\ge 0$$. Entonces el dominio es: $$[0; 4]$$. Ahora evaluamos $$f(x)$$ en los extremos: Si $$x = 0$$: $$f(0) = \\sqrt{2 - \\sqrt{4 - 0}} = \\sqrt{2 - \\sqrt{4}} = \\sqrt{2 - 2} = 0$$. Si $$x = 4$$: $$f(4) = \\sqrt{2 - \\sqrt{4 - 4}} = \\sqrt{2 - \\sqrt{0}} = \\sqrt{2 - 0} = \\sqrt{2}$$. Además, dentro del dominio, las raíces producen valores no negativos, así que $$f(x)$$ no baja de 0 ni supera $$\\sqrt{2}$$. Rango: $$[0; \\sqrt{2}]$$.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si el rango de la función \"g\", es $$[a; b[ \\cup ]b; +\\infty[$$; calcular el valor de $$b^2 - a^2$$. $$g(x) = \\frac{x - 10}{\\sqrt{x - 9} - 1}$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "0",
+        "B": "1",
+        "C": "3",
+        "D": "-1",
+        "E": "-2"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Condiciones de existencia: $$x - 9 \\ge 0 \\Rightarrow x \\ge 9$$. También, $$\\sqrt{x - 9} - 1 \\neq 0 \\Rightarrow \\sqrt{x - 9} \\neq 1 \\Rightarrow x - 9 \\neq 1 \\Rightarrow x \\neq 10$$. Ahora simplificamos racionalizando: $$g(x) = \\frac{(x - 10)}{\\sqrt{x - 9} - 1} \\cdot \\frac{(\\sqrt{x - 9} + 1)}{(\\sqrt{x - 9} + 1)}$$. $$g(x) = \\frac{(x - 10)(\\sqrt{x - 9} + 1)}{(x - 9) - 1} = \\frac{(x - 10)(\\sqrt{x - 9} + 1)}{x - 10}$$. Para $$x \\neq 10$$, se cancela $$(x - 10)$$: $$g(x) = \\sqrt{x - 9} + 1$$. Sea $$t = \\sqrt{x - 9}$$. Entonces $$t \\ge 0$$ y $$g = t + 1$$. Mínimo: $$t = 0$$ cuando $$x = 9$$. Entonces $$g = 0 + 1 = 1$$ (este valor se incluye, es 'a'). Pero $$x = 10$$ no pertenece al dominio original: si $$x = 10$$, $$t = \\sqrt{10 - 9} = 1$$, y $$g = 1 + 1 = 2$$. Así que el valor 2 queda excluido (este es 'b'). Cuando $$x$$ crece, $$t$$ crece sin límite, por tanto $$g$$ también. Rango: $$[1; 2[ \\cup ]2; +\\infty[$$. Entonces: $$a = 1$$, $$b = 2$$. Calculamos $$b^2 - a^2 = 2^2 - 1^2 = 4 - 1 = 3$$.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determine el dominio de la función: $$f(x) = \\frac{x + 1}{\\sqrt{x^2 - 6x - 16}}$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "Dom $$f(x) = [2; +\\infty[$$",
+        "B": "Dom $$f(x) = ]-\\infty; 2]$$",
+        "C": "Dom $$f(x) = ]-\\infty; 2[ \\cup [8; +\\infty[$$",
+        "D": "Dom $$f(x) = ]-\\infty; -2[ \\cup [8; +\\infty[$$",
+        "E": "Dom $$f(x) = ]-\\infty; -2[ \\cup ]8; +\\infty[$$"
+      },
+      "respuesta_correcta": "E",
+      "explicacion": "La raíz está en el denominador, por tanto se requiere que su argumento sea estrictamente positivo: $$x^2 - 6x - 16 > 0$$. Factorizamos el trinomio cuadrático: $$(x - 8)(x + 2) > 0$$. Los puntos críticos son $$x = 8$$ y $$x = -2$$. Analizamos los signos del producto: Si $$x < -2$$: $$(x - 8)$$ es negativo, $$(x + 2)$$ es negativo. El producto es positivo. Si $$-2 < x < 8$$: $$(x - 8)$$ es negativo, $$(x + 2)$$ es positivo. El producto es negativo. Si $$x > 8$$: $$(x - 8)$$ es positivo, $$(x + 2)$$ es positivo. El producto es positivo. Dado que la desigualdad es estricta ($$>0$$), los puntos críticos -2 y 8 no se incluyen. Por lo tanto, el dominio es: $$]-\\infty; -2[ \\cup ]8; +\\infty[$$.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

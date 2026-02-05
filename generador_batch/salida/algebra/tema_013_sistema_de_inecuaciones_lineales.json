@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 13,
+  "total_temas": 29,
+  "titulo_tema": "SISTEMA DE INECUACIONES LINEALES",
+  "tema": "sistema_de_inecuaciones_lineales",
+  "preguntas": [
+    {
+      "pregunta": "Señale el mayor valor entero de “x” que verifica la desigualdad: $$(x - 9)^{2} \\geq (x - 3)(x - 10)$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$9$$",
+        "B": "$$10$$",
+        "C": "$$11$$",
+        "D": "$$8$$",
+        "E": "$$7$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Desarrollamos ambos lados: $$(x - 9)^{2} = x^{2} - 18x + 81$$ $$(x - 3)(x - 10) = x^{2} - 13x + 30$$ Planteamos la desigualdad: $$x^{2} - 18x + 81 \\geq x^{2} - 13x + 30$$ Simplificamos: $$-18x + 81 \\geq -13x + 30$$ $$81 - 30 \\geq -13x + 18x$$ $$51 \\geq 5x$$ $$x \\leq \\frac{51}{5}$$ $$x \\leq 10.2$$ El mayor valor entero que cumple es: $$x = 10$$",
+      "id_temporal": "alg_sis_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Para qué valor de “b” se cumple la desigualdad: $$\\frac{x}{3} + \\frac{x}{5} + \\frac{x}{6} \\leq \\frac{b - 8}{30}$$ sabiendo que el máximo valor que puede tomar “x” es $$2$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$48$$",
+        "B": "$$49$$",
+        "C": "$$50$$",
+        "D": "$$51$$",
+        "E": "$$52$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sumamos las fracciones del lado izquierdo: $$\\frac{x}{3} + \\frac{x}{5} + \\frac{x}{6} = \\frac{10x + 6x + 5x}{30} = \\frac{21x}{30} = \\frac{7x}{10}$$ La desigualdad queda: $$\\frac{7x}{10} \\leq \\frac{b - 8}{30}$$ Multiplicamos ambos lados por $$30$$ para eliminar denominadores: $$21x \\leq b - 8$$ Dado que el máximo valor que puede tomar $$x$$ es $$2$$, sustituimos $$x=2$$ en la desigualdad: $$21(2) \\leq b - 8$$ $$42 \\leq b - 8$$ $$42 + 8 \\leq b$$ $$50 \\leq b$$ Esto significa que $$b$$ debe ser mayor o igual a $$50$$. El menor valor que puede tomar $$b$$ es $$50$$.",
+      "id_temporal": "alg_sis_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar la edad de mi primo, sabiendo que: – La tercera parte de la edad que tenía hace un año, disminuida en 15, es mayor que 5. – La cuarta parte de la edad que tendrá el año siguiente, aumentada en 8, es menor que 24.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$60$$",
+        "B": "$$61$$",
+        "C": "$$62$$",
+        "D": "$$63$$",
+        "E": "$$64$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$x$$ la edad actual de mi primo. Primera condición: La tercera parte de la edad que tenía hace un año ($$x-1$$), disminuida en 15, es mayor que 5. $$\\frac{x - 1}{3} - 15 > 5$$ $$\\frac{x - 1}{3} > 5 + 15$$ $$\\frac{x - 1}{3} > 20$$ $$x - 1 > 20 \\times 3$$ $$x - 1 > 60$$ $$x > 61$$ Segunda condición: La cuarta parte de la edad que tendrá el año siguiente ($$x+1$$), aumentada en 8, es menor que 24. $$\\frac{x + 1}{4} + 8 < 24$$ $$\\frac{x + 1}{4} < 24 - 8$$ $$\\frac{x + 1}{4} < 16$$ $$x + 1 < 16 \\times 4$$ $$x + 1 < 64$$ $$x < 63$$ Combinando ambas condiciones: $$61 < x < 63$$ La única edad entera posible para $$x$$ en este rango es $$x = 62$$.",
+      "id_temporal": "alg_sis_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el valor máximo de la función objetivo: $$f(x, y) = 3x + 2y$$ sujeta a las restricciones: $$3y \\leq x + 6$$, $$y - x \\geq -3$$, $$0 \\leq x \\leq 6$$, $$y \\geq 0$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$22$$",
+        "B": "$$24$$",
+        "C": "$$25$$",
+        "D": "$$26$$",
+        "E": "$$27$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Las restricciones definen una región poligonal. Los vértices de la región factible son los puntos donde se cruzan las líneas de las restricciones. Las restricciones son: 1. $$y \\leq \\frac{x}{3} + 2$$ 2. $$y \\geq x - 3$$ 3. $$x \\geq 0$$ 4. $$x \\leq 6$$ 5. $$y \\geq 0$$ Vértices relevantes de la región factible: - Intersección de $$x=0$$ y $$y=0$$: $$(0,0)$$ - Intersección de $$y=0$$ y $$y=x-3$$: $$0 = x-3 \\implies x=3$$. Punto: $$(3,0)$$ - Intersección de $$x=0$$ y $$y=\\frac{x}{3}+2$$: $$y = \\frac{0}{3}+2 \\implies y=2$$. Punto: $$(0,2)$$ - Intersección de $$x=6$$ y $$y=\\frac{x}{3}+2$$: $$y = \\frac{6}{3}+2 \\implies y=2+2=4$$. Punto: $$(6,4)$$ - Intersección de $$x=6$$ y $$y=x-3$$: $$y = 6-3 \\implies y=3$$. Punto: $$(6,3)$$ Evaluamos la función objetivo $$f(x, y) = 3x + 2y$$ en estos vértices: - $$f(0,0) = 3(0) + 2(0) = 0$$ - $$f(3,0) = 3(3) + 2(0) = 9$$ - $$f(0,2) = 3(0) + 2(2) = 4$$ - $$f(6,4) = 3(6) + 2(4) = 18 + 8 = 26$$ - $$f(6,3) = 3(6) + 2(3) = 18 + 6 = 24$$ El valor máximo de la función objetivo es $$26$$.",
+      "id_temporal": "alg_sis_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un centro de estudios organiza una excursión para $$600$$ estudiantes. Se dispone de buses grandes de $$50$$ pasajeros y buses pequeños de $$30$$ pasajeros. Los buses grandes cuestan S/$$350$$ y los pequeños S/$$280$$. Se dispone de un máximo de $$18$$ conductores. Hallar el costo mínimo para transportar a todos los estudiantes.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/$$4200$$",
+        "B": "S/$$4410$$",
+        "C": "S/$$4550$$",
+        "D": "S/$$4620$$",
+        "E": "S/$$5110$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$x$$ el número de buses grandes y $$y$$ el número de buses pequeños. Restricciones: 1. Capacidad (al menos $$600$$ estudiantes): $$50x + 30y \\geq 600$$ (que se simplifica a $$5x + 3y \\geq 60$$) 2. Conductores (máximo $$18$$ buses): $$x + y \\leq 18$$ 3. No negatividad: $$x \\geq 0, y \\geq 0$$ Función de costo a minimizar: $$C = 350x + 280y$$. Se evalúan los puntos enteros de la región factible o los vértices. Los puntos clave a considerar son: - Intersección de $$5x + 3y = 60$$ con $$y = 0$$: $$5x = 60 \\implies x = 12$$. Punto: $$(12,0)$$. Costo: $$C = 350(12) + 280(0) = 4200$$. Capacidad: $$50(12) + 30(0) = 600$$. Buses: $$12 \\leq 18$$. (Válido) - Intersección de $$x + y = 18$$ con $$5x + 3y = 60$$: Resolvemos el sistema: $$y = 18 - x$$. Sustituyendo en la primera ecuación: $$5x + 3(18 - x) = 60 \\implies 5x + 54 - 3x = 60 \\implies 2x = 6 \\implies x = 3$$. Entonces $$y = 18 - 3 = 15$$. Punto: $$(3,15)$$. Costo: $$C = 350(3) + 280(15) = 1050 + 4200 = 5250$$. Capacidad: $$50(3) + 30(15) = 150 + 450 = 600$$. Buses: $$3+15 = 18 \\leq 18$$. (Válido) - Otro punto importante cerca de la región factible, considerando $$x+y < 18$$: Para $$x+y=13$$ (menos conductores), si $$y = 13 - x$$. Sustituimos en la capacidad: $$5x + 3(13 - x) \\geq 60 \\implies 5x + 39 - 3x \\geq 60 \\implies 2x \\geq 21 \\implies x \\geq 10.5$$. Dado que $$x$$ debe ser entero, tomamos $$x=11$$. Si $$x=11$$, entonces $$y = 13-11=2$$. Punto: $$(11,2)$$. Capacidad: $$50(11) + 30(2) = 550 + 60 = 610$$. Buses: $$11+2=13 \\leq 18$$. Costo: $$C = 350(11) + 280(2) = 3850 + 560 = 4410$$. - Otro punto, considerando $$x+y=14$$: Si $$y=14-x$$. Sustituimos en la capacidad: $$5x + 3(14 - x) \\geq 60 \\implies 5x + 42 - 3x \\geq 60 \\implies 2x \\geq 18 \\implies x \\geq 9$$. Si $$x=9$$, entonces $$y = 14-9=5$$. Punto: $$(9,5)$$. Capacidad: $$50(9) + 30(5) = 450 + 150 = 600$$. Buses: $$9+5=14 \\leq 18$$. Costo: $$C = 350(9) + 280(5) = 3150 + 1400 = 4550$$. Comparando los costos de los puntos válidos: $$C(12,0) = 4200$$ $$C(3,15) = 5250$$ $$C(11,2) = 4410$$ $$C(9,5) = 4550$$ El costo mínimo es S/$$4200$$.",
+      "id_temporal": "alg_sis_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determine el menor valor real de \"y\" que satisface la desigualdad: $$(y - 7)^{2} \\leq (y - 4)(y - 9)$$",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$11$$",
+        "C": "$$12$$",
+        "D": "$$13$$",
+        "E": "$$14$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Desarrollamos ambos lados: $$(y - 7)^{2} = y^{2} - 14y + 49$$ $$(y - 4)(y - 9) = y^{2} - 13y + 36$$ Planteamos la desigualdad: $$y^{2} - 14y + 49 \\leq y^{2} - 13y + 36$$ Simplificamos los términos $$y^{2}$$: $$-14y + 49 \\leq -13y + 36$$ Restamos $$49$$ de ambos lados y sumamos $$13y$$: $$-14y + 13y \\leq 36 - 49$$ $$-y \\leq -13$$ Multiplicamos por $$-1$$ y cambiamos el sentido de la desigualdad: $$y \\geq 13$$ El menor valor real que cumple esta desigualdad es $$13$$, por lo tanto la respuesta correcta es D.",
+      "id_temporal": "alg_sis_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Para qué valor de \"b\" se cumple la desigualdad: $$\\frac{x}{3} + \\frac{x}{5} + \\frac{x}{6} \\geq \\frac{b + 8}{30}$$ sabiendo que el mínimo valor que puede tomar \"x\" es $$-2$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-50$$",
+        "B": "$$-48$$",
+        "C": "$$-52$$",
+        "D": "$$-45$$",
+        "E": "$$-55$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero sumamos las fracciones en el lado izquierdo de la desigualdad: $$\\frac{x}{3} + \\frac{x}{5} + \\frac{x}{6} = \\frac{10x + 6x + 5x}{30} = \\frac{21x}{30}$$ La desigualdad se transforma en: $$\\frac{21x}{30} \\geq \\frac{b + 8}{30}$$ Multiplicamos ambos lados por $$30$$ para eliminar los denominadores: $$21x \\geq b + 8$$ Se nos indica que el mínimo valor que puede tomar \"x\" es $$-2$$. Sustituimos este valor en la desigualdad: $$21(-2) \\geq b + 8$$ $$-42 \\geq b + 8$$ Restamos $$8$$ de ambos lados: $$-42 - 8 \\geq b$$ $$-50 \\geq b$$ Esto significa que \"b\" debe ser menor o igual a $$-50$$. Por lo tanto, el mayor valor que puede tomar \"b\" para que se cumpla la desigualdad es $$-50$$, y la respuesta correcta es A.",
+      "id_temporal": "alg_sis_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar la edad actual de la Decana Elena, sabiendo que: – La tercera parte de la edad que tenía el año pasado, disminuida en 5, es mayor que 11. – La cuarta parte de la edad que tendrá el año siguiente, aumentada en 8, es menor que 21.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "48",
+        "B": "49",
+        "C": "50",
+        "D": "51",
+        "E": "52"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$x$$ la edad actual de la Decana Elena. Establecemos las dos condiciones como inecuaciones: Primera condición: \"La tercera parte de la edad que tenía el año pasado, disminuida en 5, es mayor que 11.\" $$\\frac{x - 1}{3} - 5 > 11$$ $$\\frac{x - 1}{3} > 11 + 5$$ $$\\frac{x - 1}{3} > 16$$ $$x - 1 > 16 \\cdot 3$$ $$x - 1 > 48$$ $$x > 49$$ Segunda condición: \"La cuarta parte de la edad que tendrá el año siguiente, aumentada en 8, es menor que 21.\" $$\\frac{x + 1}{4} + 8 < 21$$ $$\\frac{x + 1}{4} < 21 - 8$$ $$\\frac{x + 1}{4} < 13$$ $$x + 1 < 13 \\cdot 4$$ $$x + 1 < 52$$ $$x < 51$$ Combinando ambas inecuaciones, obtenemos el rango para $$x$$: $$49 < x < 51$$ La única edad entera posible que satisface esta condición es $$x = 50$$, por lo tanto la respuesta correcta es C.",
+      "id_temporal": "alg_sis_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el valor máximo de la función objetivo: $$f(x, y) = 4x + 2y$$ sujeta a las restricciones: $$3y \\leq x + 3$$ $$-x + y \\geq -2$$ $$0 \\leq x \\leq 3$$ $$y \\geq 0$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$12$$",
+        "B": "$$14$$",
+        "C": "$$16$$",
+        "D": "$$18$$",
+        "E": "$$20$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Las restricciones dadas son: 1. $$y \\leq \\frac{x + 3}{3}$$ 2. $$y \\geq x - 2$$ 3. $$0 \\leq x \\leq 3$$ 4. $$y \\geq 0$$ Estas restricciones definen una región poligonal factible. Evaluamos la función objetivo $$f(x, y) = 4x + 2y$$ en los vértices de esta región: Vértices de la región factible: - Intersección de $$x=0$$ y $$y=0$$: $$(0,0)$$ - Intersección de $$y=0$$ y $$y=x-2$$: $$0=x-2 \\Rightarrow x=2$$. Punto: $$(2,0)$$ - Intersección de $$x=3$$ y $$y=x-2$$: $$y=3-2=1$$. Punto: $$(3,1)$$ - Intersección de $$x=3$$ y $$y=\\frac{x+3}{3}$$: $$y=\\frac{3+3}{3}=2$$. Punto: $$(3,2)$$ - Intersección de $$x=0$$ y $$y=\\frac{x+3}{3}$$: $$y=\\frac{0+3}{3}=1$$. Punto: $$(0,1)$$ Evaluamos $$f(x,y)$$ en cada vértice: - $$f(0,0) = 4(0) + 2(0) = 0$$ - $$f(2,0) = 4(2) + 2(0) = 8$$ - $$f(3,1) = 4(3) + 2(1) = 12 + 2 = 14$$ - $$f(3,2) = 4(3) + 2(2) = 12 + 4 = 16$$ - $$f(0,1) = 4(0) + 2(1) = 2$$ El valor máximo de la función objetivo es $$16$$, por lo tanto la respuesta correcta es C.",
+      "id_temporal": "alg_sis_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una universidad organiza un evento para 600 asistentes. Hay auditorios con capacidad para 70 personas que cuestan $$S/300$$ y otros con capacidad para 45 personas que cuestan $$S/220$$. Hay 10 gestores de eventos disponibles. Hallar el costo mínimo para el evento.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/2600",
+        "B": "S/2620",
+        "C": "S/2650",
+        "D": "S/2700",
+        "E": "S/2750"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Definimos las variables: Sea $$x$$ el número de auditorios con capacidad para 70 personas y $$y$$ el número de auditorios con capacidad para 45 personas. Restricciones: 1. Capacidad de asistentes: $$70x + 45y \\geq 600$$ 2. Número de gestores disponibles (cada uno para un auditorio): $$x + y \\leq 10$$ 3. Número de auditorios no negativo: $$x \\geq 0, y \\geq 0$$ (y deben ser enteros). Función objetivo (minimizar el costo): $$C = 300x + 220y$$ Evaluamos combinaciones de $$x$$ e $$y$$ que cumplen las restricciones, priorizando auditorios de mayor capacidad para cubrir los 600 asistentes con la menor cantidad de gestores (es decir, $$x+y$$ cerca de $$10$$ o el mínimo necesario): - Si $$x=9$$ (y así $$y \\leq 1$$):   - Con $$y=0$$ (total 9 auditorios): $$70(9) + 45(0) = 630$$ asistentes (cumple). Costo $$C = 300(9) + 220(0) = 2700 + 0 = S/2700$$.   - Con $$y=1$$ (total 10 auditorios): $$70(9) + 45(1) = 630 + 45 = 675$$ asistentes (cumple). Costo $$C = 300(9) + 220(1) = 2700 + 220 = S/2920$$. - Si $$x=8$$ (y así $$y \\leq 2$$):   - Con $$y=0$$ (total 8 auditorios): $$70(8) + 45(0) = 560$$ asistentes (NO cumple).   - Con $$y=1$$ (total 9 auditorios): $$70(8) + 45(1) = 560 + 45 = 605$$ asistentes (cumple). Costo $$C = 300(8) + 220(1) = 2400 + 220 = S/2620$$.   - Con $$y=2$$ (total 10 auditorios): $$70(8) + 45(2) = 560 + 90 = 650$$ asistentes (cumple). Costo $$C = 300(8) + 220(2) = 2400 + 440 = S/2840$$. - Si $$x=7$$ (y así $$y \\leq 3$$):   - Con $$y=2$$ (total 9 auditorios): $$70(7) + 45(2) = 490 + 90 = 580$$ asistentes (NO cumple).   - Con $$y=3$$ (total 10 auditorios): $$70(7) + 45(3) = 490 + 135 = 625$$ asistentes (cumple). Costo $$C = 300(7) + 220(3) = 2100 + 660 = S/2760$$. Comparando los costos de las combinaciones válidas ($$x, y$$): $$S/2700$$ (9 auditorios de 70, 0 de 45), $$S/2920$$ (9 de 70, 1 de 45), $$S/2620$$ (8 de 70, 1 de 45), $$S/2840$$ (8 de 70, 2 de 45), $$S/2760$$ (7 de 70, 3 de 45). El costo mínimo encontrado es $$S/2620$$, correspondiente a 8 auditorios de 70 personas y 1 auditorio de 45 personas. La respuesta correcta es B.",
+      "id_temporal": "alg_sis_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Señale el menor valor entero de “x” que verifica la desigualdad: $$(x - 6)^{2} \\leq (x - 3)(x - 7)$$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$8$$",
+        "B": "$$7$$",
+        "C": "$$9$$",
+        "D": "$$6$$",
+        "E": "$$5$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Desarrollamos ambos lados: $$(x - 6)^{2} = x^{2} - 12x + 36$$ y $$(x - 3)(x - 7) = x^{2} - 10x + 21$$. Planteamos la desigualdad: $$x^{2} - 12x + 36 \\leq x^{2} - 10x + 21$$. Simplificamos: $$-12x + 36 \\leq -10x + 21 \\Rightarrow 15 \\leq 2x \\Rightarrow x \\geq 7.5$$. El menor valor entero que cumple es $$x = 8$$, por lo tanto la respuesta correcta es A.",
+      "id_temporal": "alg_sis_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Para qué valor de “b” se cumple la desigualdad: $$\\frac{x}{3} + \\frac{x}{5} + \\frac{x}{6} \\geq \\frac{b + 10}{30}$$ sabiendo que el mínimo valor que puede tomar “x” es $$-2$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-50$$",
+        "B": "$$-52$$",
+        "C": "$$-54$$",
+        "D": "$$-48$$",
+        "E": "$$-46$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sumamos las fracciones del lado izquierdo: $$\\frac{x}{3} + \\frac{x}{5} + \\frac{x}{6} = \\frac{10x + 6x + 5x}{30} = \\frac{21x}{30} = \\frac{7x}{10}$$. La desigualdad se convierte en: $$\\frac{7x}{10} \\geq \\frac{b + 10}{30}$$. Multiplicamos ambos lados por 30 para eliminar denominadores: $$21x \\geq b + 10$$. Dado que el mínimo valor que puede tomar “x” es $$-2$$, sustituimos este valor en la desigualdad: $$21(-2) \\geq b + 10 \\Rightarrow -42 \\geq b + 10$$. Restamos 10 a ambos lados: $$b \\leq -52$$. Por lo tanto, el valor máximo de 'b' es -52. La respuesta correcta es B.",
+      "id_temporal": "alg_sis_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Hallar la edad actual de mi tía Elara, sabiendo que: – La mitad de la edad que tenía hace 3 años, disminuida en 10, es mayor que 21. – La cuarta parte de la edad que tendrá el año siguiente, aumentada en 5, es menor que 22.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$64$$",
+        "B": "$$65$$",
+        "C": "$$66$$",
+        "D": "$$67$$",
+        "E": "$$68$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$x$$ la edad actual de tía Elara. Primera condición: \"La mitad de la edad que tenía hace 3 años, disminuida en 10, es mayor que 21\". Esto se traduce como $$\\frac{x - 3}{2} - 10 > 21$$. Sumamos 10: $$\\frac{x - 3}{2} > 31$$. Multiplicamos por 2: $$x - 3 > 62$$. Sumamos 3: $$x > 65$$. Segunda condición: \"La cuarta parte de la edad que tendrá el año siguiente, aumentada en 5, es menor que 22\". Esto se traduce como $$\\frac{x + 1}{4} + 5 < 22$$. Restamos 5: $$\\frac{x + 1}{4} < 17$$. Multiplicamos por 4: $$x + 1 < 68$$. Restamos 1: $$x < 67$$. Combinando ambas desigualdades, tenemos $$65 < x < 67$$. La única edad entera posible es $$x = 66$$. Por lo tanto la respuesta correcta es C.",
+      "id_temporal": "alg_sis_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determinar el valor máximo de la función objetivo: $$f(x, y) = 3x + 4y$$ sujeta a las restricciones: $$3y \\leq x + 6$$, $$y - x \\geq -2$$, $$0 \\leq x \\leq 6$$ y $$y \\geq 0$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$28$$",
+        "B": "$$30$$",
+        "C": "$$32$$",
+        "D": "$$34$$",
+        "E": "$$36$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Las restricciones definen una región poligonal. Identificamos los vértices de esta región. Las restricciones son: 1) $$y \\leq \\frac{x}{3} + 2$$ 2) $$y \\geq x - 2$$ 3) $$0 \\leq x \\leq 6$$ 4) $$y \\geq 0$$. Los vértices relevantes son: - Intersección de $$y = x - 2$$ y $$y = 0$$: $$x = 2$$. Vértice $$(2, 0)$$. - Intersección de $$y = \\frac{x}{3} + 2$$ y $$x = 0$$: $$y = 2$$. Vértice $$(0, 2)$$. - Intersección de $$y = \\frac{x}{3} + 2$$ y $$y = x - 2$$: $$\\frac{x}{3} + 2 = x - 2 \\Rightarrow 4 = \\frac{2x}{3} \\Rightarrow 12 = 2x \\Rightarrow x = 6$$. Sustituyendo $$x = 6$$ en $$y = x - 2$$ obtenemos $$y = 6 - 2 = 4$$. Vértice $$(6, 4)$$. - Otro vértice posible es $$(0,0)$$. Evaluamos la función objetivo $$f(x, y) = 3x + 4y$$ en estos vértices: - $$f(0,0) = 3(0) + 4(0) = 0$$ - $$f(2,0) = 3(2) + 4(0) = 6$$ - $$f(0,2) = 3(0) + 4(2) = 8$$ - $$f(6,4) = 3(6) + 4(4) = 18 + 16 = 34$$. El valor máximo es $$34$$, por lo tanto la respuesta correcta es D.",
+      "id_temporal": "alg_sis_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una universidad organiza una excursión para 480 estudiantes. Hay microbuses de 30 y 20 pasajeros, que cuestan S/300 y S/220 respectivamente. La universidad cuenta con 20 choferes disponibles. Hallar el costo mínimo para la excursión.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "S/4800",
+        "B": "S/5040",
+        "C": "S/4900",
+        "D": "S/4700",
+        "E": "S/5100"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sean $$x$$ el número de microbuses de 30 pasajeros y $$y$$ el número de microbuses de 20 pasajeros. Las restricciones son: - Capacidad total: $$30x + 20y \\geq 480$$ - Número de choferes/buses: $$x + y \\leq 20$$ - No negativos: $$x \\geq 0$$, $$y \\geq 0$$. La función de costo a minimizar es $$C = 300x + 220y$$. Identificamos los vértices de la región factible definida por las restricciones: 1. Intersección de $$x + y = 20$$ con $$y = 0$$: $$(20, 0)$$. 2. Intersección de $$30x + 20y = 480$$ con $$y = 0$$: $$30x = 480 \\Rightarrow x = 16$$. Vértice $$(16, 0)$$. 3. Intersección de $$30x + 20y = 480$$ y $$x + y = 20$$: Multiplicamos la segunda ecuación por 20: $$20x + 20y = 400$$. Restamos esta de la primera: $$(30x + 20y) - (20x + 20y) = 480 - 400 \\Rightarrow 10x = 80 \\Rightarrow x = 8$$. Sustituyendo $$x = 8$$ en $$x + y = 20 \\Rightarrow 8 + y = 20 \\Rightarrow y = 12$$. Vértice $$(8, 12)$$. Evaluamos la función de costo en los vértices relevantes de la región factible (la región que satisface todas las desigualdades): - Para $$(16, 0)$$ (usando 16 microbuses de 30 pasajeros): $$C = 300(16) + 220(0) = 4800$$. - Para $$(20, 0)$$ (usando 20 microbuses de 30 pasajeros): $$C = 300(20) + 220(0) = 6000$$. - Para $$(8, 12)$$ (usando 8 microbuses de 30 y 12 de 20): $$C = 300(8) + 220(12) = 2400 + 2640 = 5040$$. El costo mínimo es S/4800. Por lo tanto la respuesta correcta es A.",
+      "id_temporal": "alg_sis_015",
+      "imagen": null
+    }
+  ]
+}

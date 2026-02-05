@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 18,
+  "total_temas": 29,
+  "titulo_tema": "FUNCIONES ESPECIALES",
+  "tema": "funciones_especiales",
+  "preguntas": [
+    {
+      "pregunta": "El valor de un activo financiero se mantiene constante a lo largo de los años. Este valor se modela con la función $v(t)$. Representando los años de este estudio en: $$(v(t^2) + 2v(t - 1)) / (v(3t + 2) - 4) = 5$$ Determinar la suma de la función constante para los siguientes dos años, multiplicando el resultado por tres: $3(v(t + 5) + v(t^3))$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$60$$",
+        "B": "$$50$$",
+        "C": "$$40$$",
+        "D": "$$70$$",
+        "E": "$$80$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $v(t)$ es constante, sea $v(t) = c$ para todo $t$. Entonces, sustituimos $c$ en la ecuación dada: $$(c + 2c) / (c - 4) = 5$$ $$3c / (c - 4) = 5$$ Multiplicamos ambos lados por $c - 4$: $$3c = 5(c - 4)$$ $$3c = 5c - 20$$ Restamos $3c$ de ambos lados y sumamos $20$: $$20 = 2c$$ $$c = 10$$ Piden el valor de $3(v(t + 5) + v(t^3))$. Dado que $v(t)$ es constante, esto es igual a $3(c + c) = 3(2c) = 6c$. Sustituyendo $c = 10$: $$6c = 6(10) = 60$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_001"
+    },
+    {
+      "pregunta": "En un estudio de laboratorio, la concentración de una sustancia se mantiene invariable y se representa mediante la función $h(x)$. Si se cumple que $$(h(x - 1) + h(x + 3)) / (h(4x) - 7) = 4$$ Hallar $P = h(x^3) + h(x + 1) - 5$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$23$$",
+        "B": "$$19$$",
+        "C": "$$28$$",
+        "D": "$$14$$",
+        "E": "$$21$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $h(x)$ es constante, sea $h(x) = k$. Entonces, sustituimos $k$ en la ecuación dada: $$(k + k) / (k - 7) = 4$$ $$2k / (k - 7) = 4$$ Multiplicamos ambos lados por $k - 7$: $$2k = 4(k - 7)$$ $$2k = 4k - 28$$ Restamos $2k$ de ambos lados y sumamos $28$: $$28 = 2k$$ $$k = 14$$ Piden el valor de $P = h(x^3) + h(x + 1) - 5$. Dado que $h(x)$ es constante, esto es igual a $k + k - 5 = 2k - 5$. Sustituyendo $k = 14$: $$P = 2(14) - 5 = 28 - 5 = 23$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_002"
+    },
+    {
+      "pregunta": "Sobre la función identidad $f(x)$, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F). I. Su gráfico es una recta que pasa por el origen. II. Su rango es el conjunto de los números reales negativos. III. Es una función biyectiva.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFV",
+        "B": "FVV",
+        "C": "VVF",
+        "D": "FFF",
+        "E": "VFF"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "La función identidad se define como $f(x) = x$. Analicemos cada afirmación: I. Su gráfico es la recta $y=x$. Esta recta pasa por el punto $(0,0)$ (el origen) y tiene una pendiente de 1. $\\rightarrow$ Verdadero. II. El dominio de la función identidad es el conjunto de todos los números reales ($\\mathbb{R}$), y su rango también es el conjunto de todos los números reales ($\\mathbb{R}$), no solo los números reales negativos. $\\rightarrow$ Falso. III. La función $f(x)=x$ es inyectiva (cada elemento del dominio se mapea a un único elemento del rango) y sobreyectiva (cada elemento del rango tiene al menos una preimagen en el dominio), por lo tanto, es una función biyectiva. $\\rightarrow$ Verdadero. El patrón de verdaderas y falsas es VFV.",
+      "imagen": null,
+      "id_temporal": "alg_fun_003"
+    },
+    {
+      "pregunta": "Sea $h: \\mathbb{R} \\to \\mathbb{R}$ una función identidad, tal que $h(x) = (5m - 24)x + (9n - 36)$. Calcular el valor de $m - n + 7$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$8$$",
+        "B": "$$5$$",
+        "C": "$$10$$",
+        "D": "$$6$$",
+        "E": "$$9$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Si $h(x)$ es una función identidad, entonces por definición $h(x) = x$. Para que la expresión dada $h(x) = (5m - 24)x + (9n - 36)$ sea igual a $x$, el coeficiente de $x$ debe ser 1 y el término independiente debe ser 0. Igualando el coeficiente de $x$ a 1: $$5m - 24 = 1$$ $$5m = 25$$ $$m = 5$$ Igualando el término independiente a 0: $$9n - 36 = 0$$ $$9n = 36$$ $$n = 4$$ Se pide calcular el valor de $m - n + 7$. Sustituyendo los valores encontrados de $m$ y $n$: $$m - n + 7 = 5 - 4 + 7 = 1 + 7 = 8$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_004"
+    },
+    {
+      "pregunta": "En un almacén, la cantidad de cajas procesadas sigue un patrón modelado por la función identidad $f(x)$. Se sabe que los parámetros $p$ y $q$ están definidos por la expresión $f(x) = (x + p)(x + 2) - (x + 3)^2 + q$. ¿Cuál es el valor de $p + q$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$4$$",
+        "B": "$$6$$",
+        "C": "$$3$$",
+        "D": "$$5$$",
+        "E": "$$2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $f(x)$ es una función identidad, sabemos que $f(x) = x$. Primero, expandimos y simplificamos la expresión dada para $f(x)$: Expandimos $(x + p)(x + 2)$: $$(x + p)(x + 2) = x^2 + 2x + px + 2p = x^2 + (p + 2)x + 2p$$ Expandimos $(x + 3)^2$: $$(x + 3)^2 = x^2 + 2(x)(3) + 3^2 = x^2 + 6x + 9$$ Sustituimos estas expansiones en la expresión original de $f(x)$: $$f(x) = [x^2 + (p + 2)x + 2p] - [x^2 + 6x + 9] + q$$ Eliminamos los corchetes y agrupamos términos semejantes: $$f(x) = x^2 + (p + 2)x + 2p - x^2 - 6x - 9 + q$$ $$f(x) = (x^2 - x^2) + ((p + 2) - 6)x + (2p - 9 + q)$$ $$f(x) = (p - 4)x + (2p + q - 9)$$ Dado que $f(x)$ es una función identidad ($f(x) = x$), el coeficiente de $x$ debe ser 1 y el término constante debe ser 0. Igualando el coeficiente de $x$ a 1: $$p - 4 = 1 \\implies p = 5$$ Igualando el término constante a 0: $$2p + q - 9 = 0$$ Ahora sustituimos el valor de $p = 5$ en la segunda ecuación: $$2(5) + q - 9 = 0$$ $$10 + q - 9 = 0$$ $$1 + q = 0 \\implies q = -1$$ Finalmente, se pide calcular el valor de $p + q$: $$p + q = 5 + (-1) = 4$$. Por lo tanto, la respuesta correcta es A.",
+      "imagen": null,
+      "id_temporal": "alg_fun_005"
+    },
+    {
+      "pregunta": "El seguimiento de la satisfacción del cliente en una empresa de servicios de streaming se modela mediante una función constante h(x) durante varios meses. Se obtuvo la siguiente relación: $$(h(m + 1) + h(m + 2)) / (h(m + 3) – 5) = 6$$. Determinar el valor de la expresión $$h(m + 4) + h(m + 5) – 3$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$12$$",
+        "C": "$$14$$",
+        "D": "$$16$$",
+        "E": "$$8$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Dado que h(x) es una función constante, sea $$h(x) = k$$ para todo x. Sustituimos esto en la ecuación dada: $$(k + k) / (k – 5) = 6$$. Simplificamos a $$2k / (k – 5) = 6$$. Multiplicamos ambos lados por $$(k – 5)$$ para obtener $$2k = 6(k – 5)$$. Distribuimos el 6: $$2k = 6k – 30$$. Restamos $$2k$$ de ambos lados: $$0 = 4k – 30$$. Sumamos 30 a ambos lados: $$30 = 4k$$. Dividimos por 4: $$k = 30/4 = 15/2$$. Ahora, necesitamos encontrar $$h(m + 4) + h(m + 5) – 3$$. Como h(x) es constante, esto es igual a $$k + k – 3 = 2k – 3$$. Sustituimos el valor de k: $$2(15/2) – 3 = 15 – 3 = 12$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sobre la función identidad $$f(x) = x$$, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F). I. Su gráfica pasa por el origen $$(0;0)$$. II. Es una función biyectiva. III. Su gráfica es una recta horizontal.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFV",
+        "B": "VFF",
+        "C": "FVV",
+        "D": "FVF",
+        "E": "VVF"
+      },
+      "respuesta_correcta": "E",
+      "explicacion": "Analicemos cada afirmación para la función identidad $$f(x) = x$$: I. Si $$x = 0$$, entonces $$f(0) = 0$$. Esto significa que la función pasa por el punto $$(0;0)$$. Por lo tanto, la afirmación I es Verdadero (V). II. Una función biyectiva es tanto inyectiva (cada elemento del rango corresponde a exactamente un elemento del dominio) como suprayectiva (todos los elementos del rango están cubiertos por el dominio). La función $$f(x) = x$$ cumple con ambas condiciones para los números reales. Por lo tanto, la afirmación II es Verdadero (V). III. La gráfica de la función $$f(x) = x$$ es una línea diagonal que pasa por el origen y tiene una pendiente de 1. Una recta horizontal tendría una pendiente de 0 y sería de la forma $$f(x) = c$$ (una función constante). Por lo tanto, la afirmación III es Falsa (F). El patrón resultante es VVF, que corresponde a la opción E.",
+      "id_temporal": "alg_fun_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un equipo de científicos modela la trayectoria de un nuevo satélite mediante una función identidad $$f(x)$$, definida como $$f(x) = (5p – 14)x + (3q – 18)$$. Calcular el valor de $$p - q + 1$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-2$$",
+        "B": "$$-1$$",
+        "C": "$$0$$",
+        "D": "$$1$$",
+        "E": "$$2$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que una función sea una función identidad, debe tener la forma $$f(x) = x$$. Esto significa que el coeficiente de $$x$$ debe ser 1 y el término independiente debe ser 0. Comparando con $$f(x) = (5p – 14)x + (3q – 18)$$: El coeficiente de $$x$$ debe ser 1: $$5p – 14 = 1$$. Sumamos 14 a ambos lados: $$5p = 15$$. Dividimos por 5: $$p = 3$$. El término independiente debe ser 0: $$3q – 18 = 0$$. Sumamos 18 a ambos lados: $$3q = 18$$. Dividimos por 3: $$q = 6$$. Finalmente, nos piden calcular $$p - q + 1$$. Sustituimos los valores de p y q: $$3 - 6 + 1 = -3 + 1 = -2$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_fun_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una organización de caridad recibe una cantidad fija de donaciones mensuales, modelada por la función constante $$g(x) = c(3 + x) + d(2 – x) – 5x + 10$$. Si la donación mensual es de 40 unidades monetarias, ¿cuál es el valor de $$c + d$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$9$$",
+        "B": "$$11$$",
+        "C": "$$13$$",
+        "D": "$$15$$",
+        "E": "$$7$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, expandimos y agrupamos los términos de la función $$g(x)$$ por el factor $$x$$: $$g(x) = 3c + cx + 2d – dx – 5x + 10$$. Agrupamos los términos con $$x$$ y los términos constantes: $$g(x) = (3c + 2d + 10) + (c – d – 5)x$$. Para que $$g(x)$$ sea una función constante, el coeficiente de $$x$$ debe ser 0. Entonces, $$c – d – 5 = 0$$, lo que implica $$c = d + 5$$. Además, se nos dice que la donación mensual es de 40 unidades, lo que significa que el valor constante de la función es 40. Por lo tanto, el término constante de la función debe ser igual a 40: $$3c + 2d + 10 = 40$$. Restamos 10 de ambos lados: $$3c + 2d = 30$$. Ahora tenemos un sistema de dos ecuaciones: 1) $$c = d + 5$$ 2) $$3c + 2d = 30$$. Sustituimos la ecuación (1) en la ecuación (2): $$3(d + 5) + 2d = 30$$. Distribuimos el 3: $$3d + 15 + 2d = 30$$. Combinamos los términos con $$d$$: $$5d + 15 = 30$$. Restamos 15 de ambos lados: $$5d = 15$$. Dividimos por 5: $$d = 3$$. Sustituimos el valor de $$d$$ en la ecuación (1) para encontrar $$c$$: $$c = 3 + 5 = 8$$. Finalmente, nos piden calcular $$c + d$$. $$c + d = 8 + 3 = 11$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un botánico está modelando el crecimiento de una especie de planta con una función identidad $$f(x)$$, dada por $$f(x) = (x + k)(x – 2) – (x + 3)^2 + m$$. Determine el valor de $$m - k$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$15$$",
+        "B": "$$18$$",
+        "C": "$$21$$",
+        "D": "$$24$$",
+        "E": "$$12$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Dado que $$f(x)$$ es una función identidad, sabemos que $$f(x) = x$$. Vamos a expandir la expresión dada para $$f(x)$$: Primero, expandimos $$(x + k)(x – 2)$$ y $$(x + 3)^2$$: $$(x + k)(x – 2) = x^2 - 2x + kx - 2k = x^2 + (k – 2)x - 2k$$ $$(x + 3)^2 = x^2 + 2(x)(3) + 3^2 = x^2 + 6x + 9$$ Ahora, sustituimos estas expansiones en la expresión original de $$f(x)$$: $$f(x) = [x^2 + (k – 2)x - 2k] – [x^2 + 6x + 9] + m$$ $$f(x) = x^2 + (k – 2)x - 2k - x^2 - 6x - 9 + m$$ Agrupamos los términos con $$x$$ y los términos constantes: $$f(x) = (x^2 - x^2) + ((k – 2) - 6)x + (-2k - 9 + m)$$ $$f(x) = (k – 2 – 6)x + (m - 2k - 9)$$ $$f(x) = (k – 8)x + (m - 2k - 9)$$ Dado que $$f(x)$$ es la función identidad, $$f(x) = x$$. Esto significa que el coeficiente de $$x$$ debe ser 1 y el término constante debe ser 0. Comparamos los coeficientes: 1) Coeficiente de $$x$$: $$k – 8 = 1$$. Sumamos 8 a ambos lados: $$k = 9$$. 2) Término constante: $$m - 2k - 9 = 0$$. Sumamos $$2k + 9$$ a ambos lados: $$m = 2k + 9$$. Sustituimos el valor de $$k = 9$$ en la ecuación para $$m$$: $$m = 2(9) + 9 = 18 + 9 = 27$$. Finalmente, nos piden determinar $$m - k$$. $$m - k = 27 - 9 = 18$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "En un laboratorio de química, la concentración de un reactivo se mantiene constante a lo largo de diversas fases experimentales, modelada por la función $$h(t)$$. Si se sabe que $$(h(t_1) + h(t_2)) / (h(t_3) – 5) = 3$$, determinar la suma de la concentración para cuatro fases futuras: $$h(t_4) + h(t_5) + h(t_6) + h(t_7)$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$60$$",
+        "B": "$$45$$",
+        "C": "$$30$$",
+        "D": "$$75$$",
+        "E": "$$50$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Como $$h(t)$$ es una función constante, sea $$h(t) = c$$ para todo $$t$$. Entonces, la ecuación dada se convierte en $$(c + c) / (c – 5) = 3$$. Simplificando, $$2c / (c – 5) = 3$$. Multiplicando ambos lados por $$(c – 5)$$, obtenemos $$2c = 3(c – 5)$$. Expandiendo, $$2c = 3c – 15$$. Restando $$2c$$ de ambos lados, $$0 = c – 15$$, lo que nos da $$c = 15$$. Se nos pide la suma de la función constante para cuatro fases futuras: $$h(t_4) + h(t_5) + h(t_6) + h(t_7)$$. Esto es igual a $$c + c + c + c = 4c$$. Sustituyendo el valor de $$c$$: $$4 * 15 = 60$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_fun_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$f(x)$$ una función constante tal que $$(f(x + 10) + f(x + 5)) / (f(3x) – 6) = 4$$. Hallar el valor de $$Q = f(x^3) + f(x – 3) + 7$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$25$$",
+        "B": "$$31$$",
+        "C": "$$19$$",
+        "D": "$$28$$",
+        "E": "$$34$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Dado que $$f(x)$$ es una función constante, podemos definir $$f(x) = k$$ para cualquier valor de $$x$$. Sustituyendo esto en la ecuación dada: $$(k + k) / (k – 6) = 4$$. Simplificamos a $$2k / (k – 6) = 4$$. Multiplicamos ambos lados por $$(k – 6)$$ para obtener $$2k = 4(k – 6)$$. Expandimos la expresión: $$2k = 4k – 24$$. Restamos $$2k$$ de ambos lados: $$0 = 2k – 24$$. Sumamos $$24$$ a ambos lados: $$24 = 2k$$, lo que nos da $$k = 12$$. Ahora, necesitamos hallar el valor de $$Q = f(x^3) + f(x – 3) + 7$$. Sustituyendo $$f(x) = k$$: $$Q = k + k + 7$$. Sustituyendo el valor de $$k$$: $$Q = 12 + 12 + 7 = 24 + 7 = 31$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sobre la función identidad $$f(x) = x$$, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F). I. Su gráfico pasa por el origen $$(0; 0)$$. II. Es una función biyectiva. III. El punto $$(-7; 7)$$ pertenece a su gráfica.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "VFF",
+        "B": "FVF",
+        "C": "VFV",
+        "D": "FFV",
+        "E": "VVF"
+      },
+      "respuesta_correcta": "E",
+      "explicacion": "Analicemos cada afirmación para la función identidad $$f(x) = x$$: I. Su gráfico pasa por el origen $$(0; 0)$$. Para que un punto pertenezca a la gráfica, debe cumplir $$y = f(x)$$. Si $$x = 0$$, entonces $$f(0) = 0$$. Por lo tanto, el punto $$(0; 0)$$ pertenece a la gráfica. Esta afirmación es Verdadera (V). II. Es una función biyectiva. La función $$f(x) = x$$ es inyectiva (cada elemento del dominio se mapea a un elemento único del rango) y es sobreyectiva (todo elemento del rango tiene al menos un elemento del dominio al que le corresponde). Por lo tanto, es biyectiva. Esta afirmación es Verdadera (V). III. El punto $$(-7; 7)$$ pertenece a su gráfica. Para que el punto $$(-7; 7)$$ pertenezca a la gráfica de $$f(x) = x$$, debe cumplirse que $$y = x$$. Aquí, $$x = -7$$ e $$y = 7$$. Como $$-7 \neq 7$$, el punto $$(-7; 7)$$ no pertenece a la gráfica de la función identidad. Esta afirmación es Falsa (F). El patrón de verdad/falsedad es VVF. Por lo tanto, la respuesta correcta es E.",
+      "id_temporal": "alg_fun_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$k: R \rightarrow R$$ una función identidad, tal que $$k(x) = (6p – 29)x + (9q – 36)$$. Calcular el valor de $$p + q + 3$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$9$$",
+        "B": "$$10$$",
+        "C": "$$11$$",
+        "D": "$$12$$",
+        "E": "$$13$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Para que una función sea una función identidad, debe tener la forma $$k(x) = x$$. Esto significa que el coeficiente de $$x$$ debe ser $$1$$ y el término independiente debe ser $$0$$. De la función dada $$k(x) = (6p – 29)x + (9q – 36)$$ : 1. El coeficiente de $$x$$ debe ser $$1$$: $$6p – 29 = 1$$. Sumando $$29$$ a ambos lados: $$6p = 30$$. Dividiendo por $$6$$: $$p = 5$$. 2. El término independiente debe ser $$0$$: $$9q – 36 = 0$$. Sumando $$36$$ a ambos lados: $$9q = 36$$. Dividiendo por $$9$$: $$q = 4$$. Ahora, se nos pide calcular el valor de $$p + q + 3$$. Sustituyendo los valores de $$p$$ y $$q$$: $$5 + 4 + 3 = 12$$. Por lo tanto, la respuesta correcta es D.",
+      "id_temporal": "alg_fun_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un dispositivo de medición registra un valor constante en diferentes pruebas de durabilidad. Esta constancia se describe por una función $$f$$. Si se observa que $$(f(k^3) – 5f(k + 1)) / (f(3k – 2) + 7) = -3$$, hallar el valor de $$f(k – 1) + 4f(k^2 + 2)$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$84$$",
+        "B": "$$105$$",
+        "C": "$$63$$",
+        "D": "$$126$$",
+        "E": "$$42$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Como $$f$$ es una función constante, sea $$f(x) = A$$ para cualquier valor de $$x$$. Sustituyendo en la ecuación dada: $$(A – 5A) / (A + 7) = -3$$. Simplificando el numerador: $$-4A / (A + 7) = -3$$. Multiplicando ambos lados por $$(A + 7)$$: $$-4A = -3(A + 7)$$. Expandiendo el lado derecho: $$-4A = -3A – 21$$. Sumando $$3A$$ a ambos lados: $$-A = -21$$. Multiplicando por $$-1$$: $$A = 21$$. Ahora, necesitamos hallar el valor de la expresión $$f(k – 1) + 4f(k^2 + 2)$$. Sustituyendo $$f(x) = A$$: $$A + 4A$$. Esto es igual a $$5A$$. Sustituyendo el valor de $$A$$: $$5 * 21 = 105$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_fun_015",
+      "imagen": null
+    }
+  ]
+}

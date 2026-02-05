@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 12,
+  "total_temas": 29,
+  "titulo_tema": "SISTEMAS DE ECUACIONES LINEALES CON DOS Y TRES VARIABLES",
+  "tema": "sistemas_de_ecuaciones_lineales_con_dos_y_tres_variables",
+  "preguntas": [
+    {
+      "pregunta": "Una cafetería necesita producir 180 litros de café fuerte y 120 litros de café suave. Para ello, utiliza dos mezclas base: la mezcla M, que produce 10 litros de café fuerte y 6 litros de café suave por unidad, y la mezcla N, que produce 15 litros de café fuerte y 8 litros de café suave por unidad. ¿Cuántas unidades de la mezcla M debe usar la cafetería para satisfacer sus necesidades?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "36",
+        "B": "30",
+        "C": "40",
+        "D": "25",
+        "E": "32"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea M la cantidad de unidades de la mezcla M y N la cantidad de unidades de la mezcla N. Establecemos el sistema de ecuaciones:\nPara café fuerte: $$10M + 15N = 180$$ (simplificando, $$2M + 3N = 36$$)\nPara café suave: $$6M + 8N = 120$$ (simplificando, $$3M + 4N = 60$$)\nPara encontrar M, podemos eliminar N. Multiplicamos la primera ecuación por 4 y la segunda por 3:\n$$4(2M + 3N) = 4(36) \\Rightarrow 8M + 12N = 144$$\n$$3(3M + 4N) = 3(60) \\Rightarrow 9M + 12N = 180$$\nRestamos la primera ecuación modificada de la segunda ecuación modificada:\n$$(9M + 12N) - (8M + 12N) = 180 - 144$$\n$$M = 36$$\nPor lo tanto, la cafetería debe usar 36 unidades de la mezcla M.",
+      "id_temporal": "alg_sis_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular $$p + q$$ para que el sistema tenga infinitas soluciones: $$px + qy = p$$ y $$(q^{2} - 4p + 105)x + y = 5$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "60",
+        "B": "55",
+        "C": "65",
+        "D": "50",
+        "E": "70"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Para que un sistema de ecuaciones lineales tenga infinitas soluciones, una ecuación debe ser múltiplo de la otra. Sea $$k$$ ese múltiplo.\nDe los términos independientes: $$k \\cdot p = 5 \\Rightarrow k = \\frac{5}{p}$$\nDel coeficiente de $$y$$: $$k \\cdot q = 1 \\Rightarrow \\frac{5}{p}q = 1 \\Rightarrow 5q = p$$\nDel coeficiente de $$x$$: $$k \\cdot p = q^{2} - 4p + 105$$\nComo sabemos que $$k \\cdot p = 5$$, sustituimos:\n$$q^{2} - 4p + 105 = 5$$\n$$q^{2} - 4p + 100 = 0$$\nAhora, sustituimos $$p = 5q$$ en esta ecuación:\n$$q^{2} - 4(5q) + 100 = 0$$\n$$q^{2} - 20q + 100 = 0$$\nEsta es una ecuación cuadrática que se puede factorizar como un cuadrado perfecto:\n$$(q - 10)^{2} = 0$$\nEsto nos da $$q = 10$$\nAhora calculamos $$p$$: $$p = 5q = 5(10) = 50$$\nFinalmente, calculamos $$p + q$$: $$p + q = 50 + 10 = 60$$",
+      "id_temporal": "alg_sis_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Del sistema de ecuaciones cuadráticas:\n$$x^{2} + 3x - c = 0$$\n$$x^{2} + x + d = 0$$\nSea $$r$$ una raíz común y sabiendo que $$c + d = 8$$. Hallar el módulo de la suma de las otras raíces.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "12",
+        "B": "10",
+        "C": "8",
+        "D": "15",
+        "E": "13"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "En la primera ecuación, sea $$r$$ una raíz común y $$s_{1}$$ la otra raíz.\nSuma de raíces: $$r + s_{1} = -3 \\Rightarrow s_{1} = -3 - r$$\nProducto de raíces: $$r \\cdot s_{1} = -c \\Rightarrow c = -r \\cdot s_{1} = -r(-3 - r) = 3r + r^{2}$$\nEn la segunda ecuación, sea $$r$$ la raíz común y $$s_{2}$$ la otra raíz.\nSuma de raíces: $$r + s_{2} = -1 \\Rightarrow s_{2} = -1 - r$$\nProducto de raíces: $$r \\cdot s_{2} = d \\Rightarrow d = r(-1 - r) = -r - r^{2}$$\nDado que $$c + d = 8$$, sustituimos las expresiones de $$c$$ y $$d$$:\n$$(3r + r^{2}) + (-r - r^{2}) = 8$$\n$$2r = 8$$\n$$r = 4$$\nAhora encontramos las otras raíces, $$s_{1}$$ y $$s_{2}$$:\n$$s_{1} = -3 - r = -3 - 4 = -7$$\n$$s_{2} = -1 - r = -1 - 4 = -5$$\nLa suma de las otras raíces es: $$s_{1} + s_{2} = -7 + (-5) = -12$$\nEl módulo de la suma de las otras raíces es: $$|-12| = 12$$",
+      "id_temporal": "alg_sis_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un club deportivo tiene miembros que son futbolistas (F), basquetbolistas (B) y nadadores (N). Se sabe que hay 15 miembros entre basquetbolistas y futbolistas, 18 miembros entre basquetbolistas y nadadores, y 17 miembros entre futbolistas y nadadores. Hallar la cantidad total de miembros en el club.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "25",
+        "B": "20",
+        "C": "30",
+        "D": "28",
+        "E": "22"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea F el número de futbolistas, B el número de basquetbolistas y N el número de nadadores.\nEstablecemos el sistema de ecuaciones:\n1) $$B + F = 15$$\n2) $$B + N = 18$$\n3) $$F + N = 17$$\nSumamos las tres ecuaciones:\n$$(B + F) + (B + N) + (F + N) = 15 + 18 + 17$$\n$$2B + 2F + 2N = 50$$\nFactorizamos el 2:\n$$2(B + F + N) = 50$$\nDividimos por 2 para encontrar la cantidad total de miembros:\n$$B + F + N = 25$$\nLa cantidad total de miembros en el club es 25.",
+      "id_temporal": "alg_sis_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Del sistema:\n$$x + 3y + z = 10$$\n$$2x - y = 5$$\n$$x + 2z = 11$$\nEl bono diario de un empleado es el valor de $$x$$. ¿Cuánto recibirá de bono total en el mes de julio?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/93",
+        "B": "S/90",
+        "C": "S/85",
+        "D": "S/96",
+        "E": "S/88"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Tenemos el sistema de ecuaciones:\n1) $$x + 3y + z = 10$$\n2) $$2x - y = 5$$\n3) $$x + 2z = 11$$\nDe la ecuación (2), despejamos $$y$$ en términos de $$x$$:\n$$y = 2x - 5$$\nDe la ecuación (3), despejamos $$z$$ en términos de $$x$$:\n$$2z = 11 - x \\Rightarrow z = \\frac{11 - x}{2}$$\nSustituimos estas expresiones para $$y$$ y $$z$$ en la ecuación (1):\n$$x + 3(2x - 5) + \\frac{11 - x}{2} = 10$$\n$$x + 6x - 15 + \\frac{11 - x}{2} = 10$$\n$$7x - 15 + \\frac{11 - x}{2} = 10$$\nPara eliminar la fracción, multiplicamos toda la ecuación por 2:\n$$2(7x - 15) + 2\\left(\\frac{11 - x}{2}\\right) = 2(10)$$\n$$14x - 30 + 11 - x = 20$$\n$$13x - 19 = 20$$\n$$13x = 20 + 19$$\n$$13x = 39$$\n$$x = \\frac{39}{13}$$\n$$x = 3$$\nEl bono diario es $$S/3$$. El mes de julio tiene 31 días. Por lo tanto, el bono total en el mes de julio será:\nBono total = $$3 \\cdot 31 = S/93$$",
+      "id_temporal": "alg_sis_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un laboratorio necesita fabricar una solución especial que contenga 78 mg de Compuesto 1 y 55 mg de Compuesto 2. Dispone de dos ingredientes: el Ingrediente X contiene 4 mg de Compuesto 1 y 3 mg de Compuesto 2 por unidad. El Ingrediente Y contiene 5 mg de Compuesto 1 y 4 mg de Compuesto 2 por unidad. ¿Cuántas unidades del Ingrediente X se deben usar para la solución?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "37",
+        "B": "32",
+        "C": "41",
+        "D": "28",
+        "E": "35"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea X la cantidad de unidades del Ingrediente X y Y la cantidad de unidades del Ingrediente Y.Para el Compuesto 1: $$4X + 5Y = 78$$ Para el Compuesto 2: $$3X + 4Y = 55$$Multiplicamos la primera ecuación por 4 y la segunda por 5 para eliminar Y:$$4 \times (4X + 5Y) = 4 \times 78 \\implies 16X + 20Y = 312$$$$5 \times (3X + 4Y) = 5 \times 55 \\implies 15X + 20Y = 275$$Restamos la segunda nueva ecuación de la primera nueva ecuación:$$(16X + 20Y) - (15X + 20Y) = 312 - 275$$$$X = 37$$Por lo tanto, se deben usar 37 unidades del Ingrediente X.",
+      "id_temporal": "alg_sis_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular $$p + q$$ para que el siguiente sistema de ecuaciones lineales tenga infinitas soluciones: $$px + qy = p$$ $$(q^2 - 3p + 22)x + y = 4$$",
+      "dificultad": 3,
+      "opciones": {
+        "A": "18",
+        "B": "15",
+        "C": "12",
+        "D": "20",
+        "E": "10"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que un sistema de ecuaciones lineales tenga infinitas soluciones, una ecuación debe ser múltiplo de la otra. Sea $$k$$ ese múltiplo.De los términos independientes: $$k \\cdot p = 4 \\implies k = \frac{4}{p}$$Del coeficiente de y: $$k \\cdot q = 1 \\implies \frac{4}{p} \\cdot q = 1 \\implies q = \frac{p}{4}$$Del coeficiente de x: $$k \\cdot p = q^2 - 3p + 22$$. Como sabemos que $$k \\cdot p = 4$$, sustituimos:$$4 = q^2 - 3p + 22$$$$q^2 - 3p + 18 = 0$$Ahora, sustituimos $$q = \frac{p}{4}$$ en esta ecuación:$$( \frac{p}{4} )^2 - 3p + 18 = 0$$$$\frac{p^2}{16} - 3p + 18 = 0$$Multiplicamos toda la ecuación por 16 para eliminar el denominador:$$p^2 - 48p + 288 = 0$$Factorizando esta ecuación cuadrática: $$(p - 12)(p - 24) = 0$$Tomando el valor $$p = 12$$. (Si tomáramos p=24, q=6 y p+q=30, que no es una opción).Si $$p = 12$$, entonces $$q = \frac{12}{4} = 3$$.Finalmente, calculamos $$p + q = 12 + 3 = 15$$.",
+      "id_temporal": "alg_sis_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dadas las ecuaciones: $$x^2 + 4x – c = 0$$ y $$x^2 + 3x + d = 0$$. Si $$r$$ es una raíz común a ambas ecuaciones y se sabe que $$c + d = 7$$. Hallar el módulo de la suma de las otras raíces.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "15",
+        "B": "18",
+        "C": "21",
+        "D": "24",
+        "E": "10"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para la primera ecuación, sea $$s_{1}$$ la otra raíz. Usando las fórmulas de Vieta:Suma de raíces: $$r + s_{1} = -4 \\implies s_{1} = -4 - r$$Producto de raíces: $$r \\cdot s_{1} = -c \\implies c = -r(-4-r) = 4r + r^2$$Para la segunda ecuación, sea $$s_{2}$$ la otra raíz. Usando las fórmulas de Vieta:Suma de raíces: $$r + s_{2} = -3 \\implies s_{2} = -3 - r$$Producto de raíces: $$r \\cdot s_{2} = d \\implies d = r(-3-r) = -3r - r^2$$Ahora, sumamos $$c$$ y $$d$$:$$c + d = (4r + r^2) + (-3r - r^2) = r$$Se nos da que $$c + d = 7$$, por lo tanto, $$r = 7$$.Ahora calculamos las otras raíces, $$s_{1}$$ y $$s_{2}$$:$$s_{1} = -4 - r = -4 - 7 = -11$$$$s_{2} = -3 - r = -3 - 7 = -10$$La suma de las otras raíces es $$s_{1} + s_{2} = -11 + (-10) = -21$$.Finalmente, el módulo de la suma de las otras raíces es $$|-21| = 21$$.",
+      "id_temporal": "alg_sis_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una biblioteca especializada, hay libros de Fantasía (F), Ciencia Ficción (C) y Misterio (M). Se sabe que la suma de los libros de Fantasía y Ciencia Ficción es 28. La suma de los libros de Ciencia Ficción y Misterio es 35. Y la suma de los libros de Fantasía y Misterio es 31. Hallar la cantidad total de libros en la biblioteca.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "47",
+        "B": "52",
+        "C": "42",
+        "D": "50",
+        "E": "45"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea F la cantidad de libros de Fantasía, C de Ciencia Ficción y M de Misterio. Podemos establecer el siguiente sistema de ecuaciones:1) $$F + C = 28$$2) $$C + M = 35$$3) $$F + M = 31$$Sumamos las tres ecuaciones: $$(F + C) + (C + M) + (F + M) = 28 + 35 + 31$$$$2F + 2C + 2M = 94$$Factorizamos el 2:$$2(F + C + M) = 94$$Dividimos por 2 para encontrar la cantidad total de libros:$$F + C + M = \frac{94}{2}$$$$F + C + M = 47$$La cantidad total de libros en la biblioteca es 47.",
+      "id_temporal": "alg_sis_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un analista financiero está modelando el rendimiento de tres carteras de inversión A, B y C. Sus rendimientos diarios se rigen por el siguiente sistema de ecuaciones: $$A + 2B + C = 10$$ $$2A - C = 1$$ $$2A - 2B = 4$$. Si el valor de A representa la ganancia diaria en miles de dólares, ¿cuánto se ganará en un mes de 31 días?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "S/80 mil",
+        "B": "S/93 mil",
+        "C": "S/75 mil",
+        "D": "S/90 mil",
+        "E": "S/100 mil"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Tenemos el siguiente sistema de ecuaciones:1) $$A + 2B + C = 10$$2) $$2A - C = 1$$3) $$2A - 2B = 4$$De la ecuación (3), podemos simplificarla dividiendo por 2: $$A - B = 2$$. Despejamos B: $$B = A - 2$$De la ecuación (2), despejamos C: $$C = 2A - 1$$Ahora sustituimos las expresiones para B y C en la ecuación (1):$$A + 2(A - 2) + (2A - 1) = 10$$$$A + 2A - 4 + 2A - 1 = 10$$Combinamos términos semejantes:$$5A - 5 = 10$$Sumamos 5 a ambos lados:$$5A = 15$$Dividimos por 5:$$A = 3$$La ganancia diaria de la cartera A es de 3 mil dólares.Para calcular la ganancia en un mes de 31 días, multiplicamos la ganancia diaria por el número de días:Ganancia mensual = $$3 \times 31 = 93$$ mil dólares.La ganancia en un mes de 31 días será de S/93 mil.",
+      "id_temporal": "alg_sis_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un nutricionista debe planificar una dieta que requiere 100 mg de Vitamina C y 70 mg de Calcio. El alimento tipo P contiene 5 mg de Vitamina C y 3 mg de Calcio. El alimento tipo Q contiene 6 mg de Vitamina C y 4 mg de Calcio. ¿Cuántos alimentos del tipo Q se necesitan para cumplir exactamente con los requerimientos?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "20",
+        "B": "25",
+        "C": "15",
+        "D": "30",
+        "E": "10"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea P la cantidad de alimentos tipo P y Q la cantidad de alimentos tipo Q. Establecemos el sistema de ecuaciones basado en los requerimientos:\nPara Vitamina C: $$5P + 6Q = 100$$\nPara Calcio: $$3P + 4Q = 70$$\nPara eliminar P, multiplicamos la primera ecuación por 3 y la segunda por 5:\n$$3(5P + 6Q) = 3(100) \\implies 15P + 18Q = 300$$\n$$5(3P + 4Q) = 5(70) \\implies 15P + 20Q = 350$$\nRestamos la primera de estas nuevas ecuaciones de la segunda:\n$$(15P + 20Q) - (15P + 18Q) = 350 - 300$$\n$$2Q = 50$$\n$$Q = \frac{50}{2} = 25$$\nPor lo tanto, se necesitan 25 alimentos del tipo Q.",
+      "id_temporal": "alg_sis_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determine el valor de $$M + N$$ si el sistema de ecuaciones lineales tiene infinitas soluciones: $$ (M - 8)x + (N + 7)y = 35 $$ $$ 2x + 3y = 5 $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "32",
+        "B": "36",
+        "C": "30",
+        "D": "34",
+        "E": "38"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Para que el sistema tenga infinitas soluciones, la primera ecuación debe ser un múltiplo de la segunda. Observamos los términos independientes: $$5 \times k = 35$$, por lo tanto, el múltiplo $$k = \frac{35}{5} = 7$$. Ahora aplicamos este múltiplo a los coeficientes de x e y:\nPara el coeficiente de x: $$M - 8 = 2 \times 7 \\implies M - 8 = 14 \\implies M = 22$$\nPara el coeficiente de y: $$N + 7 = 3 \times 7 \\implies N + 7 = 21 \\implies N = 14$$\nFinalmente, calculamos la suma: $$M + N = 22 + 14 = 36$$.",
+      "id_temporal": "alg_sis_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dadas las ecuaciones cuadráticas $$x^2 + 3x – k = 0$$ y $$x^2 + 2x + j = 0$$. Si tienen una raíz común y se sabe que $$k + j = -7$$, hallar el módulo de la suma de las otras dos raíces.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "9",
+        "B": "7",
+        "C": "3",
+        "D": "5",
+        "E": "0"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$r$$ la raíz común a ambas ecuaciones.\nPara la primera ecuación $$x^2 + 3x – k = 0$$, las raíces son $$r$$ y $$s_1$$. Por las fórmulas de Vieta:\nSuma de raíces: $$r + s_1 = -3 \\implies s_1 = -3 - r$$\nProducto de raíces: $$r \\cdot s_1 = -k \\implies k = -r(-3 - r) = 3r + r^2$$\nPara la segunda ecuación $$x^2 + 2x + j = 0$$, las raíces son $$r$$ y $$s_2$$. Por las fórmulas de Vieta:\nSuma de raíces: $$r + s_2 = -2 \\implies s_2 = -2 - r$$\nProducto de raíces: $$r \\cdot s_2 = j \\implies j = r(-2 - r) = -2r - r^2$$\nAhora usamos la condición $$k + j = -7$$:\n$$(3r + r^2) + (-2r - r^2) = -7$$\n$$r = -7$$\nConociendo $$r = -7$$, podemos encontrar las otras raíces:\n$$s_1 = -3 - (-7) = -3 + 7 = 4$$\n$$s_2 = -2 - (-7) = -2 + 7 = 5$$\nLa suma de las otras dos raíces es $$s_1 + s_2 = 4 + 5 = 9$$. El módulo de esta suma es $$|9| = 9$$.",
+      "id_temporal": "alg_sis_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una empresa de logística, se gestionan envíos por avión (A), tren (T) y camión (C). La suma de los envíos por avión y tren es de 120 paquetes. La suma de los envíos por tren y camión es de 150 paquetes. La suma de los envíos por avión y camión es de 130 paquetes. ¿Cuál es la cantidad total de paquetes gestionados entre los tres medios de transporte?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "180",
+        "B": "200",
+        "C": "210",
+        "D": "190",
+        "E": "170"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea A la cantidad de paquetes por avión, T por tren y C por camión. Tenemos el siguiente sistema de ecuaciones:\n1) $$A + T = 120$$\n2) $$T + C = 150$$\n3) $$A + C = 130$$\nSumamos las tres ecuaciones:\n$$(A + T) + (T + C) + (A + C) = 120 + 150 + 130$$\n$$2A + 2T + 2C = 400$$\nFactorizamos el 2:\n$$2(A + T + C) = 400$$\nPara encontrar la cantidad total de paquetes, dividimos por 2:\n$$A + T + C = \frac{400}{2} = 200$$\nPor lo tanto, se gestionan un total de 200 paquetes.",
+      "id_temporal": "alg_sis_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Del siguiente sistema de ecuaciones, el valor de $$x$$ representa la cantidad de cajas de mascarillas vendidas diariamente. ¿Cuántas cajas de mascarillas se venderán en el mes de abril? (Considere que abril tiene 30 días).\n$$ 2x + y + z = 18 $$\n$$ x – z = -2 $$\n$$ 3x – y = 14 $$",
+      "dificultad": 2,
+      "opciones": {
+        "A": "120",
+        "B": "90",
+        "C": "150",
+        "D": "180",
+        "E": "60"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, resolvemos el sistema de ecuaciones para encontrar el valor de $$x$$. De la segunda ecuación, despejamos $$z$$:\n$$x - z = -2 \\implies z = x + 2$$\nDe la tercera ecuación, despejamos $$y$$:\n$$3x - y = 14 \\implies y = 3x - 14$$\nSustituimos estas expresiones para $$y$$ y $$z$$ en la primera ecuación:\n$$2x + (3x - 14) + (x + 2) = 18$$\nAgrupamos términos de $$x$$ y constantes:\n$$2x + 3x + x - 14 + 2 = 18 \\implies 6x - 12 = 18$$\nSumamos 12 a ambos lados:\n$$6x = 30$$\nDividimos por 6 para encontrar $$x$$:\n$$x = \frac{30}{6} = 5$$\nLa cantidad de cajas de mascarillas vendidas diariamente es 5. Como el mes de abril tiene 30 días, la cantidad total de ventas será $$5 \times 30 = 150$$ cajas.",
+      "id_temporal": "alg_sis_015",
+      "imagen": null
+    }
+  ]
+}

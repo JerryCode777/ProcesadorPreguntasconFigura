@@ -1,0 +1,234 @@
+{
+  "materia": "aritmetica",
+  "numero_tema": 2,
+  "total_temas": 6,
+  "titulo_tema": "NÚMEROS PRIMOS Y NÚMEROS COMPUESTOS",
+  "tema": "numeros_primos_y_numeros_compuestos",
+  "preguntas": [
+    {
+      "pregunta": "Si el número $$N = 6^n \\cdot 10^n$$ tiene 112 divisores, calcule el valor de $$n^n$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$27$$",
+        "B": "$$64$$",
+        "C": "$$8$$",
+        "D": "$$16$$",
+        "E": "$$125$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, expresamos N en su forma canónica:\n$$N = (2 \\cdot 3)^n \\cdot (2 \\cdot 5)^n = 2^n \\cdot 3^n \\cdot 2^n \\cdot 5^n = 2^{2n} \\cdot 3^n \\cdot 5^n$$\nLa cantidad de divisores de N se calcula como el producto de los exponentes de los factores primos, cada uno aumentado en uno:\n$$D(N) = (2n + 1)(n + 1)(n + 1) = (2n + 1)(n + 1)^2$$\nSegún el enunciado, la cantidad de divisores es 112:\n$$(2n + 1)(n + 1)^2 = 112$$\nProbamos valores enteros para n:\n- Si n = 1: $$(2(1) + 1)(1 + 1)^2 = 3 \\cdot 2^2 = 3 \\cdot 4 = 12$$\n- Si n = 2: $$(2(2) + 1)(2 + 1)^2 = 5 \\cdot 3^2 = 5 \\cdot 9 = 45$$\n- Si n = 3: $$(2(3) + 1)(3 + 1)^2 = 7 \\cdot 4^2 = 7 \\cdot 16 = 112$$\nEl valor de n que cumple la condición es n = 3.\nFinalmente, calculamos $$n^n = 3^3 = 27$$.",
+      "id_temporal": "ari_num_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$N = 2^a \\cdot 3^b$$ un número. Si al multiplicar $$N$$ por 2, su cantidad de divisores aumenta en 15, y si al multiplicar $$N$$ por 3, su cantidad de divisores aumenta en 18. Calcule la cantidad total de divisores de $$N$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$240$$",
+        "B": "$$270$$",
+        "C": "$$300$$",
+        "D": "$$180$$",
+        "E": "$$320$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La cantidad de divisores de $$N = 2^a \\cdot 3^b$$ es $$D(N) = (a + 1)(b + 1)$$.\n\nCondición 1: Al multiplicar N por 2 ($$N \\cdot 2 = 2^{a+1} \\cdot 3^b$$), la cantidad de divisores aumenta en 15.\n$$D(N \\cdot 2) = (a + 1 + 1)(b + 1) = (a + 2)(b + 1)$$\n$$(a + 2)(b + 1) - (a + 1)(b + 1) = 15$$\n$$(b + 1) [ (a + 2) - (a + 1) ] = 15$$\n$$(b + 1) [1] = 15 \\Rightarrow b + 1 = 15 \\Rightarrow b = 14$$\n\nCondición 2: Al multiplicar N por 3 ($$N \\cdot 3 = 2^a \\cdot 3^{b+1}$$), la cantidad de divisores aumenta en 18.\n$$D(N \\cdot 3) = (a + 1)(b + 1 + 1) = (a + 1)(b + 2)$$\n$$(a + 1)(b + 2) - (a + 1)(b + 1) = 18$$\n$$(a + 1) [ (b + 2) - (b + 1) ] = 18$$\n$$(a + 1) [1] = 18 \\Rightarrow a + 1 = 18 \\Rightarrow a = 17$$\n\nAhora conocemos los exponentes: $$a = 17$$ y $$b = 14$$. Por lo tanto, el número $$N = 2^{17} \\cdot 3^{14}$$.\nLa cantidad total de divisores de N es:\n$$D(N) = (17 + 1)(14 + 1) = 18 \\cdot 15 = 270$$.",
+      "id_temporal": "ari_num_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un número $$N$$ tiene como factores primos a los cuatro primeros números primos consecutivos. Si los exponentes de su descomposición canónica son los cuatro números primos más pequeños distintos, ¿cuántos divisores tiene $$N$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$288$$",
+        "B": "$$432$$",
+        "C": "$$576$$",
+        "D": "$$720$$",
+        "E": "$$360$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Los cuatro primeros números primos consecutivos son: 2, 3, 5, 7.\nLos cuatro números primos más pequeños distintos son: 2, 3, 5, 7.\nPara calcular la cantidad de divisores de $$N = p_1^{e_1} \\cdot p_2^{e_2} \\cdot p_3^{e_3} \\cdot p_4^{e_4}$$, se utiliza la fórmula $$(e_1+1)(e_2+1)(e_3+1)(e_4+1)$$. El orden en que se asignan los exponentes a los factores primos no altera el resultado de la cantidad de divisores.\nPor lo tanto, los exponentes (aumentados en 1) serán: (2+1), (3+1), (5+1), (7+1).\nCantidad de divisores de N = $$(2+1)(3+1)(5+1)(7+1) = 3 \\cdot 4 \\cdot 6 \\cdot 8 = 12 \\cdot 48 = 576$$.",
+      "id_temporal": "ari_num_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$N = 2^a \\cdot 3^b \\cdot 5^c$$ un número entero. Si al multiplicar $$N$$ por 7 (donde 7 no es un factor primo de $$N$$), la cantidad de divisores de $$N$$ aumenta en 90. Además, si al dividir $$N$$ por 2 (donde $$a \\ge 1$$), la cantidad de divisores disminuye en 45. Si $$b$$ y $$c$$ son distintos, no nulos y su suma es la mínima posible, ¿cuántos divisores cuadrados perfectos tiene $$N$$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$12$$",
+        "B": "$$15$$",
+        "C": "$$16$$",
+        "D": "$$20$$",
+        "E": "$$24$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$D(N) = (a+1)(b+1)(c+1)$$ la cantidad de divisores de $$N$$.\n\n1.  Al multiplicar $$N$$ por 7: $$N \\cdot 7 = 2^a \\cdot 3^b \\cdot 5^c \\cdot 7^1$$.\n    $$D(N \\cdot 7) = (a+1)(b+1)(c+1)(1+1) = 2D(N)$$.\n    El problema indica que $$D(N \\cdot 7) - D(N) = 90$$. Sustituyendo, $$2D(N) - D(N) = 90$$, lo que implica $$D(N) = 90$$.\n    Así, $$(a+1)(b+1)(c+1) = 90$$.\n\n2.  Al dividir $$N$$ por 2: $$N/2 = 2^{a-1} \\cdot 3^b \\cdot 5^c$$. (Se asume $$a \\ge 1$$).\n    $$D(N/2) = ((a-1)+1)(b+1)(c+1) = a(b+1)(c+1)$$.\n    El problema indica que $$D(N) - D(N/2) = 45$$.\n    $$(a+1)(b+1)(c+1) - a(b+1)(c+1) = 45$$\n    $$(b+1)(c+1) [ (a+1) - a ] = 45$$\n    $$(b+1)(c+1) = 45$$.\n\nSustituyendo el valor de $$(b+1)(c+1)$$ en la ecuación de $$D(N)$$: \n$$(a+1) \\cdot 45 = 90 \\Rightarrow a+1 = 2 \\Rightarrow a = 1$$.\n\nAhora tenemos $$a=1$$ y $$(b+1)(c+1) = 45$$. Se nos dice que $$b$$ y $$c$$ son distintos, no nulos y su suma es la mínima posible.\nLas parejas de factores de 45 son (considerando $$b+1 > c+1$$ para $$b > c$$):\n-   $$(b+1, c+1) = (45, 1) \\Rightarrow (b, c) = (44, 0)$$. $$c$$ no es nulo, esta opción se descarta.\n-   $$(b+1, c+1) = (15, 3) \\Rightarrow (b, c) = (14, 2)$$. Suma $$b+c = 14+2=16$$.\n-   $$(b+1, c+1) = (9, 5) \\Rightarrow (b, c) = (8, 4)$$. Suma $$b+c = 8+4=12$$.\nLa suma mínima $$b+c$$ se obtiene con $$(b, c) = (8, 4)$$.\n\nEntonces, $$N = 2^1 \\cdot 3^8 \\cdot 5^4$$.\n\nPara encontrar la cantidad de divisores que son cuadrados perfectos, los exponentes de cada factor primo deben ser números pares. Sea un divisor $$D = 2^x \\cdot 3^y \\cdot 5^z$$.\n-   Para el factor 2: $$x$$ debe ser par y $$0 \\le x \\le 1$$. La única opción es $$x=0$$. (1 opción)\n-   Para el factor 3: $$y$$ debe ser par y $$0 \\le y \\le 8$$. Las opciones para $$y$$ son 0, 2, 4, 6, 8. (5 opciones)\n-   Para el factor 5: $$z$$ debe ser par y $$0 \\le z \\le 4$$. Las opciones para $$z$$ son 0, 2, 4. (3 opciones)\n\nLa cantidad de divisores cuadrados perfectos es el producto de las opciones para cada exponente:\n$$1 \\cdot 5 \\cdot 3 = 15$$.",
+      "id_temporal": "ari_num_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "La edad actual de una persona es menor de 100 años. Se sabe que el año pasado su edad era múltiplo de 3, hace cuatro años era múltiplo de 5, y el próximo año será múltiplo de 7. Calcule la suma de las cifras de la edad de la persona.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$7$$",
+        "C": "$$8$$",
+        "D": "$$9$$",
+        "E": "$$6$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$x$$ la edad actual de la persona.\n\nLas condiciones son:\n1.  $$x < 100$$\n2.  $$x - 1$$ es múltiplo de 3 $$ \\Rightarrow x \\equiv 1 \\pmod 3$$\n3.  $$x - 4$$ es múltiplo de 5 $$ \\Rightarrow x \\equiv 4 \\pmod 5$$\n4.  $$x + 1$$ es múltiplo de 7 $$ \\Rightarrow x \\equiv -1 \\pmod 7$$\n\nDe la condición 4: $$x = 7k - 1$$ para algún entero $$k$$.\n\nSustituimos en la condición 3:\n$$7k - 1 \\equiv 4 \\pmod 5$$\n$$2k - 1 \\equiv 4 \\pmod 5$$\n$$2k \\equiv 5 \\pmod 5$$\n$$2k \\equiv 0 \\pmod 5$$\nComo 2 y 5 son coprimos, $$k$$ debe ser un múltiplo de 5. Entonces $$k = 5m$$ para algún entero $$m$$.\n\nSustituimos $$k = 5m$$ en la expresión para $$x$$:\n$$x = 7(5m) - 1 = 35m - 1$$\n\nSustituimos esta expresión de $$x$$ en la condición 2:\n$$35m - 1 \\equiv 1 \\pmod 3$$\nComo $$35 \\equiv 2 \\pmod 3$$, tenemos:\n$$2m - 1 \\equiv 1 \\pmod 3$$\n$$2m \\equiv 2 \\pmod 3$$\nComo 2 y 3 son coprimos, $$m \\equiv 1 \\pmod 3$$.\n\nLos posibles valores para $$m$$ son 1, 4, 7, etc.\n\nSi $$m = 1$$:\n$$x = 35(1) - 1 = 34$$\nVerificamos las condiciones:\n-   $$34 < 100$$ (Cumple)\n-   $$34 - 1 = 33$$ (Múltiplo de 3, cumple)\n-   $$34 - 4 = 30$$ (Múltiplo de 5, cumple)\n-   $$34 + 1 = 35$$ (Múltiplo de 7, cumple)\nTodas las condiciones se cumplen para $$x = 34$$.\n\nSi $$m = 4$$:\n$$x = 35(4) - 1 = 140 - 1 = 139$$. Esta edad es mayor de 100 años, por lo que no es la edad buscada.\n\nLa edad de la persona es 34 años.\nLa suma de las cifras de la edad es $$3 + 4 = 7$$.",
+      "id_temporal": "ari_num_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "El número $$P = 2^a \\cdot 3^3 \\cdot 5^2$$ tiene 60 divisores. Calcule la suma de los divisores múltiplos de 10 de $$P$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$36000$$",
+        "B": "$$24000$$",
+        "C": "$$18000$$",
+        "D": "$$30000$$",
+        "E": "$$42000$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, calculamos el valor de $$a$$ usando la cantidad de divisores: $$D(P) = (a+1)(3+1)(2+1) = (a+1)(4)(3) = 12(a+1)$$.\nDado que $$D(P) = 60$$, tenemos $$12(a+1) = 60 \\implies a+1 = 5 \\implies a = 4$$.\nEntonces, el número es $$P = 2^4 \\cdot 3^3 \\cdot 5^2$$.\nPara calcular la suma de los divisores múltiplos de 10, los divisores deben tener al menos un factor de 2 y un factor de 5.\nLa forma de estos divisores es $$2^x \\cdot 3^y \\cdot 5^z$$, donde $$x \\in \\{1, 2, 3, 4\\}$$, $$y \\in \\{0, 1, 2, 3\\}$$ y $$z \\in \\{1, 2\\}$$.\nLa suma de estos divisores se calcula como:\n$$(2^1 + 2^2 + 2^3 + 2^4) \\cdot (3^0 + 3^1 + 3^2 + 3^3) \\cdot (5^1 + 5^2)$$\n$$(2+4+8+16) \\cdot (1+3+9+27) \\cdot (5+25)$$\n$$(30) \\cdot (40) \\cdot (30) = 36000$$\nLa respuesta correcta es A.",
+      "id_temporal": "ari_num_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "La edad de una persona es el menor número de dos cifras tal que la suma de sus cifras es un número primo y el producto de sus cifras es un número con 4 divisores. Determine la edad de la persona.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$16$$",
+        "B": "$$23$$",
+        "C": "$$25$$",
+        "D": "$$32$$",
+        "E": "$$18$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea el número de dos cifras $$10a + b$$.\nLa suma de sus cifras ($$a+b$$) debe ser un número primo.\nEl producto de sus cifras ($$a \\cdot b$$) debe tener 4 divisores. Un número con 4 divisores es de la forma $$p^3$$ o $$p_1 \\cdot p_2$$ (donde $$p, p_1, p_2$$ son primos).\nBuscamos el menor número de dos cifras, así que comenzamos a probar desde los números más pequeños:\nSi $$a \\cdot b = 6$$ (que tiene 4 divisores: 1, 2, 3, 6):\n  $$a=1, b=6 \\implies N=16$$. Suma: $$1+6=7$$ (primo). Este cumple.\n  $$a=2, b=3 \\implies N=23$$. Suma: $$2+3=5$$ (primo). Este cumple.\n  $$a=3, b=2 \\implies N=32$$. Suma: $$3+2=5$$ (primo). Este cumple.\n  $$a=6, b=1 \\implies N=61$$. Suma: $$6+1=7$$ (primo). Este cumple.\nSi $$a \\cdot b = 8$$ (que tiene 4 divisores: 1, 2, 4, 8):\n  $$a=1, b=8 \\implies N=18$$. Suma: $$1+8=9$$ (no primo).\nSi $$a \\cdot b = 10$$ (que tiene 4 divisores: 1, 2, 5, 10):\n  $$a=2, b=5 \\implies N=25$$. Suma: $$2+5=7$$ (primo). Este cumple.\nDe los números que cumplen ambas condiciones (16, 23, 32, 61, 25), el menor es 16.\nLa respuesta correcta es A.",
+      "id_temporal": "ari_num_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "El número $$K = 2^{m+2} \\cdot 3^m \\cdot 5^1$$ tiene 48 divisores. Calcule la cantidad de divisores compuestos de $$K$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$40$$",
+        "B": "$$42$$",
+        "C": "$$44$$",
+        "D": "$$45$$",
+        "E": "$$46$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "La cantidad de divisores de $$K$$ se calcula como el producto de los exponentes de sus factores primos, aumentados en uno:\n$$D(K) = (m+2+1)(m+1)(1+1) = (m+3)(m+1)(2)$$\nSe nos dice que $$D(K) = 48$$. Entonces:\n$$2(m+1)(m+3) = 48$$\n$$(m+1)(m+3) = 24$$\nBuscamos dos números que difieran en 2 y cuyo producto sea 24. Estos son 4 y 6.\nEntonces, $$m+1 = 4 \\implies m = 3$$. (Esto también hace que $$m+3 = 6$$).\nSustituyendo $$m=3$$ en la expresión de $$K$$:\n$$K = 2^{3+2} \\cdot 3^3 \\cdot 5^1 = 2^5 \\cdot 3^3 \\cdot 5^1$$\nEl número total de divisores de $$K$$ es $$ (5+1)(3+1)(1+1) = 6 \\cdot 4 \\cdot 2 = 48 $$. (Esto confirma el valor de m).\nLos divisores simples son el número 1 y los números primos que dividen a $$K$$. Los factores primos de $$K$$ son 2, 3 y 5. Por lo tanto, hay 3 divisores primos.\nLa cantidad de divisores simples es 1 (el número 1) + 3 (los primos) = 4.\nLa cantidad de divisores compuestos se obtiene restando los divisores simples del total de divisores:\nDivisores compuestos = Divisores totales - Divisores simples\nDivisores compuestos = $$48 - 4 = 44$$\nLa respuesta correcta es C.",
+      "id_temporal": "ari_num_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$N$$ un número de dos cifras $$ab$$ (donde $$a$$ es la decena y $$b$$ la unidad). Si $$a+b$$ es un número primo menor que 10, y el número $$N$$ tiene exactamente 3 divisores, calcule el producto de las cifras $$a \\cdot b$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$6$$",
+        "B": "$$8$$",
+        "C": "$$10$$",
+        "D": "$$12$$",
+        "E": "$$15$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Un número tiene exactamente 3 divisores si y solo si es el cuadrado de un número primo (por ejemplo, $$p^2$$).\nLos números de dos cifras que son cuadrados de primos son:\n$$5^2 = 25$$\n$$7^2 = 49$$\nConsideremos $$N=25$$:\nLas cifras son $$a=2$$ y $$b=5$$. La suma de las cifras es $$a+b = 2+5 = 7$$. Este es un número primo menor que 10. Esta opción cumple ambas condiciones. El producto de las cifras sería $$a \\cdot b = 2 \\cdot 5 = 10$$.\nConsideremos $$N=49$$:\nLas cifras son $$a=4$$ y $$b=9$$. La suma de las cifras es $$a+b = 4+9 = 13$$. Este es un número primo, pero no es menor que 10. Esta opción no cumple la segunda condición.\nPor lo tanto, el único número posible es $$N=25$$.\nEl producto de las cifras es $$10$$.\nLa respuesta correcta es C.",
+      "id_temporal": "ari_num_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "La edad de un profesor de matemáticas es un número menor que 80. Si hace 1 año su edad era múltiplo de 3, dentro de 4 años será múltiplo de 5, y hace 2 años era múltiplo de 7. ¿Cuál es la suma de las cifras de la edad del profesor?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$7$$",
+        "B": "$$8$$",
+        "C": "$$9$$",
+        "D": "$$10$$",
+        "E": "$$11$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$x$$ la edad actual del profesor. Se sabe que $$x < 80$$.\nCondición 1: Hace 1 año su edad era múltiplo de 3 $$ \\implies x-1 \\equiv 0 \\pmod{3} \\implies x \\equiv 1 \\pmod{3} $$.\nCondición 2: Dentro de 4 años será múltiplo de 5 $$ \\implies x+4 \\equiv 0 \\pmod{5} \\implies x \\equiv -4 \\pmod{5} \\implies x \\equiv 1 \\pmod{5} $$.\nCondición 3: Hace 2 años era múltiplo de 7 $$ \\implies x-2 \\equiv 0 \\pmod{7} \\implies x \\equiv 2 \\pmod{7} $$.\nDe las condiciones $$x \\equiv 1 \\pmod{3}$$ y $$x \\equiv 1 \\pmod{5}$$, podemos inferir que $$x \\equiv 1 \\pmod{LCM(3,5)}$$.\nComo $$LCM(3,5) = 15$$, entonces $$x \\equiv 1 \\pmod{15}$$.\nEsto significa que $$x$$ puede ser de la forma $$15k+1$$. Dado que $$x < 80$$, los posibles valores para $$x$$ son: 1, 16, 31, 46, 61, 76.\nAhora aplicamos la tercera condición, $$x \\equiv 2 \\pmod{7}$$, a esta lista de posibles edades:\nPara $$x=1$$: $$1 \\equiv 1 \\pmod{7}$$ (no cumple)\nPara $$x=16$$: $$16 = 2 \\cdot 7 + 2 \\implies 16 \\equiv 2 \\pmod{7}$$ (sí cumple)\nPara $$x=31$$: $$31 = 4 \\cdot 7 + 3 \\implies 31 \\equiv 3 \\pmod{7}$$ (no cumple)\nPara $$x=46$$: $$46 = 6 \\cdot 7 + 4 \\implies 46 \\equiv 4 \\pmod{7}$$ (no cumple)\nPara $$x=61$$: $$61 = 8 \\cdot 7 + 5 \\implies 61 \\equiv 5 \\pmod{7}$$ (no cumple)\nPara $$x=76$$: $$76 = 10 \\cdot 7 + 6 \\implies 76 \\equiv 6 \\pmod{7}$$ (no cumple)\nLa única edad que cumple todas las condiciones es $$x=16$$.\nLa suma de las cifras de la edad del profesor es $$1+6=7$$.\nLa respuesta correcta es A.",
+      "id_temporal": "ari_num_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "El número $$N = 2^a \\cdot 3^3 \\cdot 5^b$$ tiene una cierta cantidad de divisores. Si se multiplica $$N$$ por $$15$$, la cantidad de sus divisores aumenta en $$108$$. Calcule la suma de los divisores de $$a \\cdot b$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "96",
+        "B": "100",
+        "C": "112",
+        "D": "124",
+        "E": "130"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$N = 2^a \\cdot 3^3 \\cdot 5^b$$. La cantidad de divisores de $$N$$ es $$D(N) = (a+1)(3+1)(b+1) = 4(a+1)(b+1)$$.\nAl multiplicar $$N$$ por $$15 = 3 \\cdot 5$$, obtenemos $$N \\cdot 15 = 2^a \\cdot 3^{3+1} \\cdot 5^{b+1} = 2^a \\cdot 3^4 \\cdot 5^{b+1}$$.\nLa cantidad de divisores de $$N \\cdot 15$$ es $$D(N \\cdot 15) = (a+1)(4+1)(b+1+1) = 5(a+1)(b+2)$$.\nSegún el enunciado, $$D(N \\cdot 15) - D(N) = 108$$.\n$$5(a+1)(b+2) - 4(a+1)(b+1) = 108$$\nFactorizando $$(a+1)$$: $$(a+1) [5(b+2) - 4(b+1)] = 108$$\n$$(a+1) [5b+10 - 4b-4] = 108$$\n$$(a+1) (b+6) = 108$$\nComo $$a$$ y $$b$$ son exponentes, deben ser enteros no negativos. Buscamos factores de 108. Probando con factores donde $$b+6 \\ge 6$$:\nSi $$a+1=9$$ y $$b+6=12$$\n$$a=8$$ y $$b=6$$\nVerificamos: $$(8+1)(6+6) = 9 \\cdot 12 = 108$$. Los valores son $$a=8$$ y $$b=6$$.\nNos piden la suma de los divisores de $$a \\cdot b$$. $$a \\cdot b = 8 \\cdot 6 = 48$$.\nDescomponemos canónicamente $$48 = 2^4 \\cdot 3^1$$.\nLa suma de divisores de 48 es $$S(48) = (2^0+2^1+2^2+2^3+2^4)(3^0+3^1) = (1+2+4+8+16)(1+3) = (31)(4) = 124$$. La respuesta correcta es D.",
+      "id_temporal": "ari_num_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Halle el valor de $$n$$ si el número $$E = 6^n \\cdot 10^3 \\cdot 15$$ tiene $$240$$ divisores.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, descomponemos $$E$$ en sus factores primos:\n$$E = (2 \\cdot 3)^n \\cdot (2 \\cdot 5)^3 \\cdot (3 \\cdot 5)$$\n$$E = 2^n \\cdot 3^n \\cdot 2^3 \\cdot 5^3 \\cdot 3^1 \\cdot 5^1$$\nAgrupando los factores:\n$$E = 2^{n+3} \\cdot 3^{n+1} \\cdot 5^{3+1}$$\n$$E = 2^{n+3} \\cdot 3^{n+1} \\cdot 5^4$$\nLa cantidad de divisores de $$E$$ se calcula como el producto de los exponentes de sus factores primos aumentados en 1:\n$$D(E) = (n+3+1)(n+1+1)(4+1)$$\n$$D(E) = (n+4)(n+2)(5)$$\nSegún el enunciado, $$D(E) = 240$$. Entonces:\n$$5(n+4)(n+2) = 240$$\n$$(n+4)(n+2) = \frac{240}{5}$$\n$$(n+4)(n+2) = 48$$\nBuscamos dos números que difieran en 2 y cuyo producto sea 48. Esos números son 6 y 8.\nSi $$n+2 = 6$$, entonces $$n=4$$.\nSi $$n+4 = 8$$, entonces $$n=4$$.\nPor lo tanto, $$n=4$$. La respuesta correcta es B.",
+      "id_temporal": "ari_num_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sea $$P$$ un número de dos cifras $$\\overline{ab}$$. Si la diferencia entre el cuadrado de $$P$$ y el cuadrado del número formado al invertir sus cifras, $$\\overline{ba}$$, es $$1683$$, determine la cantidad de divisores de $$P$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "4",
+        "B": "6",
+        "C": "8",
+        "D": "10",
+        "E": "12"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El número $$P$$ se puede expresar como $$10a+b$$. El número con las cifras invertidas es $$10b+a$$.\nLa diferencia de cuadrados es $$(10a+b)^2 - (10b+a)^2 = 1683$$.\nUsando la identidad $$x^2 - y^2 = (x-y)(x+y)$$:\n$$[(10a+b) - (10b+a)] \\cdot [(10a+b) + (10b+a)] = 1683$$\n$$(9a - 9b) \\cdot (11a + 11b) = 1683$$\n$$9(a-b) \\cdot 11(a+b) = 1683$$\n$$99(a-b)(a+b) = 1683$$\nDividimos ambos lados por 99:\n$$(a-b)(a+b) = \frac{1683}{99}$$\n$$(a-b)(a+b) = 17$$\nDado que 17 es un número primo, sus únicos factores enteros positivos son 1 y 17.\nComo $$a$$ y $$b$$ son dígitos y $$a \neq 0$$, además $$a+b > a-b$$, tenemos:\n$$a-b = 1$$ (Ecuación 1)\n$$a+b = 17$$ (Ecuación 2)\nSumando (1) y (2):\n$$(a-b) + (a+b) = 1 + 17$$\n$$2a = 18 \\implies a=9$$\nSustituyendo $$a=9$$ en (2):\n$$9+b = 17 \\implies b=8$$\nEntonces, el número $$P$$ es $$98$$.\nAhora, calculamos la cantidad de divisores de $$P=98$$.\nPrimero, descomponemos $$98$$ en sus factores primos: $$98 = 2 \\cdot 49 = 2^1 \\cdot 7^2$$.\nLa cantidad de divisores $$D(P)$$ es $$(1+1)(2+1) = 2 \\cdot 3 = 6$$. La respuesta correcta es B.",
+      "id_temporal": "ari_num_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un número $$P$$ se descompone canónicamente como $$P = 2^x \\cdot 3^y \\cdot 5^z$$. Si $$P$$ tiene $$16$$ divisores y la suma de sus exponentes $$x+y+z=6$$, ¿cuántos divisores de $$P$$ son múltiplos de $$12$$?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "4",
+        "B": "6",
+        "C": "8",
+        "D": "10",
+        "E": "12"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Tenemos dos condiciones para el número $$P = 2^x \\cdot 3^y \\cdot 5^z$$:\n1. Cantidad de divisores: $$(x+1)(y+1)(z+1) = 16$$.\n2. Suma de exponentes: $$x+y+z = 6$$.\nPara que el producto de tres números sea 16, y $$x,y,z$$ sean enteros no negativos, las posibles combinaciones de $$(x+1, y+1, z+1)$$ (sin considerar orden) son:\n*   $$(16, 1, 1)$$ $\\implies (x,y,z) = (15,0,0)$. Suma de exponentes $$15+0+0 = 15 \neq 6$$. Descartado.\n*   $$(8, 2, 1)$$ $\\implies (x,y,z) = (7,1,0)$. Suma de exponentes $$7+1+0 = 8 \neq 6$$. Descartado.\n*   $$(4, 4, 1)$$ $\\implies (x,y,z) = (3,3,0)$. Suma de exponentes $$3+3+0 = 6$$. Esta combinación cumple ambas condiciones.\nEntonces, $$P$$ tiene los exponentes $$(3,3,0)$$ en algún orden. Elegimos $$x=3, y=3, z=0$$. Así, $$P = 2^3 \\cdot 3^3 \\cdot 5^0 = 2^3 \\cdot 3^3 = 8 \\cdot 27 = 216$$.\nAhora, debemos encontrar cuántos divisores de $$P$$ son múltiplos de $$12$$. Primero, descomponemos $$12$$ en sus factores primos: $$12 = 2^2 \\cdot 3^1$$.\nUn divisor de $$P$$ es de la forma $$d = 2^a \\cdot 3^b$$, donde $$0 \\le a \\le 3$$ y $$0 \\le b \\le 3$$. (No hay factor 5 en $$P$$).\nPara que $$d$$ sea un múltiplo de $$12$$, debe contener al menos $$2^2$$ y $$3^1$$. Es decir, los exponentes deben cumplir:\n*   $$a \\ge 2$$\n*   $$b \\ge 1$$\nLos posibles valores para $$a$$ son $$2, 3$$ (2 opciones).\nLos posibles valores para $$b$$ son $$1, 2, 3$$ (3 opciones).\nEl número de divisores de $$P$$ que son múltiplos de 12 es el producto de las opciones para cada exponente: $$2 \\cdot 3 = 6$$. La respuesta correcta es B.",
+      "id_temporal": "ari_num_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "La edad de Sofía es el menor número de $$2$$ cifras que tiene $$8$$ divisores y la suma de sus cifras es un número primo. ¿Cuál es la edad de Sofía?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "24",
+        "B": "30",
+        "C": "40",
+        "D": "56",
+        "E": "70"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$N$$ la edad de Sofía. $$N$$ es un número de 2 cifras ($$10 \\le N \\le 99$$).\nCondición 1: $$N$$ tiene $$8$$ divisores. Un número con 8 divisores puede tener las siguientes formas canónicas:\n*   $$p^7$$: Por ejemplo, $$2^7 = 128$$. Es un número de 3 cifras, así que lo descartamos.\n*   $$p^3 \\cdot q^1$$: donde $$p$$ y $$q$$ son números primos distintos.\n    *   Si $$p=2$$:\n        *   $$2^3 \\cdot 3 = 8 \\cdot 3 = 24$$. Suma de cifras: $$2+4=6$$ (no es primo). Descartado.\n        *   $$2^3 \\cdot 5 = 8 \\cdot 5 = 40$$. Suma de cifras: $$4+0=4$$ (no es primo). Descartado.\n        *   $$2^3 \\cdot 7 = 8 \\cdot 7 = 56$$. Suma de cifras: $$5+6=11$$ (es primo). Candidato: $$56$$.\n        *   $$2^3 \\cdot 11 = 8 \\cdot 11 = 88$$. Suma de cifras: $$8+8=16$$ (no es primo). Descartado.\n    *   Si $$p=3$$:\n        *   $$3^3 \\cdot 2 = 27 \\cdot 2 = 54$$. Suma de cifras: $$5+4=9$$ (no es primo). Descartado.\n*   $$p^1 \\cdot q^1 \\cdot r^1$$: donde $$p, q, r$$ son números primos distintos.\n    *   $$2 \\cdot 3 \\cdot 5 = 30$$. Suma de cifras: $$3+0=3$$ (es primo). Candidato: $$30$$.\n    *   $$2 \\cdot 3 \\cdot 7 = 42$$. Suma de cifras: $$4+2=6$$ (no es primo). Descartado.\n    *   $$2 \\cdot 5 \\cdot 7 = 70$$. Suma de cifras: $$7+0=7$$ (es primo). Candidato: $$70$$.\nLos números de 2 cifras que tienen 8 divisores y cuya suma de cifras es un número primo son: $$30, 56, 70$$.\nLa edad de Sofía es el *menor* de estos números. El menor es $$30$$. La respuesta correcta es B.",
+      "id_temporal": "ari_num_015",
+      "imagen": null
+    }
+  ]
+}

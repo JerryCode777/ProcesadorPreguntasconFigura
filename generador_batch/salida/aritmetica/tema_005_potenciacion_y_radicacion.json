@@ -1,0 +1,234 @@
+{
+  "materia": "aritmetica",
+  "numero_tema": 5,
+  "total_temas": 6,
+  "titulo_tema": "POTENCIACIÓN Y RADICACIÓN",
+  "tema": "potenciacion_y_radicacion",
+  "preguntas": [
+    {
+      "pregunta": "Determine cuántos números naturales, entre 100 y 10 000, son a la vez un cuadrado perfecto y un cubo perfecto, y además son múltiplos de 3.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un número que es a la vez un cuadrado perfecto y un cubo perfecto es una sexta potencia ($$n^6$$). Buscamos números $$n^6$$ tales que $$100 < n^6 < 10000$$. Calculamos los límites para $$n$$:\n$$ (100)^{1/6} < n < (10000)^{1/6} $$\n$$ 2.15 < n < 6.81 $$\nLos posibles valores enteros para $$n$$ son: 3, 4, 5, 6.\nAhora, debemos verificar la condición de que el número ($$n^6$$) sea múltiplo de 3. Para que $$n^6$$ sea múltiplo de 3, $$n$$ debe ser múltiplo de 3.\n- Si $$n=3$$, $$3^6 = 729$$. Este número está en el rango y es múltiplo de 3. (Válido)\n- Si $$n=4$$, $$4^6 = 4096$$. Este número no es múltiplo de 3. (No válido)\n- Si $$n=5$$, $$5^6 = 15625$$. Este número está fuera del rango superior (mayor que 10 000). (No válido)\n- Si $$n=6$$, $$6^6 = 46656$$. Este número está fuera del rango superior (mayor que 10 000). (No válido)\nPor lo tanto, solo hay un número que cumple todas las condiciones: 729.",
+      "id_temporal": "ari_pot_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una raíz cuadrada inexacta, el residuo por defecto excede en 12 unidades al residuo por exceso. Si la raíz entera es 20, halle la suma de las cifras del radicando.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "9",
+        "B": "10",
+        "C": "11",
+        "D": "12",
+        "E": "13"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$R$$ la raíz entera, $$d$$ el residuo por defecto y $$d_{ex}$$ el residuo por exceso.\nTenemos que $$R = 20$$.\nLa primera condición es que el residuo por defecto excede en 12 unidades al residuo por exceso: $$d = d_{ex} + 12$$.\\Sabemos que en una raíz cuadrada, la suma del residuo por defecto y el residuo por exceso es igual al doble de la raíz entera: $$d + d_{ex} = 2R$$.\nSustituimos $$R=20$$ en la ecuación: $$d + d_{ex} = 2(20) = 40$$.\nAhora tenemos un sistema de ecuaciones:\n1) $$d = d_{ex} + 12$$\n2) $$d + d_{ex} = 40$$\nSustituimos (1) en (2):\n$$(d_{ex} + 12) + d_{ex} = 40$$\n$$2d_{ex} + 12 = 40$$\n$$2d_{ex} = 28$$\n$$d_{ex} = 14$$\nAhora encontramos $$d$$:\n$$d = 14 + 12 = 26$$\nPara que una raíz cuadrada sea válida, el residuo por defecto $$d$$ debe ser menor que el doble de la raíz más 1 ($$d < 2R+1$$). En este caso, $$26 < 2(20)+1 = 41$$, lo cual es cierto.\nEl radicando ($$N$$) se calcula como $$N = R^2 + d$$.\n$$N = 20^2 + 26 = 400 + 26 = 426$$.\nFinalmente, la suma de las cifras del radicando es $$4 + 2 + 6 = 12$$.",
+      "id_temporal": "ari_pot_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una población de bacterias se triplica cada 2 horas. Si inicialmente hay 100 bacterias, ¿cuántas habrá después de 12 horas?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "3600",
+        "B": "7290",
+        "C": "10800",
+        "D": "72900",
+        "E": "145800"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "La población inicial de bacterias es de 100.\nLa población se triplica cada 2 horas.\nNecesitamos saber cuántos períodos de 2 horas hay en 12 horas: $$12 \text{ horas} / 2 \text{ horas/período} = 6 \text{ períodos}$$.\nDespués de 6 períodos, la población inicial se habrá multiplicado por $$3^6$$.\nCantidad final = Cantidad inicial $$\times$$ (Factor de crecimiento)$^{Número de períodos}$\nCantidad final = $$100 \times 3^6$$\nCalculamos $$3^6$$:\n$$3^1 = 3$$\n$$3^2 = 9$$\n$$3^3 = 27$$\n$$3^4 = 81$$\n$$3^5 = 243$$\n$$3^6 = 729$$\nCantidad final = $$100 \times 729 = 72900$$ bacterias.",
+      "id_temporal": "ari_pot_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuál es el menor número entero positivo por el que se debe multiplicar a 108 para que el producto sea un cubo perfecto?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "6",
+        "E": "9"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, realizamos la descomposición en factores primos de 108:\n$$108 = 2 \times 54 = 2^2 \times 27 = 2^2 \times 3^3$$\nPara que un número sea un cubo perfecto, los exponentes de sus factores primos deben ser múltiplos de 3.\nEn la factorización de 108: $$2^2 \times 3^3$$\n- El factor $$3^3$$ ya tiene un exponente que es múltiplo de 3.\n- El factor $$2^2$$ tiene un exponente de 2. Para que el exponente de 2 sea un múltiplo de 3 (el siguiente múltiplo de 3 es 3), necesitamos multiplicar por $$2^1$$ (ya que $$2^2 \times 2^1 = 2^3$$).\nPor lo tanto, el menor número entero positivo por el que se debe multiplicar a 108 es $$2^1 = 2$$.",
+      "id_temporal": "ari_pot_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean $$A$$ y $$B$$ dos enteros consecutivos. Si el número de enteros comprendidos estrictamente entre $$A^2$$ y $$B^2$$ es 40, halle el valor de $$A+B$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "39",
+        "B": "40",
+        "C": "41",
+        "D": "42",
+        "E": "43"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Dado que $$A$$ y $$B$$ son dos enteros consecutivos, podemos expresar $$B$$ como $$A+1$$.\nEl número de enteros comprendidos estrictamente entre dos números $$X$$ e $$Y$$ (donde $$X < Y$$) es $$Y - X - 1$$.\nEn este caso, $$X = A^2$$ y $$Y = B^2 = (A+1)^2$$.\nLa condición establece que el número de enteros entre ellos es 40:\n$$(A+1)^2 - A^2 - 1 = 40$$\nExpandimos $$(A+1)^2$$:\n$$(A^2 + 2A + 1) - A^2 - 1 = 40$$\nSimplificamos la ecuación:\n$$2A = 40$$\n$$A = 20$$\nDado que $$B = A+1$$, entonces $$B = 20+1 = 21$$.\nLa pregunta pide hallar el valor de $$A+B$$:\n$$A+B = 20 + 21 = 41$$.",
+      "id_temporal": "ari_pot_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "La diferencia entre los cubos de dos números enteros positivos consecutivos es $$397$$. ¿Cuál es la suma de estos dos números?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "21",
+        "B": "23",
+        "C": "25",
+        "D": "27",
+        "E": "29"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sean los números $$x$$ y $$x+1$$. La diferencia de sus cubos es $$(x+1)^{3} - x^{3} = 397$$. Expandiendo, $$x^{3} + 3x^{2} + 3x + 1 - x^{3} = 397$$. Esto se simplifica a $$3x^{2} + 3x + 1 = 397$$. Restando 1, $$3x^{2} + 3x = 396$$. Dividiendo por 3, $$x^{2} + x = 132$$. Reorganizando, $$x^{2} + x - 132 = 0$$. Factorizando, $$(x + 12)(x - 11) = 0$$. Como $$x$$ es un número entero positivo, $$x = 11$$. Los números son $$11$$ y $$12$$. Su suma es $$11 + 12 = 23$$.",
+      "id_temporal": "ari_pot_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuál es el menor entero positivo por el que se debe multiplicar a $$2^{4} \\cdot 3^{2} \\cdot 5^{1}$$ para que el producto resultante sea un cubo perfecto?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "60",
+        "B": "150",
+        "C": "300",
+        "D": "450",
+        "E": "900"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que un número sea un cubo perfecto, todos los exponentes de sus factores primos deben ser múltiplos de 3. El número dado es $$2^{4} \\cdot 3^{2} \\cdot 5^{1}$$. \n- Para $$2^{4}$$, el exponente más cercano y mayor múltiplo de 3 es 6. Se necesita multiplicar por $$2^{6}/2^{4} = 2^{2}$$.\n- Para $$3^{2}$$, el exponente más cercano y mayor múltiplo de 3 es 3. Se necesita multiplicar por $$3^{3}/3^{2} = 3^{1}$$.\n- Para $$5^{1}$$, el exponente más cercano y mayor múltiplo de 3 es 3. Se necesita multiplicar por $$5^{3}/5^{1} = 5^{2}$$.\nEl menor entero positivo por el que se debe multiplicar es $$2^{2} \\cdot 3^{1} \\cdot 5^{2} = 4 \\cdot 3 \\cdot 25 = 300$$.",
+      "id_temporal": "ari_pot_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una raíz cuadrada inexacta, el residuo por defecto es $$5$$. Si el radicando se incrementa en $$10$$ unidades, la raíz aumenta en $$1$$ y el nuevo residuo por defecto es $$2$$. Determine la raíz original.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "5",
+        "B": "6",
+        "C": "7",
+        "D": "8",
+        "E": "9"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea $$N$$ el radicando original y $$R$$ la raíz original.\n- La primera condición establece que $$N = R^{2} + 5$$.\n- La segunda condición dice que si el radicando se incrementa en 10 ($$N+10$$), la raíz aumenta en 1 ($$R+1$$) y el nuevo residuo por defecto es 2. Entonces, $$N + 10 = (R+1)^{2} + 2$$.\nSustituimos $$N$$ de la primera ecuación en la segunda:\n$$(R^{2} + 5) + 10 = (R+1)^{2} + 2$$\n$$R^{2} + 15 = R^{2} + 2R + 1 + 2$$\n$$R^{2} + 15 = R^{2} + 2R + 3$$\n$$15 = 2R + 3$$\n$$12 = 2R$$\n$$R = 6$$. La raíz original es 6.",
+      "id_temporal": "ari_pot_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "Calcular el valor de la expresión $$E = \frac{\\sqrt{2^{10}} + \\sqrt[3]{4^{9}}}{ (\\sqrt{2})^{4} }$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "48",
+        "E": "64"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Vamos a calcular cada término por separado:\n- $$\\sqrt{2^{10}} = 2^{10/2} = 2^{5} = 32$$\n- $$\\sqrt[3]{4^{9}} = \\sqrt[3]{(2^{2})^{9}} = \\sqrt[3]{2^{18}} = 2^{18/3} = 2^{6} = 64$$\n- $$(\\sqrt{2})^{4} = (2^{1/2})^{4} = 2^{4/2} = 2^{2} = 4$$\nAhora sustituimos estos valores en la expresión de $$E$$:\n$$E = \frac{32 + 64}{4} = \frac{96}{4} = 24$$.",
+      "id_temporal": "ari_pot_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si $$N$$ es un número natural y se sabe que su cubo, $$N^{3}$$, termina en el dígito $$9$$, ¿en qué dígito debe terminar necesariamente el número $$N$$?",
+      "dificultad": 1,
+      "opciones": {
+        "A": "3",
+        "B": "5",
+        "C": "7",
+        "D": "9",
+        "E": "No se puede determinar."
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Para determinar el último dígito de $$N$$, analizamos el último dígito de los cubos de los dígitos del 0 al 9:\n- El cubo de un número que termina en 0 termina en 0 ($$0^{3} = 0$$)\n- El cubo de un número que termina en 1 termina en 1 ($$1^{3} = 1$$)\n- El cubo de un número que termina en 2 termina en 8 ($$2^{3} = 8$$)\n- El cubo de un número que termina en 3 termina en 7 ($$3^{3} = 27$$)\n- El cubo de un número que termina en 4 termina en 4 ($$4^{3} = 64$$)\n- El cubo de un número que termina en 5 termina en 5 ($$5^{3} = 125$$)\n- El cubo de un número que termina en 6 termina en 6 ($$6^{3} = 216$$)\n- El cubo de un número que termina en 7 termina en 3 ($$7^{3} = 343$$)\n- El cubo de un número que termina en 8 termina en 2 ($$8^{3} = 512$$)\n- El cubo de un número que termina en 9 termina en 9 ($$9^{3} = 729$$)\nEl único dígito cuya tercera potencia termina en 9 es el 9. Por lo tanto, $$N$$ debe terminar en 9.",
+      "id_temporal": "ari_pot_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "¿Cuál es el menor número entero positivo por el que se debe multiplicar $$M = 2^5 \\cdot 3^3 \\cdot 5^1$$ para que el producto resultante sea un cubo perfecto?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$25$$",
+        "C": "$$50$$",
+        "D": "$$75$$",
+        "E": "$$100$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Para que un número sea un cubo perfecto, todos los exponentes de sus factores primos deben ser múltiplos de 3. \nEl número dado es $$M = 2^5 \\cdot 3^3 \\cdot 5^1$$. \n- Para el factor $$2^5$$, necesitamos $$2^1$$ para que el exponente sea 6 (múltiplo de 3). \n- Para el factor $$3^3$$, el exponente ya es 3 (múltiplo de 3), por lo que no necesita nada. \n- Para el factor $$5^1$$, necesitamos $$5^2$$ para que el exponente sea 3 (múltiplo de 3). \nEntonces, el menor número por el que se debe multiplicar $$M$$ es $$2^1 \\cdot 5^2 = 2 \\cdot 25 = 50$$.",
+      "id_temporal": "ari_pot_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "En una raíz cuadrada inexacta por defecto, la suma del radicando, la raíz entera y el residuo es 120. Si la raíz entera es el doble del residuo, ¿cuál es el valor del radicando?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$95$$",
+        "B": "$$100$$",
+        "C": "$$105$$",
+        "D": "$$110$$",
+        "E": "$$115$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$N$$ el radicando, $$R$$ la raíz entera y $$d$$ el residuo. \nSabemos que $$N = R^2 + d$$. \nTambién se nos da que $$N + R + d = 120$$ y $$R = 2d$$. \nSustituyendo $$R = 2d$$ en la primera ecuación: $$N = (2d)^2 + d = 4d^2 + d$$. \nAhora, sustituimos $$N$$ y $$R$$ en la segunda ecuación: \n$$(4d^2 + d) + (2d) + d = 120$$ \n$$4d^2 + 4d = 120$$ \nDividiendo por 4: $$d^2 + d = 30$$ \n$$d^2 + d - 30 = 0$$ \nFactorizando: $$(d+6)(d-5) = 0$$ \nDado que el residuo $$d$$ debe ser un número positivo, $$d = 5$$. \nEntonces, la raíz entera $$R = 2d = 2 \\cdot 5 = 10$$. \nVerificamos la condición del residuo: $$d < 2R+1$$, que es $$5 < 2(10)+1 \\Rightarrow 5 < 21$$, lo cual es cierto. \nFinalmente, el radicando $$N = R^2 + d = 10^2 + 5 = 100 + 5 = 105$$.",
+      "id_temporal": "ari_pot_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una colonia de bacterias se reproduce dividiéndose en dos cada 20 minutos. Si se introduce una sola bacteria en un cultivo a las 9:00 AM, ¿aproximadamente a qué hora habrá un millón de bacterias?",
+      "dificultad": 2,
+      "opciones": {
+        "A": "2:40 PM",
+        "B": "3:00 PM",
+        "C": "3:20 PM",
+        "D": "3:40 PM",
+        "E": "4:00 PM"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "La población de bacterias crece exponencialmente, duplicándose cada 20 minutos. \nSi $$n$$ es el número de períodos de 20 minutos, la cantidad de bacterias será $$2^n$$. \nQueremos saber cuándo $$2^n = 1,000,000$$. \nSabemos que $$2^{10} = 1024$$, que es aproximadamente $$10^3$$. \nEntonces, $$2^{20} = (2^{10})^2 \\approx (10^3)^2 = 10^6 = 1,000,000$$. \nPor lo tanto, se necesitan aproximadamente $$n = 20$$ períodos de 20 minutos. \nEl tiempo total transcurrido es $$20 \\cdot 20$$ minutos $$= 400$$ minutos. \nConvertimos 400 minutos a horas y minutos: $$400 \\div 60 = 6$$ horas y $$40$$ minutos. \nSi la bacteria se introdujo a las 9:00 AM, entonces: \n9:00 AM + 6 horas 40 minutos = 3:40 PM.",
+      "id_temporal": "ari_pot_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean $$P$$ y $$Q$$ dos números enteros positivos consecutivos tales que $$Q = P+1$$. Si entre los cubos de $$P$$ y $$Q$$ hay exactamente 216 números enteros, ¿cuál es el valor de $$P^2$$?",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$49$$",
+        "B": "$$64$$",
+        "C": "$$81$$",
+        "D": "$$100$$",
+        "E": "$$121$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "El número de enteros entre $$P^3$$ y $$Q^3$$ es $$Q^3 - P^3 - 1$$. \nSegún el problema, $$Q^3 - P^3 - 1 = 216$$. \nEsto implica $$Q^3 - P^3 = 217$$. \nDado que $$Q = P+1$$, podemos sustituirlo en la ecuación: \n$$(P+1)^3 - P^3 = 217$$ \nUsando la expansión del cubo: $$(P^3 + 3P^2 + 3P + 1) - P^3 = 217$$ \n$$3P^2 + 3P + 1 = 217$$ \n$$3P^2 + 3P - 216 = 0$$ \nDividiendo toda la ecuación por 3: \n$$P^2 + P - 72 = 0$$ \nFactorizando la ecuación cuadrática: \n$$(P+9)(P-8) = 0$$ \nDado que $$P$$ es un entero positivo, $$P = 8$$. \nEl problema nos pide el valor de $$P^2$$. \n$$P^2 = 8^2 = 64$$.",
+      "id_temporal": "ari_pot_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Determina cuántos números naturales, múltiplos de 5, existen entre 100 y 100 000 (ambos inclusive) que son al mismo tiempo cuadrados perfectos y cubos perfectos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$0$$",
+        "B": "$$1$$",
+        "C": "$$2$$",
+        "D": "$$3$$",
+        "E": "$$4$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Un número que es a la vez un cuadrado perfecto y un cubo perfecto es una sexta potencia perfecta. Es decir, el número es de la forma $$n^6$$. \nBuscamos números $$n^6$$ que estén en el rango $$100 \\le n^6 \\le 100 000$$. \nProbemos valores de $$n$$: \n- Si $$n=1$$, $$1^6 = 1$$ (fuera de rango). \n- Si $$n=2$$, $$2^6 = 64$$ (fuera de rango). \n- Si $$n=3$$, $$3^6 = 729$$ (dentro de rango). \n- Si $$n=4$$, $$4^6 = 4096$$ (dentro de rango). \n- Si $$n=5$$, $$5^6 = 15625$$ (dentro de rango). \n- Si $$n=6$$, $$6^6 = 46656$$ (dentro de rango). \n- Si $$n=7$$, $$7^6 = 117649$$ (fuera de rango). \nLos números que son sextas potencias en el rango son: 729, 4096, 15625, 46656. \nAhora, debemos determinar cuáles de estos son múltiplos de 5. Un número es múltiplo de 5 si su última cifra es 0 o 5. \nO, de manera equivalente, si $$n^6$$ es múltiplo de 5, entonces $$n$$ debe ser múltiplo de 5. \n- Para $$n=3$$, $$3^6$$ no es múltiplo de 5. \n- Para $$n=4$$, $$4^6$$ no es múltiplo de 5. \n- Para $$n=5$$, $$5^6 = 15625$$ es múltiplo de 5 (termina en 5). \n- Para $$n=6$$, $$6^6$$ no es múltiplo de 5. \nSolo hay un número que cumple todas las condiciones: $$15625$$. \nPor lo tanto, la cantidad de números es 1.",
+      "id_temporal": "ari_pot_015",
+      "imagen": null
+    }
+  ]
+}

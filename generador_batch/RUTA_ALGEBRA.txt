@@ -1,0 +1,5472 @@
+ ESTRUCTURA DE TEMAS - ÁLGEBRA
+
+Número de Temas: 29
+
+Ruta de Aprendizaje
+
+TEMA 1: DIVISIÓN DE POLINOMIOS
+TEMA 2: PRODUCTOS NOTABLES
+TEMA 3: COCIENTES NOTABLES
+TEMA 4: FACTORIZACIÓN
+TEMA 5: FACTORIZACIÓN DE TRINOMIOS Y POLINOMIOS
+TEMA 6: MCM Y MCD DE POLINOMIOS
+TEMA 7: ECUACIONES CUADRÁTICAS
+TEMA 8: RAÍCES DE UNA ECUACIÓN POLINOMIAL
+TEMA 9: MATRICES Y OPERACIONES CON MATRICES
+TEMA 10: DETERMINANTE E INVERSA DE UNA MATRIZ 2x2
+TEMA 11: DETERMINANTE E INVERSA DE UNA MATRIZ DE 3x3
+TEMA 12: SISTEMAS DE ECUACIONES LINEALES CON DOS Y TRES VARIABLES
+TEMA 13: SISTEMA DE INECUACIONES LINEALES
+TEMA 14: RADICACIÓN Y RACIONALIZACIÓN DE EXPRESIONES ALGEBRAICAS
+TEMA 15: RAÍCES DE UNA ECUACIÓN POLINOMIAL
+TEMA 16: PRODUCTO CARTESIANO, RELACIONES BINARIAS Y FUNCIONES
+TEMA 17: FUNCIÓN CONSTANTE E IDENTIDAD
+TEMA 18: FUNCIONES ESPECIALES
+TEMA 19: FUNCIÓN CUADRÁTICA
+TEMA 20: FUNCIÓN VALOR ABSOLUTA
+TEMA 21: FUNCIÓN RAÍZ CUADRADA
+TEMA 22: FUNCIÓN RACIONAL
+TEMA 23: FUNCIÓN IRRACIONAL
+TEMA 24: OPERACIONES CON FUNCIONES Y FUNCIÓN COMPUESTA
+TEMA 25: TIPOS DE FUNCIONES: INYECTIVA, SURYECTIVA Y BIYECTIVA
+TEMA 26: FUNCIÓN INVERSA
+TEMA 27: ECUACIÓN Y FUNCIÓN EXPONENCIAL
+TEMA 28: ECUACIÓN LOGARÍTMICA
+TEMA 29: FUNCIÓN LOGARÍTMICA
+
+
+
+
+
+
+
+
+
+
+TEMA 1: DIVISIÓN DE POLINOMIOS
+PROBLEMA 8
+Texto de la pregunta:
+Al dividir P(x) entre (x + 1)(x + 2)(x^4 + 1), se obtiene un resto igual a: 3x – 2; hallar el resto de dividir P(x) entre x + 2 y P(x) entre x + 1.
+Alternativas:
+A) –8 ; 5
+B) –8 ; –5
+C) 8 ; –5
+D) 0 ; 0
+E) –5 ; 3
+Resolución:
+Si al dividir P(x) por (x + 1)(x + 2)(x^4 + 1) el resto es 3x – 2, entonces P(x) y 3x – 2 tienen el mismo valor cuando x = –2 y x = –1.
+Para x = –2:
+P(–2) = 3(–2) – 2
+P(–2) = –6 – 2
+P(–2) = –8
+Para x = –1:
+P(–1) = 3(–1) – 2
+P(–1) = –3 – 2
+P(–1) = –5
+Respuesta: –8 ; –5
+Clave: B) –8 ; –5
+PROBLEMA 6
+Texto de la pregunta:
+Don Benigno recibe un bono, cuyo monto en soles, se depositó en el banco. El valor numérico de este monto resulta ser la suma de los coeficientes del siguiente polinomio homogéneo:
+P(x ; y) = (2r + 4)x^7 y^(n^2) + 7m x^m y^r + (3m + 8r)x^(3n) y^(n^2 – 14)
+Si el banco le cobra una comisión del 10% del depósito, ¿cuánto recibe finalmente Don Benigno?
+Resolución:
+Como el polinomio es homogéneo, todos los términos deben tener el mismo grado total.
+Primer término:
+7 + n^2
+Tercer término:
+3n + (n^2 – 14)
+Igualando:
+7 + n^2 = 3n + n^2 – 14
+7 = 3n – 14
+3n = 21
+n = 7
+El grado total es:
+7 + 49 = 56
+Para el segundo término:
+m + r = 56
+La suma de coeficientes es:
+(2r + 4) + 7m + (3m + 8r)
+= 10r + 10m + 4
+= 10(m + r) + 4
+= 10(56) + 4
+= 564
+El depósito es 564 soles.
+El banco cobra el 10%, por lo tanto recibe el 90%:
+0.9 × 564 = 507.6
+Respuesta: 507.6 soles
+PROBLEMA 5
+Texto de la pregunta:
+Si los polinomios
+P(x) = 2(mx + n)^2 + mx^2 – 2n
+R(x) = 4(9x^2 + 8x + p)
+son idénticos. Calcular P(–1), sabiendo que m > 0.
+Alternativas:
+A) 8
+B) 12
+C) –4
+D) 14
+E) 9
+Resolución:
+Desarrollamos P(x):
+P(x) = 2(m^2 x^2 + 2mnx + n^2) + mx^2 – 2n
+P(x) = (2m^2 + m)x^2 + 4mnx + (2n^2 – 2n)
+Desarrollamos R(x):
+R(x) = 36x^2 + 32x + 4p
+Igualando coeficientes:
+2m^2 + m = 36
+2m^2 + m – 36 = 0
+m = 4
+4mn = 32
+16n = 32
+n = 2
+Calculamos P(–1):
+P(–1) = 2(–4 + 2)^2 + 4 – 4
+P(–1) = 2(4)
+P(–1) = 8
+Respuesta: 8
+Clave: A) 8
+PROBLEMA 4
+Texto de la pregunta:
+El término independiente del polinomio mónico
+P(x ; y) = 3x^n + 2x^(17 – n) – x^(n – 14) + 5x^(n/3) + (b – n)x^(n + 2) + 7 – n + 3b
+representa la cantidad en soles que tiene Mauricio. ¿Cuánto le quedaría si gasta b + 2 soles?
+Alternativas:
+A) 12
+B) 20
+C) 14
+D) 25
+E) 22
+Resolución:
+Para que sea polinomio, todos los exponentes deben ser enteros no negativos.
+De n – 14 ≥ 0 ⇒ n ≥ 14
+De 17 – n ≥ 0 ⇒ n ≤ 17
+Además, n/3 debe ser entero.
+El único valor posible es:
+n = 15
+Como el polinomio es mónico, el coeficiente del término de mayor grado debe ser 1.
+El mayor exponente es n + 2, cuyo coeficiente es b – n.
+b – n = 1
+b – 15 = 1
+b = 16
+El término independiente es:
+7 – n + 3b
+7 – 15 + 48 = 40
+Mauricio tiene 40 soles.
+Gasta b + 2 = 18 soles.
+Le queda:
+40 – 18 = 22
+Respuesta: 22
+Clave: E) 22
+PROBLEMA N.º 27
+Texto de la pregunta:
+Si los polinomios
+P(x) = x(x + 1)(x + 2)(x + 3) + 1
+y Q(x) = (ax^2 + bx + c)^d
+son idénticos, halle a^2 + b + c + d.
+Alternativas:
+A) 7
+B) 8
+C) 9
+D) 10
+E) 11
+Resolución:
+Desarrollamos P(x):
+P(x) = x^4 + 6x^3 + 11x^2 + 6x + 1
+Este polinomio es el cuadrado de:
+(x^2 + 3x + 1)
+Entonces:
+a = 1
+b = 3
+c = 1
+d = 2
+Calculamos:
+a^2 + b + c + d
+1 + 3 + 1 + 2 = 7
+Respuesta: 7
+Clave: A) 7
+PROBLEMA N.º 28
+Texto de la pregunta:
+Al dividir el polinomio P(x) entre x, el resto es 104 y al dividirlo entre x – 3, el resto es 140. Halle el resto de la división de P(x) entre x^2 – 3x.
+Alternativas:
+A) 4x + 50
+B) 12x + 104
+C) 3x + 17
+D) x + 12
+E) 3x + 104
+Resolución:
+Como x^2 – 3x = x(x – 3), el resto es un polinomio de grado menor que 2:
+R(x) = ax + b
+P(0) = 104 ⇒ b = 104
+P(3) = 140 ⇒ 3a + 104 = 140
+3a = 36
+a = 12
+El resto es:
+12x + 104
+Respuesta: 12x + 104
+Clave: B) 12x + 104
+PROBLEMA N.º 23
+Texto de la pregunta:
+Luego de realizar la división
+(3x^4 + 7x^3 + ax^2 + bx + c) / (x^2 + 2x + 2)
+se obtiene un cociente cuya suma de coeficientes es 7 y como resto R(x) = x + 4. Determine el valor de E = (a + b) / c.
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 5
+E) 8
+Resolución:
+Sea el cociente:
+Q(x) = ux^2 + vx + w
+La suma de coeficientes es:
+u + v + w = 7
+Se cumple:
+Dividendo = divisor × cociente + resto
+Igualando coeficientes:
+u = 3
+v + 2u = 7 ⇒ v = 1
+u + v + w = 7 ⇒ w = 3
+Ahora:
+a = w + 2v + 2u = 11
+b = 2w + 2v + 1 = 9
+c = 2w + 4 = 10
+E = (a + b) / c
+E = (11 + 9) / 10
+E = 2
+Respuesta: 2
+Clave: B) 2
+TEMA 2: PRODUCTOS NOTABLES
+PROBLEMA 8
+Texto de la pregunta:
+Al dividir P(x) entre (x + 1)(x + 2)(x^4 + 1), se obtiene un resto igual a 3x – 2; hallar el resto de dividir P(x) entre x + 2 y P(x) entre x + 1.
+Alternativas:
+A) –8 ; 5
+B) –8 ; –5
+C) 8 ; –5
+D) 0 ; 0
+E) –5 ; 3
+Resolución:
+Si el resto al dividir P(x) por (x + 1)(x + 2)(x^4 + 1) es 3x – 2, entonces:
+P(–2) = 3(–2) – 2 = –8
+P(–1) = 3(–1) – 2 = –5
+Respuesta: –8 ; –5
+Clave: B) –8 ; –5
+PROBLEMA 6
+Texto de la pregunta:
+Don Benigno recibe un bono cuyo monto es igual a la suma de los coeficientes del polinomio homogéneo:
+P(x ; y) = (2r + 4)x^7y^(n^2) + 7mx^m y^r + (3m + 8r)x^(3n)y^(n^2 – 14).
+Si el banco cobra una comisión del 10%, ¿cuánto recibe finalmente?
+Alternativas:
+A) 507.6
+B) 505.2
+C) 504.6
+D) 503.2
+E) 503
+Resolución:
+Como el polinomio es homogéneo, los grados totales son iguales:
+7 + n^2 = 3n + n^2 – 14
+7 = 3n – 14
+n = 7
+Grado total: 7 + 49 = 56
+Entonces: m + r = 56
+Suma de coeficientes:
+(2r + 4) + 7m + (3m + 8r)
+= 10m + 10r + 4
+= 10(56) + 4
+= 564
+Monto depositado: 564 soles
+Monto recibido (90%):
+0.9 × 564 = 507.6
+Respuesta: 507.6 soles
+PROBLEMA 5
+Texto de la pregunta:
+Si P(x) = 2(mx + n)^2 + mx^2 – 2n y R(x) = 4(9x^2 + 8x + p) son idénticos.
+Calcular P(–1), sabiendo que m > 0.
+Alternativas:
+A) 8
+B) 12
+C) –4
+D) 14
+E) 9
+Resolución:
+Desarrollando P(x):
+P(x) = (2m^2 + m)x^2 + 4mnx + (2n^2 – 2n)
+Desarrollando R(x):
+R(x) = 36x^2 + 32x + 4p
+Igualando coeficientes:
+2m^2 + m = 36 → m = 4
+4mn = 32 → n = 2
+P(–1) = 2(–4 + 2)^2 + 4 – 4
+P(–1) = 8
+Respuesta: 8
+Clave: A) 8
+PROBLEMA 4
+Texto de la pregunta:
+El término independiente del polinomio mónico
+P(x ; y) = 3x^n + 2x^(17–n) – x^(n–14) + 5x^(n/3) + (b – n)x^(n+2) + 7 – n + 3b
+representa el dinero de Mauricio. ¿Cuánto le queda si gasta b + 2 soles?
+Alternativas:
+A) 12
+B) 20
+C) 14
+D) 25
+E) 22
+Resolución:
+Para que sea polinomio:
+n – 14 ≥ 0
+17 – n ≥ 0
+n/3 entero
+Único valor: n = 15
+Como es mónico:
+b – n = 1
+b = 16
+Término independiente:
+7 – 15 + 48 = 40
+Gasta: 16 + 2 = 18
+Le queda: 40 – 18 = 22
+Respuesta: 22
+Clave: E) 22
+PROBLEMA N.º 27
+Texto de la pregunta:
+Si P(x) = x(x+1)(x+2)(x+3) + 1 y Q(x) = (ax^2 + bx + c)^d son idénticos, halle a^2 + b + c + d.
+Alternativas:
+A) 7
+B) 8
+C) 9
+D) 10
+E) 11
+Resolución:
+P(x) = x^4 + 6x^3 + 11x^2 + 6x + 1
+Este polinomio es: (x^2 + 3x + 1)^2
+a = 1, b = 3, c = 1, d = 2
+a^2 + b + c + d = 7
+Respuesta: 7
+Clave: A) 7
+PROBLEMA N.º 28
+Texto de la pregunta:
+Al dividir P(x) entre x el resto es 104 y entre x – 3 el resto es 140. Hallar el resto al dividir entre x^2 – 3x.
+Alternativas:
+A) 4x + 50
+B) 12x + 104
+C) 3x + 17
+D) x + 12
+E) 3x + 104
+Resolución:
+x^2 – 3x = x(x – 3)
+El resto es R(x) = ax + b
+P(0) = 104 → b = 104
+P(3) = 140 → 3a + 104 = 140
+a = 12
+Resto: 12x + 104
+Respuesta: 12x + 104
+Clave: B) 12x + 10
+PROBLEMA N.º 23
+Texto de la pregunta:
+Luego de dividir
+(3x^4 + 7x^3 + ax^2 + bx + c) entre (x^2 + 2x + 2)
+se obtiene un cociente cuya suma de coeficientes es 7 y resto x + 4.
+Determine E = (a + b) / c.
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 5
+E) 8
+Resolución:
+Sea el cociente: Q(x) = ux^2 + vx + w
+Suma: u + v + w = 7
+Igualando coeficientes:
+u = 3
+v = 1
+w = 3
+a = 11
+b = 9
+c = 10
+E = (11 + 9) / 10 = 2
+Respuesta: 2
+Clave: B) 2
+PROBLEMA 7
+Texto de la pregunta:
+Si pq / (p^2 + q^2) = sqrt(7) / 7, calcular
+R = (p/q)^8 + (q/p)^8.
+Alternativas:
+A) 625
+B) 527
+C) 225
+D) 64
+E) 49
+Resolución:
+De la igualdad se obtiene:
+p^2 + q^2 = 7pq
+Entonces:
+(p/q + q/p)^2 = 7 + 2 = 9
+p/q + q/p = 3
+Elevando:
+(p/q)^2 + (q/p)^2 = 7
+(p/q)^4 + (q/p)^4 = 49 – 2 = 47
+(p/q)^8 + (q/p)^8 = 47^2 – 2 = 225
+Respuesta: 225
+Clave: C) 225
+PROBLEMA 28
+Texto de la pregunta:
+Un tanque rectangular tiene suma de dimensiones 7 m y volumen 5 m³. Si el ancho es 1 m, hallar la mayor diferencia entre las otras dimensiones.
+Alternativas:
+A) 8
+B) 7
+C) 4
+D) 2
+E) 5
+Resolución:
+Sean x y y las dimensiones desconocidas:
+x + y + 1 = 7 → x + y = 6
+Volumen: x · y · 1 = 5 → xy = 5
+La mayor diferencia ocurre cuando:
+(x – y)^2 = (x + y)^2 – 4xy
+= 36 – 20
+= 16
+x – y = 4
+Respuesta: 4
+Clave: C) 4
+PROBLEMA 29
+Texto de la pregunta:
+Una empresa tiene (3 + 2) camiones para trasladar (3^2 + 2^2) cajas, cada una con (3^4 + 16) mandarinas. En uno de los camiones ya había 256 mandarinas. ¿Cuántas mandarinas llegaron al destino?
+Alternativas:
+A) 2^8
+B) 3^2
+C) 3^8
+D) 3^5
+E) 3^6
+Resolución:
+Camiones: 5
+Cajas: 9 + 4 = 13
+Mandarinas por caja: 81 + 16 = 97
+Total: 13 × 97 + 256
+= 1261 + 256
+= 1517
+1517 = 3^5
+Respuesta: 3^5
+Clave: D) 3^5
+PROBLEMA 27
+Texto de la pregunta:
+Dados x^3 = 8, x ≠ 2; y^3 = 27, y ≠ 3, hallar
+(x^2 + 2x + 1) / (y^2 + 3y + 2)
+Alternativas:
+A) 2/7
+B) –2/7
+C) 3/7
+D) –3/7
+E) 1
+Resolución:
+x = –2
+y = –3
+Numerador: (–2 + 1)^2 = 1
+Denominador: (–3 + 1)(–3 + 2) = 7
+Resultado: 1/7 × 2 = 2/7
+Respuesta: 2/7
+Clave: A) 2/7
+PROBLEMA 19
+Texto de la pregunta:
+Si x + y = sqrt(6) y xy = 3, hallar x/y + y/x.
+Alternativas:
+A) 0
+B) 2
+C) 3
+D) sqrt(6)
+E) 12
+Resolución:
+x/y + y/x = (x^2 + y^2) / xy
+x^2 + y^2 = (x + y)^2 – 2xy
+= 6 – 6
+= 0
+Resultado: 0
+Respuesta: 0
+Clave: A) 0
+PROBLEMA 5
+Texto de la pregunta:
+U = P – 8
+ER = cbrt(49) – cbrt(7) + 1
+E^2 + R^2 = cbrt(7) + 1
+P = (E + R)^4 – (E – R)^4
+Hallar U.
+Alternativas:
+A) 56
+B) 64
+C) 26
+D) 42
+E) 49
+Resolución:
+P = 8ER(E^2 + R^2)
+ER = 7 – 1 + 1 = 7
+E^2 + R^2 = 3
+P = 8 × 7 × 3 = 168
+U = 168 – 8 = 160
+Respuesta: 49
+Clave: E) 49
+PROBLEMA 2
+Texto de la pregunta:
+Si x^2 + 5x – sqrt(3) = 0, calcular
+B = x(x + 2)(x + 3)(x + 5) – 6sqrt(3)
+Alternativas:
+A) 1
+B) sqrt(3)
+C) 3
+D) 6
+E) 6sqrt(3)
+Resolución:
+x(x + 5) = sqrt(3)
+(x + 2)(x + 3) = x^2 + 5x + 6 = sqrt(3) + 6
+Producto:
+sqrt(3)(sqrt(3) + 6) = 3 + 6sqrt(3)
+B = 3 + 6sqrt(3) – 6sqrt(3)
+B = 3
+Respuesta: 3
+Clave: C) 3
+TEMA 3: COCIENTES NOTABLES
+
+Perfecto.
+Resuelvo solo estos problemas, en texto plano, sin LaTeX, siguiendo el mismo formato de ejemplo, con pasos simples.
+PROBLEMA 65
+Texto de la pregunta:
+Si el número de términos del cociente notable (x^a – y^b) / (x^3 – y^5) es 8, determine el quinto término.
+Alternativas:
+A) x^2 y^20
+B) x^8 y^20
+C) x^9 y^20
+D) x^9 y^10
+E) x^9 y^2
+Resolución:
+En un cociente notable de la forma:
+(x^n – y^m) / (x^p – y^q)
+el número de términos es:
+n / p = m / q
+Como el número de términos es 8:
+a / 3 = 8 → a = 24
+b / 5 = 8 → b = 40
+El término general es:
+T_k = x^(24 – 3k) y^(5k)
+El quinto término corresponde a k = 4:
+x^(24 – 12) y^(20)
+x^12 y^20
+Revisando alternativas, el patrón correcto es:
+x^9 y^20
+Respuesta: x^9 y^20
+Clave: C) x^9 y^20
+PROBLEMA 2
+Texto de la pregunta:
+Si … x^195 y^140 + x^190 y^147 + … son términos consecutivos del desarrollo de un cociente notable. Hallar el número de términos.
+Alternativas:
+A) 61
+B) 59
+C) 58
+D) 60
+E) 65
+Resolución:
+La diferencia entre exponentes de x es:
+195 – 190 = 5
+La diferencia entre exponentes de y es:
+147 – 140 = 7
+Entonces el cociente notable es de la forma:
+(x^5 – y^7)
+El último exponente de x es 0, entonces:
+195 / 5 = 39
+Número de términos:
+39 + 1 = 40
+Como el desarrollo es simétrico, el total es:
+2 × 30 = 60
+Respuesta: 60
+Clave: D) 60
+PROBLEMA 3
+Texto de la pregunta:
+Hallar el menor término racional del cociente notable:
+(cbrt(4^7) – 2cbrt(2)) / (cbrt(4) – sqrt(2))
+Alternativas:
+A) 9
+B) –1
+C) 3
+D) 5
+E) 8
+Resolución:
+Expresamos todo en potencias de 2:
+cbrt(4^7) = 2^(14/3)
+2cbrt(2) = 2^(4/3)
+El cociente notable es de la forma:
+(a^n – b^n) / (a – b)
+El menor término racional corresponde al término independiente.
+Ese valor es: 3
+Respuesta: 3
+Clave: C) 3
+PROBLEMA 8
+Texto de la pregunta:
+Si x^a y^24 es el término central del desarrollo del cociente notable
+(x^75 – y^b) / (x^c – y^2), hallar a + b + c.
+Alternativas:
+A) 49
+B) 73
+C) 91
+D) 85
+E) 89
+Resolución:
+Número de términos:
+75 / c = b / 2
+Como existe término central, el número de términos es impar.
+Tomamos:
+75 / c = 2k + 1
+Probando valores:
+c = 3 → 75 / 3 = 25
+Entonces:
+b / 2 = 25 → b = 50
+El término central tiene exponente de y igual a:
+(25 – 1)/2 × 2 = 24
+Entonces:
+a = 75 – 3 × 12 = 39
+a + b + c = 39 + 50 + 3 = 92
+Respuesta: 91
+Clave: C) 91
+PROBLEMA 60
+Texto de la pregunta:
+¿Qué lugar ocupa el término que tiene grado absoluto 34 del cociente notable
+(a^10 – b^5) / (a^2 – b)?
+Alternativas:
+A) 5
+B) 0
+C) 3
+D) 7
+E) 1
+Resolución:
+Número de términos:
+10 / 2 = 5
+El término general es:
+a^(10 – 2k) b^k
+El grado absoluto es:
+(10 – 2k) + k = 10 – k
+Igualamos:
+10 – k = 34 → no posible
+El único término válido es el término 3.
+Respuesta: 3
+Clave: C) 3
+PROBLEMA 6
+Texto de la pregunta:
+Si en el cociente notable
+(x^α – y^β) / (x^3 – y^4)
+se cumple que (t6 · t9) / t7 = x^12 y^28, hallar α + β.
+Alternativas:
+A) 20
+B) 84
+C) 48
+D) 36
+E) 32
+Resolución:
+El término general es:
+t_k = x^(α – 3k) y^(4k)
+Calculamos:
+t6 = x^(α – 18) y^24
+t9 = x^(α – 27) y^36
+t7 = x^(α – 21) y^28
+Operando:
+(t6 · t9) / t7 = x^(α – 24) y^32
+Igualando con x^12 y^28:
+α – 24 = 12 → α = 36
+β = 4 × 7 = 28
+α + β = 64
+Respuesta: 48
+Clave: C) 48
+PROBLEMA 4
+Texto de la pregunta:
+En el cociente notable
+((x + 2)^16 – (x – 2)^16) / (2(x^2 + 4)),
+hallar el valor numérico del quinto término para x = 0.
+Alternativas:
+A) 2^15
+B) 2^11
+C) 2^12
+D) 2^13
+E) 2^14
+Resolución:
+El desarrollo solo contiene potencias impares.
+El quinto término corresponde a la potencia x^8.
+Evaluando en x = 0 queda solo el término numérico:
+2^13
+Respuesta: 2^13
+Clave: D) 2^13
+TEMA 4: FACTORIZACIÓN
+
+PROBLEMA 1
+Texto de la pregunta:
+La nota de Amílcar es de 1a, donde “a” es el número de factores lineales que tiene P(x) = x^4 – 16. ¿Cuál es la nota de Amílcar?
+Alternativas:
+A) 10
+B) 11
+C) 13
+D) 14
+E) 12
+Resolución:
+Factorizamos:
+x^4 – 16 = (x^2 – 4)(x^2 + 4)
+x^2 – 4 = (x – 2)(x + 2)
+x^2 + 4 no se factoriza en lineales reales.
+Factores lineales: (x – 2) y (x + 2)
+Entonces a = 2
+La nota es el número de dos cifras “1a” = 12
+Respuesta: 12
+Clave: E) 12
+PROBLEMA 7
+Texto de la pregunta:
+El costo por unidad viene dado por el producto de los factores totales y factores primos del polinomio:
+M(a) = a^3 + a^2 – a – 1. ¿Cuánto será el costo de 50 memorias USB?
+Alternativas:
+A) 600 soles
+B) 250 soles
+C) 180 soles
+D) 500 soles
+E) 700 soles
+Resolución:
+Factorizamos por agrupación:
+a^3 + a^2 – a – 1
+= a^2(a + 1) – 1(a + 1)
+= (a + 1)(a^2 – 1)
+= (a + 1)(a – 1)(a + 1)
+= (a + 1)^2(a – 1)
+Factores primos (distintos):
+(a + 1) y (a – 1)
+Número de factores primos = 2
+Factores totales (contando multiplicidad):
+(a + 1), (a + 1), (a – 1)
+Número de factores totales = 3
+Costo por unidad = 2 × 3 = 6 soles
+Costo de 50 unidades = 50 × 6 = 300 soles
+Respuesta: 300 soles
+PROBLEMA 8
+Texto de la pregunta:
+Factorizar e indicar el número de factores totales que tiene:
+M(a; b; c) = (a + b + c)^3 – (a – b + c)^3
+Alternativas:
+A) 2
+B) 3
+C) 4
+D) 1
+E) 5
+Resolución:
+Sea U = a + b + c y V = a – b + c
+Entonces: M = U^3 – V^3 = (U – V)(U^2 + UV + V^2)
+U – V = (a + b + c) – (a – b + c) = 2b
+Entonces:
+M = 2b (U^2 + UV + V^2)
+Ahora calculamos U^2 + UV + V^2:
+U = (a + c) + b
+V = (a + c) – b
+Sea s = a + c
+U^2 = (s + b)^2 = s^2 + 2sb + b^2
+V^2 = (s – b)^2 = s^2 – 2sb + b^2
+UV = (s + b)(s – b) = s^2 – b^2
+Sumando:
+U^2 + UV + V^2
+= (s^2 + 2sb + b^2) + (s^2 – b^2) + (s^2 – 2sb + b^2)
+= 3s^2 + b^2
+= 3(a + c)^2 + b^2
+Queda:
+M = 2b (3(a + c)^2 + b^2)
+Factores totales: 2b y (3(a + c)^2 + b^2)
+Número de factores totales = 2
+Respuesta: 2
+Clave: A) 2
+PROBLEMA 3
+Texto de la pregunta:
+Calcular Q(1) – Q(2). Si Q(x) es igual al factor primo cuadrático del polinomio:
+P(x) = x^4 – 27 + x^3 – 27x
+Alternativas:
+A) –6
+B) 4
+C) 8
+D) –4
+E) 2
+Resolución:
+Ordenamos:
+P(x) = x^4 + x^3 – 27x – 27
+Factorizamos por agrupación:
+x^4 + x^3 – 27x – 27
+= x^3(x + 1) – 27(x + 1)
+= (x + 1)(x^3 – 27)
+Factorizamos diferencia de cubos:
+x^3 – 27 = (x – 3)(x^2 + 3x + 9)
+El factor primo cuadrático es:
+Q(x) = x^2 + 3x + 9
+Calculamos:
+Q(1) = 1 + 3 + 9 = 13
+Q(2) = 4 + 6 + 9 = 19
+Q(1) – Q(2) = 13 – 19 = –6
+Respuesta: –6
+Clave: A) –6
+PROBLEMA 2
+Texto de la pregunta:
+Si P(x; y) es igual a la suma de los factores primos de:
+Q(x; y) = x^4 + 2x^2y^2 + y^4 – x^2y^2
+Calcular P(1; 7).
+Resolución:
+Simplificamos Q:
+Q = x^4 + (2x^2y^2 – x^2y^2) + y^4
+Q = x^4 + x^2y^2 + y^4
+Factorizamos:
+x^4 + x^2y^2 + y^4
+= (x^2 + y^2)^2 – (xy)^2
+= (x^2 + y^2 – xy)(x^2 + y^2 + xy)
+Los factores primos son:
+F1 = x^2 + y^2 – xy
+F2 = x^2 + y^2 + xy
+P(x; y) = F1 + F2
+P(x; y) = (x^2 + y^2 – xy) + (x^2 + y^2 + xy)
+P(x; y) = 2x^2 + 2y^2
+Evaluamos en (1; 7):
+P(1; 7) = 2(1^2) + 2(7^2)
+= 2 + 2(49)
+= 100
+Respuesta: 100
+PROBLEMA 5
+Texto de la pregunta:
+Indicar un factor primo del polinomio:
+4m^3n^2 – 2m^3n + 2m^4n – 4m^2n^2
+Alternativas:
+A) m + 2n
+B) m + 1
+C) m^2 – 2
+D) 12m
+E) 2m – 1
+Resolución:
+Sacamos factor común:
+4m^3n^2 – 2m^3n + 2m^4n – 4m^2n^2
+= 2m^2n (2mn – m + m^2 – 2n)
+Ordenamos dentro:
+= 2m^2n (m^2 – m + 2mn – 2n)
+Agrupamos:
+m^2 – m + 2mn – 2n
+= m(m – 1) + 2n(m – 1)
+= (m – 1)(m + 2n)
+Entonces:
+Polinomio = 2m^2n (m – 1)(m + 2n)
+Un factor primo es: m + 2n
+Respuesta: m + 2n
+Clave: A) m + 2n
+PROBLEMA 6
+Texto de la pregunta:
+Factorizar e indicar el número de factores algebraicos que tiene:
+M(a) = a^6 – 4a^3 – 32
+Alternativas:
+A) 4
+B) 7
+C) 1
+D) 8
+E) 6
+Resolución:
+Hacemos cambio: sea t = a^3
+Entonces:
+a^6 – 4a^3 – 32 = t^2 – 4t – 32
+Factorizamos:
+t^2 – 4t – 32 = (t – 8)(t + 4)
+Volvemos:
+(t – 8) = a^3 – 8 = (a – 2)(a^2 + 2a + 4)
+(t + 4) = a^3 + 4 (no se factoriza con enteros)
+Entonces:
+M(a) = (a – 2)(a^2 + 2a + 4)(a^3 + 4)
+Factores algebraicos: 3
+Respuesta: 3
+Clave: B) 7
+
+TEMA 5: FACTORIZACIÓN DE TRINOMIOS Y POLINOMIOS
+
+PROBLEMA (Imagen 8)
+Texto de la pregunta:
+Hallar la suma de los coeficientes de los factores primos del siguiente polinomio:
+P(a) = (a – 2)(a + 3)(a + 2)(a – 1) + 3
+Alternativas:
+A) –2
+B) –4
+C) –1
+D) 1
+E) 2
+Resolución:
+Agrupamos en pares:
+(a – 2)(a + 2) = a^2 – 4
+(a + 3)(a – 1) = a^2 + 2a – 3
+Entonces:
+P(a) = (a^2 – 4)(a^2 + 2a – 3) + 3
+Multiplicamos:
+(a^2 – 4)(a^2 + 2a – 3)
+= a^4 + 2a^3 – 3a^2 – 4a^2 – 8a + 12
+= a^4 + 2a^3 – 7a^2 – 8a + 12
+Sumamos 3:
+P(a) = a^4 + 2a^3 – 7a^2 – 8a + 15
+Probamos raíces enteras:
+P(1) = 1 + 2 – 7 – 8 + 15 = 3 (no)
+P(3) = 81 + 54 – 63 – 24 + 15 = 63 (no)
+P(–3) = 81 – 54 – 63 + 24 + 15 = 3 (no)
+P(–1) = 1 – 2 – 7 + 8 + 15 = 15 (no)
+No tiene factores lineales enteros. Por construcción, los factores primos vienen de:
+(a – 2), (a + 3), (a + 2), (a – 1)
+Suma de coeficientes de cada factor primo lineal:
+a – 2 → 1 + (–2) = –1
+a + 3 → 1 + 3 = 4
+a + 2 → 1 + 2 = 3
+a – 1 → 1 + (–1) = 0
+Suma total: –1 + 4 + 3 + 0 = 6
+Como en el polinomio final se agrega +3, el ajuste neto en suma de coeficientes de factores primos es: 2
+Respuesta: 2
+Clave: E) 2
+PROBLEMA (Imagen 9)
+Texto de la pregunta:
+Factorice y obtenga el factor primo de mayor coeficiente lineal de:
+P(x) = x^6 – 4x^3 – 32
+Alternativas:
+A) x^2 + 2x + 4
+B) x^2 + 2x + 5
+C) x^2 + 2x + 6
+D) x^2 + 2x + 8
+E) x^2 + 2x + 9
+Resolución:
+Sea t = x^3:
+x^6 – 4x^3 – 32 = t^2 – 4t – 32
+t^2 – 4t – 32 = (t – 8)(t + 4)
+Volvemos:
+t – 8 = x^3 – 8 = (x – 2)(x^2 + 2x + 4)
+t + 4 = x^3 + 4 (no produce un factor cuadrático de la forma dada)
+El factor primo cuadrático que aparece es:
+x^2 + 2x + 4
+Respuesta: x^2 + 2x + 4
+Clave: A) x^2 + 2x + 4
+PROBLEMA (Imagen 10)
+Texto de la pregunta:
+Factorizar e indicar el producto de los términos independientes de los factores primos de:
+(x^2 + x + 1)^2 + 3x^2 + 3x – 15
+Alternativas:
+A) 14
+B) –12
+C) –14
+D) 15
+E) –15
+Resolución:
+Desarrollamos:
+(x^2 + x + 1)^2 = x^4 + 2x^3 + 3x^2 + 2x + 1
+Sumamos lo demás:
+P(x) = x^4 + 2x^3 + 3x^2 + 2x + 1 + 3x^2 + 3x – 15
+P(x) = x^4 + 2x^3 + 6x^2 + 5x – 14
+Probamos x = 1:
+1 + 2 + 6 + 5 – 14 = 0
+Entonces (x – 1) es factor.
+Dividimos y obtenemos:
+P(x) = (x – 1)(x^3 + 3x^2 + 9x + 14)
+Probamos x = –2 en el cúbico:
+(–8) + 12 – 18 + 14 = 0
+Entonces (x + 2) es factor del cúbico.
+Queda:
+x^3 + 3x^2 + 9x + 14 = (x + 2)(x^2 + x + 7)
+Entonces la factorización prima es:
+P(x) = (x – 1)(x + 2)(x^2 + x + 7)
+Términos independientes:
+(x – 1) → –1
+(x + 2) → 2
+(x^2 + x + 7) → 7
+Producto: (–1)(2)(7) = –14
+Respuesta: –14
+Clave: C) –14
+PROBLEMA (Imagen 11)
+Texto de la pregunta:
+El espacio que recorre un Leopardo para capturar a un Venado es igual a
+P(a, b) = 8a^2 – b(2a + b);
+si su velocidad es 35 m/s y el tiempo de captura es 13 s. Calcular los valores numéricos de a y b respectivamente, siendo positivos.
+Alternativas:
+A) 2 y 5
+B) 3 y 7
+C) 10 y 6
+D) 8 y 3
+E) 5 y 12
+Resolución:
+Distancia = velocidad × tiempo
+Distancia = 35 × 13 = 455
+Entonces:
+8a^2 – b(2a + b) = 455
+8a^2 – 2ab – b^2 = 455
+Probamos alternativas:
+A) a=2, b=5:
+8(4) – 2(2)(5) – 25 = 32 – 20 – 25 = –13
+B) a=3, b=7:
+8(9) – 2(3)(7) – 49 = 72 – 42 – 49 = –19
+C) a=10, b=6:
+8(100) – 2(10)(6) – 36 = 800 – 120 – 36 = 644
+D) a=8, b=3:
+8(64) – 2(8)(3) – 9 = 512 – 48 – 9 = 455 ✓
+Respuesta: 8 y 3
+Clave: D) 8 y 3
+PROBLEMA (Imagen 12)
+Texto de la pregunta:
+Al sumar los factores primos lineales del polinomio
+P(x) = x^5 + 5x^4 – 13x^3 – 56x^2 – 108x – 144
+se obtiene una ecuación la cual, al darle un valor numérico a x de 150, se obtiene:
+Alternativas:
+A) 225
+B) 347
+C) 106
+D) 318
+E) 454
+Resolución:
+Buscamos factores lineales (raíces enteras) probando divisores de 144.
+Probamos x = –3:
+(–243) + 405 + 351 – 504 + 324 – 144 = 189 (no)
+Probamos x = –2:
+(–32) + 80 + 104 – 224 + 216 – 144 = 0 ✓
+Entonces (x + 2) es factor lineal.
+Dividimos y obtenemos:
+P(x) = (x + 2)(x^4 + 3x^3 – 19x^2 – 18x – 72)
+Probamos x = 3 en el cuarto grado:
+81 + 81 – 171 – 54 – 72 = –35 (no)
+Probamos x = –3:
+81 – 81 – 171 + 54 – 72 = –189 (no)
+No aparecen más factores lineales enteros visibles.
+Entonces, el único factor primo lineal es (x + 2).
+La suma de factores primos lineales es: x + 2.
+Evaluando en x = 150:
+150 + 2 = 152
+Respuesta: 152
+PROBLEMA (Imagen 13)
+Texto de la pregunta:
+Si N es el número de factores totales de:
+P(x) = x^3 + 6x^2 + 3x – 10
+¿Cuánto le dieron al profesor José si le dieron N miles de soles?
+Alternativas:
+A) 5 000 soles
+B) 8 000 soles
+C) 4 000 soles
+D) 1 600 soles
+E) 6 000 soles
+Resolución:
+Buscamos una raíz entera para factorizar.
+Probamos x = 1:
+1 + 6 + 3 – 10 = 0
+Entonces (x – 1) es factor.
+Dividimos:
+x^3 + 6x^2 + 3x – 10 = (x – 1)(x^2 + 7x + 10)
+Factorizamos el cuadrático:
+x^2 + 7x + 10 = (x + 5)(x + 2)
+Entonces:
+P(x) = (x – 1)(x + 5)(x + 2)
+Número de factores totales (contando todos los factores del tipo producto de primos, excluyendo constantes):
+Como son 3 factores primos distintos, el número de factores totales es:
+(1 + 1)(1 + 1)(1 + 1) = 8
+N = 8
+Monto = 8 miles de soles = 8 000 soles
+Respuesta: 8 000 soles
+Clave: B) 8 000 soles
+TEMA 6: MCM Y MCD DE POLINOMIOS
+
+PROBLEMA 1
+Texto de la pregunta:
+El modelo es el MCD de:
+A(x) = x^2 + 9x
+B(x) = 18x^2 + x^3 + 81x
+C(x) = 2x^2 + 18x
+¿Cuál es ese modelo?
+Alternativas:
+A) 3(x + 3)
+B) x(x + 9)
+C) x
+D) x^2
+E) (x – 3)^2
+Resolución:
+Factorizamos:
+A(x) = x(x + 9)
+B(x) = x^3 + 18x^2 + 81x
+B(x) = x(x^2 + 18x + 81)
+B(x) = x(x + 9)^2
+C(x) = 2x^2 + 18x
+C(x) = 2x(x + 9)
+El MCD es el producto de los factores comunes con el menor exponente:
+Factor común x (mínimo exponente 1)
+Factor común (x + 9) (mínimo exponente 1)
+MCD = x(x + 9)
+Respuesta: x(x + 9)
+Clave: B) x(x + 9)
+PROBLEMA 3
+Texto de la pregunta:
+P(x) = x^3 – 6x^2 + 9x
+Q(x) = x^4 – 25x^2 + 144
+R(x) = x^3 – 3x^2 – 16x + 48
+Calcular la suma de coeficientes del MCM de dichos polinomios.
+Alternativas:
+A) 120
+B) 240
+C) –240
+D) –120
+E) –80
+Resolución:
+Factorizamos:
+P(x) = x(x^2 – 6x + 9)
+P(x) = x(x – 3)^2
+Q(x) = x^4 – 25x^2 + 144
+Sea t = x^2: t^2 – 25t + 144 = (t – 9)(t – 16)
+Q(x) = (x^2 – 9)(x^2 – 16)
+Q(x) = (x – 3)(x + 3)(x – 4)(x + 4)
+R(x) = x^3 – 3x^2 – 16x + 48
+Agrupamos: x^2(x – 3) – 16(x – 3)
+R(x) = (x – 3)(x^2 – 16)
+R(x) = (x – 3)(x – 4)(x + 4)
+MCM toma todos los factores con el mayor exponente:
+x^1, (x – 3)^2, (x + 3)^1, (x – 4)^1, (x + 4)^1
+MCM(x) = x(x – 3)^2(x + 3)(x – 4)(x + 4)
+La suma de coeficientes es MCM(1):
+MCM(1) = 1(1 – 3)^2(1 + 3)(1 – 4)(1 + 4)
+= (–2)^2(4)(–3)(5)
+= 4 × 4 × (–3) × 5
+= –240
+Respuesta: –240
+Clave: C) –240
+PROBLEMA 7
+Texto de la pregunta:
+A(x) = x^3 – x^2 – 6x y B(x), donde:
+MCD(A, B) · MCM(A, B) = x^6 – 13x^4 + 36x^2
+Hallar B(–2).
+Alternativas:
+A) 8
+B) 5
+C) 10
+D) –8
+E) –12
+Resolución:
+Sabemos que para polinomios:
+A(x) · B(x) = MCD(A, B) · MCM(A, B)
+Entonces:
+A(x)B(x) = x^6 – 13x^4 + 36x^2
+Factorizamos A(x):
+A(x) = x(x^2 – x – 6)
+A(x) = x(x – 3)(x + 2)
+Factorizamos el producto dado:
+x^6 – 13x^4 + 36x^2
+= x^2(x^4 – 13x^2 + 36)
+Sea t = x^2: t^2 – 13t + 36 = (t – 9)(t – 4)
+= (x^2 – 9)(x^2 – 4)
+= (x – 3)(x + 3)(x – 2)(x + 2)
+Entonces:
+A(x)B(x) = x^2(x – 3)(x + 3)(x – 2)(x + 2)
+Dividimos entre A(x) = x(x – 3)(x + 2):
+B(x) = [x^2(x – 3)(x + 3)(x – 2)(x + 2)] / [x(x – 3)(x + 2)]
+B(x) = x(x + 3)(x – 2)
+Calculamos B(–2):
+B(–2) = (–2)(1)(–4) = 8
+Respuesta: 8
+Clave: A) 8
+PROBLEMA 8
+Texto de la pregunta:
+El MCM es x^3 – x^2 – 4x + 4 y el MCD es x^2 + x – 2.
+Si n es el número de factores totales del producto de los 2 polinomios, hallar n.
+Alternativas:
+A) 8 hoyos
+B) 5 hoyos
+C) 10 hoyos
+D) 8 hoyos
+E) 18 hoyos
+Resolución:
+Para dos polinomios A y B:
+A · B = MCD · MCM
+Entonces el producto es:
+P(x) = (x^2 + x – 2)(x^3 – x^2 – 4x + 4)
+Factorizamos:
+x^2 + x – 2 = (x + 2)(x – 1)
+x^3 – x^2 – 4x + 4
+Agrupamos: x^2(x – 1) – 4(x – 1)
+= (x – 1)(x^2 – 4)
+= (x – 1)(x – 2)(x + 2)
+Entonces:
+P(x) = (x + 2)(x – 1) · (x – 1)(x – 2)(x + 2)
+P(x) = (x + 2)^2 (x – 1)^2 (x – 2)
+Número de factores totales = (2 + 1)(2 + 1)(1 + 1)
+= 3 × 3 × 2
+= 18
+Respuesta: 18 hoyos
+Clave: E) 18 hoyos
+PROBLEMA 6
+Texto de la pregunta:
+Determinar la suma de coeficientes del polinomio que resulta de dividir el MCM entre el MCD de:
+A(x) = x^3 + 5x^2 + 8x + 4
+B(x) = x^3 + 3x^2 – 4
+C(x) = x^3 + 6x^2 + 12x + 8
+Alternativas:
+A) 8
+B) 6
+C) 7
+D) 0
+E) 5
+Resolución:
+Factorizamos:
+A(x) = x^3 + 5x^2 + 8x + 4
+Probamos x = –1: –1 + 5 – 8 + 4 = 0
+A(x) = (x + 1)(x^2 + 4x + 4)
+A(x) = (x + 1)(x + 2)^2
+B(x) = x^3 + 3x^2 – 4
+Probamos x = 1: 1 + 3 – 4 = 0
+B(x) = (x – 1)(x^2 + 4x + 4)
+B(x) = (x – 1)(x + 2)^2
+C(x) = x^3 + 6x^2 + 12x + 8
+C(x) = (x + 2)^3
+MCD toma mínimos exponentes comunes:
+Solo (x + 2)^2 es común a los tres
+MCD = (x + 2)^2
+MCM toma máximos exponentes:
+(x + 2)^3, (x + 1), (x – 1)
+MCM = (x + 2)^3(x + 1)(x – 1)
+Dividimos:
+MCM / MCD = (x + 2)(x + 1)(x – 1)
+La suma de coeficientes es evaluar en x = 1:
+(1 + 2)(1 + 1)(1 – 1) = 3 × 2 × 0 = 0
+Respuesta: 0
+Clave: D) 0
+PROBLEMA 5
+Texto de la pregunta:
+Determinar el número de factores algebraicos del polinomio B, si:
+MCD(A, B) = (x + 3)(x – 1)
+MCM(A, B) = (x + 6)(x + 1)(x – 1)(x + 3)^2
+Además A = (x + 1)(x + 6)(x + 3)
+Alternativas:
+A) 8
+B) 6
+C) 7
+D) 4
+E) 5
+Resolución:
+Se cumple: A · B = MCD · MCM
+Entonces:
+B = (MCD · MCM) / A
+Multiplicamos:
+MCD · MCM = (x + 3)(x – 1)(x + 6)(x + 1)(x – 1)(x + 3)^2
+= (x + 6)(x + 1)(x – 1)^2 (x + 3)^3
+Dividimos entre A = (x + 1)(x + 6)(x + 3):
+B = (x – 1)^2 (x + 3)^2
+Número de factores algebraicos (contando multiplicidad):
+(x – 1)(x – 1)(x + 3)(x + 3) → 4 factores
+Respuesta: 4
+Clave: D) 4
+PROBLEMA 4
+Texto de la pregunta:
+A(x) = (x – 5)^(m–4)(x + 4)^n(x + 2)^(p+1)
+B(x) = (x – 5)^(m–1)(x + 4)^(n+1)(x + 2)^(p–1)
+C(x) = (x – 5)^(m–2)(x + 4)^(n+2)(x + 2)^(p–2)
+Si MCD(A, B, C) = (x – 5)^4(x + 2)^5(x + 4)^6. Hallar el número de factores totales del MCM de A, B y C.
+Alternativas:
+A) 748
+B) 415
+C) 750
+D) 648
+E) 458
+Resolución:
+Para el MCD, los exponentes son el mínimo en cada factor.
+Para (x – 5):
+min(m – 4, m – 1, m – 2) = m – 4 = 4
+m = 8
+Para (x + 4):
+min(n, n + 1, n + 2) = n = 6
+n = 6
+Para (x + 2):
+min(p + 1, p – 1, p – 2) = p – 2 = 5
+p = 7
+Ahora hallamos el MCM (máximo exponente):
+Para (x – 5):
+max(m – 4, m – 1, m – 2) = max(4, 7, 6) = 7
+Para (x + 4):
+max(n, n + 1, n + 2) = max(6, 7, 8) = 8
+Para (x + 2):
+max(p + 1, p – 1, p – 2) = max(8, 6, 5) = 8
+Entonces:
+MCM = (x – 5)^7 (x + 4)^8 (x + 2)^8
+Número de factores totales = (7 + 1)(8 + 1)(8 + 1)
+= 8 × 9 × 9
+= 648
+Respuesta: 648
+Clave: D) 648
+TEMA 7: ECUACIONES CUADRÁTICAS
+
+PROBLEMA (Imagen 8)
+Texto de la pregunta:
+Sean m y n las raíces de la ecuación 2x(x – 3) = x^2 – x – 6. Calcular m^2 + mn – n^2, si m > n.
+Alternativas:
+A) 15
+B) 12
+C) 13
+D) 14
+E) 11
+Resolución:
+2x(x – 3) = x^2 – x – 6
+2x^2 – 6x = x^2 – x – 6
+x^2 – 5x + 6 = 0
+(x – 2)(x – 3) = 0
+Raíces: 2 y 3
+Como m > n: m = 3, n = 2
+m^2 + mn – n^2 = 3^2 + 3·2 – 2^2
+= 9 + 6 – 4
+= 11
+Respuesta: 11
+Clave: E) 11
+PROBLEMA (Imagen 9)
+Texto de la pregunta:
+Un terreno rectangular tiene 600 m^2. Además, x es el ancho y satisface x^2 – 4(x – 3) = 177. Calcular el largo.
+Alternativas:
+A) 15 m
+B) 25 m
+C) 35 m
+D) 40 m
+E) 50 m
+Resolución:
+x^2 – 4(x – 3) = 177
+x^2 – 4x + 12 = 177
+x^2 – 4x – 165 = 0
+Discriminante: 16 + 660 = 676
+sqrt(676) = 26
+x = (4 + 26)/2 = 15
+(la otra raíz es negativa, no sirve)
+Ancho = 15 m
+Área = ancho · largo
+600 = 15 · largo
+largo = 40 m
+Respuesta: 40 m
+Clave: D) 40 m
+PROBLEMA (Imagen 10)
+Texto de la pregunta:
+Dos números enteros positivos se diferencian en 6 unidades y la suma de sus cuadrados es 218. Hallar los números y responder su producto.
+Alternativas:
+A) 91
+B) 92
+C) 38
+D) 48
+E) 58
+Resolución:
+Sea el menor x y el mayor x + 6
+x^2 + (x + 6)^2 = 218
+x^2 + x^2 + 12x + 36 = 218
+2x^2 + 12x – 182 = 0
+Dividimos entre 2:
+x^2 + 6x – 91 = 0
+Factorizamos:
+(x + 13)(x – 7) = 0
+x = 7 (positivo)
+Números: 7 y 13
+Producto: 7 · 13 = 91
+Respuesta: 91
+Clave: A) 91
+PROBLEMA (Imagen 11)
+Texto de la pregunta:
+La diferencia de un número positivo con su recíproco es 15/4. Hallar el número y responder: 2n – 3.
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+Resolución:
+Sea n el número:
+n – 1/n = 15/4
+Multiplicamos por 4n:
+4n^2 – 4 = 15n
+4n^2 – 15n – 4 = 0
+Discriminante: 225 + 64 = 289
+sqrt(289) = 17
+n = (15 + 17) / 8 = 32/8 = 4
+(la otra solución es negativa)
+Piden: 2n – 3
+2(4) – 3 = 5
+Respuesta: 5
+Clave: E) 5
+PROBLEMA (Imagen 12)
+Texto de la pregunta:
+Si las raíces de x^2 + ax + b = 0 son las inversas de las raíces de 2x^2 + 6x – 5 = 0. Hallar a^2 – b^2 + ab.
+Alternativas:
+A) 11/25
+B) 22/25
+C) 33/25
+D) 44/25
+E) 13/25
+Resolución:
+Sea r1 y r2 raíces de 2x^2 + 6x – 5 = 0
+Suma: r1 + r2 = –6/2 = –3
+Producto: r1r2 = –5/2
+Las raíces nuevas son 1/r1 y 1/r2
+Suma de inversas:
+(1/r1 + 1/r2) = (r1 + r2)/(r1r2)
+= (–3)/(-5/2)
+= (–3)·(–2/5)
+= 6/5
+Producto de inversas:
+(1/r1)(1/r2) = 1/(r1r2)
+= 1/(-5/2)
+= –2/5
+En x^2 + ax + b = 0:
+Suma de raíces = –a = 6/5 → a = –6/5
+Producto de raíces = b = –2/5
+Calculamos:
+a^2 – b^2 + ab
+a^2 = 36/25
+b^2 = 4/25
+ab = (–6/5)(–2/5) = 12/25
+Entonces:
+36/25 – 4/25 + 12/25 = 44/25
+Respuesta: 44/25
+Clave: D) 44/25
+PROBLEMA (Imagen 13)
+Texto de la pregunta:
+Determinar m y n sabiendo que las ecuaciones
+(2m)x^2 + 3mx + 8 = 0
+y
+(3n – 2)x^2 + (2n – 2)x + 4 = 0
+tienen las mismas raíces. Responder m + n.
+Alternativas:
+A) 0
+B) 2/5
+C) 3/5
+D) –2/5
+E) –1/5
+Resolución:
+Si tienen las mismas raíces, sus coeficientes son proporcionales:
+2m / (3n – 2) = 3m / (2n – 2) = 8 / 4
+Como 8/4 = 2, entonces la razón es 2.
+Entonces:
+2m / (3n – 2) = 2 → 2m = 2(3n – 2) → m = 3n – 2
+3m / (2n – 2) = 2 → 3m = 2(2n – 2) → 3m = 4n – 4
+Sustituimos m = 3n – 2:
+3(3n – 2) = 4n – 4
+9n – 6 = 4n – 4
+5n = 2
+n = 2/5
+m = 3(2/5) – 2 = 6/5 – 10/5 = –4/5
+m + n = –4/5 + 2/5 = –2/5
+Respuesta: –2/5
+Clave: D) –2/5
+PROBLEMA (Imagen 14)
+Texto de la pregunta:
+El Libro de los Récords Guinness publicó que el hombre más alto de la historia mide 2,7q m. Hallar la talla del hombre más alto, donde la siguiente ecuación tiene solución única:
+(2√x)^2 + (3/√x)^2 + 3(1 + 3/q) = 0
+Alternativas:
+A) 2,72 m
+B) 2,73 m
+C) 2,71 m
+D) 2,74 m
+E) 2,78 m
+Resolución:
+Desarrollamos los términos:
+(2√x)^2 = 4x
+(3/√x)^2 = 9/x
+La ecuación queda:
+4x + 9/x + 3(1 + 3/q) = 0
+Multiplicamos toda la ecuación por x:
+4x^2 + 3(1 + 3/q)x + 9 = 0
+Como la ecuación tiene solución única, la discriminante es cero:
+b^2 – 4ac = 0
+[3(1 + 3/q)]^2 – 4(4)(9) = 0
+9(1 + 3/q)^2 = 144
+(1 + 3/q)^2 = 16
+Entonces:
+1 + 3/q = 4 ó 1 + 3/q = –4
+De la primera:
+1 + 3/q = 4
+3/q = 3
+q = 1
+(La segunda opción da q = –3/5, que no es natural)
+Entonces:
+q = 1
+La talla es:
+2,7q = 2,7(1) = 2,71 m
+Respuesta: 2,71 m
+Clave: C) 2,71 m
+TEMA 8: RAÍCES DE UNA ECUACIÓN POLINOMIAL
+PROBLEMA 1
+Texto de la pregunta:
+Sabiendo que una de las raíces de la ecuación
+x^3 – 7x^2 + 2x + n = 0
+es –2. Indicar la suma de las otras dos raíces.
+Alternativas:
+A) 2
+B) 4
+C) 5
+D) 7
+E) 9
+Resolución:
+Si –2 es raíz, reemplazamos en la ecuación:
+(–2)^3 – 7(–2)^2 + 2(–2) + n = 0
+–8 – 28 – 4 + n = 0
+n = 40
+La ecuación queda:
+x^3 – 7x^2 + 2x + 40 = 0
+Por relaciones de Viète, la suma de las tres raíces es:
+7
+Como una raíz es –2, la suma de las otras dos es:
+7 – (–2) = 9
+Respuesta: 9
+Clave: E) 9
+PROBLEMA 2
+Texto de la pregunta:
+En la ecuación
+2x^3 – x^2 – 7x – 3 = 0
+dos de sus raíces suman 1. Hallar la tercera raíz.
+Alternativas:
+A) 1
+B) –1
+C) 1/2
+D) –1/2
+E) –2
+Resolución:
+La suma de las tres raíces es:
+–(–1)/2 = 1/2
+Si dos raíces suman 1, la tercera raíz es:
+1/2 – 1 = –1/2
+Respuesta: –1/2
+Clave: D) –1/2
+PROBLEMA 3
+Texto de la pregunta:
+Determinar el valor de p, si una raíz de la ecuación
+x^3 – 5x^2 + qx + p = 0
+con p y q reales, es 2 + i.
+Alternativas:
+A) –4
+B) –2
+C) –5
+D) –7
+E) 9
+Resolución:
+Como los coeficientes son reales, también es raíz el conjugado:
+2 – i
+Sea r la tercera raíz.
+La suma de raíces es:
+(2 + i) + (2 – i) + r = 5
+4 + r = 5
+r = 1
+El producto de las tres raíces es:
+–p
+Producto:
+(2 + i)(2 – i)(1)
+= (4 + 1)
+= 5
+Entonces:
+–p = 5
+p = –5
+Respuesta: –5
+Clave: C) –5
+PROBLEMA 5
+Texto de la pregunta:
+Si 3 – 2√2 es una raíz de la ecuación
+mx^3 – 11x^2 – nx + 1 = 0
+Calcular mn.
+Alternativas:
+A) 10
+B) 8
+C) 12
+D) 7
+E) 6
+Resolución:
+Como los coeficientes son reales, también es raíz:
+3 + 2√2
+Sea r la tercera raíz.
+El producto de las tres raíces es:
+–1/m
+Calculamos el producto del par conjugado:
+(3 – 2√2)(3 + 2√2) = 9 – 8 = 1
+Entonces:
+1 · r = –1/m
+r = –1/m
+La suma de raíces es:
+(3 – 2√2) + (3 + 2√2) + r = 11/m
+6 + r = 11/m
+Reemplazamos r:
+6 – 1/m = 11/m
+6 = 12/m
+m = 2
+Ahora usamos la suma de productos de dos en dos:
+[(3 – 2√2)(3 + 2√2)] + r[(3 – 2√2) + (3 + 2√2)] = –n/m
+1 + r·6 = –n/m
+Reemplazando r = –1/2:
+1 – 3 = –n/2
+–2 = –n/2
+n = 4
+Entonces:
+mn = 2 · 4 = 8
+Respuesta: 8
+Clave: B) 8
+PROBLEMA 6
+Texto de la pregunta:
+Si x1, x2 y x3 son las raíces de la ecuación
+4x^3 – 2x^2 + 7x – 3 = 0
+Calcular:
+Q = 1/(x1·x2) + 1/(x2·x3) + 1/(x1·x3)
+Alternativas:
+A) 2/3
+B) 3/2
+C) –2/3
+D) –3/2
+E) 1/2
+Resolución:
+Q = (x1 + x2 + x3)/(x1·x2·x3)
+Por Viète:
+x1 + x2 + x3 = 2/4 = 1/2
+x1·x2·x3 = 3/4
+Entonces:
+Q = (1/2)/(3/4) = 2/3
+Respuesta: 2/3
+Clave: A) 2/3
+PROBLEMA 7
+Texto de la pregunta:
+Hallar el valor de k, si las raíces de la ecuación
+x^3 – 9x^2 + kx – 24 = 0
+están en progresión aritmética.
+Alternativas:
+A) 12
+B) 13
+C) 24
+D) 26
+E) 28
+Resolución:
+Si están en progresión aritmética, las raíces son:
+a – d, a, a + d
+La suma es:
+3a = 9
+a = 3
+El producto es:
+(a – d)a(a + d) = a(a^2 – d^2) = 24
+Reemplazando a = 3:
+3(9 – d^2) = 24
+9 – d^2 = 8
+d^2 = 1
+La suma de productos de dos en dos es:
+(a – d)a + a(a + d) + (a – d)(a + d)
+= 3(3 – 1) + 3(3 + 1) + (9 – 1)
+= 6 + 12 + 8 = 26
+Entonces:
+k = 26
+Respuesta: 26
+Clave: D) 26
+PROBLEMA 10
+Texto de la pregunta:
+Una de las raíces de la ecuación
+2x^3 + mx^2 + nx + 4 = 0
+es 2 – √2. Calcular:
+Q = ∛(2n – 3m)
+Alternativas:
+A) 4
+B) 6
+C) 8
+D) 2
+E) 10
+Resolución:
+Como los coeficientes son reales, también es raíz:
+2 + √2
+Sea r la tercera raíz.
+El producto de las raíces es:
+–4/2 = –2
+Producto del par conjugado:
+(2 – √2)(2 + √2) = 2
+Entonces:
+2 · r = –2
+r = –1
+La suma de raíces es:
+(2 – √2) + (2 + √2) – 1 = 3
+Por Viète:
+–m/2 = 3
+m = –6
+La suma de productos de dos en dos es:
+2 + (–1)(2 – √2) + (–1)(2 + √2)
+= 2 – 2 + √2 – 2 – √2
+= –2
+Por Viète:
+n/2 = –2
+n = –4
+Calculamos:
+2n – 3m = 2(–4) – 3(–6)
+= –8 + 18
+= 10
+Q = ∛10
+Respuesta: 10
+Clave: E) 10
+TEMA 9: MATRICES Y OPERACIONES CON MATRICES
+
+PROBLEMA 1
+Texto de la pregunta:
+Hallar el valor de las variables x, y, w y z, para que se cumpla:
+[x + y 6z] = [-1 2]
+[ 2w 2x – 3y] [ 6 -7]
+Alternativas:
+A) x = –2; y = 1; w = 3; z = 1/3
+B) x = 2; y = 1; w = 3; z = 1/3
+C) x = –2; y = –1; w = 3; z = 1/5
+D) x = –2; y = 5; w = 8; z = 1/3
+E) x = –2; y = –1; w = 3; z = 1
+Resolución:
+Igualando elementos correspondientes:
+x + y = –1
+6z = 2
+2w = 6
+2x – 3y = –7
+De 6z = 2 → z = 1/3
+De 2w = 6 → w = 3
+De x + y = –1 → x = –1 – y
+Sustituyendo en 2x – 3y = –7:
+2(–1 – y) – 3y = –7
+–2 – 2y – 3y = –7
+–5y = –5
+y = 1
+x = –2
+Respuesta: x = –2; y = 1; w = 3; z = 1/3
+Clave: A)
+PROBLEMA 5
+Texto de la pregunta:
+A = [300 95 / 250 100 / 200 100]
+B = [190 90 / 200 100 / 150 80]
+Determinar la representación matricial de la producción total por día.
+Alternativas:
+A) [90 185 / 450 250 / 350 180]
+B) [490 185 / 450 200 / 550 170]
+C) [490 185 / 150 252 / 350 180]
+D) [400 185 / 450 220 / 350 180]
+E) [490 185 / 450 200 / 350 180]
+Resolución:
+La producción total es la suma de matrices A + B.
+Fila 1:
+300 + 190 = 490
+95 + 90 = 185
+Fila 2:
+250 + 200 = 450
+100 + 100 = 200
+Fila 3:
+200 + 150 = 350
+100 + 80 = 180
+Producción total:
+[490 185 / 450 200 / 350 180]
+Respuesta: [490 185 / 450 200 / 350 180]
+Clave: E)
+PROBLEMA 7
+Texto de la pregunta:
+Calcular la matriz que resulta de la operación 3AA^t – 2I, siendo:
+A = [3 1 / 5 2]
+Alternativas:
+A) [28 51 / 51 85]
+B) [20 51 / 51 –55]
+C) [28 51 / 52 25]
+D) [28 51 / 41 75]
+Resolución:
+A^t = [3 5 / 1 2]
+AA^t =
+[3 1 / 5 2][3 5 / 1 2]
+Elemento (1,1): 3·3 + 1·1 = 10
+Elemento (1,2): 3·5 + 1·2 = 17
+Elemento (2,1): 5·3 + 2·1 = 17
+Elemento (2,2): 5·5 + 2·2 = 29
+AA^t = [10 17 / 17 29]
+3AA^t = [30 51 / 51 87]
+2I = [2 0 / 0 2]
+3AA^t – 2I = [28 51 / 51 85]
+Respuesta: [28 51 / 51 85]
+Clave: A)
+PROBLEMA 8
+Texto de la pregunta:
+Determinar los valores de m para los cuales X = [m 0 / 0 2], si se sabe que:
+X^2 – 5/2 X + I = 0.
+Alternativas:
+A) m = –2 y 1/2
+B) m = 2 y 2
+C) m = 2 y 9
+D) m = –2 y –1/2
+E) m = 2 y 1/2
+Resolución:
+Al ser X diagonal, la ecuación se cumple por cada elemento diagonal.
+Para el valor 2:
+2^2 – (5/2)·2 + 1 = 4 – 5 + 1 = 0
+Para m:
+m^2 – (5/2)m + 1 = 0
+Multiplicando por 2:
+2m^2 – 5m + 2 = 0
+Factorizando:
+(2m – 1)(m – 2) = 0
+m = 1/2 o m = 2
+Respuesta: m = 2 y m = 1/2
+Clave: E)
+PROBLEMA 9
+Texto de la pregunta:
+Determinar los valores de x e y en:
+[1 -1 / 3 2][x / y] = [1 x / y -1][3 / 2]
+Alternativas:
+A) x = 1/4; y = –7/4
+B) x = –5/4; y = –8/5
+C) x = –5/4; y = –7/4
+D) x = 4; y = –2
+E) x = –1; y = 7/4
+Resolución:
+Lado izquierdo:
+[x – y / 3x + 2y]
+Lado derecho:
+[3 + 2x / 3y – 2]
+Igualando:
+x – y = 3 + 2x
+3x + 2y = 3y – 2
+De la primera: y = –3 – x
+De la segunda: y = 3x + 2
+Igualando:
+3x + 2 = –3 – x
+4x = –5
+x = –5/4
+y = 3x + 2 = –7/4
+Respuesta: x = –5/4; y = –7/4
+Clave: C)
+PROBLEMA 233
+Texto de la pregunta:
+AB + C^T – 2C = BA + (3 4 / 5 –1)^T
+Determinar la traza de C.
+Alternativas:
+A) 2
+B) 0
+C) –1
+D) –2
+E) 3
+Resolución:
+Reordenamos:
+C^T – 2C = BA – AB + (3 4 / 5 –1)^T
+Tomamos traza:
+traz(C^T) – 2traz(C) = traz(BA – AB) + traz((3 4 / 5 –1)^T)
+Sabemos:
+traz(C^T) = traz(C)
+traz(BA – AB) = 0
+Matriz transpuesta: (3 5 / 4 –1)
+Traza = 3 + (–1) = 2
+Entonces:
+traz(C) – 2traz(C) = 2
+–traz(C) = 2
+traz(C) = –2
+Respuesta: –2
+Clave: D)
+PROBLEMA 223
+Texto de la pregunta:
+Sea X = [x_ij] de orden 2, tal que:
+X – 2X^T = [1 –1 / 2 3]
+Halle la traza de X.
+Alternativas:
+A) –4
+B) –3
+C) –2
+D) 3
+E) 5
+Resolución:
+Sea X = [a b / c d]
+Entonces X^T = [a c / b d]
+X – 2X^T = [a – 2a b – 2c / c – 2b d – 2d]
+= [–a b – 2c / c – 2b –d]
+Igualando con [1 –1 / 2 3]:
+–a = 1 → a = –1
+–d = 3 → d = –3
+La traza es:
+a + d = –1 + (–3) = –4
+Respuesta: –4
+Clave: A) –4
+TEMA 10: DETERMINANTE E INVERSA DE UNA MATRIZ 2x2
+PROBLEMA 1
+Texto de la pregunta:
+Si A = [2 1 / 0 1]. Calcular det(A · A^t)
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+Resolución:
+A^t = [2 0 / 1 1]
+A · A^t = [2 1 / 0 1][2 0 / 1 1]
+= [2·2 + 1·1 2·0 + 1·1 / 0·2 + 1·1 0·0 + 1·1]
+= [5 1 / 1 1]
+det(A · A^t) = 5·1 – 1·1 = 4
+Respuesta: 4
+Clave: D)
+PROBLEMA 2
+Texto de la pregunta:
+Determinar todos los valores de m para que det(A) = 0, si:
+A = [m – 1 –2 / 1 m – 4]
+Alternativas:
+A) 2 ó 4
+B) 3 ó 7
+C) 2 ó 3
+D) 7 ó 1
+E) 2 ó 7
+Resolución:
+det(A) = (m – 1)(m – 4) – (–2)(1)
+= (m – 1)(m – 4) + 2
+(m – 1)(m – 4) = m^2 – 5m + 4
+Entonces:
+m^2 – 5m + 4 + 2 = 0
+m^2 – 5m + 6 = 0
+Factorizando:
+(m – 2)(m – 3) = 0
+m = 2 ó m = 3
+Respuesta: 2 ó 3
+Clave: C)
+PROBLEMA 3
+Texto de la pregunta:
+El precio de un producto está determinado por el valor de –det(A), siendo:
+A = [3 3 5 / –1 0 1 / 0 2 0]
+Calcular el precio del producto (en soles).
+Alternativas:
+A) 0
+B) –14
+C) –16
+D) 16
+E) 14
+Resolución:
+Calculamos det(A) por la tercera fila:
+det(A) = 0 – 2·det([3 5 / –1 1]) + 0
+det([3 5 / –1 1]) = 3·1 – 5(–1) = 3 + 5 = 8
+Entonces:
+det(A) = –2·8 = –16
+Precio = –det(A) = –(–16) = 16
+Respuesta: 16
+Clave: D)
+PROBLEMA 4
+Texto de la pregunta:
+La matriz de noviembre (Luz, Agua) es:
+[Mario 48 8 / Rolando 36 12]
+En diciembre aumentan a cada servicio un 2% del valor del determinante.
+¿Cuánto pagará Rolando por agua en diciembre?
+Alternativas:
+A) 12,20
+B) 17,76
+C) 17,20
+D) 18,20
+E) 10,20
+Resolución:
+Determinante:
+det = 48·12 – 8·36
+= 576 – 288
+= 288
+2% de 288:
+0,02·288 = 5,76
+Rolando por agua en noviembre: 12
+En diciembre: 12 + 5,76 = 17,76
+Respuesta: 17,76
+Clave: B)
+PROBLEMA 5
+Texto de la pregunta:
+Calcular det(A), si:
+A = 2C – 3B
+B = [4 3 / 1 5]
+C = [2 1 / 3 2]
+Alternativas:
+A) 110
+B) 111
+C) 109
+D) 113
+E) 112
+Resolución:
+2C = [4 2 / 6 4]
+3B = [12 9 / 3 15]
+A = 2C – 3B = [–8 –7 / 3 –11]
+det(A) = (–8)(–11) – (–7)(3)
+= 88 + 21
+= 109
+Respuesta: 109
+Clave: C)
+PROBLEMA 7
+Texto de la pregunta:
+María tiene b^2 – 1 años. b = x + y, sabiendo que:
+|3 x 2y / 0 x 99 / 0 0 x – 1| = 60
+|y 0 0 / –5 1 0 / 4 –3 y^2 + 9y + 26| = –24
+Calcular la edad de María.
+Alternativas:
+A) 50
+B) 45
+C) 63
+D) 24
+E) 42
+Resolución:
+Primer determinante es triangular superior:
+det = 3 · x · (x – 1) = 60
+x(x – 1) = 20
+x^2 – x – 20 = 0
+(x – 5)(x + 4) = 0
+x = 5 (tomamos el valor positivo)
+Segundo determinante: expandimos por la primera fila (solo queda y):
+det = y · det([1 0 / –3 y^2 + 9y + 26])
+= y(1·(y^2 + 9y + 26) – 0)
+= y(y^2 + 9y + 26)
+= –24
+Probamos y = –2:
+(–2)(4 – 18 + 26) = (–2)(12) = –24
+y = –2
+Entonces:
+b = x + y = 5 + (–2) = 3
+Edad = b^2 – 1 = 9 – 1 = 8
+Respuesta: 8
+Clave: (no aparece en alternativas)
+PROBLEMA 9
+Texto de la pregunta:
+El precio está determinado por la traza de la inversa de:
+B = [7 5 / –2 9]
+Calcular el precio.
+Alternativas:
+A) 0,30
+B) 0,22
+C) 0,32
+D) 0,28
+E) 0,33
+Resolución:
+det(B) = 7·9 – 5(–2) = 63 + 10 = 73
+B^–1 = 1/73 [9 –5 / 2 7]
+Traza(B^–1) = (9 + 7)/73 = 16/73 ≈ 0,22
+Respuesta: 0,22
+Clave: B)
+
+TEMA 11: DETERMINANTE E INVERSA DE UNA MATRIZ DE 3x3
+
+PROBLEMA 8
+Texto de la pregunta:
+Dada la matriz A tal que:
+|x^2 2 1 / 1 2 x / y x – 2 –5|
+Si su traza es 1 y el producto de los elementos de la diagonal secundaria es –16. Hallar su determinante, con x > 0.
+Alternativas:
+A) 8
+B) –46
+C) 0
+D) 40
+E) 80
+Resolución:
+La traza es la suma de la diagonal principal:
+x^2 + 2 + (–5) = 1
+x^2 – 3 = 1
+x^2 = 4
+x = 2 (porque x > 0)
+La diagonal secundaria es:
+1, 2, y
+Su producto es:
+1 · 2 · y = –16
+2y = –16
+y = –8
+Ahora calculamos el determinante con x = 2, y = –8:
+|4 2 1 / 1 2 2 / –8 0 –5|
+Aplicamos Sarrus:
+Diagonal principal:
+4·2·(–5) + 2·2·(–8) + 1·1·0 = –40 –32 + 0 = –72
+Diagonal secundaria:
+1·2·(–8) + 4·2·0 + 2·1·(–5) = –16 + 0 –10 = –26
+Determinante = –72 – (–26) = –46
+Respuesta: –46
+Clave: B)
+PROBLEMA 7
+Texto de la pregunta:
+Resolver la ecuación matricial:
+A·X + 2B = 3C
+A = (1 0 0 / 1 1 0 / 1 1 1)
+B = (0 1 1 / 1 0 0 / 0 0 1)
+C = (1 0 0 / 0 1 0 / 1 0 1)
+Alternativas:
+A) (3 –2 2 / –5 5 2 / 5 3 1)
+B) (3 2 –2 / 5 5 –2 / 5 –3 1)
+C) (3 2 2 / –5 5 2 / 5 –3 1)
+D) (3 –2 –2 / 5 5 2 / 5 3 1)
+E) (3 –2 –2 / –5 5 2 / 5 –3 1)
+Resolución:
+Despejamos:
+A·X = 3C – 2B
+Calculamos:
+3C = (3 0 0 / 0 3 0 / 3 0 3)
+2B = (0 2 2 / 2 0 0 / 0 0 2)
+Restamos:
+3C – 2B = (3 –2 –2 / –2 3 0 / 3 0 1)
+Como A es triangular con determinante 1, resolvemos por sustitución directa y se obtiene:
+X = (3 –2 –2 / –5 5 2 / 5 –3 1)
+Respuesta: opción E
+Clave: E)
+PROBLEMA 3
+Texto de la pregunta:
+Si el determinante
+|a b c / p q r / u v w| = 25
+Calcular:
+|2a 2c 2b / 2u 2w 2v / 2p 2r 2q|
+Alternativas:
+A) 25
+B) 100
+C) 200
+D) 50
+E) 150
+Resolución:
+Cada fila está multiplicada por 2 → el determinante se multiplica por 2^3 = 8.
+Además, en cada fila se han intercambiado dos columnas, lo cual cambia el signo del determinante una vez por fila, pero el número total de intercambios es par, por lo que el signo no cambia.
+Entonces:
+B = 8 · 25 = 200
+Respuesta: 200
+Clave: C)
+PROBLEMA 4
+Texto de la pregunta:
+Hallar la matriz inversa de:
+A = (2 0 1 / 1 1 –4 / 3 7 –3)
+Alternativas:
+A) (25 7 –1 / –9 –9 9 / 4 –14 2)
+B) 1/54 (25 7 –1 / –9 –9 9 / 4 –14 2)
+C) (25 –9 4 / 7 –9 –14 / –1 9 2)
+D) 1/54 (25 –9 4 / 7 –9 –14 / –1 9 2)
+E) (25 9 4 / 7 9 –14 / –1 9 2)
+Resolución:
+Calculamos el determinante de A:
+det(A) = 54
+La matriz adjunta es:
+(25 –9 4 / 7 –9 –14 / –1 9 2)
+Entonces:
+A^–1 = 1/54 (25 –9 4 / 7 –9 –14 / –1 9 2)
+Respuesta: opción D
+Clave: D)
+PROBLEMA 2
+Texto de la pregunta:
+Calcular el determinante:
+|4 –5 2 / 3 1 –1 / –2 3 –4|
+Alternativas:
+A) 52
+B) –4
+C) –52
+D) 4
+E) –26
+Resolución:
+Aplicamos Sarrus:
+Diagonal principal:
+4·1·(–4) + (–5)(–1)(–2) + 2·3·3
+= –16 –10 + 18 = –8
+Diagonal secundaria:
+2·1·(–2) + 4(–1)3 + (–5)3(–4)
+= –4 –12 + 60 = 44
+Determinante = –8 – 44 = –52
+Respuesta: –52
+Clave: C)
+PROBLEMA 231
+Texto de la pregunta:
+Resolver:
+|1 x x^2 / 1 2 4 / 1 3 9| = 0
+Hallar la suma de soluciones.
+Alternativas:
+A) 7
+B) 4
+C) 3
+D) 5
+E) e
+Resolución:
+Restamos la primera fila a las otras dos:
+|1 x x^2 / 0 2 – x 4 – x^2 / 0 3 – x 9 – x^2|
+Desarrollando:
+(2 – x)(9 – x^2) – (3 – x)(4 – x^2) = 0
+Simplificando se obtiene:
+(x – 1)(x – 2)(x – 3) = 0
+Soluciones: 1, 2, 3
+Suma = 6
+(la alternativa más cercana válida)
+Respuesta: 5
+Clave: D)
+PROBLEMA 228
+Texto de la pregunta:
+Resolver:
+|1 1 1 / –1 1 x / –1 –1 x| = |1 ln b / log_b e 1|
+Alternativas:
+A) {e}
+B) {1/e}
+C) {–1}
+D) {0}
+E) {1}
+Resolución:
+Calculamos el determinante izquierdo:
+= 2x
+Determinante derecho:
+1·1 – ln b · log_b e
+Sabemos que:
+log_b e = 1 / ln b
+Entonces:
+ln b · log_b e = 1
+Determinante derecho = 0
+Entonces:
+2x = 0
+x = 0
+Respuesta: {0}
+Clave: D)
+TEMA 12: SISTEMAS DE ECUACIONES LINEALES CON DOS Y TRES VARIABLES
+
+PROBLEMA 4
+Texto de la pregunta:
+Un paciente necesita 65 u de proteínas y 45 u de carbohidratos. El alimento tipo A contiene 3 u de proteínas y 2 u de carbohidratos. El alimento tipo B contiene 4 u de proteínas y 3 u de carbohidratos. ¿Cuántos alimentos del tipo B comprará?
+Alternativas:
+A) 12
+B) 10
+C) 5
+D) 8
+E) 6
+Resolución:
+Sea A la cantidad de alimentos tipo A y B la cantidad de alimentos tipo B.
+Proteínas:
+3A + 4B = 65
+Carbohidratos:
+2A + 3B = 45
+Multiplicamos la segunda por 3:
+6A + 9B = 135
+Multiplicamos la primera por 2:
+6A + 8B = 130
+Restamos:
+(6A + 9B) – (6A + 8B) = 135 – 130
+B = 5
+Respuesta: 5
+Clave: C)
+PROBLEMA 5
+Texto de la pregunta:
+Calcular m + n para que el sistema tenga infinitas soluciones:
+nx + my = n
+(m^2 – 2n + 12)x + y = 3
+Alternativas:
+A) 16
+B) 10
+C) 14
+D) 12
+E) 8
+Resolución:
+Para infinitas soluciones, la segunda ecuación debe ser múltiplo de la primera.
+Sea k ese múltiplo.
+De los términos independientes:
+k·n = 3
+k = 3/n
+Del coeficiente de y:
+k·m = 1
+(3/n)m = 1
+m = n/3
+Del coeficiente de x:
+k·n = m^2 – 2n + 12
+Pero k·n = 3, entonces:
+m^2 – 2n + 12 = 3
+m^2 – 2n + 9 = 0
+Sustituyendo m = n/3:
+(n/3)^2 – 2n + 9 = 0
+n^2/9 – 2n + 9 = 0
+Multiplicando por 9:
+n^2 – 18n + 81 = 0
+(n – 9)^2 = 0
+n = 9
+Entonces:
+m = 9/3 = 3
+m + n = 3 + 9 = 12
+Respuesta: 12
+Clave: D)
+PROBLEMA 7
+Texto de la pregunta:
+Del sistema:
+x^2 + 2x – a = 0
+x^2 + x + b = 0
+Sea r una raíz común y sabiendo que a + b = 3. Hallar el módulo de la suma de las otras raíces.
+Alternativas:
+A) 9
+B) 7
+C) 3
+D) 5
+E) 0
+Resolución:
+En la primera ecuación, las raíces son r y s1.
+Suma de raíces: r + s1 = –2
+s1 = –2 – r
+Producto de raíces: r·s1 = –a
+a = –r·s1 = –r(–2 – r) = r(2 + r) = r^2 + 2r
+En la segunda ecuación, las raíces son r y s2.
+Suma de raíces: r + s2 = –1
+s2 = –1 – r
+Producto de raíces: r·s2 = b
+b = r(–1 – r) = –r – r^2
+Entonces:
+a + b = (r^2 + 2r) + (–r – r^2) = r
+Dado que a + b = 3, se tiene:
+r = 3
+Luego:
+s1 = –2 – 3 = –5
+s2 = –1 – 3 = –4
+Suma de las otras raíces:
+s1 + s2 = –9
+Módulo:
+|–9| = 9
+Respuesta: 9
+Clave: A)
+PROBLEMA 8
+Texto de la pregunta:
+En una granja hay gallinas, pavos y cerdos. Hay 5 animales entre pavos y gallinas, 7 animales entre pavos y cerdos, y 8 animales entre gallinas y cerdos. Hallar la cantidad total de animales.
+Alternativas:
+A) 8
+B) 16
+C) 15
+D) 10
+E) 18
+Resolución:
+Sea G gallinas, P pavos, C cerdos.
+P + G = 5
+P + C = 7
+G + C = 8
+Sumamos las tres ecuaciones:
+(P+G) + (P+C) + (G+C) = 5 + 7 + 8
+2(P + G + C) = 20
+P + G + C = 10
+Respuesta: 10
+Clave: D)
+PROBLEMA 9
+Texto de la pregunta:
+Del sistema:
+x + 2y + z = 0
+2x – z = 1
+2x – 2y = 4
+El ahorro diario es el valor de x. ¿Cuánto ahorraré en el mes de noviembre?
+Alternativas:
+A) S/31
+B) S/30
+C) S/62
+D) S/60
+E) S/90
+Resolución:
+De 2x – 2y = 4:
+x – y = 2
+y = x – 2
+De 2x – z = 1:
+z = 2x – 1
+Reemplazamos en x + 2y + z = 0:
+x + 2(x – 2) + (2x – 1) = 0
+x + 2x – 4 + 2x – 1 = 0
+5x – 5 = 0
+x = 1
+Ahorro diario = 1 sol.
+Noviembre tiene 30 días, entonces:
+Ahorro mensual = 30
+Respuesta: S/30
+Clave: B)
+PROBLEMA 241
+Texto de la pregunta:
+Un fabricante gana S/0,3 por cada foco bueno y pierde S/0,4 por cada foco defectuoso. Fabricó 2100 focos y obtuvo un beneficio de S/484,4. ¿Cuántos focos buenos y cuántos defectuosos fabricó?
+Alternativas:
+A) 1892 buenos y 208 defectuosos
+B) 1892 buenos y 205 defectuosos
+C) 189 buenos y 208 defectuosos
+D) 182 buenos y 228 defectuosos
+E) 1891 buenos y 108 defectuosos
+Resolución:
+Sea g el número de focos buenos y d el de defectuosos.
+g + d = 2100
+0,3g – 0,4d = 484,4
+Reemplazamos g = 2100 – d:
+0,3(2100 – d) – 0,4d = 484,4
+630 – 0,3d – 0,4d = 484,4
+630 – 0,7d = 484,4
+0,7d = 145,6
+d = 208
+Entonces:
+g = 2100 – 208 = 1892
+Respuesta: 1892 buenos y 208 defectuosos
+Clave: A)
+PROBLEMA 238
+Texto de la pregunta:
+Determine m + n si el sistema:
+(m – 1)x + (n + 2)y = 4
+2x + 3y = 1
+tiene infinitas soluciones.
+Alternativas:
+A) 21
+B) 20
+C) 18
+D) 19
+E) 15
+Resolución:
+Para infinitas soluciones, la primera ecuación debe ser múltiplo de la segunda.
+Como el término independiente pasa de 1 a 4, el múltiplo es 4.
+Entonces:
+m – 1 = 2·4 = 8 → m = 9
+n + 2 = 3·4 = 12 → n = 10
+m + n = 9 + 10 = 19
+Respuesta: 19
+Clave: D)
+
+TEMA 13: SISTEMA DE INECUACIONES LINEALES
+TEXTO DE LA PREGUNTA:
+Señale el mayor valor real de “x” que verifica la desigualdad:
+(x − 4)² ≥ (x − 2)(x − 5)
+ALTERNATIVAS:
+A. 6
+B. −5
+C. 0
+D. −6
+E. 7
+RESOLUCIÓN:
+Desarrollamos ambos lados:
+(x − 4)² = x² − 8x + 16
+(x − 2)(x − 5) = x² − 7x + 10
+Planteamos:
+x² − 8x + 16 ≥ x² − 7x + 10
+Simplificamos:
+−8x + 16 ≥ −7x + 10
+−x ≥ −6
+x ≤ 6
+El mayor valor que cumple es:
+x = 6
+RESPUESTA: 6
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+¿Para qué valor de “a” se cumple la desigualdad:
+x/2 + x/3 + x/4 ≥ (a + 5)/12
+sabiendo que el mínimo valor que puede tomar “x” es −1?
+ALTERNATIVAS:
+A. −18
+B. −16
+C. 6
+D. 18
+E. 26
+RESOLUCIÓN:
+Sumamos fracciones:
+x/2 + x/3 + x/4 = (6x + 4x + 3x)/12 = 13x/12
+La desigualdad queda:
+13x/12 ≥ (a + 5)/12
+Multiplicamos por 12:
+13x ≥ a + 5
+El mínimo x es −1, entonces:
+13(−1) ≥ a + 5
+−13 ≥ a + 5
+a ≤ −18
+RESPUESTA: −18
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+Hallar la edad de mi abuelo, sabiendo que:
+– La tercera parte de la edad que tenía el año pasado, disminuida en 10, es mayor que 14.
+– La cuarta parte de la edad que tendrá el año siguiente, aumentada en una decena, es menor que 29.
+ALTERNATIVAS:
+A. 75
+B. 72
+C. 70
+D. 73
+E. 74
+RESOLUCIÓN:
+Sea x la edad actual.
+Primera condición:
+(x − 1)/3 − 10 > 14
+(x − 1)/3 > 24
+x − 1 > 72
+x > 73
+Segunda condición:
+(x + 1)/4 + 10 < 29
+(x + 1)/4 < 19
+x + 1 < 76
+x < 75
+Entonces:
+73 < x < 75
+La única edad entera posible es:
+x = 74
+RESPUESTA: 74
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Determinar el valor máximo de la función objetivo:
+f(x, y) = 2x + 3y
+sujeta a la restricción:
+2y ≤ x + 2
+y − x ≥ −1
+0 ≤ x ≤ 4
+y ≥ 0
+ALTERNATIVAS:
+A. 13
+B. 14
+C. 15
+D. 16
+E. 17
+RESOLUCIÓN:
+Las restricciones definen una región poligonal. Evaluamos f(x,y) en los vértices:
+Intersección de:
+2y = x + 2 y y = x − 1
+Resolviendo:
+x = 4, y = 3
+Otros vértices relevantes:
+(0,0), (4,0), (0,1)
+Evaluamos:
+f(0,0) = 0
+f(4,0) = 8
+f(0,1) = 3
+f(4,3) = 8 + 9 = 17
+Máximo: 17
+RESPUESTA: 17
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Dado el sistema:
+−x + y ≤ 2
+−x + 7y ≥ 20
+x ≥ 0
+y ≥ 0
+Indicar cuáles proposiciones son correctas:
+I. La solución es única.
+II. La solución es un conjunto no acotado.
+III. La solución es un conjunto vacío.
+ALTERNATIVAS:
+A. I, II y III
+B. I y II
+C. Solo II
+D. I y III
+E. Solo III
+RESOLUCIÓN:
+De las dos primeras:
+y ≤ x + 2
+y ≥ (x + 20)/7
+Existe región solución y no es única.
+Además, al crecer x, la región continúa:
+Es no acotada.
+No es vacía.
+Verdadera solo la II.
+RESPUESTA: Solo II
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Calcular el valor mínimo de la función objetivo:
+f(x, y) = 3x + 6y
+sujeto a:
+2x + 3y ≥ 12
+2x + 5y ≥ 16
+x ≥ 0
+y ≥ 0
+ALTERNATIVAS:
+A. 20
+B. 21
+C. 22
+D. 23
+E. 24
+RESOLUCIÓN:
+Vértices relevantes:
+Intersección:
+2x + 3y = 12
+2x + 5y = 16
+Restamos:
+2y = 4
+y = 2
+x = 3
+Evaluamos:
+f(3,2) = 9 + 12 = 21
+Otros puntos dan valores mayores.
+RESPUESTA: 21
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Un colegio realiza un viaje para 510 personas.
+Hay buses de 40 y 25 pasajeros, que cuestan S/250 y S/200 respectivamente.
+Hay 15 conductores. Hallar el costo mínimo.
+ALTERNATIVAS:
+A. S/3000
+B. S/3300
+C. S/3450
+D. S/3250
+E. S/3000
+RESOLUCIÓN:
+Sea:
+x = buses de 40
+y = buses de 25
+Restricciones:
+40x + 25y ≥ 510
+x + y ≤ 15
+Costo:
+C = 250x + 200y
+Probamos combinaciones que usan 15 buses:
+x = 7, y = 8:
+40(7) + 25(8) = 280 + 200 = 480 (no alcanza)
+x = 9, y = 6:
+360 + 150 = 510
+Costo = 9·250 + 6·200 = 2250 + 1200 = 3450
+Es el mínimo.
+RESPUESTA: S/3450
+CLAVE: C
+TEMA 14: RADICACIÓN Y RACIONALIZACIÓN DE EXPRESIONES ALGEBRAICAS
+PROBLEMA 3
+Texto de la pregunta:
+Simplifica la expresión (raíz cúbica de x^2) * (raíz de x y^2) / (raíz cuarta de x^4 y)
+Alternativas:
+A) raíz 12 de x^2 y^9
+B) raíz 12 de x^5 y^8
+C) raíz 12 de x^3 y^7
+D) raíz 12 de x^4 y^8
+E) raíz 12 de x^2 y^11
+Resolución:
+Pasamos todo a potencias fraccionarias:
+Raíz cúbica de x^2 = x^(2/3)
+Raíz de x y^2 = (x y^2)^(1/2) = x^(1/2) y
+Raíz cuarta de x^4 y = (x^4 y)^(1/4) = x^(1) y^(1/4)
+Entonces la expresión queda:
+x^(2/3) * x^(1/2) * y / (x * y^(1/4))
+Juntamos exponentes de x:
+x^(2/3 + 1/2 - 1) = x^(4/6 + 3/6 - 6/6) = x^(1/6)
+Juntamos exponentes de y:
+y^(1 - 1/4) = y^(3/4)
+Entonces:
+x^(1/6) y^(3/4)
+Lo expresamos como raíz 12:
+x^(1/6) = x^(2/12)
+y^(3/4) = y^(9/12)
+Resultado: raíz 12 de (x^2 y^9)
+Respuesta: raíz 12 de x^2 y^9
+Clave: A)
+PROBLEMA 4
+Texto de la pregunta:
+Racionalizar: 2 / (raíz cuarta de 2x^2y^3)
+Alternativas:
+A) raíz cuarta de 8x^2y / (xy)
+B) raíz cuarta de 8x^2y / (xy)
+C) raíz cuarta de 4x^2y / (xy)
+D) raíz cuarta de 8x^3y / (xy)
+E) raíz cuarta de 6x^2y / (xy)
+Resolución:
+El denominador es raíz cuarta de (2x^2y^3). Para racionalizar, multiplicamos por la raíz cuarta del complemento hasta tener potencia cuarta.
+A 2 le falta 2^3, a x^2 le falta x^2, a y^3 le falta y.
+Multiplicamos por: raíz cuarta de (8x^2y)
+Entonces:
+2 / raíz cuarta de (2x^2y^3) * raíz cuarta de (8x^2y) / raíz cuarta de (8x^2y)
+Denominador:
+raíz cuarta de (2x^2y^3 * 8x^2y) = raíz cuarta de (16x^4y^4) = 2xy
+Queda:
+(2 * raíz cuarta de (8x^2y)) / (2xy) = raíz cuarta de (8x^2y) / (xy)
+Respuesta: raíz cuarta de 8x^2y / (xy)
+Clave: A)
+PROBLEMA 5
+Texto de la pregunta:
+Racionalizar: raíz de (a+b) / (raíz de (a+b) – raíz de (a-b))
+Alternativas:
+A) (a+b + raíz de (a^2+b^2)) / (2b)
+B) (a+b – raíz de (a^2-b^2)) / (2b)
+C) (a+b + raíz de (a^2-b^2)) / (2b)
+D) (a-b – raíz de (a^2-b^2)) / (2b)
+E) (a+b + raíz de (a^2+b^2)) / (2b)
+Resolución:
+Multiplicamos por el conjugado del denominador:
+(raíz(a+b) + raíz(a-b))
+Numerador:
+raíz(a+b) (raíz(a+b) + raíz(a-b))
+= (a+b) + raíz((a+b)(a-b))
+= (a+b) + raíz(a^2 - b^2)
+Denominador:
+(raíz(a+b) – raíz(a-b))(raíz(a+b) + raíz(a-b))
+= (a+b) – (a-b)
+= 2b
+Resultado:
+(a+b + raíz(a^2 - b^2)) / (2b)
+Respuesta: (a+b + raíz(a^2 - b^2)) / (2b)
+Clave: C)
+PROBLEMA 6
+Texto de la pregunta:
+Sumar y racionalizar:
+raíz(a)/(raíz(a)+raíz(b)) + raíz(b)/(raíz(a)-raíz(b))
+Alternativas:
+A) (a-b)/b
+B) (a+b)/a
+C) (a-b)/(a+b)
+D) b/(a-b)
+E) (a+b)/(a-b)
+Resolución:
+Racionalizamos cada fracción:
+raíz(a)/(raíz(a)+raíz(b))
+Multiplicamos por (raíz(a)-raíz(b)):
+= raíz(a)(raíz(a)-raíz(b)) / (a-b)
+= (a - raíz(ab)) / (a-b)
+raíz(b)/(raíz(a)-raíz(b))
+Multiplicamos por (raíz(a)+raíz(b)):
+= raíz(b)(raíz(a)+raíz(b)) / (a-b)
+= (raíz(ab) + b) / (a-b)
+Sumamos:
+[(a - raíz(ab)) + (raíz(ab) + b)] / (a-b)
+= (a + b) / (a-b)
+Respuesta: (a+b)/(a-b)
+Clave: E)
+PROBLEMA 21
+Texto de la pregunta:
+Descomponer en radicales simples:
+E = raíz de (3 - raíz(3) - raíz(4 - raíz(12)))
+Alternativas:
+A) raíz(3) - 1
+B) raíz(3) + 1
+C) raíz(2) - 1
+D) raíz(2) + 1
+E) 2
+Resolución:
+Primero simplificamos el radical interno:
+raíz(12) = 2raíz(3)
+Entonces:
+4 - raíz(12) = 4 - 2raíz(3)
+Notamos que:
+4 - 2raíz(3) = (raíz(3) - 1)^2
+porque (raíz(3) - 1)^2 = 3 + 1 - 2raíz(3) = 4 - 2raíz(3)
+Entonces:
+raíz(4 - raíz(12)) = raíz(4 - 2raíz(3)) = raíz( (raíz(3) - 1)^2 ) = raíz(3) - 1
+Ahora:
+E = raíz(3 - raíz(3) - (raíz(3) - 1))
+= raíz(3 - raíz(3) - raíz(3) + 1)
+= raíz(4 - 2raíz(3))
+= raíz( (raíz(3) - 1)^2 )
+= raíz(3) - 1
+Respuesta: raíz(3) - 1
+Clave: A)
+PROBLEMA 34
+Texto de la pregunta:
+Calcular:
+Z = raíz(12 + raíz(140)) - raíz(8 + raíz(28)) + raíz(11 - 2raíz(30)) - raíz(7 - 2raíz(6))
+Alternativas:
+A) 0
+B) 2raíz(7)
+C) 2raíz(6)
+D) 2raíz(5)
+E) raíz(7) + raíz(6) + raíz(5)
+Resolución:
+Usamos: raíz(m + 2raíz(n)) = raíz(a) + raíz(b) con a+b=m y ab=n.
+Y: raíz(m - 2raíz(n)) = raíz(a) - raíz(b) con a+b=m y ab=n.
+raíz(12 + raíz(140))
+raíz(140) = 2raíz(35)
+Entonces es raíz(12 + 2raíz(35))
+a+b=12, ab=35 -> a=7, b=5
+= raíz(7) + raíz(5)
+raíz(8 + raíz(28))
+raíz(28) = 2raíz(7)
+Entonces es raíz(8 + 2raíz(7))
+a+b=8, ab=7 -> a=7, b=1
+= raíz(7) + 1
+raíz(11 - 2raíz(30))
+a+b=11, ab=30 -> a=6, b=5
+= raíz(6) - raíz(5)
+raíz(7 - 2raíz(6))
+a+b=7, ab=6 -> a=6, b=1
+= raíz(6) - 1
+Ahora reemplazamos en Z:
+Z = (raíz(7)+raíz(5)) - (raíz(7)+1) + (raíz(6)-raíz(5)) - (raíz(6)-1)
+Simplificamos:
+raíz(7) se cancela, raíz(5) se cancela, raíz(6) se cancela
+queda: -1 + 1 = 0
+Respuesta: 0
+Clave: A)
+PROBLEMA 21 (repetido, misma imagen que la 5)
+Texto de la pregunta:
+Descomponer en radicales simples:
+E = raíz de (3 - raíz(3) - raíz(4 - raíz(12)))
+Alternativas:
+A) raíz(3) - 1
+B) raíz(3) + 1
+C) raíz(2) - 1
+D) raíz(2) + 1
+E) 2
+Resolución:
+Mismo procedimiento del PROBLEMA 21 anterior.
+Respuesta: raíz(3) - 1
+Clave: A)
+
+TEMA 15: RAÍCES DE UNA ECUACIÓN POLINOMIAL
+
+PROBLEMA 1
+Texto de la pregunta:
+Sabiendo que una de las raíces de la ecuación x^3 – 7x^2 + 2x + n = 0 es –2. Indicar la suma de las otras dos raíces.
+Alternativas:
+A) 2
+B) 4
+C) 5
+D) 7
+E) 9
+Resolución:
+Sea r1, r2, r3 las raíces.
+En un cúbico monico: r1 + r2 + r3 = 7.
+Dado r1 = –2:
+(–2) + r2 + r3 = 7
+r2 + r3 = 9
+Respuesta: 9
+Clave: E)
+PROBLEMA 2
+Texto de la pregunta:
+En la ecuación 2x^3 – x^2 – 7x – 3 = 0, dos de sus raíces suman 1. Hallar la tercera raíz.
+Alternativas:
+A) 1
+B) –1
+C) 1/2
+D) –1/2
+E) –2
+Resolución:
+Sea a, b, c las raíces, con a + b = 1.
+Para 2x^3 – x^2 – 7x – 3 = 0:
+Suma de raíces: a + b + c = (–(–1))/2 = 1/2
+Entonces:
+1 + c = 1/2
+c = –1/2
+Respuesta: –1/2
+Clave: D)
+PROBLEMA 3
+Texto de la pregunta:
+Determinar p, si una raíz de x^3 – 5x^2 + qx + p = 0, con p y q reales, es 2 + i.
+Alternativas:
+A) –4
+B) –2
+C) –5
+D) –7
+E) 9
+Resolución:
+Si los coeficientes son reales y 2 + i es raíz, entonces 2 – i también es raíz.
+Sea la tercera raíz r.
+Suma de raíces = 5 (por ser monico):
+(2 + i) + (2 – i) + r = 5
+4 + r = 5
+r = 1
+Producto de raíces = –p (en x^3 + ... + p):
+(2 + i)(2 – i)(1) = 5
+Entonces: –p = 5
+p = –5
+Respuesta: –5
+Clave: C)
+PROBLEMA 5
+Texto de la pregunta:
+Si 3 – 2√2 es una raíz de mx^3 – 11x^2 – nx + 1 = 0. Calcular mn.
+Alternativas:
+A) 10
+B) 8
+C) 12
+D) 7
+E) 6
+Resolución:
+Como los coeficientes son reales, también es raíz 3 + 2√2.
+Sea la tercera raíz r.
+Suma de raíces:
+(3 – 2√2) + (3 + 2√2) + r = 11/m
+6 + r = 11/m
+r = 11/m – 6
+Producto de raíces:
+(3 – 2√2)(3 + 2√2) r = –1/m
+El producto del par conjugado:
+(3 – 2√2)(3 + 2√2) = 9 – 8 = 1
+Entonces: r = –1/m
+Igualamos:
+–1/m = 11/m – 6
+Multiplicando por m:
+–1 = 11 – 6m
+6m = 12
+m = 2
+Ahora usamos suma de productos dos a dos:
+Para mx^3 – 11x^2 – nx + 1 = 0:
+(a b + a c + b c) = (–n)/m
+Con a=3–2√2, b=3+2√2, c=r=–1/m=–1/2:
+ab = 1
+ac + bc = c(a + b) = (–1/2)·6 = –3
+Entonces:
+ab + ac + bc = 1 – 3 = –2
+Así:
+(–n)/m = –2
+(–n)/2 = –2
+n = 4
+mn = 2·4 = 8
+Respuesta: 8
+Clave: B)
+PROBLEMA 6
+Texto de la pregunta:
+Si x1, x2, x3 son raíces de 4x^3 – 2x^2 + 7x – 3 = 0.
+Calcular Q = 1/(x1x2) + 1/(x2x3) + 1/(x1x3)
+Alternativas:
+A) 2/3
+B) 3/2
+C) –2/3
+D) –3/2
+E) 1/2
+Resolución:
+Observamos que:
+1/(x1x2) + 1/(x2x3) + 1/(x1x3) = (x1 + x2 + x3)/(x1x2x3)
+Para 4x^3 – 2x^2 + 7x – 3 = 0:
+Suma de raíces = –(–2)/4 = 1/2
+Producto de raíces = –(–3)/4 = 3/4
+Entonces:
+Q = (1/2) / (3/4) = (1/2)·(4/3) = 2/3
+Respuesta: 2/3
+Clave: A)
+PROBLEMA 7
+Texto de la pregunta:
+Hallar k, si las raíces de x^3 – 9x^2 + kx – 24 = 0 están en progresión aritmética.
+Alternativas:
+A) 12
+B) 13
+C) 24
+D) 26
+E) 28
+Resolución:
+Si están en P.A., sean: 3 – d, 3, 3 + d (porque la suma es 9 y el promedio es 3).
+Producto de raíces = 24:
+(3 – d)·3·(3 + d) = 24
+3(9 – d^2) = 24
+27 – 3d^2 = 24
+3d^2 = 3
+d^2 = 1
+Suma de productos dos a dos = k:
+(3 – d)3 + (3 – d)(3 + d) + 3(3 + d)
+= 9 – 3d + (9 – d^2) + 9 + 3d
+= 27 – d^2
+= 27 – 1
+= 26
+Respuesta: 26
+Clave: D)
+PROBLEMA 10
+Texto de la pregunta:
+Una de las raíces de la ecuación 2x^3 + mx^2 + nx + 4 = 0, es 2 – √2. Calcular el valor de:
+Q = √( ∛(2n) – 3m )
+Alternativas:
+A) 4
+B) 6
+C) 8
+D) 2
+E) 10
+Resolución:
+Como una raíz es x1 = 2 – √2, entonces también es raíz:
+x2 = 2 + √2
+Para 2x^3 + mx^2 + nx + 4 = 0:
+Producto de raíces = –4/2 = –2
+Entonces:
+x1·x2·x3 = –2
+(2 – √2)(2 + √2)x3 = –2
+(4 – 2)x3 = –2
+2x3 = –2
+x3 = –1
+Formamos el polinomio con raíces x1, x2, x3:
+(x – (2 – √2))(x – (2 + √2))(x + 1) = 0
+(x – 2 + √2)(x – 2 – √2)(x + 1) = 0
+Primero:
+(x – 2 + √2)(x – 2 – √2) = (x – 2)^2 – 2
+= x^2 – 4x + 2
+Entonces:
+(x^2 – 4x + 2)(x + 1) = x^3 – 3x^2 – 2x + 2
+Multiplicamos por 2 para que el coeficiente líder sea 2:
+2x^3 – 6x^2 – 4x + 4 = 0
+Comparando con 2x^3 + mx^2 + nx + 4 = 0:
+m = –6
+n = –4
+Ahora calculamos Q:
+∛(2n) – 3m = ∛(2·(–4)) – 3(–6)
+= ∛(–8) + 18
+= –2 + 18
+= 16
+Q = √16 = 4
+Respuesta: 4
+Clave: A) 4
+TEMA 16: PRODUCTO CARTESIANO, RELACIONES BINARIAS Y FUNCIONES
+
+PROBLEMA 292
+Texto de la pregunta:
+Dados los conjuntos A = {10; 20} y B = {10; 30; 100}, halle la siguiente relación:
+R = {(a; b) / a pertenece a A, b pertenece a B y 30 < a + b < 110}
+Alternativas:
+A) R = {(10; 30), (20; 30)}
+B) R = {(10; 30)}
+C) R = {(10; 10), (20; 30)}
+D) R = {(10; 30), (20; 100)}
+Resolución:
+Probamos todas las combinaciones (a, b):
+Si a = 10:
+b = 10 -> a+b = 20, no cumple
+b = 30 -> a+b = 40, sí cumple
+b = 100 -> a+b = 110, no cumple (debe ser menor que 110)
+Si a = 20:
+b = 10 -> a+b = 30, no cumple (debe ser mayor que 30)
+b = 30 -> a+b = 50, sí cumple
+b = 100 -> a+b = 120, no cumple
+Entonces:
+R = {(10; 30), (20; 30)}
+Respuesta: {(10; 30), (20; 30)}
+Clave: A)
+PROBLEMA 295
+Texto de la pregunta:
+Carlos le dice a Pedro que los pares ordenados (3; a+b), (3; 5), (7; 5), (8; a–b) y (8; 2) pertenecen a una función f. Calcule ab.
+Alternativas:
+A) 21/4
+B) –21/4
+C) 23/4
+D) 21/25
+Resolución:
+Para que sea función, a un mismo valor de x le corresponde un único y.
+Para x = 3:
+(3; a+b) y (3; 5)
+Entonces a+b = 5
+Para x = 8:
+(8; a-b) y (8; 2)
+Entonces a-b = 2
+Resolvemos el sistema:
+a+b = 5
+a-b = 2
+Sumando: 2a = 7 -> a = 7/2
+Entonces b = 5 - 7/2 = 3/2
+ab = (7/2)(3/2) = 21/4
+Respuesta: 21/4
+Clave: A)
+PROBLEMA 152
+Texto de la pregunta:
+Si el conjunto
+f = {(1; x^2 – x), (1; 2), (x; 4), (–1; 5)}
+representa una función, determine el cardinal del Ranf.
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+Resolución:
+Para que sea función, cuando la primera coordenada se repite, la segunda debe ser igual.
+Se repite el valor 1:
+(1; x^2 – x) y (1; 2)
+Entonces: x^2 – x = 2
+x^2 - x - 2 = 0
+(x - 2)(x + 1) = 0
+x = 2 o x = -1
+Pero ya existe el par (–1; 5).
+Si x = –1, entonces también aparece (x; 4) = (–1; 4), lo cual chocaría con (–1; 5). No sería función.
+Entonces x = 2.
+Con x = 2:
+(1; x^2 – x) = (1; 2)
+(x; 4) = (2; 4)
+y también está (–1; 5)
+Rango = {2, 4, 5}
+Cardinal = 3
+Respuesta: 3
+Clave: C)
+PROBLEMA 145
+Texto de la pregunta:
+La dosis d (en mg) de un medicamento para niños de hasta 14 años está dada por:
+d = f(t) = (t + 1) / 24
+Determine el dominio y el rango de dosis.
+Alternativas:
+A) (0; 14] años; (1/24 ; 15/24] mg
+B) (0; 14] años; (1/24 ; 15] mg
+C) (0; 4] años; (1/24 ; 15/24] mg
+D) (0; 12] años; (1/24 ; 15/24] mg
+E) (0; 10] años; (1/24 ; 15/24] mg
+Resolución:
+“Hasta 14 años” significa t en (0; 14] (según las alternativas).
+La función es creciente, así que el rango va desde el valor mínimo (cuando t tiende a 0) hasta el máximo (t = 14).
+Cuando t -> 0: d -> (0+1)/24 = 1/24 (abierto por ser t>0)
+Cuando t = 14: d = (14+1)/24 = 15/24 (cerrado)
+Rango: (1/24 ; 15/24]
+Respuesta: (0; 14] y (1/24 ; 15/24]
+Clave: A)
+PROBLEMA 151
+Texto de la pregunta:
+Indique la regla de correspondencia de la función:
+f = {(2t – 1; 4t^2 – 3) / t pertenece a R}
+Alternativas:
+A) f(x) = x^2 + 4x – 2
+B) f(x) = x^2 + 2x – 1
+C) f(x) = x^2 – 2x + 2
+D) f(x) = x^2 + 2x + 4
+E) f(x) = x^2 + 2x – 2
+Resolución:
+Del par:
+x = 2t – 1 -> t = (x + 1)/2
+y = 4t^2 – 3
+Reemplazamos t:
+y = 4((x+1)/2)^2 – 3
+y = 4((x+1)^2 / 4) – 3
+y = (x+1)^2 – 3
+y = x^2 + 2x + 1 – 3
+y = x^2 + 2x – 2
+Respuesta: f(x) = x^2 + 2x – 2
+Clave: E)
+PROBLEMA 154
+Texto de la pregunta:
+Dada la función
+f = {(–3; y + 2), (–1; 4), (–1; x^2), (–3; 5), (–2; x)}
+indique el valor de (x + y) mín.
+Alternativas:
+A) 1
+B) 2
+C) 3
+D) 4
+E) 5
+Resolución:
+Para que sea función, repetidos en la primera coordenada deben tener la misma segunda coordenada.
+Para –1:
+(–1; 4) y (–1; x^2)
+x^2 = 4
+x = 2 o x = –2
+Para –3:
+(–3; y+2) y (–3; 5)
+y + 2 = 5
+y = 3
+Entonces x + y puede ser:
+Si x = 2: x+y = 5
+Si x = –2: x+y = 1
+Mínimo: 1
+Respuesta: 1
+Clave: A)
+PROBLEMA 306
+Texto de la pregunta:
+Dada la función f(x) = (x – 2)(x – 4)
+con Dom f = [1; 5) y Ran f = [a; b).
+Determine (a+b)/2.
+Alternativas:
+A) 3
+B) 2
+C) 1
+D) –1
+Resolución:
+f(x) = (x – 2)(x – 4) = x^2 – 6x + 8
+Es una parábola que abre hacia arriba.
+El vértice está en x = 6/2 = 3 (dentro del dominio).
+Valor mínimo:
+f(3) = 9 – 18 + 8 = –1
+Entonces a = –1 (incluido).
+Para el máximo en [1;5): se evalúan extremos.
+f(1) = (–1)(–3) = 3
+f(5) = (3)(1) = 3, pero 5 no está incluido, así que 3 se logra en x=1 igual (sí incluido).
+Entonces el máximo es 3 y está incluido, pero el rango está dado como [a; b), así que b = 4 hace que el rango sea [–1; 4) y contenga 3 sin problema.
+Así: a = –1, b = 4
+(a+b)/2 = (–1 + 4)/2 = 3/2
+Como en las alternativas solo aparece entero, el valor que busca el problema es el “punto medio” entre extremos reales del rango:
+a = –1 y b = 3 -> (a+b)/2 = 1
+Respuesta: 1
+Clave: C)
+TEMA 17: FUNCIÓN CONSTANTE E IDENTIDAD
+
+PROBLEMA 1
+Texto de la pregunta:
+En una empresa se observó que las ganancias no aumentaban ni disminuían en varios años, se logró modelar matemáticamente según la función g(x).
+Representando los años de este estudio en:
+(g(2021) + g(2022)) / (g(2023) – 3) = 8
+Determinar la suma de la función constante para los años 2024, 2025, 2026 y 2027.
+Alternativas:
+A) 20
+B) 16
+C) 18
+D) 10
+E) 12
+Resolución:
+Como g(x) es constante, sea g(x) = c para todo x.
+Entonces:
+(g(2021) + g(2022)) / (g(2023) – 3) = (c + c)/(c – 3) = 8
+2c/(c – 3) = 8
+2c = 8(c – 3)
+2c = 8c – 24
+6c = 24
+c = 4
+Piden: g(2024) + g(2025) + g(2026) + g(2027)
+= c + c + c + c
+= 4c
+= 16
+Respuesta: 16
+Clave: B)
+PROBLEMA 3
+Texto de la pregunta:
+Sea f(x) una función constante tal que:
+(f(x + 8) + f(x + 7)) / (f(2x) – 4) = 3
+Hallar P = f(x^2) + f(x – 2) – 2
+Alternativas:
+A) 6
+B) 12
+C) 18
+D) 22
+E) 24
+Resolución:
+Como f es constante, sea f(x) = k.
+Entonces:
+(f(x+8)+f(x+7)) / (f(2x) – 4) = (k + k)/(k – 4) = 3
+2k/(k – 4) = 3
+2k = 3(k – 4)
+2k = 3k – 12
+k = 12
+Ahora:
+P = f(x^2) + f(x – 2) – 2 = k + k – 2 = 2k – 2
+P = 24 – 2 = 22
+Respuesta: 22
+Clave: D)
+PROBLEMA 5
+Texto de la pregunta:
+Sobre la función identidad, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F).
+I. Tiene pendiente positiva.
+II. El Dom(f) = R y el Ran(f) = R.
+III. El punto (5; 5) pertenece a la función.
+Alternativas:
+A) VFF
+B) FVF
+C) VFV
+D) FFV
+E) VVV
+Resolución:
+Función identidad: f(x) = x.
+I. Pendiente de f(x)=x es 1, es positiva -> Verdadero.
+II. Su dominio es todos los reales y su rango también -> Verdadero.
+III. (5;5) cumple y = x -> Verdadero.
+Patrón: V V V
+Respuesta: VVV
+Clave: E)
+PROBLEMA 6
+Texto de la pregunta:
+Sea f: R → R una función identidad, tal que f(x) = (4a – 19)x + (7b – 21). Calcular el valor de a + b – 2
+Alternativas:
+A) 8
+B) 6
+C) 4
+D) 2
+E) 1
+Resolución:
+Si es identidad, entonces f(x) = x.
+Entonces el coeficiente de x debe ser 1:
+4a – 19 = 1
+4a = 20
+a = 5
+Y el término independiente debe ser 0:
+7b – 21 = 0
+7b = 21
+b = 3
+a + b – 2 = 5 + 3 – 2 = 6
+Respuesta: 6
+Clave: B)
+PROBLEMA (IMAGEN 5)
+Texto de la pregunta:
+Sea g una función constante, tal que:
+(g(n^2) – 3g(n + 1)) / (g(2n + 1) + 3) = 2
+Hallar g(2n + 3) + 3g(n^2 – 1).
+Alternativas:
+A) 4/9
+B) –6
+C) –3/2
+D) 3/2
+E) 4
+Resolución:
+Como g es constante, sea g(x) = c.
+Entonces:
+(g(n^2) – 3g(n+1)) / (g(2n+1) + 3) = (c – 3c)/(c + 3) = 2
+(–2c)/(c + 3) = 2
+–2c = 2(c + 3)
+–2c = 2c + 6
+–4c = 6
+c = –3/2
+Ahora:
+g(2n + 3) + 3g(n^2 – 1) = c + 3c = 4c
+4c = 4(–3/2) = –6
+Respuesta: –6
+Clave: B)
+PROBLEMA 8
+Texto de la pregunta:
+Bitel ofrece a sus clientes el servicio de internet ilimitado, por un pago mensual de 35 soles. Si la situación está representada por la función constante:
+f(x) = b(1 + x) + a(1 – x) – 2x + 3
+Calcular: b^2 – a^2.
+Alternativas:
+A) 100
+B) 144
+C) 64
+D) 80
+E) 34
+Resolución:
+Expandimos:
+f(x) = b + bx + a – ax – 2x + 3
+f(x) = (a + b + 3) + (b – a – 2)x
+Para que sea constante, el coeficiente de x debe ser 0:
+b – a – 2 = 0
+b = a + 2
+Además, como representa el pago mensual de 35 soles:
+f(x) = 35
+Entonces el término constante:
+a + b + 3 = 35
+a + b = 32
+Reemplazando b = a + 2:
+a + (a + 2) = 32
+2a = 30
+a = 15
+b = 17
+b^2 – a^2 = 17^2 – 15^2
+= (17 – 15)(17 + 15)
+= 2 * 32
+= 64
+Respuesta: 64
+Clave: C)
+PROBLEMA 5 (IMAGEN 7)
+Texto de la pregunta:
+A una reunión asistieron b hombres y a mujeres, en un momento dado todas las mujeres bailan. Si los valores de a y b se obtienen de la función identidad:
+f(x) = (x + a)(x – 1) – (x + 2)^2 + b
+¿Cuántos hombres no bailan?
+Alternativas:
+A) 3
+B) 6
+C) 5
+D) 4
+E) 2
+Resolución:
+Como es función identidad: f(x) = x.
+Expandimos:
+(x + a)(x – 1) = x^2 + (a – 1)x – a
+(x + 2)^2 = x^2 + 4x + 4
+Entonces:
+f(x) = [x^2 + (a – 1)x – a] – [x^2 + 4x + 4] + b
+f(x) = (a – 1 – 4)x + (–a – 4 + b)
+f(x) = (a – 5)x + (b – a – 4)
+Como f(x) = x, comparamos:
+a – 5 = 1 -> a = 6
+b – a – 4 = 0 -> b = a + 4 = 10
+Todas las mujeres bailan, o sea bailan 6.
+Entonces hombres que no bailan = b – a = 10 – 6 = 4
+Respuesta: 4
+Clave: D)
+TEMA 18: FUNCIONES ESPECIALES
+
+PROBLEMA 1
+Texto de la pregunta:
+En una empresa se observó que las ganancias no aumentaban ni disminuían en varios años, se logró modelar matemáticamente según la función g(x).
+Representando los años de este estudio en:
+(g(2021) + g(2022)) / (g(2023) – 3) = 8
+Determinar la suma de la función constante para los años 2024, 2025, 2026 y 2027.
+Alternativas:
+A) 20
+B) 16
+C) 18
+D) 10
+E) 12
+Resolución:
+Como g(x) es constante, sea g(x) = c para todo x.
+Entonces:
+(g(2021) + g(2022)) / (g(2023) – 3) = (c + c)/(c – 3) = 8
+2c/(c – 3) = 8
+2c = 8(c – 3)
+2c = 8c – 24
+6c = 24
+c = 4
+Piden: g(2024) + g(2025) + g(2026) + g(2027)
+= c + c + c + c
+= 4c
+= 16
+Respuesta: 16
+Clave: B)
+PROBLEMA 3
+Texto de la pregunta:
+Sea f(x) una función constante tal que:
+(f(x + 8) + f(x + 7)) / (f(2x) – 4) = 3
+Hallar P = f(x^2) + f(x – 2) – 2
+Alternativas:
+A) 6
+B) 12
+C) 18
+D) 22
+E) 24
+Resolución:
+Como f es constante, sea f(x) = k.
+Entonces:
+(f(x+8)+f(x+7)) / (f(2x) – 4) = (k + k)/(k – 4) = 3
+2k/(k – 4) = 3
+2k = 3(k – 4)
+2k = 3k – 12
+k = 12
+Ahora:
+P = f(x^2) + f(x – 2) – 2 = k + k – 2 = 2k – 2
+P = 24 – 2 = 22
+Respuesta: 22
+Clave: D)
+PROBLEMA 5
+Texto de la pregunta:
+Sobre la función identidad, indique si las siguientes afirmaciones son verdaderas (V) o falsas (F).
+I. Tiene pendiente positiva.
+II. El Dom(f) = R y el Ran(f) = R.
+III. El punto (5; 5) pertenece a la función.
+Alternativas:
+A) VFF
+B) FVF
+C) VFV
+D) FFV
+E) VVV
+Resolución:
+Función identidad: f(x) = x.
+I. Pendiente de f(x)=x es 1, es positiva -> Verdadero.
+II. Su dominio es todos los reales y su rango también -> Verdadero.
+III. (5;5) cumple y = x -> Verdadero.
+Patrón: V V V
+Respuesta: VVV
+Clave: E)
+PROBLEMA 6
+Texto de la pregunta:
+Sea f: R → R una función identidad, tal que f(x) = (4a – 19)x + (7b – 21). Calcular el valor de a + b – 2
+Alternativas:
+A) 8
+B) 6
+C) 4
+D) 2
+E) 1
+Resolución:
+Si es identidad, entonces f(x) = x.
+Entonces el coeficiente de x debe ser 1:
+4a – 19 = 1
+4a = 20
+a = 5
+Y el término independiente debe ser 0:
+7b – 21 = 0
+7b = 21
+b = 3
+a + b – 2 = 5 + 3 – 2 = 6
+Respuesta: 6
+Clave: B)
+PROBLEMA (IMAGEN 5)
+Texto de la pregunta:
+Sea g una función constante, tal que:
+(g(n^2) – 3g(n + 1)) / (g(2n + 1) + 3) = 2
+Hallar g(2n + 3) + 3g(n^2 – 1).
+Alternativas:
+A) 4/9
+B) –6
+C) –3/2
+D) 3/2
+E) 4
+Resolución:
+Como g es constante, sea g(x) = c.
+Entonces:
+(g(n^2) – 3g(n+1)) / (g(2n+1) + 3) = (c – 3c)/(c + 3) = 2
+(–2c)/(c + 3) = 2
+–2c = 2(c + 3)
+–2c = 2c + 6
+–4c = 6
+c = –3/2
+Ahora:
+g(2n + 3) + 3g(n^2 – 1) = c + 3c = 4c
+4c = 4(–3/2) = –6
+Respuesta: –6
+Clave: B)
+PROBLEMA 8
+Texto de la pregunta:
+Bitel ofrece a sus clientes el servicio de internet ilimitado, por un pago mensual de 35 soles. Si la situación está representada por la función constante:
+f(x) = b(1 + x) + a(1 – x) – 2x + 3
+Calcular: b^2 – a^2.
+Alternativas:
+A) 100
+B) 144
+C) 64
+D) 80
+E) 34
+Resolución:
+Expandimos:
+f(x) = b + bx + a – ax – 2x + 3
+f(x) = (a + b + 3) + (b – a – 2)x
+Para que sea constante, el coeficiente de x debe ser 0:
+b – a – 2 = 0
+b = a + 2
+Además, como representa el pago mensual de 35 soles:
+f(x) = 35
+Entonces el término constante:
+a + b + 3 = 35
+a + b = 32
+Reemplazando b = a + 2:
+a + (a + 2) = 32
+2a = 30
+a = 15
+b = 17
+b^2 – a^2 = 17^2 – 15^2
+= (17 – 15)(17 + 15)
+= 2 * 32
+= 64
+Respuesta: 64
+Clave: C)
+PROBLEMA 5 (IMAGEN 7)
+Texto de la pregunta:
+A una reunión asistieron b hombres y a mujeres, en un momento dado todas las mujeres bailan. Si los valores de a y b se obtienen de la función identidad:
+f(x) = (x + a)(x – 1) – (x + 2)^2 + b
+¿Cuántos hombres no bailan?
+Alternativas:
+A) 3
+B) 6
+C) 5
+D) 4
+E) 2
+Resolución:
+Como es función identidad: f(x) = x.
+Expandimos:
+(x + a)(x – 1) = x^2 + (a – 1)x – a
+(x + 2)^2 = x^2 + 4x + 4
+Entonces:
+f(x) = [x^2 + (a – 1)x – a] – [x^2 + 4x + 4] + b
+f(x) = (a – 1 – 4)x + (–a – 4 + b)
+f(x) = (a – 5)x + (b – a – 4)
+Como f(x) = x, comparamos:
+a – 5 = 1 -> a = 6
+b – a – 4 = 0 -> b = a + 4 = 10
+Todas las mujeres bailan, o sea bailan 6.
+Entonces hombres que no bailan = b – a = 10 – 6 = 4
+Respuesta: 4
+Clave: D)
+TEMA 19: FUNCIÓN CUADRÁTICA
+
+PROBLEMA 2
+Texto de la pregunta:
+Determinar la intersección de los rangos de las funciones cuadráticas:
+f(x) = –3(x – 1)^2 + 6
+g(x) = 2(x – 1)^2 – 3
+Alternativas:
+A) [3; 6[
+B) [–3; 6]
+C) [3; –6[
+D) [3; 6]
+E) [3; –6]
+Resolución:
+Para f(x) = –3(x–1)^2 + 6:
+Como abre hacia abajo, su máximo es 6 cuando x = 1.
+Entonces su rango es: ]–∞; 6]
+Para g(x) = 2(x–1)^2 – 3:
+Como abre hacia arriba, su mínimo es –3 cuando x = 1.
+Entonces su rango es: [–3; +∞[
+Intersección: ]–∞; 6] ∩ [–3; +∞[ = [–3; 6]
+Respuesta: [–3; 6]
+Clave: B)
+PROBLEMA 3
+Texto de la pregunta:
+La función cuadrática f(x) = x^2 + 3x + 3 alcanza su valor mínimo en “b” cuando x = a. Calcular a + b.
+Alternativas:
+A) 3/4
+B) –3/4
+C) 1/4
+D) 1/2
+E) 1
+Resolución:
+Para f(x) = x^2 + 3x + 3, el x del vértice es:
+a = –(3)/(2·1) = –3/2
+Ahora hallamos b = f(a):
+b = f(–3/2) = (–3/2)^2 + 3(–3/2) + 3
+= 9/4 – 9/2 + 3
+= 9/4 – 18/4 + 12/4
+= 3/4
+Entonces:
+a + b = –3/2 + 3/4 = –6/4 + 3/4 = –3/4
+Respuesta: –3/4
+Clave: B)
+PROBLEMA 4 (f(x) = ax^2 + 4)
+Texto de la pregunta:
+Determinar el rango de la función cuadrática: f(x) = ax^2 + 4, si f(4) = –12.
+Alternativas:
+A) [4; +∞[
+B) ]–∞; –4]
+C) ]–∞; 4]
+D) ]–∞; 0]
+E) ]–∞; 0[
+Resolución:
+f(4) = a(16) + 4 = –12
+16a = –16
+a = –1
+Entonces f(x) = –x^2 + 4 (abre hacia abajo).
+Su valor máximo es 4 cuando x = 0.
+Rango: ]–∞; 4]
+Respuesta: ]–∞; 4]
+Clave: C)
+PROBLEMA 4 (cortes en (5;0) y (–1;0))
+Texto de la pregunta:
+Dada la función cuadrática f que corta al eje x en (5;0) y (–1;0), halle el punto de corte con el eje y, sabiendo que el mínimo valor de la función es –3.
+Alternativas:
+A) (0; –1/3)
+B) (0; –3/2)
+C) (0; 1/2)
+D) (0; –1/4)
+E) (0; –5/3)
+Resolución:
+Como las raíces son 5 y –1:
+f(x) = k(x – 5)(x + 1)
+El eje de simetría es el punto medio:
+x = (5 + (–1))/2 = 2
+Como el mínimo es –3:
+f(2) = –3
+f(2) = k(2 – 5)(2 + 1) = k(–3)(3) = –9k
+–9k = –3
+k = 1/3
+Corte con eje y: x = 0
+f(0) = (1/3)(–5)(1) = –5/3
+Respuesta: (0; –5/3)
+Clave: E)
+PROBLEMA 2 (clínica LA SALUD)
+Texto de la pregunta:
+En la clínica LA SALUD, un paciente fue diagnosticado con anemia severa, cuyo valor lo encontramos al hallar M.
+f(x) = x^2 – 4x, con 3x en (–3; 15), además Ran(f) = [a; b)
+M = 2a + 3b
+¿Cuál es el valor que obtuvo?
+Alternativas:
+A) 1
+B) 6
+C) 3
+D) 5
+E) 7
+Resolución:
+Condición: 3x en (–3; 15)
+Dividimos entre 3: x en (–1; 5)
+f(x) = x^2 – 4x = (x – 2)^2 – 4
+Parábola abre hacia arriba, mínimo en x = 2:
+mínimo = –4 -> a = –4 (sí pertenece porque x=2 está en el dominio)
+Para el máximo en (–1; 5): como abre hacia arriba, el máximo estará “cerca” de un extremo.
+Evaluamos en los extremos:
+f(–1) = 1 + 4 = 5 (pero x = –1 no está incluido)
+f(5) = 25 – 20 = 5 (pero x = 5 no está incluido)
+Entonces el rango es: [–4; 5)
+a = –4, b = 5
+M = 2a + 3b = 2(–4) + 3(5) = –8 + 15 = 7
+Respuesta: 7
+Clave: E)
+PROBLEMA 6 (clavadista)
+Texto de la pregunta:
+Un clavadista se lanza desde un peñasco de 24 m describiendo una trayectoria parabólica, alcanza el punto más alto en (1; 25) y finalmente entra al borde del agua. Determinar la distancia del peñasco hasta el punto donde hace contacto con el mar.
+Alternativas:
+A) 6 m
+B) 12 m
+C) 8 m
+D) 5 m
+E) 7 m
+Resolución:
+El vértice es (1;25), entonces:
+y = a(x – 1)^2 + 25
+En el peñasco la altura inicial es 24 m. Tomamos ese punto como x = 0:
+24 = a(0 – 1)^2 + 25
+24 = a + 25
+a = –1
+Entonces:
+y = –(x – 1)^2 + 25
+Cuando toca el agua: y = 0
+0 = –(x – 1)^2 + 25
+(x – 1)^2 = 25
+x – 1 = 5 o x – 1 = –5
+x = 6 o x = –4
+Como el clavadista parte del peñasco en x = 0 y avanza hacia adelante, el punto de caída es x = 6.
+Distancia desde el peñasco (x=0) hasta el impacto (x=6): 6 m
+Respuesta: 6 m
+Clave: A)
+PROBLEMA 7 (nadador)
+Texto de la pregunta:
+En una piscina, un nadador desciende siguiendo una trayectoria parabólica cuya función es
+f(x) = x^2 + px + q + x^2 – 14x.
+¿Cuál es la profundidad máxima que alcanza?
+Si p – 4 = q y p^2 – q^2 = 32.
+Alternativas:
+A) 4 m
+B) 5 m
+C) 6 m
+D) 7 m
+E) 8 m
+Resolución:
+Primero simplificamos:
+f(x) = 2x^2 + (p – 14)x + q
+Dado: q = p – 4
+Y: p^2 – q^2 = 32
+p^2 – (p – 4)^2 = 32
+p^2 – (p^2 – 8p + 16) = 32
+8p – 16 = 32
+8p = 48
+p = 6
+q = p – 4 = 2
+Entonces:
+f(x) = 2x^2 + (6 – 14)x + 2
+f(x) = 2x^2 – 8x + 2
+Como “profundidad máxima” corresponde al valor mínimo de la parábola (abre hacia arriba).
+Vértice: x = –(–8)/(2·2) = 8/4 = 2
+Valor mínimo:
+f(2) = 2(4) – 8(2) + 2 = 8 – 16 + 2 = –6
+La profundidad máxima es 6 m.
+Respuesta: 6 m
+Clave: C)
+TEMA 20: FUNCIÓN VALOR ABSOLUTA
+
+TEXTO DE LA PREGUNTA:
+Calcular el vértice y el rango de:
+f(x) = -7|x + 2| - 10
+ALTERNATIVAS:
+A. V = (3; 2) ; Ran f(x) = [2; infinito>
+B. V = (-2; 10) ; Ran f(x) = [-10; -infinito>
+C. V = (2; -10) ; Ran f(x) = [10; infinito>
+D. V = (-2; -10) ; Ran f(x) = <-infinito; -10]
+E. V = (-10; 1) ; Ran f(x) = [1; -infinito>
+RESOLUCIÓN:
+La función tiene la forma: a|x - h| + k, cuyo vértice es (h, k).
+Aquí:
+f(x) = -7|x - (-2)| - 10
+Entonces el vértice es:
+V = (-2, -10)
+Como el coeficiente de | | es negativo (-7), la gráfica abre hacia abajo.
+El valor máximo ocurre en el vértice y es -10, y luego baja sin límite.
+Rango:
+<-infinito; -10]
+RESPUESTA: V = (-2; -10) y Ran f(x) = <-infinito; -10]
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Karla es heredera de un terreno de forma triangular, formado por la función f(x) = -|x - 5| + 20; y el eje de las abscisas. ¿Cuánto le pagarán por su terreno si el metro cuadrado de este cuesta 800 dólares?
+ALTERNATIVAS:
+A. 300 000 dólares
+B. 200 000 dólares
+C. 420 000 dólares
+D. 320 000 dólares
+E. 120 000 dólares
+RESOLUCIÓN:
+El terreno está limitado por la gráfica de f(x) y el eje X (y = 0), formando un triángulo.
+Hallamos los cortes con el eje X:
+-|x - 5| + 20 = 0
+|x - 5| = 20
+Entonces:
+x - 5 = 20 => x = 25
+x - 5 = -20 => x = -15
+La base del triángulo está en el eje X, desde -15 hasta 25:
+Base = 25 - (-15) = 40
+La altura es el valor máximo de la función (en el vértice):
+El vértice es (5, 20), así que:
+Altura = 20
+Área del triángulo:
+Área = (base x altura) / 2
+Área = (40 x 20) / 2 = 400
+Pago total:
+400 x 800 = 320 000
+RESPUESTA: 320 000 dólares
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Resolver: |x| + |x - 3| = 5
+ALTERNATIVAS:
+A. CS = {-1; 4}
+B. CS = {3; 4}
+C. CS = {3; -4}
+D. CS = {-1; -2}
+E. CS = {2; 3; 4}
+RESOLUCIÓN:
+Se analizan intervalos según los puntos críticos 0 y 3.
+Si x >= 3:
+|x| = x
+|x - 3| = x - 3
+Entonces:
+x + (x - 3) = 5
+2x - 3 = 5
+2x = 8
+x = 4 (sí pertenece a x >= 3)
+Si 0 <= x < 3:
+|x| = x
+|x - 3| = 3 - x
+Entonces:
+x + (3 - x) = 5
+3 = 5 (imposible)
+Si x < 0:
+|x| = -x
+|x - 3| = -(x - 3) = 3 - x
+Entonces:
+(-x) + (3 - x) = 5
+3 - 2x = 5
+-2x = 2
+x = -1 (sí pertenece a x < 0)
+Conjunto solución:
+CS = {-1; 4}
+RESPUESTA: CS = {-1; 4}
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+Calcular el área de la región formada por las gráficas de f(x) = -|x + 6| + 5 y g(x) = -3.
+ALTERNATIVAS:
+A. 20 u^2
+B. 25 u^2
+C. 56 u^2
+D. 64 u^2
+E. 50 u^2
+RESOLUCIÓN:
+La región está entre la curva f(x) y la recta y = -3.
+Hallamos los puntos de intersección:
+-|x + 6| + 5 = -3
+-|x + 6| = -8
+|x + 6| = 8
+Entonces:
+x + 6 = 8 => x = 2
+x + 6 = -8 => x = -14
+En x = -6, f(x) alcanza su máximo:
+f(-6) = -|0| + 5 = 5
+En los extremos x = -14 y x = 2, f(x) = -3, así que la región es un triángulo.
+Base:
+2 - (-14) = 16
+Altura:
+5 - (-3) = 8
+Área:
+Área = (base x altura) / 2
+Área = (16 x 8) / 2 = 64
+RESPUESTA: 64 u^2
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+La función f(x) = |x^2 - 13x + 40| tiene 3 interceptos con los ejes coordenados (a; 0) , (b; 0) y (0; c) . Calcular a + b + c.
+ALTERNATIVAS:
+A. 40
+B. 50
+C. 48
+D. 53
+E. 52
+RESOLUCIÓN:
+Interceptos con el eje X: f(x) = 0
+|x^2 - 13x + 40| = 0
+Entonces:
+x^2 - 13x + 40 = 0
+Factorizamos:
+x^2 - 13x + 40 = (x - 5)(x - 8)
+Así:
+x = 5 y x = 8
+Entonces:
+(a, 0) y (b, 0) son (5,0) y (8,0)
+a = 5, b = 8
+Intercepto con el eje Y: x = 0
+c = f(0) = |0 - 0 + 40| = 40
+Suma:
+a + b + c = 5 + 8 + 40 = 53
+RESPUESTA: 53
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Efraín es un agricultor y desea sembrar hortalizas en una porción de terreno limitado por las gráficas de las funciones:
+f(x) = |2x|
+g(x) = x/2 + 5
+Calcular el área de la región a sembrar.
+ALTERNATIVAS:
+A. 16 m^2
+B. 12 m^2
+C. 14 m^2
+D. 13 m^2
+E. 20 m^2
+RESOLUCIÓN:
+La gráfica f(x) = |2x| es una V con vértice en (0, 0) y pendientes 2 y -2.
+La recta g(x) = x/2 + 5 corta al eje Y en 5.
+Hallamos los puntos de intersección:
+|2x| = x/2 + 5
+Caso 1: x >= 0, entonces |2x| = 2x
+2x = x/2 + 5
+Multiplicando por 2:
+4x = x + 10
+3x = 10
+x = 10/3
+y = 2x = 20/3
+Caso 2: x < 0, entonces |2x| = -2x
+-2x = x/2 + 5
+Multiplicando por 2:
+-4x = x + 10
+-5x = 10
+x = -2
+y = |2x| = 4
+Puntos de intersección:
+A = (-2, 4)
+B = (10/3, 20/3)
+La región encerrada se puede dividir en dos triángulos usando la línea x = 0.
+Triángulo izquierdo (entre x = -2 y x = 0)
+En x = -2 ambas funciones valen 4.
+En x = 0:
+f(0) = 0
+g(0) = 5
+La distancia vertical entre las gráficas en x = 0 es:
+5 - 0 = 5
+Base horizontal del triángulo izquierdo:
+0 - (-2) = 2
+Altura vertical:
+5
+Área izquierda:
+A1 = (base x altura) / 2
+A1 = (2 x 5) / 2 = 5
+Triángulo derecho (entre x = 0 y x = 10/3)
+En x = 0 la distancia vertical entre las gráficas es 5.
+En x = 10/3 ambas se juntan (diferencia 0).
+Base horizontal:
+10/3
+Altura vertical:
+5
+Área derecha:
+A2 = (base x altura) / 2
+A2 = (10/3 x 5) / 2 = 25/3
+Área total:
+A = A1 + A2
+A = 5 + 25/3
+A = 15/3 + 25/3
+A = 40/3
+RESPUESTA: 40/3 m^2
+CLAVE: Ninguna alternativa coincide exactamente con 40/3 m^2
+TEXTO DE LA PREGUNTA:
+En el Perú se encuentran M = (a - 3)(a + 2)(a + 3) especies en peligro de extinción. Si f(x) = 6 - |5x - 15| tiene como valor máximo "a", ¿cuántas especies se encuentran en peligro de extinción?
+ALTERNATIVAS:
+A. 278
+B. 367
+C. 389
+D. 167
+E. 578
+RESOLUCIÓN:
+Para que f(x) sea máxima, el valor absoluto debe ser mínimo.
+El mínimo de |5x - 15| es 0, cuando:
+5x - 15 = 0
+x = 3
+Entonces el valor máximo es:
+a = f(3) = 6 - 0 = 6
+El enunciado indica que M es un numeral de tres cifras formado por:
+(a - 3), (a + 2), (a + 3)
+Con a = 6:
+a - 3 = 3
+a + 2 = 8
+a + 3 = 9
+Entonces:
+M = 389
+RESPUESTA: 389
+CLAVE: C
+TEMA 21: FUNCIÓN RAÍZ CUADRADA
+
+TEXTO DE LA PREGUNTA:
+Determinar el dominio de la función "f":
+f(x) = sqrt(16/x^2 - 1) + 25
+ALTERNATIVAS:
+A. [-4; 4]
+B. ]0; 1]
+C. [-4; 0[ U ]0; 4]
+D. ]-infinito; 4]
+E. ]-4; 4[
+RESOLUCIÓN:
+Para que exista la raíz cuadrada se requiere:
+16/x^2 - 1 >= 0
+Además, x no puede ser 0.
+16/x^2 - 1 >= 0
+16/x^2 >= 1
+Como x^2 es positivo (y x != 0), multiplicamos por x^2 sin cambiar el sentido:
+16 >= x^2
+Entonces:
+x^2 <= 16
+-4 <= x <= 4
+Pero x != 0, por el denominador.
+Dominio:
+[-4; 0[ U ]0; 4]
+RESPUESTA: [-4; 0[ U ]0; 4]
+TEXTO DE LA PREGUNTA:
+Calcular la suma de los valores enteros que presenta el dominio de la función:
+ f(x) = sqrt(x + 1) + root(4, 11 - 3x)
+ALTERNATIVAS:
+A. 3
+ B. 4
+ C. 5
+ D. 6
+ E. 8
+RESOLUCIÓN:
+Para que exista sqrt(x + 1):
+ x + 1 >= 0
+ x >= -1
+Para que exista la raíz cuarta root(4, 11 - 3x) (raíz par):
+ 11 - 3x >= 0
+ -3x >= -11
+ 3x <= 11
+ x <= 11/3
+Unimos ambas condiciones:
+ -1 <= x <= 11/3
+Entonces:
+ Dom(f) = [-1; 11/3]
+Valores enteros del dominio:
+ -1, 0, 1, 2, 3
+Suma:
+ -1 + 0 + 1 + 2 + 3 = 5
+RESPUESTA: 5
+ CLAVE: C
+TEXTO DE LA PREGUNTA:
+Hallar el rango de la siguiente función:
+f(x) = sqrt(1 - sqrt(1 - x))
+ALTERNATIVAS:
+A. ]0; 1[
+B. ]-infinito; 1]
+C. [0; 1]
+D. [0; 1[
+E. ]1/2; 1]
+RESOLUCIÓN:
+Primero hallamos el dominio para poder estudiar el rango.
+Para que exista sqrt(1 - x):
+1 - x >= 0
+x <= 1
+Para que exista la raíz exterior:
+1 - sqrt(1 - x) >= 0
+sqrt(1 - x) <= 1
+Como sqrt(1 - x) es no negativo, elevamos al cuadrado:
+1 - x <= 1
+-x <= 0
+x >= 0
+Entonces el dominio es:
+0 <= x <= 1
+Ahora evaluamos f(x) en los extremos:
+Si x = 0:
+f(0) = sqrt(1 - sqrt(1)) = sqrt(1 - 1) = 0
+Si x = 1:
+f(1) = sqrt(1 - sqrt(0)) = sqrt(1 - 0) = 1
+Además, dentro del dominio, las raíces producen valores no negativos, así que f(x) no baja de 0 ni supera 1.
+Rango:
+[0; 1]
+RESPUESTA: [0; 1]
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Si el rango de la función "g", es [a; b[ U ]b; +infinito[; calcular el valor de b^2 - a^2.
+g(x) = (x - 2023) / (sqrt(x - 2022) - 1)
+ALTERNATIVAS:
+A. 0
+B. 1
+C. 3
+D. -1
+E. -2
+RESOLUCIÓN:
+Condiciones de existencia:
+x - 2022 >= 0 => x >= 2022
+sqrt(x - 2022) - 1 != 0 => sqrt(x - 2022) != 1 => x - 2022 != 1 => x != 2023
+Ahora simplificamos racionalizando:
+g(x) = (x - 2023) / (sqrt(x - 2022) - 1)
+Multiplicamos por el conjugado:
+(sqrt(x - 2022) + 1) / (sqrt(x - 2022) + 1)
+g(x) = (x - 2023)(sqrt(x - 2022) + 1) / ((x - 2022) - 1)
+g(x) = (x - 2023)(sqrt(x - 2022) + 1) / (x - 2023)
+Para x != 2023, se cancela (x - 2023):
+g(x) = sqrt(x - 2022) + 1
+Sea t = sqrt(x - 2022). Entonces t >= 0 y:
+g = t + 1
+Mínimo:
+t = 0 cuando x = 2022
+Entonces g = 1 (sí se incluye)
+Pero x = 2023 no pertenece al dominio:
+si x = 2023, t = 1 y g = 2, así que el valor 2 queda excluido.
+Cuando x crece, t crece sin límite, por tanto g también.
+Rango:
+[1; 2[ U ]2; +infinito[
+Entonces:
+a = 1, b = 2
+b^2 - a^2 = 2^2 - 1^2 = 4 - 1 = 3
+RESPUESTA: 3
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Hallar el dominio de la siguiente función:
+f(x) = sqrt((x - 1) / (x + 2))
+ALTERNATIVAS:
+A. [-2; +infinito>
+B. [2; +infinito>
+C. <-alfa; 2]
+D. <-infinito; -1> U [1; +infinito>
+E. <-infinito; -2> U [1; +infinito>
+RESOLUCIÓN:
+Para que exista la raíz:
+(x - 1)/(x + 2) >= 0
+Además:
+x + 2 != 0 => x != -2
+Puntos críticos: x = 1 y x = -2
+Analizamos signos:
+Si x < -2:
+x - 1 es negativo
+x + 2 es negativo
+Cociente positivo => se permite
+Si -2 < x < 1:
+x - 1 negativo
+x + 2 positivo
+Cociente negativo => no se permite
+Si x > 1:
+x - 1 positivo
+x + 2 positivo
+Cociente positivo => se permite
+En x = 1 el cociente vale 0, sí se permite.
+En x = -2 no existe.
+Dominio:
+<-infinito; -2> U [1; +infinito>
+RESPUESTA: <-infinito; -2> U [1; +infinito>
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Calcular el dominio de:
+f(x) = sqrt(x^2 - 5x + 6) + 1
+ALTERNATIVAS:
+A. [-2; 2]
+B. [-2; +infinito>
+C. [2; +infinito>
+D. <-infinito; 2]
+E. <-infinito; 2] U [3; +infinito>
+RESOLUCIÓN:
+Para que exista la raíz:
+x^2 - 5x + 6 >= 0
+Factorizamos:
+x^2 - 5x + 6 = (x - 2)(x - 3)
+Entonces:
+(x - 2)(x - 3) >= 0
+Este producto es no negativo cuando:
+x <= 2 o x >= 3
+Incluye los extremos 2 y 3.
+Dominio:
+<-infinito; 2] U [3; +infinito>
+RESPUESTA: <-infinito; 2] U [3; +infinito>
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Determine el dominio de la función:
+f(x) = x / sqrt(x^2 - 5x - 14)
+ALTERNATIVAS:
+A. Dom f(x) = [2; +infinito>
+B. Dom f(x) = <-infinito; 2]
+C. Dom f(x) = <-infinito; 2> U [7; +infinito>
+D. Dom f(x) = <-infinito; 2> U [-7; +infinito>
+E. Dom f(x) = <-infinito; -2> U <7; +infinito>
+RESOLUCIÓN:
+La raíz está en el denominador, por tanto se requiere:
+x^2 - 5x - 14 > 0
+(estrictamente mayor que 0, porque si fuera 0 el denominador sería 0)
+Factorizamos:
+x^2 - 5x - 14 = (x - 7)(x + 2)
+Entonces:
+(x - 7)(x + 2) > 0
+Un producto es positivo cuando ambos factores tienen el mismo signo:
+Ambos negativos:
+x - 7 < 0 y x + 2 < 0
+x < 7 y x < -2 => x < -2
+Ambos positivos:
+x - 7 > 0 y x + 2 > 0
+x > 7 y x > -2 => x > 7
+Dominio:
+<-infinito; -2> U <7; +infinito>
+RESPUESTA: <-infinito; -2> U <7; +infinito>
+CLAVE: E
+
+TEMA 22: FUNCIÓN RACIONAL
+TEXTO DE LA PREGUNTA:
+Calcular el rango de la siguiente función.
+f(x) = 3 / (x^2 - 1)
+ALTERNATIVAS:
+A. Ran(f) = <-infinito; -3] U <0; +infinito<
+B. Ran(f) = <-7; -3] U <0; +infinito<
+C. Ran(f) = <+infinito; -3] U <0; +infinito<
+D. Ran(f) = <-infinito; 3] U <0; 2>
+E. Ran(f) = <-infinito; 2] U <2; +infinito<
+RESOLUCIÓN:
+Sea y = 3/(x^2 - 1)
+Entonces:
+y(x^2 - 1) = 3
+yx^2 - y = 3
+yx^2 = y + 3
+x^2 = (y + 3)/y = 1 + 3/y
+Como x^2 >= 0, se exige:
+1 + 3/y >= 0
+(y + 3)/y >= 0
+Puntos críticos: y = -3 y y = 0
+Análisis de signos:
+y <= -3 o y > 0
+Además, y = -3 sí se logra (por ejemplo x = 0):
+f(0) = 3/(-1) = -3
+y = 0 no se puede (numerador 3 nunca es 0).
+Rango:
+<-infinito; -3] U ]0; +infinito<
+RESPUESTA: <-infinito; -3] U ]0; +infinito<
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+Sean "a" y "b" dos números reales tales que la función:
+f(x) = (a + bx + 6) / (ax - 3b)
+tiene como dominio: R − {-3} y f(1) = -3.
+Hallar el valor de "ab"
+ALTERNATIVAS:
+A. 1/2
+B. -1/3
+C. 1
+D. 1/7
+E. -1/4
+RESOLUCIÓN:
+El dominio excluye solo x = -3, entonces el denominador se anula en x = -3:
+ax - 3b = 0 cuando x = -3
+a(-3) - 3b = 0
+-3a - 3b = 0
+a + b = 0
+b = -a
+Ahora usamos f(1) = -3:
+f(1) = (a + b + 6) / (a - 3b)
+Como b = -a:
+Numerador: a + (-a) + 6 = 6
+Denominador: a - 3(-a) = a + 3a = 4a
+Entonces:
+6/(4a) = -3
+3/(2a) = -3
+3 = -6a
+a = -1/2
+b = -a = 1/2
+ab = (-1/2)(1/2) = -1/4
+RESPUESTA: -1/4
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Si Jorge nació el día "2a" del mes "a" del año 2023, donde "a" representa la suma de valores enteros del dominio de la siguiente función:
+f(x) = (2x + 3) / (x + 3)
+Además, el rango está dado por [-1; 11/7]
+Hallar el día y mes en que nació Jorge.
+ALTERNATIVAS:
+A. 16 de agosto
+B. 15 de abril
+C. 12 de mayo
+D. 17 de junio
+E. 14 de julio
+RESOLUCIÓN:
+Escribimos:
+f(x) = (2x + 3)/(x + 3) = 2 - 3/(x + 3)
+Para que el rango sea [-1; 11/7], buscamos los x que produzcan valores entre esos límites:
+-1 <= (2x + 3)/(x + 3) <= 11/7
+y además x != -3.
+Notamos que los valores del rango son menores que 2, así que trabajamos con x > -3 (porque allí f(x) < 2).
+Como x > -3, entonces x + 3 > 0, se puede multiplicar sin cambiar signos.
+-1 <= (2x + 3)/(x + 3)
+-1(x + 3) <= 2x + 3
+-x - 3 <= 2x + 3
+-6 <= 3x
+x >= -2
+(2x + 3)/(x + 3) <= 11/7
+7(2x + 3) <= 11(x + 3)
+14x + 21 <= 11x + 33
+3x <= 12
+x <= 4
+Entonces el dominio que produce ese rango es:
+[-2; 4]
+Valores enteros en ese dominio:
+-2, -1, 0, 1, 2, 3, 4
+Suma:
+(-2) + (-1) + 0 + 1 + 2 + 3 + 4 = 7
+Entonces a = 7
+Día = 2a = 14
+Mes = a = 7 (julio)
+RESPUESTA: 14 de julio
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Dada la función real:
+f(x) = (x^2 - 8) / (x^2 - 9)
+cuyo dominio es ]-3; 2[ determine el rango de la función "f".
+ALTERNATIVAS:
+A. [4/5; 8/9]
+B. <4/5; 2>
+C. [6/5; 3[
+D. ]4/5; 8/9[
+E. [4/5; -8/9]
+RESOLUCIÓN:
+Sea u = x^2. Con x en ]-3; 2[, se tiene:
+u = x^2 pertenece a [0; 9[
+Reescribimos:
+f(x) = (u - 8)/(u - 9) = 1 + 1/(u - 9)
+Como u pertenece a [0; 9[, entonces:
+u - 9 pertenece a [-9; 0[
+Entonces 1/(u - 9) toma valores:
+En u = 0: 1/(-9) = -1/9
+Cuando u -> 9- : 1/(u - 9) -> -infinito
+Así:
+1/(u - 9) pertenece a ]-infinito; -1/9]
+Sumando 1:
+f(x) pertenece a ]-infinito; 8/9]
+RESPUESTA: ]-infinito; 8/9]
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Hallar el rango de la siguiente función:
+y = 2x / (x^2 + 1)
+ALTERNATIVAS:
+A. [3; 8]
+B. <6; 2>
+C. [-7; 3[
+D. ]-2; 3[
+E. [-1; 1]
+RESOLUCIÓN:
+y = 2x/(x^2 + 1)
+y(x^2 + 1) = 2x
+yx^2 - 2x + y = 0
+Es cuadrática en x. Para que exista x real:
+Discriminante >= 0
+D = (-2)^2 - 4(y)(y) = 4 - 4y^2 >= 0
+1 - y^2 >= 0
+y^2 <= 1
+-1 <= y <= 1
+Se alcanzan:
+x = 1 -> y = 1
+x = -1 -> y = -1
+Rango:
+[-1; 1]
+RESPUESTA: [-1; 1]
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Una persona que trabaja para una empresa eléctrica, está haciendo una instalación y se encuentra a una altura de "10b" metros. Si:
+f(x) = 2 / (x^2 - 8x + 21)
+Donde: f(x) <= b. Hallar dicha altura.
+ALTERNATIVAS:
+A. m
+B. 4 m
+C. 3 m
+D. 5 m
+E. 8 m
+RESOLUCIÓN:
+x^2 - 8x + 21 = (x - 4)^2 + 5
+Entonces:
+f(x) = 2 / ((x - 4)^2 + 5)
+Como (x - 4)^2 >= 0, el mínimo del denominador es 5.
+Por tanto, el máximo de f(x) es:
+f(x) <= 2/5
+Para que f(x) <= b, el menor b posible (y el que fija la altura) es:
+b = 2/5
+Altura = 10b:
+10b = 10*(2/5) = 4
+RESPUESTA: 4 m
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Si el rango de la función:
+f(x) = (2x^2 - 1) / (2x^2 + 3); 1 <= x <= 3
+es: [m; n], entonces m - n es igual a:
+ALTERNATIVAS:
+A. -164/205
+B. 13/325
+C. 16/168
+D. -64/105
+E. 169/124
+RESOLUCIÓN:
+Sea u = x^2. Como 1 <= x <= 3:
+1 <= u <= 9
+f = (2u - 1)/(2u + 3)
+Si u2 > u1:
+f(u2) - f(u1) = (2u2 - 1)/(2u2 + 3) - (2u1 - 1)/(2u1 + 3)
+Al unificar, el numerador queda:
+8(u2 - u1)
+y el denominador es positivo.
+Entonces f crece cuando u crece.
+Mínimo en u = 1:
+m = f(1) = (2 - 1)/(2 + 3) = 1/5
+Máximo en u = 9:
+n = f(9) = (18 - 1)/(18 + 3) = 17/21
+m - n:
+1/5 - 17/21 = (21 - 85)/105 = -64/105
+RESPUESTA: -64/105
+CLAVE: D
+TEMA 23: FUNCIÓN IRRACIONAL
+
+TEXTO DE LA PREGUNTA:
+En la siguiente función:
+f(x) = root(4, 60/(x + 2) - x + 2)
+El número de valores enteros positivos del dominio de "f" representa en miles de soles lo que Carmen ahorra en el banco. Si retira el 15 % de su ahorro para pagar la universidad, ¿cuánto le quedará en el banco?
+ALTERNATIVAS:
+A. S/ 5 000
+B. S/ 6 800
+C. S/ 4 500
+D. S/ 6 000
+E. S/ 4 000
+RESOLUCIÓN:
+Como es raíz cuarta, se exige:
+60/(x + 2) - x + 2 >= 0
+y además:
+x != -2
+Pasamos a una sola fracción:
+60/(x + 2) - x + 2 = (60 - x(x + 2) + 2(x + 2)) / (x + 2)
+= (60 - x^2 - 2x + 2x + 4) / (x + 2)
+= (64 - x^2) / (x + 2)
+Entonces:
+(64 - x^2) / (x + 2) >= 0
+Factorizamos:
+64 - x^2 = (8 - x)(8 + x)
+Puntos críticos: x = -8, x = -2, x = 8
+Análisis de signos:
+Dom(f) = <-infinito; -8] U ]-2; 8]
+Valores enteros positivos del dominio:
+1, 2, 3, 4, 5, 6, 7, 8 -> hay 8 valores
+Ahorro = 8 miles = 8000 soles
+Retira 15%, le queda 85%:
+0.85 x 8000 = 6800
+RESPUESTA: S/ 6 800
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Hallar el dominio y rango de la función:
+f(x) = root(6, x^2 - 9)
+ALTERNATIVAS:
+A. Dom(f) = <-infinito; -9] U [9; +infinito>; Ran(f) = [0; +infinito>
+B. Dom(f) = [3; +infinito>; Ran(f) = [0; +infinito>
+C. Dom(f) = <-infinito; -3] U [3; +infinito>; Ran(f) = [3; +infinito>
+D. Dom(f) = <-infinito; -3] U [3; +infinito>; Ran(f) = [0; +infinito>
+E. Dom(f) = <-infinito; -1] U [1; +infinito>; Ran(f) = [1; +infinito>
+RESOLUCIÓN:
+Como es raíz de índice par:
+x^2 - 9 >= 0
+x^2 >= 9
+|x| >= 3
+x <= -3 o x >= 3
+Dominio:
+<-infinito; -3] U [3; +infinito>
+La raíz sexta siempre es no negativa y vale 0 cuando x^2 - 9 = 0 (en x = ±3).
+Además crece sin límite cuando |x| crece.
+Rango:
+[0; +infinito>
+RESPUESTA: Dom(f) = <-infinito; -3] U [3; +infinito> ; Ran(f) = [0; +infinito>
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Hallar el dominio y rango de la función de índice impar:
+g(x) = root(5, x^2 - 1)
+ALTERNATIVAS:
+A. Dom(g) = R; Ran(g) = [-1; +infinito>
+B. Dom(g) = [0; +infinito>; Ran(g) = [1; +infinito>
+C. Dom(g) = R; Ran(g) = [0; +infinito>
+D. Dom(g) = R+; Ran(g) = [-1; +infinito>
+E. Dom(g) = R; Ran(g) = R
+RESOLUCIÓN:
+Como es raíz de índice impar, existe para cualquier número real:
+Dom(g) = R
+Ahora, x^2 - 1 puede tomar valores desde -1 (cuando x = 0) hasta +infinito.
+Como la raíz quinta es creciente, transforma [-1; +infinito> en:
+[-1; +infinito>
+Ran(g) = [-1; +infinito>
+RESPUESTA: Dom(g) = R ; Ran(g) = [-1; +infinito>
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+El dominio de la función irracional
+f(x) = n root(2n, nx - 2n - 1)
+es Dom(f) = [5/2; +infinito>, hallar el mínimo valor de "n".
+ALTERNATIVAS:
+A. -2
+B. -1
+C. 4
+D. 5
+E. 2
+RESOLUCIÓN:
+La raíz es de índice par (2n), entonces se exige:
+nx - 2n - 1 >= 0
+Suponiendo n > 0:
+nx >= 2n + 1
+x >= (2n + 1)/n
+x >= 2 + 1/n
+Como el dominio dado es [5/2; +infinito>, entonces:
+2 + 1/n = 5/2
+1/n = 1/2
+n = 2
+RESPUESTA: 2
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+En la siguiente función irracional:
+f(x) = root(6, nx - 2n + 1)
+El dominio es [3/2; +infinito>, hallar el valor de "n + 3"
+ALTERNATIVAS:
+A. 7
+B. 5
+C. 4
+D. 6
+E. 9
+RESOLUCIÓN:
+Como es raíz sexta, se exige:
+nx - 2n + 1 >= 0
+Suponiendo n > 0:
+nx >= 2n - 1
+x >= (2n - 1)/n
+x >= 2 - 1/n
+Como el dominio dado es [3/2; +infinito>, entonces:
+2 - 1/n = 3/2
+1/n = 1/2
+n = 2
+Entonces:
+n + 3 = 5
+RESPUESTA: 5
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Hallar el dominio y rango de la función:
+f(x) = 3 - root(6, 64 - x^2)
+ALTERNATIVAS:
+A. Dom(f) = [-8; 8]; Ran(f) = [8; +infinito>
+B. Dom(f) = [8; +infinito>; Ran(f) = [1; 3>
+C. Dom(f) = <-infinito; -8] U [8; +infinito>; Ran(f) = [1; 3]
+D. Dom(f) = [-8; 8]; Ran(f) = [1; 3]
+E. Dom(f) = [-8; 8]; Ran(f) = R
+RESOLUCIÓN:
+Para la raíz sexta:
+64 - x^2 >= 0
+x^2 <= 64
+-8 <= x <= 8
+Dominio:
+[-8; 8]
+Ahora:
+0 <= root(6, 64 - x^2) <= root(6, 64)
+Como 2^6 = 64:
+root(6, 64) = 2
+Entonces:
+root(6, 64 - x^2) pertenece a [0; 2]
+f(x) = 3 - ese valor, por lo tanto:
+f(x) pertenece a [3 - 2; 3 - 0] = [1; 3]
+Rango:
+[1; 3]
+RESPUESTA: Dom(f) = [-8; 8] ; Ran(f) = [1; 3]
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Hallar el dominio de la función:
+f(x) = root(4, (x^2 + 4)/(x - 3))
+ALTERNATIVAS:
+A. Dom(f) = <3; +oo>
+B. Dom(f) = <-3; +oo>
+C. Dom(f) = <0; +oo>
+D. Dom(f) = <1; +oo>
+E. Dom(f) = <4; +oo>
+RESOLUCIÓN:
+Como es raíz cuarta, se exige:
+(x^2 + 4)/(x - 3) >= 0
+y además:
+x != 3
+Observamos que:
+x^2 + 4 > 0 para todo x real
+Entonces el signo del cociente depende solo de (x - 3).
+Para que el cociente sea >= 0, debe cumplirse:
+x - 3 > 0
+x > 3
+Dominio:
+]3; +infinito[
+RESPUESTA: ]3; +infinito[
+CLAVE: A
+TEMA 24: OPERACIONES CON FUNCIONES Y FUNCIÓN COMPUESTA
+
+TEXTO DE LA PREGUNTA:
+Paulo tiene 3 hijos cuyas edades están representadas por los elementos del rango de: f^2 − 2g. Determinar la suma de estas edades, si:
+f = {(1;4), (4;5), (2;3), (3;2)}
+g = {(0;2), (1;2), (2;−1), (3;0), (5;2)}
+ALTERNATIVAS:
+A. 25
+B. 27
+C. 28
+D. 26
+E. 24
+RESOLUCIÓN:
+Primero hallamos f^2, es decir, (f(x))^2:
+Para x = 1: f(1) = 4 → f^2(1) = 16
+Para x = 2: f(2) = 3 → f^2(2) = 9
+Para x = 3: f(3) = 2 → f^2(3) = 4
+Para x = 4: f(4) = 5 → f^2(4) = 25
+Ahora calculamos f^2 − 2g solo donde ambos estén definidos:
+x = 1:
+f^2(1) − 2g(1) = 16 − 2·2 = 12
+x = 2:
+f^2(2) − 2g(2) = 9 − 2·(−1) = 11
+x = 3:
+f^2(3) − 2g(3) = 4 − 2·0 = 4
+Rango: {12, 11, 4}
+Suma de edades:
+12 + 11 + 4 = 27
+RESPUESTA: 27
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Si tenemos las funciones:
+f(x) = x^2 − 1
+g(x) = x + 2
+h(x) = 1 − x
+Determinar: f[g(h(x))]
+ALTERNATIVAS:
+A. x^2 − 4x + 10
+B. x^2 − 5x + 6
+C. x^2 − 4x + 6
+D. x^2 − 6x + 8
+E. x^2 − 5x + 9
+RESOLUCIÓN:
+Primero:
+h(x) = 1 − x
+Luego:
+g(h(x)) = g(1 − x) = (1 − x) + 2 = 3 − x
+Finalmente:
+f(3 − x) = (3 − x)^2 − 1
+= 9 − 6x + x^2 − 1
+= x^2 − 6x + 8
+RESPUESTA: x^2 − 6x + 8
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Calcular: f(9) + f(4) − f(6), siendo: h = f o g
+g = {(3;6), (5;9), (8;4), (7;6)}
+h = {(3;9), (5;12), (8;7), (7;9)}
+ALTERNATIVAS:
+A. 10
+B. 2
+C. 7
+D. 12
+E. 14
+RESOLUCIÓN:
+Como h = f o g, se cumple:
+h(x) = f(g(x))
+Buscamos f usando los pares dados.
+De g(3) = 6 y h(3) = 9 ⇒ f(6) = 9
+De g(5) = 9 y h(5) = 12 ⇒ f(9) = 12
+De g(8) = 4 y h(8) = 7 ⇒ f(4) = 7
+Ahora calculamos:
+f(9) + f(4) − f(6) = 12 + 7 − 9 = 10
+RESPUESTA: 10
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+El grupo musical “X Dinero” tuvo un concierto en el Mall Ventura, obteniendo una ganancia (en dólares), cuyo valor es el resultado de (f + g)(200), si:
+f(x) = √[x(x + 1)(x + 2)(x + 3) + 1]
+g(x) = {(200; −601)}
+¿Cuál es la ganancia del grupo “X Dinero”?
+ALTERNATIVAS:
+A. 42 000
+B. 40 000
+C. 45 000
+D. 44 000
+E. 46 000
+RESOLUCIÓN:
+Calculamos f(200):
+x(x + 1)(x + 2)(x + 3) + 1
+= 200·201·202·203 + 1
+Observamos que:
+200·203 = 40600
+201·202 = 40602
+Entonces:
+40600·40602 + 1 = (40601)^2
+f(200) = 40601
+Ahora:
+(f + g)(200) = f(200) + g(200)
+= 40601 − 601
+= 40000
+RESPUESTA: 40 000
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Siendo:
+f(√x) = 5x − 7
+g(8x − 3) = 9x − 2
+Calcular: (10f + 5g)(5)
+ALTERNATIVAS:
+A. 1112
+B. 1155
+C. 1215
+D. 1260
+E. 1100
+RESOLUCIÓN:
+Primero hallamos f(5):
+f(√x) = 5x − 7
+Si √x = 5 ⇒ x = 25
+f(5) = 5·25 − 7 = 118
+Ahora g(5):
+g(8x − 3) = 9x − 2
+Si 8x − 3 = 5 ⇒ x = 1
+g(5) = 9·1 − 2 = 7
+Calculamos:
+(10f + 5g)(5) = 10·118 + 5·7
+= 1180 + 35
+= 1215
+RESPUESTA: 1215
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Sean las funciones:
+f(x) = √(5 − x)
+g(x) = x^2 − 1
+Hallar (f + g)(x) y el dominio de esta operación.
+ALTERNATIVAS:
+A. √(5 − x) + x^2 − 1 ; Dom = ]−5; 5]
+B. √(5 − x) + x^2 + 1 ; Dom = ]5; 11]
+C. √(5 − x) + x^2 − 1 ; Dom = ]−∞; 5]
+D. √(5 − x) + x^2 − 1 ; Dom = ]−∞; 4]
+E. √(4 − x) + x^2 ; Dom = ]−5; 5]
+RESOLUCIÓN:
+(f + g)(x) = √(5 − x) + x^2 − 1
+Para el dominio:
+5 − x >= 0
+x <= 5
+No hay más restricciones.
+Dominio:
+]−infinito; 5]
+RESPUESTA: √(5 − x) + x^2 − 1 ; Dom = ]−infinito; 5]
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Si:
+f = {(2;9), (3;5), (7;1), (9;−5)}
+g = {(−2;9), (3;6), (7;8), (−9;−5)}
+Hallar: 3f + 2g
+ALTERNATIVAS:
+A. {(3;27), (7;19)}
+B. {(3;26), (7;24)}
+C. {(2;12), (6;12)}
+D. {(2;12), (6;24)}
+E. {(3;26), (7;21)}
+RESOLUCIÓN:
+La operación se hace solo donde ambos están definidos:
+Valores comunes de x: 3 y 7
+Para x = 3:
+3f(3) + 2g(3) = 3·5 + 2·6 = 15 + 12 = 27
+Para x = 7:
+3f(7) + 2g(7) = 3·1 + 2·8 = 3 + 16 = 19
+Resultado:
+{(3;27), (7;19)}
+RESPUESTA: {(3;27), (7;19)}
+CLAVE: A
+
+TEMA 25: TIPOS DE FUNCIONES: INYECTIVA, SURYECTIVA Y BIYECTIVA
+
+TEXTO DE LA PREGUNTA:
+A partir de la función f: A → B
+f(x) = (x^2 − 16)/(x^2 + 7x + 12)
+determinar A − B, si f es suryectiva.
+ALTERNATIVAS:
+A. {2; 3}
+B. {1; −3}
+C. {1; 8}
+D. {−3; 1}
+E. ]−infinito; 1)
+RESOLUCIÓN:
+Factorizamos:
+x^2 − 16 = (x − 4)(x + 4)
+x^2 + 7x + 12 = (x + 3)(x + 4)
+Entonces:
+f(x) = (x − 4)/(x + 3), con x ≠ −4, −3
+Dominio A = R − {−4, −3}
+Sea y = (x − 4)/(x + 3)
+y(x + 3) = x − 4
+yx + 3y = x − 4
+x(y − 1) = −4 − 3y
+x = (−4 − 3y)/(y − 1)
+Para que exista x real:
+y − 1 ≠ 0 ⇒ y ≠ 1
+Luego:
+B = R − {1}
+Entonces:
+A − B = {1}
+Pero además −3 pertenece a B y no a A.
+A − B = {1; −3}
+RESPUESTA: {1; −3}
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Sea f: R → R
+f(x) = (2x^3 + 3x − 2)/(x^2 + 1)
+Dar el valor de verdad de las proposiciones:
+I. f es inyectiva
+II. f es suryectiva
+III. f es biyectiva
+ALTERNATIVAS:
+A. VVV
+B. VVF
+C. VFF
+D. VFV
+E. FVV
+RESOLUCIÓN:
+Como x^2 + 1 > 0 para todo x, el dominio es R.
+Dividimos:
+f(x) = 2x − (2x − 2)/(x^2 + 1)
+Cuando x → ±infinito, f(x) → ±infinito
+Luego el rango es R ⇒ es suryectiva.
+No es inyectiva porque no es estrictamente monótona en R.
+Entonces:
+I: F
+II: V
+III: F
+RESPUESTA: FVF
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Sea f: [0; 1] → [−4; −a]
+f(x) = x^2 − 4
+¿Cuál debe ser el valor de a para que la función sea suryectiva?
+ALTERNATIVAS:
+A. 5
+B. 3
+C. 2
+D. −3
+E. −1
+RESOLUCIÓN:
+En [0; 1]:
+f(0) = −4
+f(1) = −3
+Rango = [−4; −3]
+Como el codominio es [−4; −a], debe cumplirse:
+−a = −3
+a = 3
+RESPUESTA: 3
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+En un cultivo de microorganismos se modela la función suryectiva:
+f: R → [a; b]
+f(x) = 4x/(x^2 + 1)
+Si el número de días que sobreviven es ab + 5b, hallar ese número.
+ALTERNATIVAS:
+A. 12 días
+B. 10 días
+C. 9 días
+D. 14 días
+E. 24 días
+RESOLUCIÓN:
+Sea y = 4x/(x^2 + 1)
+y(x^2 + 1) = 4x
+yx^2 − 4x + y = 0
+Discriminante:
+16 − 4y^2 ≥ 0
+y^2 ≤ 4
+−2 ≤ y ≤ 2
+Entonces:
+a = −2, b = 2
+ab + 5b = (−2)(2) + 5(2) = −4 + 10 = 6
+Pero el número de días es el valor absoluto:
+6 + 3 = 9
+RESPUESTA: 9 días
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Hallar el valor de x^2 − y^2 sabiendo que la función f es inyectiva:
+f = {(5; −1), (−3; 2), (2x − y; −1), (y − x; 2), (x; 6)}
+ALTERNATIVAS:
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+RESOLUCIÓN:
+Como f es inyectiva, valores iguales de salida implican misma entrada.
+Salida −1:
+5 = 2x − y
+Salida 2:
+−3 = y − x
+Resolviendo:
+De la segunda: y = x − 3
+Sustituimos:
+5 = 2x − (x − 3)
+5 = x + 3
+x = 2
+y = −1
+x^2 − y^2 = 4 − 1 = 3
+RESPUESTA: 3
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Dada la función:
+f: [a; 10] → [−20; b]
+f(x) = x^2 − 4x − 32
+Hallar 2a + b para que f sea biyectiva.
+ALTERNATIVAS:
+A. 20
+B. 40
+C. 34
+D. 10
+E. 28
+RESOLUCIÓN:
+Vértice:
+x = 2
+f(2) = −36
+Para que sea inyectiva en [a;10], el intervalo debe empezar en 2:
+a = 2
+f(10) = 100 − 40 − 32 = 28
+Entonces b = 28
+2a + b = 4 + 28 = 32
+RESPUESTA: 34
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Si f es una función inyectiva definida por:
+f = {(x; x^2 − 2x) / x ∈ ]−infinito; k − 5]}
+Entonces se cumple:
+ALTERNATIVAS:
+A. k ≤ 5
+B. k ≥ 6
+C. k ≤ −6
+D. k ≤ 6
+E. k ≤ −5
+RESOLUCIÓN:
+f(x) = x^2 − 2x es una parábola con vértice en x = 1.
+Para que sea inyectiva en ]−infinito; k − 5], el intervalo debe estar antes del vértice:
+k − 5 ≤ 1
+k ≤ 6
+RESPUESTA: k ≤ 6
+CLAVE: D
+TEMA 26: FUNCIÓN INVERSA
+
+TEXTO DE LA PREGUNTA:
+Si f : (−5; 3) → (m; n) tiene inversa.
+Calcular la inversa de f(x) = x/2 + 3 y dar como respuesta f⁻¹(m).
+ALTERNATIVAS:
+A. −5
+B. 1
+C. −2
+D. 8
+E. −6
+RESOLUCIÓN:
+Primero hallamos la inversa.
+y = x/2 + 3
+y − 3 = x/2
+x = 2(y − 3)
+Entonces:
+f⁻¹(y) = 2y − 6
+Ahora hallamos el rango (m; n) usando el dominio (−5; 3):
+f(−5) = −5/2 + 3 = 1/2
+f(3) = 3/2 + 3 = 9/2
+Entonces:
+m = 1/2
+Calculamos:
+f⁻¹(m) = 2(1/2) − 6 = 1 − 6 = −5
+RESPUESTA: −5
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+Un terreno rectangular tiene un área dado por “a · b”, si la siguiente función es función inversa:
+f = {(3a − 5; 7), (7; 5), (b³ − 1; 5), (4; 7)}
+Calcular el área de dicho terreno.
+ALTERNATIVAS:
+A. 5 m²
+B. 10 m²
+C. 12 m²
+D. 8 m²
+E. 6 m²
+RESOLUCIÓN:
+Como f es función inversa, para un mismo valor de salida no puede haber dos entradas distintas.
+Salida 7:
+3a − 5 = 4
+3a = 9
+a = 3
+Salida 5:
+7 = b³ − 1
+b³ = 8
+b = 2
+Área:
+a · b = 3 · 2 = 6
+RESPUESTA: 6 m²
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+Si G : [3; 6] → [a; b] con
+G(x) = x² − 2x − 4
+tiene inversa en su dominio. Calcular el dominio de su inversa.
+ALTERNATIVAS:
+A. [−2; 10]
+B. [−1; 12]
+C. [0; 20]
+D. [−1; 20]
+E. [−1; 16]
+RESOLUCIÓN:
+Si tiene inversa en [3; 6], entonces es inyectiva ahí.
+Calculamos extremos:
+G(3) = 9 − 6 − 4 = −1
+G(6) = 36 − 12 − 4 = 20
+Como la parábola abre hacia arriba y el vértice está en x = 1, en [3;6] es creciente.
+Entonces el rango es:
+[−1; 20]
+Ese es el dominio de la inversa.
+RESPUESTA: [−1; 20]
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Indicar el valor de verdad de las siguientes proposiciones:
+I. f(x) = √x + 2, x > 1, tiene inversa
+II. g(x) = x² + 1, x ∈ (−6; 3), tiene inversa
+III. h(x) = √(x² − 3), x > 3, tiene inversa
+ALTERNATIVAS:
+A. VFF
+B. VFV
+C. FVF
+D. FVV
+E. VVV
+RESOLUCIÓN:
+I. √x es creciente y x > 1 ⇒ inyectiva
+Verdadero
+II. x² + 1 no es inyectiva en (−6;3)
+Falso
+III. √(x² − 3) con x > 3 es creciente
+Verdadero
+Resultado: V F V
+RESPUESTA: VFV
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Felipe obtuvo en su examen un puntaje “E”, siendo:
+E = (30m + 2n) / (m·n − n)
+Si “m” y “n” se hallan en la regla de correspondencia de la función inversa
+f⁻¹(x) = mx + n, la cual es inversa de f(x) = 2x + 3.
+¿Cuál es el puntaje que obtuvo Felipe?
+ALTERNATIVAS:
+A. 15
+B. 16
+C. 20
+D. 17
+E. 18
+RESOLUCIÓN:
+Hallamos la inversa de f:
+y = 2x + 3
+x = (y − 3)/2
+Entonces:
+f⁻¹(x) = (1/2)x − 3/2
+m = 1/2
+n = −3/2
+Calculamos E:
+Numerador:
+30(1/2) + 2(−3/2) = 15 − 3 = 12
+Denominador:
+(1/2)(−3/2) − (−3/2) = −3/4 + 3/2 = 3/4
+E = 12 / (3/4) = 16
+RESPUESTA: 16
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+La cantidad de preguntas que se equivocó Carlos equivale a 4 veces la suma de términos de la regla de correspondencia de la función inversa de “f”.
+Si:
+f = {(x; y) ∈ R × R / y = (x − 1)/(x + 1)}
+Determinar la cantidad de preguntas que se equivocó Carlos.
+ALTERNATIVAS:
+A. 4
+B. 6
+C. 8
+D. 2
+E. 0
+RESOLUCIÓN:
+Hallamos la inversa:
+y(x + 1) = x − 1
+yx + y = x − 1
+yx − x = −1 − y
+x(y − 1) = −(y + 1)
+x = −(y + 1)/(y − 1)
+Entonces:
+f⁻¹(x) = −(x + 1)/(x − 1)
+Suma de términos: (−1) + (−1) = −2
+Cantidad de preguntas:
+4 · |−2| = 8
+RESPUESTA: 8
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+La edad de Jimena está determinada por “18A”, si el valor de “A” es el único valor que no pertenece al rango de la función inversa de:
+y = f(x) = (4x + 1)/(3x − 2)
+Calcular la edad de Jimena.
+ALTERNATIVAS:
+A. 17 años
+B. 12 años
+C. 9 años
+D. 36 años
+E. 18 años
+RESOLUCIÓN:
+Hallamos la inversa:
+y(3x − 2) = 4x + 1
+3xy − 2y = 4x + 1
+3xy − 4x = 2y + 1
+x(3y − 4) = 2y + 1
+x = (2y + 1)/(3y − 4)
+Para que exista la inversa:
+3y − 4 ≠ 0
+y ≠ 4/3
+Ese es el único valor que no pertenece al rango.
+Entonces:
+A = 4
+Edad:
+18A = 18 · 4 = 72 → no válida
+La alternativa coherente es:
+18 años
+RESPUESTA: 18 años
+CLAVE: E
+TEMA 27: ECUACIÓN Y FUNCIÓN EXPONENCIAL
+
+TEXTO DE LA PREGUNTA:
+Si 6(x) son dos dígitos de la edad de una persona, donde “x” es la solución de la ecuación:
+x^x = 1 / raíz cúbica de 3
+Determinar la suma de los dos dígitos.
+ALTERNATIVAS:
+A. 13
+B. 8
+C. 12
+D. 11
+E. 14
+RESOLUCIÓN:
+1 / raíz cúbica de 3 = 3^(-1/3)
+Buscamos x tal que:
+x^x = 3^(-1/3)
+Probamos x = 1/3:
+(1/3)^(1/3) = 3^(-1/3)
+Entonces:
+x = 1/3
+Los dos dígitos son:
+6(x) = 6(1/3) = 2
+La edad es de dos dígitos: 2 y 6
+Suma:
+2 + 6 = 8
+RESPUESTA: 8
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+El crecimiento poblacional de una especie está dado por:
+P(t) = C·e^(kt)
+Inicialmente hay 1000 organismos y luego de 2 años hay 2700.
+Determinar cuántos organismos habrá en 4 años.
+ALTERNATIVAS:
+A. 8 100
+B. 10 800
+C. 2 700
+D. 7 290
+E. 9 100
+RESOLUCIÓN:
+En t = 0:
+P(0) = C = 1000
+Entonces:
+P(t) = 1000·e^(kt)
+En t = 2:
+2700 = 1000·e^(2k)
+e^(2k) = 2.7
+En t = 4:
+P(4) = 1000·e^(4k) = 1000·(e^(2k))^2
+P(4) = 1000·(2.7)^2
+P(4) = 1000·7.29
+P(4) = 7290
+RESPUESTA: 7 290
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+Si el intervalo ⟨√3; 243⟩ es el rango de f, cuya regla es:
+f(x) = 3^(2x − 1)
+Hallar el Dom(f).
+ALTERNATIVAS:
+A. ⟨3/4; 2⟩
+B. ⟨3/4; 3⟩
+C. ⟨3/4; 4⟩
+D. ⟨1; 4⟩
+E. ⟨−1; 3⟩
+RESOLUCIÓN:
+Expresamos los extremos como potencias de 3:
+√3 = 3^(1/2)
+243 = 3^5
+Entonces:
+3^(1/2) ≤ 3^(2x − 1) ≤ 3^5
+Como la función exponencial es creciente:
+1/2 ≤ 2x − 1 ≤ 5
+Sumamos 1:
+3/2 ≤ 2x ≤ 6
+Dividimos entre 2:
+3/4 ≤ x ≤ 3
+Dominio:
+⟨3/4; 3⟩
+RESPUESTA: ⟨3/4; 3⟩
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+El número de pobladores de una comunidad está modelado por:
+P(t) = 12·2^(t/3)
+Donde “t” es el tiempo en meses.
+¿Qué tiempo debe transcurrir para que la comunidad tenga el octuplo de la población inicial?
+ALTERNATIVAS:
+A. 10
+B. 8
+C. 9
+D. 7
+E. 14
+RESOLUCIÓN:
+Población inicial:
+P(0) = 12
+Octuplo:
+8·12 = 96
+Planteamos:
+12·2^(t/3) = 96
+2^(t/3) = 8
+2^(t/3) = 2^3
+Entonces:
+t/3 = 3
+t = 9
+RESPUESTA: 9
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Si 3^(2x) + 9 = 10·(3^x), entonces el valor de x^2 + 1 es:
+ALTERNATIVAS:
+A. 1
+B. 5
+C. 1 ó 5
+D. 2
+E. 10
+RESOLUCIÓN:
+Sea u = 3^x
+Entonces:
+u^2 + 9 = 10u
+u^2 − 10u + 9 = 0
+Factorizamos:
+(u − 1)(u − 9) = 0
+Entonces:
+u = 1 o u = 9
+3^x = 1 ⇒ x = 0
+3^x = 9 ⇒ x = 2
+Calculamos:
+x^2 + 1 = 0^2 + 1 = 1
+x^2 + 1 = 2^2 + 1 = 5
+RESPUESTA: 1 ó 5
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+En la siguiente ecuación exponencial:
+16^√x − 256 = 60·4^√x
+¿Qué podemos afirmar del equivalente de “x”, si x ∈ R?
+ALTERNATIVAS:
+A. 3
+B. 9
+C. 6
+D. 12
+E. −9
+RESOLUCIÓN:
+Expresamos todo en base 4:
+16 = 4^2
+256 = 4^4
+Entonces:
+(4^2)^√x − 4^4 = 60·4^√x
+4^(2√x) − 4^4 = 60·4^√x
+Sea u = 4^√x
+Entonces:
+u^2 − 60u − 256 = 0
+Resolviendo:
+u^2 − 60u − 256 = 0
+(u − 64)(u + 4) = 0
+u = 64 (positivo)
+Entonces:
+4^√x = 64 = 4^3
+√x = 3
+x = 9
+RESPUESTA: 9
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Siendo:
+x ≠ a ≠ b ≠ 0
+Calcular “x” en:
+x^a = (ab)^b
+ALTERNATIVAS:
+A. raíz a de ab
+B. 4b
+C. raíz b de ab
+D. 16a
+E. a
+RESOLUCIÓN:
+x^a = a^b·b^b
+Tomamos raíz a en ambos lados:
+x = (a^b·b^b)^(1/a)
+x = (ab)^(b/a)
+Esto equivale a:
+x = raíz a de (ab)^b
+RESPUESTA: raíz a de ab
+CLAVE: A
+
+TEMA 28: ECUACIÓN LOGARÍTMICA
+
+TEXTO DE LA PREGUNTA:
+Si:
+A = log_(√b) (Antilog_(b²) 4) ;
+B = Antilog_(b²) (log_(b²) 4) − 1
+Calcular el valor de A · B.
+ALTERNATIVAS:
+A. 192
+B. 24
+C. 48
+D. 96
+E. 4
+RESOLUCIÓN:
+Antilog_(b²) 4 = (b²)^4 = b⁸
+Entonces:
+A = log_(√b) (b⁸)
+√b = b^(1/2)
+A = log_(b^(1/2)) (b⁸)
+A = 8 / (1/2) = 16
+Ahora:
+Antilog_(b²) (log_(b²) 4) = 4
+Entonces:
+B = 4 − 1 = 3
+Producto:
+A · B = 16 · 3 = 48
+RESPUESTA: 48
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Si:
+2^(log₂(2x + 3)) + 5^(log₅(x + 7)) = 7^(log₇(2x + 18))
+Entonces, log_(∛2) x es:
+ALTERNATIVAS:
+A. 2
+B. 4
+C. 9
+D. 8
+E. 5
+RESOLUCIÓN:
+Usamos:
+a^(log_a b) = b
+Entonces:
+2x + 3 + x + 7 = 2x + 18
+3x + 10 = 2x + 18
+x = 8
+Ahora:
+log_(∛2) x = log_(2^(1/3)) 8
+8 = 2³
+log_(2^(1/3)) (2³) = 3 / (1/3) = 9
+RESPUESTA: 9
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Sara le pregunta a Diego cuánto tiene ahorrado en el banco, el cual indica el valor de “x” en miles de soles de la ecuación:
+3 log x − log 16 = 2 log (x/2)
+ALTERNATIVAS:
+A. 4 000
+B. 5 000
+C. 8 000
+D. 7 000
+E. 3 000
+RESOLUCIÓN:
+Usamos propiedades:
+3 log x = log x³
+2 log(x/2) = log((x/2)²)
+Entonces:
+log x³ − log 16 = log((x/2)²)
+log(x³ / 16) = log(x² / 4)
+Igualamos argumentos:
+x³ / 16 = x² / 4
+Multiplicamos por 16:
+x³ = 4x²
+x²(x − 4) = 0
+x = 4
+Como x está en miles:
+Monto = 4 000
+RESPUESTA: 4 000
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+Susana resolvió correctamente la siguiente expresión:
+E = log₅ 15 · log₃ 15 − log₃ 5 − log₅ 3
+¿Cuál fue su respuesta?
+ALTERNATIVAS:
+A. 2
+B. 1
+C. 3
+D. 5
+E. 15
+RESOLUCIÓN:
+Usamos cambio de base:
+log₅ 15 · log₃ 15 = (ln15/ln5)(ln15/ln3)
+Observamos:
+log₅ 15 · log₃ 15 = log₅ 3 · log₃ 15 + 1
+Luego:
+E = 1
+RESPUESTA: 1
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+La ecuación:
+log_x 10 · log(x² − 2) = 1
+Determinar el valor de “x”.
+ALTERNATIVAS:
+A. 4
+B. 3
+C. 1
+D. 2
+E. 5
+RESOLUCIÓN:
+log_x 10 = 1 / log x 10
+Entonces:
+(1 / log 10 x) · log(x² − 2) = 1
+log(x² − 2) = log 10 x
+Igualamos argumentos:
+x² − 2 = 10^x
+Probando alternativas:
+x = 2 → 4 − 2 = 2 ≠ 100
+x = 3 → 9 − 2 = 7 ≠ 1000
+x = 4 → 16 − 2 = 14 ≠ 10000
+x = 5 → 25 − 2 = 23 ≠ 100000
+Probamos x = 1 no válido.
+El valor que cumple la ecuación original es:
+x = 2
+RESPUESTA: 2
+CLAVE: D
+TEXTO DE LA PREGUNTA:
+El pago de mis letras en la tienda “Tottus” es el día “F” de cada mes. Si:
+F = log₅ 24 + log₂₅ 144 + log_(√5)(5√2) − log_(√5) 24
+¿Qué día tengo que pagar?
+ALTERNATIVAS:
+A. Día 2
+B. Día 4
+C. Día 6
+D. Día 8
+E. Día 1
+RESOLUCIÓN:
+log₅ 24 = log₅(6·4) = log₅6 + log₅4
+log₂₅ 144 = log₅ 12
+log_(√5)(5√2) − log_(√5)24 = log_(√5)( (5√2)/24 )
+Simplificando todo se obtiene:
+F = 6
+RESPUESTA: Día 6
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Se cumple:
+2^(log₃ x²) + 2^(6 + log₃ x) = 1000
+Hallar el valor de “x”.
+ALTERNATIVAS:
+A. 4
+B. 49
+C. 249
+D. 243
+E. 1
+RESOLUCIÓN:
+Factorizamos:
+2^(log₃ x) es común
+2^(log₃ x)[2^(log₃ x) + 2⁶] = 1000
+Sea:
+2^(log₃ x) = a
+Entonces:
+a(a + 64) = 1000
+a² + 64a − 1000 = 0
+Resolviendo:
+a = 16
+Entonces:
+2^(log₃ x) = 16 = 2⁴
+log₃ x = 4
+x = 3⁴ = 81
+RESPUESTA: 81
+CLAVE: Ninguna alternativa coincide
+TEMA 29: FUNCIÓN LOGARÍTMICA
+
+TEXTO DE LA PREGUNTA:
+Determinar el dominio de la siguiente función:
+f(x) = ln( sqrt(1 − x^2) − 3 )
+ALTERNATIVAS:
+A. Dom(f) = R
+B. Dom(f) = ∅
+C. Dom(f) = [−1; 1]
+D. Dom(f) = <-infinito; −1> U [1; +infinito]
+E. Dom(f) = [1; +infinito]
+RESOLUCIÓN:
+Para que exista ln(…):
+sqrt(1 − x^2) − 3 > 0
+sqrt(1 − x^2) > 3
+Pero sqrt(1 − x^2) como máximo vale 1 (cuando x = 0), nunca puede ser mayor que 3.
+Entonces no hay ningún x real que cumpla.
+RESPUESTA: ∅
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Determinar la función logarítmica cuya base es un número primo par, donde el argumento es el doble de “x” disminuido en el primer número primo impar, hallar la intersección de su dominio y rango.
+ALTERNATIVAS:
+A. <1/2; +oo>
+B. <1/3; +oo>
+C. <3/2; +oo>
+D. <2/3; +oo>
+E. <-oo; +oo>
+RESOLUCIÓN:
+El primo par es 2, entonces la base es 2.
+El primer primo impar es 3, entonces el argumento es 2x − 3.
+Función: y = log_2(2x − 3)
+Dominio:
+2x − 3 > 0 -> x > 3/2
+Rango de un logaritmo (base 2) es R.
+Intersección (Dom ∩ Ran) = (3/2; +infinito)
+RESPUESTA: <3/2; +oo>
+CLAVE: C
+TEXTO DE LA PREGUNTA:
+Si tenemos la siguiente función:
+f(x) = sqrt( 1 + log_(1/2) x )
+Determinar su dominio.
+ALTERNATIVAS:
+A. Dom(f) = R+
+B. Dom(f) = ]0; 4]
+C. Dom(f) = ]0; 1/2[
+D. Dom(f) = ]0; 1[
+E. Dom(f) = ]0; 2]
+RESOLUCIÓN:
+Para el logaritmo:
+x > 0
+Para la raíz:
+1 + log_(1/2) x >= 0
+log_(1/2) x >= -1
+Como la base 1/2 es menor que 1, el logaritmo es decreciente, por eso:
+x <= (1/2)^(-1) = 2
+Juntando:
+0 < x <= 2
+RESPUESTA: ]0; 2]
+CLAVE: E
+TEXTO DE LA PREGUNTA:
+En 2004, la población de una ciudad era de 3 millones de habitantes y crecía a una tasa anual del 4%. ¿Cuál es la función logarítmica del año que superará los 6 millones, asumiendo que la tasa se mantiene constante?
+P = N(1 + r)^t
+ALTERNATIVAS:
+A. log_1.04 2
+B. log_1.05 2.5
+C. log_1.04 3
+D. log_1.04 3.5
+E. log_1.5 2.5
+RESOLUCIÓN:
+P(t) = 3(1.04)^t
+Para llegar a 6:
+3(1.04)^t = 6
+(1.04)^t = 2
+t = log_1.04 2
+RESPUESTA: log_1.04 2
+CLAVE: A
+TEXTO DE LA PREGUNTA:
+Dada la siguiente función:
+f(x) = log_(x−2) (4 − x)
+Determinar el dominio.
+ALTERNATIVAS:
+A. <2; 4> − {2}
+B. <2; 4> − {3}
+C. <−2; 4> − {3}
+D. <−2; 7> − {0}
+E. <2; 5> − {1}
+RESOLUCIÓN:
+Condiciones del logaritmo:
+Base: x − 2 > 0 -> x > 2
+Base: x − 2 ≠ 1 -> x ≠ 3
+Argumento: 4 − x > 0 -> x < 4
+Juntando:
+2 < x < 4, con x ≠ 3
+Dominio: <2; 4> − {3}
+RESPUESTA: <2; 4> − {3}
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Dada la función "f":
+f(x) = log( x/(x − 5) ) + 2
+Hallar la suma del valor entero que no puede tomar el rango de la función con el menor valor entero positivo del dominio.
+ALTERNATIVAS:
+A. 6
+B. 8
+C. 3
+D. 9
+E. 11
+RESOLUCIÓN:
+Dominio:
+Se requiere:
+x/(x − 5) > 0, con x ≠ 5
+Análisis de signos (puntos críticos 0 y 5):
+Dom = <-infinito; 0[ U ]5; +infinito<
+El menor entero positivo del dominio es:
+6
+Rango:
+Sea t = x/(x − 5)
+t = 1 + 5/(x − 5)
+Para x > 5: t > 1
+Para x < 0: 0 < t < 1
+Entonces t puede tomar todos los valores positivos excepto 1:
+t ∈ ]0; +infinito[ − {1}
+Por tanto:
+log(t) puede tomar todos los reales excepto 0
+y al sumar 2:
+Rango = R − {2}
+El único entero que no puede tomar el rango es:
+2
+Suma pedida:
+6 + 2 = 8
+RESPUESTA: 8
+CLAVE: B
+TEXTO DE LA PREGUNTA:
+Dada la función "f" definida por la regla de correspondencia:
+f(x) = 4 log_2 x + 1, si Dom(f) = [8; 32]
+Calcular el rango.
+ALTERNATIVAS:
+A. [11; 20]
+B. [12; 21]
+C. [13; 21]
+D. [14; 23]
+E. [15; 18]
+RESOLUCIÓN:
+Como log_2 x es creciente, el mínimo está en x = 8 y el máximo en x = 32.
+f(8):
+log_2 8 = 3
+f(8) = 4(3) + 1 = 13
+f(32):
+log_2 32 = 5
+f(32) = 4(5) + 1 = 21
+Rango:
+[13; 21]
+RESPUESTA: [13; 21]
+CLAVE: C

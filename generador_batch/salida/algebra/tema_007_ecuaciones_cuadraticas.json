@@ -1,0 +1,234 @@
+{
+  "materia": "algebra",
+  "numero_tema": 7,
+  "total_temas": 29,
+  "titulo_tema": "ECUACIONES CUADRÁTICAS",
+  "tema": "ecuaciones_cuadraticas",
+  "preguntas": [
+    {
+      "pregunta": "Sean $$m$$ y $$n$$ las raíces de la ecuación $$3x(x - 5) = 2x^2 - 9x + 8$$. Calcular $$m^2 - 2mn + n^2$$, si $$m > n$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$4$$",
+        "B": "$$5$$",
+        "C": "$$6$$",
+        "D": "$$7$$",
+        "E": "$$8$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, simplificamos la ecuación a la forma estándar: $$3x(x - 5) = 2x^2 - 9x + 8$$ $$3x^2 - 15x = 2x^2 - 9x + 8$$ $$x^2 - 6x + 8 = 0$$ Factorizamos la ecuación cuadrática: $$(x - 4)(x - 2) = 0$$ Las raíces son $$x_1 = 4$$ y $$x_2 = 2$$. Dado que $$m > n$$, asignamos $$m = 4$$ y $$n = 2$$. Ahora, calculamos la expresión solicitada: $$m^2 - 2mn + n^2 = 4^2 - 2(4)(2) + 2^2 = 16 - 16 + 4 = 4$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_001",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un jardín rectangular tiene un área de $$750 \\text{ m}^2$$. Si el ancho del jardín, denotado por $$w$$, satisface la ecuación $$w^2 - 5(w - 2) = 60$$, calcular la longitud del jardín.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$70 \\text{ m}$$",
+        "B": "$$75 \\text{ m}$$",
+        "C": "$$80 \\text{ m}$$",
+        "D": "$$85 \\text{ m}$$",
+        "E": "$$90 \\text{ m}$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, resolvemos la ecuación para encontrar el ancho $$w$$: $$w^2 - 5(w - 2) = 60$$ $$w^2 - 5w + 10 = 60$$ $$w^2 - 5w - 50 = 0$$ Factorizamos la ecuación: $$(w - 10)(w + 5) = 0$$ Esto nos da dos posibles valores para $$w$$: $$w = 10$$ o $$w = -5$$. Como el ancho debe ser una medida positiva, tomamos $$w = 10 \\text{ m}$$. El área del jardín es $$Area = ancho \\cdot largo$$. Sabemos que el Área es $$750 \\text{ m}^2$$ y el ancho es $$10 \\text{ m}$$: $$750 = 10 \\cdot largo$$ $$largo = \\frac{750}{10} = 75 \\text{ m}$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_ecu_002",
+      "imagen": null
+    },
+    {
+      "pregunta": "Dos números enteros positivos se diferencian en $$4$$ unidades y la suma de sus cuadrados es $$170$$. Hallar los números y responder su producto.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$70$$",
+        "B": "$$72$$",
+        "C": "$$77$$",
+        "D": "$$80$$",
+        "E": "$$82$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea el menor número $$x$$ y el mayor $$x + 4$$. La suma de sus cuadrados es $$170$$: $$x^2 + (x + 4)^2 = 170$$ Desarrollamos la ecuación: $$x^2 + (x^2 + 8x + 16) = 170$$ $$2x^2 + 8x + 16 - 170 = 0$$ $$2x^2 + 8x - 154 = 0$$ Dividimos toda la ecuación por $$2$$: $$x^2 + 4x - 77 = 0$$ Factorizamos la ecuación cuadrática: $$(x + 11)(x - 7) = 0$$ Esto nos da dos soluciones para $$x$$: $$x = -11$$ o $$x = 7$$. Dado que los números deben ser positivos, tomamos $$x = 7$$. Los números son $$7$$ y $$7 + 4 = 11$$. El producto de los números es $$7 \\cdot 11 = 77$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_ecu_003",
+      "imagen": null
+    },
+    {
+      "pregunta": "La diferencia de un número positivo con su recíproco es $$\\frac{24}{5}$$. Hallar el número y responder: $$3n + 2$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$15$$",
+        "B": "$$16$$",
+        "C": "$$17$$",
+        "D": "$$18$$",
+        "E": "$$19$$"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea $$n$$ el número positivo. La diferencia entre el número y su recíproco se expresa como: $$n - \\frac{1}{n} = \\frac{24}{5}$$ Para eliminar los denominadores, multiplicamos toda la ecuación por $$5n$$: $$5n^2 - 5 = 24n$$ Reorganizamos la ecuación a la forma estándar de una cuadrática: $$5n^2 - 24n - 5 = 0$$ Usamos la fórmula general para resolver $$n = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$: El discriminante es $$(-24)^2 - 4(5)(-5) = 576 + 100 = 676$$. La raíz cuadrada del discriminante es $$\\sqrt{676} = 26$$. Las soluciones para $$n$$ son: $$n = \\frac{24 + 26}{2 \\cdot 5} = \\frac{50}{10} = 5$$ y $$n = \\frac{24 - 26}{2 \\cdot 5} = \\frac{-2}{10} = -\\frac{1}{5}$$. Dado que el número debe ser positivo, tomamos $$n = 5$$. Finalmente, se nos pide calcular $$3n + 2$$: $$3(5) + 2 = 15 + 2 = 17$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_ecu_004",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si las raíces de $$x^2 + ax + b = 0$$ son las inversas de las raíces de $$3x^2 + 9x - 4 = 0$$. Hallar $$2a^2 + b^2 - ab$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$6$$",
+        "B": "$$7$$",
+        "C": "$$8$$",
+        "D": "$$9$$",
+        "E": "$$10$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$r_1$$ y $$r_2$$ las raíces de la ecuación $$3x^2 + 9x - 4 = 0$$. Por las relaciones de Vieta: La suma de las raíces es $$r_1 + r_2 = -\\frac{9}{3} = -3$$. El producto de las raíces es $$r_1r_2 = -\\frac{4}{3}$$. Las raíces de la segunda ecuación $$x^2 + ax + b = 0$$ son las inversas de $$r_1$$ y $$r_2$$, es decir, $$\\frac{1}{r_1}$$ y $$\\frac{1}{r_2}$$. Para la segunda ecuación: La suma de las raíces es $$-\\frac{a}{1} = \\frac{1}{r_1} + \\frac{1}{r_2} = \\frac{r_1 + r_2}{r_1r_2}$$. Sustituimos los valores conocidos: $$-a = \\frac{-3}{-4/3} = -3 \\cdot \\left(-\\frac{3}{4}\\right) = \\frac{9}{4}$$. Entonces, $$a = -\\frac{9}{4}$$. El producto de las raíces es $$\\frac{b}{1} = \\left(\\frac{1}{r_1}\\right)\\left(\\frac{1}{r_2}\\right) = \\frac{1}{r_1r_2}$$. Sustituimos el valor conocido: $$b = \\frac{1}{-4/3} = -\\frac{3}{4}$$. Ahora calculamos la expresión $$2a^2 + b^2 - ab$$: $$a^2 = \\left(-\\frac{9}{4}\\right)^2 = \\frac{81}{16}$$ $$b^2 = \\left(-\\frac{3}{4}\\right)^2 = \\frac{9}{16}$$ $$ab = \\left(-\\frac{9}{4}\\right)\\left(-\\frac{3}{4}\\right) = \\frac{27}{16}$$ Sustituimos estos valores en la expresión: $$2\\left(\\frac{81}{16}\\right) + \\frac{9}{16} - \\frac{27}{16} = \\frac{162}{16} + \\frac{9}{16} - \\frac{27}{16} = \\frac{162 + 9 - 27}{16} = \\frac{171 - 27}{16} = \\frac{144}{16} = 9$$. Por lo tanto, la respuesta correcta es D.",
+      "id_temporal": "alg_ecu_005",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean p y q las raíces de la ecuación $$x(x - 7) = 2x - 20$$. Calcular $$p^2 - pq - q^2$$, si $$p > q$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$-12$$",
+        "B": "$$-11$$",
+        "C": "$$-10$$",
+        "D": "$$-9$$",
+        "E": "$$-8$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, simplificamos la ecuación a su forma estándar: $$x(x - 7) = 2x - 20$$ $$x^2 - 7x = 2x - 20$$ $$x^2 - 9x + 20 = 0$$ Factorizamos la ecuación cuadrática: $$(x - 4)(x - 5) = 0$$ Las raíces son $$x = 4$$ y $$x = 5$$. Dado que $$p > q$$, asignamos $$p = 5$$ y $$q = 4$$. Ahora, sustituimos estos valores en la expresión a calcular: $$p^2 - pq - q^2 = 5^2 - (5)(4) - 4^2$$ $$= 25 - 20 - 16$$ $$= 5 - 16$$ $$= -11$$ Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_ecu_006",
+      "imagen": null
+    },
+    {
+      "pregunta": "Una sala rectangular tiene un área de $$840 m^2$$. Su largo 'L' (en metros) satisface la ecuación $$L^2 - 10(L - 4) = 740$$. Calcular el ancho de la sala.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "20 m",
+        "B": "25 m",
+        "C": "28 m",
+        "D": "30 m",
+        "E": "32 m"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Primero, resolvemos la ecuación cuadrática para encontrar el largo 'L': $$L^2 - 10(L - 4) = 740$$ $$L^2 - 10L + 40 = 740$$ $$L^2 - 10L - 700 = 0$$ Factorizamos la ecuación: $$(L - 30)(L + 20) = 0$$ Las posibles soluciones para L son $$L = 30$$ o $$L = -20$$. Dado que el largo debe ser una medida positiva, tomamos $$L = 30 m$$. El área de un rectángulo es el producto del largo por el ancho. Conocemos el área ($$840 m^2$$) y el largo ($$30 m$$): Área = largo ⋅ ancho $$840 = 30 ⋅ ancho$$ $$ancho = \frac{840}{30}$$ $$ancho = 28 m$$ Por lo tanto, el ancho de la sala es 28 m, la respuesta correcta es C.",
+      "id_temporal": "alg_ecu_007",
+      "imagen": null
+    },
+    {
+      "pregunta": "La edad de dos hermanos, ambos números enteros positivos, se diferencian en 5 años y la suma de sus cuadrados es 193. Hallar la suma de las edades de los hermanos.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "17",
+        "B": "18",
+        "C": "19",
+        "D": "20",
+        "E": "21"
+      },
+      "respuesta_correcta": "C",
+      "explicacion": "Sea 'x' la edad del hermano menor. Entonces, la edad del hermano mayor será $$x + 5$$. La suma de sus cuadrados es 193: $$x^2 + (x + 5)^2 = 193$$ Desarrollamos la ecuación: $$x^2 + (x^2 + 10x + 25) = 193$$ $$2x^2 + 10x + 25 = 193$$ $$2x^2 + 10x - 168 = 0$$ Dividimos toda la ecuación por 2: $$x^2 + 5x - 84 = 0$$ Factorizamos la ecuación cuadrática: $$(x + 12)(x - 7) = 0$$ Las posibles soluciones para x son $$x = -12$$ o $$x = 7$$. Dado que la edad debe ser un número entero positivo, tomamos $$x = 7$$. Las edades de los hermanos son 7 años y $$7 + 5 = 12$$ años. Se pide la suma de las edades: $$7 + 12 = 19$$. Por lo tanto, la respuesta correcta es C.",
+      "id_temporal": "alg_ecu_008",
+      "imagen": null
+    },
+    {
+      "pregunta": "La diferencia de un número positivo 'n' con su recíproco es $$24/5$$. Hallar el valor de $$3n + 1$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "15",
+        "B": "16",
+        "C": "17",
+        "D": "18",
+        "E": "19"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sea 'n' el número. Su recíproco es $$1/n$$. La diferencia se expresa como: $$n - \frac{1}{n} = \frac{24}{5}$$ Para eliminar los denominadores, multiplicamos toda la ecuación por $$5n$$: $$5n(n) - 5n(\frac{1}{n}) = 5n(\frac{24}{5})$$ $$5n^2 - 5 = 24n$$ Reorganizamos la ecuación a la forma cuadrática estándar: $$5n^2 - 24n - 5 = 0$$ Utilizamos la fórmula general para resolver 'n' (o factorizamos): Para factorizar, buscamos dos números que multiplicados den $$5 \\cdot (-5) = -25$$ y sumados den -24. Estos números son -25 y 1. $$(5n + 1)(n - 5) = 0$$ Las posibles soluciones para n son $$n = -1/5$$ o $$n = 5$$. Dado que 'n' es un número positivo, tomamos $$n = 5$$. Se pide calcular el valor de $$3n + 1$$: $$3(5) + 1 = 15 + 1 = 16$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_ecu_009",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un experimento científico establece que la energía de una partícula, en unidades arbitrarias, es $$3,5k$$. Hallar la energía de la partícula si la siguiente ecuación, donde 'y' es la posición y 'k' es un parámetro positivo, tiene una solución única: $$(3\\sqrt{y})^2 + (1/\\sqrt{y})^2 + 2(1 + 4/k) = 0$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "6,5",
+        "B": "7,0",
+        "C": "7,5",
+        "D": "8,0",
+        "E": "8,5"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Primero, simplificamos los términos de la ecuación: $$(3\\sqrt{y})^2 = 9y$$ $$(1/\\sqrt{y})^2 = 1/y$$ La ecuación se convierte en: $$9y + \frac{1}{y} + 2(1 + \frac{4}{k}) = 0$$ Para eliminar el denominador 'y', multiplicamos toda la ecuación por 'y': $$9y^2 + 1 + 2(1 + \frac{4}{k})y = 0$$ Reorganizamos la ecuación a la forma cuadrática estándar $$ay^2 + by + c = 0$$: $$9y^2 + 2(1 + \frac{4}{k})y + 1 = 0$$ Para que una ecuación cuadrática tenga una solución única, su discriminante ($$b^2 - 4ac$$) debe ser igual a cero. Aquí, $$a = 9$$, $$b = 2(1 + \frac{4}{k})$$, y $$c = 1$$. Aplicamos la condición del discriminante: $$[2(1 + \frac{4}{k})]^2 - 4(9)(1) = 0$$ $$4(1 + \frac{4}{k})^2 - 36 = 0$$ $$4(1 + \frac{4}{k})^2 = 36$$ $$(1 + \frac{4}{k})^2 = \frac{36}{4}$$ $$(1 + \frac{4}{k})^2 = 9$$ Tomamos la raíz cuadrada en ambos lados: $$1 + \frac{4}{k} = \\pm\\sqrt{9}$$ $$1 + \frac{4}{k} = \\pm3$$ Tenemos dos posibles casos: Caso 1: $$1 + \frac{4}{k} = 3$$ $$\frac{4}{k} = 3 - 1$$ $$\frac{4}{k} = 2$$ $$k = \frac{4}{2}$$ $$k = 2$$ Caso 2: $$1 + \frac{4}{k} = -3$$ $$\frac{4}{k} = -3 - 1$$ $$\frac{4}{k} = -4$$ $$k = \frac{4}{-4}$$ $$k = -1$$ Dado que el problema indica que 'k' es un parámetro positivo, seleccionamos $$k = 2$$. Finalmente, calculamos la energía de la partícula usando el valor de k: Energía = $$3,5k$$ Energía = $$3,5(2)$$ Energía = $$7,0$$ Por lo tanto, la energía de la partícula es 7,0, la respuesta correcta es B.",
+      "id_temporal": "alg_ecu_010",
+      "imagen": null
+    },
+    {
+      "pregunta": "Sean p y q las raíces de la ecuación $$5x(x – 2) = 4x^2 + 3x - 12$$. Calcular $$p^2 + pq – q^2$$, si $$p > q$$.",
+      "dificultad": 1,
+      "opciones": {
+        "A": "$$155$$",
+        "B": "$$150$$",
+        "C": "$$145$$",
+        "D": "$$160$$",
+        "E": "$$130$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Primero, simplificamos la ecuación dada: $$5x(x – 2) = 4x^2 + 3x - 12$$ lo que se convierte en $$5x^2 – 10x = 4x^2 + 3x - 12$$. Reorganizando los términos, obtenemos la ecuación cuadrática estándar: $$x^2 – 13x + 12 = 0$$. Factorizamos esta ecuación: $$(x – 1)(x – 12) = 0$$. Las raíces son $$x = 1$$ y $$x = 12$$. Dado que $$p > q$$, asignamos $$p = 12$$ y $$q = 1$$. Ahora sustituimos estos valores en la expresión a calcular: $$p^2 + pq – q^2 = 12^2 + 12 \\cdot 1 – 1^2 = 144 + 12 – 1 = 156 – 1 = 155$$. Por lo tanto, la respuesta correcta es A.",
+      "id_temporal": "alg_ecu_011",
+      "imagen": null
+    },
+    {
+      "pregunta": "Un jardín rectangular posee un área de $$720 \text{ m}^2$$. Si su ancho $$w$$ satisface la ecuación $$w^2 – 5(w – 4) = 104$$, calcular la longitud de su largo.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$50 \text{ m}$$",
+        "B": "$$60 \text{ m}$$",
+        "C": "$$70 \text{ m}$$",
+        "D": "$$45 \text{ m}$$",
+        "E": "$$55 \text{ m}$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "La ecuación para el ancho $$w$$ es $$w^2 – 5(w – 4) = 104$$. Expandimos y simplificamos: $$w^2 – 5w + 20 = 104$$. Restando 104 de ambos lados, obtenemos la ecuación cuadrática: $$w^2 – 5w – 84 = 0$$. Factorizamos esta ecuación: $$(w – 12)(w + 7) = 0$$. Las soluciones para $$w$$ son $$12$$ y $$-7$$. Como el ancho debe ser una medida positiva, tomamos $$w = 12 \text{ m}$$. El área de un rectángulo es el producto de su ancho por su largo. Sabemos que el Área es $$720 \text{ m}^2$$ y el ancho es $$12 \text{ m}$$. Entonces, $$720 = 12 \\cdot \text{largo}$$. Despejando el largo: $$\text{largo} = \frac{720}{12} = 60 \text{ m}$$. La respuesta correcta es B.",
+      "id_temporal": "alg_ecu_012",
+      "imagen": null
+    },
+    {
+      "pregunta": "La diferencia entre dos números enteros positivos es de 8 unidades y la suma de sus cuadrados es 232. Hallar los números y responder su suma.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$18$$",
+        "B": "$$20$$",
+        "C": "$$22$$",
+        "D": "$$24$$",
+        "E": "$$26$$"
+      },
+      "respuesta_correcta": "B",
+      "explicacion": "Sean los dos números enteros positivos $$x$$ y $$y$$. Según el problema, su diferencia es 8, así que podemos expresar los números como $$x$$ y $$x + 8$$. La suma de sus cuadrados es 232, entonces planteamos la ecuación: $$x^2 + (x + 8)^2 = 232$$. Expandimos el binomio: $$x^2 + x^2 + 16x + 64 = 232$$. Agrupamos términos semejantes: $$2x^2 + 16x + 64 - 232 = 0$$, lo que nos da $$2x^2 + 16x - 168 = 0$$. Dividimos toda la ecuación por 2: $$x^2 + 8x - 84 = 0$$. Factorizamos la ecuación: $$(x + 14)(x - 6) = 0$$. Las posibles soluciones para $$x$$ son $$-14$$ y $$6$$. Como los números deben ser positivos, tomamos $$x = 6$$. Los números son $$6$$ y $$6 + 8 = 14$$. Se nos pide la suma de los números, que es $$6 + 14 = 20$$. Por lo tanto, la respuesta correcta es B.",
+      "id_temporal": "alg_ecu_013",
+      "imagen": null
+    },
+    {
+      "pregunta": "La diferencia de un número positivo con su recíproco es $$24/5$$. Hallar el número y responder: $$3k - 2$$.",
+      "dificultad": 2,
+      "opciones": {
+        "A": "$$10$$",
+        "B": "$$11$$",
+        "C": "$$12$$",
+        "D": "$$13$$",
+        "E": "$$14$$"
+      },
+      "respuesta_correcta": "D",
+      "explicacion": "Sea $$k$$ el número positivo. Su recíproco es $$1/k$$. La diferencia entre el número y su recíproco es $$24/5$$, entonces: $$k - \frac{1}{k} = \frac{24}{5}$$. Para eliminar los denominadores, multiplicamos toda la ecuación por $$5k$$: $$5k^2 - 5 = 24k$$. Reorganizamos la ecuación a la forma estándar de una ecuación cuadrática: $$5k^2 - 24k - 5 = 0$$. Podemos resolver esta ecuación usando la fórmula cuadrática $$k = \frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$. Sustituyendo los valores: $$k = \frac{-(-24) \\pm \\sqrt{(-24)^2 - 4(5)(-5)}}{2(5)} = \frac{24 \\pm \\sqrt{576 + 100}}{10} = \frac{24 \\pm \\sqrt{676}}{10}$$. Sabiendo que $$\\sqrt{676} = 26$$, tenemos $$k = \frac{24 \\pm 26}{10}$$. Las dos soluciones son $$k_1 = \frac{24 + 26}{10} = \frac{50}{10} = 5$$ y $$k_2 = \frac{24 - 26}{10} = \frac{-2}{10} = -\frac{1}{5}$$. Como el problema especifica que el número es positivo, tomamos $$k = 5$$. Finalmente, se nos pide calcular $$3k - 2$$: $$3(5) - 2 = 15 - 2 = 13$$. La respuesta correcta es D.",
+      "id_temporal": "alg_ecu_014",
+      "imagen": null
+    },
+    {
+      "pregunta": "Si las raíces de $$x^2 + cx + d = 0$$ son las inversas de las raíces de $$3x^2 + 9x – 4 = 0$$. Hallar $$c^2 – d^2 + cd$$.",
+      "dificultad": 3,
+      "opciones": {
+        "A": "$$99/16$$",
+        "B": "$$93/16$$",
+        "C": "$$87/16$$",
+        "D": "$$105/16$$",
+        "E": "$$90/16$$"
+      },
+      "respuesta_correcta": "A",
+      "explicacion": "Sea $$r_1$$ y $$r_2$$ las raíces de la ecuación $$3x^2 + 9x – 4 = 0$$. Para una ecuación cuadrática $$Ax^2 + Bx + C = 0$$, la suma de las raíces es $$-B/A$$ y el producto es $$C/A$$. Para la primera ecuación: Suma de raíces ($$r_1 + r_2$$) $$= -9/3 = -3$$. Producto de raíces ($$r_1r_2$$) $$= -4/3$$. Las raíces de la segunda ecuación, $$x^2 + cx + d = 0$$, son las inversas de $$r_1$$ y $$r_2$$, es decir, $$1/r_1$$ y $$1/r_2$$. Calculamos la suma de estas nuevas raíces: $$\frac{1}{r_1} + \frac{1}{r_2} = \frac{r_1 + r_2}{r_1r_2} = \frac{-3}{-4/3} = (-3) \\cdot (-\frac{3}{4}) = \frac{9}{4}$$. Para la ecuación $$x^2 + cx + d = 0$$, la suma de las raíces es $$-c$$. Por lo tanto, $$-c = \frac{9}{4} \\implies c = -\frac{9}{4}$$. Calculamos el producto de las nuevas raíces: $$(\frac{1}{r_1})(\frac{1}{r_2}) = \frac{1}{r_1r_2} = \frac{1}{-4/3} = -\frac{3}{4}$$. Para la ecuación $$x^2 + cx + d = 0$$, el producto de las raíces es $$d$$. Por lo tanto, $$d = -\frac{3}{4}$$. Finalmente, calculamos la expresión $$c^2 – d^2 + cd$$: $$c^2 = (-\frac{9}{4})^2 = \frac{81}{16}$$. $$d^2 = (-\frac{3}{4})^2 = \frac{9}{16}$$. $$cd = (-\frac{9}{4})(-\frac{3}{4}) = \frac{27}{16}$$. Sustituimos estos valores: $$\frac{81}{16} - \frac{9}{16} + \frac{27}{16} = \frac{81 - 9 + 27}{16} = \frac{72 + 27}{16} = \frac{99}{16}$$. La respuesta correcta es A.",
+      "id_temporal": "alg_ecu_015",
+      "imagen": null
+    }
+  ]
+}
